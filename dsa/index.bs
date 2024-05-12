@@ -1,0 +1,48 @@
+<pre class='metadata'>
+Title: Duomenų struktūros aprašas
+Shortname: dsa
+Level: 1
+Status: LD
+Repository: ivpk/dsa
+URL: https://ivpk.github.io/dsa
+Editor: IVPK, https://ivpk.lrv.lt/
+Abstract: Duomenų struktūros aprašo specifikacija.
+Complain About: accidental-2119 yes, missing-example-ids yes
+Markup Shorthands: markdown yes, css no
+</pre>
+
+# Duomenų struktūros aprašas
+
+Čia rasite pilna duomenų struktūros aprašo (DSA) lentelės specifikaciją.
+
+Duomenų struktūros aprašas (toliau <dfn>DSA</dfn>) yra lentelė, kurią galima redaguoti
+skaičiuoklės pagalba. Lentelėje pateikiama informacija apie vieno ar kelių
+duomenų šaltinių struktūrą.
+
+DSA skirtas tam, kad būtų galima automatizuoti duomenų atvėrimo veiklas.
+Įstaigoms, atveriančioms duomenis, daugeliu atveju turėtu užtekti paruošti tik
+DSA lentelę. Turint parengtą DSA lentelę, visos kitos veiklos yra pilnai
+automatizuojamos.
+
+Vieninga aprašų struktūros parengimo metodika sudaro galimybę automatizuoti
+duomenų atvėrimo ir publikavimo procesus bei užtikrinti atveriamų duomenų
+kokybę, vientisumą ir viso proceso stebėseną.
+
+DSA gali būti rengiamas jau atvertiems duomenims ADSA ir dar neatvertiems
+duomenims ŠDSA.
+
+
+<!--pre class=include>path: modelis.bs</pre-->
+<pre class=include>path: formatas.bs</pre>
+<pre class=include>path: dimensijos.bs</pre>
+<pre class=include>path: tipai.bs</pre>
+<pre class=include>path: pavadinimai.bs</pre>
+<pre class=include>path: vienetai.bs</pre>
+<pre class=include>path: identifikatoriai.bs</pre>
+<pre class=include>path: branda.bs</pre>
+<pre class=include>path: prieiga.bs</pre>
+<pre class=include>path: saltiniai.bs</pre>
+<pre class=include>path: zodynai.bs</pre>
+<pre class=include>path: formules.bs</pre>
+<pre class=include>path: savokos.bs</pre>
+<pre class=include>path: keitimai.bs</pre>

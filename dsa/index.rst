@@ -67,6 +67,7 @@ Turinys
     modeliai/funkciniai
     branda
     prieiga
+    schemos/index
     saltiniai
     vardu-erdves
     zodynai

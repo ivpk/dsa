@@ -971,12 +971,23 @@ stulpelyje nurodyta, kad šis laukas naudoja vardinį `place` klasifikatorių.
     `enum.prepare` reikšmės gali kartotis, tokiu būdu, kelios skirtingos
     `enum.source` reikšmės bus susietos su viena `enum.prepare` reikšme.
 
+.. data:: level
+
+    Nurodo duomenų lauko brandos lygį. Žiūrėti :ref:`level`.
+
+
+
+
 .. data:: access
 
     Klasifikatoriams galima nurodyti skirtingas prieigos teises, tokiu
     atveju, naudotojas turintis `open` prieigą matys tik tuos duomenis,
     kurių klasifikatorių reikšmės turi `open` prieigos teises, visi kiti bus
     išfiltruoti.
+
+.. data:: uri
+
+    Sąsaja su išoriniu žodynu. Žiūrėti :ref:`vocab`.
 
 .. data:: title
 

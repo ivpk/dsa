@@ -1,0 +1,1138 @@
+
+<!DOCTYPE html>
+
+
+<html lang="lt" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Koncepcinis modelis &#8212; DSA</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-examples.css?v=e236af4b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=f0eb6ae9" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=4ee96f2e"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="_static/translations.js?v=e4682f4a"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+    <script type="module">
+mermaid.initialize({
+    startOnLoad:true,
+    theme: 'neutral'
+});
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'modelis';</script>
+    <link rel="index" title="Indeksas" href="genindex.html" />
+    <link rel="search" title="Paieška" href="search.html" />
+    <link rel="next" title="Lentelės formatas" href="formatas.html" />
+    <link rel="prev" title="Duomenų struktūros aprašas" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="lt"/>
+  <meta name="docsearch:version" content="1.1" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">DSA</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Paieška" aria-label="Paieška" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Paieška</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Koncepcinis modelis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formatas.html">Lentelės formatas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dimensijos.html">Dimensijos</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="tipai.html">Duomenų tipai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pavadinimai.html">Kodiniai pavadinimai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vienetai.html">Matavimo vienetai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apibendrinimas.html">Apibendrinimas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="identifikatoriai.html">Asociacija</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modeliai/funkciniai.html">Funkciniai modeliai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="branda.html">Brandos lygiai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prieiga.html">Prieigos lygiai</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="schemos/index.html">Duomenų schemos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="schemos/xsd.html">XSD</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="saltiniai.html">Duomenų šaltiniai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vardu-erdves.html">Vardų erdvės</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zodynai.html">Išoriniai žodynai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formules.html">Formulės</a></li>
+<li class="toctree-l1"><a class="reference internal" href="savokos.html">Sąvokos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keitimai.html">Keitimų istorija</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ivpk/dsa" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Šaltinio saugykla"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ivpk/dsa/issues/new?title=Issue%20on%20page%20%2Fmodelis.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Atidarykite problemą"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Pilno ekrano režimas"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Paieška" aria-label="Paieška" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Koncepcinis modelis</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Turinys </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objektas">Objektas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#klase">Klasė</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelis">Modelis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apibendrinimas">Apibendrinimas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikatorius">Identifikatorius</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#savybe">Savybė</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#asociacija">Asociacija</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#per-duomenu-tipa">Per duomenų tipą</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tiesiogine">Tiesioginė</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atvirkstine">Atvirkštinė</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#klasifikatorius">Klasifikatorius</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zodynas">Žodynas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iri">IRI</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="koncepcinis-modelis">
+<span id="uml-index"></span><h1>Koncepcinis modelis<a class="headerlink" href="#koncepcinis-modelis" title="Link to this heading">#</a></h1>
+<p>Prieš pradedant darbą su strūktūros aprašais, būtina pasirengti koncepcinio
+modelio UML diagramą, vadovaujantis <a class="reference external" href="https://semiceu.github.io/style-guide/1.0.0/gc-conceptual-model-conventions.html">Conceptual model conventions (UML)</a>
+reikalavimais.</p>
+<p>Koncepcinis modelis vienareikšmiškai apibrėžia duomenų modelį grafine forma ir
+naudojamas, kaip vienintelis tiesos šaltinis, kadangi vizualinę duomenų modelio
+reprezentaciją nesunkiai gali suprasti skirtingose srityse dirbandys žmonės ir
+pasitivrtinti duomenų modelį, kuris vėliau bus taikomas rengiant duomenų
+struktūros aprašus.</p>
+<p>Reikia atkreipti dėmesį, kad koncepcinis modelis yra vienas, o jį atitinkančių
+duomenų šaltinių gali būti daug.</p>
+<p>Kaip pavyzdį, naudosime žemiau pateiktą koncepcinį duomenų modelį:</p>
+<pre  class="mermaid">
+        classDiagram
+  direction LR
+
+  class AdministracijosTipas {
+    &lt;&lt;enumeration&gt;&gt;
+    APSKRITIS
+    SAVIVALDYBE
+  }
+
+  class Administracija {
+    + kodas: integer [1..1]
+    + pavadinimas: text [1..1]
+  }
+
+  class Savivaldybe
+  class Apskritis
+  class Gyvenviete {
+    + id: integer [1..1]
+    + pavadinimas: text [1..1]
+  }
+
+
+  Savivaldybe --&gt; &quot;[1..1]&quot; Apskritis : apskritis
+  Gyvenviete --&gt; &quot;[1..1]&quot; Savivaldybe : savivaldybe
+  Savivaldybe --|&gt; Administracija
+  Apskritis --|&gt; Administracija
+  Administracija ..&gt; &quot;[1..1]&quot; AdministracijosTipas : tipas
+    </pre><p>Pagal šį koncepcinį modelį, DSA lentelė atrodytu taip:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>d</p></th>
+<th class="head"><p>r</p></th>
+<th class="head"><p>m</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>prepare</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="4"><p>datasets/gov/example</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td colspan="2"><p><strong>Administracija</strong></p></td>
+<td></td>
+<td><p>kodas</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>kodas</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>pavadinimas</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>tipas</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>enum</p></td>
+<td></td>
+<td><p>&quot;APSKRITIS&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>&quot;SAVIVALDYBE&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td colspan="2"><p><strong>Gyvenviete</strong></p></td>
+<td></td>
+<td><p>id</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>pavadinimas</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>savivaldybe</p></td>
+<td><p>ref</p></td>
+<td><p><strong>Savivaldybe</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td colspan="2"><p><strong>Apskritis</strong></p></td>
+<td><p><strong>Administracija</strong></p></td>
+<td><p>kodas, tipas</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>kodas</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>pavadinimas</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>tipas</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>&quot;APSKRITIS&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td colspan="2"><p><strong>Savivaldybe</strong></p></td>
+<td><p><strong>Administracija</strong></p></td>
+<td><p>kodas, tipas</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>kodas</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>pavadinimas</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>tipas</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>&quot;SAVIVALDYBE&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>apskritis</p></td>
+<td><p>ref</p></td>
+<td><p><strong>Apskritis</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Pavadinimai nurodyti koncepciniame modelyje, turi identiškai sutapti su
+pavadinimai nurodytais DSA lentelės loginio modelio <code class="docutils literal notranslate"><span class="pre">model</span></code>, <code class="docutils literal notranslate"><span class="pre">property</span></code>,
+<code class="docutils literal notranslate"><span class="pre">type</span></code>, <code class="docutils literal notranslate"><span class="pre">ref</span></code> ir <code class="docutils literal notranslate"><span class="pre">prepare</span></code> stulpeluose.</p>
+<p>DSA lentelėje fizinio modelio, <code class="docutils literal notranslate"><span class="pre">source</span></code> stulpelyje nurodyti pavadinimai
+skirtinguose šaltiniuose gali skirtis, tačiau loginio modelio pavadinimai turi
+išlikti tokie patys.</p>
+<section id="objektas">
+<span id="id1"></span><h2>Objektas<a class="headerlink" href="#objektas" title="Link to this heading">#</a></h2>
+<p><em class="dfn">Objektas</em> yra viena duomenų eilutė, arba vienas duomenų įrašas ar
+atvejis. Kalbant apie objektus, naudojamas <span class="underline">pavyzdys</span> žymėjimas.</p>
+<p>Pavyzdžiui iš aukščiau pateikto duomenų modelio, klasės <code class="docutils literal notranslate"><span class="pre">Gyvenviete</span></code> objektai
+gali būti:</p>
+<ul class="simple">
+<li><p><span class="underline">Vilnius</span></p></li>
+<li><p><span class="underline">Kaunas</span></p></li>
+<li><p><span class="underline">Klaipeda</span></p></li>
+</ul>
+<p>Sąvoka <a class="reference internal" href="savokos.html#term-objektas"><span class="xref std std-term">objektas</span></a> kalba apie konkretų individualų atvejį ar pavyzdį.</p>
+<p>Imant duomenų lentelę iš <code class="docutils literal notranslate"><span class="pre">Gyvenviete</span></code> modelio, gausime tokius duomenis.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>id</p></th>
+<th class="head"><p>pavadinimas</p></th>
+<th class="head"><p>savivaldybe</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Vilnius</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Kaunas</p></td>
+<td><p>11</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Klaipeda</p></td>
+<td><p>12</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Šioje lentelėje yra trys objektai.</p>
+<p>Objekto pavyzdys UML diagramoje:</p>
+<pre  class="mermaid">
+        classDiagram
+  class Gyvenviete {
+    + id: integer [1..1]
+    + pavadinimas: text [1..1]
+    + savivaldybe: integer [1..1]
+  }
+
+  class Vilnius[&quot;&lt;u&gt;Vilnius: Gyvenviete&lt;/u&gt;&quot;] {
+    id = 1
+    pavadinimas = &quot;Vilnius&quot;
+    savivaldybe = 10
+  }
+  class Kaunas[&quot;&lt;u&gt;Kaunas: Gyvenviete&lt;/u&gt;&quot;] {
+    id = 2
+    pavadinimas = &quot;Kaunas&quot;
+    savivaldybe = 11
+  }
+  class Klaipeda[&quot;&lt;u&gt;Klaipeda: Gyvenviete&lt;/u&gt;&quot;] {
+    id = 3
+    pavadinimas = &quot;Klaipeda&quot;
+    savivaldybe = 12
+  }
+
+  Vilnius --|&gt; Gyvenviete
+  Kaunas --|&gt; Gyvenviete
+  Klaipeda --|&gt; Gyvenviete
+    </pre><p>UML diagramoje turime tris objetus <span class="underline">Vilnius</span>, <span class="underline">Kaunas</span> ir
+<span class="underline">Klaipeda</span>, priskirti klasei <code class="docutils literal notranslate"><span class="pre">Gyvenviete</span></code>.</p>
+<p>Skirtingi objektai gali būti klasifikuojami į klases arba esybes.</p>
+</section>
+<section id="klase">
+<h2>Klasė<a class="headerlink" href="#klase" title="Link to this heading">#</a></h2>
+<p>Klasė arba Esybė yra vienodas savybes ir vienodą apibrėžimą turinčių objektų
+aibė, kuriems suteikiamas tam tikras pavadinimas.</p>
+<p>Tarkime <span class="underline">Vilniaus</span>, <span class="underline">Kauno</span> ir <span class="underline">Klaipėdos</span>
+objektus galime priskirti vienai klasei ir suteikti tai klasei pavadinimą
+<code class="docutils literal notranslate"><span class="pre">Gyvenviete</span></code>.</p>
+<p>Klasės pavyzdys UML diagramoje:</p>
+<pre  class="mermaid">
+        classDiagram
+
+  class Gyvenviete
+    </pre><p>Klasė gali neturėti jokių savybių, arba gali turėti savybes, kurios apibūdina
+pačią klasę.</p>
+<p>Tarkime modelis <code class="docutils literal notranslate"><span class="pre">Gyvenvietė</span></code> turi savybę <code class="docutils literal notranslate"><span class="pre">pavadinimas</span></code>, tačiau tai nėra klasės
+savybė, todėl, kad <code class="docutils literal notranslate"><span class="pre">pavadinimas</span></code> yra duomenų atributas, kuris nėra klasę
+apibūdinanti savybė.</p>
+<p>Nurodžius savybes prie klasės, iškeliamas griežtas reikalavimas, visiems
+modeliams ir subklasėms, atitikti visas klasės savybes.</p>
+<p>Tuo tarpu duomenų modelis, gali atitikti tam tikrą klasę, bet gali būti
+pateikiamas su skirtingomis savybėmis.</p>
+<p>Sudarant ontologijas, pateikiami klasių apibrėžimai, dažniausiai be savybių,
+kad neriboti klasės taikymo. Tačiau tam tikrais atvejais, ontologijoje klasės
+pateikiamos ir su keliomis savybėmis, kurios apibrėžia pačią klasę.</p>
+</section>
+<section id="modelis">
+<span id="id2"></span><h2>Modelis<a class="headerlink" href="#modelis" title="Link to this heading">#</a></h2>
+<img alt="_images/modelis.png" src="_images/modelis.png" />
+<p>Klasės savybės apibrežia pačią klasę ir tampa klasės dalimi, tačiau modelio
+savybės neturi įtakos klasės semantiniam apibrėžimui, tai yra tiesiog duomenų
+laukų sąrašas pateikiams su klase.</p>
+<p>Viena klasė gali turėti daug skirtingų modelių, su skirtingomis savybėmis arba
+su skirtingais duomenų laukais.</p>
+<p>Modelis, schema arba profilis yra konkretus savybių, duomenų tipų sąrašas,
+kuriame nurodoma kurios savybės yra privalomos, kurios gali turėti daugiau nei
+vieną reikšmę ir kitas detales.</p>
+<p>Sudarant taikymo profilius (angl. <em>Application profile</em>) UML klasių diagramoje
+pateikiami konkretūs duomenų modeliai, su konkrečiomis savybėmis ir jų tipais.</p>
+<p>Modelio pavyzdys UML diagramoje:</p>
+<pre  class="mermaid">
+        classDiagram
+
+  class Gyvenviete {
+    + id: integer [1..1]
+    + pavadinimas: text [1..1]
+  }
+    </pre><p>Modelis atvaizduojas lygiai taip pat, kaip ir klasės. Ar tai yra klasės ar
+modelis galima atskirti tik pagal diagramos pavadinimą, jei diagrama vaizduoja
+ontologiją, tada joje yra klasės, jei taikymo profilį, tada diagramoje yra
+modeliai.</p>
+<p>Jei UML diagramose prie klasių yra pateikti pilni sąrašai savybių su tipais,
+tada tai greičiausiai yra taikymo profilis.</p>
+</section>
+<section id="apibendrinimas">
+<span id="uml-generalization"></span><h2>Apibendrinimas<a class="headerlink" href="#apibendrinimas" title="Link to this heading">#</a></h2>
+<p>Objektai gali būti skirstomi į klases, tačiau pačios klasės gali būti
+skirstomos į bendresnes klases, toks apibendrinimo procesas vadinamas
+generalizacija.</p>
+<p>UML diagramose gneralizacija žymima užpildyta rodykle, kurios krypts iš labiau
+specializuotos siauresnę prasmę turinčios klasės, į labiau apibendrintą,
+platesnę prasmę turinčią klasę, pavyzdžiui:</p>
+<pre  class="mermaid">
+        classDiagram
+  direction LR
+
+  class Savivaldybe
+  class Administracija
+
+  Savivaldybe --|&gt; Administracija
+    </pre><p>Šiame pavyzdyje nurodome, kad <code class="docutils literal notranslate"><span class="pre">Savivaldybe</span></code> yra <code class="docutils literal notranslate"><span class="pre">Administracija</span></code> poaibis. Arba
+<code class="docutils literal notranslate"><span class="pre">Administracija</span></code> yra platesnė klasė, o <code class="docutils literal notranslate"><span class="pre">Savivaldybę</span></code> yra siauresnė, labiau
+specifinę prasmę nurodanti klasė.</p>
+</section>
+<section id="identifikatorius">
+<h2>Identifikatorius<a class="headerlink" href="#identifikatorius" title="Link to this heading">#</a></h2>
+<p>Kad galėtume vienareikšmiškai įvardinti ar nurodyti tam tikrą objektą, visi
+objektai privalo turėti unikalius identifikatorius.</p>
+<p>Kiekvienam objektui priskiriamas vienas globalus identifikatorius <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc9562.html"><strong>UUID</strong></a> formatu, tačiau objektas gali turėti vieną ar daugiau lokalius
+identifikatorius.</p>
+<p>Globalūs identifikatoriai priskiriami esybei ir atspindi vieną realaus pasaulio
+objektą, lokalus identifikatorius yra siejams su konkrečiu duomenų modeliu ar
+duomenų šaltiniu ir skirtinguose modeliuose gali būti naudojami keli skirtingi
+lokalūs identifikatoriai rodantys į vieną realaus pasaulio objektą.</p>
+<pre  class="mermaid">
+        classDiagram
+
+  class Gyvenviete
+
+  class City {
+    + id: integer [1..1]
+    + name: text [1..1]
+  }
+
+  class Miestas {
+    + kodas: integer [1..1]
+    + pavadinimas: text [1..1]
+  }
+
+  class VilniusCity[&quot;&lt;u&gt;dd79d2a6-d3d6-4fc2-83bb-da9dd15b2a89: City&lt;/u&gt;&quot;] {
+    id = 7
+    name = &quot;Vilnius&quot;
+  }
+  class VilniusMiestas[&quot;&lt;u&gt;dd79d2a6-d3d6-4fc2-83bb-da9dd15b2a89: Miestas&lt;/u&gt;&quot;] {
+    kodas = 23
+    pavadinimas = &quot;Vilnius&quot;
+  }
+
+  VilniusCity --|&gt; City
+  VilniusMiestas --|&gt; Miestas
+  City --|&gt; Gyvenviete
+  Miestas --|&gt; Gyvenviete
+    </pre><p>UML diagramoje aukščiau turime du skirtingus duomenų objektus, kurie turi
+vienodą globalų identifikatorių <code class="docutils literal notranslate"><span class="pre">dd79d2a6-d3d6-4fc2-83bb-da9dd15b2a89</span></code>, tačiau
+skirtingus lokalius <code class="docutils literal notranslate"><span class="pre">id</span> <span class="pre">=</span> <span class="pre">7</span></code> ir <code class="docutils literal notranslate"><span class="pre">kodas</span> <span class="pre">=</span> <span class="pre">23</span></code>.</p>
+<p>Globalus identifikatorius suteikiamas esybei <code class="docutils literal notranslate"><span class="pre">Gyvenviete</span></code>, lokalūs
+identifikatoriai suteikiami konkrečiam duomenų modeliui ir konkrečiam duomenų
+šaltiniui.</p>
+<p>Rengiant <a class="reference internal" href="savokos.html#term-DSA"><span class="xref std std-term">DSA</span></a> lentelę globalūs identifikatoriai žymimi <a class="reference internal" href="dimensijos.html#model.ref" title="model.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">model.ref</span></code></a>
+stulpelyje arba rezervuotu savybės pavadinimu <code class="docutils literal notranslate"><span class="pre">_id</span></code> ir yra privalomas.</p>
+</section>
+<section id="savybe">
+<h2>Savybė<a class="headerlink" href="#savybe" title="Link to this heading">#</a></h2>
+<p>UML diagramos savybės žymimos sutartine forma:</p>
+<div class="admonition-sintakse admonition">
+<p class="admonition-title">Sintaksė</p>
+<p><strong>access</strong> <strong>property</strong> <code class="docutils literal notranslate"><span class="pre">:</span></code> <strong>type</strong> <code class="docutils literal notranslate"><span class="pre">[</span></code> <strong>cardinality</strong> <code class="docutils literal notranslate"><span class="pre">..</span></code> <strong>multiplicity</strong> <code class="docutils literal notranslate"><span class="pre">]</span></code></p>
+</div>
+<dl class="simple">
+<dt>access</dt><dd><p>Prieigos lygis. Gali būti naudojami tokie žymėjimai:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> - atviri duomenys, žiūrėti <a class="reference internal" href="prieiga.html#open" title="open"><code class="xref py py-data docutils literal notranslate"><span class="pre">open</span></code></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#</span></code> - vieši duomenys, žiūrįti <a class="reference internal" href="prieiga.html#public" title="public"><code class="xref py py-data docutils literal notranslate"><span class="pre">public</span></code></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">~</span></code> - duomenys teikiami pagal sutartį, žiūrėti <a class="reference internal" href="prieiga.html#protected" title="protected"><code class="xref py py-data docutils literal notranslate"><span class="pre">protected</span></code></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> - nepublikuojami duomenys, žiūrėti <a class="reference internal" href="prieiga.html#private" title="private"><code class="xref py py-data docutils literal notranslate"><span class="pre">private</span></code></a>.</p></li>
+</ul>
+</dd>
+<dt>property</dt><dd><p>Savybė, žiūrėti <a class="reference internal" href="formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a>. Nurodoma savybės URI forma.</p>
+</dd>
+<dt>type</dt><dd><p>Duomenų tipas, žiūrėti <a class="reference internal" href="tipai.html#duomenu-tipai"><span class="std std-ref">Duomenų tipai</span></a>. UML diagramose, jei duomenų
+tipas yra <a class="reference internal" href="formatas.html#ref" title="ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">ref</span></code></a> arba <code class="xref py py-data docutils literal notranslate"><span class="pre">backref</span></code>, tada nurodomas modelio
+pavadinimas, URI forma, su kuriuo daroma asociacija.</p>
+</dd>
+<dt>cardinality</dt><dd><p>Nurodo ar laukas yra privalomas:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code> - laukas yra neprivalomas.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> - laukas yra privalomas.</p></li>
+</ul>
+</dd>
+<dt>multiplicity</dt><dd><p>Nurodo kiek kartų gali būti pateikta lauko reikšmė.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> - lauko reikšmė gali būti pateikta tik vieną kartą.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> - laukė reikšmė gali būti pateikta daugiau nei veiną kartą.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Pavyzdys:</p>
+<pre  class="mermaid">
+        classDiagram
+
+  class Gyvenviete {
+    + id: integer [1..1]
+    + pavadinimas: text [1..1]
+  }
+    </pre><p>UML diagramoje matote <code class="docutils literal notranslate"><span class="pre">Gyvenviete</span></code> duomenų modelį, kuris turi dvi savybes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span> <span class="nb">id</span><span class="p">:</span> <span class="n">integer</span> <span class="p">[</span><span class="mf">1..1</span><span class="p">]</span>
+<span class="o">+</span> <span class="n">pavadinimas</span><span class="p">:</span> <span class="n">text</span> <span class="p">[</span><span class="mf">1..1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Abi savybės turi atvirą prieigos lygmenį, <code class="docutils literal notranslate"><span class="pre">id</span></code> ir <code class="docutils literal notranslate"><span class="pre">pavadinimas</span></code> kodinius
+savybės pavadinimus, <code class="docutils literal notranslate"><span class="pre">integer</span></code> ir <code class="docutils literal notranslate"><span class="pre">text</span></code> duomenų tipus ir abi savybės yra
+privalomos ir gali turėti tik vieną reikšmę.</p>
+</section>
+<section id="asociacija">
+<h2>Asociacija<a class="headerlink" href="#asociacija" title="Link to this heading">#</a></h2>
+<section id="per-duomenu-tipa">
+<h3>Per duomenų tipą<a class="headerlink" href="#per-duomenu-tipa" title="Link to this heading">#</a></h3>
+<p>UML diagramose nurodant ryšį su kitomis esybėmis, galima naudoti įprastą
+savybių žymėjimo formą <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">savivaldybe:</span> <span class="pre">Savivaldybe</span> <span class="pre">[1..1]</span></code>, kur po <code class="docutils literal notranslate"><span class="pre">:</span></code>
+dvitaškio nurodomas kitas modelis, su kuriuo daroma asociacija.</p>
+<pre  class="mermaid">
+        classDiagram
+
+  class Gyvenviete {
+    + id: integer [1..1]
+    + pavadinimas: text [1..1]
+    + savivaldybe: Savivaldybe [1..1]
+  }
+
+  class Savivaldybe {
+    + kodas: integer [1..1]
+    + pavadinimas: text [1..1]
+  }
+    </pre><p>Tokia asociacija daroma, kai siejame su išoriniais modeliais, arba kai turime
+per daug asociacijų ir norime UML diagramoje sumažinti rodyklių skaičių.</p>
+</section>
+<section id="tiesiogine">
+<h3>Tiesioginė<a class="headerlink" href="#tiesiogine" title="Link to this heading">#</a></h3>
+<p>Tiesioginė asociacija nurodoma rodyklės pagalba, jei yra pateikta rodyklė, tada
+savybių sąraše, savybės, kuri yra pateikta prie rodyklės neberodome.</p>
+<pre  class="mermaid">
+        classDiagram
+  direction LR
+
+  class Savivaldybe {
+    + kodas: integer [1..1]
+    + pavadinimas: text [1..1]
+  }
+
+  class Gyvenviete {
+    + id: integer [1..1]
+    + pavadinimas: text [1..1]
+  }
+
+  Gyvenviete --&gt; &quot;[1..1]&quot; Savivaldybe : savivaldybe
+    </pre><p>Rodyklės kryptis visada rodo iš modelio, prie kurio savybė yra apibrėžta, į
+kitą modelį, su kuriuo savybė yra siejama.</p>
+<p>Tiesioginė asociacija <a class="reference internal" href="savokos.html#term-DSA"><span class="xref std std-term">DSA</span></a> yra nurodoma <a class="reference internal" href="tipai.html#type.ref" title="type.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">type.ref</span></code></a> pagalba.</p>
+</section>
+<section id="atvirkstine">
+<h3>Atvirkštinė<a class="headerlink" href="#atvirkstine" title="Link to this heading">#</a></h3>
+<p>Asociacijai gali būti naudojami ir atvirkštiniai ryšiai, pavyzdžiui:</p>
+<pre  class="mermaid">
+        classDiagram
+  direction LR
+
+  class Savivaldybe {
+    + kodas: integer [1..1]
+    + pavadinimas: text [1..1]
+  }
+
+  class Gyvenviete {
+    + id: integer [1..1]
+    + pavadinimas: text [1..1]
+  }
+
+  Gyvenviete &quot;[0..*]&quot; &lt;-- Savivaldybe : gyvenvietes
+    </pre><p>Šiuo atveju nurodome <a class="reference internal" href="tipai.html#type.backref" title="type.backref"><code class="xref py py-data docutils literal notranslate"><span class="pre">type.backref</span></code></a> tipo atvirkštinę asociaciją, rodyklės
+kryptis ir daugiareikšmiškumas keičiasi, turime vieną savyvaldybę, kuri gali
+turėti daug gyvenviečių.</p>
+</section>
+</section>
+<section id="klasifikatorius">
+<h2>Klasifikatorius<a class="headerlink" href="#klasifikatorius" title="Link to this heading">#</a></h2>
+<p>Klasifikatoriai arba kontroliuojami žodynai, yra galimų reikšmių sąrašas
+naudojamas tam tikrai savybei.</p>
+<p>UML diagramoje klasifikatoriai pateikiami naudojant <code class="docutils literal notranslate"><span class="pre">&lt;&lt;enumeration&gt;&gt;</span></code>
+stereotipą ir punktyrinę priklausomybės rodyklę:</p>
+<pre  class="mermaid">
+        classDiagram
+
+  class AdministracijosTipas {
+    &lt;&lt;enumeration&gt;&gt;
+    APSKRITIS
+    SAVIVALDYBE
+  }
+
+  class Administracija {
+    + kodas: integer [1..1]
+    + pavadinimas: text [1..1]
+  }
+
+  Administracija ..&gt; &quot;[1..1]&quot; AdministracijosTipas : tipas
+    </pre><p><code class="docutils literal notranslate"><span class="pre">AdministracijosTipas</span></code> yra klasifikatorius, turintis kontroliuojamą žodyną,
+kuriame apibrėžtos dvi galimos reikšmės <code class="docutils literal notranslate"><span class="pre">APSKRITIS</span></code> ir <code class="docutils literal notranslate"><span class="pre">SAVIVALDYBE</span></code>.</p>
+<p>Struktūros apraše klasifikatoriai aprašomi naudojant <a class="reference internal" href="dimensijos.html#module-enum" title="enum"><code class="xref py py-data docutils literal notranslate"><span class="pre">enum</span></code></a> dimensiją.</p>
+</section>
+<section id="zodynas">
+<h2>Žodynas<a class="headerlink" href="#zodynas" title="Link to this heading">#</a></h2>
+<p>Visos klasės ir savybės (<em class="dfn">sąvokos</em>) yra skirstomos į žodynus. Dažnai
+viename duomenų modelyje yra naudojamos <span class="xref std std-term">sąvokos</span> iš skirtingų
+žodynų.</p>
+<p>Kad atskirti, kuri sąvoka yra iš kokio žodyno, naudojami žodyno prefiksai.</p>
+<pre  class="mermaid">
+        classDiagram
+  direction LR
+
+  class Location[&quot;locn:Location&quot;] {
+    + dct:identifier: integer [1..1]
+    + rdfs:label: text [1..1]
+  }
+
+  class Gyvenviete {
+    + id: integer [1..1]
+    + pavadinimas: text [1..1]
+  }
+
+  Gyvenviete --|&gt; Location
+    </pre><p>Žodyno prefiksai gali būti naudojami tiek klasės pavadinime, tie savybių ir
+tipų pavadinimuose.</p>
+<p>Jei žodyno prefiksas nėra nurodytas, tai reiškia, kad naudojamas esamas
+žodynas, kuris yra apibrėžtas duomenų modelyje.</p>
+<p>Žodynai taip pat gali būti nurodomi naudojant UML paketus arba vardų erdves:</p>
+<pre  class="mermaid">
+        classDiagram
+  direction LR
+
+  class Gyvenviete {
+    + id: integer [1..1]
+    + pavadinimas: text [1..1]
+  }
+
+  Gyvenviete --|&gt; Location
+
+  namespace locn {
+      class Location {
+        + dct:identifier: integer [1..1]
+        + rdfs:label: text [1..1]
+      }
+  }
+    </pre><p>Sąvokoms, kurios yra vardų erdvės rėmuose, žodyno prefiksai nenurodomi. Žodyno
+prefiksai nurodomi tik tuo atveju, jei sąvoka yra iš kito žodyno.</p>
+</section>
+<section id="iri">
+<h2>IRI<a class="headerlink" href="#iri" title="Link to this heading">#</a></h2>
+<p>Visos sąvokos, tokios kaip klasės, savybės, duomenų tipai, taip pat yra
+objektai, turintys savo identifikatorius.</p>
+<p>UML diagramose nurodomi būtent sąvokų identifikatoriai sutrumpinta IRI forma.</p>
+<p>IRI yra identifikatorius schema sudaryta iš sekančių komponentų:</p>
+<p><strong>scheme</strong> <code class="docutils literal notranslate"><span class="pre">://</span></code> <strong>host</strong> <code class="docutils literal notranslate"><span class="pre">/</span></code> <strong>path</strong> <code class="docutils literal notranslate"><span class="pre">?</span></code> <strong>query</strong> <code class="docutils literal notranslate"><span class="pre">#</span></code> <strong>fragment</strong></p>
+<p>Lietuvos viešąjame sektoriuje naudojama sekanti URI schema:</p>
+<p><code class="docutils literal notranslate"><span class="pre">https://data.gov.lt/id/</span></code> <strong>vocab</strong> <code class="docutils literal notranslate"><span class="pre">/</span></code> <strong>term</strong> [ <code class="docutils literal notranslate"><span class="pre">/</span></code> <strong>id</strong> ]</p>
+<dl class="simple">
+<dt>vocab</dt><dd><p>Žodyno kodinis pavadinimas.</p>
+</dd>
+<dt>term</dt><dd><p>Sąvokos kodinis pavadinimas.</p>
+</dd>
+<dt>id</dt><dd><p>Objekto identifikatorius.</p>
+</dd>
+</dl>
+<p>Jei mūsų kuriamam žodynui būtų suteiktas kodinis pavadinimas <code class="docutils literal notranslate"><span class="pre">adresai</span></code>, tada
+mūsų sąvokoms būtų suteikti tokie IRI identifikatoriai:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">data</span><span class="o">.</span><span class="n">gov</span><span class="o">.</span><span class="n">lt</span><span class="o">/</span><span class="nb">id</span><span class="o">/</span><span class="n">adresai</span><span class="o">/</span><span class="n">Gyvenviete</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">data</span><span class="o">.</span><span class="n">gov</span><span class="o">.</span><span class="n">lt</span><span class="o">/</span><span class="nb">id</span><span class="o">/</span><span class="n">adresai</span><span class="o">/</span><span class="nb">id</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">data</span><span class="o">.</span><span class="n">gov</span><span class="o">.</span><span class="n">lt</span><span class="o">/</span><span class="nb">id</span><span class="o">/</span><span class="n">adresai</span><span class="o">/</span><span class="n">pavadinimas</span>
+</pre></div>
+</div>
+<p>Kadangi pilnas IRI yra gan ilgas, UML diagramose naudojame sutrumpintą IRI
+formą su prefiksu. Šiuo atveju, galime deklaruoti, kad <code class="docutils literal notranslate"><span class="pre">ar</span></code> prefiksas atitinka
+<code class="docutils literal notranslate"><span class="pre">https://data.gov.lt/id/adresai/</span></code> URI, todėl sutrumpinta forma atrodys taip:</p>
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">ar:</span><span class="w"> </span><span class="nv">&lt;https://data.gov.lt/id/adresai/&gt;</span>
+
+<span class="nn">ar</span><span class="p">:</span><span class="nt">Gyvenviete</span>
+<span class="nn">ar</span><span class="p">:</span><span class="nt">id</span>
+<span class="nn">ar</span><span class="p">:</span><span class="nt">pavadinimas</span>
+</pre></div>
+</div>
+<p>UML diagramoje naudojame sutrumpintus URI pavadinimus, tačiau kartu su diagrama
+būtina pateikti ir prefiksų sąrašą, kad būtų ašku, ką reiškia kiekvienas
+prefikas:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Prefiksas</p></th>
+<th class="head"><p>Vardų erdvės IRI</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ar</p></td>
+<td><p>https://data.gov.lt/id/adresai/</p></td>
+</tr>
+<tr class="row-odd"><td><p>locn</p></td>
+<td><p>http://www.w3.org/ns/locn#</p></td>
+</tr>
+<tr class="row-even"><td><p>dct</p></td>
+<td><p>http://purl.org/dc/terms/</p></td>
+</tr>
+<tr class="row-odd"><td><p>rdfs</p></td>
+<td><p>http://www.w3.org/2000/01/rdf-schema#</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre  class="mermaid">
+        classDiagram
+  direction LR
+
+  class Location[&quot;locn:Location&quot;] {
+    + dct:identifier: integer [1..1]
+    + rdfs:label: text [1..1]
+  }
+
+  class Gyvenviete[&quot;ar:Gyvenviete&quot;] {
+    + ar:id: integer [1..1]
+    + ar:pavadinimas: text [1..1]
+  }
+
+  Gyvenviete --|&gt; Location
+    </pre></section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">praeitas</p>
+        <p class="prev-next-title">Duomenų struktūros aprašas</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="formatas.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">kitas</p>
+        <p class="prev-next-title">Lentelės formatas</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Turinys
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objektas">Objektas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#klase">Klasė</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelis">Modelis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apibendrinimas">Apibendrinimas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikatorius">Identifikatorius</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#savybe">Savybė</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#asociacija">Asociacija</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#per-duomenu-tipa">Per duomenų tipą</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tiesiogine">Tiesioginė</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atvirkstine">Atvirkštinė</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#klasifikatorius">Klasifikatorius</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zodynas">Žodynas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iri">IRI</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Iki Valstybės skaitmeninių sprendimų agentūra
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2019-2024, VSSA.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1075 @@
+
+<!DOCTYPE html>
+
+
+<html lang="lt" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Duomenų šaltiniai &#8212; DSA</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-examples.css?v=e236af4b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=f0eb6ae9" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=4ee96f2e"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="_static/translations.js?v=e4682f4a"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+    <script type="module">
+mermaid.initialize({
+    startOnLoad:true,
+    theme: 'neutral'
+});
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'saltiniai';</script>
+    <link rel="index" title="Indeksas" href="genindex.html" />
+    <link rel="search" title="Paieška" href="search.html" />
+    <link rel="next" title="Vardų erdvės" href="vardu-erdves.html" />
+    <link rel="prev" title="XSD" href="schemos/xsd.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="lt"/>
+  <meta name="docsearch:version" content="1.1" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">DSA</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Paieška" aria-label="Paieška" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Paieška</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="modelis.html">Koncepcinis modelis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formatas.html">Lentelės formatas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dimensijos.html">Dimensijos</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="tipai.html">Duomenų tipai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pavadinimai.html">Kodiniai pavadinimai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vienetai.html">Matavimo vienetai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apibendrinimas.html">Apibendrinimas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="identifikatoriai.html">Asociacija</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modeliai/funkciniai.html">Funkciniai modeliai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="branda.html">Brandos lygiai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prieiga.html">Prieigos lygiai</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="schemos/index.html">Duomenų schemos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="schemos/xsd.html">XSD</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Duomenų šaltiniai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vardu-erdves.html">Vardų erdvės</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zodynai.html">Išoriniai žodynai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formules.html">Formulės</a></li>
+<li class="toctree-l1"><a class="reference internal" href="savokos.html">Sąvokos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keitimai.html">Keitimų istorija</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ivpk/dsa" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Šaltinio saugykla"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ivpk/dsa/issues/new?title=Issue%20on%20page%20%2Fsaltiniai.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Atidarykite problemą"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Pilno ekrano režimas"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Paieška" aria-label="Paieška" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Duomenų šaltiniai</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Turinys </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sql">SQL</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connect"><code class="docutils literal notranslate"><span class="pre">connect()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#csv">CSV</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular"><code class="docutils literal notranslate"><span class="pre">tabular()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json">JSON</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xml">XML</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">xpath()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xlsx">XLSX</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="duomenu-saltiniai">
+<span id="id1"></span><h1>Duomenų šaltiniai<a class="headerlink" href="#duomenu-saltiniai" title="Link to this heading">#</a></h1>
+<section id="sql">
+<span id="resource-type-sql"></span><h2>SQL<a class="headerlink" href="#sql" title="Link to this heading">#</a></h2>
+<dl class="describe" id="sql-resource-source">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">resource.source</span></span></dt>
+<dd><p>Duomenų bazės URI. Duomenų bazės URI formuojamas naudojant tokį <a class="reference external" href="https://en.wikipedia.org/wiki/Augmented_Backus–Naur_form">ABNF</a>
+šabloną:</p>
+<div class="highlight-abnf notranslate"><div class="highlight"><pre><span></span><span class="nc">uri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">type</span><span class="w"> </span><span class="p">[</span><span class="l">&quot;+&quot;</span><span class="w"> </span><span class="nc">driver</span><span class="p">]</span><span class="w"> </span><span class="l">&quot;://&quot;</span>
+<span class="w">      </span><span class="p">[</span><span class="nc">user</span><span class="w"> </span><span class="p">[</span><span class="l">&quot;:&quot;</span><span class="w"> </span><span class="nc">password</span><span class="p">]</span><span class="w"> </span><span class="l">&quot;@&quot;</span><span class="p">]</span>
+<span class="w">      </span><span class="nc">host</span><span class="w"> </span><span class="p">[</span><span class="l">&quot;:&quot;</span><span class="w"> </span><span class="nc">port</span><span class="p">]</span>
+<span class="w">      </span><span class="l">&quot;/&quot;</span><span class="w"> </span><span class="nc">database</span><span class="w"> </span><span class="p">[</span><span class="l">&quot;?&quot;</span><span class="w"> </span><span class="nc">params</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Šablone naudojamų kintamųjų aprašymas:</p>
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">type</span></span></dt>
+<dd><p>Duomenų bazių serverio pavadinimas:</p>
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">sqlite</span></span></dt>
+<dd></dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">postgresql</span></span></dt>
+<dd></dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">mysql</span></span></dt>
+<dd></dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">oracle</span></span></dt>
+<dd></dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">mssql</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">driver</span></span></dt>
+<dd><p>Konkretaus duomenų bazių serverio tvarkyklė naudojama komunikacijai su
+duomenų baze.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">user</span></span></dt>
+<dd><p>Naudotojo vardas jungimuisi prie duomenų bazės.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">password</span></span></dt>
+<dd><p>Duomenų bazės naudotojo slaptažodis.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">host</span></span></dt>
+<dd><p>Duomenų bazių serverio adresas.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">port</span></span></dt>
+<dd><p>Duomenų bazių serverio prievadas.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">database</span></span></dt>
+<dd><p>Konkrečios duomenų bazės pavadinimas.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">params</span></span></dt>
+<dd><p>Papildomi parametrai <code class="docutils literal notranslate"><span class="pre">Query</span> <span class="pre">string</span></code> formatu.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">resource.prepare</span></span></dt>
+<dd><p>Formulė skirta papildomiems veiksmams reikalingiems ryšiui su duomenų baze
+užmegzti ir duomenų bazės paruošimui, kad būtų galima skaityt duomenis.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">resource.type</span></span></dt>
+<dd><p>Galimos reikšmės: <code class="docutils literal notranslate"><span class="pre">sql</span></code>.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">resource.prepare</span></span></dt>
+<dd><dl class="py function">
+<dt class="sig sig-object py" id="connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dsn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schema</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'utf-8'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#connect" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parametrai<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dsn</strong> -- Duomenų bazės URI, kaip nurodyta <a class="reference internal" href="#sql-resource-source"><span class="std std-ref">resource.source</span></a>.</p></li>
+<li><p><strong>schema</strong> -- Duomenų bazės schema.</p></li>
+<li><p><strong>encoding</strong> -- Duomenų bazės koduotė.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Naudojama tais atvejais, kai jungiantis prie duomenų bazės reikia
+perduoti papildomus parametrus.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">model.source</span></span></dt>
+<dd><p>Duomenų bazėje esančios lentelės pavadinimas.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">property.source</span></span></dt>
+<dd><p>Lentelės stulpelio pavadinimas.</p>
+</dd></dl>
+
+</section>
+<section id="csv">
+<h2>CSV<a class="headerlink" href="#csv" title="Link to this heading">#</a></h2>
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">resource.type</span></span></dt>
+<dd><p>Galimos reikšmės: <code class="docutils literal notranslate"><span class="pre">csv</span></code>, <code class="docutils literal notranslate"><span class="pre">tsv</span></code>.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">resource.source</span></span></dt>
+<dd><p>Žiūrėti <a class="reference internal" href="formules.html#failai"><span class="std std-ref">Failai</span></a>.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">resource.prepare</span></span></dt>
+<dd><dl class="py function">
+<dt class="sig sig-object py" id="tabular">
+<span class="sig-name descname"><span class="pre">tabular</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">','</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tabular" title="Link to this definition">#</a></dt>
+<dd><p>Nurodoma kaip CSV faile atskirti stulpeliai. Pagal nutylėjimą
+<code class="docutils literal notranslate"><span class="pre">separator</span></code> reikšmė yra <code class="docutils literal notranslate"><span class="pre">,</span></code>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">model.source</span></span></dt>
+<dd><p>Nenaudojama, kadangi CSV resursas gali turėti tik vieną lentelę.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">model.prepare</span></span></dt>
+<dd><p>Žiūrėti <a class="reference internal" href="formules.html#stulpeliai-lenteleje"><span class="std std-ref">Stulpeliai lentelėje</span></a>.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">property.source</span></span></dt>
+<dd><p>Žiūrėti <a class="reference internal" href="formules.html#stulpeliai-lenteleje"><span class="std std-ref">Stulpeliai lentelėje</span></a>.</p>
+</dd></dl>
+
+</section>
+<section id="json">
+<h2>JSON<a class="headerlink" href="#json" title="Link to this heading">#</a></h2>
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">resource.type</span></span></dt>
+<dd><p>Galimos reikšmės: <code class="docutils literal notranslate"><span class="pre">json</span></code>, <code class="docutils literal notranslate"><span class="pre">jsonl</span></code>.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">resource.source</span></span></dt>
+<dd><p>Žiūrėti <a class="reference internal" href="formules.html#failai"><span class="std std-ref">Failai</span></a>.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">model.source</span></span></dt>
+<dd><p>JSON objekto savybės pavadinimas, kuri rodo į masyvą reikšmių, kurios bus
+naudojamos kaip modelio duomenų eilutės. Kiekvienas masyvo elementas
+atskirai aprašomas <a class="reference internal" href="formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a> dimensijoje. Jei JSON objektas yra
+kompleksinis žiūrėti <a class="reference internal" href="formules.html#kompleksines-strukturos"><span class="std std-ref">Kompleksinės struktūros</span></a>.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">property.source</span></span></dt>
+<dd><p>JSON objekto savybė, kurioje pateikiami aprašomo stulpelio duomenys.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">property.prepare</span></span></dt>
+<dd><p>Žiūrėti <a class="reference internal" href="formules.html#kompleksines-strukturos"><span class="std std-ref">Kompleksinės struktūros</span></a>.</p>
+</dd></dl>
+
+</section>
+<section id="xml">
+<h2>XML<a class="headerlink" href="#xml" title="Link to this heading">#</a></h2>
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">resource.type</span></span></dt>
+<dd><p>Galimos reikšmės: <code class="docutils literal notranslate"><span class="pre">xml</span></code>, <code class="docutils literal notranslate"><span class="pre">html</span></code>.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">resource.source</span></span></dt>
+<dd><p>Žiūrėti <a class="reference internal" href="formules.html#failai"><span class="std std-ref">Failai</span></a>.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">model.source</span></span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/XPath">XPath</a> iki elementų sąrašo kuriame
+yra modelio duomenys.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">model.prepare</span></span></dt>
+<dd><p>Jei neužpildyta, vykdoma <code class="xref py py-func docutils literal notranslate"><span class="pre">xpath(self)</span></code> funkcija.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">xpath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Link to this definition">#</a></dt>
+<dd><p>Vykdo nurodyta <code class="docutils literal notranslate"><span class="pre">expr</span></code>, viso XML dokumento kontekste.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">property.source</span></span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/XPath">XPath</a> iki elemento kuriame yra
+duomenys.</p>
+<p>XPath nurodomas reliatyvus modeliui, arba kitai daugiareikšmei savybei,
+kurios sudėtyje savybė yra. Daugiareikšmės savybės žymimos <code class="docutils literal notranslate"><span class="pre">[]</span></code> simboliais
+savybės kodiniame pavadinime, įprastai tai yra <code class="docutils literal notranslate"><span class="pre">array</span></code> tipo savybės.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">model.prepare</span></span></dt>
+<dd><p>Jei neužpildyta, vykdoma <code class="xref py py-func docutils literal notranslate"><span class="pre">xpath(self)</span></code> funkcija, iš
+<a class="reference internal" href="formatas.html#model" title="model"><code class="xref py py-data docutils literal notranslate"><span class="pre">model</span></code></a> gauto elemento kontekste.</p>
+</dd></dl>
+
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;countries&gt;</span>
+<span class="w">    </span><span class="nt">&lt;country</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Lithuania&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;cities&gt;</span>
+<span class="w">            </span><span class="nt">&lt;city</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;10&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Vilnius&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;streets&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;100&quot;</span><span class="nt">&gt;</span>Gedimino<span class="w"> </span>st.<span class="nt">&lt;/street&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;101&quot;</span><span class="nt">&gt;</span>Konstitucijos<span class="w"> </span>st.<span class="nt">&lt;/street&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/streets&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/city&gt;</span>
+<span class="w">            </span><span class="nt">&lt;city</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;11&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Kaunas&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;streets&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;102&quot;</span><span class="nt">&gt;</span>Laisves<span class="w"> </span>st.<span class="nt">&lt;/street&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;street</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;103&quot;</span><span class="nt">&gt;</span>Daukanto<span class="w"> </span>st.<span class="nt">&lt;/street&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/streets&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/city&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/cities&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/country&gt;</span>
+<span class="nt">&lt;/countries&gt;</span>
+</pre></div>
+</div>
+<pre  class="mermaid">
+        classDiagram
+    direction LR
+
+    class Country {
+      + id: integer [1..1]
+      + name&#64;en: string [1..1]
+    }
+
+    class City {
+      + id: integer [1..1]
+      + name&#64;en: string [1..1]
+    }
+
+    class Street {
+      + id: integer [1..1]
+      + name&#64;en: string [1..1]
+    }
+
+    City --&gt; &quot;[1..1]&quot; Country : country
+    City &quot;[1..*]&quot; &lt;-- Country : cities
+
+    Street --&gt; &quot;[1..1]&quot; City : city
+    Street &quot;[1..*]&quot; &lt;-- City : streets
+    </pre><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Pagal aukščiau duotus duomenis ir koncepcinį modelį, struktūros aprašas
+atrodys taip:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="2"><p><strong>Country</strong></p></td>
+<td></td>
+<td><p>id</p></td>
+<td><p><strong>countries/country</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>&#64;id</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>name&#64;en</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>&#64;name</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>cities[]</p></td>
+<td><p>backref</p></td>
+<td><p><strong>City</strong></p></td>
+<td><p>cities/city</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>cities[].id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>&#64;id</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>cities[].name&#64;en</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>&#64;name</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>cities[].country</p></td>
+<td><p>ref</p></td>
+<td><p><strong>Country</strong></p></td>
+<td><p>../../&#64;id</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>cities[].streets[]</p></td>
+<td><p>backref</p></td>
+<td><p><strong>Street</strong></p></td>
+<td><p>streets/street</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>cities[].streets[].id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>&#64;id</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>cities[].streets[].name&#64;en</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>&#64;name</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>cities[].streets[].city</p></td>
+<td><p>ref</p></td>
+<td><p><strong>City</strong></p></td>
+<td><p>../../&#64;id</p></td>
+</tr>
+<tr class="row-odd"><td colspan="2"><p><strong>City</strong></p></td>
+<td></td>
+<td><p>id</p></td>
+<td><p><strong>countries/country/cities/city</strong></p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>&#64;id</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>name&#64;en</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>&#64;name</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>country</p></td>
+<td><p>ref</p></td>
+<td><p><strong>Country</strong></p></td>
+<td><p>../../&#64;id</p></td>
+</tr>
+<tr class="row-odd"><td colspan="2"><p><strong>Street</strong></p></td>
+<td></td>
+<td><p>id</p></td>
+<td><p><strong>countries/country/cities/city/streets/street</strong></p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>&#64;id</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>name&#64;en</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>&#64;name</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>country</p></td>
+<td><p>ref</p></td>
+<td><p><strong>City</strong></p></td>
+<td><p>../../&#64;id</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Struktūros apraše matome du variantus, kaip gali būti aprašomi duomenys.
+Pirmu atveju <code class="docutils literal notranslate"><span class="pre">Country</span></code> modelyje naudojama objektų kompozicija, kur vieno
+<code class="docutils literal notranslate"><span class="pre">Country</span></code> objekto apimtyje, pateikiami ir kiti objektai.</p>
+<p>Reikia atkreipti dėmesį, kad savybės esančios kitos daugiareikšmės savybės
+sudėtyje, <a class="reference internal" href="dimensijos.html#property.source" title="property.source"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.source</span></code></a> stulpelyje nurodo XPath išraišką
+reliatyvią daugereikšmei savybei. Daugiareikšmės savybės žymymos <code class="docutils literal notranslate"><span class="pre">[]</span></code> žyme.</p>
+<p>Pavyzdyje <code class="docutils literal notranslate"><span class="pre">cities[].id</span></code> <a class="reference internal" href="dimensijos.html#property.source" title="property.source"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.source</span></code></a> stulpelyje nurodo <code class="docutils literal notranslate"><span class="pre">&#64;id</span></code>,
+kuris yra reliatyvus <code class="docutils literal notranslate"><span class="pre">cities[]</span></code> savybės <code class="docutils literal notranslate"><span class="pre">streets/street</span></code> atžvilgiu.</p>
+<p>Pagal struktūros aprašą pateiktą aukščiau, kreipiantis į <code class="docutils literal notranslate"><span class="pre">/Country</span></code>,
+gausime tokius <a class="reference external" href="https://ivpk.github.io/uapi">UDTS</a> specifikaciją atitinkančius duomenis:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Country&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;29df0534-389d-4eac-a048-799ac64d5103&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;en&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Lithuana&quot;</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;cities&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;City&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4a7a3214-e6c3-4a5b-99a8-04be88eac3d4&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;en&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Vilnius&quot;</span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;country&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Country&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;29df0534-389d-4eac-a048-799ac64d5103&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;streets&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Street&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c1380514-549f-4cdd-b258-6fecc3a5bbda&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;en&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Gedimino st.&quot;</span><span class="p">},</span>
+<span class="w">                    </span><span class="nt">&quot;city&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;City&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4a7a3214-e6c3-4a5b-99a8-04be88eac3d4&quot;</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Street&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5c02f700-6478-43a0-a147-959927cb3c1c&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;en&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Konstitucijos st.&quot;</span><span class="p">},</span>
+<span class="w">                    </span><span class="nt">&quot;city&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;City&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4a7a3214-e6c3-4a5b-99a8-04be88eac3d4&quot;</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;City&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0fee7d9a-6827-4931-bbea-d44d197faef2&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;en&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Kaunas&quot;</span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;country&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Country&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;29df0534-389d-4eac-a048-799ac64d5103&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;streets&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Street&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;399a37d6-63a7-43a4-82de-d3d5c75f5d02&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">102</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;en&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Laisves st.&quot;</span><span class="p">},</span>
+<span class="w">                    </span><span class="nt">&quot;city&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;City&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0fee7d9a-6827-4931-bbea-d44d197faef2&quot;</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Street&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5b04fecd-5fff-48f6-8674-7cc6da840281&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">103</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;en&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Daukanto st.&quot;</span><span class="p">},</span>
+<span class="w">                    </span><span class="nt">&quot;city&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;City&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0fee7d9a-6827-4931-bbea-d44d197faef2&quot;</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Analogiškai, jei kreiptumėmės į <code class="docutils literal notranslate"><span class="pre">/Street</span></code>, gautume visas gatves iš visų miestų:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;_data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Street&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c1380514-549f-4cdd-b258-6fecc3a5bbda&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;en&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Gedimino st.&quot;</span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;city&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;City&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4a7a3214-e6c3-4a5b-99a8-04be88eac3d4&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Street&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5c02f700-6478-43a0-a147-959927cb3c1c&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;en&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Konstitucijos st.&quot;</span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;city&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;City&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4a7a3214-e6c3-4a5b-99a8-04be88eac3d4&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Street&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;399a37d6-63a7-43a4-82de-d3d5c75f5d02&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">102</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;en&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Laisves st.&quot;</span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;city&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;City&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0fee7d9a-6827-4931-bbea-d44d197faef2&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Street&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5b04fecd-5fff-48f6-8674-7cc6da840281&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">103</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;en&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Daukanto st.&quot;</span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;city&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;City&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0fee7d9a-6827-4931-bbea-d44d197faef2&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="xlsx">
+<h2>XLSX<a class="headerlink" href="#xlsx" title="Link to this heading">#</a></h2>
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">resource.type</span></span></dt>
+<dd><p>Galimos reikšmės: <code class="docutils literal notranslate"><span class="pre">xlsx</span></code>, <code class="docutils literal notranslate"><span class="pre">xls</span></code> arba <code class="docutils literal notranslate"><span class="pre">odt</span></code>.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">resource.source</span></span></dt>
+<dd><p>Žiūrėti <a class="reference internal" href="formules.html#failai"><span class="std std-ref">Failai</span></a>.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">model.source</span></span></dt>
+<dd><p>Skaičiuoklės faile esančio lapo pavadinimas.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">model.prepare</span></span></dt>
+<dd><p>Žiūrėti <a class="reference internal" href="formules.html#stulpeliai-lenteleje"><span class="std std-ref">Stulpeliai lentelėje</span></a>.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">property.source</span></span></dt>
+<dd><p>Žiūrėti <a class="reference internal" href="formules.html#stulpeliai-lenteleje"><span class="std std-ref">Stulpeliai lentelėje</span></a>.</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="schemos/xsd.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">praeitas</p>
+        <p class="prev-next-title">XSD</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="vardu-erdves.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">kitas</p>
+        <p class="prev-next-title">Vardų erdvės</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Turinys
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sql">SQL</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connect"><code class="docutils literal notranslate"><span class="pre">connect()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#csv">CSV</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular"><code class="docutils literal notranslate"><span class="pre">tabular()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json">JSON</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xml">XML</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">xpath()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xlsx">XLSX</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Iki Valstybės skaitmeninių sprendimų agentūra
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2019-2024, VSSA.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

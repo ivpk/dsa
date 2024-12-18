@@ -1,0 +1,2398 @@
+
+<!DOCTYPE html>
+
+
+<html lang="lt" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Asociacija &#8212; DSA</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-examples.css?v=e236af4b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=f0eb6ae9" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=4ee96f2e"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="_static/translations.js?v=e4682f4a"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+    <script type="module">
+mermaid.initialize({
+    startOnLoad:true,
+    theme: 'neutral'
+});
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'identifikatoriai';</script>
+    <link rel="index" title="Indeksas" href="genindex.html" />
+    <link rel="search" title="Paieška" href="search.html" />
+    <link rel="next" title="Funkciniai modeliai" href="modeliai/funkciniai.html" />
+    <link rel="prev" title="Apibendrinimas" href="apibendrinimas.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="lt"/>
+  <meta name="docsearch:version" content="1.1" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">DSA</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Paieška" aria-label="Paieška" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Paieška</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="modelis.html">Koncepcinis modelis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formatas.html">Lentelės formatas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dimensijos.html">Dimensijos</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="tipai.html">Duomenų tipai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pavadinimai.html">Kodiniai pavadinimai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vienetai.html">Matavimo vienetai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apibendrinimas.html">Apibendrinimas</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Asociacija</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modeliai/funkciniai.html">Funkciniai modeliai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="branda.html">Brandos lygiai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prieiga.html">Prieigos lygiai</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="schemos/index.html">Duomenų schemos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="schemos/xsd.html">XSD</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="saltiniai.html">Duomenų šaltiniai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vardu-erdves.html">Vardų erdvės</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zodynai.html">Išoriniai žodynai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formules.html">Formulės</a></li>
+<li class="toctree-l1"><a class="reference internal" href="savokos.html">Sąvokos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keitimai.html">Keitimų istorija</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ivpk/dsa" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Šaltinio saugykla"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ivpk/dsa/issues/new?title=Issue%20on%20page%20%2Fidentifikatoriai.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Atidarykite problemą"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Pilno ekrano režimas"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Paieška" aria-label="Paieška" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Asociacija</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Turinys </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kompozicija">Kompozicija</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jungtinis-modelis">Jungtinis modelis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#savybiu-itraukimas">Savybių įtraukimas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#daugiareiksmiskumas">Daugiareikšmiškumas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#duomenu-kilme">Duomenų kilmė</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jungimo-budai">Jungimo būdai</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#per-pirmini-rakta">Per pirminį raktą</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#per-nepirmini-rakta">Per nepirminį raktą</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#per-kompozicini-rakta">Per kompozicinį raktą</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atgalinis-rysys">Atgalinis ryšys</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polimorfinis-jungimas">Polimorfinis jungimas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brandos-lygis">Brandos lygis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#susiejimas-neimanomas">Susiejimas neįmanomas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#susiejimas-nepatikimas">Susiejimas nepatikimas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#susiejimas-ne-per-pirmini-rakta">Susiejimas ne per pirminį raktą</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#susiejimas-per-pirmini-rakta">Susiejimas per pirminį raktą</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="asociacija">
+<span id="rysiai"></span><h1>Asociacija<a class="headerlink" href="#asociacija" title="Link to this heading">#</a></h1>
+<p>Pateikiant metaduomenis apie ryšius tarp modelių, duomenų <a class="reference internal" href="branda.html#level"><span class="std std-ref">brandos lygis</span></a> pakeliamas iki ketvirto lygio.</p>
+<p>Ryšiai tarp modelių aprašomi tais atvejais, kai vienoje duomenų lentelėje
+naudojami identifikatoriai iš kitos lentelės.</p>
+<section id="kompozicija">
+<span id="composition"></span><h2>Kompozicija<a class="headerlink" href="#kompozicija" title="Link to this heading">#</a></h2>
+<p>Kompozicija arba duomenų normalizavimas yra duomenų modeliavimo principas, kai
+atskiros duomenų klasės yra pateikiamos kaip atskiri duomenų modeliai, kurie
+gali būti jungiami tarpusavyje, taikant įvairius <a class="reference internal" href="#ref-types"><span class="std std-ref">duomenų jungimo būdus</span></a>.</p>
+<p>Pavyzdžiui turint tokią koncepcinio modelio klasių diagramą:</p>
+<pre  class="mermaid">
+        classDiagram
+  direction LR
+
+  class Country {
+    + code: integer [1..1]
+    + name&#64;en: string [1..1]
+  }
+
+  class City {
+    + name&#64;en: string [1..1]
+  }
+
+  City  --&gt; &quot;[1..*]&quot; Country : country
+    </pre><p>Duomenų modelis, taikant kompoziciją atrodytų taip:</p>
+<div class="pst-scrollable-table-container"><span id="norm-dsa-example-1"></span><table class="table" id="id2">
+<caption><span class="caption-text">Kompozicijos pavyzdys</span><a class="headerlink" href="#id2" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>dataset</p></th>
+<th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>level</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="3"><p>datasets/gov/rc/ar/ws</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td colspan="2"><p>Country</p></td>
+<td></td>
+<td><p>code</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td><p>code</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td><p>name&#64;en</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td colspan="2"><p>City</p></td>
+<td></td>
+<td></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td><p>name&#64;en</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td><p>country</p></td>
+<td><p>ref</p></td>
+<td><p>Country</p></td>
+<td><p>4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Taikant kompozicijos principą, kiekvienai klasei kuriamas atskiras
+nepriklausomas duomenų modelis, o atskiri modeliai jungiami tarpusavyje
+ryšiais.</p>
+</section>
+<section id="jungtinis-modelis">
+<span id="ref-denorm"></span><h2>Jungtinis modelis<a class="headerlink" href="#jungtinis-modelis" title="Link to this heading">#</a></h2>
+<p>Jungtinis modelis yra toks duomenų modelis, kuriame apjungiamos savybės iš
+daugiau nei vienos koncepcinio modelio klasės. Jungtinis modelis yra priešingas
+dalykas <a class="reference internal" href="#composition"><span class="std std-ref">kompozicijai</span></a>, kur kompozicija išskaido klases į
+atskirus modelius, jungtinis modelis atvirkščiai apjungia klases į vieną
+modelį.</p>
+<p>Jungtinis modelis dar yra vadinamas agregatu arba denormalizuotu duomenų
+modeliu.</p>
+<p>Jungtinis modelis turi vieną šakninį modelį (angl. <em>aggregate root</em>), prie
+kurio prijungiami kiti modeliai naudojant vieną iš <a class="reference internal" href="#ref-types"><span class="std std-ref">duomenų jungimo būdų</span></a>.</p>
+<p>Žiamiau pateikiamas jungtinio modelio pavyzdys.</p>
+<div class="pst-scrollable-table-container"><span id="denorm-dsa-example-1"></span><table class="table" id="id3">
+<caption><span class="caption-text">Jungtinio modelio pavyzdys</span><a class="headerlink" href="#id3" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>dataset</p></th>
+<th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>level</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="3"><p>datasets/gov/rc/ar/ws</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td colspan="2"><p>Country</p></td>
+<td></td>
+<td><p>code</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td><p>code</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td><p>name&#64;en</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td colspan="2"><p>City</p></td>
+<td></td>
+<td></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td><p>name&#64;en</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td><p>country</p></td>
+<td><p>ref</p></td>
+<td><p>Country</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td><p>country.code</p></td>
+<td></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td><p>country.name&#64;en</p></td>
+<td></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td><p>country.name&#64;lt</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Pavyzdyje <code class="docutils literal notranslate"><span class="pre">City</span></code> yra jungtinis modelis, kadangi <code class="docutils literal notranslate"><span class="pre">City</span></code> išvardintos ne tik
+<code class="docutils literal notranslate"><span class="pre">City</span></code> klasei priklausančios savybės, tačiau įtraukiamos ir kitos klasės
+<code class="docutils literal notranslate"><span class="pre">Country</span></code> savybės.</p>
+<p><code class="docutils literal notranslate"><span class="pre">City</span></code> šiame pavyzdyje yra šakninis modelis, o <code class="docutils literal notranslate"><span class="pre">Country</span></code> yra modelis,
+prijungtas per <code class="docutils literal notranslate"><span class="pre">City/country</span></code> savybę.</p>
+<div class="admonition seealso">
+<p class="admonition-title">Taip pat žiūrėkite</p>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="modeliai/funkciniai.html#func-model-part"><span class="std std-ref">Daliniai modeliai</span></a> (<code class="docutils literal notranslate"><span class="pre">/:part</span></code>)</div>
+</div>
+</div>
+<section id="savybiu-itraukimas">
+<span id="prop-expand"></span><h3>Savybių įtraukimas<a class="headerlink" href="#savybiu-itraukimas" title="Link to this heading">#</a></h3>
+<p>Kad jungtiniame modelyje nereikėtu kartoti prijungiamo modelio savybių, galima
+pateikti <code class="docutils literal notranslate"><span class="pre">expand()</span></code> funkciją <a class="reference internal" href="dimensijos.html#model.prepare" title="model.prepare"><code class="xref py py-data docutils literal notranslate"><span class="pre">model.prepare</span></code></a> arba
+<a class="reference internal" href="dimensijos.html#property.prepare" title="property.prepare"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.prepare</span></code></a> stulpeliuose.</p>
+<p>Perrašant <a class="reference internal" href="#denorm-dsa-example-1"><span class="std std-ref">Jungtinio modelio pavyzdys</span></a> lentelę su <code class="docutils literal notranslate"><span class="pre">expand()</span></code>, gautume, tokią
+trumpesnę struktūros aprašo lentelę:</p>
+<div class="pst-scrollable-table-container"><table class="table" id="id4">
+<caption><span class="caption-text">Jungtinio modelio pavyzdys su expand()</span><a class="headerlink" href="#id4" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>dataset</p></th>
+<th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>prepare</p></th>
+<th class="head"><p>level</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="3"><p>datasets/gov/rc/ar/ws</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td colspan="2"><p>Country</p></td>
+<td></td>
+<td><p>code</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td><p>code</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td><p>name&#64;en</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td colspan="2"><p>City</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td><p>name&#64;en</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td><p>country</p></td>
+<td><p>ref</p></td>
+<td><p>Country</p></td>
+<td><p>expand()</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td><p>country.name&#64;lt</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Ši lentelė yra lygiai tokia pati kaip ir <a class="reference internal" href="#denorm-dsa-example-1"><span class="std std-ref">Jungtinio modelio pavyzdys</span></a>.</p>
+<p>Prie <code class="docutils literal notranslate"><span class="pre">City/country</span></code> nurodyta <code class="docutils literal notranslate"><span class="pre">expand()</span></code> funkcija į <code class="docutils literal notranslate"><span class="pre">City</span></code> modelį įtraukia
+visas <code class="docutils literal notranslate"><span class="pre">Country</span></code> savybes.</p>
+<p>Jei norima įtraukti ne visas <code class="docutils literal notranslate"><span class="pre">Country</span></code> savybes, reikia naudoti <code class="docutils literal notranslate"><span class="pre">include()</span></code>
+funkciją, pateikiant sąrašą savybių, kurias norima įtraukti, pavyzdžiui
+<code class="docutils literal notranslate"><span class="pre">include(code)</span></code> - bus įtraukta tik viena <code class="docutils literal notranslate"><span class="pre">Country/code</span></code> savybė. Kelias savybes
+galima išvardinti, atskiriant savybių pavadinimus kableliu.</p>
+<p>Prie <code class="docutils literal notranslate"><span class="pre">City</span></code> modelio yra įtraukta ir <code class="docutils literal notranslate"><span class="pre">City/country.name&#64;lt</span></code> savybė, kurios nėra
+<code class="docutils literal notranslate"><span class="pre">Country</span></code> modelyje.</p>
+<p><code class="docutils literal notranslate"><span class="pre">expand()</span></code> įtraukia visas savybes, kurios išvardintos prie modelio, įskaitant
+ir jungtinio modelio savybes iš kitų klasių.</p>
+</section>
+</section>
+<section id="daugiareiksmiskumas">
+<h2>Daugiareikšmiškumas<a class="headerlink" href="#daugiareiksmiskumas" title="Link to this heading">#</a></h2>
+</section>
+<section id="duomenu-kilme">
+<h2>Duomenų kilmė<a class="headerlink" href="#duomenu-kilme" title="Link to this heading">#</a></h2>
+<p>Įprastai duomenys yra registruojami vieną kartą pirminiame šaltinyje ir daug
+kartų pernaudojami išvestiniuose šaltiniuose. Informacija apie tai iš kokio
+pirminio šaldinio duomenys pateko į išvestinį šaltinį, vadinama duomenų kilme.</p>
+<p>Struktūros aprašuose, duomenų kilmė pažymima nepildant <a class="reference internal" href="dimensijos.html#property.type" title="property.type"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.type</span></code></a>
+stulpleio. Jei <a class="reference internal" href="dimensijos.html#property.type" title="property.type"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.type</span></code></a> yra neužpildytas, nurodoma, kad modelis
+kuriame pateikta savybė, nėra pirminis šios savybės šaltinis.</p>
+<p>Jei modelis yra kito jungtinio modelio dalis arba pirminio modelio dalis,
+<a class="reference internal" href="dimensijos.html#property.type" title="property.type"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.type</span></code></a> stulpelis yra nepildomas, jei savybės modelyje yra
+pateikiamos tik skaitymui, be galimybės keisti savybių reikšmių.</p>
+<ul class="simple">
+<li><p>jei <a class="reference internal" href="dimensijos.html#property.type" title="property.type"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.type</span></code></a> užpildytas, tada nurodoma, kad ši savybė yra
+<a class="reference internal" href="savokos.html#term-pirminis-duomenu-saltinis"><span class="xref std std-term">pirminis duomenų šaltinis</span></a>, tos savybės duomenys gali būti keičiami
+duomenų modelyje prie kurios savybė yra pateikta,</p></li>
+<li><p>jei <code class="docutils literal notranslate"><span class="pre">type</span></code> nenurodytas, tada nurodoma, kad ši savybė nėra <a class="reference internal" href="savokos.html#term-pirminis-duomenu-saltinis"><span class="xref std std-term">pirminis
+duomenų šaltinis</span></a> ir gali būti naudojama tik skaitymui, be galimybės keisti
+savybės reikšias per modelį, kuriame savybė pateikita.</p></li>
+</ul>
+<p>Pavyzdžiui turime jungtinį <code class="docutils literal notranslate"><span class="pre">City</span></code> modelį:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>dataset</p></th>
+<th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>level</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="3"><p>datasets/gov/rc/ar/ws</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td colspan="2"><p>Country</p></td>
+<td></td>
+<td><p>code</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td><p>code</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td><p>name&#64;en</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td colspan="2"><p>City</p></td>
+<td></td>
+<td></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td><p>name&#64;en</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td><p>country</p></td>
+<td><p>ref</p></td>
+<td><p>Country</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td><p>country.code</p></td>
+<td></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td><p>country.name&#64;en</p></td>
+<td></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td><p>country.name&#64;lt</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Kuriame prie <code class="docutils literal notranslate"><span class="pre">City</span></code> prijungiama <code class="docutils literal notranslate"><span class="pre">Country</span></code> klasė.`country.code` ir
+<code class="docutils literal notranslate"><span class="pre">country.name&#64;en</span></code> neturi <a class="reference internal" href="dimensijos.html#property.type" title="property.type"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.type</span></code></a>, nurodant, kad <code class="docutils literal notranslate"><span class="pre">City</span></code> jungtinis
+modelis nėra šių savybių pirminis šaltinis ir šios savybės gali būti naudojamos
+tik skaitymo tikslais.</p>
+<p>Tačiau <code class="docutils literal notranslate"><span class="pre">City/country.name&#64;lt</span></code> turi <a class="reference internal" href="dimensijos.html#property.type" title="property.type"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.type</span></code></a>, todėl <code class="docutils literal notranslate"><span class="pre">City</span></code>
+jungtinis modelis yra šios savybės pirminis šaltinis.</p>
+<p>Jei ta pati savybė turi daugiau nei vieną pirminį šaltinį, tada savybės, kuri
+nurodo <a class="reference internal" href="dimensijos.html#property.type" title="property.type"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.type</span></code></a> ir yra pateikta prie išvestinio arba jungtinio
+modelio, brandos lygis yra <code class="docutils literal notranslate"><span class="pre">2</span></code>, kadangi negali būti du pirminiai duomenų
+šaltiniai viename objektui.</p>
+</section>
+<section id="jungimo-budai">
+<span id="ref-types"></span><h2>Jungimo būdai<a class="headerlink" href="#jungimo-budai" title="Link to this heading">#</a></h2>
+<section id="per-pirmini-rakta">
+<h3>Per pirminį raktą<a class="headerlink" href="#per-pirmini-rakta" title="Link to this heading">#</a></h3>
+<p>Pavyzdžiui, jei turime tokias dvi duomenų lenteles:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head" colspan="3"><p>Country</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>id</p></th>
+<th class="head"><p>name</p></th>
+<th class="head"><p>code</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Lietuva</p></td>
+<td><p>lt</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Latvija</p></td>
+<td><p>lv</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head" colspan="3"><p>City</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>id</p></th>
+<th class="head"><p>name</p></th>
+<th class="head"><p>country</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Vilnius</p></td>
+<td><p>lt</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Kaunas</p></td>
+<td><p>lt</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>Ryga</p></td>
+<td><p>lv</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Šiuo atveju, jei norime parengti aukščiau pateiktų duomenų struktūros aprašą,
+jis atrodytų taip:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>id</p></th>
+<th class="head"><p>d</p></th>
+<th class="head"><p>r</p></th>
+<th class="head"><p>b</p></th>
+<th class="head"><p>m</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>level</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td colspan="5"><p>datasets/gov/example/countries</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>Country</p></td>
+<td></td>
+<td><p>code</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>name</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>code</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>City</p></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>name</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>country</p></td>
+<td><p>ref</p></td>
+<td><p>Country</p></td>
+<td><p>4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Šiame duomenų struktūros apraše, 9-oje eilutėje <code class="docutils literal notranslate"><span class="pre">country</span></code> stulpelio tipas yra
+<code class="docutils literal notranslate"><span class="pre">ref</span></code>, tai reiškia, kad šis stulpelis yra kito modelio išorinis raktas.
+<code class="docutils literal notranslate"><span class="pre">property.ref</span></code> stulpelyje nurodyta kurio modelio išorinis raktas šis
+stulpelis yra. Šiuo atveju, tai yra <code class="docutils literal notranslate"><span class="pre">Country</span></code> modelis, kuris apibrėžtas 2-oje
+eilutėje.</p>
+<p>Pagal nutylėjimą, ryšys su kitu modeliu nustatomas naudojant kitos lentelės
+pirminį raktą nurodytą <a class="reference internal" href="dimensijos.html#model.ref" title="model.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">model.ref</span></code></a> stulpelyje. Šiuo atveju, <code class="docutils literal notranslate"><span class="pre">City</span>
+<span class="pre">.country</span></code> yra jungiamas per <code class="docutils literal notranslate"><span class="pre">Country.code</span></code>. Tai reiškia, kad <code class="docutils literal notranslate"><span class="pre">City.country</span></code>
+duomenų tipas turi sutapti su <code class="docutils literal notranslate"><span class="pre">Country.code</span></code> duomenų tipu, kuris yra <code class="docutils literal notranslate"><span class="pre">string</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">property.ref</span></code> reikšmė gali būti pateikiama vienu iš šių variantų:</p>
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">property.ref</span></span></dt>
+<dd><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">model</span></span></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">model</span></code> nurodo kito <a class="reference internal" href="formatas.html#model" title="model"><code class="xref py py-data docutils literal notranslate"><span class="pre">model</span></code></a> pavadinimą kurio <a class="reference internal" href="dimensijos.html#model.ref" title="model.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">model.ref</span></code></a>
+siejamas su <a class="reference internal" href="formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a>.</p>
+<p>Jei <a class="reference internal" href="dimensijos.html#model.ref" title="model.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">model.ref</span></code></a> pirminiam raktui naudoja daugiau nei vieną lauką,
+tada <a class="reference internal" href="dimensijos.html#property.source" title="property.source"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.source</span></code></a> laukas turi būti tuščias, o
+<a class="reference internal" href="dimensijos.html#property.prepare" title="property.prepare"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.prepare</span></code></a> turi būti pateikiamos kableliu atskirtos
+property reikšmės, kurios bus naudojamos susiejimui.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">model[property]</span></span></dt>
+<dd><p>Tais atvejais, kai <a class="reference internal" href="formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a> duomenys nesutampa su siejamo
+<a class="reference internal" href="dimensijos.html#model.ref" title="model.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">model.ref</span></code></a>, galima nurodyti <a class="reference internal" href="formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a> iš <a class="reference internal" href="formatas.html#model" title="model"><code class="xref py py-data docutils literal notranslate"><span class="pre">model</span></code></a>.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">model[*property]</span></span></dt>
+<dd><p>Jei susiejimui reikia daugiau nei vieno duomenų lauko ir jie nesutampa
+su model.ref, tada galima nurodyti kelias property reikšmes atskirtas
+kableliu. Tačiau šiuo atveju taip pat būtina nurodyti ir
+<a class="reference internal" href="dimensijos.html#property.prepare" title="property.prepare"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.prepare</span></code></a> kelias reikšmes atskirtas kableliu, o
+<a class="reference internal" href="dimensijos.html#property.source" title="property.source"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.source</span></code></a> reikšmė turi būti tuščia.
+<a class="reference internal" href="dimensijos.html#property.prepare" title="property.prepare"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.prepare</span></code></a> stulpelyje nurodomi kiti modelio
+<a class="reference internal" href="formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a> pavadinimai iš kurių duomenų reikšmių turi būti
+formuojamas sudėtinis raktas.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="per-nepirmini-rakta">
+<span id="ref-fkey"></span><h3>Per nepirminį raktą<a class="headerlink" href="#per-nepirmini-rakta" title="Link to this heading">#</a></h3>
+<p>Jei modelius reikia jungti ne per pirminį raktą, o per kitus laukus, tada
+naudojama <code class="docutils literal notranslate"><span class="pre">model[property]</span></code> forma.</p>
+<p>Pavyzdžiui, jei turime tokius duomenis:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head" colspan="3"><p>Country</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>id</p></th>
+<th class="head"><p>name</p></th>
+<th class="head"><p>code</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Lietuva</p></td>
+<td><p>lt</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Latvija</p></td>
+<td><p>lv</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head" colspan="3"><p>City</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>id</p></th>
+<th class="head"><p>name</p></th>
+<th class="head"><p>country</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Vilnius</p></td>
+<td><p>lt</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Kaunas</p></td>
+<td><p>lt</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>Ryga</p></td>
+<td><p>lv</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Kur <code class="docutils literal notranslate"><span class="pre">Country</span></code> pirminis raktas yra <code class="docutils literal notranslate"><span class="pre">id</span></code> ir norime jungti <code class="docutils literal notranslate"><span class="pre">City.country</span></code> per
+<code class="docutils literal notranslate"><span class="pre">Country.code</span></code>, tuomet duomenų struktūros aprašas atrodys taip:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>d</p></th>
+<th class="head"><p>d</p></th>
+<th class="head"><p>r</p></th>
+<th class="head"><p>b</p></th>
+<th class="head"><p>m</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>level</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td colspan="5"><p>datasets/gov/example/countries</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>Country</p></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>name</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>code</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>City</p></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>name</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>country</p></td>
+<td><p>ref</p></td>
+<td><p>Country[code]</p></td>
+<td><p>4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>9-oje eilutėje <code class="docutils literal notranslate"><span class="pre">property.ref</span></code> stulpelyje pateikta <code class="docutils literal notranslate"><span class="pre">Country[code]</span></code> reikšmė, kuri
+<code class="docutils literal notranslate"><span class="pre">Country</span></code> nurodo su kokiu modeliu jungiame, o <code class="docutils literal notranslate"><span class="pre">code</span></code> nurodo su kokiu <code class="docutils literal notranslate"><span class="pre">Country</span></code>
+stulpeliu jungiame. Jei pateiktas tik modelis, tada jungiama per to modelio
+pirminį raktą, jei pateiktas stulpelis laužtiniuose skliausteliuose, tada
+jungiama per nurodytą stulpelį.</p>
+</section>
+<section id="per-kompozicini-rakta">
+<h3>Per kompozicinį raktą<a class="headerlink" href="#per-kompozicini-rakta" title="Link to this heading">#</a></h3>
+<p>Jei modelius reikia jungti per kelis laukus, tada naudojama
+<code class="docutils literal notranslate"><span class="pre">model[*property]</span></code> forma, kur laužtiniuose skliaustuose pateikiami keli
+stulpeliai atskirti kableliais.</p>
+<p>Pavyzdžiui, jei turime tokius duomenis:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head" colspan="3"><p>Country</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>id</p></th>
+<th class="head"><p>name</p></th>
+<th class="head"><p>code</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Lietuva</p></td>
+<td><p>lt</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Latvija</p></td>
+<td><p>lv</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head" colspan="4"><p>City</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>id</p></th>
+<th class="head"><p>name</p></th>
+<th class="head"><p>country</p></th>
+<th class="head"><p>country_id</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Vilnius</p></td>
+<td><p>lt</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Kaunas</p></td>
+<td><p>lt</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>Ryga</p></td>
+<td><p>lv</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Kur <code class="docutils literal notranslate"><span class="pre">City</span></code> su <code class="docutils literal notranslate"><span class="pre">Country</span></code> yra jungiamas per du <code class="docutils literal notranslate"><span class="pre">country</span></code> ir <code class="docutils literal notranslate"><span class="pre">country_id</span></code>
+stulpelius, tuomet reikia įtraukti išvestinį duomenų lauką, kuriame formulės
+įrašomos į <a class="reference internal" href="dimensijos.html#property.prepare" title="property.prepare"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.prepare</span></code></a> pagalba apjungiami keli laukai į vieną
+kompozicinį raktą. Šiuo atveju duomenų struktūros aprašas atrodys taip:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>d</p></th>
+<th class="head"><p>d</p></th>
+<th class="head"><p>r</p></th>
+<th class="head"><p>b</p></th>
+<th class="head"><p>m</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>prepare</p></th>
+<th class="head"><p>level</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td colspan="5"><p>datasets/gov/example/countries</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>Country</p></td>
+<td></td>
+<td><p>id</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>name</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>code</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>City</p></td>
+<td></td>
+<td><p>id</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>name</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>country_code</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>country_id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>country</p></td>
+<td><p>ref</p></td>
+<td><p>Country[id,code]</p></td>
+<td><p>country_id, country_code</p></td>
+<td><p>4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Čia matome, kad 11-oje eilutėje buvo įtrauktas išvestinis laukas <code class="docutils literal notranslate"><span class="pre">country</span></code>,
+kuris išskaičiuojamas apjungiant <code class="docutils literal notranslate"><span class="pre">country_id</span></code> ir <code class="docutils literal notranslate"><span class="pre">country_code</span></code>. O ryšiui su
+<code class="docutils literal notranslate"><span class="pre">Country</span></code>, laužtiniuose skliausteliuose nurodyti du laukai iš jungiamo
+<code class="docutils literal notranslate"><span class="pre">Country</span></code> modelio. Abiejų jungiamų pusių pateiktas laukų sąrašas turi būti
+vienodo eiliškumo, o jungiami laukai turi turėti vienodus tipus.</p>
+<p>Jei <code class="docutils literal notranslate"><span class="pre">Country</span></code> pirminis raktas būtų <a class="reference internal" href="savokos.html#term-kompozicinis-raktas"><span class="xref std std-term">kompozicinis</span></a>,
+pavyzdžiui <code class="docutils literal notranslate"><span class="pre">id,</span> <span class="pre">code</span></code>, tuomet, 11-oje eilutėje <code class="docutils literal notranslate"><span class="pre">property.ref</span></code> užtektu nurodyti
+tik <code class="docutils literal notranslate"><span class="pre">Country</span></code>.</p>
+</section>
+<section id="atgalinis-rysys">
+<span id="id1"></span><h3>Atgalinis ryšys<a class="headerlink" href="#atgalinis-rysys" title="Link to this heading">#</a></h3>
+<p>Jungiant modelius atgaliniu ryšiu kuriamas išvestinis arba virtualus laukas,
+kuriame analogiškai kaip ir paprasto ryšio atveju, apjungiami du modeliai,
+tik šiuo atveju kuriamas daug su vienas tipo ryšys.</p>
+<p>Pavyzdžiui, jei turime tokius duomenis:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head" colspan="2"><p>Country</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>id</p></th>
+<th class="head"><p>name</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Lietuva</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Latvija</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head" colspan="3"><p>City</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>id</p></th>
+<th class="head"><p>name</p></th>
+<th class="head"><p>country</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Vilnius</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Kaunas</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>Ryga</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Ir šiuos duomenis atitinkantį duomenų modelį:</p>
+<pre  class="mermaid">
+        classDiagram
+    direction LR
+
+    class Country {
+      + id: integer [1..1]
+      + name&#64;lt: string [1..1]
+    }
+
+    class City {
+      + id: integer [1..1]
+      + name&#64;lt: string [1..1]
+    }
+
+    City --&gt; &quot;[1..1]&quot; Country : country
+    City &quot;[1..*]&quot; &lt;-- Country : cities
+    </pre><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Tai norint sukurti atgalinį ryšį iš <code class="docutils literal notranslate"><span class="pre">City</span></code> modelio į <code class="docutils literal notranslate"><span class="pre">Country</span></code> modelį, duomenų
+struktūros aprašas atrodys taip:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>level</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="2"><p><strong>Country</strong></p></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>name&#64;lt</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>cities[]</p></td>
+<td><p>backref</p></td>
+<td><p><strong>City</strong></p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td colspan="2"><p><strong>City</strong></p></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>name&#64;lt</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>country</p></td>
+<td><p>ref</p></td>
+<td><p><strong>Country</strong></p></td>
+<td><p>4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Čia atgalinis ryšys nurodytas 5-oje eilutėje, pateikiant virtualų
+<code class="docutils literal notranslate"><span class="pre">Country.cities</span></code> lauką, kuris jungiamas per <code class="docutils literal notranslate"><span class="pre">City.country</span></code> lauką, kadangi
+<code class="docutils literal notranslate"><span class="pre">City.country</span></code> turi ryšį su <code class="docutils literal notranslate"><span class="pre">Country</span></code>.</p>
+<p>Jei <code class="docutils literal notranslate"><span class="pre">City</span></code> modelyje būtų pateikti keli stulpeliai susieti su <code class="docutils literal notranslate"><span class="pre">Country</span></code>, tada
+5-oje eilutėje <code class="docutils literal notranslate"><span class="pre">property.ref</span></code> reikšmė turėtų nurodyti konkretų lauką, per
+kurį jungiama, pavyzdžiui <code class="docutils literal notranslate"><span class="pre">City[country]</span></code>.</p>
+</section>
+<section id="polimorfinis-jungimas">
+<span id="polimorfinis-rysys"></span><h3>Polimorfinis jungimas<a class="headerlink" href="#polimorfinis-jungimas" title="Link to this heading">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Pastaba</p>
+<p>Tokio tipo jungimas kol kas dar nėra įgyvendintas.</p>
+</div>
+<p>Polimorfinis jungimas yra toks ryšys tarp modelių, kai vieno modelio laukas
+yra siejamas su daugiau nei vienu kitu modeliu. Tokiam ryšiui nurodyti
+polimorfinis laukas turi dvi reikšmes, išorinio modelio pavadinimą ir to
+modelio stulpelio per kurį jungiama reikšmę.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head" colspan="2"><p>Country</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>id</p></th>
+<th class="head"><p>name</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Lietuva</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Latvija</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head" colspan="3"><p>City</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>id</p></th>
+<th class="head"><p>name</p></th>
+<th class="head"><p>country</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Vilnius</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Ryga</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head" colspan="4"><p>Event</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>id</p></th>
+<th class="head"><p>name</p></th>
+<th class="head"><p>object_id</p></th>
+<th class="head"><p>object_model</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Įkūrimas</p></td>
+<td><p>1</p></td>
+<td><p>datasets/gov/example/countries/Country</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Įkūrimas</p></td>
+<td><p>2</p></td>
+<td><p>datasets/gov/example/countries/Country</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>Įkūrimas</p></td>
+<td><p>1</p></td>
+<td><p>datasets/gov/example/countries/City</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>Įkūrimas</p></td>
+<td><p>2</p></td>
+<td><p>datasets/gov/example/countries/City</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Pavyzdyje aukščiau matome, kad yra du modeliai <code class="docutils literal notranslate"><span class="pre">Country</span></code> ir <code class="docutils literal notranslate"><span class="pre">City</span></code>, kuriuos
+jungia <code class="docutils literal notranslate"><span class="pre">Event</span></code> modelis per <code class="docutils literal notranslate"><span class="pre">object_id</span></code> ir <code class="docutils literal notranslate"><span class="pre">object_model</span></code> laukus. Pavyzdžiui
+<code class="docutils literal notranslate"><span class="pre">Event</span></code> kurio <code class="docutils literal notranslate"><span class="pre">id</span></code> yra 1, siejamas su <code class="docutils literal notranslate"><span class="pre">Country</span></code> modeliu, kurio <code class="docutils literal notranslate"><span class="pre">id</span></code> yra 1.</p>
+<p>Tokių duomenų struktūros aprašas atrodys taip:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>d</p></th>
+<th class="head"><p>d</p></th>
+<th class="head"><p>r</p></th>
+<th class="head"><p>b</p></th>
+<th class="head"><p>m</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>prepare</p></th>
+<th class="head"><p>level</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td colspan="5"><p>datasets/gov/example/countries</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>Country</p></td>
+<td></td>
+<td><p>id</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>name</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>cities[]</p></td>
+<td><p>backref</p></td>
+<td><p>City</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>City</p></td>
+<td></td>
+<td><p>id</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>name</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>country</p></td>
+<td><p>ref</p></td>
+<td><p>Country</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>Event</p></td>
+<td></td>
+<td><p>id</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>name</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>13</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>object_id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>14</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>object_model</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>15</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>object</p></td>
+<td><p>generic</p></td>
+<td><p>Country</p></td>
+<td><p>object_model, object_id</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>16</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>City</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>15-oje eilutėje įtrauktas virtualus <code class="docutils literal notranslate"><span class="pre">Event.object</span></code> laukas, kuris 15-oje ir
+16-oje eilutėse, <a class="reference internal" href="dimensijos.html#property.ref" title="property.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.ref</span></code></a> stulpelyje išvardina du modelius
+<code class="docutils literal notranslate"><span class="pre">Country</span></code> ir <code class="docutils literal notranslate"><span class="pre">City</span></code>, su kuriais jungiamas šis laukas, per <code class="docutils literal notranslate"><span class="pre">object_model</span></code> ir
+<code class="docutils literal notranslate"><span class="pre">object_id</span></code> laukus, kurie aprašyti atskirai.</p>
+<p><code class="docutils literal notranslate"><span class="pre">object_id</span></code> ir <code class="docutils literal notranslate"><span class="pre">object_model</span></code> aprašomi atskirai tik todėl, kad duomenys
+ateina iš išorinio šaltinio. Jei duomenys rašomi tiesiogiai į <span class="xref std std-ref">Saugyklą</span>, tada atskirai <code class="docutils literal notranslate"><span class="pre">generic</span></code> laukų apsirašyti nereikia.</p>
+</section>
+</section>
+<section id="brandos-lygis">
+<span id="ref-level"></span><h2>Brandos lygis<a class="headerlink" href="#brandos-lygis" title="Link to this heading">#</a></h2>
+<p>Apibrėžiant ryšius tarp modelių, brandos lygis įrašomas <a class="reference internal" href="formatas.html#level" title="level"><code class="xref py py-data docutils literal notranslate"><span class="pre">level</span></code></a>
+stulpelyje atlieka svarbų vaidmenį. Nuo brandos lygio, priklauso, kaip turi būti
+interpretuojamas išorinis raktas, siejamas su kitu modeliu.</p>
+<dl>
+<dt>1 brandos lygis: Susiejimas neįmanomas</dt><dd><p>Duomenys pateikti tokia forma, kurios pagalba dviejų modelių jungimas nėra
+įmanomas.</p>
+<p>Pavyzdžiui, pateikta adreso tekstinė forma, kuri nesutampa su tekstine
+forma pateikiama oficialiame adresų registre arba naudojamas toks tam
+tikras identifikatorius, kuris nėra surištas su siejamo modelio pirminiu
+raktu.</p>
+</dd>
+<dt>2 brandos lygis: Susiejimas nepatikimas</dt><dd><p>Duomenys pateikiami tam tikra forma, kuri neužtikrina patikimo duomenų
+susiejimo, tačiau siejimas atliekamas pagal siejamo modelio atributą, kuris
+negarantuoja unikalaus objekto identifikavimo.</p>
+<p>Pavyzdžiui siejimas atliekamas pagal pavadinimą, kuris gali keistis arba ne
+visais atvejais sutampa.</p>
+</dd>
+<dt>3 brandos lygis: Susiejimas ne per pirminį raktą</dt><dd><p>Duomenims susieti naudojamas patikimas identifikatorius, kuris yra surištas su
+siejamo modelio pirminiu raktu, tačiau naudojamas ne pirminis raktas, o
+kitas identifikatorius.</p>
+</dd>
+<dt>4 brandos lygis: Susiejimas per pirminį raktą</dt><dd><p>Susiejimas daromas per pirminį raktą.</p>
+</dd>
+</dl>
+<section id="susiejimas-neimanomas">
+<h3>Susiejimas neįmanomas<a class="headerlink" href="#susiejimas-neimanomas" title="Link to this heading">#</a></h3>
+<p>Jei <code class="docutils literal notranslate"><span class="pre">ref</span></code> tipui nurodytas 1 arba žemesnis brandos lygis, tai reiškia, duomenų
+jungimas nėra įmanomas. Tokiu atveju, atveriant duomenis, <code class="docutils literal notranslate"><span class="pre">property</span></code> įgaus tokį
+tipą, koks yra lauko su kuriuo siejamas ryšys tipas.</p>
+<p>Pavyzdžiui:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>d</p></th>
+<th class="head"><p>r</p></th>
+<th class="head"><p>b</p></th>
+<th class="head"><p>m</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>level</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="5"><p>example</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>Country</p></td>
+<td></td>
+<td><p>name&#64;lt</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>name&#64;lt</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>City</p></td>
+<td></td>
+<td><p>name</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>name&#64;lt</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>country</p></td>
+<td><p>ref</p></td>
+<td><p>Country</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Šiuo atveju, <code class="docutils literal notranslate"><span class="pre">City.country</span></code> yra siejamas su <code class="docutils literal notranslate"><span class="pre">Country.name</span></code>. Kadangi
+<code class="docutils literal notranslate"><span class="pre">City.country</span></code> brandos lygis yra 2, tai reiškia, kad <code class="docutils literal notranslate"><span class="pre">City.country</span></code> ir
+<code class="docutils literal notranslate"><span class="pre">Country.name</span></code> pavadinimai nesutampa ir jungimo atlikti neįmanoma. Tokiu
+atveju, <code class="docutils literal notranslate"><span class="pre">City.country</span></code> tipas bus ne <code class="docutils literal notranslate"><span class="pre">ref</span></code>, o toks pat, kaip <code class="docutils literal notranslate"><span class="pre">Country.name</span></code>,
+t.y. <code class="docutils literal notranslate"><span class="pre">string</span></code>.</p>
+<p>Tačiau, metaduomenyse išliks informacija, apie tai, kad šios lentelės yra
+susijusios. Dėl prasto duomenų brandos lygios, realus susiejimas nėra
+įmanomas.</p>
+<p>Jei modeliai yra susiję, tačiau, tokio duomenų lauko, per kurį galima būtų
+atlikti susiejimą iš vis nėra, tuomet, tokį lauką galima sukurti, nurodant
+brandos lygį 0. Pavyzdžiui:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>d</p></th>
+<th class="head"><p>r</p></th>
+<th class="head"><p>b</p></th>
+<th class="head"><p>m</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>level</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="5"><p>example</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>Country</p></td>
+<td></td>
+<td><p>name&#64;lt</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>name&#64;lt</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>name&#64;en</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>City</p></td>
+<td></td>
+<td><p>name</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>name&#64;en</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>country</p></td>
+<td><p>ref</p></td>
+<td><p>Country[name&#64;en]</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Šioje vietoje <code class="docutils literal notranslate"><span class="pre">City.country</span></code> tampa <code class="docutils literal notranslate"><span class="pre">country&#64;en</span></code>, kurio tipas yra <code class="docutils literal notranslate"><span class="pre">string</span></code>. O į
+<code class="docutils literal notranslate"><span class="pre">Country</span></code> yra įtrauktas papildomas laukas <code class="docutils literal notranslate"><span class="pre">name&#64;en</span></code>, per kurį ir atliekamas
+susiejimas, t.y. per kurį galėtų būti atliktas susiejimas, jei toks laukas
+egzistuotų ne tik <code class="docutils literal notranslate"><span class="pre">City.country</span></code>, bet ir <code class="docutils literal notranslate"><span class="pre">Country.name&#64;en</span></code>.</p>
+</section>
+<section id="susiejimas-nepatikimas">
+<h3>Susiejimas nepatikimas<a class="headerlink" href="#susiejimas-nepatikimas" title="Link to this heading">#</a></h3>
+<p>Jei <code class="docutils literal notranslate"><span class="pre">ref</span></code> tipui suteiktas 2 brandos lygis, tai reiškia, kad susiejimas yra
+įmanomas, tačiau nėra garantijos, kad jis veiks visais atvejais.</p>
+<p>Susiejimas laikomas nepatikimu, tada, kai siejimas atliekamas ne patikimo
+unikalaus identifikatoriaus pagalba, o per pavadinimą ar panašiais būdais.</p>
+<p>Pavadinimai gali keistis, gali dubliuotis, gali skirtis jų užrašymo forma, todėl
+toks jungimas laikomas nepatikimu.</p>
+<p>Toks jungimas ir 2 brandos lygio žymėjimas taikomas tik tais atvejais, kai
+jungimas daromas, per jungiamo modelio atributą. Pavyzdžiui:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>d</p></th>
+<th class="head"><p>r</p></th>
+<th class="head"><p>b</p></th>
+<th class="head"><p>m</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>level</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="5"><p>example</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>Country</p></td>
+<td></td>
+<td><p>name&#64;lt</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>name&#64;lt</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>City</p></td>
+<td></td>
+<td><p>name</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>name&#64;lt</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>country</p></td>
+<td><p>ref</p></td>
+<td><p>Country</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Šiuo atveju, kadangi <code class="docutils literal notranslate"><span class="pre">City.country</span></code> brandos lygis yra <code class="docutils literal notranslate"><span class="pre">2</span></code>, tai reiškia, kad
+<code class="docutils literal notranslate"><span class="pre">City.country</span></code> duomenys yra realiai paimti iš <code class="docutils literal notranslate"><span class="pre">Country.name&#64;lt</span></code>. Jei
+<code class="docutils literal notranslate"><span class="pre">City.country</span></code> būtų paimti ne iš <code class="docutils literal notranslate"><span class="pre">Country.name&#64;lt</span></code>, o iš kokio nors kito
+šaltinio ir gali nesutapti, tada brandos lygis turėtu būti <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<p>Tai reiškia, kad <code class="docutils literal notranslate"><span class="pre">2</span></code> brandos lygis žymimas tik tais atvejais, kai išorinis
+raktas yra paimtas iš siejamo modelio atributo.</p>
+</section>
+<section id="susiejimas-ne-per-pirmini-rakta">
+<h3>Susiejimas ne per pirminį raktą<a class="headerlink" href="#susiejimas-ne-per-pirmini-rakta" title="Link to this heading">#</a></h3>
+<p>Jei <code class="docutils literal notranslate"><span class="pre">ref</span></code> tipui suteiktas 3 ar didesnis brandos lygis, vadinasi susiejimas yra
+patikimas. Duomenys siejami naudojant patikimus unikalius identifikatorius,
+kurie nesidubliuoja, nesikeičia ir užrašomi visada vienodai.</p>
+<p>Dažniausiai patikimais identifikatoriais laikomi sveiki skaičiai, tam tikri
+sutartiniai kodai ir kiti specializuoti identifikatoriai, tokie kaip UUID.</p>
+<p>Tačiau, naudojamas ne pirminis raktas, o kitas duomenų laukas. Pavyzdžiui:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>d</p></th>
+<th class="head"><p>r</p></th>
+<th class="head"><p>b</p></th>
+<th class="head"><p>m</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>level</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="5"><p>example</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>Country</p></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>code</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>name&#64;lt</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>City</p></td>
+<td></td>
+<td><p>name</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>name&#64;lt</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>country</p></td>
+<td><p>ref</p></td>
+<td><p>Country[code]</p></td>
+<td><p>3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Skirtumas tarp <code class="docutils literal notranslate"><span class="pre">3</span></code> ir <code class="docutils literal notranslate"><span class="pre">4</span></code> brandos lygio iš esmės susijęs su duomenų saugojimu
+Saugykloje ar kitoje vietoje, kur pirminiai raktai yra generuojami ir jų
+negalima keisti. Jei naudojamas <code class="docutils literal notranslate"><span class="pre">3</span></code> brandos lygis, tuomet saugykloje saugomas,
+ne išorinis saugyklos identifikatorius UUID, o vidinis duomenų rinkinio
+identifikatorius.</p>
+<p>Publikuojant duomenis iš tam tikro šaltinio, išorinis raktas visada turėtu
+būti konvertuojamas į išorinį pirminį raktą, tačiau tais atvejais, jei dėl tam
+tikrų priežasčių tas nėra daroma, tuomet žymimas 3 brandos lygis ir
+publikuojami ne išoriniai pirminiai raktai, o šaltinio vidiniai.</p>
+<p>Pavyzdžiui, jei turime tokius duomenis:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head" colspan="4"><p>example/Country</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>_id</p></th>
+<th class="head"><p>id</p></th>
+<th class="head"><p>code</p></th>
+<th class="head"><p>name&#64;lt</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>4dbb1b77-a930-4f2a-8ef4-f05b89f0fcfe</p></td>
+<td><p>1</p></td>
+<td><p>lt</p></td>
+<td><p>Lietuva</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Ir jei <code class="docutils literal notranslate"><span class="pre">City.country</span></code> turi brandos lygį <code class="docutils literal notranslate"><span class="pre">3</span></code>, tada <code class="docutils literal notranslate"><span class="pre">City</span></code> duomenys atrodys taip:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head" colspan="3"><p>example/City</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>_id</p></th>
+<th class="head"><p>name&#64;lt</p></th>
+<th class="head"><p>country._id</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>096e054e-7a4c-44cc-8f27-98af815080d5</p></td>
+<td><p>Vilnius</p></td>
+<td><p>lt</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="susiejimas-per-pirmini-rakta">
+<h3>Susiejimas per pirminį raktą<a class="headerlink" href="#susiejimas-per-pirmini-rakta" title="Link to this heading">#</a></h3>
+<p>Šiuo atveju, brandos lygis žymimas <code class="docutils literal notranslate"><span class="pre">4</span></code> ir skirtumas nuo <code class="docutils literal notranslate"><span class="pre">3</span></code> brandos lygio yra
+toks, kad duomenyse naudojamas išorinis pirminis raktas. Pavyzdžiui:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>d</p></th>
+<th class="head"><p>r</p></th>
+<th class="head"><p>b</p></th>
+<th class="head"><p>m</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>level</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="5"><p>example</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>Country</p></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>code</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>name&#64;lt</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>City</p></td>
+<td></td>
+<td><p>name</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>name&#64;lt</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>country</p></td>
+<td><p>ref</p></td>
+<td><p>Country</p></td>
+<td><p>4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Turint tokį struktūros aprašą, kur <code class="docutils literal notranslate"><span class="pre">City.country</span></code> brandos lygis yra <code class="docutils literal notranslate"><span class="pre">4</span></code>,
+duomenys atrodys taip:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head" colspan="4"><p>example/Country</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>_id</p></th>
+<th class="head"><p>id</p></th>
+<th class="head"><p>code</p></th>
+<th class="head"><p>name&#64;lt</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>4dbb1b77-a930-4f2a-8ef4-f05b89f0fcfe</p></td>
+<td><p>1</p></td>
+<td><p>lt</p></td>
+<td><p>Lietuva</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head" colspan="3"><p>example/City</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>_id</p></th>
+<th class="head"><p>name&#64;lt</p></th>
+<th class="head"><p>country._id</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>096e054e-7a4c-44cc-8f27-98af815080d5</p></td>
+<td><p>Vilnius</p></td>
+<td><p>4dbb1b77-a930-4f2a-8ef4-f05b89f0fcfe</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Matome, kad <code class="docutils literal notranslate"><span class="pre">City.country._id</span></code> yra <code class="docutils literal notranslate"><span class="pre">Country</span></code> pirminis raktas. Tai reiškia, kad
+vidiniai duomenų rinkinio raktai konvertuojami į išorinius.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="apibendrinimas.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">praeitas</p>
+        <p class="prev-next-title">Apibendrinimas</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="modeliai/funkciniai.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">kitas</p>
+        <p class="prev-next-title">Funkciniai modeliai</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Turinys
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kompozicija">Kompozicija</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jungtinis-modelis">Jungtinis modelis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#savybiu-itraukimas">Savybių įtraukimas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#daugiareiksmiskumas">Daugiareikšmiškumas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#duomenu-kilme">Duomenų kilmė</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jungimo-budai">Jungimo būdai</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#per-pirmini-rakta">Per pirminį raktą</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#per-nepirmini-rakta">Per nepirminį raktą</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#per-kompozicini-rakta">Per kompozicinį raktą</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atgalinis-rysys">Atgalinis ryšys</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polimorfinis-jungimas">Polimorfinis jungimas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brandos-lygis">Brandos lygis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#susiejimas-neimanomas">Susiejimas neįmanomas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#susiejimas-nepatikimas">Susiejimas nepatikimas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#susiejimas-ne-per-pirmini-rakta">Susiejimas ne per pirminį raktą</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#susiejimas-per-pirmini-rakta">Susiejimas per pirminį raktą</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Iki Valstybės skaitmeninių sprendimų agentūra
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2019-2024, VSSA.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

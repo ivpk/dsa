@@ -1,0 +1,757 @@
+
+<!DOCTYPE html>
+
+
+<html lang="lt" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Antras Brandos Lygis &#8212; DSA</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-examples.css?v=e236af4b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=f0eb6ae9" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=4ee96f2e"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=e4682f4a"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'branda/L200';</script>
+    <link rel="index" title="Indeksas" href="../genindex.html" />
+    <link rel="search" title="Paieška" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="lt"/>
+  <meta name="docsearch:version" content="1.1" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">DSA</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Paieška" aria-label="Paieška" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Paieška</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../modelis.html">Koncepcinis modelis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../formatas.html">Lentelės formatas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dimensijos.html">Dimensijos</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../tipai.html">Duomenų tipai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pavadinimai.html">Kodiniai pavadinimai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vienetai.html">Matavimo vienetai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apibendrinimas.html">Apibendrinimas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../identifikatoriai.html">Asociacija</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeliai/funkciniai.html">Funkciniai modeliai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../branda.html">Brandos lygiai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prieiga.html">Prieigos lygiai</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../schemos/index.html">Duomenų schemos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../schemos/xsd.html">XSD</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../saltiniai.html">Duomenų šaltiniai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vardu-erdves.html">Vardų erdvės</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zodynai.html">Išoriniai žodynai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../formules.html">Formulės</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../savokos.html">Sąvokos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../keitimai.html">Keitimų istorija</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ivpk/dsa" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Šaltinio saugykla"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ivpk/dsa/issues/new?title=Issue%20on%20page%20%2Fbranda/L200.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Atidarykite problemą"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Pilno ekrano režimas"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Paieška" aria-label="Paieška" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Antras Brandos Lygis</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Turinys </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strukturuota"><strong>Struktūruota</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reikalavimas-1-l201">Reikalavimas 1 (L201)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reikalavimas-2-l202">Reikalavimas 2 (L202)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reikalavimas-3-l203">Reikalavimas 3 (L203)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reikalavimas-4-l204">Reikalavimas 4 (L204)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reikalavimas-5-l205">Reikalavimas 5 (L205)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reikalavimas-6-l206">Reikalavimas 6 (L206)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reikalavimas-7-l207">Reikalavimas 7 (L207)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reikalavimas-8-l208">Reikalavimas 8 (L208)</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="antras-brandos-lygis">
+<span id="level2"></span><h1>Antras Brandos Lygis<a class="headerlink" href="#antras-brandos-lygis" title="Link to this heading">#</a></h1>
+<section id="strukturuota">
+<h2><strong>Struktūruota</strong><a class="headerlink" href="#strukturuota" title="Link to this heading">#</a></h2>
+<p>Duomenys kaupiami struktūruota, mašininiu būdu nuskaitoma forma, bet
+kokiu formatu. Užpildytas <a class="reference internal" href="../dimensijos.html#property.source" title="property.source"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.source</span></code></a> stulpelis.</p>
+<p>Plačiau apie brandos lygio kėlimą skaitykite skyriuje <span class="xref std std-ref">to-level-2</span>.</p>
+<p>Antru brandos lygiu žymimi duomenų laukai, kurie pateikti vieninga
+forma arba pagal aiškų ir vienodą šabloną. Tačiau pateikimo būdas nėra
+standartinis. Nestandartinis duomenų formatas yra toks, kuris neturi
+viešai skelbiamos ir atviros formato specifikacijos arba kuris nėra
+priimtas kaip standartas, kurį prižiūri tam tikra standartizacijos
+organizacija.</p>
+<p><strong>Pavyzdžiai</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head" colspan="3"><p>Imone</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>imones_id</p></th>
+<th class="head"><p>imones_pavadinimas</p></th>
+<th class="head"><p>rusis</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>42</p></td>
+<td><p>UAB &quot;Įmonė&quot;</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head" colspan="5"><p>Filialas</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>ikurimo_data</p></th>
+<th class="head"><p>atstumas</p></th>
+<th class="head"><p>imones_id</p></th>
+<th class="head"><p>imones_pavadinimas._id</p></th>
+<th class="head"><p>tel_nr</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>1/9/21</p></td>
+<td><p>1 m.</p></td>
+<td><p>1</p></td>
+<td><p>UAB &quot;Įmonė&quot;</p></td>
+<td><p>(83) 111 11111</p></td>
+</tr>
+<tr class="row-even"><td><p>2/9/21</p></td>
+<td><p>2 m.</p></td>
+<td><p>1</p></td>
+<td><p>UAB &quot;Įmonė&quot;</p></td>
+<td><p>(83) 222 22222</p></td>
+</tr>
+<tr class="row-odd"><td><p>3/9/21</p></td>
+<td><p>3 m.</p></td>
+<td><p>1</p></td>
+<td><p>UAB &quot;Įmonė&quot;</p></td>
+<td><p>(83) 333 33333</p></td>
+</tr>
+<tr class="row-even"><td><p>4/9/21</p></td>
+<td><p>4 m.</p></td>
+<td><p>1</p></td>
+<td><p>UAB &quot;Įmonė&quot;</p></td>
+<td><p>(83) 444 44444</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head" colspan="8"><p>Struktūros aprašas</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>d</p></th>
+<th class="head"><p>r</p></th>
+<th class="head"><p>b</p></th>
+<th class="head"><p>m</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>level</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td colspan="5"><p>example</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>JuridinisAsmuo</p></td>
+<td></td>
+<td><p>kodas</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>kodas</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>pavadinimas&#64;lt</p></td>
+<td><p>text</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>Imone</p></td>
+<td></td>
+<td><p>imones_id</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>imones_id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>imones_pavadinimas</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>rusis</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>Filialas</p></td>
+<td></td>
+<td></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>ikurimo_data</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>atstumas</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>imones_id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>imones_pavadinimas</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>tel_nr</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="reikalavimas-1-l201">
+<span id="level201"></span><h2>Reikalavimas 1 (L201)<a class="headerlink" href="#reikalavimas-1-l201" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Nestandartiniai duomenų tipai</strong> - antru brandos lygiu žymimi duomenys,
+kurių nurodytas tipas neatitinka realaus duomenų tipo. Pavyzdžiui:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ikurimo_data</span></code> - nurodytas <code class="docutils literal notranslate"><span class="pre">string</span></code>, turėtu būti <code class="docutils literal notranslate"><span class="pre">date</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">imones_pavadinimas</span></code> - nurodytas <code class="docutils literal notranslate"><span class="pre">string</span></code>, turėtu būti <code class="docutils literal notranslate"><span class="pre">text</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">atstumas</span></code> - nurodytas <code class="docutils literal notranslate"><span class="pre">string</span></code>, turėtu būti <code class="docutils literal notranslate"><span class="pre">integer</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="reikalavimas-2-l202">
+<span id="level202"></span><h2>Reikalavimas 2 (L202)<a class="headerlink" href="#reikalavimas-2-l202" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Nestandartinis formatas</strong> - antru brandos lygiu žymimi duomenys,
+kurie pateikti nestandartiniu formatu. Standartinis duomenų
+pateikimas nurodytas prie kiekvieno duomenų tipo skyriuje
+<a class="reference internal" href="../tipai.html#duomenu-tipai"><span class="std std-ref">Duomenų tipai</span></a>. Payvzdžiui:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ikurimo_data</span></code> - nurodytas <code class="docutils literal notranslate"><span class="pre">DD/MM/YY</span></code>, turėtu būti <code class="docutils literal notranslate"><span class="pre">YYYY-MM-DD</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">atstumas</span></code> - nurodyta <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">m.</span></code>, turėtu būti <code class="docutils literal notranslate"><span class="pre">X</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tel_nr</span></code> - nurodytas <code class="docutils literal notranslate"><span class="pre">(XX)</span> <span class="pre">XXX</span> <span class="pre">XXXXX</span></code>, turėtu būti
+<code class="docutils literal notranslate"><span class="pre">+XXX-XXX-XXXXX</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="reikalavimas-3-l203">
+<span id="level203"></span><h2>Reikalavimas 3 (L203)<a class="headerlink" href="#reikalavimas-3-l203" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>Nestandartiniai kodiniai pavadinimai</strong> - antru brandos lygiu žymimi
+duomenys, kurių kodiniai pavadinimai, neatitinka <a class="reference internal" href="../pavadinimai.html#kodiniai-pavadinimai"><span class="std std-ref">standartinių
+reikalavimų keliamų kodiniams pavadinimams</span></a>.
+Pavyzdžiui:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">imones_id</span></code> - dubliuojamas modelio pavadinimas, turėtu būti <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">imones_pavadinimas</span></code> - dubliuojamas modelio pavadinimas, turėtu
+būti <code class="docutils literal notranslate"><span class="pre">pavadinimas</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ikurimo_data</span></code> - dubliuojamas tipo pavadinimas, turėtu būti</p></li>
+</ul>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">ikurta</span></code>.</p>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="reikalavimas-4-l204">
+<span id="level204"></span><h2>Reikalavimas 4 (L204)<a class="headerlink" href="#reikalavimas-4-l204" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Nepatikimi identifikatoriai</strong> - antru brandos lygiu žymimi
+duomenys, kurių <code class="docutils literal notranslate"><span class="pre">ref</span></code> tipui naudojami nepatikimi identifikatoriai,
+pavyzdžiui tokie, kaip pavadinimai, kurie gali keistis arba kartotis.
+Pavyzdžiui:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">imones_pavadinimas</span></code> - jungimas daromas per įmonės pavadinimą,
+tačiau šiuo atveju kito varianto nėra, nes <code class="docutils literal notranslate"><span class="pre">Filialas.imones_id</span></code>
+nesutampa su <code class="docutils literal notranslate"><span class="pre">Imone.imones_id</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="reikalavimas-5-l205">
+<span id="level205"></span><h2>Reikalavimas 5 (L205)<a class="headerlink" href="#reikalavimas-5-l205" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>Denormalizuoti duomenys</strong> - antru brandos lygiu žymimi duomenys,
+kurie dubliuoja kito modelio duomenis ir yra užrašyti nenurodant, kad
+tai yra duomenys dubliuojantys kito modelio duomenis. Pavyzdžiui:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Filialas.imones_id</span></code> turėtu būti <code class="docutils literal notranslate"><span class="pre">Filialas.imone.imones_id</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Filialas.imones_pavadinimas</span></code> turėtu būti
+<code class="docutils literal notranslate"><span class="pre">Filialas.imone.imones_pavadinimas</span></code>.</p>
+<p>Plačiau apie denormalizuotus duomenis skaitykite skyriuje
+<a class="reference internal" href="../identifikatoriai.html#ref-denorm"><span class="std std-ref">Jungtinis modelis</span></a>.</p>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="reikalavimas-6-l206">
+<span id="level206"></span><h2>Reikalavimas 6 (L206)<a class="headerlink" href="#reikalavimas-6-l206" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Nenurodytas susiejimas</strong> - antru brandos lygiu žymimi duomenys,
+kurie siejasi su kitu modeliu, tačiau tokia informacija nėra pateikta
+metaduomenyse. Pavyzdžiui:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Filialas.imone</span></code> - <code class="docutils literal notranslate"><span class="pre">Filialas</span></code> siejasi su <code class="docutils literal notranslate"><span class="pre">Imone</span></code>, per
+<code class="docutils literal notranslate"><span class="pre">Filialas.imones_pavadiniams</span></code>, todėl turėtu būti nurodytas <code class="docutils literal notranslate"><span class="pre">imone</span>
+<span class="pre">ref</span> <span class="pre">Imone</span></code> ryšys su <code class="docutils literal notranslate"><span class="pre">Imone</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="reikalavimas-7-l207">
+<span id="level207"></span><h2>Reikalavimas 7 (L207)<a class="headerlink" href="#reikalavimas-7-l207" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Neatitinka modelio bazės</strong> - antru brandos lygiu žymimi duomenys,
+kurie priklauso vienai semantinei klasei, tačiau duomenų schema
+nesutampa su bazinio modelio schema. Pavyzdžiui:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Imone</span></code> - priklauso semantinei klasei <code class="docutils literal notranslate"><span class="pre">JuridinisAsmuo</span></code>, tačiau tai
+nėra pažymėta metaduomenyse.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Imone.imones_id</span></code> turėtu būti <code class="docutils literal notranslate"><span class="pre">Imone.kodas</span></code>, kad sutaptu su baze
+(<code class="docutils literal notranslate"><span class="pre">JuridinisAsmuo.kodas</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Imone.imones_pavadinimas</span></code> turėtu būti <code class="docutils literal notranslate"><span class="pre">Imone.pavadinimas&#64;lt</span></code>, kad
+sutaptu su baze (<code class="docutils literal notranslate"><span class="pre">JuridinisAsmuo.pavadinimas&#64;lt</span></code>).</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="reikalavimas-8-l208">
+<span id="level208"></span><h2>Reikalavimas 8 (L208)<a class="headerlink" href="#reikalavimas-8-l208" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Nenurodytas enum kodinėms reikšmėms</strong> - antru brandos lygiu žymimi
+kategoriniai duomenys, kurių reikšmės pateiktos sutartiniais
+kodinais, kurių prasmė nėra aiški. Pavyzdžiui:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Imone.rusis</span></code> - įmonės rūšis žymima skaičiais, tačiau nėra aišku,
+kokks skaičius, ką rei6kia, todėl reikia pateitki <code class="docutils literal notranslate"><span class="pre">enum</span></code> sąrašą,
+kuriame būtų nurodyta, ką koks skaičius reiškia. Plačiau skaityti
+<a class="reference internal" href="../dimensijos.html#enum"><span class="std std-ref">enum</span></a>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Turinys
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strukturuota"><strong>Struktūruota</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reikalavimas-1-l201">Reikalavimas 1 (L201)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reikalavimas-2-l202">Reikalavimas 2 (L202)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reikalavimas-3-l203">Reikalavimas 3 (L203)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reikalavimas-4-l204">Reikalavimas 4 (L204)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reikalavimas-5-l205">Reikalavimas 5 (L205)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reikalavimas-6-l206">Reikalavimas 6 (L206)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reikalavimas-7-l207">Reikalavimas 7 (L207)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reikalavimas-8-l208">Reikalavimas 8 (L208)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Iki Valstybės skaitmeninių sprendimų agentūra
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2019-2024, VSSA.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

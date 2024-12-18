@@ -1,0 +1,545 @@
+\begin{sphinxtheindex}
+\let\bigletter\sphinxstyleindexlettergroup
+\let\spxpagem \sphinxstyleindexpagemain
+\let\spxentry \sphinxstyleindexentry
+\let\spxextra \sphinxstyleindexextra
+
+  \bigletter A
+  \item \spxentry{absent}\spxextra{modulje type}, \hyperpage{44}
+  \item \spxentry{access}\spxextra{modulje base}, \hyperpage{23}
+  \item \spxentry{access}\spxextra{modulje comment}, \hyperpage{40}
+  \item \spxentry{access}\spxextra{modulje dataset}, \hyperpage{20}
+  \item \spxentry{access}\spxextra{modulje enum}, \hyperpage{33}
+  \item \spxentry{access}\spxextra{modulje model}, \hyperpage{27}
+  \item \spxentry{access}\spxextra{modulje property}, \hyperpage{29}
+  \item \spxentry{access}\spxextra{modulje resource}, \hyperpage{22}
+  \item \spxentry{access}\spxextra{įtaisytasis kintamasis}, \hyperpage{17}, \hyperpage{100}
+  \item \spxentry{add()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{131}
+  \item \spxentry{ADK}, \hyperindexformat{\spxpagem}{144}
+  \item \spxentry{ADP}, \hyperindexformat{\spxpagem}{144}
+  \item \spxentry{ADS}, \hyperindexformat{\spxpagem}{144}
+  \item \spxentry{ADSA}, \hyperindexformat{\spxpagem}{144}
+  \item \spxentry{and()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{130}, \hyperpage{138}
+  \item \spxentry{API}, \hyperindexformat{\spxpagem}{152}
+  \item \spxentry{aplinkos kintamasis}, \hyperindexformat{\spxpagem}{144}
+  \item \spxentry{array}\spxextra{modulje type}, \hyperpage{56}
+  \item \spxentry{atvirų duomenų direktyva}, \hyperindexformat{\spxpagem}{144}
+  \item \spxentry{aukštos vertės duomenys}, \hyperindexformat{\spxpagem}{146}
+
+  \indexspace
+  \bigletter B
+  \item \spxentry{backref}\spxextra{modulje type}, \hyperpage{55}
+  \item \spxentry{base}
+    \subitem \spxentry{module}, \hyperpage{23}
+  \item \spxentry{base}\spxextra{įtaisytasis kintamasis}, \hyperpage{14}
+  \item \spxentry{bazė}, \hyperindexformat{\spxpagem}{150}
+  \item \spxentry{BDAR}, \hyperindexformat{\spxpagem}{144}
+  \item \spxentry{binary}\spxextra{modulje type}, \hyperpage{45}
+  \item \spxentry{bind()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{130}
+  \item \spxentry{body()}\spxextra{modulyje param}, \hyperpage{37}
+  \item \spxentry{boolean}\spxextra{modulje type}, \hyperpage{44}
+  \item \spxentry{brandos lygis}, \hyperindexformat{\spxpagem}{144}
+  \item \spxentry{built\sphinxhyphen{}in function}
+    \subitem \spxentry{add()}, \hyperpage{131}
+    \subitem \spxentry{and()}, \hyperpage{130}, \hyperpage{138}
+    \subitem \spxentry{bind()}, \hyperpage{130}
+    \subitem \spxentry{case()}, \hyperpage{141}
+    \subitem \spxentry{cast()}, \hyperpage{140}
+    \subitem \spxentry{choose()}, \hyperpage{141}
+    \subitem \spxentry{connect()}, \hyperpage{116}
+    \subitem \spxentry{contains()}, \hyperpage{137}
+    \subitem \spxentry{cron()}, \hyperpage{139}
+    \subitem \spxentry{daily()}, \hyperpage{140}
+    \subitem \spxentry{date()}, \hyperpage{133, 134}
+    \subitem \spxentry{datetime()}, \hyperpage{133}
+    \subitem \spxentry{decompress()}, \hyperpage{134}
+    \subitem \spxentry{dict()}, \hyperpage{133}
+    \subitem \spxentry{div()}, \hyperpage{131}
+    \subitem \spxentry{endswith()}, \hyperpage{138}
+    \subitem \spxentry{eq()}, \hyperpage{130}, \hyperpage{136}
+    \subitem \spxentry{exclude()}, \hyperpage{138}
+    \subitem \spxentry{expand()}, \hyperpage{138}
+    \subitem \spxentry{extends()}, \hyperpage{139}
+    \subitem \spxentry{extract()}, \hyperpage{134}
+    \subitem \spxentry{file()}, \hyperpage{134}
+    \subitem \spxentry{first()}, \hyperpage{143}
+    \subitem \spxentry{ge()}, \hyperpage{131}, \hyperpage{137}
+    \subitem \spxentry{getattr()}, \hyperpage{132}, \hyperpage{143}
+    \subitem \spxentry{getitem()}, \hyperpage{132}, \hyperpage{143}
+    \subitem \spxentry{gt()}, \hyperpage{131}, \hyperpage{137}
+    \subitem \spxentry{head()}, \hyperpage{135}
+    \subitem \spxentry{header()}, \hyperpage{135}
+    \subitem \spxentry{hourly()}, \hyperpage{140}
+    \subitem \spxentry{in()}, \hyperpage{137}
+    \subitem \spxentry{include()}, \hyperpage{138}
+    \subitem \spxentry{item()}, \hyperpage{130}
+    \subitem \spxentry{le()}, \hyperpage{131}, \hyperpage{137}
+    \subitem \spxentry{len()}, \hyperpage{141}
+    \subitem \spxentry{limit()}, \hyperpage{139}
+    \subitem \spxentry{list()}, \hyperpage{132}
+    \subitem \spxentry{lower()}, \hyperpage{141}
+    \subitem \spxentry{lt()}, \hyperpage{131}, \hyperpage{137}
+    \subitem \spxentry{mod()}, \hyperpage{132}
+    \subitem \spxentry{monthly()}, \hyperpage{140}
+    \subitem \spxentry{mul()}, \hyperpage{131}
+    \subitem \spxentry{ne()}, \hyperpage{131}, \hyperpage{136}
+    \subitem \spxentry{negative()}, \hyperpage{132}
+    \subitem \spxentry{not()}, \hyperpage{130}
+    \subitem \spxentry{notin()}, \hyperpage{137}
+    \subitem \spxentry{null()}, \hyperpage{140}
+    \subitem \spxentry{op()}, \hyperpage{133}
+    \subitem \spxentry{or()}, \hyperpage{130}, \hyperpage{138}
+    \subitem \spxentry{page()}, \hyperpage{139}
+    \subitem \spxentry{param()}, \hyperpage{130}
+    \subitem \spxentry{path()}, \hyperpage{142}
+    \subitem \spxentry{positive()}, \hyperpage{132}
+    \subitem \spxentry{prop()}, \hyperpage{130}
+    \subitem \spxentry{query()}, \hyperpage{142}
+    \subitem \spxentry{re()}, \hyperpage{140}
+    \subitem \spxentry{replace()}, \hyperpage{140}
+    \subitem \spxentry{return()}, \hyperpage{141}
+    \subitem \spxentry{select()}, \hyperpage{138}
+    \subitem \spxentry{self()}, \hyperpage{130}
+    \subitem \spxentry{set()}, \hyperpage{133}, \hyperpage{141}
+    \subitem \spxentry{sort()}, \hyperpage{138}
+    \subitem \spxentry{split()}, \hyperpage{140}
+    \subitem \spxentry{stack()}, \hyperpage{133}
+    \subitem \spxentry{startswith()}, \hyperpage{138}
+    \subitem \spxentry{strip()}, \hyperpage{141}
+    \subitem \spxentry{sub()}, \hyperpage{131}
+    \subitem \spxentry{swap()}, \hyperpage{141}
+    \subitem \spxentry{switch()}, \hyperpage{141}
+    \subitem \spxentry{tabular()}, \hyperpage{116}
+    \subitem \spxentry{tail()}, \hyperpage{135}
+    \subitem \spxentry{tuple()}, \hyperpage{132}
+    \subitem \spxentry{upper()}, \hyperpage{141}
+    \subitem \spxentry{url()}, \hyperpage{141}
+    \subitem \spxentry{var()}, \hyperpage{130}
+    \subitem \spxentry{weekly()}, \hyperpage{140}
+    \subitem \spxentry{xpath()}, \hyperpage{117}
+    \subitem \spxentry{yearly()}, \hyperpage{140}
+
+  \indexspace
+  \bigletter C
+  \item \spxentry{case()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{141}
+  \item \spxentry{cast()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{140}
+  \item \spxentry{choose()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{141}
+  \item \spxentry{comment}
+    \subitem \spxentry{module}, \hyperpage{39}
+  \item \spxentry{connect()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{116}
+  \item \spxentry{contains()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{137}
+  \item \spxentry{create()}\spxextra{modulyje migrate}, \hyperpage{43}
+  \item \spxentry{cron()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{139}
+
+  \indexspace
+  \bigletter D
+  \item \spxentry{daily()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{140}
+  \item \spxentry{dataset}
+    \subitem \spxentry{module}, \hyperpage{19}
+  \item \spxentry{dataset}\spxextra{įtaisytasis kintamasis}, \hyperpage{13}
+  \item \spxentry{date}\spxextra{modulje type}, \hyperpage{47}
+  \item \spxentry{date()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{133, 134}
+  \item \spxentry{datetime}\spxextra{modulje type}, \hyperpage{46}
+  \item \spxentry{datetime()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{133}
+  \item \spxentry{daugiareikšmis tipas}, \hyperindexformat{\spxpagem}{145}
+  \item \spxentry{DCAT}, \hyperindexformat{\spxpagem}{149}
+  \item \spxentry{DCAT\sphinxhyphen {}AP}, \hyperindexformat{\spxpagem}{149}
+  \item \spxentry{decompress()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{134}
+  \item \spxentry{delete()}\spxextra{modulyje migrate}, \hyperpage{43}
+  \item \spxentry{description}\spxextra{modulje comment}, \hyperpage{40}
+  \item \spxentry{description}\spxextra{modulje dataset}, \hyperpage{20}
+  \item \spxentry{description}\spxextra{modulje enum}, \hyperpage{33}
+  \item \spxentry{description}\spxextra{modulje lang}, \hyperpage{41}
+  \item \spxentry{description}\spxextra{modulje migrate}, \hyperpage{43}
+  \item \spxentry{description}\spxextra{modulje model}, \hyperpage{28}
+  \item \spxentry{description}\spxextra{modulje prefix}, \hyperpage{30}
+  \item \spxentry{description}\spxextra{modulje property}, \hyperpage{29}
+  \item \spxentry{description}\spxextra{modulje resource}, \hyperpage{22}
+  \item \spxentry{description}\spxextra{įtaisytasis kintamasis}, \hyperpage{18}
+  \item \spxentry{dict()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{133}
+  \item \spxentry{didelės vertės duomenys}, \hyperindexformat{\spxpagem}{146}
+  \item \spxentry{dimensija}, \hyperindexformat{\spxpagem}{150}
+  \item \spxentry{distinct()}\spxextra{modulyje model}, \hyperpage{28}
+  \item \spxentry{distribucija}, \hyperindexformat{\spxpagem}{150}
+  \item \spxentry{div()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{131}
+  \item \spxentry{DOS}, \hyperindexformat{\spxpagem}{152}
+  \item \spxentry{DSA}, \hyperindexformat{\spxpagem}{146}
+  \item \spxentry{duomenų katalogas}, \hyperindexformat{\spxpagem}{146}
+  \item \spxentry{duomenų rinkinys}, \hyperindexformat{\spxpagem}{150}
+  \item \spxentry{duomenų serializavimo formatas}, \hyperindexformat{\spxpagem}{146}
+  \item \spxentry{duomenų valdymo aktas}, \hyperindexformat{\spxpagem}{146}
+  \item \spxentry{duomenų šaltinis}, \hyperindexformat{\spxpagem}{152}
+
+  \indexspace
+  \bigletter E
+  \item \spxentry{EIF}, \hyperindexformat{\spxpagem}{147}
+  \item \spxentry{endswith()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{138}
+  \item \spxentry{enum}
+    \subitem \spxentry{module}, \hyperpage{31}
+  \item \spxentry{enum}\spxextra{modulje property}, \hyperpage{29}
+  \item \spxentry{eq()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{130}, \hyperpage{136}
+  \item \spxentry{ETL}, \hyperindexformat{\spxpagem}{152}
+  \item \spxentry{Europos sąveikumo karkasas}, \hyperindexformat{\spxpagem}{147}
+  \item \spxentry{exclude()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{138}
+  \item \spxentry{expand()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{138}
+  \item \spxentry{extends()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{139}
+  \item \spxentry{extract()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{134}
+
+  \indexspace
+  \bigletter F
+  \item \spxentry{file}\spxextra{modulje type}, \hyperpage{53}
+  \item \spxentry{file()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{134}
+  \item \spxentry{filter()}\spxextra{modulyje migrate}, \hyperpage{43}
+  \item \spxentry{first()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{143}
+
+  \indexspace
+  \bigletter G
+  \item \spxentry{ge()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{131}, \hyperpage{137}
+  \item \spxentry{generic}\spxextra{modulje type}, \hyperpage{55}
+  \item \spxentry{geometry}\spxextra{modulje type}, \hyperpage{49}
+  \item \spxentry{getattr()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{132}, \hyperpage{143}
+  \item \spxentry{getitem()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{132}, \hyperpage{143}
+  \item \spxentry{gt()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{131}, \hyperpage{137}
+
+  \indexspace
+  \bigletter H
+  \item \spxentry{head()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{135}
+  \item \spxentry{header()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{135}
+  \item \spxentry{header()}\spxextra{modulyje param}, \hyperpage{37}
+  \item \spxentry{hourly()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{140}
+  \item \spxentry{http()}\spxextra{modulyje resource}, \hyperpage{22}
+
+  \indexspace
+  \bigletter I
+  \item \spxentry{id}\spxextra{modulje comment}, \hyperpage{39}
+  \item \spxentry{id}\spxextra{modulje dataset}, \hyperpage{19}
+  \item \spxentry{id}\spxextra{modulje migrate}, \hyperpage{42}
+  \item \spxentry{id}\spxextra{modulje resource}, \hyperpage{20}
+  \item \spxentry{id}\spxextra{įtaisytasis kintamasis}, \hyperpage{16}
+  \item \spxentry{image}\spxextra{modulje type}, \hyperpage{54}
+  \item \spxentry{in()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{137}
+  \item \spxentry{include()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{138}
+  \item \spxentry{integer}\spxextra{modulje type}, \hyperpage{44}
+  \item \spxentry{item()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{130}
+  \item \spxentry{iteratorius}, \hyperindexformat{\spxpagem}{152}
+  \item \spxentry{IVPK}, \hyperindexformat{\spxpagem}{147}
+
+  \indexspace
+  \bigletter J
+  \item \spxentry{JSON}, \hyperindexformat{\spxpagem}{152}
+  \item \spxentry{jungtinis modelis}, \hyperindexformat{\spxpagem}{147}
+
+  \indexspace
+  \bigletter K
+  \item \spxentry{kanoniniai duomenys}, \hyperindexformat{\spxpagem}{147}
+  \item \spxentry{kodinis pavadinimas}, \hyperindexformat{\spxpagem}{148}
+  \item \spxentry{kompozicinis raktas}, \hyperindexformat{\spxpagem}{148}
+
+  \indexspace
+  \bigletter L
+  \item \spxentry{lang}
+    \subitem \spxentry{module}, \hyperpage{41}
+  \item \spxentry{le()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{131}, \hyperpage{137}
+  \item \spxentry{len()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{141}
+  \item \spxentry{level}\spxextra{modulje base}, \hyperpage{23}
+  \item \spxentry{level}\spxextra{modulje comment}, \hyperpage{40}
+  \item \spxentry{level}\spxextra{modulje dataset}, \hyperpage{20}
+  \item \spxentry{level}\spxextra{modulje model}, \hyperpage{27}
+  \item \spxentry{level}\spxextra{modulje property}, \hyperpage{29}
+  \item \spxentry{level}\spxextra{modulje resource}, \hyperpage{22}
+  \item \spxentry{level}\spxextra{įtaisytasis kintamasis}, \hyperpage{17}
+  \item \spxentry{limit()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{139}
+  \item \spxentry{list()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{132}
+  \item \spxentry{lower()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{141}
+  \item \spxentry{lt()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{131}, \hyperpage{137}
+
+  \indexspace
+  \bigletter M
+  \item \spxentry{manifestas}, \hyperindexformat{\spxpagem}{148}
+  \item \spxentry{metaduomenys}, \hyperindexformat{\spxpagem}{148}
+  \item \spxentry{migrate}
+    \subitem \spxentry{module}, \hyperpage{41}
+  \item \spxentry{mod()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{132}
+  \item \spxentry{model}
+    \subitem \spxentry{module}, \hyperpage{24}, \hyperpage{28}
+  \item \spxentry{model}\spxextra{įtaisytasis kintamasis}, \hyperpage{15}
+  \item \spxentry{modelis}, \hyperindexformat{\spxpagem}{151}
+  \item \spxentry{module}
+    \subitem \spxentry{base}, \hyperpage{23}
+    \subitem \spxentry{comment}, \hyperpage{39}
+    \subitem \spxentry{dataset}, \hyperpage{19}
+    \subitem \spxentry{enum}, \hyperpage{31}
+    \subitem \spxentry{lang}, \hyperpage{41}
+    \subitem \spxentry{migrate}, \hyperpage{41}
+    \subitem \spxentry{model}, \hyperpage{24}, \hyperpage{28}
+    \subitem \spxentry{param}, \hyperpage{33}, \hyperpage{35}
+    \subitem \spxentry{prefix}, \hyperpage{30}
+    \subitem \spxentry{property}, \hyperpage{29}
+    \subitem \spxentry{resource}, \hyperpage{20}, \hyperpage{22}
+    \subitem \spxentry{switch}, \hyperpage{39}
+    \subitem \spxentry{type}, \hyperpage{44}
+  \item \spxentry{money}\spxextra{modulje type}, \hyperpage{52}
+  \item \spxentry{monthly()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{140}
+  \item \spxentry{mul()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{131}
+
+  \indexspace
+  \bigletter N
+  \item \spxentry{ne()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{131}, \hyperpage{136}
+  \item \spxentry{negative()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{132}
+  \item \spxentry{normalizavimas}, \hyperindexformat{\spxpagem}{148}
+  \item \spxentry{not()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{130}
+  \item \spxentry{notin()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{137}
+  \item \spxentry{null()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{140}
+  \item \spxentry{number}\spxextra{modulje type}, \hyperpage{45}
+
+  \indexspace
+  \bigletter O
+  \item \spxentry{object}\spxextra{modulje type}, \hyperpage{56}
+  \item \spxentry{objektas}, \hyperindexformat{\spxpagem}{151}
+  \item \spxentry{op()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{133}
+  \item \spxentry{open}\spxextra{įtaisytasis kintamasis}, \hyperpage{100}
+  \item \spxentry{or()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{130}, \hyperpage{138}
+
+  \indexspace
+  \bigletter P
+  \item \spxentry{page()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{139}
+  \item \spxentry{param}
+    \subitem \spxentry{module}, \hyperpage{33}, \hyperpage{35}
+  \item \spxentry{param()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{130}
+  \item \spxentry{path()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{142}
+  \item \spxentry{path()}\spxextra{modulyje param}, \hyperpage{35}
+  \item \spxentry{pirminis duomenų šaltinis}, \hyperindexformat{\spxpagem}{149}
+  \item \spxentry{pirminis šaltinis}, \hyperindexformat{\spxpagem}{149}
+  \item \spxentry{positive()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{132}
+  \item \spxentry{POSIX}, \hyperindexformat{\spxpagem}{152}
+  \item \spxentry{prefix}
+    \subitem \spxentry{module}, \hyperpage{30}
+  \item \spxentry{prepare}\spxextra{modulje comment}, \hyperpage{39}
+  \item \spxentry{prepare}\spxextra{modulje dataset}, \hyperpage{20}
+  \item \spxentry{prepare}\spxextra{modulje enum}, \hyperpage{33}
+  \item \spxentry{prepare}\spxextra{modulje migrate}, \hyperpage{43}
+  \item \spxentry{prepare}\spxextra{modulje model}, \hyperpage{26}
+  \item \spxentry{prepare}\spxextra{modulje param}, \hyperpage{34}
+  \item \spxentry{prepare}\spxextra{modulje property}, \hyperpage{29}
+  \item \spxentry{prepare}\spxextra{įtaisytasis kintamasis}, \hyperpage{17}
+  \item \spxentry{prieigos taškas}, \hyperindexformat{\spxpagem}{148}
+  \item \spxentry{private}\spxextra{įtaisytasis kintamasis}, \hyperpage{100}
+  \item \spxentry{prop()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{130}
+  \item \spxentry{property}
+    \subitem \spxentry{module}, \hyperpage{29}
+  \item \spxentry{property}\spxextra{modulje model}, \hyperpage{28}
+  \item \spxentry{property}\spxextra{įtaisytasis kintamasis}, \hyperpage{15}
+  \item \spxentry{protected}\spxextra{įtaisytasis kintamasis}, \hyperpage{100}
+  \item \spxentry{public}\spxextra{įtaisytasis kintamasis}, \hyperpage{100}
+
+  \indexspace
+  \bigletter Q
+  \item \spxentry{query()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{142}
+  \item \spxentry{query()}\spxextra{modulyje param}, \hyperpage{36}
+
+  \indexspace
+  \bigletter R
+  \item \spxentry{range()}\spxextra{modulyje param}, \hyperpage{35}
+  \item \spxentry{RDF}, \hyperindexformat{\spxpagem}{152}
+  \item \spxentry{re()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{140}
+  \item \spxentry{read()}\spxextra{modulyje param}, \hyperpage{35}
+  \item \spxentry{ref}\spxextra{modulje base}, \hyperpage{23}
+  \item \spxentry{ref}\spxextra{modulje comment}, \hyperpage{39}
+  \item \spxentry{ref}\spxextra{modulje dataset}, \hyperpage{20}
+  \item \spxentry{ref}\spxextra{modulje enum}, \hyperpage{33}
+  \item \spxentry{ref}\spxextra{modulje lang}, \hyperpage{41}
+  \item \spxentry{ref}\spxextra{modulje migrate}, \hyperpage{43}
+  \item \spxentry{ref}\spxextra{modulje model}, \hyperpage{26}
+  \item \spxentry{ref}\spxextra{modulje param}, \hyperpage{34}
+  \item \spxentry{ref}\spxextra{modulje prefix}, \hyperpage{30}
+  \item \spxentry{ref}\spxextra{modulje property}, \hyperpage{29}
+  \item \spxentry{ref}\spxextra{modulje resource}, \hyperpage{21}
+  \item \spxentry{ref}\spxextra{modulje type}, \hyperpage{54}
+  \item \spxentry{ref}\spxextra{įtaisytasis kintamasis}, \hyperpage{17}
+  \item \spxentry{reguliarioji išraiška}, \hyperindexformat{\spxpagem}{152}
+  \item \spxentry{replace()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{140}
+  \item \spxentry{resource}
+    \subitem \spxentry{module}, \hyperpage{20}, \hyperpage{22}
+  \item \spxentry{resource}\spxextra{įtaisytasis kintamasis}, \hyperpage{14}
+  \item \spxentry{REST API}, \hyperindexformat{\spxpagem}{148}
+  \item \spxentry{return()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{141}
+  \item \spxentry{RFC}
+    \subitem \spxentry{RFC 4180}, \hyperpage{12}
+    \subitem \spxentry{RFC 9562}, \hyperpage{9}, \hyperpage{16}
+
+  \indexspace
+  \bigletter S
+  \item \spxentry{savybė}, \hyperindexformat{\spxpagem}{151}
+  \item \spxentry{select()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{138}
+  \item \spxentry{self()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{130}
+  \item \spxentry{set()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{133}, \hyperpage{141}
+  \item \spxentry{sisteminis pavadinimas}, \hyperindexformat{\spxpagem}{149}
+  \item \spxentry{sort()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{138}
+  \item \spxentry{source}\spxextra{modulje comment}, \hyperpage{39}
+  \item \spxentry{source}\spxextra{modulje dataset}, \hyperpage{20}
+  \item \spxentry{source}\spxextra{modulje enum}, \hyperpage{33}
+  \item \spxentry{source}\spxextra{modulje model}, \hyperpage{26}
+  \item \spxentry{source}\spxextra{modulje param}, \hyperpage{34}
+  \item \spxentry{source}\spxextra{modulje property}, \hyperpage{29}
+  \item \spxentry{source}\spxextra{modulje resource}, \hyperpage{21}
+  \item \spxentry{source}\spxextra{įtaisytasis kintamasis}, \hyperpage{17}
+  \item \spxentry{split()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{140}
+  \item \spxentry{stack()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{133}
+  \item \spxentry{startswith()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{138}
+  \item \spxentry{string}\spxextra{modulje type}, \hyperpage{45}
+  \item \spxentry{strip()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{141}
+  \item \spxentry{sub()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{131}
+  \item \spxentry{subjektas}, \hyperindexformat{\spxpagem}{151}
+  \item \spxentry{sudėtinis tipas}, \hyperindexformat{\spxpagem}{149}
+  \item \spxentry{swap()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{141}
+  \item \spxentry{switch}
+    \subitem \spxentry{module}, \hyperpage{39}
+  \item \spxentry{switch()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{141}
+  \item \spxentry{switch.prepare}\spxextra{modulje switch}, \hyperpage{39}
+  \item \spxentry{switch.source}\spxextra{modulje switch}, \hyperpage{39}
+
+  \indexspace
+  \bigletter T
+  \item \spxentry{tabular()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{116}
+  \item \spxentry{tail()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{135}
+  \item \spxentry{text}\spxextra{modulje type}, \hyperpage{46}
+  \item \spxentry{TGIĮ}, \hyperindexformat{\spxpagem}{152}
+  \item \spxentry{time}\spxextra{modulje type}, \hyperpage{48}
+  \item \spxentry{title}\spxextra{modulje comment}, \hyperpage{40}
+  \item \spxentry{title}\spxextra{modulje dataset}, \hyperpage{20}
+  \item \spxentry{title}\spxextra{modulje enum}, \hyperpage{33}
+  \item \spxentry{title}\spxextra{modulje lang}, \hyperpage{41}
+  \item \spxentry{title}\spxextra{modulje migrate}, \hyperpage{43}
+  \item \spxentry{title}\spxextra{modulje model}, \hyperpage{28}
+  \item \spxentry{title}\spxextra{modulje prefix}, \hyperpage{30}
+  \item \spxentry{title}\spxextra{modulje property}, \hyperpage{29}
+  \item \spxentry{title}\spxextra{modulje resource}, \hyperpage{22}
+  \item \spxentry{title}\spxextra{įtaisytasis kintamasis}, \hyperpage{18}
+  \item \spxentry{tuple()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{132}
+  \item \spxentry{type}
+    \subitem \spxentry{module}, \hyperpage{44}
+  \item \spxentry{type}\spxextra{modulje dataset}, \hyperpage{19}
+  \item \spxentry{type}\spxextra{modulje model}, \hyperpage{25}
+  \item \spxentry{type}\spxextra{modulje property}, \hyperpage{29}
+  \item \spxentry{type}\spxextra{modulje resource}, \hyperpage{20}
+  \item \spxentry{type}\spxextra{įtaisytasis kintamasis}, \hyperpage{16}
+
+  \indexspace
+  \bigletter U
+  \item \spxentry{update()}\spxextra{modulyje migrate}, \hyperpage{43}
+  \item \spxentry{upper()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{141}
+  \item \spxentry{URI}, \hyperindexformat{\spxpagem}{152}
+  \item \spxentry{uri}\spxextra{modulje comment}, \hyperpage{40}
+  \item \spxentry{uri}\spxextra{modulje model}, \hyperpage{27}
+  \item \spxentry{uri}\spxextra{modulje prefix}, \hyperpage{30}
+  \item \spxentry{uri}\spxextra{modulje property}, \hyperpage{29}
+  \item \spxentry{uri}\spxextra{modulje type}, \hyperpage{56}
+  \item \spxentry{uri}\spxextra{įtaisytasis kintamasis}, \hyperpage{17}
+  \item \spxentry{url}\spxextra{modulje type}, \hyperpage{56}
+  \item \spxentry{url()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{141}
+
+  \indexspace
+  \bigletter V
+  \item \spxentry{var()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{130}
+  \item \spxentry{viešasis žodynas}, \hyperindexformat{\spxpagem}{149}
+  \item \spxentry{VIIVĮ}, \hyperindexformat{\spxpagem}{153}
+  \item \spxentry{VSSA}, \hyperindexformat{\spxpagem}{153}
+
+  \indexspace
+  \bigletter W
+  \item \spxentry{web servisas}, \hyperindexformat{\spxpagem}{149}
+  \item \spxentry{weekly()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{140}
+
+  \indexspace
+  \bigletter X
+  \item \spxentry{xpath()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{117}
+
+  \indexspace
+  \bigletter Y
+  \item \spxentry{YAML}, \hyperindexformat{\spxpagem}{149}
+  \item \spxentry{yearly()}
+    \subitem \spxentry{built\sphinxhyphen{}in function}, \hyperpage{140}
+
+  \indexspace
+  \bigletter �
+  \item \spxentry{ŠDSA}, \hyperindexformat{\spxpagem}{153}
+  \item \spxentry{žodynas}, \hyperindexformat{\spxpagem}{151}
+
+\end{sphinxtheindex}

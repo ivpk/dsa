@@ -1,0 +1,2089 @@
+
+<!DOCTYPE html>
+
+
+<html lang="lt" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Formulės &#8212; DSA</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-examples.css?v=e236af4b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=f0eb6ae9" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=4ee96f2e"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="_static/translations.js?v=e4682f4a"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'formules';</script>
+    <link rel="index" title="Indeksas" href="genindex.html" />
+    <link rel="search" title="Paieška" href="search.html" />
+    <link rel="next" title="Sąvokos" href="savokos.html" />
+    <link rel="prev" title="Išoriniai žodynai" href="zodynai.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="lt"/>
+  <meta name="docsearch:version" content="1.1" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">DSA</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Paieška" aria-label="Paieška" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Paieška</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="modelis.html">Koncepcinis modelis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formatas.html">Lentelės formatas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dimensijos.html">Dimensijos</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="tipai.html">Duomenų tipai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pavadinimai.html">Kodiniai pavadinimai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vienetai.html">Matavimo vienetai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apibendrinimas.html">Apibendrinimas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="identifikatoriai.html">Asociacija</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modeliai/funkciniai.html">Funkciniai modeliai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="branda.html">Brandos lygiai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prieiga.html">Prieigos lygiai</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="schemos/index.html">Duomenų schemos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="schemos/xsd.html">XSD</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="saltiniai.html">Duomenų šaltiniai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vardu-erdves.html">Vardų erdvės</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zodynai.html">Išoriniai žodynai</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Formulės</a></li>
+<li class="toctree-l1"><a class="reference internal" href="savokos.html">Sąvokos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keitimai.html">Keitimų istorija</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ivpk/dsa" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Šaltinio saugykla"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ivpk/dsa/issues/new?title=Issue%20on%20page%20%2Fformules.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Atidarykite problemą"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Pilno ekrano režimas"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Paieška" aria-label="Paieška" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Formulės</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Turinys </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gramatika">Gramatika</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintakses-medis">Sintaksės medis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funkciju-iskvietimas">Funkcijų iškvietimas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poziciniai-argumentai">Poziciniai argumentai</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vardiniai-argumentai">Vardiniai argumentai</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alternatyvus-funkcijos-iskvietimas">Alternatyvus funkcijos iškvietimas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standartines-funkcijos">Standartinės funkcijos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bind"><code class="docutils literal notranslate"><span class="pre">bind()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prop"><code class="docutils literal notranslate"><span class="pre">prop()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#item"><code class="docutils literal notranslate"><span class="pre">item()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#param"><code class="docutils literal notranslate"><span class="pre">param()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#var"><code class="docutils literal notranslate"><span class="pre">var()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#self"><code class="docutils literal notranslate"><span class="pre">self()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#or"><code class="docutils literal notranslate"><span class="pre">or()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#and"><code class="docutils literal notranslate"><span class="pre">and()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not"><code class="docutils literal notranslate"><span class="pre">not()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eq"><code class="docutils literal notranslate"><span class="pre">eq()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ne"><code class="docutils literal notranslate"><span class="pre">ne()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lt"><code class="docutils literal notranslate"><span class="pre">lt()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#le"><code class="docutils literal notranslate"><span class="pre">le()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gt"><code class="docutils literal notranslate"><span class="pre">gt()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ge"><code class="docutils literal notranslate"><span class="pre">ge()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add"><code class="docutils literal notranslate"><span class="pre">add()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sub"><code class="docutils literal notranslate"><span class="pre">sub()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mul"><code class="docutils literal notranslate"><span class="pre">mul()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#div"><code class="docutils literal notranslate"><span class="pre">div()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mod"><code class="docutils literal notranslate"><span class="pre">mod()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#positive"><code class="docutils literal notranslate"><span class="pre">positive()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#negative"><code class="docutils literal notranslate"><span class="pre">negative()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuple"><code class="docutils literal notranslate"><span class="pre">tuple()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list"><code class="docutils literal notranslate"><span class="pre">list()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getattr"><code class="docutils literal notranslate"><span class="pre">getattr()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getitem"><code class="docutils literal notranslate"><span class="pre">getitem()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict"><code class="docutils literal notranslate"><span class="pre">dict()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set"><code class="docutils literal notranslate"><span class="pre">set()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#op"><code class="docutils literal notranslate"><span class="pre">op()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stack"><code class="docutils literal notranslate"><span class="pre">stack()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datetime"><code class="docutils literal notranslate"><span class="pre">datetime()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#date"><code class="docutils literal notranslate"><span class="pre">date()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">date()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#failai">Failai</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file"><code class="docutils literal notranslate"><span class="pre">file()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extract"><code class="docutils literal notranslate"><span class="pre">extract()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decompress"><code class="docutils literal notranslate"><span class="pre">decompress()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stulpeliai-lenteleje">Stulpeliai lentelėje</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#header"><code class="docutils literal notranslate"><span class="pre">header()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#head"><code class="docutils literal notranslate"><span class="pre">head()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tail"><code class="docutils literal notranslate"><span class="pre">tail()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#duomenu-atranka">Duomenų atranka</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><code class="docutils literal notranslate"><span class="pre">eq()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><code class="docutils literal notranslate"><span class="pre">ne()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><code class="docutils literal notranslate"><span class="pre">gt()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><code class="docutils literal notranslate"><span class="pre">lt()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><code class="docutils literal notranslate"><span class="pre">ge()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12"><code class="docutils literal notranslate"><span class="pre">le()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in"><code class="docutils literal notranslate"><span class="pre">in()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notin"><code class="docutils literal notranslate"><span class="pre">notin()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contains"><code class="docutils literal notranslate"><span class="pre">contains()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#startswith"><code class="docutils literal notranslate"><span class="pre">startswith()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#endswith"><code class="docutils literal notranslate"><span class="pre">endswith()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13"><code class="docutils literal notranslate"><span class="pre">and()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14"><code class="docutils literal notranslate"><span class="pre">or()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sort"><code class="docutils literal notranslate"><span class="pre">sort()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select"><code class="docutils literal notranslate"><span class="pre">select()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#include"><code class="docutils literal notranslate"><span class="pre">include()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exclude"><code class="docutils literal notranslate"><span class="pre">exclude()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expand"><code class="docutils literal notranslate"><span class="pre">expand()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extends"><code class="docutils literal notranslate"><span class="pre">extends()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limit"><code class="docutils literal notranslate"><span class="pre">limit()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#page"><code class="docutils literal notranslate"><span class="pre">page()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#periodiskumas">Periodiškumas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cron"><code class="docutils literal notranslate"><span class="pre">cron()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hourly"><code class="docutils literal notranslate"><span class="pre">hourly()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#daily"><code class="docutils literal notranslate"><span class="pre">daily()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weekly"><code class="docutils literal notranslate"><span class="pre">weekly()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monthly"><code class="docutils literal notranslate"><span class="pre">monthly()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#yearly"><code class="docutils literal notranslate"><span class="pre">yearly()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statines-reiksmes">Statinės reikšmės</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformavimas">Transformavimas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#null"><code class="docutils literal notranslate"><span class="pre">null()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replace"><code class="docutils literal notranslate"><span class="pre">replace()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#re"><code class="docutils literal notranslate"><span class="pre">re()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cast"><code class="docutils literal notranslate"><span class="pre">cast()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split"><code class="docutils literal notranslate"><span class="pre">split()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strip"><code class="docutils literal notranslate"><span class="pre">strip()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lower"><code class="docutils literal notranslate"><span class="pre">lower()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upper"><code class="docutils literal notranslate"><span class="pre">upper()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#len"><code class="docutils literal notranslate"><span class="pre">len()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choose"><code class="docutils literal notranslate"><span class="pre">choose()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#switch"><code class="docutils literal notranslate"><span class="pre">switch()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case"><code class="docutils literal notranslate"><span class="pre">case()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15"><code class="docutils literal notranslate"><span class="pre">case()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#swap"><code class="docutils literal notranslate"><span class="pre">swap()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#return"><code class="docutils literal notranslate"><span class="pre">return()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16"><code class="docutils literal notranslate"><span class="pre">set()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#url"><code class="docutils literal notranslate"><span class="pre">url()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#query"><code class="docutils literal notranslate"><span class="pre">query()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#path"><code class="docutils literal notranslate"><span class="pre">path()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kompleksines-strukturos">Kompleksinės struktūros</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21"><code class="docutils literal notranslate"><span class="pre">getattr()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22"><code class="docutils literal notranslate"><span class="pre">getitem()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first"><code class="docutils literal notranslate"><span class="pre">first()</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="formules">
+<span id="id1"></span><h1>Formulės<a class="headerlink" href="#formules" title="Link to this heading">#</a></h1>
+<p>Formulės rašomos <a class="reference internal" href="formatas.html#prepare" title="prepare"><code class="xref py py-data docutils literal notranslate"><span class="pre">prepare</span></code></a> stulpelyje. Formulių pagalba galima atlikti
+įvairius duomenų transformavimo, nuasmeninimo, filtravimo ir kokybės tikrinimo
+veiksmus.</p>
+<p>Kadangi yra labai didelė įvairovė duomenų formatų ir duomenų valdymo mechanizmų,
+siekiant suvaldyti visą šią įvairovę <a class="reference internal" href="savokos.html#term-DSA"><span class="xref std std-term">DSA</span></a> formulės leidžia vieningai
+aprašyti veiksmus su duomenimis. Vėliau formulės verčiamos į vieningą <a class="reference external" href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">AST</a>, kurį
+gali interpretuoti automatizuotos priemonės, priklausomai nuo duomenų šaltinio
+ir konteksto ir DSA sluoksnio.</p>
+<section id="gramatika">
+<h2>Gramatika<a class="headerlink" href="#gramatika" title="Link to this heading">#</a></h2>
+<p>Formulių sintaksė atitinką šią <a class="reference external" href="https://en.wikipedia.org/wiki/Augmented_Backus–Naur_form">ABNF</a> gramatiką:</p>
+<div class="highlight-abnf notranslate"><div class="highlight"><pre><span></span><span class="nc">formula</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nc">testlist</span>
+<span class="nc">testlist</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nc">test</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="l">&quot;,&quot;</span><span class="w"> </span><span class="nc">test</span><span class="p">)</span><span class="w"> </span><span class="o">*1</span><span class="l">&quot;,&quot;</span>
+<span class="nc">test</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="nc">or</span>
+<span class="nc">or</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="nc">and</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="l">&quot;|&quot;</span><span class="w"> </span><span class="nc">and</span><span class="p">)</span>
+<span class="nc">and</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="nc">not</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="l">&quot;&amp;&quot;</span><span class="w"> </span><span class="nc">not</span><span class="p">)</span>
+<span class="nc">not</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="l">&quot;!&quot;</span><span class="w"> </span><span class="nc">not</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nc">comp</span>
+<span class="nc">comp</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="nc">expr</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="nc">compop</span><span class="w"> </span><span class="nc">expr</span><span class="p">)</span>
+<span class="nc">expr</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="nc">term</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="nc">termop</span><span class="w"> </span><span class="nc">term</span><span class="p">)</span>
+<span class="nc">term</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="nc">factor</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="nc">factorop</span><span class="w"> </span><span class="nc">factor</span><span class="p">)</span>
+<span class="nc">factor</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nc">sign</span><span class="w"> </span><span class="nc">factor</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nc">composition</span>
+<span class="nc">composition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">atom</span><span class="w"> </span><span class="o">*</span><span class="nc">trailer</span>
+<span class="nc">atom</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="l">&quot;(&quot;</span><span class="w"> </span><span class="o">*1</span><span class="nc">group</span><span class="w"> </span><span class="l">&quot;)&quot;</span>
+<span class="w">            </span><span class="o">/</span><span class="w"> </span><span class="l">&quot;[&quot;</span><span class="w"> </span><span class="o">*1</span><span class="nc">list</span><span class="w"> </span><span class="l">&quot;]&quot;</span>
+<span class="w">            </span><span class="o">/</span><span class="w"> </span><span class="nc">func</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nc">value</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nc">name</span>
+<span class="nc">group</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="nc">test</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="l">&quot;,&quot;</span><span class="w"> </span><span class="nc">test</span><span class="p">)</span><span class="w"> </span><span class="o">*1</span><span class="l">&quot;,&quot;</span>
+<span class="nc">list</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="nc">test</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="l">&quot;,&quot;</span><span class="w"> </span><span class="nc">test</span><span class="p">)</span><span class="w"> </span><span class="o">*1</span><span class="l">&quot;,&quot;</span>
+<span class="nc">trailer</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="l">&quot;[&quot;</span><span class="w"> </span><span class="o">*1</span><span class="nc">filter</span><span class="w"> </span><span class="l">&quot;]&quot;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nc">method</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nc">attr</span>
+<span class="nc">func</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="nc">name</span><span class="w"> </span><span class="nc">call</span>
+<span class="nc">method</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="l">&quot;.&quot;</span><span class="w"> </span><span class="nc">name</span><span class="w"> </span><span class="nc">call</span>
+<span class="nc">call</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="l">&quot;(&quot;</span><span class="w"> </span><span class="o">*1</span><span class="nc">arglist</span><span class="w"> </span><span class="l">&quot;)&quot;</span>
+<span class="nc">arglist</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nc">argument</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="l">&quot;,&quot;</span><span class="w"> </span><span class="nc">argument</span><span class="p">)</span><span class="w"> </span><span class="o">*1</span><span class="l">&quot;,&quot;</span>
+<span class="nc">argument</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nc">test</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nc">kwarg</span>
+<span class="nc">kwarg</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="nc">name</span><span class="w"> </span><span class="l">&quot;:&quot;</span><span class="w"> </span><span class="nc">test</span>
+<span class="nc">filter</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nc">test</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="l">&quot;,&quot;</span><span class="w"> </span><span class="nc">test</span><span class="p">)</span><span class="w"> </span><span class="o">*1</span><span class="l">&quot;,&quot;</span>
+<span class="nc">attr</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="l">&quot;.&quot;</span><span class="w"> </span><span class="nc">name</span>
+<span class="nc">value</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="nc">null</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nc">bool</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nc">integer</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nc">number</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nc">string</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nc">star</span>
+<span class="nc">compop</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="l">&quot;&gt;=&quot;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="l">&quot;&lt;=&quot;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="l">&quot;!=&quot;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="l">&quot;=&quot;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="l">&quot;&lt;&quot;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="l">&quot;&gt;&quot;</span>
+<span class="nc">termpop</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="l">&quot;+&quot;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="l">&quot;-&quot;</span>
+<span class="nc">factorop</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="l">&quot;*&quot;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="l">&quot;/&quot;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="l">&quot;%&quot;</span>
+<span class="nc">sign</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="l">&quot;+&quot;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="l">&quot;-&quot;</span>
+<span class="nc">star</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="l">&quot;*&quot;</span>
+<span class="nc">name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span>~<span class="o">/</span><span class="p">[</span><span class="nc">a-</span>z_<span class="p">][</span><span class="nc">a-z0-</span><span class="o">9</span>_<span class="p">]</span><span class="o">*/</span><span class="nc">i</span>
+<span class="nc">number</span><span class="w">      </span><span class="o">=</span><span class="w"> </span>~<span class="o">/</span>\<span class="nc">d</span>+<span class="p">(</span>\.\<span class="nc">d</span>+<span class="p">)</span>?<span class="o">/</span>
+<span class="nc">integer</span><span class="w">     </span><span class="o">=</span><span class="w"> </span>~<span class="o">/0</span>|<span class="p">[</span><span class="o">1</span>-<span class="o">9</span><span class="p">]</span>\<span class="nc">d</span><span class="o">*/</span>
+<span class="nc">bool</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="l">&quot;false&quot;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="l">&quot;true&quot;</span>
+<span class="nc">null</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="l">&quot;null&quot;</span>
+<span class="nc">string</span><span class="w">      </span><span class="o">=</span><span class="w"> </span>~<span class="o">/</span><span class="p">(</span>?!<span class="l">&quot;&quot;</span><span class="p">)</span>.<span class="o">*</span>?<span class="p">(</span>?&lt;!\\<span class="p">)(</span>\\\\<span class="p">)</span><span class="o">*</span>?&quot;|&#39;<span class="p">(</span>?!&#39;&#39;<span class="p">)</span>.<span class="o">*</span>?
+<span class="w">                </span><span class="p">(</span>?&lt;!\\<span class="p">)(</span>\\\\<span class="p">)</span><span class="o">*</span>?&#39;<span class="o">/</span><span class="nc">i</span>
+</pre></div>
+</div>
+</section>
+<section id="sintakses-medis">
+<h2>Sintaksės medis<a class="headerlink" href="#sintakses-medis" title="Link to this heading">#</a></h2>
+<p>Formulės verčiamos į vieningą abstraktų sintaksės medį. Vieningas abstraktus
+sintaksės medis leidžia atskirti formulės skaitymo ir interpretavimo veiklas.</p>
+<p>Abstraktus sintaksės medis sudarytas iš vienodų elementų turinčių tokias
+savybes:</p>
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">name</span></span></dt>
+<dd><p>Funkcijos pavadinimas.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">args</span></span></dt>
+<dd><p>Funkcijos argumentų sąrašas, kurį gali sudaryti konkrečios reikšmės ar kiti
+medžio elementai, veiksmai.</p>
+</dd></dl>
+
+<p>Visos formulėje naudojamos išraiškos sintaksės medyje verčiamos į funkcijų ir
+argumentų medį. Pavyzdžiui <code class="docutils literal notranslate"><span class="pre">test(&quot;a&quot;,</span> <span class="pre">&quot;b&quot;)</span></code> bus verčiamas į:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;args&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">],</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="funkciju-iskvietimas">
+<h2>Funkcijų iškvietimas<a class="headerlink" href="#funkciju-iskvietimas" title="Link to this heading">#</a></h2>
+<p>Formulės susideda iš vykdomų funkcijų sekos. Pavyzdžiui funkcijos pavadinimu
+<code class="docutils literal notranslate"><span class="pre">test</span></code> vykdymas formulėje atrodys taip:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">test</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Aukščiau pavyzdyje pateikta formulė vykdo funkciją <code class="docutils literal notranslate"><span class="pre">test</span></code>, be argumentų. Tačiau
+funkcijos gali turėti pozicinius ir vardinius argumentus.</p>
+</section>
+<section id="poziciniai-argumentai">
+<h2>Poziciniai argumentai<a class="headerlink" href="#poziciniai-argumentai" title="Link to this heading">#</a></h2>
+<p>Poziciniai argumentai perduodami taip:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Pavyzdyje, funkcijai <code class="docutils literal notranslate"><span class="pre">test</span></code> perduodami trys argumentai <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code> ir <code class="docutils literal notranslate"><span class="pre">c</span></code>. Šioje
+dokumentacijoje, tais atvejais, kai funkcijos pozicinių argumentų skaičius nėra
+fiksuotas, naudojama <code class="docutils literal notranslate"><span class="pre">*args</span></code> išraiška, kur <code class="docutils literal notranslate"><span class="pre">*</span></code> nurodo, kad pozicinių argumentų
+gali būti 0 ar daugiau.</p>
+</section>
+<section id="vardiniai-argumentai">
+<h2>Vardiniai argumentai<a class="headerlink" href="#vardiniai-argumentai" title="Link to this heading">#</a></h2>
+<p>Vardiniai argumentai funkcijai perduodami taip:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Pozicinius argumentus būtina perduoti tiksliai tokia tvarka, kokios tikisi
+funkcija. Tačiau vardinius argumentus, galima perduoti, bet kuria tvarka.</p>
+<p>Jei vardinių argumentų sąrašas nėra fiksuotas, dokumentacijoje toks argumentų
+sąrašas užrašomas <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> forma, kur <code class="docutils literal notranslate"><span class="pre">**</span></code> nurodo, kad vardinių argumentų
+gali būti 0 ar daugiau.</p>
+</section>
+<section id="alternatyvus-funkcijos-iskvietimas">
+<h2>Alternatyvus funkcijos iškvietimas<a class="headerlink" href="#alternatyvus-funkcijos-iskvietimas" title="Link to this heading">#</a></h2>
+<p>Funkcijų iškvietimas gali būti užrašomas įprastiniu būdu, pavyzdžiui:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="n">test</span><span class="p">(</span><span class="n">test</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">b</span><span class="p">),</span> <span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Arba funkcijų grandinės (angl. <a class="reference external" href="https://en.wikipedia.org/wiki/Method_chaining">Method chain</a>) būdu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">test</span><span class="p">()</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Kadangi formulės dažnai naudojamos tam tikros reikšmės transformavimui, todėl
+dažnai formulė yra lengviau skaitoma, naudojant funkcijų grandinę.</p>
+<p><code class="docutils literal notranslate"><span class="pre">test(a)</span></code> yra <code class="docutils literal notranslate"><span class="pre">a.test()</span></code> arba <code class="docutils literal notranslate"><span class="pre">test(a,</span> <span class="pre">b)</span></code> ir <code class="docutils literal notranslate"><span class="pre">a.test(b)</span></code> yra ekvivalentūs
+(<a class="reference external" href="https://en.wikipedia.org/wiki/Uniform_Function_Call_Syntax">UFCS</a>).</p>
+</section>
+<section id="standartines-funkcijos">
+<h2>Standartinės funkcijos<a class="headerlink" href="#standartines-funkcijos" title="Link to this heading">#</a></h2>
+<p>Priklausomai nuo duomenų šaltinio ar konteksto gali būti naudojami skirtingi
+veiksmai, tačiau žemiau yra pateikti bendrosios paskirties veiksmai:</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="bind">
+<span class="sig-name descname"><span class="pre">bind</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bind" title="Link to this definition">#</a></dt>
+<dd><p>Rodo į reikšmę pavadinimu <code class="docutils literal notranslate"><span class="pre">name</span></code> iš konteksto. Reikšmės ieškoma tokia
+tvarka:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#var" title="var"><code class="xref py py-func docutils literal notranslate"><span class="pre">var()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#param" title="param"><code class="xref py py-func docutils literal notranslate"><span class="pre">param()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#item" title="item"><code class="xref py py-func docutils literal notranslate"><span class="pre">item()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#prop" title="prop"><code class="xref py py-func docutils literal notranslate"><span class="pre">prop()</span></code></a></p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="prop">
+<span class="sig-name descname"><span class="pre">prop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prop" title="Link to this definition">#</a></dt>
+<dd><p>Modelio savybė pavadinimu <code class="docutils literal notranslate"><span class="pre">name</span></code> iš <a class="reference internal" href="formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a> stulpelio.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="item">
+<span class="sig-name descname"><span class="pre">item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#item" title="Link to this definition">#</a></dt>
+<dd><p>Sąrašo elemento savybė pavadinimu <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="param">
+<span class="sig-name descname"><span class="pre">param</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#param" title="Link to this definition">#</a></dt>
+<dd><p>Parametras pavadinimu <code class="docutils literal notranslate"><span class="pre">name</span></code>. Žiūrėti <a class="reference internal" href="dimensijos.html#param"><span class="std std-ref">param</span></a>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="var">
+<span class="sig-name descname"><span class="pre">var</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#var" title="Link to this definition">#</a></dt>
+<dd><p>Kintamasis apibrėžtas <a class="reference internal" href="#id16" title="set"><code class="xref py py-func docutils literal notranslate"><span class="pre">set()</span></code></a> funkcijos pagalba.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="self">
+<span class="sig-name descname"><span class="pre">self</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#self" title="Link to this definition">#</a></dt>
+<dd><p>Rodo į aktyvią reikšmę, naudojamas <a class="reference internal" href="dimensijos.html#property.prepare" title="property.prepare"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.prepare</span></code></a> formulėse.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="or">
+<span class="sig-name descname"><span class="pre">or</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#or" title="Link to this definition">#</a></dt>
+<dd><p>Taip pat galima naudoti tokia išraiška:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">|</span> <span class="n">b</span> <span class="o">|</span> <span class="n">c</span>
+</pre></div>
+</div>
+<p>Grąžiną pirmą netuščią reikšmę. Pirmoji netuščia reikšmė nutraukia sekančių
+<code class="docutils literal notranslate"><span class="pre">args</span></code> argumentų interpretavimą.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="and">
+<span class="sig-name descname"><span class="pre">and</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#and" title="Link to this definition">#</a></dt>
+<dd><p>Taip pat galima naudoti tokia išraiška:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&amp;</span> <span class="n">b</span> <span class="o">&amp;</span> <span class="n">c</span>
+</pre></div>
+</div>
+<p>Grąžina pirmą tuščią reikšmę arba paskutinę reikšmę, jei prieš tai esančios
+reikšmės netuščios.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="not">
+<span class="sig-name descname"><span class="pre">not</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#not" title="Link to this definition">#</a></dt>
+<dd><p>Taip pat galima naudoti tokia išraiška:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!arg
+</pre></div>
+</div>
+<p>Jei <code class="docutils literal notranslate"><span class="pre">arg</span></code> tuščia grąžina <code class="docutils literal notranslate"><span class="pre">true</span></code>, priešingu atveju <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="eq">
+<span class="sig-name descname"><span class="pre">eq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#eq" title="Link to this definition">#</a></dt>
+<dd><p>Taip pat galima naudoti tokia išraiška:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">a</span></code> lygus <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ne">
+<span class="sig-name descname"><span class="pre">ne</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ne" title="Link to this definition">#</a></dt>
+<dd><p>Taip pat galima naudoti tokia išraiška:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">!=</span> <span class="n">b</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">a</span></code> nelygus <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lt">
+<span class="sig-name descname"><span class="pre">lt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lt" title="Link to this definition">#</a></dt>
+<dd><p>Taip pat galima naudoti tokia išraiška:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">a</span></code> mažiau už <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="le">
+<span class="sig-name descname"><span class="pre">le</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#le" title="Link to this definition">#</a></dt>
+<dd><p>Taip pat galima naudoti tokia išraiška:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;=</span> <span class="n">b</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">a</span></code> mažiau arba lygu už <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gt">
+<span class="sig-name descname"><span class="pre">gt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gt" title="Link to this definition">#</a></dt>
+<dd><p>Taip pat galima naudoti tokia išraiška:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">a</span></code> daugiau už <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ge">
+<span class="sig-name descname"><span class="pre">ge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ge" title="Link to this definition">#</a></dt>
+<dd><p>Taip pat galima naudoti tokia išraiška:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&gt;=</span> <span class="n">b</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">a</span></code> daugiau arba lygu už <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#add" title="Link to this definition">#</a></dt>
+<dd><p>Taip pat galima naudoti tokia išraiška:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">a</span></code> ir <code class="docutils literal notranslate"><span class="pre">b</span></code> suma.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sub">
+<span class="sig-name descname"><span class="pre">sub</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sub" title="Link to this definition">#</a></dt>
+<dd><p>Taip pat galima naudoti tokia išraiška:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">a</span></code> ir <code class="docutils literal notranslate"><span class="pre">b</span></code> skirtumas.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mul">
+<span class="sig-name descname"><span class="pre">mul</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mul" title="Link to this definition">#</a></dt>
+<dd><p>Taip pat galima naudoti tokia išraiška:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">a</span></code> ir <code class="docutils literal notranslate"><span class="pre">b</span></code> sandauga.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="div">
+<span class="sig-name descname"><span class="pre">div</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#div" title="Link to this definition">#</a></dt>
+<dd><p>Taip pat galima naudoti tokia išraiška:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">a</span></code> ir <code class="docutils literal notranslate"><span class="pre">b</span></code> dalyba.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mod">
+<span class="sig-name descname"><span class="pre">mod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mod" title="Link to this definition">#</a></dt>
+<dd><p>Taip pat galima naudoti tokia išraiška:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">a</span></code> ir <code class="docutils literal notranslate"><span class="pre">b</span></code> modulis.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="positive">
+<span class="sig-name descname"><span class="pre">positive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#positive" title="Link to this definition">#</a></dt>
+<dd><p>Taip pat galima naudoti tokia išraiška:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">a</span>
+</pre></div>
+</div>
+<p>Gali būti interpretuojamas skirtingai, priklausomai nuo konteksto.
+Įprastiniu atveju keičia skaičiaus ženklą.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="negative">
+<span class="sig-name descname"><span class="pre">negative</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#negative" title="Link to this definition">#</a></dt>
+<dd><p>Taip pat galima naudoti tokia išraiška:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">a</span>
+</pre></div>
+</div>
+<p>Gali būti interpretuojamas skirtingai, priklausomai nuo konteksto.
+Įprastiniu atveju keičia skaičiaus ženklą.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tuple">
+<span class="sig-name descname"><span class="pre">tuple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tuple" title="Link to this definition">#</a></dt>
+<dd><p>Taip pat galima naudoti tokia išraiška:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Grupė argumentų.</p>
+<dl class="simple">
+<dt>()</dt><dd><p>Tuščia grupė.</p>
+</dd>
+<dt>a, b</dt><dd><p>Tas pats, kas <code class="docutils literal notranslate"><span class="pre">tuple(a,</span> <span class="pre">b)</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="list">
+<span class="sig-name descname"><span class="pre">list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#list" title="Link to this definition">#</a></dt>
+<dd><p>Taip pat galima naudoti tokia išraiška:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">*</span><span class="n">args</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Sąrašas reikšmių.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="getattr">
+<span class="sig-name descname"><span class="pre">getattr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#getattr" title="Link to this definition">#</a></dt>
+<dd><p>Taip pat galima naudoti tokia išraiška:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">object</span><span class="o">.</span><span class="n">attr</span>
+</pre></div>
+</div>
+<p>Gaunamos reikšmės pagal atributą arba raktą.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="getitem">
+<span class="sig-name descname"><span class="pre">getitem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#getitem" title="Link to this definition">#</a></dt>
+<dd><p>Taip pat galima naudoti tokia išraiška:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Gaunamos reikšmės pagal atributą arba raktą.</p>
+<p><a class="reference internal" href="#id22" title="getitem"><code class="xref py py-func docutils literal notranslate"><span class="pre">getitem()</span></code></a> gali būti interpretuojamas kaip sąrašo reikšmių filtras:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dict">
+<span class="sig-name descname"><span class="pre">dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dict" title="Link to this definition">#</a></dt>
+<dd><p>Taip pat galima naudoti tokia išraiška:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">a</span><span class="p">:</span> <span class="n">b</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Sudėtinė duomenų struktūra.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="set">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#set" title="Link to this definition">#</a></dt>
+<dd><p>Taip pat galima naudoti tokia išraiška:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Reikšmių aibė.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="op">
+<span class="sig-name descname"><span class="pre">op</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operator</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#op" title="Link to this definition">#</a></dt>
+<dd><p>Taip pat galima naudoti tokia išraiška:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Operatoriai gali būti naudojami kaip argumentai.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="stack">
+<span class="sig-name descname"><span class="pre">stack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stack" title="Link to this definition">#</a></dt>
+<dd><p>Visus stulpelius išskyrus <code class="docutils literal notranslate"><span class="pre">exclude</span></code> verčia į vieną stulpelių eilutei
+suteikiant <code class="docutils literal notranslate"><span class="pre">columns</span></code> pavadinimą, o reikšmių stulpeliui <code class="docutils literal notranslate"><span class="pre">values</span></code> pavadinimą.
+Pavyzdžiui:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>vertinimas</p></th>
+<th class="head"><p>2015P2</p></th>
+<th class="head"><p>2016P2</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Neigiamai</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Teigiamai</p></td>
+<td><p>39</p></td>
+<td><p>28</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Tokiai lentelei pritaikius <code class="docutils literal notranslate"><span class="pre">stack(&quot;data&quot;,</span> <span class="pre">&quot;rodiklis&quot;,</span> <span class="pre">[&quot;vertinimas&quot;])</span></code>
+transformaciją, gausime tokį rezultatą:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>vertinimas</p></th>
+<th class="head"><p>data</p></th>
+<th class="head"><p>rodiklis</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Neigiamai</p></td>
+<td><p>2015P2</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Neigiamai</p></td>
+<td><p>2016P2</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>Teigiamai</p></td>
+<td><p>2015P2</p></td>
+<td><p>39</p></td>
+</tr>
+<tr class="row-odd"><td><p>Teigiamai</p></td>
+<td><p>2016P2</p></td>
+<td><p>28</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datetime">
+<span class="sig-name descname"><span class="pre">datetime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime" title="Link to this definition">#</a></dt>
+<dd><p>Išgaunama data ir laikas iš str, naudojant <a class="reference external" href="https://strftime.org/">strftime</a> formatą.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="date">
+<span class="sig-name descname"><span class="pre">date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#date" title="Link to this definition">#</a></dt>
+<dd><p>išgaunama data iš str, naudojant <a class="reference external" href="https://strftime.org/">strftime</a> formatą.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datetime</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Link to this definition">#</a></dt>
+<dd><p>Gražinama data iš datos ir laiko.</p>
+</dd></dl>
+
+</section>
+<section id="failai">
+<span id="id3"></span><h2>Failai<a class="headerlink" href="#failai" title="Link to this heading">#</a></h2>
+<p>Dažnai duomenys teikiami failų pavidalu, kurie gali būti saugomi tiek lokaliai
+failų sistemoje, tiek nuotoliniame serveryje. Failai gali būti suspausti ir
+patalpinti į archyvo konteinerius. <a class="reference internal" href="savokos.html#term-DSA"><span class="xref std std-term">DSA</span></a> leidžia aprašyti įvairius
+prieigos prie duomenų, saugomų failuose, atvejus.</p>
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">resource.source</span></span></dt>
+<dd><p>Nutolusiame serveryje saugomo failo <a class="reference internal" href="savokos.html#term-URI"><span class="xref std std-term">URI</span></a> arba kelias iki lokalaus
+katalogo. Lokalaus katalogo kelias gali būti pateikiamas tiek <a class="reference internal" href="savokos.html#term-POSIX"><span class="xref std std-term">POSIX</span></a>,
+tiek <a class="reference internal" href="savokos.html#term-DOS"><span class="xref std std-term">DOS</span></a> formatais, priklausomai nuo to, kokioje operacinėje
+sistemoje failai saugomi.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">resource.prepare</span></span></dt>
+<dd><dl class="py function">
+<dt class="sig sig-object py" id="file">
+<span class="sig-name descname"><span class="pre">file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'utf-8'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parametrai<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>resource</strong> -- Kelias arba URI iki failo.</p></li>
+<li><p><strong>encoding</strong> -- Failo koduotę.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Ši funkcija leidžia nurodyti failo koduotę, jei failas yra užkoduotas
+kita, nei UTF-8 koduote. Pilną palaikomų koduočių sąrašą galite rasti
+<a class="reference external" href="https://docs.python.org/3/library/codecs.html#standard-encodings">šiame sąraše</a>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="extract">
+<span class="sig-name descname"><span class="pre">extract</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#extract" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parametrai<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>resource</strong> -- Kelias arba URI iki archyvo failo arba failo objektas.</p></li>
+<li><p><strong>type</strong> -- Archyvo tipas.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Išpakuoja archyvą, kuriame saugomi failai. Galimos <code class="docutils literal notranslate"><span class="pre">type</span></code> reikšmės:</p>
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">zip</span></span></dt>
+<dd></dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">tar</span></span></dt>
+<dd></dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">rar</span></span></dt>
+<dd></dd></dl>
+
+<p>Funkcijos rezultatas yra archyvo objektas, kuris leidžia pasiekti
+esančius archyvo failus <a class="reference internal" href="#id22" title="getitem"><code class="xref py py-func docutils literal notranslate"><span class="pre">getitem()</span></code></a> funkcijos pagalba.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="decompress">
+<span class="sig-name descname"><span class="pre">decompress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#decompress" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parametrai<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>resource</strong> -- Kelias arba URI iki archyvo failo arba failo objektas.</p></li>
+<li><p><strong>type</strong> -- Archyvo tipas.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Taikomas srautinis failo glaudinimo filtras. Galimos <code class="docutils literal notranslate"><span class="pre">type</span></code> reikšmės:</p>
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">gz</span></span></dt>
+<dd></dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">bz2</span></span></dt>
+<dd></dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">xz</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="stulpeliai-lenteleje">
+<span id="id5"></span><h2>Stulpeliai lentelėje<a class="headerlink" href="#stulpeliai-lenteleje" title="Link to this heading">#</a></h2>
+<p>CSV ar skaičiuoklių lentelėse stulpelių pavadinimai pateikiami pačioje
+lentelėje. Eilutė, kurioje surašyti pavadinimai nebūtinai gali būti pirma.
+Stulpelių pavadinimai gali būti pateikti keliose eilutėse iš kurių formuojamos
+kompleksinės struktūros (žiūrėti <a class="reference internal" href="#kompleksines-strukturos"><span class="std std-ref">Kompleksinės struktūros</span></a>). Įvairias
+situacijas galima aprašyti formulių pagalba.</p>
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">model.prepare</span></span></dt>
+<dd><dl class="py function">
+<dt class="sig sig-object py" id="header">
+<span class="sig-name descname"><span class="pre">header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">line</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#header" title="Link to this definition">#</a></dt>
+<dd><dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">null</span></span></dt>
+<dd><p>Lentelėje eilučių pavadinimų nėra. Tokiu atveju,
+<a class="reference internal" href="dimensijos.html#property.source" title="property.source"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.source</span></code></a> stulpelyje reikia pateikti stulpelio numerį,
+pradedant skaičiuoti nuo 0.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">line</span></span></dt>
+<dd><p>Nurodomas eilutės numeris, pradedant eilutes skaičiuoti nuo 0, kur
+yra pateikti lentelės stulpelių pavadinimai. Pagal nutylėjimą
+stulpelių pavadinimų ieškoma pirmoje eilutėje.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">*line</span></span></dt>
+<dd><p>Jei lentelė turi kompleksinę stulpelių struktūrą, tada galima
+pateikti daugiau nei vieną eilutės numerį iš kurių bus nustatomi
+stulpelių pavadinimai.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="head">
+<span class="sig-name descname"><span class="pre">head</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#head" title="Link to this definition">#</a></dt>
+<dd><p>Praleisti <code class="docutils literal notranslate"><span class="pre">n</span></code> einančių po stulpelių pavadinimų eilutės.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tail">
+<span class="sig-name descname"><span class="pre">tail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tail" title="Link to this definition">#</a></dt>
+<dd><p>Ignoruoti <code class="docutils literal notranslate"><span class="pre">n</span></code> eilučių failo pabaigoje.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">property.source</span></span></dt>
+<dd><p>Jei naudojamas <a class="reference internal" href="#header" title="header"><code class="xref py py-func docutils literal notranslate"><span class="pre">header(null)</span></code></a>, tada nurodomas stulpelio
+numeris, pradedant nuo 0.</p>
+<p>Jei naudojamas <a class="reference internal" href="#header" title="header"><code class="xref py py-func docutils literal notranslate"><span class="pre">header(line)</span></code></a>, tada nurodomas stulpelio
+pavadinimas, toks koks įrašytas lentelės line eilutėje.</p>
+<p>Jei naudojamas <a class="reference internal" href="#header" title="header"><code class="xref py py-func docutils literal notranslate"><span class="pre">header(*line)</span></code></a>, tada nurodomas stulpelio
+pavadinimas, toks koks įrašymas lentelės pirmajame line argumente.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">property.prepare</span></span></dt>
+<dd><p>Jei naudojamas <code class="docutils literal notranslate"><span class="pre">header(*line)</span></code>, žiūrėti <a class="reference internal" href="#kompleksines-strukturos"><span class="std std-ref">Kompleksinės struktūros</span></a>.</p>
+</dd></dl>
+
+</section>
+<section id="duomenu-atranka">
+<span id="id6"></span><h2>Duomenų atranka<a class="headerlink" href="#duomenu-atranka" title="Link to this heading">#</a></h2>
+<p>Duomenų filtravimui naudojamas <a class="reference internal" href="dimensijos.html#model.prepare" title="model.prepare"><code class="xref py py-data docutils literal notranslate"><span class="pre">model.prepare</span></code></a> stulpelis, kuriame galima
+apriboti iš šaltinio skaitomų duomenų imtį.</p>
+<p>Tarkime, jei turime tokias dvi duomenų lenteles:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head" colspan="2"><p>COUNTRIES</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>COUNTRY</p></th>
+<th class="head"><p>CODE</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>Lietuva</p></td>
+<td><p>lt</p></td>
+</tr>
+<tr class="row-even"><td><p>Latvija</p></td>
+<td><p>lv</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head" colspan="3"><p>CITIES</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>ID</p></th>
+<th class="head"><p>CITY</p></th>
+<th class="head"><p>COUNTRY</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Vilnius</p></td>
+<td><p>lt</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Kaunas</p></td>
+<td><p>lt</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>Ryga</p></td>
+<td><p>lv</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Jei norėtume atveri ne visų šalių duomenis, o tik Lietuvos, tada duomenų
+struktūros aprašas turėtu atrodyti taip:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>d</p></th>
+<th class="head"><p>r</p></th>
+<th class="head"><p>b</p></th>
+<th class="head"><p>m</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+<th class="head"><p>prepare</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="5"><p>datasets/example/countries</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td colspan="4"><p>salys</p></td>
+<td><p>sql</p></td>
+<td></td>
+<td><p>sqlite://</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>Country</p></td>
+<td></td>
+<td><p>code</p></td>
+<td><p>COUNTRIES</p></td>
+<td><p><strong>code = &quot;lt&quot;</strong></p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>name</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>COUNTRY</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>code</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>CODE</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>City</p></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>CITIES</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>ID</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>name</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>CITY</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>country</p></td>
+<td><p>ref</p></td>
+<td><p>Country</p></td>
+<td><p>COUNTRY</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Kaip ir visur, formulės reikia naudoti pavadinimus ne iš <a class="reference internal" href="formatas.html#source" title="source"><code class="xref py py-data docutils literal notranslate"><span class="pre">source</span></code></a>
+stulpelio, o iš <a class="reference internal" href="formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a>, <a class="reference internal" href="formatas.html#model" title="model"><code class="xref py py-data docutils literal notranslate"><span class="pre">model</span></code></a> arba <a class="reference internal" href="formatas.html#dataset" title="dataset"><code class="xref py py-data docutils literal notranslate"><span class="pre">dataset</span></code></a>.</p>
+<p>Jei lentelės yra susijusios ryšiais tarpusavyje, užtenka filtrą nurodyti tik
+vienoje lentelėje, visose kitose susijusios lentelėse filtrai bus taikomi
+automatiškai, kad užtikrinti duomenų vientisumą.</p>
+<p>Nurodant filtrus yra galimybė naudoti ne tik vienos lentelės laukus, bet ir
+susijusių lentelių laukus, pavyzdžiui yra galimybė nurodyti tokį filtrą:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>d</p></th>
+<th class="head"><p>r</p></th>
+<th class="head"><p>b</p></th>
+<th class="head"><p>m</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+<th class="head"><p>prepare</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>City</p></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>CITIES</p></td>
+<td><p><strong>country.code = &quot;lt&quot;</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Tačiau šiuo atveju, toks filtras būtų perteklinis, nes toks filtras
+generuojamas automatiškai ir susijusio <code class="docutils literal notranslate"><span class="pre">Country</span></code> modelio, kadangi negalime
+publikuoti Latvijos miestų, jei publikuojama tik Lietuvos šalis.</p>
+<p>Pilnas galimų filtrų sąrašas:</p>
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">model.prepare</span></span></dt>
+<dd><dl class="py function">
+<dt class="sig sig-object py" id="id7">
+<span class="sig-name descname"><span class="pre">eq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id7" title="Link to this definition">#</a></dt>
+<dd><p>Sutrumpinta forma:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
+</pre></div>
+</div>
+<p>Sąlyga tenkinama, jei <code class="docutils literal notranslate"><span class="pre">a</span></code> ir <code class="docutils literal notranslate"><span class="pre">b</span></code> reikšmės yra lygios.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id8">
+<span class="sig-name descname"><span class="pre">ne</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id8" title="Link to this definition">#</a></dt>
+<dd><p>Sutrumpinta forma:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">!=</span> <span class="n">b</span>
+</pre></div>
+</div>
+<p>Sąlyga tenkinama, jei <code class="docutils literal notranslate"><span class="pre">a</span></code> ir <code class="docutils literal notranslate"><span class="pre">b</span></code> reikšmės nėra lygios.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id9">
+<span class="sig-name descname"><span class="pre">gt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id9" title="Link to this definition">#</a></dt>
+<dd><p>Sutrumpinta forma:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span>
+</pre></div>
+</div>
+<p>Sąlyga tenkinama, jei <code class="docutils literal notranslate"><span class="pre">a</span></code> reikšmė yra didesnė už <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+<p>Ši funkcija veikia tik su kiekybiniais duomenimis, kuriuos galima palyginti.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id10">
+<span class="sig-name descname"><span class="pre">lt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id10" title="Link to this definition">#</a></dt>
+<dd><p>Sutrumpinta forma:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span>
+</pre></div>
+</div>
+<p>Sąlyga tenkinama, jei <code class="docutils literal notranslate"><span class="pre">a</span></code> reikšmė yra mažesnė už <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+<p>Ši funkcija veikia tik su kiekybiniais duomenimis, kuriuos galima palyginti.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id11">
+<span class="sig-name descname"><span class="pre">ge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id11" title="Link to this definition">#</a></dt>
+<dd><p>Sutrumpinta forma:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&gt;=</span> <span class="n">b</span>
+</pre></div>
+</div>
+<p>Sąlyga tenkinama, jei <code class="docutils literal notranslate"><span class="pre">a</span></code> reikšmė yra didesnė arba lygi <code class="docutils literal notranslate"><span class="pre">b</span></code> reikšmei.</p>
+<p>Ši funkcija veikia tik su kiekybiniais duomenimis, kuriuos galima palyginti.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id12">
+<span class="sig-name descname"><span class="pre">le</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id12" title="Link to this definition">#</a></dt>
+<dd><p>Sutrumpinta forma:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;=</span> <span class="n">b</span>
+</pre></div>
+</div>
+<p>Sąlyga tenkinama, jei <code class="docutils literal notranslate"><span class="pre">a</span></code> reikšmė yra mažesnė arba lygi <code class="docutils literal notranslate"><span class="pre">b</span></code> reikšmei.</p>
+<p>Ši funkcija veikia tik su kiekybiniais duomenimis, kuriuos galima palyginti.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="in">
+<span class="sig-name descname"><span class="pre">in</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#in" title="Link to this definition">#</a></dt>
+<dd><p>Sutrumpinta forma:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="ow">in</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Sąlyga tenkinama, jei <code class="docutils literal notranslate"><span class="pre">a</span></code> lygi bent vienai iš <code class="docutils literal notranslate"><span class="pre">b</span></code> sekos reikšmių.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="notin">
+<span class="sig-name descname"><span class="pre">notin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#notin" title="Link to this definition">#</a></dt>
+<dd><p>Sutrumpinta forma:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">notin</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Sąlyga tenkinama, jei <code class="docutils literal notranslate"><span class="pre">a</span></code> nelygi nei vienai iš <code class="docutils literal notranslate"><span class="pre">b</span></code> sekos reikšmių.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="contains">
+<span class="sig-name descname"><span class="pre">contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#contains" title="Link to this definition">#</a></dt>
+<dd><p>Sutrumpinta forma:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Sąlyga tenkinama, jei bent viena <code class="docutils literal notranslate"><span class="pre">a</span></code> sekos reikšmių sutampa su <code class="docutils literal notranslate"><span class="pre">b</span></code> reikšme.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="startswith">
+<span class="sig-name descname"><span class="pre">startswith</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#startswith" title="Link to this definition">#</a></dt>
+<dd><p>Sutrumpinta forma:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Sąlyga tenkinama, jei <code class="docutils literal notranslate"><span class="pre">a</span></code> simbolių eilutė prasideda <code class="docutils literal notranslate"><span class="pre">b</span></code> simbolių eilute.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="endswith">
+<span class="sig-name descname"><span class="pre">endswith</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#endswith" title="Link to this definition">#</a></dt>
+<dd><p>Sutrumpinta forma:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Sąlyga tenkinama, jei <code class="docutils literal notranslate"><span class="pre">a</span></code> simbolių eilutė baigiasi <code class="docutils literal notranslate"><span class="pre">b</span></code> simbolių eilute.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id13">
+<span class="sig-name descname"><span class="pre">and</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id13" title="Link to this definition">#</a></dt>
+<dd><p>Sutrumpinta forma:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&amp;</span> <span class="n">b</span>
+</pre></div>
+</div>
+<p>Sąlyga tenkinama, jei abi <code class="docutils literal notranslate"><span class="pre">a</span></code> ir <code class="docutils literal notranslate"><span class="pre">b</span></code> sąlygos tenkinamos.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id14">
+<span class="sig-name descname"><span class="pre">or</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id14" title="Link to this definition">#</a></dt>
+<dd><p>Sutrumpinta forma:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">|</span> <span class="n">b</span>
+</pre></div>
+</div>
+<p>Sąlyga tenkinama, jei bent viena <code class="docutils literal notranslate"><span class="pre">a</span></code> arba <code class="docutils literal notranslate"><span class="pre">b</span></code> sąlyga tenkinama.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sort">
+<span class="sig-name descname"><span class="pre">sort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">+a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">-b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sort" title="Link to this definition">#</a></dt>
+<dd><p>Rūšiuoti didėjimo tvarka  pagal <code class="docutils literal notranslate"><span class="pre">a</span></code> ir mažėjimo tvarka pagal <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="select">
+<span class="sig-name descname"><span class="pre">select</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">props</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#select" title="Link to this definition">#</a></dt>
+<dd><p>Pateikiant duomenis, grąžinamos tik nurodytos savybės.</p>
+<p>Jei nenurodyta jokia savybė, įtraukia visas, išskyrus daugiareikšmes
+savybes.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="include">
+<span class="sig-name descname"><span class="pre">include</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">props</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#include" title="Link to this definition">#</a></dt>
+<dd><p>Prie grąžinamų savybių, papildomai įtraukiamos nurodytos savybės. Gali
+būti naudojama kartu su <code class="docutils literal notranslate"><span class="pre">select()</span></code>, papildomai įtraukiant
+daugiareikšmes ar sudėtinių tipų savybės.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="exclude">
+<span class="sig-name descname"><span class="pre">exclude</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">props</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#exclude" title="Link to this definition">#</a></dt>
+<dd><p>Pašalina savybę iš <code class="docutils literal notranslate"><span class="pre">select()</span></code> ar <code class="docutils literal notranslate"><span class="pre">expand()</span></code> funkcijos pagalba atrinktų
+savybių sąrašo.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="expand">
+<span class="sig-name descname"><span class="pre">expand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">props</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#expand" title="Link to this definition">#</a></dt>
+<dd><p>Veikia panašiai, kaip <code class="docutils literal notranslate"><span class="pre">include()</span></code>, tačiau įtraukia visas nurodyto
+sudėtinio tipo savybes.</p>
+<p>Jei nenurodyta konkreti savybė, įtraukia visų sudėtinių tipų savybes.</p>
+<p><code class="docutils literal notranslate"><span class="pre">expand()</span></code> veikia tik su tiesiogiai modeliui priklausančiomis savybėmis.</p>
+<div class="admonition seealso">
+<p class="admonition-title">Taip pat žiūrėkite</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="identifikatoriai.html#prop-expand"><span class="std std-ref">Savybių įtraukimas</span></a></p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="extends">
+<span class="sig-name descname"><span class="pre">extends</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">props</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#extends" title="Link to this definition">#</a></dt>
+<dd><p>Įtraukia nurodyto <code class="docutils literal notranslate"><span class="pre">model</span></code> modelio <code class="docutils literal notranslate"><span class="pre">props</span></code> savybes.</p>
+<p>Jei nenurodytas <code class="docutils literal notranslate"><span class="pre">model</span></code> ir <code class="docutils literal notranslate"><span class="pre">props</span></code>, įtraukia visas <a class="reference internal" href="formatas.html#base" title="base"><code class="xref py py-data docutils literal notranslate"><span class="pre">base</span></code></a> modelio savybes.</p>
+<p>Jei nenurodyta <code class="docutils literal notranslate"><span class="pre">props</span></code>, įtraukia, visas <code class="docutils literal notranslate"><span class="pre">model</span></code> modelio savybes.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="limit">
+<span class="sig-name descname"><span class="pre">limit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#limit" title="Link to this definition">#</a></dt>
+<dd><p>Riboja gražinamų objektų skaičių iki nurodyti <code class="docutils literal notranslate"><span class="pre">num</span></code> skaičiaus.</p>
+<p>Gali būti naudojamas su <a class="reference internal" href="#page" title="page"><code class="xref py py-func docutils literal notranslate"><span class="pre">page()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="page">
+<span class="sig-name descname"><span class="pre">page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">props</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#page" title="Link to this definition">#</a></dt>
+<dd><p>Nurodo sekančio <code class="docutils literal notranslate"><span class="pre">next</span></code> puslapio reikšmę.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="periodiskumas">
+<h2>Periodiškumas<a class="headerlink" href="#periodiskumas" title="Link to this heading">#</a></h2>
+<p>Periodiškumui nurodyti naudojamas model.prepare stulpelis, kuriame galima
+naudoti tokias formules:</p>
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">model.prepare</span></span></dt>
+<dd><dl class="py function">
+<dt class="sig sig-object py" id="cron">
+<span class="sig-name descname"><span class="pre">cron</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cron" title="Link to this definition">#</a></dt>
+<dd><p>Duomenų atnaujinimo laikas, analogiškas <a class="reference external" href="https://en.wikipedia.org/wiki/Cron">cron</a> formatui.</p>
+<p><code class="docutils literal notranslate"><span class="pre">line</span></code> argumentas aprašomas taip:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">n</span></code>m</dt><dd><p><code class="docutils literal notranslate"><span class="pre">n</span></code>-toji minutė, <code class="docutils literal notranslate"><span class="pre">n</span></code> ∊ 0-59.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">n</span></code>h</dt><dd><p><code class="docutils literal notranslate"><span class="pre">n</span></code>-toji valanda, <code class="docutils literal notranslate"><span class="pre">n</span></code> ∊ 0-23.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">n</span></code>d</dt><dd><p><code class="docutils literal notranslate"><span class="pre">n</span></code>-toji mėnesio diena, <code class="docutils literal notranslate"><span class="pre">n</span></code> ∊ 1-31.</p>
+</dd>
+<dt>$d</dt><dd><p>Paskutinė mėnesio diena.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">n</span></code>M</dt><dd><p><code class="docutils literal notranslate"><span class="pre">n</span></code>-tasis mėnuo, <code class="docutils literal notranslate"><span class="pre">n</span></code> ∊ 1-12.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">n</span></code>w</dt><dd><p><code class="docutils literal notranslate"><span class="pre">n</span></code>-toji savaitės diena, <code class="docutils literal notranslate"><span class="pre">n</span></code> ∊ 0-6 (sekmadienis-šeštadienis).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">n</span></code>#<code class="docutils literal notranslate"><span class="pre">i</span></code>w</dt><dd><p><code class="docutils literal notranslate"><span class="pre">n</span></code>-toji savaitės diena, <code class="docutils literal notranslate"><span class="pre">i</span></code>-toji mėnesio savaitė, <code class="docutils literal notranslate"><span class="pre">i</span></code> ∊ 1-6.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">n</span></code>$<code class="docutils literal notranslate"><span class="pre">i</span></code>w</dt><dd><p><code class="docutils literal notranslate"><span class="pre">n</span></code>-toji savaitės diena, <code class="docutils literal notranslate"><span class="pre">i</span></code>-toji savaitė nuo mėnesio galo, <code class="docutils literal notranslate"><span class="pre">i</span></code>
+∊ 1-6.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>,</dt><dd><p>Kableliu galim atskirt kelias laiko vertes.</p>
+</dd>
+<dt>-</dt><dd><p>Brūkšneliu galima atskirti laiko verčių intervalą.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>/</dt><dd><p>Pasvyruoju brūkšniu galima atskirti laiko verčių kartojimo
+žingsnį.</p>
+</dd>
+</dl>
+<p>Laiko vertės atskiriamos tarpo simbolių. Jei laiko vertė nenurodyta,
+reiškia įeina visos įmanomos laiko vertės reikšmės.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hourly">
+<span class="sig-name descname"><span class="pre">hourly</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hourly" title="Link to this definition">#</a></dt>
+<dd><p><a class="reference internal" href="#cron" title="cron"><code class="xref py py-func docutils literal notranslate"><span class="pre">cron('0m')</span></code></a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="daily">
+<span class="sig-name descname"><span class="pre">daily</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#daily" title="Link to this definition">#</a></dt>
+<dd><p><a class="reference internal" href="#cron" title="cron"><code class="xref py py-func docutils literal notranslate"><span class="pre">cron('0m</span> <span class="pre">0d')</span></code></a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="weekly">
+<span class="sig-name descname"><span class="pre">weekly</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#weekly" title="Link to this definition">#</a></dt>
+<dd><p><a class="reference internal" href="#cron" title="cron"><code class="xref py py-func docutils literal notranslate"><span class="pre">cron('0m</span> <span class="pre">0h</span> <span class="pre">0w')</span></code></a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="monthly">
+<span class="sig-name descname"><span class="pre">monthly</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#monthly" title="Link to this definition">#</a></dt>
+<dd><p><a class="reference internal" href="#cron" title="cron"><code class="xref py py-func docutils literal notranslate"><span class="pre">cron('0m</span> <span class="pre">0h</span> <span class="pre">1d')</span></code></a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="yearly">
+<span class="sig-name descname"><span class="pre">yearly</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#yearly" title="Link to this definition">#</a></dt>
+<dd><p><a class="reference internal" href="#cron" title="cron"><code class="xref py py-func docutils literal notranslate"><span class="pre">cron('0m</span> <span class="pre">0h</span> <span class="pre">1d</span> <span class="pre">1M')</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="statines-reiksmes">
+<h2>Statinės reikšmės<a class="headerlink" href="#statines-reiksmes" title="Link to this heading">#</a></h2>
+<p>Statinės reikšmės arba konstantos duomenų laukams gali būti nurodomos
+<a class="reference internal" href="dimensijos.html#property.prepare" title="property.prepare"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.prepare</span></code></a> stulpelyje naudojant formulės sintaksę. Plačiau apie
+formules žiūrėti <a class="reference internal" href="#formules"><span class="std std-ref">Formulės</span></a> skyrelyje.</p>
+</section>
+<section id="transformavimas">
+<h2>Transformavimas<a class="headerlink" href="#transformavimas" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="dimensijos.html#property.prepare" title="property.prepare"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.prepare</span></code></a> stulpelyje gauta šaltinio reikšmė gali būti pasiekiama
+per <code class="docutils literal notranslate"><span class="pre">self</span></code> kintamąjį.</p>
+<p><a class="reference internal" href="dimensijos.html#property.prepare" title="property.prepare"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.prepare</span></code></a> formulėje gali būti aprašomos kelios reikšmės atskirtos
+kableliu, tai naudojama ryšio laukams, kai ryšiui aprašyti reikia daugiau nei
+vieno duomenų lauko.</p>
+<p>Formulėje galima naudoti kitus to pačio modelio property pavadinimus, kai
+aprašomo <a class="reference internal" href="formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a> reikšmės formuojamos dinamiškai naudojant vieną ar
+kelis jau aprašytus laukus.</p>
+<p><a class="reference internal" href="dimensijos.html#property.prepare" title="property.prepare"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.prepare</span></code></a> stulpelyje galima naudoti tokias formules:</p>
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">property.prepare</span></span></dt>
+<dd><dl class="py function">
+<dt class="sig sig-object py" id="null">
+<span class="sig-name descname"><span class="pre">null</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#null" title="Link to this definition">#</a></dt>
+<dd><p>Grąžina <code class="docutils literal notranslate"><span class="pre">null</span></code> reikšmę, jei toliau einančios transformacijos grąžina
+<code class="docutils literal notranslate"><span class="pre">null</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="replace">
+<span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">old</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#replace" title="Link to this definition">#</a></dt>
+<dd><p>Pakeičia visus <code class="docutils literal notranslate"><span class="pre">old</span></code> į <code class="docutils literal notranslate"><span class="pre">new</span></code> simbolius eilutėje.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="re">
+<span class="sig-name descname"><span class="pre">re</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#re" title="Link to this definition">#</a></dt>
+<dd><p>Grąžina atitinkančią reguliariosios išraiškos <code class="docutils literal notranslate"><span class="pre">pattern</span></code> reikšmę arba
+pirmos grupės reikšmę jei naudojama tik viena grupė arba reikšmių grupę
+jei <code class="docutils literal notranslate"><span class="pre">pattern</span></code> yra daugiau nei viena grupė.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cast">
+<span class="sig-name descname"><span class="pre">cast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cast" title="Link to this definition">#</a></dt>
+<dd><p>Konvertuoja šaltinio tipą į nurodytą <code class="docutils literal notranslate"><span class="pre">type</span></code> tipą. Tipų konvertavimas yra
+įmanomas tik tam tikrais atvejais. Jei tipų konvertuoti neįmanoma, tada
+metodas turėtų grąžinti klaidą.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="split">
+<span class="sig-name descname"><span class="pre">split</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#split" title="Link to this definition">#</a></dt>
+<dd><p>Dalina simbolių eilutę naudojant <code class="docutils literal notranslate"><span class="pre">s+</span></code> <a class="reference internal" href="savokos.html#term-reguliarioji-israiska"><span class="xref std std-term">reguliariąją išraišką</span></a>. Grąžina masyvą.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="strip">
+<span class="sig-name descname"><span class="pre">strip</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#strip" title="Link to this definition">#</a></dt>
+<dd><p>Pašalina tarpo simbolius iš pradžios ir pabaigos.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lower">
+<span class="sig-name descname"><span class="pre">lower</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lower" title="Link to this definition">#</a></dt>
+<dd><p>Verčia visas raides mažosiomis.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="upper">
+<span class="sig-name descname"><span class="pre">upper</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#upper" title="Link to this definition">#</a></dt>
+<dd><p>Verčia visas raides didžiosiomis.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="len">
+<span class="sig-name descname"><span class="pre">len</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#len" title="Link to this definition">#</a></dt>
+<dd><p>Grąžina elementų skaičių sekoje.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="choose">
+<span class="sig-name descname"><span class="pre">choose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">default</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#choose" title="Link to this definition">#</a></dt>
+<dd><p>Jei šaltinio reikšmė nėra viena iš <a class="reference internal" href="dimensijos.html#enum"><span class="std std-ref">enum</span></a>, tada grąžinama default
+reikšmė.</p>
+<p>Jei <code class="docutils literal notranslate"><span class="pre">default</span></code> nepateiktas, grąžina vieną iš <a class="reference internal" href="dimensijos.html#property.enum" title="property.enum"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.enum</span></code></a>
+reikšmių, jei duomenų šaltinio reikšmė nėra viena iš
+<a class="reference internal" href="dimensijos.html#property.enum" title="property.enum"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.enum</span></code></a>, tada grąžinama klaida.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="switch">
+<span class="sig-name descname"><span class="pre">switch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">cases</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#switch" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="case">
+<span class="sig-name descname"><span class="pre">case</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cond</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#case" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id15">
+<span class="sig-name descname"><span class="pre">case</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">default</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id15" title="Link to this definition">#</a></dt>
+<dd><p>Grąžina <code class="docutils literal notranslate"><span class="pre">value</span></code>, jei tenkina <code class="docutils literal notranslate"><span class="pre">cond</span></code> arba <code class="docutils literal notranslate"><span class="pre">default</span></code>. Jei <code class="docutils literal notranslate"><span class="pre">case(default)</span></code>
+nepateiktas, tada grąžina pradinę reikšmę.</p>
+<p>Jei, <code class="docutils literal notranslate"><span class="pre">cases</span></code> nepateikti, grąžina vieną iš <code class="xref py py-data docutils literal notranslate"><span class="pre">switch.source</span></code>
+reikšmių, tenkinančių switch prepare sąlygą.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="swap">
+<span class="sig-name descname"><span class="pre">swap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">old</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#swap" title="Link to this definition">#</a></dt>
+<dd><p>Pakeičia <code class="docutils literal notranslate"><span class="pre">old</span></code> reikšmę <code class="docutils literal notranslate"><span class="pre">new</span></code>, jeigu <code class="docutils literal notranslate"><span class="pre">self</span></code> atitinka <code class="docutils literal notranslate"><span class="pre">old</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="return">
+<span class="sig-name descname"><span class="pre">return</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#return" title="Link to this definition">#</a></dt>
+<dd><p>Nutraukia transformacijų grandinę ir grąžina reikšmę.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id16">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id16" title="Link to this definition">#</a></dt>
+<dd><p>Išsaugo reikšmę į kintamąjį <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="url">
+<span class="sig-name descname"><span class="pre">url</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#url" title="Link to this definition">#</a></dt>
+<dd><p>Skaido URI į objektą turintį tokias savybes:</p>
+<dl class="simple">
+<dt>scheme</dt><dd><p>URI schema.</p>
+</dd>
+<dt>netloc</dt><dd><p>Visada URI dalis tarp scheme ir path.</p>
+</dd>
+<dt>username</dt><dd><p>Naudotojo vardas.</p>
+</dd>
+<dt>password</dt><dd><p>Slaptažodis.</p>
+</dd>
+<dt>host</dt><dd><p>Domeno vardas arba IP adresas.</p>
+</dd>
+<dt>port</dt><dd><p>Prievado numeris.</p>
+</dd>
+<dt>path</dt><dd><p>Kelias.</p>
+</dd>
+<dt>query</dt><dd><p>URL dalis einanti tarp <code class="docutils literal notranslate"><span class="pre">?</span></code> ir <code class="docutils literal notranslate"><span class="pre">#</span></code>.</p>
+</dd>
+<dt>fragment</dt><dd><p>URL dalis einanti po #.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="query">
+<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#query" title="Link to this definition">#</a></dt>
+<dd><p>Funkcija skirta darbui su URI query, skaido URI query dalį į parametrus
+arba leidžia pakeisti duomenų šaltinio URI query naujomis reikšmimis.</p>
+<div class="admonition seealso">
+<p class="admonition-title">Taip pat žiūrėkite</p>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="dimensijos.html#param.query" title="param.query"><code class="xref py py-func docutils literal notranslate"><span class="pre">param.query()</span></code></a></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="path">
+<span class="sig-name descname"><span class="pre">path</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#path" title="Link to this definition">#</a></dt>
+<dd><p>Skaido failų sistemos arba URI kelią į tokias savybes:</p>
+<dl class="simple">
+<dt>parts</dt><dd><p>Skaido kelią į dalis (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePath.parts">plačiau</a>).</p>
+</dd>
+<dt>drive</dt><dd><p>Diskas (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePath.drive">plačiau</a>).</p>
+</dd>
+<dt>root</dt><dd><p>Šaknis (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePath.root">plačiau</a>).</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">Taip pat žiūrėkite</p>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="dimensijos.html#param.path" title="param.path"><code class="xref py py-func docutils literal notranslate"><span class="pre">param.path()</span></code></a></div>
+</div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="kompleksines-strukturos">
+<span id="id20"></span><h2>Kompleksinės struktūros<a class="headerlink" href="#kompleksines-strukturos" title="Link to this heading">#</a></h2>
+<p>Daugelis duomenų šaltiniu turi galimybę saugoti kompleksines struktūras. Jei
+duomenys yra kompleksiniai, tada <a class="reference internal" href="dimensijos.html#property.source" title="property.source"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.source</span></code></a> stulpelyje galima
+nurodyti tik duomens pavadinimą iš pirmojo lygmens, gilesniuose lygmenyse
+esančius duomenis galima aprašyti naudojant formules <a class="reference internal" href="dimensijos.html#property.prepare" title="property.prepare"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.prepare</span></code></a>
+stulpelyje.</p>
+<p>Analogiškai duomenų atranką galima daryti ir <code class="docutils literal notranslate"><span class="pre">model</span></code> eilutėse, jei tai leidžia
+duomenų šaltinis.</p>
+<p>Kaip pavyzdį naudosime tokią <a class="reference internal" href="savokos.html#term-JSON"><span class="xref std std-term">JSON</span></a> duomenų struktūrą:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;results&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dataset&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;CSV&quot;</span><span class="p">]</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">property.prepare</span></span></dt>
+<dd><dl class="py function">
+<dt class="sig sig-object py" id="id21">
+<span class="sig-name descname"><span class="pre">getattr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id21" title="Link to this definition">#</a></dt>
+<dd><p>Grąžina <code class="docutils literal notranslate"><span class="pre">object</span></code> savybę <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">count</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id22">
+<span class="sig-name descname"><span class="pre">getitem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id22" title="Link to this definition">#</a></dt>
+<dd><p>Grąžina <code class="docutils literal notranslate"><span class="pre">object</span></code> objekto <code class="docutils literal notranslate"><span class="pre">item</span></code> savybę arba <code class="docutils literal notranslate"><span class="pre">object</span></code> masyvo <code class="docutils literal notranslate"><span class="pre">item</span></code>
+elementą.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="bp">self</span><span class="p">[</span><span class="s2">&quot;result&quot;</span><span class="p">][</span><span class="s2">&quot;count&quot;</span><span class="p">]</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="#id22" title="getitem"><code class="xref py py-func docutils literal notranslate"><span class="pre">getitem()</span></code></a> ir <a class="reference internal" href="#id21" title="getattr"><code class="xref py py-func docutils literal notranslate"><span class="pre">getattr()</span></code></a> gali būti naudojami kartu.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">type</span>
+<span class="go">&quot;dataset&quot;</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="#id22" title="getitem"><code class="xref py py-func docutils literal notranslate"><span class="pre">getitem()</span></code></a> gali būti naudojamas, kaip masyvo elementų filtras
+pateikiant filtro sąlygą.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="n">tags</span> <span class="o">=</span> <span class="s2">&quot;CSV&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">type</span>
+<span class="go">[&quot;dataset&quot;]</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="n">item</span><span class="p">(</span><span class="n">tags</span><span class="p">)</span> <span class="o">=</span> <span class="s2">&quot;CSV&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">type</span>
+<span class="go">[&quot;dataset&quot;]</span>
+</pre></div>
+</div>
+<p>Norint gauti visus masyvo elementus, galima naudoti tokią išraišką:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">results</span><span class="p">[]</span><span class="o">.</span><span class="n">tags</span><span class="p">[]</span>
+<span class="go">[&quot;CSV&quot;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="first">
+<span class="sig-name descname"><span class="pre">first</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#first" title="Link to this definition">#</a></dt>
+<dd><p>Grąžina pirmą <code class="docutils literal notranslate"><span class="pre">object</span></code> sąrašo reikšmę, jei sąrašas tuščias, tada
+grąžina <code class="docutils literal notranslate"><span class="pre">default</span></code> reikšmę, jei <code class="docutils literal notranslate"><span class="pre">default</span></code> nenurodytas, tada nutraukia
+vykdymą su klaidą.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">results</span><span class="p">[]</span><span class="o">.</span><span class="n">tags</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+<span class="go">&quot;CSV&quot;</span>
+</pre></div>
+</div>
+<p>Jei <a href="#id23"><span class="problematic" id="id24">`</span></a>self.result.results[].tags būtų tuščias, tada:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">results</span><span class="p">[]</span><span class="o">.</span><span class="n">tags</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="n">null</span><span class="p">)</span>
+<span class="go">null</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<p>Analogiška struktūra gali būti gaunama ir lentelėse, kai stulpelių pavadinimai
+nurodyti keliose eilutėse, pavyzdyje pateiktą struktūrą atitiktų tokia lentelė:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>result</p></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+<tr class="row-even"><th class="head"><p>count</p></th>
+<th class="head"><p>results</p></th>
+<th class="head"></th>
+</tr>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>tags</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>dataset</p></td>
+<td><p>CSV</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Šioje lentelėje stulpelių pavadinimai pateikti trijose eilutėse, todėl
+<code class="docutils literal notranslate"><span class="pre">model.prepare</span></code> reikėtų naudoti <a class="reference internal" href="#header" title="header"><code class="xref py py-func docutils literal notranslate"><span class="pre">header(0,</span> <span class="pre">1,</span> <span class="pre">2)</span></code></a>.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="zodynai.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">praeitas</p>
+        <p class="prev-next-title">Išoriniai žodynai</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="savokos.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">kitas</p>
+        <p class="prev-next-title">Sąvokos</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Turinys
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gramatika">Gramatika</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintakses-medis">Sintaksės medis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funkciju-iskvietimas">Funkcijų iškvietimas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poziciniai-argumentai">Poziciniai argumentai</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vardiniai-argumentai">Vardiniai argumentai</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alternatyvus-funkcijos-iskvietimas">Alternatyvus funkcijos iškvietimas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standartines-funkcijos">Standartinės funkcijos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bind"><code class="docutils literal notranslate"><span class="pre">bind()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prop"><code class="docutils literal notranslate"><span class="pre">prop()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#item"><code class="docutils literal notranslate"><span class="pre">item()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#param"><code class="docutils literal notranslate"><span class="pre">param()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#var"><code class="docutils literal notranslate"><span class="pre">var()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#self"><code class="docutils literal notranslate"><span class="pre">self()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#or"><code class="docutils literal notranslate"><span class="pre">or()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#and"><code class="docutils literal notranslate"><span class="pre">and()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not"><code class="docutils literal notranslate"><span class="pre">not()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eq"><code class="docutils literal notranslate"><span class="pre">eq()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ne"><code class="docutils literal notranslate"><span class="pre">ne()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lt"><code class="docutils literal notranslate"><span class="pre">lt()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#le"><code class="docutils literal notranslate"><span class="pre">le()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gt"><code class="docutils literal notranslate"><span class="pre">gt()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ge"><code class="docutils literal notranslate"><span class="pre">ge()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add"><code class="docutils literal notranslate"><span class="pre">add()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sub"><code class="docutils literal notranslate"><span class="pre">sub()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mul"><code class="docutils literal notranslate"><span class="pre">mul()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#div"><code class="docutils literal notranslate"><span class="pre">div()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mod"><code class="docutils literal notranslate"><span class="pre">mod()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#positive"><code class="docutils literal notranslate"><span class="pre">positive()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#negative"><code class="docutils literal notranslate"><span class="pre">negative()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuple"><code class="docutils literal notranslate"><span class="pre">tuple()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list"><code class="docutils literal notranslate"><span class="pre">list()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getattr"><code class="docutils literal notranslate"><span class="pre">getattr()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getitem"><code class="docutils literal notranslate"><span class="pre">getitem()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dict"><code class="docutils literal notranslate"><span class="pre">dict()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set"><code class="docutils literal notranslate"><span class="pre">set()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#op"><code class="docutils literal notranslate"><span class="pre">op()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stack"><code class="docutils literal notranslate"><span class="pre">stack()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datetime"><code class="docutils literal notranslate"><span class="pre">datetime()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#date"><code class="docutils literal notranslate"><span class="pre">date()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">date()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#failai">Failai</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file"><code class="docutils literal notranslate"><span class="pre">file()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extract"><code class="docutils literal notranslate"><span class="pre">extract()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decompress"><code class="docutils literal notranslate"><span class="pre">decompress()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stulpeliai-lenteleje">Stulpeliai lentelėje</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#header"><code class="docutils literal notranslate"><span class="pre">header()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#head"><code class="docutils literal notranslate"><span class="pre">head()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tail"><code class="docutils literal notranslate"><span class="pre">tail()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#duomenu-atranka">Duomenų atranka</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><code class="docutils literal notranslate"><span class="pre">eq()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><code class="docutils literal notranslate"><span class="pre">ne()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><code class="docutils literal notranslate"><span class="pre">gt()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><code class="docutils literal notranslate"><span class="pre">lt()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><code class="docutils literal notranslate"><span class="pre">ge()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12"><code class="docutils literal notranslate"><span class="pre">le()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in"><code class="docutils literal notranslate"><span class="pre">in()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notin"><code class="docutils literal notranslate"><span class="pre">notin()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contains"><code class="docutils literal notranslate"><span class="pre">contains()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#startswith"><code class="docutils literal notranslate"><span class="pre">startswith()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#endswith"><code class="docutils literal notranslate"><span class="pre">endswith()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13"><code class="docutils literal notranslate"><span class="pre">and()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14"><code class="docutils literal notranslate"><span class="pre">or()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sort"><code class="docutils literal notranslate"><span class="pre">sort()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select"><code class="docutils literal notranslate"><span class="pre">select()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#include"><code class="docutils literal notranslate"><span class="pre">include()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exclude"><code class="docutils literal notranslate"><span class="pre">exclude()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expand"><code class="docutils literal notranslate"><span class="pre">expand()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extends"><code class="docutils literal notranslate"><span class="pre">extends()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limit"><code class="docutils literal notranslate"><span class="pre">limit()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#page"><code class="docutils literal notranslate"><span class="pre">page()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#periodiskumas">Periodiškumas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cron"><code class="docutils literal notranslate"><span class="pre">cron()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hourly"><code class="docutils literal notranslate"><span class="pre">hourly()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#daily"><code class="docutils literal notranslate"><span class="pre">daily()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weekly"><code class="docutils literal notranslate"><span class="pre">weekly()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monthly"><code class="docutils literal notranslate"><span class="pre">monthly()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#yearly"><code class="docutils literal notranslate"><span class="pre">yearly()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statines-reiksmes">Statinės reikšmės</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformavimas">Transformavimas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#null"><code class="docutils literal notranslate"><span class="pre">null()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replace"><code class="docutils literal notranslate"><span class="pre">replace()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#re"><code class="docutils literal notranslate"><span class="pre">re()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cast"><code class="docutils literal notranslate"><span class="pre">cast()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split"><code class="docutils literal notranslate"><span class="pre">split()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strip"><code class="docutils literal notranslate"><span class="pre">strip()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lower"><code class="docutils literal notranslate"><span class="pre">lower()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upper"><code class="docutils literal notranslate"><span class="pre">upper()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#len"><code class="docutils literal notranslate"><span class="pre">len()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choose"><code class="docutils literal notranslate"><span class="pre">choose()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#switch"><code class="docutils literal notranslate"><span class="pre">switch()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case"><code class="docutils literal notranslate"><span class="pre">case()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15"><code class="docutils literal notranslate"><span class="pre">case()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#swap"><code class="docutils literal notranslate"><span class="pre">swap()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#return"><code class="docutils literal notranslate"><span class="pre">return()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16"><code class="docutils literal notranslate"><span class="pre">set()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#url"><code class="docutils literal notranslate"><span class="pre">url()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#query"><code class="docutils literal notranslate"><span class="pre">query()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#path"><code class="docutils literal notranslate"><span class="pre">path()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kompleksines-strukturos">Kompleksinės struktūros</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21"><code class="docutils literal notranslate"><span class="pre">getattr()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22"><code class="docutils literal notranslate"><span class="pre">getitem()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first"><code class="docutils literal notranslate"><span class="pre">first()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Iki Valstybės skaitmeninių sprendimų agentūra
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2019-2024, VSSA.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

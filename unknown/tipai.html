@@ -1,0 +1,1656 @@
+
+<!DOCTYPE html>
+
+
+<html lang="lt" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Duomenų tipai &#8212; DSA</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-examples.css?v=e236af4b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=f0eb6ae9" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=4ee96f2e"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="_static/translations.js?v=e4682f4a"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+    <script type="module">
+mermaid.initialize({
+    startOnLoad:true,
+    theme: 'neutral'
+});
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tipai';</script>
+    <link rel="index" title="Indeksas" href="genindex.html" />
+    <link rel="search" title="Paieška" href="search.html" />
+    <link rel="next" title="Kodiniai pavadinimai" href="pavadinimai.html" />
+    <link rel="prev" title="Dimensijos" href="dimensijos.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="lt"/>
+  <meta name="docsearch:version" content="1.1" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">DSA</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Paieška" aria-label="Paieška" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Paieška</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="modelis.html">Koncepcinis modelis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formatas.html">Lentelės formatas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dimensijos.html">Dimensijos</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Duomenų tipai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pavadinimai.html">Kodiniai pavadinimai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vienetai.html">Matavimo vienetai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apibendrinimas.html">Apibendrinimas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="identifikatoriai.html">Asociacija</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modeliai/funkciniai.html">Funkciniai modeliai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="branda.html">Brandos lygiai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prieiga.html">Prieigos lygiai</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="schemos/index.html">Duomenų schemos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="schemos/xsd.html">XSD</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="saltiniai.html">Duomenų šaltiniai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vardu-erdves.html">Vardų erdvės</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zodynai.html">Išoriniai žodynai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formules.html">Formulės</a></li>
+<li class="toctree-l1"><a class="reference internal" href="savokos.html">Sąvokos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keitimai.html">Keitimų istorija</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ivpk/dsa" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Šaltinio saugykla"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ivpk/dsa/issues/new?title=Issue%20on%20page%20%2Ftipai.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Atidarykite problemą"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Pilno ekrano režimas"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Paieška" aria-label="Paieška" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Duomenų tipai</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Turinys </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.absent"><code class="docutils literal notranslate"><span class="pre">absent</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.boolean"><code class="docutils literal notranslate"><span class="pre">boolean</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.integer"><code class="docutils literal notranslate"><span class="pre">integer</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.number"><code class="docutils literal notranslate"><span class="pre">number</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.binary"><code class="docutils literal notranslate"><span class="pre">binary</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.string"><code class="docutils literal notranslate"><span class="pre">string</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.text"><code class="docutils literal notranslate"><span class="pre">text</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.datetime"><code class="docutils literal notranslate"><span class="pre">datetime</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.date"><code class="docutils literal notranslate"><span class="pre">date</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.time"><code class="docutils literal notranslate"><span class="pre">time</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.geometry"><code class="docutils literal notranslate"><span class="pre">geometry</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.money"><code class="docutils literal notranslate"><span class="pre">money</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.file"><code class="docutils literal notranslate"><span class="pre">file</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.image"><code class="docutils literal notranslate"><span class="pre">image</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.ref"><code class="docutils literal notranslate"><span class="pre">ref</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.backref"><code class="docutils literal notranslate"><span class="pre">backref</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.generic"><code class="docutils literal notranslate"><span class="pre">generic</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.object"><code class="docutils literal notranslate"><span class="pre">object</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.array"><code class="docutils literal notranslate"><span class="pre">array</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.url"><code class="docutils literal notranslate"><span class="pre">url</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.uri"><code class="docutils literal notranslate"><span class="pre">uri</span></code></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-type">
+<span id="id1"></span><span id="duomenu-tipai"></span><h1>Duomenų tipai<a class="headerlink" href="#module-type" title="Link to this heading">#</a></h1>
+<dl class="py data">
+<dt class="sig sig-object py" id="type.absent">
+<span class="sig-prename descclassname"><span class="pre">type.</span></span><span class="sig-name descname"><span class="pre">absent</span></span><a class="headerlink" href="#type.absent" title="Link to this definition">#</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Nebepalaikoma nuo 0.2 versijos: </span>Šis tipas buvo naudojamas migracijoms ir versijavimui, tačiau nuo 0.2
+versijos, versijavimo struktūros aprašuose atsisakyta.</p>
+</div>
+<p>Žymi <a class="reference internal" href="dimensijos.html#property"><span class="std std-ref">savybę</span></a>, kuri buvo ištrinta ir nebenaudojama.</p>
+<div class="admonition seealso">
+<p class="admonition-title">Taip pat žiūrėkite</p>
+<p><a class="reference internal" href="dimensijos.html#migrate"><span class="std std-ref">migrate</span></a></p>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="type.boolean">
+<span class="sig-prename descclassname"><span class="pre">type.</span></span><span class="sig-name descname"><span class="pre">boolean</span></span><a class="headerlink" href="#type.boolean" title="Link to this definition">#</a></dt>
+<dd><p>Loginė reikšmė, pateikiama skaitine forma:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+<td><p>Neigiama reikšmė (<em>false</em>).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td><p>Teigiama reikšmė (<em>true</em>).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<aside class="topic">
+<p class="topic-title">Brandos lygis</p>
+<dl class="simple">
+<dt><a class="reference internal" href="branda.html#l102"><span class="std std-ref">L102: Nėra vientisumo</span></a></dt><dd><p>Duomenyse nėra vientisumo, kartais <code class="docutils literal notranslate"><span class="pre">true</span></code> pateikta kaip <code class="docutils literal notranslate"><span class="pre">1</span></code>, kartais
+kaip <code class="docutils literal notranslate"><span class="pre">taip</span></code>, arba <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p>
+</dd>
+<dt><a class="reference internal" href="branda.html#l202"><span class="std std-ref">L202: Nestandartinis formatas</span></a></dt><dd><p>Visi duomenys pateikti vienoda, tačiau nestandartine forma. Tarkime
+duomenys pateikti <code class="docutils literal notranslate"><span class="pre">true</span></code>, <code class="docutils literal notranslate"><span class="pre">false</span></code> reikšmėmis, tačiau turėtu būti
+<code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+</dd>
+</dl>
+</aside>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="type.integer">
+<span class="sig-prename descclassname"><span class="pre">type.</span></span><span class="sig-name descname"><span class="pre">integer</span></span><a class="headerlink" href="#type.integer" title="Link to this definition">#</a></dt>
+<dd><p>Sveikas skaičius.</p>
+<p><a class="reference internal" href="dimensijos.html#property.ref" title="property.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.ref</span></code></a> stulpelyje, nurodomi <a class="reference internal" href="vienetai.html#matavimo-vienetai"><span class="std std-ref">Matavimo vienetai</span></a>.</p>
+<aside class="topic">
+<p class="topic-title">Brandos lygis</p>
+<dl class="simple">
+<dt><a class="reference internal" href="branda.html#l102"><span class="std std-ref">L102: Nėra vientisumo</span></a></dt><dd><p>Duomenys pateikti skirtingais vienetais, pavyzdžui dalis duomenų
+pateikti metrais, dalis kilometrais ir dalis milimetrais.</p>
+</dd>
+<dt><a class="reference internal" href="branda.html#l105"><span class="std std-ref">L105: Vienetų konvertavimo paklaida</span></a></dt><dd><p>Amžius pateiktas atskirai, nurodant metus, menesius ir dienas. Šiuo
+atveju brandos lygis yra 1, kadangi neaišku, kiek yra dienų metuose
+ir mėnesiuose, kadangi skirtingi metai ir skirtingi mėnesiai turi
+skirtingą dienų skaičių. Tokiais atvejais duomenis reikia pateikti
+dienomis.</p>
+</dd>
+<dt><a class="reference internal" href="branda.html#l202"><span class="std std-ref">L202: Nestandartinis formatas</span></a></dt><dd><p>Duomenys pateikti išskaidant vieną reikšmę į kelias reikšmes,
+skirtingais vienetais. Duomenys turėtu būti pateikti mažiausiu
+detalumu, viename duomenų lauke. Pavyzdžiui atstumas pateiktas
+atskirais duomenų laukais, kur viename nurodomas atstumas
+kilometrais, kitame metrais, trečiame milimetrais. Šiuo atveju,
+duomenys turėtu būti pateikiami milimetrais.</p>
+</dd>
+<dt><a class="reference internal" href="branda.html#l302"><span class="std std-ref">L302: Nenurodyti matavimo vienetai</span></a></dt><dd><p>Duomenys yra kiekybiniai, tačiau <a class="reference internal" href="dimensijos.html#property.ref" title="property.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.ref</span></code></a> stulpelyje
+nenurodyti vienetai.</p>
+</dd>
+</dl>
+</aside>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="type.number">
+<span class="sig-prename descclassname"><span class="pre">type.</span></span><span class="sig-name descname"><span class="pre">number</span></span><a class="headerlink" href="#type.number" title="Link to this definition">#</a></dt>
+<dd><p>Realusis skaičius, apvalinamas naudojant <a class="reference external" href="https://en.wikipedia.org/wiki/IEEE_754">slankiojo kablelio aritmetiką</a>.</p>
+<p><a class="reference internal" href="dimensijos.html#property.ref" title="property.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.ref</span></code></a> stulpelyje, nurodomi <a class="reference internal" href="vienetai.html#matavimo-vienetai"><span class="std std-ref">Matavimo vienetai</span></a>.</p>
+<p>Sveikoji dalis atskiriama <code class="docutils literal notranslate"><span class="pre">.</span></code> simbolių.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="type.binary">
+<span class="sig-prename descclassname"><span class="pre">type.</span></span><span class="sig-name descname"><span class="pre">binary</span></span><a class="headerlink" href="#type.binary" title="Link to this definition">#</a></dt>
+<dd><p>Dvejetainiai duomenys. Bendras baitų skaičius turi būti ne didesnis nei 1G.</p>
+<p>Jei reikšmė yra didesnė nei 1G reikųtu naudoti <a class="reference internal" href="#type.file" title="type.file"><code class="xref py py-data docutils literal notranslate"><span class="pre">type.file</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="type.string">
+<span class="sig-prename descclassname"><span class="pre">type.</span></span><span class="sig-name descname"><span class="pre">string</span></span><a class="headerlink" href="#type.string" title="Link to this definition">#</a></dt>
+<dd><p>Simbolių eilutė. Neriboto dydžio, tačiau fiziškai simbolių eilutė turėtu
+būti ne didesnė, nei 1G.</p>
+<p>Simboliu eilutė turėtu būti pateikta UTF-8 koduote.</p>
+<p>Šiuo tipu žymimi duomenų laukai, kuriuose tekstas pateiktas ne žmonių
+kalba. Tai gali būti įvairūs kategoriniai duomenys, identifikatoriai ar
+kito pobūdžio simbolių eilutės, kurios nėra užrašytos natūraliąja žmonių
+kalba.</p>
+<p>Jei <a class="reference internal" href="formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a> pavadinimas turi kalbos žymę <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>, tada <code class="docutils literal notranslate"><span class="pre">string</span></code> tipas
+tampa <code class="docutils literal notranslate"><span class="pre">text</span></code> tipo dalimi. Kablos kodas nurodomas naudojant <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a>
+kodų sąrašą.</p>
+<p>Jei tekstas turi kalbos žyme, <a class="reference internal" href="dimensijos.html#property.ref" title="property.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.ref</span></code></a> galima pateikti teksto
+formatą, nadojant vieną iš šių formatų:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">html</span></code></p></td>
+<td><p>tekstas pateiktas <a class="reference external" href="https://en.wikipedia.org/wiki/HTML">HTML</a> formatu.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">md</span></code></p></td>
+<td><p>tekstas pateiktas <a class="reference external" href="https://spec.commonmark.org/">Markdown</a> formatu.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">rst</span></code></p></td>
+<td><p>tekstas pateitkas <a class="reference external" href="https://docutils.sourceforge.io/rst.html">reStructuredText</a> formatu.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">tei</span></code></p></td>
+<td><p>tekstas pateiktas <a class="reference external" href="https://en.wikipedia.org/wiki/Text_Encoding_Initiative">TEI</a> formatu.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>d</p></th>
+<th class="head"><p>r</p></th>
+<th class="head"><p>b</p></th>
+<th class="head"><p>m</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="5"><p>example</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>Country</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>name&#64;lt</p></td>
+<td><p>string</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>description&#64;lt</p></td>
+<td><p>string</p></td>
+<td><p>html</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>description&#64;en</p></td>
+<td><p>string</p></td>
+<td><p>html</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Šiame pavyzdyje <code class="docutils literal notranslate"><span class="pre">&#64;lt</span></code> nurodo, kad šalies pavadinimai ir aprašymai
+pateikti Lietuvių kalba, tačiau laukas <code class="docutils literal notranslate"><span class="pre">description</span></code> papildomai turi
+vertimą į anglų kalbą. Papildomai, šalies aprašymo teksto formatas yra
+<a class="reference external" href="https://en.wikipedia.org/wiki/HTML">HTML</a> tipo.</p>
+</div>
+<aside class="topic">
+<p class="topic-title">Brandos lygis</p>
+<dl class="simple">
+<dt><a class="reference internal" href="branda.html#l202"><span class="std std-ref">L202: Nestandartinis formatas</span></a></dt><dd><p>Tekstas yra užrašytas natūralia žmonių kalba, tačiau neturi kalbos
+žymės.</p>
+</dd>
+<dt><a class="reference internal" href="branda.html#l202"><span class="std std-ref">L202: Nestandartinis formatas</span></a></dt><dd><p>Duomenys pateikti nestandartine koduote. Standartinė koduotė yra
+UTF-8.</p>
+</dd>
+<dt><a class="reference internal" href="branda.html#l202"><span class="std std-ref">L202: Nestandartinis formatas</span></a></dt><dd><p>Duomenys pateikti UTF-8 koduote, tačiau pats tekstas naudoja tam
+tikrą formatavimo sintaksę, kuri nėra nurodyta <a class="reference internal" href="dimensijos.html#property.ref" title="property.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.ref</span></code></a>
+stulpelyje.</p>
+</dd>
+</dl>
+</aside>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="type.text">
+<span class="sig-prename descclassname"><span class="pre">type.</span></span><span class="sig-name descname"><span class="pre">text</span></span><a class="headerlink" href="#type.text" title="Link to this definition">#</a></dt>
+<dd><p>Natūraliaja žmonių kalba užrašytas tekstas, susidedantis iš vieno ar kelių
+<code class="docutils literal notranslate"><span class="pre">string</span></code> tipo duomenų laukų, pateikiant atskirą duomenų lauką, kiekvienai
+kalbai.</p>
+<p>Dažniausiai tiesiogiai <code class="docutils literal notranslate"><span class="pre">text</span></code> tipas nenaudojamas, kadangi jei <code class="docutils literal notranslate"><span class="pre">string</span></code>
+tipas turi kalbos žymę, tai duomenų laukas yra interpretuojamas kaip <code class="docutils literal notranslate"><span class="pre">text</span></code>
+tipo.</p>
+<p>Pavyzdžiui jei <a class="reference internal" href="formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a> pavadinimas yra <code class="docutils literal notranslate"><span class="pre">title&#64;lt</span></code>, tada <code class="docutils literal notranslate"><span class="pre">title</span></code>
+duomenų laukas yra <code class="docutils literal notranslate"><span class="pre">text</span></code> tipo.</p>
+<p>Atskirai <code class="docutils literal notranslate"><span class="pre">text</span></code> tipo duomenų laukas gali būti nurodomas tais atvejais, kai
+reikia pateikti aprašymą ir <a class="reference internal" href="savokos.html#term-URI"><span class="xref std std-term">URI</span></a> pačiam <code class="docutils literal notranslate"><span class="pre">text</span></code> tipo laukui, o ne
+vienam iš vertimų.</p>
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>dataset</p></th>
+<th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>uri</p></th>
+<th class="head"><p>title</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="3"><p>example</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>prefix</p></td>
+<td><p>rdfs</p></td>
+<td><p>http://www.w3.org/
+2000/01/rdf-schema#</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td colspan="2"><p>Country</p></td>
+<td></td>
+<td><p>name&#64;lt</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td><p>name</p></td>
+<td><p>text</p></td>
+<td></td>
+<td><p>rdfs:label</p></td>
+<td><p>Pavadinimas</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td><p>name&#64;lt</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="type.datetime">
+<span class="sig-prename descclassname"><span class="pre">type.</span></span><span class="sig-name descname"><span class="pre">datetime</span></span><a class="headerlink" href="#type.datetime" title="Link to this definition">#</a></dt>
+<dd><p>Data ir laikas atitinkantis <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.</p>
+<p>Mažiausia galima reikšmė: <code class="docutils literal notranslate"><span class="pre">0001-01-01T00:00:00</span></code>.</p>
+<p>Didžiausia galima reikšmė: <code class="docutils literal notranslate"><span class="pre">9999-12-31T23:59:59.999999</span></code>.</p>
+<p>Pagal <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> standartą, data gali būti pateikta tokia forma:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">YYYY</span><span class="o">-</span><span class="n">MM</span><span class="o">-</span><span class="n">DD</span><span class="p">[</span><span class="o">*</span><span class="n">HH</span><span class="p">[:</span><span class="n">MM</span><span class="p">[:</span><span class="n">SS</span><span class="p">[</span><span class="o">.</span><span class="n">fff</span><span class="p">[</span><span class="n">fff</span><span class="p">]]]][</span><span class="o">+</span><span class="n">HH</span><span class="p">:</span><span class="n">MM</span><span class="p">[:</span><span class="n">SS</span><span class="p">[</span><span class="o">.</span><span class="n">ffffff</span><span class="p">]]]]</span>
+</pre></div>
+</div>
+<p>Simbolis <code class="docutils literal notranslate"><span class="pre">*</span></code> reiškia, kad galima pateikti bet kokį vieną simbolį,
+dažniausiai naudojamas tarpo simbolis, arba raidė <code class="docutils literal notranslate"><span class="pre">T</span></code>.</p>
+<p><a class="reference internal" href="dimensijos.html#property.ref" title="property.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.ref</span></code></a> stulpelyje, nurodomas <a class="reference external" href="https://www.w3.org/TR/vocab-dcat-2/#Property:dataset_temporal_resolution">datos ir laiko tikslumas</a>
+sekundėmis. Tikslumą galima nurodyti laiko vienetais, pavyzdžiui <code class="docutils literal notranslate"><span class="pre">Y</span></code>,
+<code class="docutils literal notranslate"><span class="pre">D</span></code>, <code class="docutils literal notranslate"><span class="pre">S</span></code>, arba <code class="docutils literal notranslate"><span class="pre">5Y</span></code>, <code class="docutils literal notranslate"><span class="pre">10D</span></code>, <code class="docutils literal notranslate"><span class="pre">30S</span></code>. Visi duomenys turi atitikti vienodą
+tikslumą, tikslumas negali varijuoti. Galimi vienetų variantai:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Reikšmė</p></th>
+<th class="head"><p>Prasmė</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Y</span></code></p></td>
+<td><p>Metai</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">M</span></code></p></td>
+<td><p>Mėnesiai</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Q</span></code></p></td>
+<td><p>Metų ketvirčiai</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">W</span></code></p></td>
+<td><p>Savaitės</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">D</span></code></p></td>
+<td><p>Dienos</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">H</span></code></p></td>
+<td><p>Valandos</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">T</span></code></p></td>
+<td><p>Minutės</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">S</span></code></p></td>
+<td><p>Sekundės</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">L</span></code></p></td>
+<td><p>Milisekundės</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">U</span></code></p></td>
+<td><p>Mikrosekundės</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">N</span></code></p></td>
+<td><p>Nanosekundės</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<aside class="topic">
+<p class="topic-title">Brandos lygis</p>
+<dl class="simple">
+<dt><a class="reference internal" href="branda.html#l101"><span class="std std-ref">L101: Neaiški struktūra</span></a></dt><dd><p>Data ir laikas pateikti laisvu tekstu, pavyzdžiui <code class="docutils literal notranslate"><span class="pre">2020</span> <span class="pre">paskutinę</span>
+<span class="pre">pirmo</span> <span class="pre">mėnesio</span> <span class="pre">dieną</span></code>.</p>
+</dd>
+<dt><a class="reference internal" href="branda.html#l102"><span class="std std-ref">L102: Nėra vientisumo</span></a></dt><dd><p>Data ir laikas pateikti naudojant skirtingus formatus, pavyzdžiui
+<code class="docutils literal notranslate"><span class="pre">2020-01-31</span></code>, <code class="docutils literal notranslate"><span class="pre">01/31/2020</span></code>, <code class="docutils literal notranslate"><span class="pre">31.1.20</span></code>.</p>
+</dd>
+<dt><a class="reference internal" href="branda.html#l202"><span class="std std-ref">L202: Nestandartinis formatas</span></a></dt><dd><p>Duomenys pateikti nestandartiniu formatu, tačiau visi duomenys
+pateikti vienodu formatu. Pavyzdžiui visi duomenys pateikti
+<code class="docutils literal notranslate"><span class="pre">01/31/2020</span></code> formatu, tačiau datos turi būti pateiktos <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>
+formatu.</p>
+</dd>
+<dt><a class="reference internal" href="branda.html#l210"><span class="std std-ref">L210: Išskaidyta atskirais komponentais</span></a></dt><dd><p>Duomenys pateikti atskiruose laukuose, pavyzdžiui metai pateikti
+viename <code class="docutils literal notranslate"><span class="pre">integer</span></code> tipo lauke, o ketvirtis, kitame <code class="docutils literal notranslate"><span class="pre">integer</span></code> tipo
+lauke. Norint didesnio brandos lygio, duomenys turi būti viename
+<code class="docutils literal notranslate"><span class="pre">date</span></code> tipo lauke su <a class="reference internal" href="dimensijos.html#property.ref" title="property.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.ref</span></code></a> = <code class="docutils literal notranslate"><span class="pre">Q</span></code>.</p>
+</dd>
+<dt><a class="reference internal" href="branda.html#l303"><span class="std std-ref">L303: Nenurodytas duomenų tikslumas</span></a></dt><dd><p>Nenurodytas <a class="reference internal" href="dimensijos.html#property.ref" title="property.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.ref</span></code></a>, kuriame turėtu būti pateiktas
+duomenų tikslumas.</p>
+</dd>
+</dl>
+</aside>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="type.date">
+<span class="sig-prename descclassname"><span class="pre">type.</span></span><span class="sig-name descname"><span class="pre">date</span></span><a class="headerlink" href="#type.date" title="Link to this definition">#</a></dt>
+<dd><p>Tas pats kas <code class="docutils literal notranslate"><span class="pre">datetime</span></code> tik dienos tikslumu. Šio tipo reikšmės taip pat
+turi atitikti <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">YYYY</span><span class="o">-</span><span class="n">MM</span><span class="o">-</span><span class="n">DD</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="dimensijos.html#property.ref" title="property.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.ref</span></code></a> stulpeyje nurodomas datos tikslumas:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Reikšmė</p></th>
+<th class="head"><p>Prasmė</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Y</p></td>
+<td><p>Metai</p></td>
+</tr>
+<tr class="row-odd"><td><p>M</p></td>
+<td><p>Mėnesiai</p></td>
+</tr>
+<tr class="row-even"><td><p>Q</p></td>
+<td><p>Metų ketvirčiai</p></td>
+</tr>
+<tr class="row-odd"><td><p>W</p></td>
+<td><p>Savaitės</p></td>
+</tr>
+<tr class="row-even"><td><p>D</p></td>
+<td><p>Dienos</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Jei duomenys pateikti žemesniu nei dienos tikslumu, tada datos rekšmės turi
+būti nurodytos <code class="docutils literal notranslate"><span class="pre">YYYY-MM-DD</span></code> formatu, pakeičiant <code class="docutils literal notranslate"><span class="pre">MM</span></code> ir arba <code class="docutils literal notranslate"><span class="pre">DD~</span> <span class="pre">į</span> <span class="pre">`01</span></code>.</p>
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<p>Turint tokį struktūros aprašą:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="2"><p>Country</p></td>
+<td></td>
+<td><p>id</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>independence</p></td>
+<td><p>date</p></td>
+<td><p>Y</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Nors <code class="docutils literal notranslate"><span class="pre">independence</span></code> duomenų lauko tiksluas yra metų, tačiau pateikiant
+duomenis būtina nurodyti mėnesį ir dieną taip pat:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;independence&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1990-01-01&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Šiuo atveju, kadangi datos tiksluas yra metai, <code class="docutils literal notranslate"><span class="pre">-01-01</span></code> dalis datoje
+neturi jokios reikšmės ir yra pateikiama tik tam, kad reikšmė atitiktu
+<a class="reference external" href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> reikalavimus.</p>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="type.time">
+<span class="sig-prename descclassname"><span class="pre">type.</span></span><span class="sig-name descname"><span class="pre">time</span></span><a class="headerlink" href="#type.time" title="Link to this definition">#</a></dt>
+<dd><p>Dienos laikas, be konkrečios datos. Šio tipo reikšmės, kaip ir kiti
+su laiku susiję tipai turi atitikti <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HH</span><span class="p">[:</span><span class="n">MM</span><span class="p">[:</span><span class="n">SS</span><span class="p">[</span><span class="o">.</span><span class="n">fff</span><span class="p">[</span><span class="n">fff</span><span class="p">]]]][</span><span class="o">+</span><span class="n">HH</span><span class="p">:</span><span class="n">MM</span><span class="p">[:</span><span class="n">SS</span><span class="p">[</span><span class="o">.</span><span class="n">ffffff</span><span class="p">]]]</span>
+</pre></div>
+</div>
+<p>Jei norima nurodyti žemesnio nei sekundžių tikslumo laiką, tada
+vietoj minučių ir/ar sekundžių galima naudoti <code class="docutils literal notranslate"><span class="pre">00</span></code> ir
+<a class="reference internal" href="dimensijos.html#property.ref" title="property.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.ref</span></code></a> stulpelyje nurodyti tikslumą:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Reikšmė</p></th>
+<th class="head"><p>Prasmė</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">H</span></code></p></td>
+<td><p>Valandos</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">T</span></code></p></td>
+<td><p>Minutės</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">S</span></code></p></td>
+<td><p>Sekundės</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">L</span></code></p></td>
+<td><p>Milisekundės</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">U</span></code></p></td>
+<td><p>Mikrosekundės</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">N</span></code></p></td>
+<td><p>Nanosekundės</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">type.</span></span><span class="sig-name descname"><span class="pre">temporal</span></span></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Nebepalaikoma nuo 0.2 versijos.</span></p>
+</div>
+<p>Apibrėžtis laike.</p>
+<p>Šis tipas atitinka <code class="docutils literal notranslate"><span class="pre">datetime</span></code>, tačiau nurodo, kad visas model yra
+apibrėžtas laike, būtent pagal šią savybę. Tik viena model savybė gali
+turėti <code class="docutils literal notranslate"><span class="pre">temporal</span></code> tipą. Pagal šios savybės reikšmes apskaičiuojamas ir
+įvertinamas <a class="reference external" href="https://www.w3.org/TR/vocab-dcat-2/#Property:dataset_temporal">dct:temporal</a>.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="type.geometry">
+<span class="sig-prename descclassname"><span class="pre">type.</span></span><span class="sig-name descname"><span class="pre">geometry</span></span><a class="headerlink" href="#type.geometry" title="Link to this definition">#</a></dt>
+<dd><p>Erdviniai duomenys. Duomenys pateikiami <a class="reference external" href="https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry">WKT</a> formatu, naudojant <a class="reference external" href="https://epsg.org/home.html">EPSG</a>
+duomenų bazės parametrus, skirtingoms projekcijoms išreikšti.</p>
+<p><a class="reference internal" href="dimensijos.html#property.ref" title="property.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.ref</span></code></a> stulpelyje nurodomas tikslumas metrais. Tikslumą
+galima pateikti naudojanti SI vienetus, pavyzdžiui <code class="docutils literal notranslate"><span class="pre">m</span></code>, <code class="docutils literal notranslate"><span class="pre">km</span></code> arba <code class="docutils literal notranslate"><span class="pre">10m</span></code>,
+<code class="docutils literal notranslate"><span class="pre">100km</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">geometry</span></code> tipas gali turėti du argumentus <code class="docutils literal notranslate"><span class="pre">geometry(form,</span> <span class="pre">crs)</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">form</span></code> - geometrijos forma</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">crs</span></code> - koordinačių sistema</p></li>
+</ul>
+<p>Pats tipas gali būti pateiktas vienu iš šių variantų:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">geometry(form,</span> <span class="pre">crs)</span></code> - nurodant formą ir koordinačių sistemą</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">geometry(crs)</span></code> - nurodant tik koordinačių sistemą</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">geometry(form)</span></code> - nurodant tik formą</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">geometry</span></code> - be argumentų.</p></li>
+</ul>
+<p><strong>Geometrijos forma</strong> (<code class="docutils literal notranslate"><span class="pre">form</span></code>)</p>
+<p>Galimi tokie geometrijos tipai:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">point</span></code> - taškas.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">linestring</span></code> - linija.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">polygon</span></code> - daugiakampis (pradžios ir pabaigos taškai <strong>turi</strong> sutapti).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">multipoint</span></code> - keli taškai.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">multilinestring</span></code> - kelios linijos.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">multipolygon</span></code> - keli daugiakampiai (kiekvieno daugiakampio pradžios ir pabaigos taškai <strong>turi</strong> sutapti).</p></li>
+</ul>
+<p>Kiekviena iš formų gali turėti tokias galūnes nurodančias papildomą dimensiją:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">z</span></code> - aukštis.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">m</span></code> - pasirinktas matmuo (pavyzdžiui laikas, atstumas, storis ir pan.)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">zm</span></code> - aukštis ir pasirinktas matmuo.</p></li>
+</ul>
+<p>Jei geometrijos forma nenurodyta, tada duomenys gali būti bet kokios
+geometrinės formos. Jei forma nurodyta, tada visi duomenys turi būti tik
+tokios formos, kokia nurodyta.</p>
+<p><strong>Koordinačių sistema</strong> (<code class="docutils literal notranslate"><span class="pre">crs</span></code>)</p>
+<p>Antrasis <code class="docutils literal notranslate"><span class="pre">geometry</span></code> argumentas nurodomas pateikiant <a class="reference external" href="https://en.wikipedia.org/wiki/Spatial_reference_system#Identifier">SRID</a> numerį, kuris yra
+konkrečios koordinačių sistemos identifikacinis numeris <a class="reference external" href="https://epsg.org/home.html">EPSG</a> duomenų
+bazėje. Jei koordinačių sistemos numeris nenurodytas, tuomet daroma
+prielaida, kad erdviniai duomenys atitinka <code class="docutils literal notranslate"><span class="pre">4326</span></code> (<a href="#id8"><span class="problematic" id="id9">WGS84_</span></a>) koordinačių
+sistemą.</p>
+<p>Svarbu, kad pateikiant duomenis, koordinačių ašių eiliškumas atitiktų tokį
+eiliškumą, kuris nurodytas <a class="reference external" href="https://epsg.org/home.html">EPSG</a> parametrų duomenų bazėje, konkrečiai
+koordinačių sistemai, kuria pateikiami duomenys.</p>
+<p>Svarbu, kad pateikiant duomenis, koordinačių ašių eiliškumas atitiktų tokį
+eiliškumą, kuris nurodytas <a class="reference external" href="https://epsg.org/home.html">EPSG</a> parametrų duomenų bazėje, konkrečiai
+koordinačių sistemai, kuria pateikiami duomenys.</p>
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<ol class="loweralpha simple">
+<li><p>pateikiant duomenis  LKS 94 (SRID:3346) ir WGS84 (SRID:4326)
+koordinačių sistemose į ADP Saugyklą turi būti laikomasi eiliškumo:
+pirmiausia pateikiama X (į šiaurę/platumos/latitude), o po to Y (į
+rytus/ilgumos/longitute) reikšmės;</p></li>
+<li><p>tačiau pateikiant duomenis  WGS84/Pseudo-Merkator (SRID:3857)
+koordinačių sistemoje jau atvirkščiai – pirmiausia pateikiama  rytų
+ilgumos, o po to šiaurės platumos reikšmės.</p></li>
+</ol>
+</div>
+<p>Pilną <a class="reference external" href="https://en.wikipedia.org/wiki/Spatial_reference_system#Identifier">SRID</a> kodų sąrašą galite rasti <a class="reference external" href="https://epsg.io/">epsg.io</a> svetainėje. Keletas
+dažniau naudojamų <a class="reference external" href="https://en.wikipedia.org/wiki/Spatial_reference_system#Identifier">SRID</a> kodų:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>SRID</p></th>
+<th class="head"><p>CRS</p></th>
+<th class="head"><p>Pavyzdys</p></th>
+<th class="head"><p>ašys</p></th>
+<th class="head"><p>orientacija</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://epsg.io/4326">4326</a></p></td>
+<td><p>WGS84</p></td>
+<td><p><a class="reference external" href="https://get.data.gov.lt/_srid/4326/54.6981/25.2738">POINT(54.6981 25.2738)</a></p></td>
+<td><p>lat, lon</p></td>
+<td><p>north, east</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://epsg.io/3346">3346</a></p></td>
+<td><p>LKS94</p></td>
+<td><p><a class="reference external" href="https://get.data.gov.lt/_srid/3346/6063156/582111">POINT(6063156 582111)</a></p></td>
+<td><p>north, east (x, y)</p></td>
+<td><p>north, east</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://epsg.io/3857">3857</a></p></td>
+<td><p>WGS84 / Pseudo-Merctor</p></td>
+<td><p><a class="reference external" href="https://get.data.gov.lt/_srid/3857/2813472/7303494">POINT(2813472 7303494)</a></p></td>
+<td><p>lon, lat</p></td>
+<td><p>east, north</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://epsg.io/4258">4258</a></p></td>
+<td><p>ETRS89</p></td>
+<td><p><a class="reference external" href="https://get.data.gov.lt/_srid/4258/54.6981/25.2738">POINT(54.6981 25.2738)</a></p></td>
+<td><p>lat, lon</p></td>
+<td><p>north, east</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Pastaba</p>
+<p>Atkreipkite dėmesį, kad LKS94 koordinačių sistemoje geometrinės ašys
+neatitinka įprastinio ašių eiliškumo naudojamo GIS sistemose. LKS94 pirmas
+skaičius yra apytiksliai 6,000,000 metrų nuo pusiaujo į šiaurę, o antrasis
+skaičius apytiksliai 500,000 metrų į rytus, skaičiuojant nuo 24º rytų
+meridiano, atėmus 500km. Teikiant duomenis, taškai turėtu atrodyti taip:
+<code class="docutils literal notranslate"><span class="pre">6000000</span> <span class="pre">500000</span></code>, pirmas ilgesnis, antras trumpesnis.</p>
+<blockquote>
+<div><p>Ašinio meridiano projekcija yra abscisių (x) ašis. Šios ašies
+teigiamoji kryptis nukreipta į šiaurę. Ordinačių (y) ašies
+teigiamoji kryptis nukreipta į rytus.</p>
+<p>Išvyniojus cilindrą, gaunamos stačiakampės koordinatės su x
+šiaurinės abscisės pradžia pusiaujuje ir y rytinės ordinatės
+reikšme 24°C meridiane 500 000 metrų.</p>
+<p class="attribution">—<a class="reference external" href="https://www.e-tar.lt/portal/lt/legalAct/TAR.6D575923F94A">https://www.e-tar.lt/portal/lt/legalAct/TAR.6D575923F94A</a></p>
+</div></blockquote>
+</div>
+<p>Prieš publikuojant duomenis, galite pasitikrinti, ar koordinačių ašys
+pateikiamos teisinga tvarka, naudotami taško atvaizdavimo įrankį.</p>
+<p>Pavyzdžiui, norint patikrinti Vilniaus Katedros varpinės bokšto taško
+koordinates, LKS94 (EPSG:3346) sistemoje, galite naršyklės adreso juostoje
+pateikti šį adresą:</p>
+<p><a class="reference external" href="https://get.data.gov.lt/_srid/3346/6061789/582964">https://get.data.gov.lt/_srid/3346/6061789/582964</a></p>
+<p>Jei ašių eiliškumas teisingas, gausite tašką ten kur tikėjotės, jei ašys
+sukeistos vietomis, tada taškas žemėlapyje gali būti visai kitoje vietoje,
+nei tikėjotės.</p>
+<p>Adreso formatas:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">_srid</span><span class="o">/</span><span class="p">{</span><span class="n">srid</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">ašis1</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">ašis2</span><span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">{srid}</span></code> - <a class="reference external" href="https://epsg.org/home.html">EPSG</a> duomenų bazėje esančios koordinačių sistemos <a class="reference external" href="https://en.wikipedia.org/wiki/Spatial_reference_system#Identifier">SRID</a> kodas</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{ašis1}</span></code> - pirmosios ašies reikšmė (kryptis priklauso nuo <code class="docutils literal notranslate"><span class="pre">{srid}</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{ašis2}</span></code> - antrosios ašies reikšmė (kryptis priklauso nuo <code class="docutils literal notranslate"><span class="pre">{srid}</span></code>)</p></li>
+</ul>
+<div class="admonition-pavyzdines-data-property-type-reiksmes admonition">
+<p class="admonition-title">Pavyzdinės <a class="reference internal" href="dimensijos.html#property.type" title="property.type"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.type</span></code></a> reikšmės</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">geometry</span></code> - WGS84 projekcijos, bet kokio  tipo geometriniai
+objektai.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">geometry(3346)</span></code> - LKS94 projekcijos, bet kokio tipo geometriniai
+objektai.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">geometry(point)</span></code> - GWS84 projekcijos, bet <code class="docutils literal notranslate"><span class="pre">point</span></code> tipo geometriniai
+objektai.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">geometry(linestringm,</span> <span class="pre">3345)</span></code> - LKS94 projekcijos, <code class="docutils literal notranslate"><span class="pre">linestringm</span></code> tipo
+geometriniai objektai su pasirinktu matmeniu, kaip trečia dimensija.</p></li>
+</ul>
+</div>
+<div class="admonition-pavyzdys-duomenys admonition">
+<p class="admonition-title">Pavyzdys (duomenys)</p>
+<p>Vilniaus Katedros varpinės bokšto taškas, LKS94 (EPSG:3346) koordinačių
+sistemoje:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;koordinates&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;POINT (6061789 582964)&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<aside class="topic">
+<p class="topic-title">Brandos lygis</p>
+<dl class="simple">
+<dt><a class="reference internal" href="branda.html#l101"><span class="std std-ref">L101: Neaiški struktūra</span></a></dt><dd><p>Pateiktas adresas, nenurodant adreso koordinačių.</p>
+</dd>
+<dt><a class="reference internal" href="branda.html#l102"><span class="std std-ref">L102: Nėra vientisumo</span></a></dt><dd><p>Nenurodytas koordinačių sistema ir duomenys pateikti skirtingomis
+koordinatėmis.</p>
+</dd>
+<dt><a class="reference internal" href="branda.html#l102"><span class="std std-ref">L102: Nėra vientisumo</span></a></dt><dd><p>Sumaišytos ašys, pavyzdžiui vieni duomenys pateikiami x, y, kiti y,
+x.</p>
+</dd>
+<dt><a class="reference internal" href="branda.html#l102"><span class="std std-ref">L102: Nėra vientisumo</span></a></dt><dd><p>Sumaišyti vienetai, pavyzdžiui vieni duomenys pateikti metrais,
+kiti laipsniais.</p>
+</dd>
+<dt><a class="reference internal" href="branda.html#l201"><span class="std std-ref">L201: Nestandartiniai duomenų tipai</span></a></dt><dd><p>Nenurodyta koordinačių sistema, tačiau visi duomenys pateikti
+naudojant vienodą koordinačių sistemą.</p>
+</dd>
+<dt><a class="reference internal" href="branda.html#l210"><span class="std std-ref">L210: Išskaidyta atskirais komponentais</span></a></dt><dd><p>Taško koordinatės pateiktos, kaip du atskiri duomenų laukai.</p>
+</dd>
+<dt><a class="reference internal" href="branda.html#l303"><span class="std std-ref">L303: Nenurodytas duomenų tikslumas</span></a></dt><dd><p>Nenurodytas <a class="reference internal" href="dimensijos.html#property.ref" title="property.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.ref</span></code></a>, kuriame turėtu būti pateiktas
+duomenų tikslumas metrais.</p>
+</dd>
+</dl>
+</aside>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">type.</span></span><span class="sig-name descname"><span class="pre">spatial</span></span></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Nebepalaikoma nuo 0.2 versijos.</span></p>
+</div>
+<p>Apibrėžtis erdvėje.</p>
+<p>Šis tipas atitinka <code class="docutils literal notranslate"><span class="pre">geometry</span></code>, tačiau nurodo, kad visas model yra
+apibrėžtas erdvėje, būtent pagal šią savybę.  Tik viena model savybė
+gali turėti <code class="docutils literal notranslate"><span class="pre">spatial</span></code> tipą. Pagal šios savybės reikšmes apskaičiuojamas ir
+įvertinamas <a class="reference external" href="https://www.w3.org/TR/vocab-dcat-2/#Property:dataset_spatial">dct:spatial</a>.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="type.money">
+<span class="sig-prename descclassname"><span class="pre">type.</span></span><span class="sig-name descname"><span class="pre">money</span></span><a class="headerlink" href="#type.money" title="Link to this definition">#</a></dt>
+<dd><p>Valiuta. Saugomas valiutos kiekis, nurodant tiek sumą, tiek valiutos
+kodą naudojant <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_4217">ISO 4217</a> kodus.</p>
+<p>Valiutos kodas nurodomas <a class="reference internal" href="dimensijos.html#property.ref" title="property.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.ref</span></code></a> stulpelyje.</p>
+<p>Pavyzdys:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>d</p></th>
+<th class="head"><p>r</p></th>
+<th class="head"><p>b</p></th>
+<th class="head"><p>m</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="5"><p>example</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>Product</p></td>
+<td></td>
+<td></td>
+<td><p>PRODUCT</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>price</p></td>
+<td><p>money</p></td>
+<td><p>EUR</p></td>
+<td><p>PRICE</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Jei valiutos suma ir pavadinimas saugomi atskirai, tuomet valiutą galima
+aprašyti taip:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>d</p></th>
+<th class="head"><p>r</p></th>
+<th class="head"><p>b</p></th>
+<th class="head"><p>m</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+<th class="head"><p>prepare</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="5"><p>example</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>Product</p></td>
+<td></td>
+<td></td>
+<td><p>PRODUCT</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>amount</p></td>
+<td></td>
+<td></td>
+<td><p>PRICE</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>currency</p></td>
+<td></td>
+<td></td>
+<td><p>CURRENCY_CODE</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>price</p></td>
+<td><p>money</p></td>
+<td></td>
+<td></td>
+<td><p>money(amount, currency)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Šio tipo duomenys pateikiami viena iš šių formų:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">123</span>
+<span class="mf">123.45</span>
+<span class="mi">123</span> <span class="n">EUR</span>
+<span class="mf">123.45</span> <span class="n">EUR</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="type.file">
+<span class="sig-prename descclassname"><span class="pre">type.</span></span><span class="sig-name descname"><span class="pre">file</span></span><a class="headerlink" href="#type.file" title="Link to this definition">#</a></dt>
+<dd><p>Šis duomenų tipas yra sudėtinis, susidedantis iš tokių duomenų:</p>
+<dl class="simple">
+<dt>id</dt><dd><p>Laukas, kuris unikaliai identifikuoja failą, šis laukas duomenų
+saugojimo metu pavirs failo identifikatoriumi, jam suteikiant unikalų
+UUID.</p>
+</dd>
+<dt>name</dt><dd><p>Failo pavadinimas.</p>
+</dd>
+<dt>type</dt><dd><p>Failo <a class="reference external" href="https://en.wikipedia.org/wiki/Media_type">media tipas</a>.</p>
+</dd>
+<dt>size</dt><dd><p>Failo turinio dydis baitais.</p>
+</dd>
+<dt>content</dt><dd><p>Failo turinys.</p>
+</dd>
+</dl>
+<p>Šiuos metaduomenis galima perduoti <code class="docutils literal notranslate"><span class="pre">file()</span></code> funkcijai, kaip vardinius
+argumentus.</p>
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>d</p></th>
+<th class="head"><p>r</p></th>
+<th class="head"><p>b</p></th>
+<th class="head"><p>m</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>source</p></th>
+<th class="head"><p>prepare</p></th>
+<th class="head"><p>access</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="5"><p>datasets/example</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>Country</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>name</p></td>
+<td><p>string</p></td>
+<td><p>NAME</p></td>
+<td></td>
+<td><p>open</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>flag_file_name</p></td>
+<td><p>string</p></td>
+<td><p>FLAG_FILE_NAME</p></td>
+<td></td>
+<td><p>private</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>flag_file_data</p></td>
+<td><p>binary</p></td>
+<td><p>FLAG_FILE_DATA</p></td>
+<td></td>
+<td><p>private</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>flag</p></td>
+<td><p>file</p></td>
+<td></td>
+<td><p>file(name: flag_file_name, content: flag_file_data)</p></td>
+<td><p>open</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Šiame pavyzdyje, iš <code class="docutils literal notranslate"><span class="pre">flag_file_name</span></code> ir <code class="docutils literal notranslate"><span class="pre">flag_file_data</span></code> laukų
+padaromas vienas <code class="docutils literal notranslate"><span class="pre">flag</span></code> laukas, kuriame panaudojami duomenys iš dviejų
+laukų. Šiuo atveju, <code class="docutils literal notranslate"><span class="pre">flag_file_name</span></code> ir <code class="docutils literal notranslate"><span class="pre">flag_file_data</span></code> laukai tampa
+pertekliniais, todėl <a class="reference internal" href="prieiga.html#id0" title="access"><code class="xref py py-data docutils literal notranslate"><span class="pre">access</span></code></a> stulpelyje jie pažymėti <code class="docutils literal notranslate"><span class="pre">private</span></code>.</p>
+<p>Analogiškai, tokius pačius duomenis galima aprašyti ir nenaudojant
+formulių:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>d</p></th>
+<th class="head"><p>r</p></th>
+<th class="head"><p>b</p></th>
+<th class="head"><p>m</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>source</p></th>
+<th class="head"><p>prepare</p></th>
+<th class="head"><p>access</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="5"><p>datasets/example</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>Country</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>name</p></td>
+<td><p>string</p></td>
+<td><p>NAME</p></td>
+<td></td>
+<td><p>open</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>flag</p></td>
+<td><p>file</p></td>
+<td></td>
+<td></td>
+<td><p>open</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>flag._name</p></td>
+<td></td>
+<td><p>FLAG_FILE_NAME</p></td>
+<td></td>
+<td><p>open</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>flag._content</p></td>
+<td></td>
+<td><p>FLAG_FILE_DATA</p></td>
+<td></td>
+<td><p>open</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="type.image">
+<span class="sig-prename descclassname"><span class="pre">type.</span></span><span class="sig-name descname"><span class="pre">image</span></span><a class="headerlink" href="#type.image" title="Link to this definition">#</a></dt>
+<dd><p>Paveiksliukas. <code class="docutils literal notranslate"><span class="pre">image</span></code> tipas turi tokias pačias savybes kaip <code class="docutils literal notranslate"><span class="pre">file</span></code>
+tipas.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="type.ref">
+<span class="sig-prename descclassname"><span class="pre">type.</span></span><span class="sig-name descname"><span class="pre">ref</span></span><a class="headerlink" href="#type.ref" title="Link to this definition">#</a></dt>
+<dd><p>Ryšys su modeliu. Šis tipas naudojamas norint pažymėti, kad lauko
+reikšmė yra <a class="reference internal" href="dimensijos.html#property.ref" title="property.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.ref</span></code></a> stulpelyje nurodyto modelio objektas.</p>
+<p>Pagal nutylėjimą, jungimas su kito modelio objektais daromas per siejamo
+pirminį raktą (<a class="reference internal" href="dimensijos.html#model.ref" title="model.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">model.ref</span></code></a>), tačiau yra galimybė nurodyti ir kitą,
+nebūtinai pirminį raktą.</p>
+<p>Jei jungimas daromas, ne per pirminį raktą, tuomet, laukai per kuriuos
+daromas jungimas nurodomi <a class="reference internal" href="dimensijos.html#property.ref" title="property.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.ref</span></code></a> stulpelyje laužtiniuose
+sklaustuose, pavyzdžiui:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Country</span><span class="p">[</span><span class="n">code</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Čia jungiama su <code class="docutils literal notranslate"><span class="pre">Country</span></code> modeliu, per <code class="docutils literal notranslate"><span class="pre">Country</span></code> modelio <code class="docutils literal notranslate"><span class="pre">code</span></code> duomenų
+lauką.</p>
+<p>Jei laukas, per kurį daromas jungimas nenurodytas, pavyzdžiui:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Country</span>
+</pre></div>
+</div>
+<p>Tada, jungimas daromas per <code class="docutils literal notranslate"><span class="pre">Country</span></code> modelio pirminį raktą, kuris nurodytas
+<a class="reference internal" href="dimensijos.html#model.ref" title="model.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">model.ref</span></code></a> stulpelyje.</p>
+<p>Šio objekto reikšmės yra pateikiamos, kaip dalis objekto į kurį rodoma. Jei
+<code class="docutils literal notranslate"><span class="pre">ref</span></code> tipo lauko brandos lygis (<a class="reference internal" href="dimensijos.html#property.level" title="property.level"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.level</span></code></a>) yra 4 ar didesnis,
+tuomet šio duomenų tipo reikšmės atrodo taip:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;69c98b0f-9e4e-424b-9575-9f601d79b68e&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Jei brandos lygis (<a class="reference internal" href="dimensijos.html#property.level" title="property.level"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.level</span></code></a>) yra žemesnis nei 4, tada reikšmė
+atrodo taip:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;69c98b0f-9e4e-424b-9575-9f601d79b68e&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Čia <code class="docutils literal notranslate"><span class="pre">id</span></code> yra <a class="reference internal" href="dimensijos.html#model.ref" title="model.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">model.ref</span></code></a> arba <a class="reference internal" href="identifikatoriai.html#ref-fkey"><span class="std std-ref">kitas laukas</span></a>, per
+kurį daromas jungimas. Jei nenurodytas nei <a class="reference internal" href="dimensijos.html#model.ref" title="model.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">model.ref</span></code></a>, nei
+<a class="reference internal" href="identifikatoriai.html#ref-fkey"><span class="std std-ref">kitas laukas</span></a>, tada jungimas daromas per <code class="docutils literal notranslate"><span class="pre">_id</span></code>, tačiau
+netikrinama ar toks <code class="docutils literal notranslate"><span class="pre">_id</span></code> egzistuoja jungiamame modelyje.</p>
+<div class="admonition seealso">
+<p class="admonition-title">Taip pat žiūrėkite</p>
+<p><a class="reference internal" href="identifikatoriai.html#rysiai"><span class="std std-ref">Asociacija</span></a></p>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="type.backref">
+<span class="sig-prename descclassname"><span class="pre">type.</span></span><span class="sig-name descname"><span class="pre">backref</span></span><a class="headerlink" href="#type.backref" title="Link to this definition">#</a></dt>
+<dd><p>Atgalinis ryšys su modeliu.</p>
+<p>Jei ryšys tarp dviejų modlių yra daug su vienu, tada <code class="docutils literal notranslate"><span class="pre">property</span></code> pavadinimas
+nurodomas su <code class="docutils literal notranslate"><span class="pre">[]</span></code> simboliu.</p>
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<p>Koncepcinis modelis</p>
+<pre  class="mermaid">
+        classDiagram
+    direction LR
+
+    class Country {
+      + id: integer [1..1]
+      + name&#64;lt: string [1..1]
+    }
+
+    class City {
+      + id: integer [1..1]
+      + name&#64;lt: string [1..1]
+    }
+
+    City --&gt; &quot;[1..1]&quot; Country : country
+    City &quot;[1..*]&quot; &lt;-- Country : cities
+    </pre><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Struktūros aprašas</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="2"><p><strong>Country</strong></p></td>
+<td></td>
+<td><p>id</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>name&#64;lt</p></td>
+<td><p>string</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>cities[]</p></td>
+<td><p>backref</p></td>
+<td><p><strong>City</strong></p></td>
+</tr>
+<tr class="row-even"><td colspan="2"><p><strong>City</strong></p></td>
+<td></td>
+<td><p>id</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>name&#64;lt</p></td>
+<td><p>string</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>country</p></td>
+<td><p>ref</p></td>
+<td><p><strong>Country</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">Taip pat žiūrėkite</p>
+<p><a class="reference internal" href="identifikatoriai.html#atgalinis-rysys"><span class="std std-ref">Atgalinis ryšys</span></a></p>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="type.generic">
+<span class="sig-prename descclassname"><span class="pre">type.</span></span><span class="sig-name descname"><span class="pre">generic</span></span><a class="headerlink" href="#type.generic" title="Link to this definition">#</a></dt>
+<dd><p>Dinaminis ryšys su modeliu.</p>
+<p>Šis tipas naudojamas tada, kai yra poreikis perteikti dinaminį ryšį, t.
+y. duomenys siejami ne tik pagal id, bet ir pagal modelio pavadinimą.
+Tokiu būdu, vieno modelio laukas gali būti siejamas su keliais
+modeliais.</p>
+<div class="admonition seealso">
+<p class="admonition-title">Taip pat žiūrėkite</p>
+<p><a class="reference internal" href="identifikatoriai.html#polimorfinis-rysys"><span class="std std-ref">Polimorfinis jungimas</span></a></p>
+</div>
+<p>Šis duomenų tipas yra sudėtinis, susidedantis iš tokių duomenų:</p>
+<dl class="simple">
+<dt>object_model</dt><dd><p>Pilnas modelio pavadinimas, su kuriuo yra siejamas objektas.</p>
+</dd>
+<dt>object_id</dt><dd><p><code class="docutils literal notranslate"><span class="pre">object_model</span></code> modelio objekto id.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="type.object">
+<span class="sig-prename descclassname"><span class="pre">type.</span></span><span class="sig-name descname"><span class="pre">object</span></span><a class="headerlink" href="#type.object" title="Link to this definition">#</a></dt>
+<dd><p><a class="reference internal" href="savokos.html#term-sudetinis-tipas"><span class="xref std std-term">Sudėtinis tipas</span></a>, apjungiantis kelias savybes į
+grupę, po vienu pavadinimu.</p>
+<p>Šis tipas naudojamas apibrėžti sudėtiniams duomenims, kurie aprašyti
+naudojant kelis skirtingus tipas. Kompozicinio tipo atveju property
+stulpelyje komponuojami pavadinimai atskiriami taško simboliu.</p>
+<p>Sudarant duomenų modelį, rekomenduojama laikytis plokščios struktūros ir
+komponavimą įgyvendinti siejant modelius per <code class="docutils literal notranslate"><span class="pre">ref</span></code> ar <code class="docutils literal notranslate"><span class="pre">generic</span></code> tipus.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="type.array">
+<span class="sig-prename descclassname"><span class="pre">type.</span></span><span class="sig-name descname"><span class="pre">array</span></span><a class="headerlink" href="#type.array" title="Link to this definition">#</a></dt>
+<dd><p><a class="reference internal" href="savokos.html#term-sudetinis-tipas"><span class="xref std std-term">Sudėtinis tipas</span></a>, nurodo reikšmių masyvą.</p>
+<p>Šis tipas naudojamas apibrėžti duomenų masyvams. Jei masyvo elementai
+turi vienodus tipus, tada elemento tipas pateikiamas property pavadinimo
+gale prirašant [] sufiksą, kuris nurodo, kad aprašomas ne pats masyvas,
+o masyvo elementas.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="type.url">
+<span class="sig-prename descclassname"><span class="pre">type.</span></span><span class="sig-name descname"><span class="pre">url</span></span><a class="headerlink" href="#type.url" title="Link to this definition">#</a></dt>
+<dd><p>Unikali resurso vieta (URL) (angl. <em>Uniform Resource
+Locator</em>).</p>
+<p>Šis tipas naudojamas pateikiant nuorodas į išorinius šaltinius.</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Uniform_Resource_Locator">https://en.wikipedia.org/wiki/Uniform_Resource_Locator</a></p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="type.uri">
+<span class="sig-prename descclassname"><span class="pre">type.</span></span><span class="sig-name descname"><span class="pre">uri</span></span><a class="headerlink" href="#type.uri" title="Link to this definition">#</a></dt>
+<dd><p>Universalus resurso identifikatorius (URI) (angl. <em>Universal Resource
+Identifier</em>).</p>
+<p>Šis tipas naudojamas tais atvejais, kai pateikiamas išorinio resurso
+identifikatorius, RDF duomenų modelyje tai yra subjeto identifikatorius.</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">https://en.wikipedia.org/wiki/Uniform_Resource_Identifier</a></p>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dimensijos.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">praeitas</p>
+        <p class="prev-next-title">Dimensijos</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="pavadinimai.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">kitas</p>
+        <p class="prev-next-title">Kodiniai pavadinimai</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Turinys
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.absent"><code class="docutils literal notranslate"><span class="pre">absent</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.boolean"><code class="docutils literal notranslate"><span class="pre">boolean</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.integer"><code class="docutils literal notranslate"><span class="pre">integer</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.number"><code class="docutils literal notranslate"><span class="pre">number</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.binary"><code class="docutils literal notranslate"><span class="pre">binary</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.string"><code class="docutils literal notranslate"><span class="pre">string</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.text"><code class="docutils literal notranslate"><span class="pre">text</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.datetime"><code class="docutils literal notranslate"><span class="pre">datetime</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.date"><code class="docutils literal notranslate"><span class="pre">date</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.time"><code class="docutils literal notranslate"><span class="pre">time</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.geometry"><code class="docutils literal notranslate"><span class="pre">geometry</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.money"><code class="docutils literal notranslate"><span class="pre">money</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.file"><code class="docutils literal notranslate"><span class="pre">file</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.image"><code class="docutils literal notranslate"><span class="pre">image</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.ref"><code class="docutils literal notranslate"><span class="pre">ref</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.backref"><code class="docutils literal notranslate"><span class="pre">backref</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.generic"><code class="docutils literal notranslate"><span class="pre">generic</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.object"><code class="docutils literal notranslate"><span class="pre">object</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.array"><code class="docutils literal notranslate"><span class="pre">array</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.url"><code class="docutils literal notranslate"><span class="pre">url</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.uri"><code class="docutils literal notranslate"><span class="pre">uri</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Iki Valstybės skaitmeninių sprendimų agentūra
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2019-2024, VSSA.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

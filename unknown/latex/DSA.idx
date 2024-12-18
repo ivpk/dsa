@@ -1,0 +1,401 @@
+\indexentry{RFC@\spxentry{RFC}!RFC 9562@\spxentry{RFC 9562}|hyperpage}{9}
+\indexentry{RFC@\spxentry{RFC}!RFC 4180@\spxentry{RFC 4180}|hyperpage}{12}
+\indexentry{dataset (įtaisytasis kintamasis)@\spxentry{dataset}\spxextra{įtaisytasis kintamasis}|hyperpage}{13}
+\indexentry{resource (įtaisytasis kintamasis)@\spxentry{resource}\spxextra{įtaisytasis kintamasis}|hyperpage}{14}
+\indexentry{base (įtaisytasis kintamasis)@\spxentry{base}\spxextra{įtaisytasis kintamasis}|hyperpage}{14}
+\indexentry{model (įtaisytasis kintamasis)@\spxentry{model}\spxextra{įtaisytasis kintamasis}|hyperpage}{15}
+\indexentry{property (įtaisytasis kintamasis)@\spxentry{property}\spxextra{įtaisytasis kintamasis}|hyperpage}{15}
+\indexentry{id (įtaisytasis kintamasis)@\spxentry{id}\spxextra{įtaisytasis kintamasis}|hyperpage}{16}
+\indexentry{RFC@\spxentry{RFC}!RFC 9562@\spxentry{RFC 9562}|hyperpage}{16}
+\indexentry{type (įtaisytasis kintamasis)@\spxentry{type}\spxextra{įtaisytasis kintamasis}|hyperpage}{16}
+\indexentry{ref (įtaisytasis kintamasis)@\spxentry{ref}\spxextra{įtaisytasis kintamasis}|hyperpage}{17}
+\indexentry{source (įtaisytasis kintamasis)@\spxentry{source}\spxextra{įtaisytasis kintamasis}|hyperpage}{17}
+\indexentry{prepare (įtaisytasis kintamasis)@\spxentry{prepare}\spxextra{įtaisytasis kintamasis}|hyperpage}{17}
+\indexentry{level (įtaisytasis kintamasis)@\spxentry{level}\spxextra{įtaisytasis kintamasis}|hyperpage}{17}
+\indexentry{access (įtaisytasis kintamasis)@\spxentry{access}\spxextra{įtaisytasis kintamasis}|hyperpage}{17}
+\indexentry{uri (įtaisytasis kintamasis)@\spxentry{uri}\spxextra{įtaisytasis kintamasis}|hyperpage}{17}
+\indexentry{title (įtaisytasis kintamasis)@\spxentry{title}\spxextra{įtaisytasis kintamasis}|hyperpage}{18}
+\indexentry{description (įtaisytasis kintamasis)@\spxentry{description}\spxextra{įtaisytasis kintamasis}|hyperpage}{18}
+\indexentry{module@\spxentry{module}!dataset@\spxentry{dataset}|hyperpage}{19}
+\indexentry{dataset@\spxentry{dataset}!module@\spxentry{module}|hyperpage}{19}
+\indexentry{id (modulje dataset)@\spxentry{id}\spxextra{modulje dataset}|hyperpage}{19}
+\indexentry{type (modulje dataset)@\spxentry{type}\spxextra{modulje dataset}|hyperpage}{19}
+\indexentry{ref (modulje dataset)@\spxentry{ref}\spxextra{modulje dataset}|hyperpage}{20}
+\indexentry{source (modulje dataset)@\spxentry{source}\spxextra{modulje dataset}|hyperpage}{20}
+\indexentry{prepare (modulje dataset)@\spxentry{prepare}\spxextra{modulje dataset}|hyperpage}{20}
+\indexentry{level (modulje dataset)@\spxentry{level}\spxextra{modulje dataset}|hyperpage}{20}
+\indexentry{access (modulje dataset)@\spxentry{access}\spxextra{modulje dataset}|hyperpage}{20}
+\indexentry{title (modulje dataset)@\spxentry{title}\spxextra{modulje dataset}|hyperpage}{20}
+\indexentry{description (modulje dataset)@\spxentry{description}\spxextra{modulje dataset}|hyperpage}{20}
+\indexentry{module@\spxentry{module}!resource@\spxentry{resource}|hyperpage}{20}
+\indexentry{resource@\spxentry{resource}!module@\spxentry{module}|hyperpage}{20}
+\indexentry{id (modulje resource)@\spxentry{id}\spxextra{modulje resource}|hyperpage}{20}
+\indexentry{type (modulje resource)@\spxentry{type}\spxextra{modulje resource}|hyperpage}{20}
+\indexentry{ref (modulje resource)@\spxentry{ref}\spxextra{modulje resource}|hyperpage}{21}
+\indexentry{source (modulje resource)@\spxentry{source}\spxextra{modulje resource}|hyperpage}{21}
+\indexentry{level (modulje resource)@\spxentry{level}\spxextra{modulje resource}|hyperpage}{22}
+\indexentry{access (modulje resource)@\spxentry{access}\spxextra{modulje resource}|hyperpage}{22}
+\indexentry{title (modulje resource)@\spxentry{title}\spxextra{modulje resource}|hyperpage}{22}
+\indexentry{description (modulje resource)@\spxentry{description}\spxextra{modulje resource}|hyperpage}{22}
+\indexentry{module@\spxentry{module}!resource@\spxentry{resource}|hyperpage}{22}
+\indexentry{resource@\spxentry{resource}!module@\spxentry{module}|hyperpage}{22}
+\indexentry{http() (modulyje resource)@\spxentry{http()}\spxextra{modulyje resource}|hyperpage}{22}
+\indexentry{module@\spxentry{module}!base@\spxentry{base}|hyperpage}{23}
+\indexentry{base@\spxentry{base}!module@\spxentry{module}|hyperpage}{23}
+\indexentry{ref (modulje base)@\spxentry{ref}\spxextra{modulje base}|hyperpage}{23}
+\indexentry{level (modulje base)@\spxentry{level}\spxextra{modulje base}|hyperpage}{23}
+\indexentry{access (modulje base)@\spxentry{access}\spxextra{modulje base}|hyperpage}{23}
+\indexentry{module@\spxentry{module}!model@\spxentry{model}|hyperpage}{24}
+\indexentry{model@\spxentry{model}!module@\spxentry{module}|hyperpage}{24}
+\indexentry{type (modulje model)@\spxentry{type}\spxextra{modulje model}|hyperpage}{25}
+\indexentry{ref (modulje model)@\spxentry{ref}\spxextra{modulje model}|hyperpage}{26}
+\indexentry{source (modulje model)@\spxentry{source}\spxextra{modulje model}|hyperpage}{26}
+\indexentry{prepare (modulje model)@\spxentry{prepare}\spxextra{modulje model}|hyperpage}{26}
+\indexentry{level (modulje model)@\spxentry{level}\spxextra{modulje model}|hyperpage}{27}
+\indexentry{access (modulje model)@\spxentry{access}\spxextra{modulje model}|hyperpage}{27}
+\indexentry{uri (modulje model)@\spxentry{uri}\spxextra{modulje model}|hyperpage}{27}
+\indexentry{title (modulje model)@\spxentry{title}\spxextra{modulje model}|hyperpage}{28}
+\indexentry{description (modulje model)@\spxentry{description}\spxextra{modulje model}|hyperpage}{28}
+\indexentry{property (modulje model)@\spxentry{property}\spxextra{modulje model}|hyperpage}{28}
+\indexentry{module@\spxentry{module}!model@\spxentry{model}|hyperpage}{28}
+\indexentry{model@\spxentry{model}!module@\spxentry{module}|hyperpage}{28}
+\indexentry{distinct() (modulyje model)@\spxentry{distinct()}\spxextra{modulyje model}|hyperpage}{28}
+\indexentry{module@\spxentry{module}!property@\spxentry{property}|hyperpage}{29}
+\indexentry{property@\spxentry{property}!module@\spxentry{module}|hyperpage}{29}
+\indexentry{source (modulje property)@\spxentry{source}\spxextra{modulje property}|hyperpage}{29}
+\indexentry{prepare (modulje property)@\spxentry{prepare}\spxextra{modulje property}|hyperpage}{29}
+\indexentry{type (modulje property)@\spxentry{type}\spxextra{modulje property}|hyperpage}{29}
+\indexentry{ref (modulje property)@\spxentry{ref}\spxextra{modulje property}|hyperpage}{29}
+\indexentry{level (modulje property)@\spxentry{level}\spxextra{modulje property}|hyperpage}{29}
+\indexentry{access (modulje property)@\spxentry{access}\spxextra{modulje property}|hyperpage}{29}
+\indexentry{uri (modulje property)@\spxentry{uri}\spxextra{modulje property}|hyperpage}{29}
+\indexentry{title (modulje property)@\spxentry{title}\spxextra{modulje property}|hyperpage}{29}
+\indexentry{description (modulje property)@\spxentry{description}\spxextra{modulje property}|hyperpage}{29}
+\indexentry{enum (modulje property)@\spxentry{enum}\spxextra{modulje property}|hyperpage}{29}
+\indexentry{module@\spxentry{module}!prefix@\spxentry{prefix}|hyperpage}{30}
+\indexentry{prefix@\spxentry{prefix}!module@\spxentry{module}|hyperpage}{30}
+\indexentry{ref (modulje prefix)@\spxentry{ref}\spxextra{modulje prefix}|hyperpage}{30}
+\indexentry{uri (modulje prefix)@\spxentry{uri}\spxextra{modulje prefix}|hyperpage}{30}
+\indexentry{title (modulje prefix)@\spxentry{title}\spxextra{modulje prefix}|hyperpage}{30}
+\indexentry{description (modulje prefix)@\spxentry{description}\spxextra{modulje prefix}|hyperpage}{30}
+\indexentry{module@\spxentry{module}!enum@\spxentry{enum}|hyperpage}{31}
+\indexentry{enum@\spxentry{enum}!module@\spxentry{module}|hyperpage}{31}
+\indexentry{ref (modulje enum)@\spxentry{ref}\spxextra{modulje enum}|hyperpage}{33}
+\indexentry{source (modulje enum)@\spxentry{source}\spxextra{modulje enum}|hyperpage}{33}
+\indexentry{prepare (modulje enum)@\spxentry{prepare}\spxextra{modulje enum}|hyperpage}{33}
+\indexentry{access (modulje enum)@\spxentry{access}\spxextra{modulje enum}|hyperpage}{33}
+\indexentry{title (modulje enum)@\spxentry{title}\spxextra{modulje enum}|hyperpage}{33}
+\indexentry{description (modulje enum)@\spxentry{description}\spxextra{modulje enum}|hyperpage}{33}
+\indexentry{module@\spxentry{module}!param@\spxentry{param}|hyperpage}{33}
+\indexentry{param@\spxentry{param}!module@\spxentry{module}|hyperpage}{33}
+\indexentry{ref (modulje param)@\spxentry{ref}\spxextra{modulje param}|hyperpage}{34}
+\indexentry{prepare (modulje param)@\spxentry{prepare}\spxextra{modulje param}|hyperpage}{34}
+\indexentry{source (modulje param)@\spxentry{source}\spxextra{modulje param}|hyperpage}{34}
+\indexentry{module@\spxentry{module}!param@\spxentry{param}|hyperpage}{35}
+\indexentry{param@\spxentry{param}!module@\spxentry{module}|hyperpage}{35}
+\indexentry{read() (modulyje param)@\spxentry{read()}\spxextra{modulyje param}|hyperpage}{35}
+\indexentry{range() (modulyje param)@\spxentry{range()}\spxextra{modulyje param}|hyperpage}{35}
+\indexentry{path() (modulyje param)@\spxentry{path()}\spxextra{modulyje param}|hyperpage}{35}
+\indexentry{query() (modulyje param)@\spxentry{query()}\spxextra{modulyje param}|hyperpage}{36}
+\indexentry{header() (modulyje param)@\spxentry{header()}\spxextra{modulyje param}|hyperpage}{37}
+\indexentry{body() (modulyje param)@\spxentry{body()}\spxextra{modulyje param}|hyperpage}{37}
+\indexentry{module@\spxentry{module}!switch@\spxentry{switch}|hyperpage}{39}
+\indexentry{switch@\spxentry{switch}!module@\spxentry{module}|hyperpage}{39}
+\indexentry{switch.source (modulje switch)@\spxentry{switch.source}\spxextra{modulje switch}|hyperpage}{39}
+\indexentry{switch.prepare (modulje switch)@\spxentry{switch.prepare}\spxextra{modulje switch}|hyperpage}{39}
+\indexentry{module@\spxentry{module}!comment@\spxentry{comment}|hyperpage}{39}
+\indexentry{comment@\spxentry{comment}!module@\spxentry{module}|hyperpage}{39}
+\indexentry{id (modulje comment)@\spxentry{id}\spxextra{modulje comment}|hyperpage}{39}
+\indexentry{ref (modulje comment)@\spxentry{ref}\spxextra{modulje comment}|hyperpage}{39}
+\indexentry{source (modulje comment)@\spxentry{source}\spxextra{modulje comment}|hyperpage}{39}
+\indexentry{prepare (modulje comment)@\spxentry{prepare}\spxextra{modulje comment}|hyperpage}{39}
+\indexentry{level (modulje comment)@\spxentry{level}\spxextra{modulje comment}|hyperpage}{40}
+\indexentry{access (modulje comment)@\spxentry{access}\spxextra{modulje comment}|hyperpage}{40}
+\indexentry{uri (modulje comment)@\spxentry{uri}\spxextra{modulje comment}|hyperpage}{40}
+\indexentry{title (modulje comment)@\spxentry{title}\spxextra{modulje comment}|hyperpage}{40}
+\indexentry{description (modulje comment)@\spxentry{description}\spxextra{modulje comment}|hyperpage}{40}
+\indexentry{module@\spxentry{module}!lang@\spxentry{lang}|hyperpage}{41}
+\indexentry{lang@\spxentry{lang}!module@\spxentry{module}|hyperpage}{41}
+\indexentry{ref (modulje lang)@\spxentry{ref}\spxextra{modulje lang}|hyperpage}{41}
+\indexentry{title (modulje lang)@\spxentry{title}\spxextra{modulje lang}|hyperpage}{41}
+\indexentry{description (modulje lang)@\spxentry{description}\spxextra{modulje lang}|hyperpage}{41}
+\indexentry{module@\spxentry{module}!migrate@\spxentry{migrate}|hyperpage}{41}
+\indexentry{migrate@\spxentry{migrate}!module@\spxentry{module}|hyperpage}{41}
+\indexentry{id (modulje migrate)@\spxentry{id}\spxextra{modulje migrate}|hyperpage}{42}
+\indexentry{ref (modulje migrate)@\spxentry{ref}\spxextra{modulje migrate}|hyperpage}{43}
+\indexentry{prepare (modulje migrate)@\spxentry{prepare}\spxextra{modulje migrate}|hyperpage}{43}
+\indexentry{create() (modulyje migrate)@\spxentry{create()}\spxextra{modulyje migrate}|hyperpage}{43}
+\indexentry{update() (modulyje migrate)@\spxentry{update()}\spxextra{modulyje migrate}|hyperpage}{43}
+\indexentry{delete() (modulyje migrate)@\spxentry{delete()}\spxextra{modulyje migrate}|hyperpage}{43}
+\indexentry{filter() (modulyje migrate)@\spxentry{filter()}\spxextra{modulyje migrate}|hyperpage}{43}
+\indexentry{title (modulje migrate)@\spxentry{title}\spxextra{modulje migrate}|hyperpage}{43}
+\indexentry{description (modulje migrate)@\spxentry{description}\spxextra{modulje migrate}|hyperpage}{43}
+\indexentry{module@\spxentry{module}!type@\spxentry{type}|hyperpage}{44}
+\indexentry{type@\spxentry{type}!module@\spxentry{module}|hyperpage}{44}
+\indexentry{absent (modulje type)@\spxentry{absent}\spxextra{modulje type}|hyperpage}{44}
+\indexentry{boolean (modulje type)@\spxentry{boolean}\spxextra{modulje type}|hyperpage}{44}
+\indexentry{integer (modulje type)@\spxentry{integer}\spxextra{modulje type}|hyperpage}{44}
+\indexentry{number (modulje type)@\spxentry{number}\spxextra{modulje type}|hyperpage}{45}
+\indexentry{binary (modulje type)@\spxentry{binary}\spxextra{modulje type}|hyperpage}{45}
+\indexentry{string (modulje type)@\spxentry{string}\spxextra{modulje type}|hyperpage}{45}
+\indexentry{text (modulje type)@\spxentry{text}\spxextra{modulje type}|hyperpage}{46}
+\indexentry{datetime (modulje type)@\spxentry{datetime}\spxextra{modulje type}|hyperpage}{46}
+\indexentry{date (modulje type)@\spxentry{date}\spxextra{modulje type}|hyperpage}{47}
+\indexentry{time (modulje type)@\spxentry{time}\spxextra{modulje type}|hyperpage}{48}
+\indexentry{geometry (modulje type)@\spxentry{geometry}\spxextra{modulje type}|hyperpage}{49}
+\indexentry{money (modulje type)@\spxentry{money}\spxextra{modulje type}|hyperpage}{52}
+\indexentry{file (modulje type)@\spxentry{file}\spxextra{modulje type}|hyperpage}{53}
+\indexentry{image (modulje type)@\spxentry{image}\spxextra{modulje type}|hyperpage}{54}
+\indexentry{ref (modulje type)@\spxentry{ref}\spxextra{modulje type}|hyperpage}{54}
+\indexentry{backref (modulje type)@\spxentry{backref}\spxextra{modulje type}|hyperpage}{55}
+\indexentry{generic (modulje type)@\spxentry{generic}\spxextra{modulje type}|hyperpage}{55}
+\indexentry{object (modulje type)@\spxentry{object}\spxextra{modulje type}|hyperpage}{56}
+\indexentry{array (modulje type)@\spxentry{array}\spxextra{modulje type}|hyperpage}{56}
+\indexentry{url (modulje type)@\spxentry{url}\spxextra{modulje type}|hyperpage}{56}
+\indexentry{uri (modulje type)@\spxentry{uri}\spxextra{modulje type}|hyperpage}{56}
+\indexentry{access (įtaisytasis kintamasis)@\spxentry{access}\spxextra{įtaisytasis kintamasis}|hyperpage}{100}
+\indexentry{open (įtaisytasis kintamasis)@\spxentry{open}\spxextra{įtaisytasis kintamasis}|hyperpage}{100}
+\indexentry{public (įtaisytasis kintamasis)@\spxentry{public}\spxextra{įtaisytasis kintamasis}|hyperpage}{100}
+\indexentry{protected (įtaisytasis kintamasis)@\spxentry{protected}\spxextra{įtaisytasis kintamasis}|hyperpage}{100}
+\indexentry{private (įtaisytasis kintamasis)@\spxentry{private}\spxextra{įtaisytasis kintamasis}|hyperpage}{100}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!connect()@\spxentry{connect()}|hyperpage}{116}
+\indexentry{connect()@\spxentry{connect()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{116}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!tabular()@\spxentry{tabular()}|hyperpage}{116}
+\indexentry{tabular()@\spxentry{tabular()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{116}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!xpath()@\spxentry{xpath()}|hyperpage}{117}
+\indexentry{xpath()@\spxentry{xpath()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{117}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!bind()@\spxentry{bind()}|hyperpage}{130}
+\indexentry{bind()@\spxentry{bind()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{130}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!prop()@\spxentry{prop()}|hyperpage}{130}
+\indexentry{prop()@\spxentry{prop()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{130}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!item()@\spxentry{item()}|hyperpage}{130}
+\indexentry{item()@\spxentry{item()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{130}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!param()@\spxentry{param()}|hyperpage}{130}
+\indexentry{param()@\spxentry{param()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{130}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!var()@\spxentry{var()}|hyperpage}{130}
+\indexentry{var()@\spxentry{var()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{130}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!self()@\spxentry{self()}|hyperpage}{130}
+\indexentry{self()@\spxentry{self()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{130}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!or()@\spxentry{or()}|hyperpage}{130}
+\indexentry{or()@\spxentry{or()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{130}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!and()@\spxentry{and()}|hyperpage}{130}
+\indexentry{and()@\spxentry{and()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{130}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!not()@\spxentry{not()}|hyperpage}{130}
+\indexentry{not()@\spxentry{not()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{130}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!eq()@\spxentry{eq()}|hyperpage}{130}
+\indexentry{eq()@\spxentry{eq()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{130}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!ne()@\spxentry{ne()}|hyperpage}{131}
+\indexentry{ne()@\spxentry{ne()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{131}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!lt()@\spxentry{lt()}|hyperpage}{131}
+\indexentry{lt()@\spxentry{lt()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{131}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!le()@\spxentry{le()}|hyperpage}{131}
+\indexentry{le()@\spxentry{le()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{131}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!gt()@\spxentry{gt()}|hyperpage}{131}
+\indexentry{gt()@\spxentry{gt()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{131}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!ge()@\spxentry{ge()}|hyperpage}{131}
+\indexentry{ge()@\spxentry{ge()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{131}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!add()@\spxentry{add()}|hyperpage}{131}
+\indexentry{add()@\spxentry{add()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{131}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!sub()@\spxentry{sub()}|hyperpage}{131}
+\indexentry{sub()@\spxentry{sub()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{131}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!mul()@\spxentry{mul()}|hyperpage}{131}
+\indexentry{mul()@\spxentry{mul()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{131}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!div()@\spxentry{div()}|hyperpage}{131}
+\indexentry{div()@\spxentry{div()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{131}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!mod()@\spxentry{mod()}|hyperpage}{132}
+\indexentry{mod()@\spxentry{mod()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{132}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!positive()@\spxentry{positive()}|hyperpage}{132}
+\indexentry{positive()@\spxentry{positive()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{132}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!negative()@\spxentry{negative()}|hyperpage}{132}
+\indexentry{negative()@\spxentry{negative()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{132}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!tuple()@\spxentry{tuple()}|hyperpage}{132}
+\indexentry{tuple()@\spxentry{tuple()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{132}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!list()@\spxentry{list()}|hyperpage}{132}
+\indexentry{list()@\spxentry{list()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{132}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!getattr()@\spxentry{getattr()}|hyperpage}{132}
+\indexentry{getattr()@\spxentry{getattr()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{132}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!getitem()@\spxentry{getitem()}|hyperpage}{132}
+\indexentry{getitem()@\spxentry{getitem()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{132}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!dict()@\spxentry{dict()}|hyperpage}{133}
+\indexentry{dict()@\spxentry{dict()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{133}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!set()@\spxentry{set()}|hyperpage}{133}
+\indexentry{set()@\spxentry{set()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{133}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!op()@\spxentry{op()}|hyperpage}{133}
+\indexentry{op()@\spxentry{op()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{133}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!stack()@\spxentry{stack()}|hyperpage}{133}
+\indexentry{stack()@\spxentry{stack()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{133}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!datetime()@\spxentry{datetime()}|hyperpage}{133}
+\indexentry{datetime()@\spxentry{datetime()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{133}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!date()@\spxentry{date()}|hyperpage}{133}
+\indexentry{date()@\spxentry{date()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{133}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!date()@\spxentry{date()}|hyperpage}{134}
+\indexentry{date()@\spxentry{date()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{134}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!file()@\spxentry{file()}|hyperpage}{134}
+\indexentry{file()@\spxentry{file()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{134}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!extract()@\spxentry{extract()}|hyperpage}{134}
+\indexentry{extract()@\spxentry{extract()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{134}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!decompress()@\spxentry{decompress()}|hyperpage}{134}
+\indexentry{decompress()@\spxentry{decompress()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{134}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!header()@\spxentry{header()}|hyperpage}{135}
+\indexentry{header()@\spxentry{header()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{135}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!head()@\spxentry{head()}|hyperpage}{135}
+\indexentry{head()@\spxentry{head()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{135}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!tail()@\spxentry{tail()}|hyperpage}{135}
+\indexentry{tail()@\spxentry{tail()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{135}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!eq()@\spxentry{eq()}|hyperpage}{136}
+\indexentry{eq()@\spxentry{eq()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{136}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!ne()@\spxentry{ne()}|hyperpage}{136}
+\indexentry{ne()@\spxentry{ne()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{136}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!gt()@\spxentry{gt()}|hyperpage}{137}
+\indexentry{gt()@\spxentry{gt()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{137}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!lt()@\spxentry{lt()}|hyperpage}{137}
+\indexentry{lt()@\spxentry{lt()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{137}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!ge()@\spxentry{ge()}|hyperpage}{137}
+\indexentry{ge()@\spxentry{ge()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{137}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!le()@\spxentry{le()}|hyperpage}{137}
+\indexentry{le()@\spxentry{le()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{137}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!in()@\spxentry{in()}|hyperpage}{137}
+\indexentry{in()@\spxentry{in()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{137}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!notin()@\spxentry{notin()}|hyperpage}{137}
+\indexentry{notin()@\spxentry{notin()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{137}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!contains()@\spxentry{contains()}|hyperpage}{137}
+\indexentry{contains()@\spxentry{contains()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{137}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!startswith()@\spxentry{startswith()}|hyperpage}{138}
+\indexentry{startswith()@\spxentry{startswith()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{138}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!endswith()@\spxentry{endswith()}|hyperpage}{138}
+\indexentry{endswith()@\spxentry{endswith()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{138}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!and()@\spxentry{and()}|hyperpage}{138}
+\indexentry{and()@\spxentry{and()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{138}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!or()@\spxentry{or()}|hyperpage}{138}
+\indexentry{or()@\spxentry{or()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{138}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!sort()@\spxentry{sort()}|hyperpage}{138}
+\indexentry{sort()@\spxentry{sort()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{138}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!select()@\spxentry{select()}|hyperpage}{138}
+\indexentry{select()@\spxentry{select()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{138}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!include()@\spxentry{include()}|hyperpage}{138}
+\indexentry{include()@\spxentry{include()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{138}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!exclude()@\spxentry{exclude()}|hyperpage}{138}
+\indexentry{exclude()@\spxentry{exclude()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{138}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!expand()@\spxentry{expand()}|hyperpage}{138}
+\indexentry{expand()@\spxentry{expand()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{138}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!extends()@\spxentry{extends()}|hyperpage}{139}
+\indexentry{extends()@\spxentry{extends()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{139}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!limit()@\spxentry{limit()}|hyperpage}{139}
+\indexentry{limit()@\spxentry{limit()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{139}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!page()@\spxentry{page()}|hyperpage}{139}
+\indexentry{page()@\spxentry{page()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{139}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!cron()@\spxentry{cron()}|hyperpage}{139}
+\indexentry{cron()@\spxentry{cron()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{139}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!hourly()@\spxentry{hourly()}|hyperpage}{140}
+\indexentry{hourly()@\spxentry{hourly()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{140}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!daily()@\spxentry{daily()}|hyperpage}{140}
+\indexentry{daily()@\spxentry{daily()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{140}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!weekly()@\spxentry{weekly()}|hyperpage}{140}
+\indexentry{weekly()@\spxentry{weekly()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{140}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!monthly()@\spxentry{monthly()}|hyperpage}{140}
+\indexentry{monthly()@\spxentry{monthly()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{140}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!yearly()@\spxentry{yearly()}|hyperpage}{140}
+\indexentry{yearly()@\spxentry{yearly()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{140}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!null()@\spxentry{null()}|hyperpage}{140}
+\indexentry{null()@\spxentry{null()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{140}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!replace()@\spxentry{replace()}|hyperpage}{140}
+\indexentry{replace()@\spxentry{replace()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{140}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!re()@\spxentry{re()}|hyperpage}{140}
+\indexentry{re()@\spxentry{re()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{140}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!cast()@\spxentry{cast()}|hyperpage}{140}
+\indexentry{cast()@\spxentry{cast()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{140}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!split()@\spxentry{split()}|hyperpage}{140}
+\indexentry{split()@\spxentry{split()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{140}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!strip()@\spxentry{strip()}|hyperpage}{141}
+\indexentry{strip()@\spxentry{strip()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{141}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!lower()@\spxentry{lower()}|hyperpage}{141}
+\indexentry{lower()@\spxentry{lower()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{141}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!upper()@\spxentry{upper()}|hyperpage}{141}
+\indexentry{upper()@\spxentry{upper()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{141}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!len()@\spxentry{len()}|hyperpage}{141}
+\indexentry{len()@\spxentry{len()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{141}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!choose()@\spxentry{choose()}|hyperpage}{141}
+\indexentry{choose()@\spxentry{choose()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{141}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!switch()@\spxentry{switch()}|hyperpage}{141}
+\indexentry{switch()@\spxentry{switch()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{141}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!case()@\spxentry{case()}|hyperpage}{141}
+\indexentry{case()@\spxentry{case()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{141}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!case()@\spxentry{case()}|hyperpage}{141}
+\indexentry{case()@\spxentry{case()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{141}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!swap()@\spxentry{swap()}|hyperpage}{141}
+\indexentry{swap()@\spxentry{swap()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{141}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!return()@\spxentry{return()}|hyperpage}{141}
+\indexentry{return()@\spxentry{return()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{141}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!set()@\spxentry{set()}|hyperpage}{141}
+\indexentry{set()@\spxentry{set()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{141}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!url()@\spxentry{url()}|hyperpage}{141}
+\indexentry{url()@\spxentry{url()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{141}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!query()@\spxentry{query()}|hyperpage}{142}
+\indexentry{query()@\spxentry{query()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{142}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!path()@\spxentry{path()}|hyperpage}{142}
+\indexentry{path()@\spxentry{path()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{142}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!getattr()@\spxentry{getattr()}|hyperpage}{143}
+\indexentry{getattr()@\spxentry{getattr()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{143}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!getitem()@\spxentry{getitem()}|hyperpage}{143}
+\indexentry{getitem()@\spxentry{getitem()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{143}
+\indexentry{built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}!first()@\spxentry{first()}|hyperpage}{143}
+\indexentry{first()@\spxentry{first()}!built\sphinxhyphen{}in function@\spxentry{built\sphinxhyphen{}in function}|hyperpage}{143}
+\indexentry{ADK@\spxentry{ADK}|hyperindexformat{\spxpagem}}{144}
+\indexentry{ADP@\spxentry{ADP}|hyperindexformat{\spxpagem}}{144}
+\indexentry{ADS@\spxentry{ADS}|hyperindexformat{\spxpagem}}{144}
+\indexentry{ADSA@\spxentry{ADSA}|hyperindexformat{\spxpagem}}{144}
+\indexentry{aplinkos kintamasis@\spxentry{aplinkos kintamasis}|hyperindexformat{\spxpagem}}{144}
+\indexentry{atvirų duomenų direktyva@\spxentry{atvirų duomenų direktyva}|hyperindexformat{\spxpagem}}{144}
+\indexentry{BDAR@\spxentry{BDAR}|hyperindexformat{\spxpagem}}{144}
+\indexentry{brandos lygis@\spxentry{brandos lygis}|hyperindexformat{\spxpagem}}{144}
+\indexentry{daugiareikšmis tipas@\spxentry{daugiareikšmis tipas}|hyperindexformat{\spxpagem}}{145}
+\indexentry{duomenų valdymo aktas@\spxentry{duomenų valdymo aktas}|hyperindexformat{\spxpagem}}{146}
+\indexentry{duomenų katalogas@\spxentry{duomenų katalogas}|hyperindexformat{\spxpagem}}{146}
+\indexentry{didelės vertės duomenys@\spxentry{didelės vertės duomenys}|hyperindexformat{\spxpagem}}{146}
+\indexentry{aukštos vertės duomenys@\spxentry{aukštos vertės duomenys}|hyperindexformat{\spxpagem}}{146}
+\indexentry{duomenų serializavimo formatas@\spxentry{duomenų serializavimo formatas}|hyperindexformat{\spxpagem}}{146}
+\indexentry{DSA@\spxentry{DSA}|hyperindexformat{\spxpagem}}{146}
+\indexentry{EIF@\spxentry{EIF}|hyperindexformat{\spxpagem}}{147}
+\indexentry{Europos sąveikumo karkasas@\spxentry{Europos sąveikumo karkasas}|hyperindexformat{\spxpagem}}{147}
+\indexentry{IVPK@\spxentry{IVPK}|hyperindexformat{\spxpagem}}{147}
+\indexentry{jungtinis modelis@\spxentry{jungtinis modelis}|hyperindexformat{\spxpagem}}{147}
+\indexentry{kanoniniai duomenys@\spxentry{kanoniniai duomenys}|hyperindexformat{\spxpagem}}{147}
+\indexentry{kodinis pavadinimas@\spxentry{kodinis pavadinimas}|hyperindexformat{\spxpagem}}{148}
+\indexentry{kompozicinis raktas@\spxentry{kompozicinis raktas}|hyperindexformat{\spxpagem}}{148}
+\indexentry{manifestas@\spxentry{manifestas}|hyperindexformat{\spxpagem}}{148}
+\indexentry{metaduomenys@\spxentry{metaduomenys}|hyperindexformat{\spxpagem}}{148}
+\indexentry{normalizavimas@\spxentry{normalizavimas}|hyperindexformat{\spxpagem}}{148}
+\indexentry{prieigos taškas@\spxentry{prieigos taškas}|hyperindexformat{\spxpagem}}{148}
+\indexentry{REST API@\spxentry{REST API}|hyperindexformat{\spxpagem}}{148}
+\indexentry{web servisas@\spxentry{web servisas}|hyperindexformat{\spxpagem}}{149}
+\indexentry{YAML@\spxentry{YAML}|hyperindexformat{\spxpagem}}{149}
+\indexentry{viešasis žodynas@\spxentry{viešasis žodynas}|hyperindexformat{\spxpagem}}{149}
+\indexentry{sudėtinis tipas@\spxentry{sudėtinis tipas}|hyperindexformat{\spxpagem}}{149}
+\indexentry{sisteminis pavadinimas@\spxentry{sisteminis pavadinimas}|hyperindexformat{\spxpagem}}{149}
+\indexentry{pirminis šaltinis@\spxentry{pirminis šaltinis}|hyperindexformat{\spxpagem}}{149}
+\indexentry{pirminis duomenų šaltinis@\spxentry{pirminis duomenų šaltinis}|hyperindexformat{\spxpagem}}{149}
+\indexentry{DCAT@\spxentry{DCAT}|hyperindexformat{\spxpagem}}{149}
+\indexentry{DCAT\sphinxhyphen {}AP@\spxentry{DCAT\sphinxhyphen {}AP}|hyperindexformat{\spxpagem}}{149}
+\indexentry{dimensija@\spxentry{dimensija}|hyperindexformat{\spxpagem}}{150}
+\indexentry{duomenų rinkinys@\spxentry{duomenų rinkinys}|hyperindexformat{\spxpagem}}{150}
+\indexentry{distribucija@\spxentry{distribucija}|hyperindexformat{\spxpagem}}{150}
+\indexentry{bazė@\spxentry{bazė}|hyperindexformat{\spxpagem}}{150}
+\indexentry{modelis@\spxentry{modelis}|hyperindexformat{\spxpagem}}{151}
+\indexentry{savybė@\spxentry{savybė}|hyperindexformat{\spxpagem}}{151}
+\indexentry{subjektas@\spxentry{subjektas}|hyperindexformat{\spxpagem}}{151}
+\indexentry{objektas@\spxentry{objektas}|hyperindexformat{\spxpagem}}{151}
+\indexentry{žodynas@\spxentry{žodynas}|hyperindexformat{\spxpagem}}{151}
+\indexentry{API@\spxentry{API}|hyperindexformat{\spxpagem}}{152}
+\indexentry{duomenų šaltinis@\spxentry{duomenų šaltinis}|hyperindexformat{\spxpagem}}{152}
+\indexentry{ETL@\spxentry{ETL}|hyperindexformat{\spxpagem}}{152}
+\indexentry{iteratorius@\spxentry{iteratorius}|hyperindexformat{\spxpagem}}{152}
+\indexentry{URI@\spxentry{URI}|hyperindexformat{\spxpagem}}{152}
+\indexentry{POSIX@\spxentry{POSIX}|hyperindexformat{\spxpagem}}{152}
+\indexentry{DOS@\spxentry{DOS}|hyperindexformat{\spxpagem}}{152}
+\indexentry{reguliarioji išraiška@\spxentry{reguliarioji išraiška}|hyperindexformat{\spxpagem}}{152}
+\indexentry{JSON@\spxentry{JSON}|hyperindexformat{\spxpagem}}{152}
+\indexentry{RDF@\spxentry{RDF}|hyperindexformat{\spxpagem}}{152}
+\indexentry{TGIĮ@\spxentry{TGIĮ}|hyperindexformat{\spxpagem}}{152}
+\indexentry{ŠDSA@\spxentry{ŠDSA}|hyperindexformat{\spxpagem}}{153}
+\indexentry{VSSA@\spxentry{VSSA}|hyperindexformat{\spxpagem}}{153}
+\indexentry{VIIVĮ@\spxentry{VIIVĮ}|hyperindexformat{\spxpagem}}{153}

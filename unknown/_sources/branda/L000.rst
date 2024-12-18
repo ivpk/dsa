@@ -1,0 +1,73 @@
+.. default-role:: literal
+.. _level0:
+
+Nulinis Brandos Lygis (L000)
+============================
+
+**Nekaupiama**
+--------------
+
+Duomenys nekaupiami. Duomenų rinkinys užregistruotas atvirų duomenų
+portale. Užpildyta :data:`dataset` eilutė.
+
+Plačiau apie brandos lygio kėlimą skaitykite skyriuje :ref:`to-level-0`.
+
+**Pavyzdžiai**
+
+========== =================== ====== 
+Imone                                
+-------------------------------------
+imones_id  imones_pavadinimas  rusis 
+========== =================== ======
+42         UAB "Įmonė"         1     
+========== =================== ======
+
+============= ========= ========== ======================= =======
+Filialas                                                  
+------------------------------------------------------------------
+ikurimo_data  atstumas  imones_id  imones_pavadinimas._id  tel_nr
+============= ========= ========== ======================= =======
+============= ========= ========== ======================= =======
+
+== == == == ====================== ======== =========== ======
+Struktūros aprašas                                            
+--------------------------------------------------------------
+d  r  b  m  property               type     ref         level 
+== == == == ====================== ======== =========== ======
+example                                                       
+---------------------------------- -------- ----------- ------
+\        Imone                              imones_id   4     
+-- -- -- ------------------------- -------- ----------- ------
+\           imones_id              integer              4     
+\           imones_pavadinimas     string               2     
+\           rusis                  integer              2     
+\        Filialas                                       0     
+-- -- -- ------------------------- -------- ----------- ------
+\           ikurimo_data           string               0     
+\           atstumas               string               0     
+\           imone                  ref      Imone       0     
+\           tel_nr                 string               0     
+== == == == ====================== ======== =========== ======
+
+.. level001:
+
+Reikalavimas 1 (L001)
+---------------------
+- **Duomenų nėra** - nuliniu brandos lygiu žymimi duomenys, kurių nėra,
+  pavyzdžiui jei įmonės filialų duomenų niekas nefiksuoja.
+  
+.. level002:
+
+Reikalavimas 2 (L002)
+---------------------
+- **Duomenys nepublikuojami** - nuliniu brandos lygiu žymimi duomenys,
+  kurie fiziškai egzistuoja, tačiau nėra publikuojami jokia forma.
+  
+.. level003:
+
+Reikalavimas 3 (L003)
+---------------------
+- **Ribojamas duomenų naudojimas** - nuliniu brandos lygiu žymimi
+  duomenys, kuri yra prieinami, tačiau pagal tokias naudojimo sąlygas,
+  kurios nėra suderinamos su atvirų duomenų licencijomis.
+

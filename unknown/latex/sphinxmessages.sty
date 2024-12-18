@@ -1,0 +1,21 @@
+%
+% sphinxmessages.sty
+%
+% message resources for Sphinx
+%
+\ProvidesPackage{sphinxmessages}[2019/01/04 v2.0 Localized LaTeX macros (Sphinx team)]
+
+\renewcommand{\literalblockcontinuedname}{tęsinys iš praeito puslapio}
+\renewcommand{\literalblockcontinuesname}{continues on next page}
+\renewcommand{\sphinxnonalphabeticalgroupname}{Non\sphinxhyphen{}alphabetical}
+\renewcommand{\sphinxsymbolsname}{Symbols}
+\renewcommand{\sphinxnumbersname}{Numbers}
+\def\pageautorefname{page}
+
+\addto\captionslithuanian{\renewcommand{\figurename}{Fig.\@{} }}
+\def\fnum@figure{\figurename\thefigure{}}
+
+\addto\captionslithuanian{\renewcommand{\tablename}{Table }}
+\def\fnum@table{\tablename\thetable{}}
+
+\addto\captionslithuanian{\renewcommand{\literalblockname}{Listing}}

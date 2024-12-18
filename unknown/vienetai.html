@@ -1,0 +1,1203 @@
+
+<!DOCTYPE html>
+
+
+<html lang="lt" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Matavimo vienetai &#8212; DSA</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-examples.css?v=e236af4b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=f0eb6ae9" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=4ee96f2e"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="_static/translations.js?v=e4682f4a"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'vienetai';</script>
+    <link rel="index" title="Indeksas" href="genindex.html" />
+    <link rel="search" title="Paieška" href="search.html" />
+    <link rel="next" title="Apibendrinimas" href="apibendrinimas.html" />
+    <link rel="prev" title="Kodiniai pavadinimai" href="pavadinimai.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="lt"/>
+  <meta name="docsearch:version" content="1.1" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">DSA</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Paieška" aria-label="Paieška" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Paieška</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="modelis.html">Koncepcinis modelis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formatas.html">Lentelės formatas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dimensijos.html">Dimensijos</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="tipai.html">Duomenų tipai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pavadinimai.html">Kodiniai pavadinimai</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Matavimo vienetai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apibendrinimas.html">Apibendrinimas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="identifikatoriai.html">Asociacija</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modeliai/funkciniai.html">Funkciniai modeliai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="branda.html">Brandos lygiai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prieiga.html">Prieigos lygiai</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="schemos/index.html">Duomenų schemos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="schemos/xsd.html">XSD</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="saltiniai.html">Duomenų šaltiniai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vardu-erdves.html">Vardų erdvės</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zodynai.html">Išoriniai žodynai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formules.html">Formulės</a></li>
+<li class="toctree-l1"><a class="reference internal" href="savokos.html">Sąvokos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keitimai.html">Keitimų istorija</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ivpk/dsa" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Šaltinio saugykla"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ivpk/dsa/issues/new?title=Issue%20on%20page%20%2Fvienetai.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Atidarykite problemą"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Pilno ekrano režimas"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Paieška" aria-label="Paieška" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Matavimo vienetai</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Turinys </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apibreztis-laike">Apibrėžtis laike</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apibreztis-erdveje">Apibrėžtis erdvėje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kokybiniai-duomenys">Kokybiniai duomenys</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kiekybiniai-duomenys">Kiekybiniai duomenys</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prefiksai">Prefiksai</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vienetai">Vienetai</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#specialiejie-vienetai">Specialiejie vienetai</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#laiko-vienetai">Laiko vienetai</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#si-baziniai-vienetai">SI Baziniai vienetai</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#si-isvestiniai-vienetai">SI Išvestiniai vienetai</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kiti-vienetai">Kiti vienetai</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="matavimo-vienetai">
+<span id="id1"></span><h1>Matavimo vienetai<a class="headerlink" href="#matavimo-vienetai" title="Link to this heading">#</a></h1>
+<section id="apibreztis-laike">
+<h2>Apibrėžtis laike<a class="headerlink" href="#apibreztis-laike" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">date</span></code> ir <code class="docutils literal notranslate"><span class="pre">datetime</span></code> tipo duomenų laukams gali būti žymimas ir <span class="xref std std-ref">laiko</span> duomenų tikslumas, pavyzdžiui:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>d</p></th>
+<th class="head"><p>r</p></th>
+<th class="head"><p>b</p></th>
+<th class="head"><p>m</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>level</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="5"><p>datasets/example</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>Matavimas</p></td>
+<td></td>
+<td><p>id</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>laikas</p></td>
+<td><p>datetime</p></td>
+<td><p>1S</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>vieta</p></td>
+<td><p>geometry(point, 4326)</p></td>
+<td><p>1m</p></td>
+<td><p>4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Šiuo atveju, nurodyta, kad laukas <code class="docutils literal notranslate"><span class="pre">laikas</span></code> yra 1 sekundės tikslumu, o <code class="docutils literal notranslate"><span class="pre">vieta</span></code> 1
+metro tikslumu.</p>
+<p>Žymint laiko tikslumą, galite naudoti tokius sutartinius simbolius (atkreipkite
+dėmesį, kad šie vienetai veikia tik su <code class="docutils literal notranslate"><span class="pre">date</span></code> ir <code class="docutils literal notranslate"><span class="pre">datetime</span></code> tipais):</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Simbolis</p></th>
+<th class="head"><p>Prasmė</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Y</p></td>
+<td><p>Metai</p></td>
+</tr>
+<tr class="row-odd"><td><p>Q</p></td>
+<td><p>Metų ketvirčiai</p></td>
+</tr>
+<tr class="row-even"><td><p>M</p></td>
+<td><p>Mėnesiai</p></td>
+</tr>
+<tr class="row-odd"><td><p>W</p></td>
+<td><p>Savaitės</p></td>
+</tr>
+<tr class="row-even"><td><p>D</p></td>
+<td><p>Dienos</p></td>
+</tr>
+<tr class="row-odd"><td><p>H</p></td>
+<td><p>Valandos</p></td>
+</tr>
+<tr class="row-even"><td><p>T</p></td>
+<td><p>Minutės</p></td>
+</tr>
+<tr class="row-odd"><td><p>S</p></td>
+<td><p>Sekundės</p></td>
+</tr>
+<tr class="row-even"><td><p>L</p></td>
+<td><p>Milisekundės</p></td>
+</tr>
+<tr class="row-odd"><td><p>U</p></td>
+<td><p>Mikrosekundės</p></td>
+</tr>
+<tr class="row-even"><td><p>N</p></td>
+<td><p>Nanosekundės</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="apibreztis-erdveje">
+<h2>Apibrėžtis erdvėje<a class="headerlink" href="#apibreztis-erdveje" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">geometry</span></code> tipo duomenų laukams gali būti žymimas <span class="xref std std-ref">erdvinių</span> duomenų tikslumas, pavyzdžiui:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Simbolis</p></th>
+<th class="head"><p>Prasmė</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>nm</p></td>
+<td><p>Nanometrai (10⁻⁹ m)</p></td>
+</tr>
+<tr class="row-odd"><td><p>mm</p></td>
+<td><p>Milimetrai (10⁻³ m)</p></td>
+</tr>
+<tr class="row-even"><td><p>cm</p></td>
+<td><p>Centimetrai (10⁻² m)</p></td>
+</tr>
+<tr class="row-odd"><td><p>m</p></td>
+<td><p>Metrai</p></td>
+</tr>
+<tr class="row-even"><td><p>km</p></td>
+<td><p>Kilometrai (10³ m)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="kokybiniai-duomenys">
+<h2>Kokybiniai duomenys<a class="headerlink" href="#kokybiniai-duomenys" title="Link to this heading">#</a></h2>
+<p>Kokybiniai duomenys skirstomi į dvi kategorijas:</p>
+<ul class="simple">
+<li><p>pavadinimai ir identifikatoriai</p></li>
+<li><p>kategoriniai duomenys</p></li>
+</ul>
+<p>Pavadinimai ir identifikatoriai <a class="reference internal" href="dimensijos.html#property.ref" title="property.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.ref</span></code></a> stulpelyje neturi jokio
+žymėjimo ir jiems suteikiamas <code class="docutils literal notranslate"><span class="pre">4</span></code> brandos lygis.</p>
+<p>Kategoriniai duomenys žymimi naudojant papildomą <code class="docutils literal notranslate"><span class="pre">enum</span></code> dimensiją, kurioje
+išvardinamos visos galimos kategorinių duomenų reikšmės.</p>
+<p>Jei kategoriniai duomenys yra palyginami, pavyzdžiui:</p>
+<ul class="simple">
+<li><p>puikiai</p></li>
+<li><p>gerai</p></li>
+<li><p>vidutiniškai</p></li>
+<li><p>blogai</p></li>
+</ul>
+<p>Tada, tokiems duomenims, turi būti naudojamas <code class="docutils literal notranslate"><span class="pre">integer</span></code> tipas, kad nebūtų
+prarastos palyginamosios savybės.</p>
+<p>Jei duomenys yra nepalyginami, pavyzdžiui:</p>
+<ul class="simple">
+<li><p>raudona</p></li>
+<li><p>geltona</p></li>
+<li><p>žalia</p></li>
+<li><p>mėlyna</p></li>
+</ul>
+<p>tada nebūtina naudoti <code class="docutils literal notranslate"><span class="pre">integer</span></code> tipą.</p>
+</section>
+<section id="kiekybiniai-duomenys">
+<h2>Kiekybiniai duomenys<a class="headerlink" href="#kiekybiniai-duomenys" title="Link to this heading">#</a></h2>
+<p>Matavimo vienetai naudojant <a class="reference external" href="https://en.wikipedia.org/wiki/International_System_of_Units">SI simbolius</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/SI_derived_unit">išvestinius SI simbolius</a> ir
+<a class="reference external" href="https://en.wikipedia.org/wiki/Non-SI_units_mentioned_in_the_SI">simbolius patvirtintus naudojimui su SI</a>,  pateikiami <a class="reference internal" href="dimensijos.html#property.ref" title="property.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.ref</span></code></a>
+stulpelyje.</p>
+<p>Pateikus vienetus, laukui gali būti suteikiamas 4-as brandos lygis.</p>
+<p>Pavyzdys:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>d</p></th>
+<th class="head"><p>r</p></th>
+<th class="head"><p>b</p></th>
+<th class="head"><p>m</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>level</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="5"><p>datasets/example</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>Matavimas</p></td>
+<td></td>
+<td><p>id</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>temperatura</p></td>
+<td><p>number</p></td>
+<td><p>°C</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>svorlis</p></td>
+<td><p>number</p></td>
+<td><p>kg</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>plotas</p></td>
+<td><p>number</p></td>
+<td><p>m²</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>turis</p></td>
+<td><p>number</p></td>
+<td><p>m³</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>greitis</p></td>
+<td><p>number</p></td>
+<td><p>km/h</p></td>
+<td><p>4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Vienetai užrašomi naudojant matematinę notaciją, kurioje galima naudoti
+skaičius, daugybos ir dalybos simbolius, kėlimą laipsniu ir atskirų vienetų
+sudėtį:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Žymėjimas</p></th>
+<th class="head"><p>Reikšmė</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>⋅ · *</p></td>
+<td><p>Daugyba</p></td>
+</tr>
+<tr class="row-odd"><td><p>/</p></td>
+<td><p>Dalyba</p></td>
+</tr>
+<tr class="row-even"><td><p>(tarpas)</p></td>
+<td><p>Sudėtis</p></td>
+</tr>
+<tr class="row-odd"><td><p>^<sup>(+-)(skaičius)</sup> arba ⁺ ⁻ ⁰ ¹ ² ³ ⁴ ⁵ ⁶ ⁷ ⁸ ⁹</p></td>
+<td><p>Kėlimas laipsniu</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Pavyzdžiai:</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">m</div>
+<div class="line">1m</div>
+<div class="line">10m</div>
+<div class="line">m^2</div>
+<div class="line">m²</div>
+<div class="line">km¹⁰</div>
+<div class="line">kg⋅m²⋅s⁻³⋅A⁻¹</div>
+<div class="line">kg*m^2*s^-3⋅A^-1</div>
+<div class="line">8kg⋅m²⋅s⁻³⋅A⁻¹</div>
+<div class="line">mg/l</div>
+<div class="line">g/m^2</div>
+<div class="line">mg/m^3</div>
+<div class="line">mm</div>
+<div class="line">U/m^2</div>
+<div class="line">U/m^3</div>
+<div class="line">%</div>
+<div class="line">ha</div>
+<div class="line">min</div>
+<div class="line">h</div>
+<div class="line">bar</div>
+<div class="line">U</div>
+<div class="line">10^6s</div>
+<div class="line">10⁶s</div>
+<div class="line">μ/m³</div>
+<div class="line">yr</div>
+<div class="line">3mo</div>
+<div class="line">yr 2mo 4wk</div>
+<div class="line">°C</div>
+<div class="line">°</div>
+</div>
+</div></blockquote>
+<section id="prefiksai">
+<h3>Prefiksai<a class="headerlink" href="#prefiksai" title="Link to this heading">#</a></h3>
+<p>Kiekybiniai matavimo vienetai gali turėti tokius prefiksus:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Žymėjimas</p></th>
+<th class="head"><p>10<sup>n</sup></p></th>
+<th class="head"><p>Priešdėlis</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Y</p></td>
+<td><p>10<sup>24</sup></p></td>
+<td><p>yotta</p></td>
+</tr>
+<tr class="row-odd"><td><p>Z</p></td>
+<td><p>10<sup>21</sup></p></td>
+<td><p>zetta</p></td>
+</tr>
+<tr class="row-even"><td><p>E</p></td>
+<td><p>10<sup>18</sup></p></td>
+<td><p>exa</p></td>
+</tr>
+<tr class="row-odd"><td><p>P</p></td>
+<td><p>10<sup>15</sup></p></td>
+<td><p>peta</p></td>
+</tr>
+<tr class="row-even"><td><p>T</p></td>
+<td><p>10<sup>12</sup></p></td>
+<td><p>tera</p></td>
+</tr>
+<tr class="row-odd"><td><p>G</p></td>
+<td><p>10<sup>9</sup></p></td>
+<td><p>giga</p></td>
+</tr>
+<tr class="row-even"><td><p>M</p></td>
+<td><p>10<sup>6</sup></p></td>
+<td><p>mega</p></td>
+</tr>
+<tr class="row-odd"><td><p>k</p></td>
+<td><p>10<sup>3</sup></p></td>
+<td><p>kilo</p></td>
+</tr>
+<tr class="row-even"><td><p>h</p></td>
+<td><p>10<sup>2</sup></p></td>
+<td><p>hecto</p></td>
+</tr>
+<tr class="row-odd"><td><p>da</p></td>
+<td><p>10<sup>1</sup></p></td>
+<td><p>deca</p></td>
+</tr>
+<tr class="row-even"><td><p>d</p></td>
+<td><p>10<sup>-1</sup></p></td>
+<td><p>deci</p></td>
+</tr>
+<tr class="row-odd"><td><p>c</p></td>
+<td><p>10<sup>-2</sup></p></td>
+<td><p>centi</p></td>
+</tr>
+<tr class="row-even"><td><p>m</p></td>
+<td><p>10<sup>-3</sup></p></td>
+<td><p>milli</p></td>
+</tr>
+<tr class="row-odd"><td><p>µ</p></td>
+<td><p>10<sup>-6</sup></p></td>
+<td><p>micro</p></td>
+</tr>
+<tr class="row-even"><td><p>n</p></td>
+<td><p>10<sup>-9</sup></p></td>
+<td><p>nano</p></td>
+</tr>
+<tr class="row-odd"><td><p>p</p></td>
+<td><p>10<sup>-12</sup></p></td>
+<td><p>pico</p></td>
+</tr>
+<tr class="row-even"><td><p>f</p></td>
+<td><p>10<sup>-15</sup></p></td>
+<td><p>femto</p></td>
+</tr>
+<tr class="row-odd"><td><p>a</p></td>
+<td><p>10<sup>-18</sup></p></td>
+<td><p>atto</p></td>
+</tr>
+<tr class="row-even"><td><p>z</p></td>
+<td><p>10<sup>-21</sup></p></td>
+<td><p>zepto</p></td>
+</tr>
+<tr class="row-odd"><td><p>y</p></td>
+<td><p>10<sup>-24</sup></p></td>
+<td><p>yocto</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="vienetai">
+<h3>Vienetai<a class="headerlink" href="#vienetai" title="Link to this heading">#</a></h3>
+<section id="specialiejie-vienetai">
+<h4>Specialiejie vienetai<a class="headerlink" href="#specialiejie-vienetai" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Žymėjimas</p></th>
+<th class="head"><p>Pavadinimas</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>U</p></td>
+<td><p>vienetai (keikis vienetais)</p></td>
+</tr>
+<tr class="row-odd"><td><p>%</p></td>
+<td><p>procentai</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="laiko-vienetai">
+<h4>Laiko vienetai<a class="headerlink" href="#laiko-vienetai" title="Link to this heading">#</a></h4>
+<p>Naudojami tik tais atvejais, kai matuojamas laiko kiekis, o ne data ir laikas.
+Datos ir laiko (<code class="docutils literal notranslate"><span class="pre">date</span></code> ir <code class="docutils literal notranslate"><span class="pre">datetime</span></code> tipai) tikslumui žymėti, naudojamos kitos
+žymės.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Žymėjimas</p></th>
+<th class="head"><p>Pavadinimas</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>s</p></td>
+<td><p>sekundė</p></td>
+</tr>
+<tr class="row-odd"><td><p>min</p></td>
+<td><p>minutė</p></td>
+</tr>
+<tr class="row-even"><td><p>h</p></td>
+<td><p>valanda</p></td>
+</tr>
+<tr class="row-odd"><td><p>d</p></td>
+<td><p>diena (24 valandos)</p></td>
+</tr>
+<tr class="row-even"><td><p>wk</p></td>
+<td><p>savaitė (7 dienos)</p></td>
+</tr>
+<tr class="row-odd"><td><p>mo</p></td>
+<td><p>mėnuo (28-31 diena arba 4 savaitės)</p></td>
+</tr>
+<tr class="row-even"><td><p>yr</p></td>
+<td><p>metai (354.37 dienos arba 12 mėnesių)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="si-baziniai-vienetai">
+<h4>SI Baziniai vienetai<a class="headerlink" href="#si-baziniai-vienetai" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Žymėjimas</p></th>
+<th class="head"><p>Pavadinimas</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>m</p></td>
+<td><p>metre</p></td>
+</tr>
+<tr class="row-odd"><td><p>g</p></td>
+<td><p>gram</p></td>
+</tr>
+<tr class="row-even"><td><p>s</p></td>
+<td><p>second</p></td>
+</tr>
+<tr class="row-odd"><td><p>A</p></td>
+<td><p>ampere</p></td>
+</tr>
+<tr class="row-even"><td><p>K</p></td>
+<td><p>kelvin</p></td>
+</tr>
+<tr class="row-odd"><td><p>mol</p></td>
+<td><p>mole</p></td>
+</tr>
+<tr class="row-even"><td><p>cd</p></td>
+<td><p>candela</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="si-isvestiniai-vienetai">
+<h4>SI Išvestiniai vienetai<a class="headerlink" href="#si-isvestiniai-vienetai" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Žymėjimas</p></th>
+<th class="head"><p>Pavadinimas</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Hz</p></td>
+<td><p>hertz</p></td>
+</tr>
+<tr class="row-odd"><td><p>rad</p></td>
+<td><p>radian</p></td>
+</tr>
+<tr class="row-even"><td><p>sr</p></td>
+<td><p>steradian</p></td>
+</tr>
+<tr class="row-odd"><td><p>N</p></td>
+<td><p>newton</p></td>
+</tr>
+<tr class="row-even"><td><p>Pa</p></td>
+<td><p>pascal</p></td>
+</tr>
+<tr class="row-odd"><td><p>J</p></td>
+<td><p>joule</p></td>
+</tr>
+<tr class="row-even"><td><p>W</p></td>
+<td><p>watt</p></td>
+</tr>
+<tr class="row-odd"><td><p>C</p></td>
+<td><p>coulomb</p></td>
+</tr>
+<tr class="row-even"><td><p>V</p></td>
+<td><p>volt</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>farad</p></td>
+</tr>
+<tr class="row-even"><td><p>Ω</p></td>
+<td><p>ohm</p></td>
+</tr>
+<tr class="row-odd"><td><p>S</p></td>
+<td><p>siemens</p></td>
+</tr>
+<tr class="row-even"><td><p>Wb</p></td>
+<td><p>weber</p></td>
+</tr>
+<tr class="row-odd"><td><p>T</p></td>
+<td><p>tesla</p></td>
+</tr>
+<tr class="row-even"><td><p>H</p></td>
+<td><p>henry</p></td>
+</tr>
+<tr class="row-odd"><td><p>°C</p></td>
+<td><p>degree Celsius</p></td>
+</tr>
+<tr class="row-even"><td><p>lm</p></td>
+<td><p>lumen</p></td>
+</tr>
+<tr class="row-odd"><td><p>lx</p></td>
+<td><p>lux</p></td>
+</tr>
+<tr class="row-even"><td><p>Bq</p></td>
+<td><p>becquerel</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gy</p></td>
+<td><p>gray</p></td>
+</tr>
+<tr class="row-even"><td><p>Sv</p></td>
+<td><p>sievert</p></td>
+</tr>
+<tr class="row-odd"><td><p>kat</p></td>
+<td><p>katal</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="kiti-vienetai">
+<h4>Kiti vienetai<a class="headerlink" href="#kiti-vienetai" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Žymėjimas</p></th>
+<th class="head"><p>Pavadinimas</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>au</p></td>
+<td><p>astronomical unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>°</p></td>
+<td><p>degree</p></td>
+</tr>
+<tr class="row-even"><td><p>′</p></td>
+<td><p>arcminute</p></td>
+</tr>
+<tr class="row-odd"><td><p>″</p></td>
+<td><p>arcsecond</p></td>
+</tr>
+<tr class="row-even"><td><p>ha</p></td>
+<td><p>hectare</p></td>
+</tr>
+<tr class="row-odd"><td><p>l</p></td>
+<td><p>litre</p></td>
+</tr>
+<tr class="row-even"><td><p>L</p></td>
+<td><p>litre</p></td>
+</tr>
+<tr class="row-odd"><td><p>t</p></td>
+<td><p>tonne</p></td>
+</tr>
+<tr class="row-even"><td><p>Da</p></td>
+<td><p>dalton</p></td>
+</tr>
+<tr class="row-odd"><td><p>eV</p></td>
+<td><p>electronvolt</p></td>
+</tr>
+<tr class="row-even"><td><p>Np</p></td>
+<td><p>neper</p></td>
+</tr>
+<tr class="row-odd"><td><p>B</p></td>
+<td><p>bel</p></td>
+</tr>
+<tr class="row-even"><td><p>dB</p></td>
+<td><p>decibel</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gal</p></td>
+<td><p>gal (acceleration)</p></td>
+</tr>
+<tr class="row-even"><td><p>u</p></td>
+<td><p>unified atomic mass unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>var</p></td>
+<td><p>volt-ampere reactive</p></td>
+</tr>
+<tr class="row-even"><td><p>pc</p></td>
+<td><p>parsec</p></td>
+</tr>
+<tr class="row-odd"><td><p>c₀ arba c_0</p></td>
+<td><p>natural unit of speed</p></td>
+</tr>
+<tr class="row-even"><td><p>ħ</p></td>
+<td><p>natural unit of action</p></td>
+</tr>
+<tr class="row-odd"><td><p>mₑ arba m_e</p></td>
+<td><p>natural unit of mass</p></td>
+</tr>
+<tr class="row-even"><td><p>e</p></td>
+<td><p>atomic unit of charge</p></td>
+</tr>
+<tr class="row-odd"><td><p>a₀ arba a_0</p></td>
+<td><p>atomic unit of length</p></td>
+</tr>
+<tr class="row-even"><td><p>E_h</p></td>
+<td><p>atomic unit of energy</p></td>
+</tr>
+<tr class="row-odd"><td><p>M</p></td>
+<td><p>nautical mile</p></td>
+</tr>
+<tr class="row-even"><td><p>kn</p></td>
+<td><p>knot</p></td>
+</tr>
+<tr class="row-odd"><td><p>Å</p></td>
+<td><p>ångström</p></td>
+</tr>
+<tr class="row-even"><td><p>a</p></td>
+<td><p>are</p></td>
+</tr>
+<tr class="row-odd"><td><p>b</p></td>
+<td><p>barn</p></td>
+</tr>
+<tr class="row-even"><td><p>bar</p></td>
+<td><p>bar</p></td>
+</tr>
+<tr class="row-odd"><td><p>atm</p></td>
+<td><p>standard atmosphere</p></td>
+</tr>
+<tr class="row-even"><td><p>Ci</p></td>
+<td><p>curie</p></td>
+</tr>
+<tr class="row-odd"><td><p>R</p></td>
+<td><p>roentgen</p></td>
+</tr>
+<tr class="row-even"><td><p>rem</p></td>
+<td><p>rem</p></td>
+</tr>
+<tr class="row-odd"><td><p>erg</p></td>
+<td><p>erg</p></td>
+</tr>
+<tr class="row-even"><td><p>dyn</p></td>
+<td><p>dyne</p></td>
+</tr>
+<tr class="row-odd"><td><p>P</p></td>
+<td><p>poise</p></td>
+</tr>
+<tr class="row-even"><td><p>st</p></td>
+<td><p>stokes</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mx</p></td>
+<td><p>maxwell</p></td>
+</tr>
+<tr class="row-even"><td><p>G</p></td>
+<td><p>gauss</p></td>
+</tr>
+<tr class="row-odd"><td><p>Oe</p></td>
+<td><p>ørsted</p></td>
+</tr>
+<tr class="row-even"><td><p>sb</p></td>
+<td><p>stilb</p></td>
+</tr>
+<tr class="row-odd"><td><p>ph</p></td>
+<td><p>phot</p></td>
+</tr>
+<tr class="row-even"><td><p>Torr</p></td>
+<td><p>torr</p></td>
+</tr>
+<tr class="row-odd"><td><p>kgf</p></td>
+<td><p>kilogram-force</p></td>
+</tr>
+<tr class="row-even"><td><p>cal</p></td>
+<td><p>calorie</p></td>
+</tr>
+<tr class="row-odd"><td><p>μ</p></td>
+<td><p>micron</p></td>
+</tr>
+<tr class="row-even"><td><p>xu</p></td>
+<td><p>x-unit</p></td>
+</tr>
+<tr class="row-odd"><td><p>γ</p></td>
+<td><p>gamma (mass, magnetic flux density)</p></td>
+</tr>
+<tr class="row-even"><td><p>λ</p></td>
+<td><p>lambda</p></td>
+</tr>
+<tr class="row-odd"><td><p>Jy</p></td>
+<td><p>jansky</p></td>
+</tr>
+<tr class="row-even"><td><p>mmHg</p></td>
+<td><p>millimetre of mercury</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="pavadinimai.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">praeitas</p>
+        <p class="prev-next-title">Kodiniai pavadinimai</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="apibendrinimas.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">kitas</p>
+        <p class="prev-next-title">Apibendrinimas</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Turinys
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apibreztis-laike">Apibrėžtis laike</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apibreztis-erdveje">Apibrėžtis erdvėje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kokybiniai-duomenys">Kokybiniai duomenys</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kiekybiniai-duomenys">Kiekybiniai duomenys</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prefiksai">Prefiksai</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vienetai">Vienetai</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#specialiejie-vienetai">Specialiejie vienetai</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#laiko-vienetai">Laiko vienetai</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#si-baziniai-vienetai">SI Baziniai vienetai</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#si-isvestiniai-vienetai">SI Išvestiniai vienetai</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kiti-vienetai">Kiti vienetai</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Iki Valstybės skaitmeninių sprendimų agentūra
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2019-2024, VSSA.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

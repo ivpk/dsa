@@ -1,0 +1,1288 @@
+
+<!DOCTYPE html>
+
+
+<html lang="lt" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Funkciniai modeliai &#8212; DSA</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-examples.css?v=e236af4b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=f0eb6ae9" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=4ee96f2e"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=e4682f4a"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+    <script type="module">
+mermaid.initialize({
+    startOnLoad:true,
+    theme: 'neutral'
+});
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'modeliai/funkciniai';</script>
+    <link rel="index" title="Indeksas" href="../genindex.html" />
+    <link rel="search" title="Paieška" href="../search.html" />
+    <link rel="next" title="Brandos lygiai" href="../branda.html" />
+    <link rel="prev" title="Asociacija" href="../identifikatoriai.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="lt"/>
+  <meta name="docsearch:version" content="1.1" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">DSA</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Paieška" aria-label="Paieška" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Paieška</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../modelis.html">Koncepcinis modelis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../formatas.html">Lentelės formatas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dimensijos.html">Dimensijos</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../tipai.html">Duomenų tipai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pavadinimai.html">Kodiniai pavadinimai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vienetai.html">Matavimo vienetai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apibendrinimas.html">Apibendrinimas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../identifikatoriai.html">Asociacija</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Funkciniai modeliai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../branda.html">Brandos lygiai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prieiga.html">Prieigos lygiai</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../schemos/index.html">Duomenų schemos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../schemos/xsd.html">XSD</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../saltiniai.html">Duomenų šaltiniai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vardu-erdves.html">Vardų erdvės</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zodynai.html">Išoriniai žodynai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../formules.html">Formulės</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../savokos.html">Sąvokos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../keitimai.html">Keitimų istorija</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ivpk/dsa" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Šaltinio saugykla"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ivpk/dsa/issues/new?title=Issue%20on%20page%20%2Fmodeliai/funkciniai.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Atidarykite problemą"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Pilno ekrano režimas"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Paieška" aria-label="Paieška" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Funkciniai modeliai</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Turinys </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcijos">Funkcijos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getall">getall</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getone">getone</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search">search</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#statiniai-filtrai">Statiniai filtrai</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dinaminiai-filtrai">Dinaminiai filtrai</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#operatoriai">Operatoriai</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select">select</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sort">sort</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part">part</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="funkciniai-modeliai">
+<span id="functional-models"></span><h1>Funkciniai modeliai<a class="headerlink" href="#funkciniai-modeliai" title="Link to this heading">#</a></h1>
+<p>Loginis duomenų modelis formuojamas <a class="reference internal" href="../formatas.html#model" title="model"><code class="xref py py-data docutils literal notranslate"><span class="pre">model</span></code></a> stulpelyje įvardinant
+<a class="reference internal" href="../modelis.html#uml-index"><span class="std std-ref">koncepcinio modelio</span></a> klasės pavadinimą.</p>
+<p><a class="reference internal" href="../modelis.html#uml-index"><span class="std std-ref">Koncepcinis modelis</span></a> nėra siejamas su jokiu konkrečiu duomenų šaltiniu, tačiau
+loginis modelis yra siejamas su konkrečiu duomenų šaltiniu, tačiau išlaiko
+koncepciniame modelyje apibrėžtą duomenų struktūrą.</p>
+<p>Dažnai viena koncepcinio modelio klasė, loginio modelio pagalba yra siejama su
+keliais skirtingais duomenų šaltinio prieigos taškais, kurie įgyvendina
+skirtingas duomenų gavimo funkcijas arba veiksmus.</p>
+<p>Tarkime, jei turime tokį koncepcinį modelį:</p>
+<pre  class="mermaid">
+        classDiagram
+
+  class City {
+    + code: integer [1..1]
+    + name: text [1..1]
+  }
+    </pre><p>Ir turime duomenų šaltinį, kuris leidžia duomenis gauti skirtingais metodais:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>dataset</p></th>
+<th class="head"><p>resource</p></th>
+<th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+<th class="head"><p>prepare</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="4"><p>datasets/gov/example</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td colspan="2"><p><strong>City</strong></p></td>
+<td></td>
+<td><p>code</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>code</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>name&#64;lt</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td colspan="3"><p>get_all_cities</p></td>
+<td><p>json</p></td>
+<td></td>
+<td><p>/cities</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td colspan="3"><p>get_city_by_code</p></td>
+<td><p>json</p></td>
+<td></td>
+<td><p>/cities/{code}</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Šiame pavyzdyje turime duomenų struktūros aprašą, kuriame yra <code class="docutils literal notranslate"><span class="pre">City</span></code> modelis,
+atitinkantis koncepcinį modelį, nesusietas su jokiu duomenų šaltinius ir du
+duomenų šaltiniai <code class="docutils literal notranslate"><span class="pre">get_all_cities</span></code> ir <code class="docutils literal notranslate"><span class="pre">get_city_by_code</span></code>, nesusieti su
+loginiu modeliu.</p>
+<p>Norint susieti <code class="docutils literal notranslate"><span class="pre">get_all_cities</span></code> ir <code class="docutils literal notranslate"><span class="pre">get_city_by_code</span></code> duomenų šaltinius su
+loginiu modeliu, mums reikia panaudoti funkcinius modelius, kadangi duomenų
+šaltinis įgyvendina tik dalį funkcionalumo duomenims gauti.</p>
+<p>Galutinis pilnai susietas struktūros aprašas atrodys taip:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>dataset</p></th>
+<th class="head"><p>resource</p></th>
+<th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+<th class="head"><p>prepare</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="4"><p>datasets/gov/example</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td colspan="2"><p><strong>City</strong></p></td>
+<td></td>
+<td><p>code</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>code</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>code</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>name&#64;lt</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>title</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td colspan="3"><p>get_all_cities</p></td>
+<td><p>json</p></td>
+<td></td>
+<td><p>/cities</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td colspan="2"><p>City/:getall</p></td>
+<td></td>
+<td></td>
+<td><p>data</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td colspan="3"><p>get_city_by_code</p></td>
+<td><p>json</p></td>
+<td></td>
+<td><p>/cities/{code}</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td colspan="2"><p>City/:getone</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td colspan="2"></td>
+<td><p>code</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td></td>
+<td><p>path()</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">City/:getall</span></code> ir <code class="docutils literal notranslate"><span class="pre">City/:getone</span></code> yra funkciniai modeliai, nurodantys, kad
+duomenų modelis <code class="docutils literal notranslate"><span class="pre">City</span></code> yra siejamas su duomenų šaltiniu, kuris įgyvendina tam
+tikras duomenų skaitymo funkcijas.</p>
+<p>Duomenų skaitymo funkcijos sutampa su <a class="reference external" href="https://ivpk.github.io/uapi">UDTS</a> specifikacijoje aprašytais veiksmais,
+kuriuos galima atlikti su duomenimis.</p>
+<p>Funkciniai modeliai paveldi visas savybes iš pagrindinio modelio, tačiau gali
+papildyti pagrindinį modelį naujomis savybėmis, arba pateikti pagrindinio
+modelio savybes su kitais metaduomenis, tarkim nurodant kitokią
+<a class="reference internal" href="../dimensijos.html#property.source" title="property.source"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.source</span></code></a> reikšmę.</p>
+<p>Jei nenurodytas joks funkcinis modelis, daroma prielaida, kad šaltinis palaiko
+visas <a class="reference external" href="https://ivpk.github.io/uapi">UDTS</a> funkcijas.</p>
+<section id="funkcijos">
+<h2>Funkcijos<a class="headerlink" href="#funkcijos" title="Link to this heading">#</a></h2>
+<section id="getall">
+<h3>getall<a class="headerlink" href="#getall" title="Link to this heading">#</a></h3>
+<p>Nurodo, kad duomenų šaltinis leidžia gauti visus klasės objektus, netaikant jokių filtrų.</p>
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>dataset</p></th>
+<th class="head"><p>resource</p></th>
+<th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+<th class="head"><p>prepare</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="4"><p>datasets/gov/example</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td colspan="2"><p><strong>City</strong></p></td>
+<td></td>
+<td><p>code</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>code</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>code</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>name&#64;lt</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>title</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td colspan="3"><p>get_all_cities</p></td>
+<td><p>json</p></td>
+<td></td>
+<td><p>/cities</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td colspan="2"><p>City/:getall</p></td>
+<td></td>
+<td></td>
+<td><p>data</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="getone">
+<h3>getone<a class="headerlink" href="#getone" title="Link to this heading">#</a></h3>
+<p>Nurodo, kad duomenų šaltinis leidžia gauti vieną klasės objektą nurodžius
+objekto identifikatorių.</p>
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>dataset</p></th>
+<th class="head"><p>resource</p></th>
+<th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+<th class="head"><p>prepare</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="4"><p>datasets/gov/example</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td colspan="2"><p><strong>City</strong></p></td>
+<td></td>
+<td><p>code</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>code</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>code</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>name&#64;lt</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>title</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td colspan="3"><p>get_city_by_code</p></td>
+<td><p>json</p></td>
+<td></td>
+<td><p>/cities/{code}</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td colspan="2"><p>City/:getone</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td colspan="2"></td>
+<td><p>code</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td></td>
+<td><p>path()</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">getone</span></code> veiksmo atveju, modelis turi turėti pirminį raktą, nurodytą
+<a class="reference internal" href="../dimensijos.html#model.ref" title="model.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">model.ref</span></code></a> stulpelyje. Pirminis raktas gali būti paveldimas iš
+pagrindinio modelio arba gali būti nurodomas kitas pirminis raktas prie
+funkcinio modelio.</p>
+<p>Sąsajai su duomenų šaltiniu, pirminio rakto savybės turėtų nurodyti funkciją,
+kuri siejama su duomenų šaltinio parametrais. Konkrečiai, pavyzdyje aukščiau
+prie <code class="docutils literal notranslate"><span class="pre">City/:getone/code</span></code> savybės yra nurodyta <code class="docutils literal notranslate"><span class="pre">path()</span></code> funkcija
+<code class="xref py py-data docutils literal notranslate"><span class="pre">proprty.prepare</span></code> stulpelyje, kuri nurodo, kad <code class="docutils literal notranslate"><span class="pre">code</span></code> savybė yra
+naudojama kaip duomenų šaltinio URI path parametras, pažymėtas
+<a class="reference internal" href="../dimensijos.html#resource.source" title="resource.source"><code class="xref py py-data docutils literal notranslate"><span class="pre">resource.source</span></code></a> stulpelyje <code class="docutils literal notranslate"><span class="pre">{}</span></code> riestiniuose skliausteliuose, tuo pačiu
+pavadinimu, kaip ir <a class="reference internal" href="../formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a> pavadinimas.</p>
+<p>Per <a class="reference external" href="https://ivpk.github.io/uapi">UDTS</a> protokolą, bus tikimasi gauti tokią užklausią:</p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/datasets/gov/example/City/87a1d91a-e00d-4981-8287-d1810243d160</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Tokia <a class="reference external" href="https://ivpk.github.io/uapi">UDTS</a> užklausa, pagal pateiktą duomenų struktūros aprašo pavyzdį, bus
+konvertuota į tokią duomenų šaltiniui skirtą užklausą:</p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/cities/42</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Kad tai veiktu, duomenų agentas, turi saugoti išorinių ir vidinių
+identifikatorių lentelę, kurioje yra susietas išorinis
+<code class="docutils literal notranslate"><span class="pre">87a1d91a-e00d-4981-8287-d1810243d160</span></code> su vidiniu <code class="docutils literal notranslate"><span class="pre">42</span></code>, kas leidžia konvertuoti
+tarp vidinių ir išorinių identifikatorių.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="id1">
+<caption><span class="caption-text">Identifikatorių susiejimas</span><a class="headerlink" href="#id1" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>_id (išorinis)</p></th>
+<th class="head"><p>id (vidinis)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>87a1d91a-e00d-4981-8287-d1810243d160</p></td>
+<td><p>42</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Visų duomenų šaltinių lokalūs identifikatoriai, siejami su vienu esybės
+išoriniu identifikatoriumi.</p>
+</section>
+<section id="search">
+<h3>search<a class="headerlink" href="#search" title="Link to this heading">#</a></h3>
+<p>Nurodo, kad duomenų šaltinis leidžia gauti ne visus klasės objektus, o tam
+tikrą objektų imtį, pagal nurodytą duomenų filtrą.</p>
+<section id="statiniai-filtrai">
+<h4>Statiniai filtrai<a class="headerlink" href="#statiniai-filtrai" title="Link to this heading">#</a></h4>
+<p>Statiniai filtrai nurodo, kad duomenys pateikiami naudojant konkrečias filtrų
+reikšmes nurodytas struktūros apraše.</p>
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>dataset</p></th>
+<th class="head"><p>resource</p></th>
+<th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+<th class="head"><p>prepare</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="4"><p>datasets/gov/example</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td colspan="2"><p><strong>Country</strong></p></td>
+<td></td>
+<td><p>code</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>code</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td colspan="2"><p><strong>City</strong></p></td>
+<td></td>
+<td><p>code</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>code</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>city_code</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>name&#64;lt</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>city_name</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>country</p></td>
+<td><p>ref</p></td>
+<td><p>Country</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>country.code</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>&quot;lt&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td colspan="3"><p>get_all_cities</p></td>
+<td><p>json</p></td>
+<td></td>
+<td><p>/cities</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td colspan="2"><p>City?country.code=&quot;lt&quot;</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Pavyzdyje nurodyta, kad funkcinis <code class="docutils literal notranslate"><span class="pre">City?country.code=&quot;lt&quot;</span></code> modelis grąžina ne
+visus duomenis, o tik Lietuvos miestų duomenis.</p>
+</section>
+<section id="dinaminiai-filtrai">
+<h4>Dinaminiai filtrai<a class="headerlink" href="#dinaminiai-filtrai" title="Link to this heading">#</a></h4>
+<p>Dinaminiai filtrai nurodo, kad duomenys pateikiami naudojanti filtrų reikšmes,
+kurias pateikia duomenų naudotojas, per <a class="reference external" href="https://ivpk.github.io/uapi">UDTS</a> užklausą, pateikti duomenys
+konvertuojami ir perduodami duomenų šaltiniui.</p>
+<p>Dinaminiai filtrai veikia lygiai taip pat, kaip ir statiniai filtrai, tik
+dinaminio filtro atveju, nenurodoma statinė reikšmė.</p>
+<p>Tarkime statinis <code class="docutils literal notranslate"><span class="pre">country.code=&quot;lt&quot;</span></code> filtras gali būti dinaminis pašalinus
+<code class="docutils literal notranslate"><span class="pre">=&quot;lt&quot;</span></code> dalį ir paliekant tik <code class="docutils literal notranslate"><span class="pre">country.code</span></code>.</p>
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>dataset</p></th>
+<th class="head"><p>resource</p></th>
+<th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+<th class="head"><p>prepare</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="4"><p>datasets/gov/example</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td colspan="2"><p><strong>Country</strong></p></td>
+<td></td>
+<td><p>code</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>code</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td colspan="2"><p><strong>City</strong></p></td>
+<td></td>
+<td><p>code</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>code</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>city_code</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>name&#64;lt</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>city_name</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>country</p></td>
+<td><p>ref</p></td>
+<td><p>Country</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>country.code</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>country_code</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td colspan="3"><p>get_cities_by_country</p></td>
+<td><p>json</p></td>
+<td></td>
+<td><p>/cities</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td colspan="2"><p>City?country.code</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>country.code</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>country</p></td>
+<td><p>query()</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Šiame pavyzdyje turime <code class="docutils literal notranslate"><span class="pre">City?country.code</span></code> funkcinį modelį, kuriame naudojamas
+dinaminis filtras pagal <code class="docutils literal notranslate"><span class="pre">country.code</span></code>.</p>
+<p>Kadangi <code class="docutils literal notranslate"><span class="pre">City?country.code</span></code> modelis nurodo <code class="docutils literal notranslate"><span class="pre">country.code</span></code> savybę su <a class="reference internal" href="../formules.html#query" title="query"><code class="xref py py-func docutils literal notranslate"><span class="pre">query()</span></code></a>
+formule <a class="reference internal" href="../dimensijos.html#property.prepare" title="property.prepare"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.prepare</span></code></a> stulpelyje, tai reiškia, kad konvertuojant
+užklausą į duomenų šaltinio protokolą, <code class="docutils literal notranslate"><span class="pre">country.code</span></code> reikšmė bus perduota kaip
+URI query parametras.</p>
+<p>Per <a class="reference external" href="https://ivpk.github.io/uapi">UDTS</a> protokolą, bus tikimasi gauti tokią užklausią:</p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/datasets/gov/example/City?country.code=&quot;lt&quot;</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p>Tokia <a class="reference external" href="https://ivpk.github.io/uapi">UDTS</a> užklausa, pagal pateiktą duomenų struktūros aprašo pavyzdį, bus
+konvertuota į tokią duomenų šaltiniui skirtą užklausą:</p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/cities?country=&quot;lt&quot;</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+</section>
+<section id="operatoriai">
+<h4>Operatoriai<a class="headerlink" href="#operatoriai" title="Link to this heading">#</a></h4>
+<p>Funkciniam modeliui galima perduoti daugiau nei vieną filtro parametrą,
+naudojant skirtingus filtravimui skirtus operatorius.</p>
+<div class="admonition seealso">
+<p class="admonition-title">Taip pat žiūrėkite</p>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="../formules.html#duomenu-atranka"><span class="std std-ref">Duomenų atranka</span></a></div>
+</div>
+</div>
+<p>Pavyzdžiui funkcinis modelis naudojantis dinaminį filtravimą pagal du
+kriterijus atrodytų taip:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>City?country.code&amp;code
+</pre></div>
+</div>
+<p>Šiuo atveju, duomenys pateikiami naudojant filtrą pagal šalies ir miesto kodus.</p>
+</section>
+</section>
+<section id="select">
+<h3>select<a class="headerlink" href="#select" title="Link to this heading">#</a></h3>
+<p>Nurodo, kad duomenų šaltinis grąžina ne visas klasės savybes, o tik tam tikras.</p>
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>dataset</p></th>
+<th class="head"><p>resource</p></th>
+<th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+<th class="head"><p>prepare</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="4"><p>datasets/gov/example</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td colspan="2"><p><strong>City</strong></p></td>
+<td></td>
+<td><p>code</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>code</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>city_code</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>name&#64;lt</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>city_name</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td colspan="3"><p>get_cities</p></td>
+<td><p>json</p></td>
+<td></td>
+<td><p>/cities</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td colspan="2"><p>City?select(code)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Pavyzdyje nurodoma, kad <code class="docutils literal notranslate"><span class="pre">get_cities</span></code> duomenų šaltinis grąžina ne visas <code class="docutils literal notranslate"><span class="pre">City</span></code>
+klasės savybes (<code class="docutils literal notranslate"><span class="pre">code</span></code> ir <code class="docutils literal notranslate"><span class="pre">name</span></code>), o tik vieną <code class="docutils literal notranslate"><span class="pre">code</span></code>.</p>
+<p><a class="reference internal" href="../formules.html#select" title="select"><code class="xref py py-func docutils literal notranslate"><span class="pre">select()</span></code></a> funkcijai galima nurodyti kelias savybes, atskiriant jas kableliu:</p>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="p">(</span><span class="err">code</span><span class="p">,</span> <span class="err">name@lt</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Taip pat galima naudoti ir kitas savybių atrankos funkcijas.</p>
+<div class="admonition seealso">
+<p class="admonition-title">Taip pat žiūrėkite</p>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="../formules.html#select" title="select"><code class="xref py py-func docutils literal notranslate"><span class="pre">select()</span></code></a></div>
+</div>
+<div class="line-block">
+<div class="line">Kitos savybių atrankos funkcijos:</div>
+<div class="line"><a class="reference internal" href="../formules.html#include" title="include"><code class="xref py py-func docutils literal notranslate"><span class="pre">include()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../formules.html#exclude" title="exclude"><code class="xref py py-func docutils literal notranslate"><span class="pre">exclude()</span></code></a></div>
+<div class="line"><a class="reference internal" href="../formules.html#expand" title="expand"><code class="xref py py-func docutils literal notranslate"><span class="pre">expand()</span></code></a></div>
+</div>
+</div>
+</section>
+<section id="sort">
+<h3>sort<a class="headerlink" href="#sort" title="Link to this heading">#</a></h3>
+<p>Nurodo, kad duomenų šaltinis grąžina surūšiuotus duomenis, pagal tam tikras
+savybių reikšmes.</p>
+<div class="admonition seealso">
+<p class="admonition-title">Taip pat žiūrėkite</p>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="../formules.html#sort" title="sort"><code class="xref py py-func docutils literal notranslate"><span class="pre">sort()</span></code></a></div>
+</div>
+</div>
+</section>
+<section id="part">
+<span id="func-model-part"></span><h3>part<a class="headerlink" href="#part" title="Link to this heading">#</a></h3>
+<p>Nurodo, kad duomenų šaltinis neleidžia tiesiogiai pasiekti modelio duomenų ir
+šis modelis yra naudojamas tik kaip sudėtinė, vieno ar kelių kitų
+<a class="reference internal" href="../identifikatoriai.html#ref-denorm"><span class="std std-ref">jungtinių modelių</span></a>.</p>
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>dataset</p></th>
+<th class="head"><p>resource</p></th>
+<th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+<th class="head"><p>prepare</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="4"><p>datasets/gov/example</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td colspan="2"><p><strong>City</strong></p></td>
+<td></td>
+<td><p>code</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>code</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>city_code</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>name&#64;lt</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>city_name</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td colspan="3"><p>get_cities</p></td>
+<td><p>json</p></td>
+<td></td>
+<td><p>/cities</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td colspan="2"><p>City?select(code)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>page</p></td>
+<td><p>query()</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../identifikatoriai.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">praeitas</p>
+        <p class="prev-next-title">Asociacija</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../branda.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">kitas</p>
+        <p class="prev-next-title">Brandos lygiai</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Turinys
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcijos">Funkcijos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getall">getall</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getone">getone</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search">search</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#statiniai-filtrai">Statiniai filtrai</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dinaminiai-filtrai">Dinaminiai filtrai</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#operatoriai">Operatoriai</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select">select</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sort">sort</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part">part</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Iki Valstybės skaitmeninių sprendimų agentūra
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2019-2024, VSSA.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

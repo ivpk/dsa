@@ -1,0 +1,806 @@
+
+<!DOCTYPE html>
+
+
+<html lang="lt" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Išoriniai žodynai &#8212; DSA</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-examples.css?v=e236af4b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=f0eb6ae9" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=4ee96f2e"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="_static/translations.js?v=e4682f4a"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'zodynai';</script>
+    <link rel="index" title="Indeksas" href="genindex.html" />
+    <link rel="search" title="Paieška" href="search.html" />
+    <link rel="next" title="Formulės" href="formules.html" />
+    <link rel="prev" title="Vardų erdvės" href="vardu-erdves.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="lt"/>
+  <meta name="docsearch:version" content="1.1" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">DSA</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Paieška" aria-label="Paieška" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Paieška</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="modelis.html">Koncepcinis modelis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formatas.html">Lentelės formatas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dimensijos.html">Dimensijos</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="tipai.html">Duomenų tipai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pavadinimai.html">Kodiniai pavadinimai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vienetai.html">Matavimo vienetai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apibendrinimas.html">Apibendrinimas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="identifikatoriai.html">Asociacija</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modeliai/funkciniai.html">Funkciniai modeliai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="branda.html">Brandos lygiai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prieiga.html">Prieigos lygiai</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="schemos/index.html">Duomenų schemos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="schemos/xsd.html">XSD</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="saltiniai.html">Duomenų šaltiniai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vardu-erdves.html">Vardų erdvės</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Išoriniai žodynai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formules.html">Formulės</a></li>
+<li class="toctree-l1"><a class="reference internal" href="savokos.html">Sąvokos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keitimai.html">Keitimų istorija</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ivpk/dsa" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Šaltinio saugykla"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ivpk/dsa/issues/new?title=Issue%20on%20page%20%2Fzodynai.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Atidarykite problemą"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Pilno ekrano režimas"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Paieška" aria-label="Paieška" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Išoriniai žodynai</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Turinys </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subjekto-uri">Subjekto URI</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="isoriniai-zodynai">
+<span id="vocab"></span><h1>Išoriniai žodynai<a class="headerlink" href="#isoriniai-zodynai" title="Link to this heading">#</a></h1>
+<p>Išorinių žodynų pagalba, galima susieti aprašomus duomenis su išoriniais
+žodynais. Susiejimas atliekamas <a class="reference internal" href="dimensijos.html#model.uri" title="model.uri"><code class="xref py py-data docutils literal notranslate"><span class="pre">model.uri</span></code></a> ir <a class="reference internal" href="dimensijos.html#property.uri" title="property.uri"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.uri</span></code></a>,
+naudojant <span class="xref std std-ref">išorinių žodynų URI prefiksus</span>.</p>
+<p>Pavyzdžiui turint tokį duomenų šaltinį:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head" colspan="2"><p>country</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>id</p></th>
+<th class="head"><p>name</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Lietuva</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head" colspan="3"><p>city</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>id</p></th>
+<th class="head"><p>name</p></th>
+<th class="head"><p>country</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Vilnius</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Ir šį šaltinį atitinkančią <a class="reference internal" href="savokos.html#term-DSA"><span class="xref std std-term">DSA</span></a> lentelę:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>id</p></th>
+<th class="head"><p>d</p></th>
+<th class="head"><p>r</p></th>
+<th class="head"><p>b</p></th>
+<th class="head"><p>m</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>uri</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>prefix</p></td>
+<td><p>locn</p></td>
+<td><p>http://www.w3.org/ns/locn#</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>dbpedia-owl</p></td>
+<td><p>http://dbpedia.org/ontology/</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td colspan="5"><p>datasets/example/geo</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td colspan="4"><p>salys</p></td>
+<td><p>sql</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>Country</p></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>locn:Location</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>dct:identifier</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>name&#64;lt</p></td>
+<td><p>text</p></td>
+<td></td>
+<td><p>locn:geographicName</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>capital</p></td>
+<td><p>ref</p></td>
+<td><p>City</p></td>
+<td><p>dbpedia-owl:capital</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>City</p></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>locn:Location</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>dct:identifier</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>name&#64;lt</p></td>
+<td><p>text</p></td>
+<td></td>
+<td><p>locn:geographicName</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>country</p></td>
+<td><p>ref</p></td>
+<td><p>Country</p></td>
+<td><p>dbpedia-owl:country</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Jei <a class="reference internal" href="formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a> pavadinimai turi <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> žymes, tada generuojant RDF, prie
+reikšmės pridedama atitinkama kalbos žymė.</p>
+<p>Galima duomenis eksportuoti <a class="reference external" href="https://en.wikipedia.org/wiki/Turtle_(syntax)">RDF Turtle</a> formatu, kas atrodytų taip:</p>
+<div class="highlight-ttl notranslate"><div class="highlight"><pre><span></span>@<span class="nv">base</span><span class="w"> </span><span class="o">&lt;</span><span class="nv">https</span>:<span class="o">//</span><span class="nv">get</span>.<span class="nv">data</span>.<span class="nv">gov</span>.<span class="nv">lt</span><span class="o">/&gt;</span><span class="w"> </span>.
+@<span class="nv">prefix</span><span class="w"> </span><span class="nv">dct</span>:<span class="w"> </span><span class="o">&lt;</span><span class="nv">http</span>:<span class="o">//</span><span class="nv">purl</span>.<span class="nv">org</span><span class="o">/</span><span class="nv">dc</span><span class="o">/</span><span class="nv">terms</span><span class="o">/&gt;</span><span class="w"> </span>.
+@<span class="nv">prefix</span><span class="w"> </span><span class="nv">locn</span>:<span class="w"> </span><span class="o">&lt;</span><span class="nv">http</span>:<span class="o">//</span><span class="nv">www</span>.<span class="nv">w3</span>.<span class="nv">org</span><span class="o">/</span><span class="nv">ns</span><span class="o">/</span><span class="nv">locn</span>#<span class="o">&gt;</span><span class="w"> </span>.
+@<span class="nv">prefix</span><span class="w"> </span><span class="nv">dbpedia</span><span class="o">-</span><span class="nv">owl</span>:<span class="w"> </span><span class="o">&lt;</span><span class="nv">http</span>:<span class="o">//</span><span class="nv">dbpedia</span>.<span class="nv">org</span><span class="o">/</span><span class="nv">ontology</span><span class="o">/&gt;</span><span class="w"> </span>.
+
+<span class="o">&lt;</span><span class="nv">datasets</span><span class="o">/</span><span class="nv">example</span><span class="o">/</span><span class="nv">geo</span><span class="o">/</span><span class="nv">Country</span><span class="o">/</span><span class="nv">eb09946c</span><span class="o">-</span><span class="mi">26</span><span class="nv">e1</span><span class="o">-</span><span class="mi">4698</span><span class="o">-</span><span class="nv">a298</span><span class="o">-</span><span class="mi">7</span><span class="nv">bb1e468b165</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="nv">a</span><span class="w"> </span><span class="nv">locn</span>:<span class="nv">Location</span><span class="w"> </span><span class="c1">;</span>
+<span class="w">    </span><span class="nv">dct</span>:<span class="nv">identifier</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="c1">;</span>
+<span class="w">    </span><span class="nv">locn</span>:<span class="nv">geographicName</span><span class="w"> </span><span class="s2">&quot;Lietuva&quot;</span>@<span class="nv">lt</span><span class="w"> </span><span class="c1">;</span>
+<span class="w">    </span><span class="nv">dbpedia</span><span class="o">-</span><span class="nv">owl</span>:<span class="nv">capital</span><span class="w"> </span><span class="o">&lt;</span><span class="nv">datasets</span><span class="o">/</span><span class="nv">example</span><span class="o">/</span><span class="nv">geo</span><span class="o">/</span><span class="nv">City</span><span class="o">/</span><span class="nv">b54c21f6</span><span class="o">-</span><span class="mi">08</span><span class="nv">b8</span><span class="o">-</span><span class="mi">4</span><span class="nv">bdd</span><span class="o">-</span><span class="nv">b785</span><span class="o">-</span><span class="nv">be1cb2e93a98</span><span class="o">&gt;</span><span class="w"> </span>.
+
+<span class="o">&lt;</span><span class="nv">datasets</span><span class="o">/</span><span class="nv">example</span><span class="o">/</span><span class="nv">geo</span><span class="o">/</span><span class="nv">City</span><span class="o">/</span><span class="nv">b54c21f6</span><span class="o">-</span><span class="mi">08</span><span class="nv">b8</span><span class="o">-</span><span class="mi">4</span><span class="nv">bdd</span><span class="o">-</span><span class="nv">b785</span><span class="o">-</span><span class="nv">be1cb2e93a98</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="nv">a</span><span class="w"> </span><span class="nv">locn</span>:<span class="nv">Location</span><span class="w"> </span><span class="c1">;</span>
+<span class="w">    </span><span class="nv">dct</span>:<span class="nv">identifier</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="c1">;</span>
+<span class="w">    </span><span class="nv">locn</span>:<span class="nv">geographicName</span><span class="w"> </span><span class="s2">&quot;Vilnius&quot;</span>@<span class="nv">lt</span><span class="w"> </span><span class="c1">;</span>
+<span class="w">    </span><span class="nv">dbpedia</span><span class="o">-</span><span class="nv">owl</span>:<span class="nv">country</span><span class="w"> </span><span class="o">&lt;</span><span class="nv">datasets</span><span class="o">/</span><span class="nv">example</span><span class="o">/</span><span class="nv">geo</span><span class="o">/</span><span class="nv">Country</span><span class="o">/</span><span class="nv">eb09946c</span><span class="o">-</span><span class="mi">26</span><span class="nv">e1</span><span class="o">-</span><span class="mi">4698</span><span class="o">-</span><span class="nv">a298</span><span class="o">-</span><span class="mi">7</span><span class="nv">bb1e468b165</span><span class="o">&gt;</span><span class="w"> </span>.
+</pre></div>
+</div>
+<p>Analogiškai, tie patys duomenys gali būti eksportuojami <a class="reference external" href="https://www.w3.org/TR/rdf-syntax-grammar/">RDF/XML</a> formatu:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;rdf:RDF</span>
+<span class="w">    </span><span class="na">xml:base=</span><span class="s">&quot;https://get.data.gov.lt/&quot;</span>
+<span class="w">    </span><span class="na">xmlns:dct=</span><span class="s">&quot;http://purl.org/dc/terms/&quot;</span>
+<span class="w">    </span><span class="na">xmlns:locn=</span><span class="s">&quot;http://www.w3.org/ns/locn#&quot;</span>
+<span class="w">    </span><span class="na">xmlns:dbpedia-owl=</span><span class="s">&quot;http://dbpedia.org/ontology/&quot;</span>
+<span class="w">    </span><span class="na">xmlns:rdf=</span><span class="s">&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span><span class="nt">&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;locn:Location</span>
+<span class="w">        </span><span class="na">rdf:about=</span><span class="s">&quot;datasets/example/geo/Country/eb09946c-26e1-4698-a298-7bb1e468b165&quot;</span>
+<span class="w">        </span><span class="na">dct:identifier=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;locn:geographicName</span><span class="w"> </span><span class="na">xml:lang=</span><span class="s">&quot;lt&quot;</span><span class="nt">&gt;</span>Lietuva<span class="nt">&lt;/locn:geographicName&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dbpedia-owl:capital</span>
+<span class="w">            </span><span class="na">rdf:resource=</span><span class="s">&quot;datasets/example/geo/City/b54c21f6-08b8-4bdd-b785-be1cb2e93a98&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/locn:Location&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;locn:Location</span>
+<span class="w">        </span><span class="na">rdf:about=</span><span class="s">&quot;datasets/example/geo/City/b54c21f6-08b8-4bdd-b785-be1cb2e93a98&quot;</span>
+<span class="w">        </span><span class="na">dct:identifier=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;locn:geographicName</span><span class="w"> </span><span class="na">xml:lang=</span><span class="s">&quot;lt&quot;</span><span class="nt">&gt;</span>Vilnius<span class="nt">&lt;/locn:geographicName&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dbpedia-owl:country</span>
+<span class="w">            </span><span class="na">rdf:resource=</span><span class="s">&quot;datasets/example/geo/Country/eb09946c-26e1-4698-a298-7bb1e468b165&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/locn:Location&gt;</span>
+<span class="nt">&lt;/rdf:RDF&gt;</span>
+</pre></div>
+</div>
+<p>Išoriniai žodynai suteikia galimybę eksportuoti duomenis <a class="reference internal" href="savokos.html#term-RDF"><span class="xref std std-term">RDF</span></a> formatu.</p>
+<p>Jei struktūros apraše nėra užpildytas <a class="reference internal" href="formatas.html#uri" title="uri"><code class="xref py py-data docutils literal notranslate"><span class="pre">uri</span></code></a> stulpelis, tada, turėtu būti
+generuojamas tokie RDF duomenys:</p>
+<div class="highlight-ttl notranslate"><div class="highlight"><pre><span></span>@<span class="nv">base</span><span class="w"> </span><span class="o">&lt;</span><span class="nv">https</span>:<span class="o">//</span><span class="nv">get</span>.<span class="nv">data</span>.<span class="nv">gov</span>.<span class="nv">lt</span><span class="o">/&gt;</span><span class="w"> </span>.
+@<span class="nv">prefix</span><span class="w"> </span><span class="nv">dct</span>:<span class="w"> </span><span class="o">&lt;</span><span class="nv">http</span>:<span class="o">//</span><span class="nv">purl</span>.<span class="nv">org</span><span class="o">/</span><span class="nv">dc</span><span class="o">/</span><span class="nv">terms</span><span class="o">/&gt;</span><span class="w"> </span>.
+@<span class="nv">prefix</span><span class="w"> </span><span class="nv">locn</span>:<span class="w"> </span><span class="o">&lt;</span><span class="nv">http</span>:<span class="o">//</span><span class="nv">www</span>.<span class="nv">w3</span>.<span class="nv">org</span><span class="o">/</span><span class="nv">ns</span><span class="o">/</span><span class="nv">locn</span>#<span class="o">&gt;</span><span class="w"> </span>.
+@<span class="nv">prefix</span><span class="w"> </span><span class="nv">dbpedia</span><span class="o">-</span><span class="nv">owl</span>:<span class="w"> </span><span class="o">&lt;</span><span class="nv">http</span>:<span class="o">//</span><span class="nv">dbpedia</span>.<span class="nv">org</span><span class="o">/</span><span class="nv">ontology</span><span class="o">/&gt;</span><span class="w"> </span>.
+
+<span class="o">&lt;</span><span class="nv">datasets</span><span class="o">/</span><span class="nv">example</span><span class="o">/</span><span class="nv">geo</span><span class="o">/</span><span class="nv">Country</span><span class="o">/</span><span class="nv">eb09946c</span><span class="o">-</span><span class="mi">26</span><span class="nv">e1</span><span class="o">-</span><span class="mi">4698</span><span class="o">-</span><span class="nv">a298</span><span class="o">-</span><span class="mi">7</span><span class="nv">bb1e468b165</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="nv">a</span><span class="w"> </span><span class="o">&lt;</span><span class="nv">datasets</span><span class="o">/</span><span class="nv">example</span><span class="o">/</span><span class="nv">geo</span><span class="o">/</span><span class="nv">Country</span><span class="o">&gt;</span><span class="w"> </span><span class="c1">;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nv">datasets</span><span class="o">/</span><span class="nv">example</span><span class="o">/</span><span class="nv">geo</span><span class="o">/</span><span class="nv">Country</span><span class="o">/</span><span class="nv">id</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="c1">;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nv">datasets</span><span class="o">/</span><span class="nv">example</span><span class="o">/</span><span class="nv">geo</span><span class="o">/</span><span class="nv">Country</span><span class="o">/</span><span class="nv">name</span><span class="o">&gt;</span><span class="w"> </span><span class="s2">&quot;Lietuva&quot;</span>@<span class="nv">lt</span><span class="w"> </span><span class="c1">;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nv">datasets</span><span class="o">/</span><span class="nv">example</span><span class="o">/</span><span class="nv">geo</span><span class="o">/</span><span class="nv">Country</span><span class="o">/</span><span class="nv">capital</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="nv">datasets</span><span class="o">/</span><span class="nv">example</span><span class="o">/</span><span class="nv">geo</span><span class="o">/</span><span class="nv">City</span><span class="o">/</span><span class="nv">b54c21f6</span><span class="o">-</span><span class="mi">08</span><span class="nv">b8</span><span class="o">-</span><span class="mi">4</span><span class="nv">bdd</span><span class="o">-</span><span class="nv">b785</span><span class="o">-</span><span class="nv">be1cb2e93a98</span><span class="o">&gt;</span><span class="w"> </span>.
+
+<span class="o">&lt;</span><span class="nv">datasets</span><span class="o">/</span><span class="nv">example</span><span class="o">/</span><span class="nv">geo</span><span class="o">/</span><span class="nv">City</span><span class="o">/</span><span class="nv">b54c21f6</span><span class="o">-</span><span class="mi">08</span><span class="nv">b8</span><span class="o">-</span><span class="mi">4</span><span class="nv">bdd</span><span class="o">-</span><span class="nv">b785</span><span class="o">-</span><span class="nv">be1cb2e93a98</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="nv">a</span><span class="w"> </span><span class="o">&lt;</span><span class="nv">datasets</span><span class="o">/</span><span class="nv">example</span><span class="o">/</span><span class="nv">geo</span><span class="o">/</span><span class="nv">City</span><span class="o">&gt;</span><span class="w"> </span><span class="c1">;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nv">datasets</span><span class="o">/</span><span class="nv">example</span><span class="o">/</span><span class="nv">geo</span><span class="o">/</span><span class="nv">City</span><span class="o">/</span><span class="nv">id</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="c1">;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nv">datasets</span><span class="o">/</span><span class="nv">example</span><span class="o">/</span><span class="nv">geo</span><span class="o">/</span><span class="nv">City</span><span class="o">/</span><span class="nv">name</span><span class="o">&gt;</span><span class="w"> </span><span class="s2">&quot;Vilnius&quot;</span>@<span class="nv">lt</span><span class="w"> </span><span class="c1">;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nv">datasets</span><span class="o">/</span><span class="nv">example</span><span class="o">/</span><span class="nv">geo</span><span class="o">/</span><span class="nv">City</span><span class="o">/</span><span class="nv">country</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="nv">datasets</span><span class="o">/</span><span class="nv">example</span><span class="o">/</span><span class="nv">geo</span><span class="o">/</span><span class="nv">Country</span><span class="o">/</span><span class="nv">eb09946c</span><span class="o">-</span><span class="mi">26</span><span class="nv">e1</span><span class="o">-</span><span class="mi">4698</span><span class="o">-</span><span class="nv">a298</span><span class="o">-</span><span class="mi">7</span><span class="nv">bb1e468b165</span><span class="o">&gt;</span><span class="w"> </span>.
+</pre></div>
+</div>
+<section id="subjekto-uri">
+<h2>Subjekto URI<a class="headerlink" href="#subjekto-uri" title="Link to this heading">#</a></h2>
+<p>Pagal nutylėjimą <a class="reference internal" href="savokos.html#term-subjektas"><span class="xref std std-term">subjekto</span></a> URI yra automatiškai generuojamas
+ir atrodo taip:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">get</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">gov</span><span class="o">.</span><span class="n">lt</span><span class="o">/</span><span class="n">datasets</span><span class="o">/</span><span class="n">example</span><span class="o">/</span><span class="n">geo</span><span class="o">/</span><span class="n">Country</span><span class="o">/</span><span class="n">eb09946c</span><span class="o">-</span><span class="mf">26e1</span><span class="o">-</span><span class="mi">4698</span><span class="o">-</span><span class="n">a298</span><span class="o">-</span><span class="mi">7</span><span class="n">bb1e468b165</span>
+</pre></div>
+</div>
+<p>Tačiau naudojant kontroliuojamus žodynus, galima nurodyti kitą identifikatorių
+tokiu būdu:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>m</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>uri</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="2"><p>Country</p></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>locn:Location</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>uri</p></td>
+<td><p>uri</p></td>
+<td></td>
+<td><p>locn:Location</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>name&#64;lt</p></td>
+<td><p>text</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Jei <a class="reference internal" href="dimensijos.html#property.uri" title="property.uri"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.uri</span></code></a> sutampa su <a class="reference internal" href="dimensijos.html#model.uri" title="model.uri"><code class="xref py py-data docutils literal notranslate"><span class="pre">model.uri</span></code></a> ir <a class="reference internal" href="dimensijos.html#property.type" title="property.type"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.type</span></code></a>
+yra <a class="reference internal" href="formatas.html#uri" title="uri"><code class="xref py py-data docutils literal notranslate"><span class="pre">uri</span></code></a>, tada formuojant duomenis RDF formatu naudojame ne generuotą
+subjekto URI, o naudojame lauko reikšmę, kurio <a class="reference internal" href="dimensijos.html#property.uri" title="property.uri"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.uri</span></code></a> sutampa su
+<a class="reference internal" href="dimensijos.html#model.uri" title="model.uri"><code class="xref py py-data docutils literal notranslate"><span class="pre">model.uri</span></code></a>.</p>
+<p>Gali būti ne daugiau kaip vienas <a class="reference internal" href="dimensijos.html#property.uri" title="property.uri"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.uri</span></code></a> su <a class="reference internal" href="dimensijos.html#property.type" title="property.type"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.type</span></code></a>
+<a class="reference internal" href="formatas.html#uri" title="uri"><code class="xref py py-data docutils literal notranslate"><span class="pre">uri</span></code></a>, kuris sutampa su <a class="reference internal" href="dimensijos.html#model.uri" title="model.uri"><code class="xref py py-data docutils literal notranslate"><span class="pre">model.uri</span></code></a>.</p>
+<p>Jei yra keli <a class="reference internal" href="formatas.html#uri" title="uri"><code class="xref py py-data docutils literal notranslate"><span class="pre">uri</span></code></a> tipo laukai, kurie identifikuoja tą patį subjektą,
+tada kitiems atvejams reikia naudoti ne <a class="reference internal" href="dimensijos.html#model.uri" title="model.uri"><code class="xref py py-data docutils literal notranslate"><span class="pre">model.uri</span></code></a>, o <a class="reference external" href="https://www.w3.org/TR/owl-ref/#sameAs-def">owl:sameAs</a>.</p>
+<p>Jei <code class="docutils literal notranslate"><span class="pre">uri</span></code> reikšmė bus <code class="docutils literal notranslate"><span class="pre">https://sws.geonames.org/597427/</span></code>, tada gautume tokius
+RDF duomenis:</p>
+<div class="highlight-ttl notranslate"><div class="highlight"><pre><span></span>@<span class="nv">base</span><span class="w"> </span><span class="o">&lt;</span><span class="nv">https</span>:<span class="o">//</span><span class="nv">get</span>.<span class="nv">data</span>.<span class="nv">gov</span>.<span class="nv">lt</span><span class="o">/</span><span class="nv">example</span><span class="o">/&gt;</span><span class="w"> </span>.
+@<span class="nv">prefix</span><span class="w"> </span><span class="nv">locn</span>:<span class="w"> </span><span class="o">&lt;</span><span class="nv">http</span>:<span class="o">//</span><span class="nv">www</span>.<span class="nv">w3</span>.<span class="nv">org</span><span class="o">/</span><span class="nv">ns</span><span class="o">/</span><span class="nv">locn</span>#<span class="o">&gt;</span><span class="w"> </span>.
+
+<span class="o">&lt;</span><span class="nv">https</span>:<span class="o">//</span><span class="nv">sws</span>.<span class="nv">geonames</span>.<span class="nv">org</span><span class="o">/</span><span class="mi">597427</span><span class="o">/&gt;</span>
+<span class="w">    </span><span class="nv">a</span><span class="w"> </span><span class="nv">locn</span>:<span class="nv">Location</span><span class="w"> </span><span class="c1">;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nv">Country</span><span class="o">/</span><span class="nv">id</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="c1">;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nv">Country</span><span class="o">/</span><span class="nv">name</span><span class="o">&gt;</span><span class="w"> </span><span class="s2">&quot;Lietuva&quot;</span>@<span class="nv">lt</span><span class="w"> </span>.
+</pre></div>
+</div>
+<p>Atkreipkite dėmesį, kad pats <code class="docutils literal notranslate"><span class="pre">uri</span></code> laukas nėra įtrautkas į RDF duomenis.</p>
+<p>Analogiškai, jei <a class="reference internal" href="formatas.html#ref" title="ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">ref</span></code></a> tipo laukas rodo į modelį, kurio <a class="reference internal" href="dimensijos.html#model.uri" title="model.uri"><code class="xref py py-data docutils literal notranslate"><span class="pre">model.uri</span></code></a>
+sutampa su <a class="reference internal" href="dimensijos.html#property.uri" title="property.uri"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.uri</span></code></a> kuris yra <a class="reference internal" href="formatas.html#ref" title="ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">ref</span></code></a> tipo, tada <a class="reference internal" href="formatas.html#ref" title="ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">ref</span></code></a>
+lauko reikšmė taip pat įgyja ne generuotą URI, o URI iš duomenų.</p>
+<p>Pratęsiant tą patį pavyzdį:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>m</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>uri</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="2"><p>Country</p></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>locn:Location</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>uri</p></td>
+<td><p>uri</p></td>
+<td></td>
+<td><p>locn:Location</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>name&#64;lt</p></td>
+<td><p>text</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td colspan="2"><p>City</p></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>locn:Location</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>name&#64;lt</p></td>
+<td><p>text</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>country</p></td>
+<td><p>ref</p></td>
+<td><p>Country</p></td>
+<td><p>locn:Location</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Gautume tokius duomenis:</p>
+<div class="highlight-ttl notranslate"><div class="highlight"><pre><span></span>@<span class="nv">base</span><span class="w"> </span><span class="o">&lt;</span><span class="nv">https</span>:<span class="o">//</span><span class="nv">get</span>.<span class="nv">data</span>.<span class="nv">gov</span>.<span class="nv">lt</span><span class="o">/</span><span class="nv">example</span><span class="o">/&gt;</span><span class="w"> </span>.
+@<span class="nv">prefix</span><span class="w"> </span><span class="nv">locn</span>:<span class="w"> </span><span class="o">&lt;</span><span class="nv">http</span>:<span class="o">//</span><span class="nv">www</span>.<span class="nv">w3</span>.<span class="nv">org</span><span class="o">/</span><span class="nv">ns</span><span class="o">/</span><span class="nv">locn</span>#<span class="o">&gt;</span><span class="w"> </span>.
+
+<span class="o">&lt;</span><span class="nv">https</span>:<span class="o">//</span><span class="nv">sws</span>.<span class="nv">geonames</span>.<span class="nv">org</span><span class="o">/</span><span class="mi">597427</span><span class="o">/&gt;</span>
+<span class="w">    </span><span class="nv">a</span><span class="w"> </span><span class="nv">locn</span>:<span class="nv">Location</span><span class="w"> </span><span class="c1">;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nv">Country</span><span class="o">/</span><span class="nv">id</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="c1">;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nv">Country</span><span class="o">/</span><span class="nv">name</span><span class="o">&gt;</span><span class="w"> </span><span class="s2">&quot;Lietuva&quot;</span>@<span class="nv">lt</span><span class="w"> </span>.
+
+<span class="o">&lt;</span><span class="nv">City</span><span class="o">/</span><span class="nv">b54c21f6</span><span class="o">-</span><span class="mi">08</span><span class="nv">b8</span><span class="o">-</span><span class="mi">4</span><span class="nv">bdd</span><span class="o">-</span><span class="nv">b785</span><span class="o">-</span><span class="nv">be1cb2e93a98</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="nv">a</span><span class="w"> </span><span class="nv">locn</span>:<span class="nv">Location</span><span class="w"> </span><span class="c1">;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nv">City</span><span class="o">/</span><span class="nv">id</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="c1">;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nv">City</span><span class="o">/</span><span class="nv">name</span><span class="o">&gt;</span><span class="w"> </span><span class="s2">&quot;Vilnius&quot;</span>@<span class="nv">lt</span><span class="w"> </span><span class="c1">;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nv">City</span><span class="o">/</span><span class="nv">country</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="nv">https</span>:<span class="o">//</span><span class="nv">sws</span>.<span class="nv">geonames</span>.<span class="nv">org</span><span class="o">/</span><span class="mi">597427</span><span class="o">/&gt;</span><span class="w"> </span>.
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="vardu-erdves.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">praeitas</p>
+        <p class="prev-next-title">Vardų erdvės</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="formules.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">kitas</p>
+        <p class="prev-next-title">Formulės</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Turinys
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subjekto-uri">Subjekto URI</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Iki Valstybės skaitmeninių sprendimų agentūra
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2019-2024, VSSA.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

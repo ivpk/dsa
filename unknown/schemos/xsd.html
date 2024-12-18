@@ -1,0 +1,1630 @@
+
+<!DOCTYPE html>
+
+
+<html lang="lt" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>XSD &#8212; DSA</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-examples.css?v=e236af4b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=f0eb6ae9" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=4ee96f2e"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=e4682f4a"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'schemos/xsd';</script>
+    <link rel="index" title="Indeksas" href="../genindex.html" />
+    <link rel="search" title="Paieška" href="../search.html" />
+    <link rel="next" title="Duomenų šaltiniai" href="../saltiniai.html" />
+    <link rel="prev" title="Duomenų schemos" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="lt"/>
+  <meta name="docsearch:version" content="1.1" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">DSA</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Paieška" aria-label="Paieška" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Paieška</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../modelis.html">Koncepcinis modelis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../formatas.html">Lentelės formatas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dimensijos.html">Dimensijos</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../tipai.html">Duomenų tipai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pavadinimai.html">Kodiniai pavadinimai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vienetai.html">Matavimo vienetai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apibendrinimas.html">Apibendrinimas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../identifikatoriai.html">Asociacija</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeliai/funkciniai.html">Funkciniai modeliai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../branda.html">Brandos lygiai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prieiga.html">Prieigos lygiai</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Duomenų schemos</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">XSD</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../saltiniai.html">Duomenų šaltiniai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vardu-erdves.html">Vardų erdvės</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zodynai.html">Išoriniai žodynai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../formules.html">Formulės</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../savokos.html">Sąvokos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../keitimai.html">Keitimų istorija</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ivpk/dsa" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Šaltinio saugykla"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ivpk/dsa/issues/new?title=Issue%20on%20page%20%2Fschemos/xsd.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Atidarykite problemą"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Pilno ekrano režimas"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Paieška" aria-label="Paieška" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>XSD</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Turinys </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jungtinis-modelis">Jungtinis modelis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sakninis-modelis">Šakninis modelis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dalinis-modelis">Dalinis modelis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elementai">Elementai</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#element">element</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#santrauka-xsd-elementu-ir-dsa-atitikimas">Santrauka: XSD elementų ir DSA Atitikimas</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attribute">attribute</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simpletype">simpleType</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complextype">complexType</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence">sequence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choice">choice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#all">all</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complexcontent">complexContent</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simplecontent">simpleContent</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enumeration">enumeration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotation">annotation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">documentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#restriction">restriction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extension">extension</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#union">union</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xsd-appinfo">union</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atributai">Atributai</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#base">base</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unique">unique</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minoccurs">minOccurs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxoccurs">maxOccurs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nillable">nillable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#type">type</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use">use</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#duomenu-tipai">Duomenų tipai</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="xsd">
+<h1>XSD<a class="headerlink" href="#xsd" title="Link to this heading">#</a></h1>
+<p><a class="reference external" href="https://www.w3.org/TR/xmlschema11-1/">XML Schema Definition (XSD)</a> yra schemų kalba skirta XML duomenims aprašyti.</p>
+<p>XSD specifikacija susideda iš šių dalių:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.w3.org/TR/xmlschema11-1/">W3C XML Schema Definition Language (XSD) 1.1 Part 1: Structures</a></p></li>
+<li><p><a class="reference external" href="https://www.w3.org/TR/xmlschema11-2/">W3C XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes</a></p></li>
+</ul>
+<section id="jungtinis-modelis">
+<span id="xsd-aggregate-model"></span><h2>Jungtinis modelis<a class="headerlink" href="#jungtinis-modelis" title="Link to this heading">#</a></h2>
+<p>Jungtiniai modeliai (angl. <em>Aggregate Model</em>) yra modelis, kuris yra sujungtas
+iš vieno ar kelių papildomų modelių.</p>
+<section id="sakninis-modelis">
+<span id="xsd-aggregate-root"></span><h3>Šakninis modelis<a class="headerlink" href="#sakninis-modelis" title="Link to this heading">#</a></h3>
+<p>Šakninis modelis (angl. <em>Aggregate Root</em>) yra jungtinio modelio pradžios
+taškas, per kurį pasiekiami kitų jungtinio modelio sudėtyje esančių modelių
+duomenys.</p>
+</section>
+<section id="dalinis-modelis">
+<span id="xsd-aggregate-part"></span><h3>Dalinis modelis<a class="headerlink" href="#dalinis-modelis" title="Link to this heading">#</a></h3>
+<p>Dalinis modelis (angl. <em>Aggregate Part</em>) yra Jungtinio modelio sudedamoji dalis
+ir atskirai nenaudojamas duomenims gauti. Dalinio modelio duomenys yra teikiami
+tik kaip jungtinio modelio dalis.</p>
+<p>Dalinio modelio atveju, nėra pildomas <a class="reference internal" href="../dimensijos.html#model.source" title="model.source"><code class="xref py py-data docutils literal notranslate"><span class="pre">model.source</span></code></a>, kadangi dalinio
+modelio duomenys gali būti pasiekiami tik per jungtinį modelį.</p>
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<p><strong>Duomenys</strong></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;country</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Lietuva&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;city</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Vilnius&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/country&gt;</span>
+</pre></div>
+</div>
+<p><strong>Schema</strong></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xs:schema</span><span class="w"> </span><span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;xs:complexType</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;city&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;xs:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/xs:complexType&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;country&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;xs:complexType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:sequence&gt;</span>
+<span class="w">                </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;city&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;unbounded&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;xs:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/xs:element&gt;</span>
+
+<span class="nt">&lt;/xs:schema&gt;</span>
+</pre></div>
+</div>
+<p><strong>Struktūros aprašas</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>dataset</p></th>
+<th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+<th class="head"><p>prepare</p></th>
+<th class="head"><p>level</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>schema</p></td>
+<td><p>xsd</p></td>
+<td><p>country.xsd</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td colspan="3"><p>xsd</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td colspan="2"><p><strong>Country</strong></p></td>
+<td></td>
+<td></td>
+<td><p>/country</p></td>
+<td></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td><p>name</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>&#64;name</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td><p>cities[]</p></td>
+<td><p>backref</p></td>
+<td><p>City</p></td>
+<td><p>city</p></td>
+<td><p>expand()</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td colspan="2"><p><strong>City/:part</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>0</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td><p>name</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>&#64;name</p></td>
+<td></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Pavyzdyje:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Country</span></code> modelis yra <a class="reference internal" href="#xsd-aggregate-model"><span class="std std-ref">Jungtinis modelis</span></a> ir jungtinio modelio
+<a class="reference internal" href="#xsd-aggregate-root"><span class="std std-ref">Šakninis modelis</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">City</span></code> yra <a class="reference internal" href="#xsd-aggregate-part"><span class="std std-ref">Dalinis modelis</span></a>, kadangi tai žymi <code class="docutils literal notranslate"><span class="pre">/:part</span></code> žymė, taip
+pat <code class="docutils literal notranslate"><span class="pre">City</span></code> neturi užpildyto <a class="reference internal" href="../dimensijos.html#model.source" title="model.source"><code class="xref py py-data docutils literal notranslate"><span class="pre">model.source</span></code></a> stulpelio, tai reiškia, kad
+tiesiogiai <code class="docutils literal notranslate"><span class="pre">City</span></code> duomenų gauti galimybės nėra, juos galima gauti tik per
+<code class="docutils literal notranslate"><span class="pre">Country</span></code> jungtinį modelį, kurio sudėtyje yra ir <code class="docutils literal notranslate"><span class="pre">City</span></code>, prieinamas per
+<code class="docutils literal notranslate"><span class="pre">Country/cities</span></code> savybę.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Country/cities</span></code> savybė turi <a class="reference internal" href="../formules.html#expand" title="expand"><code class="xref py py-func docutils literal notranslate"><span class="pre">expand()</span></code></a> funkciją įrašytą į
+<a class="reference internal" href="../dimensijos.html#property.prepare" title="property.prepare"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.prepare</span></code></a>, kuri įtraukia visas tiesiogines <code class="docutils literal notranslate"><span class="pre">City</span></code> savybes į
+jungtinį <code class="docutils literal notranslate"><span class="pre">Country</span></code> modelį.</p></li>
+</ul>
+</section>
+</section>
+<section id="elementai">
+<h2>Elementai<a class="headerlink" href="#elementai" title="Link to this heading">#</a></h2>
+<section id="element">
+<span id="xsd-element"></span><h3>element<a class="headerlink" href="#element" title="Link to this heading">#</a></h3>
+<p>XSD <a class="reference internal" href="#xsd-element"><span class="std std-ref">element</span></a> atitinka DSA loginio modelio:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../formatas.html#model" title="model"><code class="xref py py-data docutils literal notranslate"><span class="pre">model</span></code></a> - jei elemento tipas yra <a class="reference internal" href="#xsd-complextype"><span class="std std-ref">complexType</span></a>,</p></li>
+<li><p><a class="reference internal" href="../formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a> - jei elemento tipas yra <a class="reference internal" href="#xsd-simpletype"><span class="std std-ref">simpleType</span></a>.</p></li>
+</ul>
+<p>Jei <code class="docutils literal notranslate"><span class="pre">xsd_element</span></code> tipas nėra nurodytas, tada pagal XSD specifikaciją elemento
+tipas yra <code class="docutils literal notranslate"><span class="pre">xs:anyType</span></code>. DSA neturi <code class="docutils literal notranslate"><span class="pre">xs:anyType</span></code> analogo, todėl tokiu atveju
+turėtu būti naudojamas DSA <code class="docutils literal notranslate"><span class="pre">string</span></code> tipas, kur <code class="docutils literal notranslate"><span class="pre">xs:anyType</span></code> reikšmė yra
+pateikiama, kaip tekstinė reprezentacija.</p>
+<p>Priklausomai nuo to, kur <a class="reference internal" href="#xsd-element"><span class="std std-ref">element</span></a> yra deklaruotas
+<a class="reference internal" href="#xsd-complextype"><span class="std std-ref">complexType</span></a> atžvilgiu, pagal nutylėjimą atliekama sekanti XSD
+interpretacija:</p>
+<ul class="simple">
+<li><p>Jei <a class="reference internal" href="#xsd-element"><span class="std std-ref">element</span></a> (<a class="reference internal" href="#xsd-complextype"><span class="std std-ref">complexType</span></a> tipo) yra <a class="reference internal" href="#xsd-complextype"><span class="std std-ref">complexType</span></a> sudėtyje, laikoma, kad
+modelis yra kito <a class="reference internal" href="../identifikatoriai.html#ref-denorm"><span class="std std-ref">Jungtinis modelis</span></a> dalis, todėl pagal nutylėjimą nenurodomas
+<code class="xref py py-data docutils literal notranslate"><span class="pre">model.source`ir</span> <span class="pre">šis</span> <span class="pre">modelis</span> <span class="pre">žymimas</span> <span class="pre">kaip</span> <span class="pre">dalinis,</span> <span class="pre">prie</span> <span class="pre">jo</span> <span class="pre">pavadinimo</span> <span class="pre">pridedant</span> <span class="pre">žymę</span> <span class="pre">`/:part</span></code>.</p></li>
+<li><p>Jei <a class="reference internal" href="#xsd-element"><span class="std std-ref">element</span></a> (<a class="reference internal" href="#xsd-complextype"><span class="std std-ref">complexType</span></a> tipo) nėra <a class="reference internal" href="#xsd-complextype"><span class="std std-ref">complexType</span></a> sudėtyje ir deklaruotas
+atskirai, bet XSD schemoje yra bent vienas <code class="docutils literal notranslate"><span class="pre">complexType</span></code>, kurio viduje yra elementas, turintis
+atributą <code class="docutils literal notranslate"><span class="pre">ref</span></code>, kurio reikšmė yra šio elemento pavadinimas, tada laikoma, kad modelis
+yra kito <a class="reference internal" href="../identifikatoriai.html#ref-denorm"><span class="std std-ref">Jungtinis modelis</span></a> dalis, todėl pagal nutylėjimą nenurodomas <a class="reference internal" href="../dimensijos.html#model.source" title="model.source"><code class="xref py py-data docutils literal notranslate"><span class="pre">model.source</span></code></a> ir
+šis modelis žymimas kaip dalinis, prie jo pavadinimo pridedant žymę <code class="docutils literal notranslate"><span class="pre">/:part</span></code>.</p></li>
+<li><p>Jei <a class="reference internal" href="#xsd-element"><span class="std std-ref">element</span></a> (<a class="reference internal" href="#xsd-complextype"><span class="std std-ref">complexType</span></a> tipo) nėra <a class="reference internal" href="#xsd-complextype"><span class="std std-ref">complexType</span></a> sudėtyje ir yra deklaruotas
+atskirai, tada laikoma, kad modelis gali būti pasiekiamas tiesiogiai ir tokio
+modelio <a class="reference internal" href="../dimensijos.html#model.source" title="model.source"><code class="xref py py-data docutils literal notranslate"><span class="pre">model.source</span></code></a> yra pildomas bei šis modelis nežymimas kaip dalinis.</p></li>
+<li><p>Jei <a class="reference internal" href="#xsd-simpletype"><span class="std std-ref">simpleType</span></a> tipo <a class="reference internal" href="#xsd-element"><span class="std std-ref">element</span></a> yra <a class="reference internal" href="#xsd-complextype"><span class="std std-ref">complexType</span></a> sudėtyje,
+iš jo sukuriama <a class="reference internal" href="../formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a>, ir pridedama prie <a class="reference internal" href="../formatas.html#model" title="model"><code class="xref py py-data docutils literal notranslate"><span class="pre">model</span></code></a>, kuris kuriamas iš elemento, kurį
+aprašo šis <a class="reference internal" href="#xsd-complextype"><span class="std std-ref">complexType</span></a>. Šios <a class="reference internal" href="../dimensijos.html#property.source" title="property.source"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.source</span></code></a> formuojamas iš elemento pavadinimo,
+prie jo pridedant <code class="docutils literal notranslate"><span class="pre">/text()</span></code></p></li>
+<li><p>Jei <a class="reference internal" href="#xsd-simpletype"><span class="std std-ref">simpleType</span></a> tipo <a class="reference internal" href="#xsd-element"><span class="std std-ref">element</span></a> nėra <a class="reference internal" href="#xsd-complextype"><span class="std std-ref">complexType</span></a> sudėtyje, bet yra
+deklaruotas atskirai, bei nėra nei vieno kito elemento, kuris per <code class="docutils literal notranslate"><span class="pre">ref</span></code> ar <code class="docutils literal notranslate"><span class="pre">type</span></code> referuotų
+į šį elementą, iš jo sukuriama <a class="reference internal" href="../formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a>, ir pridedama prie specialaus
+<code class="docutils literal notranslate"><span class="pre">Resource</span></code> <a class="reference internal" href="../formatas.html#model" title="model"><code class="xref py py-data docutils literal notranslate"><span class="pre">model</span></code></a>.</p></li>
+</ul>
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<p><strong>Duomenys</strong></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Country&gt;</span>
+<span class="w">  </span><span class="nt">&lt;name&gt;</span>France<span class="nt">&lt;/name&gt;</span>
+<span class="w">  </span><span class="nt">&lt;numberOfMunicipalities&gt;</span>35<span class="nt">&lt;/numberOfMunicipalities&gt;</span>
+
+<span class="w">  </span><span class="nt">&lt;City&gt;</span>
+<span class="w">    </span><span class="nt">&lt;name&gt;</span>Paris<span class="nt">&lt;/name&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/City&gt;</span>
+
+<span class="w">  </span><span class="nt">&lt;City&gt;</span>
+<span class="w">    </span><span class="nt">&lt;name&gt;</span>Lyon<span class="nt">&lt;/name&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/City&gt;</span>
+
+<span class="nt">&lt;/Country&gt;</span>
+</pre></div>
+</div>
+<p><strong>Schema</strong></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xs:schema</span><span class="w"> </span><span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+
+<span class="w">  </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Country&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;xs:complexType&gt;</span>
+<span class="w">      </span><span class="nt">&lt;xs:sequence&gt;</span>
+
+<span class="w">        </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+
+<span class="w">        </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;numberOfMunicipalities&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;xs:simpleType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:restriction</span><span class="w"> </span><span class="na">base=</span><span class="s">&quot;xs:integer&quot;</span><span class="nt">&gt;</span>
+<span class="w">              </span><span class="nt">&lt;xs:minInclusive</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/xs:simpleType&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xs:element&gt;</span>
+
+<span class="w">        </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;governance&quot;</span><span class="nt">/&gt;</span>
+
+<span class="w">        </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;City&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;unbounded&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;xs:complexType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:sequence&gt;</span>
+<span class="w">              </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xs:element&gt;</span>
+
+<span class="w">      </span><span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/xs:element&gt;</span>
+
+<span class="w">  </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;governance&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;xs:complexType&gt;</span>
+<span class="w">      </span><span class="nt">&lt;xs:sequence&gt;</span>
+<span class="w">        </span><span class="nt">&lt;element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;president&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;string&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/xs:element&gt;</span>
+
+<span class="nt">&lt;/xs:schema&gt;</span>
+</pre></div>
+</div>
+<p><strong>Struktūros aprašas</strong></p>
+</div>
+<p>Pavyzdyje:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Country</span></code> <code class="docutils literal notranslate"><span class="pre">element</span></code> tampa modeliu, nes jis yra pirminio lygio, ir jo tipas yra <a class="reference internal" href="#xsd-complextype"><span class="std std-ref">complexType</span></a>.</p></li>
+</ul>
+<blockquote>
+<div><p>XML struktūroje jis tampa šakniniu elementu, todėl iš jo kilęs modelis irgi nurodomas kaip šakninis
+modelis, galintis eiti atskirai, ir nėra žymimas <code class="docutils literal notranslate"><span class="pre">/:part</span></code>.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> <code class="docutils literal notranslate"><span class="pre">element</span></code> tampa <a class="reference internal" href="../formatas.html#model" title="model"><code class="xref py py-data docutils literal notranslate"><span class="pre">model</span></code></a> <code class="docutils literal notranslate"><span class="pre">Country</span></code> <a class="reference internal" href="../formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a>, nes jis yra viduje <a class="reference internal" href="#xsd-complextype"><span class="std std-ref">complexType</span></a>,
+kuris yra viduje</p></li>
+</ul>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">Country</span></code> <code class="docutils literal notranslate"><span class="pre">element</span></code> ir pats yra <a class="reference internal" href="#xsd-simpletype"><span class="std std-ref">simpleType</span></a>. Jo tipas šiuo atveju nurodomas paties elemento aprašyme</dt><dd><p>ir yra <code class="docutils literal notranslate"><span class="pre">string</span></code>. Šis <code class="docutils literal notranslate"><span class="pre">string</span></code> tipas DSA taip pat tampa <code class="docutils literal notranslate"><span class="pre">string</span></code> tipu.</p>
+</dd>
+</dl>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">numberOfMunicipalities</span></code> <code class="docutils literal notranslate"><span class="pre">element</span></code> taip pat tampa <code class="docutils literal notranslate"><span class="pre">Country</span></code> modelio <a class="reference internal" href="../formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a>. Jam tipas nurodytas
+atskirame <a class="reference internal" href="#xsd-simpletype"><span class="std std-ref">simpleType</span></a>, kuriame nurodoma, kad jo pagrindas (<code class="docutils literal notranslate"><span class="pre">base</span></code>) yra <code class="docutils literal notranslate"><span class="pre">integer</span></code>,
+ir nurodyti apribojimai (<code class="docutils literal notranslate"><span class="pre">restriction</span></code>). Šis <code class="docutils literal notranslate"><span class="pre">base</span></code> tipas ir yra konvertuojamas į DSA tipą,
+šiuo konkrečiu atveju - į <code class="docutils literal notranslate"><span class="pre">integer</span></code> tipą. Kadangi DSA netaiko apribojimų reikšmėms, tai visi apribojimai,
+kurie yra nurodyti <code class="docutils literal notranslate"><span class="pre">restriction</span></code> (šiame pavyzdyje, <code class="docutils literal notranslate"><span class="pre">minInclusive</span></code>) ignoruojami. Kadangi <a class="reference internal" href="../formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a>
+pavadinimas turi būti sudarytas iš mažųjų raidžių, o tarpai tarp žodžių atskiriami pabraukimais (_), tai
+<a class="reference internal" href="../formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a> pavadinimas tampa <code class="docutils literal notranslate"><span class="pre">number_of_municipalities</span></code>.</p></li>
+<li><p>Sekantis elementas, <code class="docutils literal notranslate"><span class="pre">&lt;xs:element</span> <span class="pre">ref=&quot;governance&quot;/&gt;</span></code>, neturi pavadinimo, bet jame yra atributas <code class="docutils literal notranslate"><span class="pre">ref</span></code>,
+kas nurodo, kad jo aprašymas referuojamas kitam, globaliam elementui, pavadinimu <code class="docutils literal notranslate"><span class="pre">governance</span></code>.
+Šiuo atveju iš šio <span class="xref std std-ref">element</span> kuriamai <a class="reference internal" href="../formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a> suteikiamas pavadinimas pagal
+<code class="docutils literal notranslate"><span class="pre">ref</span></code> atributą, o į jo <code class="docutils literal notranslate"><span class="pre">ref</span></code> stulpelį įrašomas modelio, sukurto iš referuojamo <span class="xref std std-ref">element</span>, pavadinimas.</p></li>
+<li><p>iš atskirai apibrėžto elemento <code class="docutils literal notranslate"><span class="pre">&lt;xs:element</span> <span class="pre">ref=&quot;governance&quot;/&gt;</span></code> sukuriamas <a class="reference internal" href="../formatas.html#model" title="model"><code class="xref py py-data docutils literal notranslate"><span class="pre">model</span></code></a> Governance.</p></li>
+</ul>
+<section id="santrauka-xsd-elementu-ir-dsa-atitikimas">
+<h4>Santrauka: XSD elementų ir DSA Atitikimas<a class="headerlink" href="#santrauka-xsd-elementu-ir-dsa-atitikimas" title="Link to this heading">#</a></h4>
+</section>
+</section>
+<section id="attribute">
+<span id="xsd-attribute"></span><h3>attribute<a class="headerlink" href="#attribute" title="Link to this heading">#</a></h3>
+<p>XSD <a class="reference internal" href="#xsd-attribute"><span class="std std-ref">attribute</span></a> atitinka DSA loginio modelio <a class="reference internal" href="../formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a>.</p>
+<p>Iš <a class="reference internal" href="#xsd-attribute"><span class="std std-ref">attribute</span></a> atributo <code class="docutils literal notranslate"><span class="pre">name</span></code> formuojamas <a class="reference internal" href="../formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a> pavadinimas. Jei <code class="docutils literal notranslate"><span class="pre">name</span></code>
+susideda iš kelių žodžių, <a class="reference internal" href="../formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a> pavadinimas taip pat susidės iš kelių žodžių,
+tačiau jie bus mažosiomis raidėmis ir atskirti pabraukimo ženklu (_).</p>
+<p><a class="reference internal" href="../dimensijos.html#property.source" title="property.source"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.source</span></code></a> yra formuojamas iš <a class="reference internal" href="#xsd-attribute"><span class="std std-ref">attribute</span></a> atributo <code class="docutils literal notranslate"><span class="pre">name</span></code>, priekyje pridedant <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>.</p>
+<p>Jei <code class="docutils literal notranslate"><span class="pre">attribute</span></code> tipas yra nurodytas <code class="docutils literal notranslate"><span class="pre">attribute</span></code> elemente esančiu <a class="reference internal" href="#xsd-type"><span class="std std-ref">type</span></a> atributu,
+tai <a class="reference internal" href="../formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a> tipas formuojamas iš <a class="reference internal" href="#xsd-attribute"><span class="std std-ref">attribute</span></a>,  naudojantis <span class="xref std std-ref">xd_type_conversion</span>.</p>
+<p>Jei <code class="docutils literal notranslate"><span class="pre">attribute</span></code> tipas aprašytas <a class="reference internal" href="#xsd-simpletype"><span class="std std-ref">simpleType</span></a>, tai <a class="reference internal" href="../dimensijos.html#property.type" title="property.type"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.type</span></code></a> formuojamas iš šio
+<span class="xref std std-ref">simpleType</span> viduje esančio <a class="reference internal" href="#xsd-restriction"><span class="std std-ref">restriction</span></a> <a class="reference internal" href="#xsd-base"><span class="std std-ref">base</span></a> nurodyto <a class="reference internal" href="#xsd-type"><span class="std std-ref">type</span></a>.</p>
+<p>Jei <code class="docutils literal notranslate"><span class="pre">attribute</span></code> elemento sudėtyje yra <span class="xref std std-ref">annotation</span>, iš jo formuojamas aprašymas -
+<a class="reference internal" href="../dimensijos.html#property.description" title="property.description"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.description</span></code></a>.</p>
+<p>Jei <code class="docutils literal notranslate"><span class="pre">attribute</span></code> turi atributą <a class="reference internal" href="#xsd-use"><span class="std std-ref">use</span></a> su reikšme <code class="docutils literal notranslate"><span class="pre">required</span></code>, tai prie <a class="reference internal" href="../formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a>
+pavadinimo pridedama <code class="docutils literal notranslate"><span class="pre">required</span></code> žymė, reiškianti, kad ši <a class="reference internal" href="../formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a> yra privaloma.</p>
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<p><strong>Duomenys</strong></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;country</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;France&quot;</span><span class="w"> </span><span class="na">capital=</span><span class="s">&quot;Paris&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<p><strong>Schema</strong></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xs:schema</span><span class="w"> </span><span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="w"> </span><span class="na">elementFormDefault=</span><span class="s">&quot;qualified&quot;</span><span class="nt">&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;country&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;xs:complexType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="na">use=</span><span class="s">&quot;required&quot;</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;capital&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="na">use=</span><span class="s">&quot;required&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/xs:element&gt;</span>
+
+<span class="nt">&lt;/xs:schema&gt;</span>
+</pre></div>
+</div>
+<p><strong>Struktūros aprašas</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>dataset</p></th>
+<th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+<th class="head"><p>prepare</p></th>
+<th class="head"><p>level</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>schema</p></td>
+<td><p>xsd</p></td>
+<td><p>country.xsd</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td colspan="3"><p>xsd</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td colspan="2"><p><strong>Country</strong></p></td>
+<td></td>
+<td></td>
+<td><p>/country</p></td>
+<td></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td><p>name</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>&#64;name</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td><p>capital</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>&#64;capital</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Pavyzdyje:</p>
+<ul class="simple">
+<li><p>XSD <code class="docutils literal notranslate"><span class="pre">attribute</span></code> kurio <code class="docutils literal notranslate"><span class="pre">name</span></code> reikšmė yra <code class="docutils literal notranslate"><span class="pre">name</span></code> tampa <a class="reference internal" href="../formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a> su pavadinimu <code class="docutils literal notranslate"><span class="pre">name</span></code>.
+Jo tipas yra <code class="docutils literal notranslate"><span class="pre">string</span></code>, tai konvertuojasi į DSA <a class="reference internal" href="../dimensijos.html#property.type" title="property.type"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.type</span></code></a> <code class="docutils literal notranslate"><span class="pre">string</span></code>. <a class="reference internal" href="../dimensijos.html#property.source" title="property.source"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.source</span></code></a>
+padaromas iš <code class="docutils literal notranslate"><span class="pre">attribute</span></code> <code class="docutils literal notranslate"><span class="pre">name</span></code> <code class="docutils literal notranslate"><span class="pre">name</span></code>, prie jo pridedant <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> ir tampa <code class="docutils literal notranslate"><span class="pre">&#64;name</span></code>.</p></li>
+<li><p>XSD <code class="docutils literal notranslate"><span class="pre">attribute</span></code> kurio <code class="docutils literal notranslate"><span class="pre">name</span></code> reikšmė yra <code class="docutils literal notranslate"><span class="pre">capital</span></code> tampa <a class="reference internal" href="../formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a> su pavadinimu <code class="docutils literal notranslate"><span class="pre">capital</span></code>.
+Jo tipas yra <code class="docutils literal notranslate"><span class="pre">string</span></code>, todėl konvertuojasi į DSA <a class="reference internal" href="../dimensijos.html#property.type" title="property.type"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.type</span></code></a> <code class="docutils literal notranslate"><span class="pre">string</span></code>. <a class="reference internal" href="../dimensijos.html#property.source" title="property.source"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.source</span></code></a>
+padaromas iš <code class="docutils literal notranslate"><span class="pre">attribute</span></code> <code class="docutils literal notranslate"><span class="pre">name</span></code> <code class="docutils literal notranslate"><span class="pre">capital</span></code>, prie jo pridedant <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> ir tampa <code class="docutils literal notranslate"><span class="pre">&#64;capital</span></code>.</p></li>
+</ul>
+</section>
+<section id="simpletype">
+<span id="xsd-simpletype"></span><h3>simpleType<a class="headerlink" href="#simpletype" title="Link to this heading">#</a></h3>
+<p>Jei elemento ar atributo tipas aprašytas naudojant <code class="docutils literal notranslate"><span class="pre">simpleType</span></code>, į DSA tipą jis
+konvertuojamas naudojant konvertavimo lentelę <span class="xref std std-ref">xsd_type_conversion</span>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">simpleType</span></code> viduje gali būti <span class="xref std std-ref">restriction</span> arba <span class="xref std std-ref">extension</span>. Jie abu naudojami smulkesniam
+<code class="docutils literal notranslate"><span class="pre">simpleType</span></code> aprašymui. Dauguma jų naudojami duomenų validavimui, o DSA duomenų validavimo
+taisyklės netaikomos, tai šie apribojimai dažniausiai yra ignoruojami. Jų aprašymus rasite žemiau.</p>
+<p>Jei <code class="docutils literal notranslate"><span class="pre">simpleType</span></code> elementas turi <a class="reference internal" href="#xsd-annotation"><span class="std std-ref">annotation</span></a>, jo turinys pridedamas prie iš šį <code class="docutils literal notranslate"><span class="pre">simpleType</span></code>
+naudojančio elemento sukurtos <code class="docutils literal notranslate"><span class="pre">property</span></code> aprašymo: <a class="reference internal" href="../dimensijos.html#property.description" title="property.description"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.description</span></code></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">simpleType</span></code> gali būti aprašomas ir atskirai. Tokiu atveju, iš jo nustatytas <a class="reference internal" href="../dimensijos.html#property.type" title="property.type"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.type</span></code></a> bus
+pridėtas toms <a class="reference internal" href="../formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a>, kurios sukurtos iš į šį tipą referuojančių elementų arba atributų.</p>
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<p><strong>Duomenys</strong></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;numberOfMunicipalities&gt;</span>5<span class="nt">&lt;/numberOfMunicipalities&gt;</span>
+</pre></div>
+</div>
+<p><strong>Schema</strong></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xs:schema</span><span class="w"> </span><span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;country&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;xs:complexType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;population&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span><span class="nt">&lt;xs:simpleType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:restriction</span><span class="w"> </span><span class="na">base=</span><span class="s">&quot;xs:integer&quot;</span><span class="nt">&gt;</span>
+<span class="w">              </span><span class="nt">&lt;xs:minInclusive</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/xs:simpleType&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xs:element&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/xs:element&gt;</span>
+
+<span class="nt">&lt;/xs:schema&gt;</span>
+</pre></div>
+</div>
+<p><strong>Struktūros aprašas</strong></p>
+</div>
+<p>Pavyzdyje:</p>
+<ul class="simple">
+<li><p>iš <code class="docutils literal notranslate"><span class="pre">simpleType</span></code>, kurio viduje nurodytas <a class="reference internal" href="#xsd-restriction"><span class="std std-ref">restriction</span></a>, kurio <a class="reference internal" href="#xsd-base"><span class="std std-ref">base</span></a> yra <code class="docutils literal notranslate"><span class="pre">string</span></code>,
+gaunamas DSA <a class="reference internal" href="../dimensijos.html#property.type" title="property.type"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.type</span></code></a> <code class="docutils literal notranslate"><span class="pre">string</span></code>.</p></li>
+</ul>
+</section>
+<section id="complextype">
+<span id="xsd-complextype"></span><h3>complexType<a class="headerlink" href="#complextype" title="Link to this heading">#</a></h3>
+<p><a class="reference internal" href="#xsd-complextype"><span class="std std-ref">complexType</span></a> gali būti arba <a class="reference internal" href="#xsd-element"><span class="std std-ref">element</span></a> sudėtyje, arba atskirai.
+Jei <a class="reference internal" href="#xsd-complextype"><span class="std std-ref">complexType</span></a> yra <a class="reference internal" href="#xsd-element"><span class="std std-ref">element</span></a> sudėtyje, iš jų abiejų
+kartu kuriamas <a class="reference internal" href="../formatas.html#model" title="model"><code class="xref py py-data docutils literal notranslate"><span class="pre">model</span></code></a>. <a class="reference internal" href="../formatas.html#model" title="model"><code class="xref py py-data docutils literal notranslate"><span class="pre">model</span></code></a> struktūra nustatoma iš <a class="reference internal" href="#xsd-complextype"><span class="std std-ref">complexType</span></a>, o
+pavadinimas - iš <a class="reference internal" href="#xsd-element"><span class="std std-ref">element</span></a> atributo <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
+<p>Jei <a class="reference internal" href="#xsd-complextype"><span class="std std-ref">complexType</span></a> yra aprašytas atskirai, iš jo kuriamas <a class="reference internal" href="../formatas.html#model" title="model"><code class="xref py py-data docutils literal notranslate"><span class="pre">model</span></code></a>,
+kurio pavadinimas nustatomas iš <a class="reference internal" href="#xsd-complextype"><span class="std std-ref">complexType</span></a> pavadinimo.</p>
+<p><a class="reference internal" href="#xsd-complextype"><span class="std std-ref">complexType</span></a> gali turėti atributą <code class="docutils literal notranslate"><span class="pre">mixed</span></code>. Jis reiškia, kad šiuo <a class="reference internal" href="#xsd-complextype"><span class="std std-ref">complexType</span></a>
+aprašytas <a class="reference internal" href="#xsd-element"><span class="std std-ref">element</span></a> turės galimybę viduje turėti teksto. Tokiu atveju, prie <a class="reference internal" href="../formatas.html#model" title="model"><code class="xref py py-data docutils literal notranslate"><span class="pre">model</span></code></a>
+pridedama <a class="reference internal" href="../formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a> su pavadinimu <code class="docutils literal notranslate"><span class="pre">text</span></code> ir tipu <code class="docutils literal notranslate"><span class="pre">string</span></code>. Jos <a class="reference internal" href="../dimensijos.html#property.source" title="property.source"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.source</span></code></a> yra <code class="docutils literal notranslate"><span class="pre">text()</span></code>.</p>
+<p>Jei <code class="docutils literal notranslate"><span class="pre">complexType</span></code> sudėtyje yra <a class="reference internal" href="#xsd-choice"><span class="std std-ref">choice</span></a> elementas ir šio elemento atributas <a class="reference internal" href="#xsd-maxoccurs"><span class="std std-ref">maxOccurs</span></a>
+yra daugiau, nei <code class="docutils literal notranslate"><span class="pre">1</span></code> arba yra <code class="docutils literal notranslate"><span class="pre">unbounded</span></code>, iš šio complexType kuriama po vieną <a class="reference internal" href="../formatas.html#model" title="model"><code class="xref py py-data docutils literal notranslate"><span class="pre">model</span></code></a> kiekvienam
+<a class="reference internal" href="#xsd-choice"><span class="std std-ref">choice</span></a> pasirinkimui, kai šis pasirinkimas pridedamas prie kitų <a class="reference internal" href="../dimensijos.html#property"><span class="std std-ref">property</span></a>.</p>
+<p>Jei <code class="docutils literal notranslate"><span class="pre">complexType</span></code> viduje yra <span class="xref std std-ref">complexContent</span>, kurio viduje yra <span class="xref std std-ref">extension</span>, kurio <a class="reference internal" href="../dimensijos.html#base"><span class="std std-ref">base</span></a>
+rodo į kitą, atskirai apibrėžtą elementą, tai prie <a class="reference internal" href="../formatas.html#model" title="model"><code class="xref py py-data docutils literal notranslate"><span class="pre">model</span></code></a>, stulpelyje <code class="docutils literal notranslate"><span class="pre">prepare</span></code>, nurodoma
+funkcija <a href="#id1"><span class="problematic" id="id2">:function:`extends()`</span></a>, jos parametru nurodžius <a class="reference internal" href="../formatas.html#model" title="model"><code class="xref py py-data docutils literal notranslate"><span class="pre">model</span></code></a>, kuris buvo sukurtas iš to tipo.</p>
+<p><code class="docutils literal notranslate"><span class="pre">complexType</span></code> sudėtyje gali būti įvairios konstrukcijos, aprašančios atributus ir elementus, iš kurių šiam
+<a class="reference internal" href="../formatas.html#model" title="model"><code class="xref py py-data docutils literal notranslate"><span class="pre">model</span></code></a> formuojamos <a class="reference internal" href="../formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a>:</p>
+<ul class="simple">
+<li><p><span class="xref std std-ref">attribute</span></p></li>
+<li><p><span class="xref std std-ref">sequence</span></p></li>
+<li><p><span class="xref std std-ref">choice</span></p></li>
+<li><p><span class="xref std std-ref">all</span></p></li>
+<li><p><span class="xref std std-ref">simpleContent</span></p></li>
+<li><p><span class="xref std std-ref">complexContent</span></p></li>
+</ul>
+</section>
+<section id="sequence">
+<span id="xsd-sequence"></span><h3>sequence<a class="headerlink" href="#sequence" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">sequence</span></code> elementas būna <span class="xref std std-ref">complexType</span> sudėtyje. Jis nurodo <span class="xref std std-ref">element</span> elementų seką.
+Kiekvienas <code class="docutils literal notranslate"><span class="pre">sequence</span></code> viduje esantis <span class="xref std std-ref">element</span> yra apdorojamas, ir iš jo sukurta savybė ar savybės
+pridedamos prie iš <span class="xref std std-ref">complexType</span> sukurto modelio.</p>
+<p>Jei <code class="docutils literal notranslate"><span class="pre">sequence</span></code> viduje yra <a class="reference internal" href="#xsd-choice"><span class="std std-ref">choice</span></a>, kurio <a class="reference internal" href="#xsd-maxoccurs"><span class="std std-ref">maxOccurs</span></a> yra &quot;1&quot;, tai kiekvienam šio
+<a class="reference internal" href="#xsd-choice"><span class="std std-ref">choice</span></a> pasirinkimui iš jo ir likusių savybių kuriamas atskiras modelis.</p>
+<p>Jei <code class="docutils literal notranslate"><span class="pre">sequence</span></code> turi atributą <a class="reference internal" href="#xsd-maxoccurs"><span class="std std-ref">maxOccurs</span></a> ir jo reikšmė yra daugiau nei 1 ar yra &quot;unbounded&quot;,
+tai kiekviena <a class="reference internal" href="../formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a>, sukurto iš <code class="docutils literal notranslate"><span class="pre">sequence</span> <span class="pre">viduje</span> <span class="pre">esančių</span> <span class="pre">elementų,</span> <span class="pre">tampa</span> <span class="pre">masyvu,</span> <span class="pre">kas</span> <span class="pre">reiškia,</span>
+<span class="pre">kad</span> <span class="pre">prie</span> <span class="pre">jos</span> <span class="pre">pavadinimo</span> <span class="pre">prisideda</span> <span class="pre">`[]</span></code>, o jei jos tipas būtų buvęs <code class="docutils literal notranslate"><span class="pre">ref</span></code>, jis pasikeičia į <code class="docutils literal notranslate"><span class="pre">backref</span></code>.</p>
+</section>
+<section id="choice">
+<span id="xsd-choice"></span><h3>choice<a class="headerlink" href="#choice" title="Link to this heading">#</a></h3>
+<p>Jei <code class="docutils literal notranslate"><span class="pre">choice</span></code> elemento atributas <a class="reference internal" href="#xsd-maxoccurs"><span class="std std-ref">maxOccurs</span></a> yra lygus &quot;1&quot;, tai <code class="docutils literal notranslate"><span class="pre">choice</span></code> verčiamas į DSA lygiai
+taip pat, kaip ir <a class="reference internal" href="#xsd-sequence"><span class="std std-ref">sequence</span></a>.</p>
+<p>Jei <code class="docutils literal notranslate"><span class="pre">choice</span></code> elemento atributas <a class="reference internal" href="#xsd-maxoccurs"><span class="std std-ref">maxOccurs</span></a> yra daugiau nei &quot;1&quot; arba yra &quot;unbounded&quot;, tai su
+kiekvienu šio <code class="docutils literal notranslate"><span class="pre">choice</span></code> viduje esančiu pasirinkimu (tai gali būti <a class="reference internal" href="#xsd-element"><span class="std std-ref">element</span></a>, <a class="reference internal" href="#xsd-sequence"><span class="std std-ref">sequence</span></a>
+ar kitas <code class="docutils literal notranslate"><span class="pre">choice</span></code>) bus kuriamas atskiras <a class="reference internal" href="../formatas.html#model" title="model"><code class="xref py py-data docutils literal notranslate"><span class="pre">model</span></code></a> iš <a class="reference internal" href="#xsd-complextype"><span class="std std-ref">complexType</span></a>, kurio sudėtyje yra šis
+<code class="docutils literal notranslate"><span class="pre">choice</span></code> (tiesiogiai, ar kito <a class="reference internal" href="#xsd-sequence"><span class="std std-ref">sequence</span></a> ar <code class="docutils literal notranslate"><span class="pre">choice</span></code> viduje).</p>
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<p><strong>Duomenys</strong></p>
+<p>Pirmas variantas:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;country&gt;</span>
+<span class="w">    </span><span class="nt">&lt;population&gt;</span>800000<span class="nt">&lt;/population&gt;</span>
+<span class="w">    </span><span class="nt">&lt;area&gt;</span>700.5<span class="nt">&lt;/area&gt;</span>
+<span class="w">    </span><span class="nt">&lt;king_or_queen&gt;</span>Elžbieta<span class="w"> </span>II<span class="nt">&lt;/king_or_queen&gt;</span>
+<span class="nt">&lt;/country&gt;</span>
+</pre></div>
+</div>
+<p>Antras variantas:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;country&gt;</span>
+<span class="w">    </span><span class="nt">&lt;population&gt;</span>1000000<span class="nt">&lt;/population&gt;</span>
+<span class="w">    </span><span class="nt">&lt;area&gt;</span>500.0<span class="nt">&lt;/area&gt;</span>
+<span class="w">    </span><span class="nt">&lt;president&gt;</span>Ona<span class="w"> </span>Grybauskaitė<span class="nt">&lt;/president&gt;</span>
+<span class="nt">&lt;/country&gt;</span>
+</pre></div>
+</div>
+<p><strong>Schema</strong></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xs:schema</span><span class="w"> </span><span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;country&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;xs:complexType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;population&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:integer&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;area&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:decimal&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:choice</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;president&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;king_or_queen&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/xs:choice&gt;</span>
+
+<span class="w">        </span><span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/xs:element&gt;</span>
+
+<span class="nt">&lt;/xs:schema&gt;</span>
+</pre></div>
+</div>
+<p><a href="#id3"><span class="problematic" id="id4">**</span></a>Struktūros aprašas - **</p>
+</div>
+</section>
+<section id="all">
+<span id="xsd-all"></span><h3>all<a class="headerlink" href="#all" title="Link to this heading">#</a></h3>
+<p>Elementas <code class="docutils literal notranslate"><span class="pre">all</span></code> reiškia, kad jo viduje aprašyti elementai turi eiti nurodyta tvarka, ir maksimalliai
+gali būti po 1 kartą. Minimaliai gali būti taip, kaip nurodyta prie kiekvieno elemento naudojant
+<a class="reference internal" href="#xsd-minoccurs"><span class="std std-ref">minOccurs</span></a>. Taigi, iš kiekvieno <code class="docutils literal notranslate"><span class="pre">all</span></code> viduje esamų elementų bus kuriama savybė,
+ir galbūt modelis, kaip nurodyta <a class="reference internal" href="#xsd-element"><span class="std std-ref">element</span></a>.</p>
+</section>
+<section id="complexcontent">
+<span id="xsd-complex-content"></span><h3>complexContent<a class="headerlink" href="#complexcontent" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">complexContent</span></code> būna <a class="reference internal" href="#xsd-complextype"><span class="std std-ref">complexType</span></a> viduje ir aprašo sudėtinį turinį.</p>
+<p><code class="docutils literal notranslate"><span class="pre">complexContent</span></code> viduje būna <a class="reference internal" href="#xsd-extension"><span class="std std-ref">extension</span></a>, kuris turi atributą <a class="reference internal" href="#xsd-base"><span class="std std-ref">base</span></a>.
+Šis atributas nurodo, kokio kito tipo pagrindu kuriamas šis tipas. Iš <a class="reference internal" href="#xsd-base"><span class="std std-ref">base</span></a> nurodomo
+tipo sukurtas modelis įdedamas į iš šio <code class="docutils literal notranslate"><span class="pre">complexContent</span></code> tėvinio <span class="xref std std-ref">complexType</span> prepare
+stulpelyje nurodomą funkciją <a href="#id5"><span class="problematic" id="id6">:function:`extends()`</span></a>.</p>
+<p><a class="reference internal" href="#xsd-extension"><span class="std std-ref">extension</span></a> viduje
+gali būti <a class="reference internal" href="#xsd-sequence"><span class="std std-ref">sequence</span></a>, <a class="reference internal" href="#xsd-choice"><span class="std std-ref">choice</span></a> ir <a class="reference internal" href="#xsd-all"><span class="std std-ref">all</span></a>, o taip pat <a class="reference internal" href="#xsd-attribute"><span class="std std-ref">attribute</span></a>.</p>
+<p>Iš šių <a class="reference internal" href="#xsd-attribute"><span class="std std-ref">attribute</span></a> bei iš <a class="reference internal" href="#xsd-sequence"><span class="std std-ref">sequence</span></a>, <a class="reference internal" href="#xsd-choice"><span class="std std-ref">choice</span></a> ir <a class="reference internal" href="#xsd-all"><span class="std std-ref">all</span></a> viduje
+esančių <a class="reference internal" href="#xsd-element"><span class="std std-ref">element</span></a> kuriamos savybės, ir pridedamos prie iš <a class="reference internal" href="#xsd-complextype"><span class="std std-ref">complexType</span></a> sukurto
+modelio, pagal tas pačias taisykles, kaip ir iš tiesiogiai <a class="reference internal" href="#xsd-complextype"><span class="std std-ref">complexType</span></a> esančių tokių
+pačių elementų.</p>
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<p><strong>Duomenys</strong></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;example&gt;</span>
+<span class="w">    </span><span class="nt">&lt;country</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;C1&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;name&gt;</span>Lithuania<span class="nt">&lt;/name&gt;</span>
+<span class="w">        </span><span class="nt">&lt;capital&gt;</span>Vilnius<span class="nt">&lt;/capital&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/country&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;city</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;CT1&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;name&gt;</span>Kaunas<span class="nt">&lt;/name&gt;</span>
+<span class="w">        </span><span class="nt">&lt;country&gt;</span>Lithuania<span class="nt">&lt;/country&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/city&gt;</span>
+<span class="nt">&lt;/example&gt;</span>
+</pre></div>
+</div>
+<p><strong>Schema</strong></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xs:schema</span><span class="w"> </span><span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="w"> </span><span class="na">elementFormDefault=</span><span class="s">&quot;qualified&quot;</span><span class="nt">&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;xs:complexType</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Place&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;xs:sequence&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="w">        </span><span class="nt">&lt;xs:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;id&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="na">use=</span><span class="s">&quot;required&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/xs:complexType&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;xs:complexType</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Country&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;xs:complexContent&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:extension</span><span class="w"> </span><span class="na">base=</span><span class="s">&quot;Place&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;xs:sequence&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;capital&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/xs:extension&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xs:complexContent&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/xs:complexType&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;xs:complexType</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;City&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;xs:complexContent&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:extension</span><span class="w"> </span><span class="na">base=</span><span class="s">&quot;Place&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;xs:sequence&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;country&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/xs:extension&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xs:complexContent&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/xs:complexType&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;country&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;Country&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;city&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;City&quot;</span><span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/xs:schema&gt;</span>
+</pre></div>
+</div>
+<p><a href="#id7"><span class="problematic" id="id8">**</span></a>Struktūros aprašas - **</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>dataset</p></th>
+<th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+<th class="head"><p>prepare</p></th>
+<th class="head"><p>level</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>xsd</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Pavyzdyje:</p>
+<ul>
+<li><p><span class="xref std std-ref">complexType</span> Place tampa <a class="reference internal" href="../formatas.html#model" title="model"><code class="xref py py-data docutils literal notranslate"><span class="pre">model</span></code></a> Place, o <span class="xref std std-ref">complexType</span> Place viduje esantis
+<a class="reference internal" href="#xsd-element"><span class="std std-ref">element</span></a> <code class="docutils literal notranslate"><span class="pre">name</span></code> ir <a class="reference internal" href="#xsd-attribute"><span class="std std-ref">attribute</span></a> <code class="docutils literal notranslate"><span class="pre">id</span></code> tampa jo savybėmis (<a class="reference internal" href="../formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a>).</p></li>
+<li><p><span class="xref std std-ref">complexType</span> City tampa <a class="reference internal" href="../formatas.html#model" title="model"><code class="xref py py-data docutils literal notranslate"><span class="pre">model</span></code></a> City, o <span class="xref std std-ref">complexType</span> City viduje esančiame
+<a href="#id9"><span class="problematic" id="id10">:rex:`xsd_extension`</span></a> esantis <a class="reference internal" href="#xsd-element"><span class="std std-ref">element</span></a> <code class="docutils literal notranslate"><span class="pre">country</span></code> tampa <a class="reference internal" href="../formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a> <code class="docutils literal notranslate"><span class="pre">country</span></code>.</p>
+<p><a class="reference internal" href="#xsd-extension"><span class="std std-ref">extension</span></a> <a class="reference internal" href="#xsd-base"><span class="std std-ref">base</span></a> atributas nurodo į <span class="xref std std-ref">complexType</span> <code class="docutils literal notranslate"><span class="pre">Place</span></code>, todėl
+iš jo sukurtas <a class="reference internal" href="../formatas.html#model" title="model"><code class="xref py py-data docutils literal notranslate"><span class="pre">model</span></code></a> <code class="docutils literal notranslate"><span class="pre">Place</span></code> nurodomas <a class="reference internal" href="../formatas.html#model" title="model"><code class="xref py py-data docutils literal notranslate"><span class="pre">model</span></code></a> <code class="docutils literal notranslate"><span class="pre">City</span></code> <code class="docutils literal notranslate"><span class="pre">prepare</span></code> stulpelyje
+esančioje <a href="#id11"><span class="problematic" id="id12">:function:`extends`</span></a> funkcijoje. Tai reiškia, kad vėliau, interpretuojant šį DSA,
+visos <a class="reference internal" href="../formatas.html#model" title="model"><code class="xref py py-data docutils literal notranslate"><span class="pre">model</span></code></a> <code class="docutils literal notranslate"><span class="pre">Place</span></code> esančios <a class="reference internal" href="../formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a> įtraukiamos į <a class="reference internal" href="../formatas.html#model" title="model"><code class="xref py py-data docutils literal notranslate"><span class="pre">model</span></code></a> City.</p>
+</li>
+<li><p>analogiškai su <code class="docutils literal notranslate"><span class="pre">Country</span></code>.</p></li>
+</ul>
+</section>
+<section id="simplecontent">
+<span id="xsd-simple-content"></span><h3>simpleContent<a class="headerlink" href="#simplecontent" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">simpleContent</span></code> elementas būna viduje <code class="docutils literal notranslate"><span class="pre">complexType</span></code> elemento. Viduje <code class="docutils literal notranslate"><span class="pre">simpleContent</span></code> elemento gali
+būti arba <a class="reference internal" href="#xsd-restriction"><span class="std std-ref">restriction</span></a> arba <a class="reference internal" href="#xsd-extension"><span class="std std-ref">extension</span></a> elementas.</p>
+<p>Jei <code class="docutils literal notranslate"><span class="pre">simpleContent</span></code> viduje naudojamas <a class="reference internal" href="#xsd-extension"><span class="std std-ref">extension</span></a>, tai <a class="reference internal" href="#xsd-extension"><span class="std std-ref">extension</span></a> viduje nurodomi
+<a class="reference internal" href="#xsd-attribute"><span class="std std-ref">attribute</span></a>. Iš kiekvieno jų kuriama <a class="reference internal" href="../formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a> ir pridedama prie <a class="reference internal" href="../formatas.html#model" title="model"><code class="xref py py-data docutils literal notranslate"><span class="pre">model</span></code></a>, sukurto
+iš <span class="xref std std-ref">xsd_complex_type</span>, kurio viduje yra. Taip pat, prie modelio, sukurto iš <span class="xref std std-ref">xsd_complex_type</span> pridedama <a class="reference internal" href="../formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a> pavadinimu
+<code class="docutils literal notranslate"><span class="pre">text</span></code> ir jai priskiriamas tipas, kuris gaunamas iš <a class="reference internal" href="#xsd-base"><span class="std std-ref">base</span></a>, pagal tipų siejimo lentelę
+<span class="xref std std-ref">xsd_type_conversion</span>.</p>
+<p>Jei <code class="docutils literal notranslate"><span class="pre">simpleContent</span></code> viduje naudojamas <a class="reference internal" href="#xsd-restriction"><span class="std std-ref">restriction</span></a>, tai reiškia, kad tipas, kurio viduje
+yra šis mazgas, yra apribojamas. Apribojimai gali būti tokie, kaip minimalios ar maximalios reikšmės,
+ilgis ar kitos duomenų validacijos taisyklės. Dauguma jų yra ignoruojami, nes DSA duomenų reikšmių
+apribojimui įrankių neturi. Tačiau, jei <a class="reference internal" href="#xsd-restriction"><span class="std std-ref">restriction</span></a> viduje yra <span class="xref std std-ref">enumeration</span>,
+tai išvardintos reikšmės perkeliamos į <a class="reference internal" href="../dimensijos.html#enum"><span class="std std-ref">enum</span></a>. Išsamiau paaiškinta prie <a class="reference internal" href="#xsd-enumeration"><span class="std std-ref">enumeration</span></a>.</p>
+</section>
+<section id="enumeration">
+<span id="xsd-enumeration"></span><h3>enumeration<a class="headerlink" href="#enumeration" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">enumeration</span></code> išvardija reikšmes, iš kurių gali būti pasirenkama <a class="reference internal" href="#xsd-element"><span class="std std-ref">element</span></a> arba <code class="docutils literal notranslate"><span class="pre">xsd_attribute</span></code>
+reikšmė. DSA jo atitiktis yra <a class="reference internal" href="../dimensijos.html#enum"><span class="std std-ref">enum</span></a>. <code class="docutils literal notranslate"><span class="pre">enumeration</span></code> būna <span class="xref std std-ref">xsd_simple_type</span> sudėtyje esančio
+<a class="reference internal" href="#xsd-restriction"><span class="std std-ref">restriction</span></a> viduje, o šis <span class="xref std std-ref">xsd_simple_type</span> aprašo <a class="reference internal" href="#xsd-element"><span class="std std-ref">element</span></a> arba
+<a class="reference internal" href="#xsd-attribute"><span class="std std-ref">attribute</span></a> tipą. Taigi, iš <code class="docutils literal notranslate"><span class="pre">enumeration</span></code> gautas reikšmių sąrašas perkeliamas
+į DSA savybės, suformuotos iš <a class="reference internal" href="#xsd-element"><span class="std std-ref">element</span></a> arba <a class="reference internal" href="#xsd-attribute"><span class="std std-ref">attribute</span></a> <a class="reference internal" href="../dimensijos.html#enum"><span class="std std-ref">enum</span></a> reikšmes.</p>
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<p><strong>Duomenys</strong></p>
+<p>Pirmas variantas:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;country&gt;</span>
+<span class="w">    </span><span class="nt">&lt;population&gt;</span>800000<span class="nt">&lt;/population&gt;</span>
+<span class="w">    </span><span class="nt">&lt;area&gt;</span>700.5<span class="nt">&lt;/area&gt;</span>
+<span class="w">    </span><span class="nt">&lt;king_or_queen&gt;</span>Elžbieta<span class="w"> </span>II<span class="nt">&lt;/king_or_queen&gt;</span>
+<span class="nt">&lt;/country&gt;</span>
+</pre></div>
+</div>
+<p>Antras variantas:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;country&gt;</span>
+<span class="w">    </span><span class="nt">&lt;population&gt;</span>1000000<span class="nt">&lt;/population&gt;</span>
+<span class="w">    </span><span class="nt">&lt;area&gt;</span>500.0<span class="nt">&lt;/area&gt;</span>
+<span class="w">    </span><span class="nt">&lt;president&gt;</span>Ona<span class="w"> </span>Grybauskaitė<span class="nt">&lt;/president&gt;</span>
+<span class="nt">&lt;/country&gt;</span>
+</pre></div>
+</div>
+<p><strong>Schema</strong></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<p>&lt;xs:schema xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; elementFormDefault=&quot;qualified&quot;&gt;</p>
+<blockquote>
+<div><dl>
+<dt>&lt;xs:element name=&quot;Country&quot;&gt;</dt><dd><dl>
+<dt>&lt;xs:complexType&gt;</dt><dd><dl>
+<dt>&lt;xs:sequence&gt;</dt><dd><p>&lt;xs:element name=&quot;name&quot; type=&quot;xs:string&quot; /&gt;
+&lt;xs:element name=&quot;head_of_state&quot;&gt;</p>
+<blockquote>
+<div><dl>
+<dt>&lt;xs:simpleType&gt;</dt><dd><dl class="simple">
+<dt>&lt;xs:restriction base=&quot;xs:string&quot;&gt;</dt><dd><p>&lt;xs:enumeration value=&quot;President&quot; /&gt;
+&lt;xs:enumeration value=&quot;Monarch&quot; /&gt;
+&lt;xs:enumeration value=&quot;PrimeMinister&quot; /&gt;</p>
+</dd>
+</dl>
+<p>&lt;/xs:restriction&gt;</p>
+</dd>
+</dl>
+<p>&lt;/xs:simpleType&gt;</p>
+</div></blockquote>
+<p>&lt;/xs:element&gt;</p>
+</dd>
+</dl>
+<p>&lt;/xs:sequence&gt;</p>
+</dd>
+</dl>
+<p>&lt;/xs:complexType&gt;</p>
+</dd>
+</dl>
+<p>&lt;/xs:element&gt;</p>
+</div></blockquote>
+<p>&lt;/xs:schema&gt;</p>
+<blockquote>
+<div><p><a href="#id13"><span class="problematic" id="id14">**</span></a>Struktūros aprašas - **</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>dataset</p></th>
+<th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source       prepare</p></th>
+<th class="head"><p>level</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>schema</p></td>
+<td><p>xsd</p></td>
+<td><p>country.xsd</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td colspan="3"><p>xsd</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td colspan="2"><p><strong>Country</strong></p></td>
+<td></td>
+<td></td>
+<td><p>/country</p></td>
+<td><p>0</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td><p>name</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>name/text()</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td><p>head_of_state</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>head_of_state/text()</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>enum</p></td>
+<td></td>
+<td><p>President</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>Monarch</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>PrimeMinister</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></blockquote>
+</section>
+<section id="annotation">
+<span id="xsd-annotation"></span><h3>annotation<a class="headerlink" href="#annotation" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">annotation</span></code> viduje būna informacija apie elementą, kurio viduje jis yra. Jo viduje gali būti
+elementai <a class="reference internal" href="#xsd-documentation"><span class="std std-ref">documentation</span></a> ir <a class="reference internal" href="#xsd-appinfo"><span class="std std-ref">union</span></a>. <a class="reference internal" href="#xsd-appinfo"><span class="std std-ref">union</span></a> elementas ignoruojamas,
+o <a class="reference internal" href="#xsd-documentation"><span class="std std-ref">documentation</span></a> viduje esantis tekstas perkeliamas į lauką <a class="reference internal" href="../dimensijos.html#property.description" title="property.description"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.description</span></code></a>
+arba į <a class="reference internal" href="../dimensijos.html#model.description" title="model.description"><code class="xref py py-data docutils literal notranslate"><span class="pre">model.description</span></code></a>, kuris kuriamas iš <span class="xref std std-ref">element</span> ar <span class="xref std std-ref">attribute</span>, kurio
+viduje <code class="docutils literal notranslate"><span class="pre">annotation</span></code> yra.</p>
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<p><strong>Duomenys</strong></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Country</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Lithuania&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Capital&gt;</span>Vilnius<span class="nt">&lt;/Capital&gt;</span>
+<span class="nt">&lt;/Country&gt;</span>
+</pre></div>
+</div>
+<p><strong>Schema</strong></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xs:schema</span><span class="w"> </span><span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Country&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;xs:annotation&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:documentation&gt;</span>
+<span class="w">                </span>Represents<span class="w"> </span>a<span class="w"> </span>country,<span class="w"> </span>with<span class="w"> </span>its<span class="w"> </span>name<span class="w"> </span>as<span class="w"> </span>and<span class="w"> </span>its<span class="w"> </span>capital.
+<span class="w">            </span><span class="nt">&lt;/xs:documentation&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xs:annotation&gt;</span>
+<span class="w">        </span><span class="nt">&lt;xs:complexType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:sequence&gt;</span>
+<span class="w">                </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Capital&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;xs:annotation&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;xs:documentation&gt;</span>
+<span class="w">                            </span>Represents<span class="w"> </span>the<span class="w"> </span>capital<span class="w"> </span>city<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>country.
+<span class="w">                        </span><span class="nt">&lt;/xs:documentation&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/xs:annotation&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/xs:element&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="na">use=</span><span class="s">&quot;required&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;xs:annotation&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;xs:documentation&gt;</span>
+<span class="w">                        </span>Specifies<span class="w"> </span>the<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>country.
+<span class="w">                    </span><span class="nt">&lt;/xs:documentation&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/xs:annotation&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/xs:attribute&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/xs:element&gt;</span>
+
+<span class="nt">&lt;/xs:schema&gt;</span>
+</pre></div>
+</div>
+<p><strong>Struktūros aprašas</strong></p>
+</div>
+</section>
+<section id="documentation">
+<span id="xsd-documentation"></span><h3>documentation<a class="headerlink" href="#documentation" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">documentation</span></code> elementas visada būna viduje <a class="reference internal" href="#xsd-annotation"><span class="std std-ref">annotation</span></a> elemento ir iš jų abiejų kartu
+formuojamas aprašymas - <a class="reference internal" href="../dimensijos.html#model.description" title="model.description"><code class="xref py py-data docutils literal notranslate"><span class="pre">model.description</span></code></a> arba <a class="reference internal" href="../dimensijos.html#model.description" title="model.description"><code class="xref py py-data docutils literal notranslate"><span class="pre">model.description</span></code></a>. Daugiau
+informacijos prie <a class="reference internal" href="#xsd-annotation"><span class="std std-ref">annotation</span></a></p>
+</section>
+<section id="restriction">
+<span id="xsd-restriction"></span><h3>restriction<a class="headerlink" href="#restriction" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">restriction</span></code> yra taikomas galimų duomenų reikšmių ribojimui, kaip pavyzdžiui, minimalioms ar
+maksimalioms reikšmėms, teksto ilgio ribojimams. DSA šie ribojimai neaprašomi, taigi dauguma šių
+žymių ignoruojama.</p>
+<p>Vienintelis atvejis, kai <code class="docutils literal notranslate"><span class="pre">restriction</span></code> perkeliamas į DSA, yra, kai jis naudojamas kartu
+su <a class="reference internal" href="#xsd-enumeration"><span class="std std-ref">enumeration</span></a>. Tai naudojama aprašyti išvardijamoms galimoms reikšmėms. Daugiau
+aprašyta prie <a class="reference internal" href="#xsd-enumeration"><span class="std std-ref">enumeration</span></a>.</p>
+</section>
+<section id="extension">
+<span id="xsd-extension"></span><h3>extension<a class="headerlink" href="#extension" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">extension</span></code> mazgas visada eina viduje <span class="xref std std-ref">xsd_simple_type</span> arba <span class="xref std std-ref">xsd_complex_type</span>.
+Kaip jis veikia šiuose mazguose, aprašyta prie jų.</p>
+</section>
+<section id="union">
+<span id="xsd-union"></span><h3>union<a class="headerlink" href="#union" title="Link to this heading">#</a></h3>
+</section>
+<section id="xsd-appinfo">
+<span id="id15"></span><h3>union<a class="headerlink" href="#xsd-appinfo" title="Link to this heading">#</a></h3>
+</section>
+</section>
+<section id="atributai">
+<h2>Atributai<a class="headerlink" href="#atributai" title="Link to this heading">#</a></h2>
+<section id="base">
+<span id="xsd-base"></span><h3>base<a class="headerlink" href="#base" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">base</span></code> naudojamas viduje <a class="reference internal" href="#xsd-extension"><span class="std std-ref">extension</span></a> arba <a class="reference internal" href="#xsd-restriction"><span class="std std-ref">restriction</span></a>, kai norima išplėsti arba
+susiaurinti tam tikro tipo reikšmes. Daugiau apie <code class="docutils literal notranslate"><span class="pre">base</span></code> naudojimą aprašyta prie
+<a class="reference internal" href="#xsd-complex-content"><span class="std std-ref">complexContent</span></a> ir prie <a class="reference internal" href="#xsd-simple-content"><span class="std std-ref">simpleContent</span></a>.</p>
+</section>
+<section id="unique">
+<span id="xsd-unique"></span><h3>unique<a class="headerlink" href="#unique" title="Link to this heading">#</a></h3>
+</section>
+<section id="minoccurs">
+<span id="xsd-minoccurs"></span><h3>minOccurs<a class="headerlink" href="#minoccurs" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">minOccurs</span></code> naudojamas nurodyti elemento minimalų pasikartojimų skaičių. Pagal šį atributą taip pat
+galim nustatyti, ar elementas privalomas, ar ne. Jei <code class="docutils literal notranslate"><span class="pre">minOccurs</span></code> yra lygus <code class="docutils literal notranslate"><span class="pre">0</span></code>, tai elementas
+neprivalomas, o jei didesnis nei 0, elementas privalomas. DSA privalomumas nurodomas prie
+<code class="xref py py-data docutils literal notranslate"><span class="pre">property.name</span></code> pridedant <code class="docutils literal notranslate"><span class="pre">required</span></code> jei ji yra privaloma, arbe nepridedant nieko, jei neprivaloma.</p>
+<p>Jei <a class="reference internal" href="#xsd-element"><span class="std std-ref">element</span></a> turi atributą <code class="docutils literal notranslate"><span class="pre">minOccurs</span></code>, kurio reikšmė lugi '0', reiškia iš šio elemento
+sukurta savybė yra neprivaloma, ir žymė <code class="docutils literal notranslate"><span class="pre">required</span></code> nepridedama, o jei <code class="docutils literal notranslate"><span class="pre">minOccurs</span></code> atributo reikšmė
+yra <code class="docutils literal notranslate"><span class="pre">1</span></code> arba didesnė, arba jei šis atributas visai nenurodytas (pagal nutylėjimą jo reikšmė lygi <code class="docutils literal notranslate"><span class="pre">1</span></code>),
+reiškia, kad iš jo sukurta savybė yra privaloma ir prie jos pavadinimo pridedama žymė <code class="docutils literal notranslate"><span class="pre">required</span></code>.</p>
+</section>
+<section id="maxoccurs">
+<span id="xsd-maxoccurs"></span><h3>maxOccurs<a class="headerlink" href="#maxoccurs" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">maxOccurs</span></code> žymi, kiek daugiausiai kartų elementas gali pasikartoti. Jei ši reikšmė yra 1, arba jei
+šis atributas iš viso nenurodytas (jo numatytoji reikšmė yra 1), reiškia elementas gali būti tik
+vieną kartą. Tokiu atveju, DSA tai yra įprasta, vieną objektą ar savybę žyminti <a class="reference internal" href="../formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a>.
+Jei <code class="docutils literal notranslate"><span class="pre">maxOccurs</span></code> reikšmė yra daugiau nei <code class="docutils literal notranslate"><span class="pre">1</span></code> arba <code class="docutils literal notranslate"><span class="pre">unbounded</span></code>, tai reiškia, kad elementas gali
+pasikartoti daug kartų, tai iš jo padaryta <a class="reference internal" href="../formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a> bus masyvas, ir prie jos pavadinimo
+bus pridėti laužtiniai skliaustai (<code class="docutils literal notranslate"><span class="pre">[]</span></code>), o jei tai yra į kitą <a class="reference internal" href="../formatas.html#model" title="model"><code class="xref py py-data docutils literal notranslate"><span class="pre">model</span></code></a> rodanti savybė, tai
+jos tipas bus ne <a class="reference internal" href="../formatas.html#ref" title="ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">ref</span></code></a>, bet <code class="xref py py-data docutils literal notranslate"><span class="pre">backref</span></code>.</p>
+</section>
+<section id="nillable">
+<span id="xsd-nillable"></span><h3>nillable<a class="headerlink" href="#nillable" title="Link to this heading">#</a></h3>
+</section>
+<section id="type">
+<span id="xsd-type"></span><h3>type<a class="headerlink" href="#type" title="Link to this heading">#</a></h3>
+<p>XSD tipas gali būti nurodytas pačiame elemente, nurodant atributą <code class="docutils literal notranslate"><span class="pre">type</span></code>, arba aprašytas po jo
+einančiame <span class="xref std std-ref">simpleType</span> arba <span class="xref std std-ref">complexType</span>.</p>
+<p>Jei tipas aprašytas pačiame elemente ar atribute, į DSA <a class="reference internal" href="../dimensijos.html#property.type" title="property.type"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.type</span></code></a> jis konvertuojamas naudojant
+konvertavimo lentelę <span class="xref std std-ref">xsd_type_conversion</span>.</p>
+<p>Taip pat elemento tipas gali būti aprašytas naudojant <span class="xref std std-ref">simpleType</span> ir <span class="xref std std-ref">complexType</span>.</p>
+</section>
+<section id="use">
+<span id="xsd-use"></span><h3>use<a class="headerlink" href="#use" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">use</span></code> naudojamas aprašant <a class="reference internal" href="#xsd-attribute"><span class="std std-ref">attribute</span></a>, ir nurodo, ar elementas yra privalomas,
+ar ne. Jei <code class="docutils literal notranslate"><span class="pre">use</span></code> nenurodytas, naudojama jo numatytoji reikšmė, kuri yra <code class="docutils literal notranslate"><span class="pre">optional</span></code>,
+ir tai reiškia, kad <a class="reference internal" href="#xsd-attribute"><span class="std std-ref">attribute</span></a> nėra privalomas, taigi DSA jis taip pat nežymimas
+kaip privalomas. Jei <code class="docutils literal notranslate"><span class="pre">use</span></code> reikšmė yra &quot;required&quot;, reiškia, kad šis <a class="reference internal" href="#xsd-attribute"><span class="std std-ref">attribute</span></a> yra
+privalomas, ir DSA prie jo pavadinimo pridedama žymė <code class="docutils literal notranslate"><span class="pre">required</span></code>.</p>
+</section>
+</section>
+<section id="duomenu-tipai">
+<h2>Duomenų tipai<a class="headerlink" href="#duomenu-tipai" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table" id="xsd-type-conversion">
+<thead>
+<tr class="row-odd"><th class="head"><p>XSD tipas (type)</p></th>
+<th class="head"><p>DSA tipas (type)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>string</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-odd"><td><p>boolean</p></td>
+<td><p>boolean</p></td>
+</tr>
+<tr class="row-even"><td><p>decimal</p></td>
+<td><p>number</p></td>
+</tr>
+<tr class="row-odd"><td><p>float</p></td>
+<td><p>number</p></td>
+</tr>
+<tr class="row-even"><td><p>double</p></td>
+<td><p>number</p></td>
+</tr>
+<tr class="row-odd"><td><p>duration</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-even"><td><p>dateTime</p></td>
+<td><p>datetime</p></td>
+</tr>
+<tr class="row-odd"><td><p>time</p></td>
+<td><p>time</p></td>
+</tr>
+<tr class="row-even"><td><p>date</p></td>
+<td><p>date</p></td>
+</tr>
+<tr class="row-odd"><td><p>gYearMonth</p></td>
+<td><p>date;enum;M</p></td>
+</tr>
+<tr class="row-even"><td><p>gYear</p></td>
+<td><p>date;enum;Y</p></td>
+</tr>
+<tr class="row-odd"><td><p>gMonthDay</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-even"><td><p>gDay</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-odd"><td><p>gMonth</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-even"><td><p>hexBinary</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-odd"><td><p>base64Binary</p></td>
+<td><p>binary;prepare;base64</p></td>
+</tr>
+<tr class="row-even"><td><p>anyURI</p></td>
+<td><p>uri</p></td>
+</tr>
+<tr class="row-odd"><td><p>QName</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-even"><td><p>NOTATION</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-odd"><td><p>normalizedString</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-even"><td><p>token</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-odd"><td><p>language</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-even"><td><p>NMTOKEN</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-odd"><td><p>NMTOKENS</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-odd"><td><p>NCName</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-even"><td><p>ID</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-odd"><td><p>IDREF</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-even"><td><p>IDREFS</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-odd"><td><p>ENTITY</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-even"><td><p>ENTITIES</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-odd"><td><p>integer</p></td>
+<td><p>integer</p></td>
+</tr>
+<tr class="row-even"><td><p>nonPositiveInteger</p></td>
+<td><p>integer</p></td>
+</tr>
+<tr class="row-odd"><td><p>negativeInteger</p></td>
+<td><p>integer</p></td>
+</tr>
+<tr class="row-even"><td><p>long</p></td>
+<td><p>integer</p></td>
+</tr>
+<tr class="row-odd"><td><p>int</p></td>
+<td><p>integer</p></td>
+</tr>
+<tr class="row-even"><td><p>short</p></td>
+<td><p>integer</p></td>
+</tr>
+<tr class="row-odd"><td><p>byte</p></td>
+<td><p>integer</p></td>
+</tr>
+<tr class="row-even"><td><p>nonNegativeInteger</p></td>
+<td><p>integer</p></td>
+</tr>
+<tr class="row-odd"><td><p>unsignedLong</p></td>
+<td><p>integer</p></td>
+</tr>
+<tr class="row-even"><td><p>unsignedInt</p></td>
+<td><p>integer</p></td>
+</tr>
+<tr class="row-odd"><td><p>unsignedShort</p></td>
+<td><p>integer</p></td>
+</tr>
+<tr class="row-even"><td><p>unsignedByte</p></td>
+<td><p>integer</p></td>
+</tr>
+<tr class="row-odd"><td><p>positiveInteger</p></td>
+<td><p>integer</p></td>
+</tr>
+<tr class="row-even"><td><p>yearMonthDuration</p></td>
+<td><p>integer</p></td>
+</tr>
+<tr class="row-odd"><td><p>dayTimeDuration</p></td>
+<td><p>integer</p></td>
+</tr>
+<tr class="row-even"><td><p>dateTimeStamp</p></td>
+<td><p>datetime</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>string</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">praeitas</p>
+        <p class="prev-next-title">Duomenų schemos</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../saltiniai.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">kitas</p>
+        <p class="prev-next-title">Duomenų šaltiniai</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Turinys
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jungtinis-modelis">Jungtinis modelis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sakninis-modelis">Šakninis modelis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dalinis-modelis">Dalinis modelis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elementai">Elementai</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#element">element</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#santrauka-xsd-elementu-ir-dsa-atitikimas">Santrauka: XSD elementų ir DSA Atitikimas</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attribute">attribute</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simpletype">simpleType</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complextype">complexType</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence">sequence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choice">choice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#all">all</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complexcontent">complexContent</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simplecontent">simpleContent</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enumeration">enumeration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotation">annotation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">documentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#restriction">restriction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extension">extension</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#union">union</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xsd-appinfo">union</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atributai">Atributai</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#base">base</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unique">unique</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minoccurs">minOccurs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxoccurs">maxOccurs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nillable">nillable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#type">type</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use">use</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#duomenu-tipai">Duomenų tipai</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Iki Valstybės skaitmeninių sprendimų agentūra
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2019-2024, VSSA.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

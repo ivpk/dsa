@@ -1,0 +1,190 @@
+\xpginauxfiletrue 
+\selectlanguage *{lithuanian}
+\contentsline {chapter}{\numberline {1}Specifikacijos}{3}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Turinys}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Koncepcinis modelis}{5}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Objektas}{7}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Klasė}{7}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Modelis}{8}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Apibendrinimas}{8}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.5}Identifikatorius}{9}{subsection.2.1.5}%
+\contentsline {subsection}{\numberline {2.1.6}Savybė}{9}{subsection.2.1.6}%
+\contentsline {subsection}{\numberline {2.1.7}Asociacija}{10}{subsection.2.1.7}%
+\contentsline {subsubsection}{Per duomenų tipą}{10}{subsubsection*.3}%
+\contentsline {subsubsection}{Tiesioginė}{10}{subsubsection*.4}%
+\contentsline {subsubsection}{Atvirkštinė}{10}{subsubsection*.5}%
+\contentsline {subsection}{\numberline {2.1.8}Klasifikatorius}{10}{subsection.2.1.8}%
+\contentsline {subsection}{\numberline {2.1.9}Žodynas}{11}{subsection.2.1.9}%
+\contentsline {subsection}{\numberline {2.1.10}IRI}{11}{subsection.2.1.10}%
+\contentsline {section}{\numberline {2.2}Lentelės formatas}{12}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Dimensijos}{13}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Metaduomenys}{16}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Dimensijos}{18}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}dataset}{19}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}resource}{20}{subsection.2.3.2}%
+\contentsline {subsubsection}{Funkcijos}{22}{subsubsection*.40}%
+\contentsline {subsection}{\numberline {2.3.3}base}{23}{subsection.2.3.3}%
+\contentsline {subsubsection}{Išoriniai identifikatoriai}{23}{subsubsection*.46}%
+\contentsline {subsubsection}{Paveldimumas}{23}{subsubsection*.47}%
+\contentsline {subsubsection}{Duomenų lokalumas}{23}{subsubsection*.48}%
+\contentsline {subsubsection}{Persidengimas}{24}{subsubsection*.49}%
+\contentsline {subsubsection}{Pavyzdžiai}{24}{subsubsection*.50}%
+\contentsline {subsection}{\numberline {2.3.4}model}{24}{subsection.2.3.4}%
+\contentsline {subsubsection}{Funkcijos}{28}{subsubsection*.62}%
+\contentsline {subsection}{\numberline {2.3.5}property}{29}{subsection.2.3.5}%
+\contentsline {section}{\numberline {2.4}Papildomos dimensijos}{30}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}prefix}{30}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}enum}{31}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}param}{33}{subsection.2.4.3}%
+\contentsline {subsubsection}{Funkcijos}{35}{subsubsection*.92}%
+\contentsline {subsection}{\numberline {2.4.4}switch}{39}{subsection.2.4.4}%
+\contentsline {subsection}{\numberline {2.4.5}comment}{39}{subsection.2.4.5}%
+\contentsline {subsection}{\numberline {2.4.6}lang}{41}{subsection.2.4.6}%
+\contentsline {subsection}{\numberline {2.4.7}migrate}{41}{subsection.2.4.7}%
+\contentsline {section}{\numberline {2.5}Duomenų tipai}{44}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Kodiniai pavadinimai}{56}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Vardų erdvių}{57}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Modeliai}{57}{subsection.2.6.2}%
+\contentsline {subsubsection}{Nekartojame vardų erdvės}{57}{subsubsection*.148}%
+\contentsline {subsection}{\numberline {2.6.3}Duomenų laukai}{57}{subsection.2.6.3}%
+\contentsline {subsubsection}{Ryšiai tarp modelių}{57}{subsubsection*.149}%
+\contentsline {subsubsection}{Nekartojame modelio pavadinimo}{58}{subsubsection*.150}%
+\contentsline {subsubsection}{Nekartojame duomenų tipo pavadinimo}{58}{subsubsection*.151}%
+\contentsline {section}{\numberline {2.7}Matavimo vienetai}{59}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}Apibrėžtis laike}{59}{subsection.2.7.1}%
+\contentsline {subsection}{\numberline {2.7.2}Apibrėžtis erdvėje}{60}{subsection.2.7.2}%
+\contentsline {subsection}{\numberline {2.7.3}Kokybiniai duomenys}{60}{subsection.2.7.3}%
+\contentsline {subsection}{\numberline {2.7.4}Kiekybiniai duomenys}{60}{subsection.2.7.4}%
+\contentsline {subsubsection}{Prefiksai}{62}{subsubsection*.152}%
+\contentsline {subsubsection}{Vienetai}{62}{subsubsection*.153}%
+\contentsline {paragraph}{Specialiejie vienetai}{62}{paragraph*.154}%
+\contentsline {paragraph}{Laiko vienetai}{63}{paragraph*.155}%
+\contentsline {paragraph}{SI Baziniai vienetai}{63}{paragraph*.156}%
+\contentsline {paragraph}{SI Išvestiniai vienetai}{64}{paragraph*.157}%
+\contentsline {paragraph}{Kiti vienetai}{64}{paragraph*.158}%
+\contentsline {section}{\numberline {2.8}Apibendrinimas}{65}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Asociacija}{65}{section.2.9}%
+\contentsline {subsection}{\numberline {2.9.1}Kompozicija}{66}{subsection.2.9.1}%
+\contentsline {subsection}{\numberline {2.9.2}Jungtinis modelis}{66}{subsection.2.9.2}%
+\contentsline {subsubsection}{Savybių įtraukimas}{67}{subsubsection*.159}%
+\contentsline {subsection}{\numberline {2.9.3}Daugiareikšmiškumas}{68}{subsection.2.9.3}%
+\contentsline {subsection}{\numberline {2.9.4}Duomenų kilmė}{68}{subsection.2.9.4}%
+\contentsline {subsection}{\numberline {2.9.5}Jungimo būdai}{69}{subsection.2.9.5}%
+\contentsline {subsubsection}{Per pirminį raktą}{69}{subsubsection*.160}%
+\contentsline {subsubsection}{Per nepirminį raktą}{70}{subsubsection*.161}%
+\contentsline {subsubsection}{Per kompozicinį raktą}{71}{subsubsection*.162}%
+\contentsline {subsubsection}{Atgalinis ryšys}{72}{subsubsection*.163}%
+\contentsline {subsubsection}{Polimorfinis jungimas}{73}{subsubsection*.164}%
+\contentsline {subsection}{\numberline {2.9.6}Brandos lygis}{75}{subsection.2.9.6}%
+\contentsline {subsubsection}{Susiejimas neįmanomas}{76}{subsubsection*.165}%
+\contentsline {subsubsection}{Susiejimas nepatikimas}{77}{subsubsection*.166}%
+\contentsline {subsubsection}{Susiejimas ne per pirminį raktą}{77}{subsubsection*.167}%
+\contentsline {subsubsection}{Susiejimas per pirminį raktą}{78}{subsubsection*.168}%
+\contentsline {section}{\numberline {2.10}Funkciniai modeliai}{79}{section.2.10}%
+\contentsline {subsection}{\numberline {2.10.1}Funkcijos}{81}{subsection.2.10.1}%
+\contentsline {subsubsection}{getall}{81}{subsubsection*.169}%
+\contentsline {subsubsection}{getone}{81}{subsubsection*.170}%
+\contentsline {subsubsection}{search}{82}{subsubsection*.171}%
+\contentsline {paragraph}{Statiniai filtrai}{82}{paragraph*.172}%
+\contentsline {paragraph}{Dinaminiai filtrai}{83}{paragraph*.173}%
+\contentsline {paragraph}{Operatoriai}{84}{paragraph*.174}%
+\contentsline {subsubsection}{select}{85}{subsubsection*.175}%
+\contentsline {subsubsection}{sort}{85}{subsubsection*.176}%
+\contentsline {subsubsection}{part}{86}{subsubsection*.177}%
+\contentsline {section}{\numberline {2.11}Brandos lygiai}{86}{section.2.11}%
+\contentsline {subsection}{\numberline {2.11.1}L000: Duomenų nėra}{87}{subsection.2.11.1}%
+\contentsline {subsubsection}{L001: Duomenys nepublikuojami}{88}{subsubsection*.178}%
+\contentsline {subsubsection}{L002: Ribojamas duomenų naudojimas}{88}{subsubsection*.179}%
+\contentsline {subsubsection}{L003: Nėra identifikatoriaus}{88}{subsubsection*.180}%
+\contentsline {subsubsection}{L004: Duomenų nėra}{88}{subsubsection*.181}%
+\contentsline {subsection}{\numberline {2.11.2}L100: Nenuskaitoma mašininiu būdu}{88}{subsection.2.11.2}%
+\contentsline {subsubsection}{L101: Neaiški struktūra}{89}{subsubsection*.182}%
+\contentsline {subsubsection}{L102: Nėra vientisumo}{89}{subsubsection*.183}%
+\contentsline {subsubsection}{L103: Neįmanomas jungimas}{89}{subsubsection*.184}%
+\contentsline {subsubsection}{L104: Identifikatorius nėra unikalus}{89}{subsubsection*.185}%
+\contentsline {subsubsection}{L105: Vienetų konvertavimo paklaida}{89}{subsubsection*.186}%
+\contentsline {subsection}{\numberline {2.11.3}L200: Nestandartinis pateikimas}{90}{subsection.2.11.3}%
+\contentsline {subsubsection}{L201: Nestandartiniai duomenų tipai}{91}{subsubsection*.187}%
+\contentsline {subsubsection}{L202: Nestandartinis formatas}{91}{subsubsection*.188}%
+\contentsline {subsubsection}{L203: Nestandartiniai kodiniai pavadinimai}{92}{subsubsection*.189}%
+\contentsline {subsubsection}{L204: Nepatikimi identifikatoriai}{92}{subsubsection*.190}%
+\contentsline {subsubsection}{L205: Denormalizuoti duomenys}{92}{subsubsection*.191}%
+\contentsline {subsubsection}{L206: Nenurodytas susiejimas}{92}{subsubsection*.192}%
+\contentsline {subsubsection}{L207: Neatitinka modelio bazės}{92}{subsubsection*.193}%
+\contentsline {subsubsection}{L208: Nenurodytas enum kodinėms reikšmėms}{93}{subsubsection*.194}%
+\contentsline {subsubsection}{L209: Nenurodyta modelio bazė}{93}{subsubsection*.195}%
+\contentsline {subsubsection}{L210: Išskaidyta atskirais komponentais}{93}{subsubsection*.196}%
+\contentsline {subsection}{\numberline {2.11.4}L300: Nėra identifikatoriaus}{93}{subsection.2.11.4}%
+\contentsline {subsubsection}{L301: Nėra globalaus objekto identifikatoriaus}{94}{subsubsection*.197}%
+\contentsline {subsubsection}{L302: Nenurodyti matavimo vienetai}{94}{subsubsection*.198}%
+\contentsline {subsubsection}{L303: Nenurodytas duomenų tikslumas}{95}{subsubsection*.199}%
+\contentsline {subsubsection}{L304: Neaprašyti kategoriniai duomenys}{95}{subsubsection*.200}%
+\contentsline {subsection}{\numberline {2.11.5}L400: Nesusieata su žodynais}{95}{subsection.2.11.5}%
+\contentsline {subsubsection}{L401: Nesusieta su standartiniu žodynu}{97}{subsubsection*.201}%
+\contentsline {subsection}{\numberline {2.11.6}L500: Trūkumų nėra}{98}{subsection.2.11.6}%
+\contentsline {section}{\numberline {2.12}Prieigos lygiai}{100}{section.2.12}%
+\contentsline {section}{\numberline {2.13}Duomenų schemos}{100}{section.2.13}%
+\contentsline {subsection}{\numberline {2.13.1}Schemų sąrašas}{100}{subsection.2.13.1}%
+\contentsline {subsubsection}{XSD}{100}{subsubsection*.207}%
+\contentsline {paragraph}{Jungtinis modelis}{101}{paragraph*.208}%
+\contentsline {subparagraph}{Šakninis modelis}{101}{subparagraph*.209}%
+\contentsline {subparagraph}{Dalinis modelis}{101}{subparagraph*.210}%
+\contentsline {paragraph}{Elementai}{102}{paragraph*.211}%
+\contentsline {subparagraph}{element}{102}{subparagraph*.212}%
+\contentsline {subparagraph}{Santrauka: XSD elementų ir DSA Atitikimas}{104}{subparagraph*.213}%
+\contentsline {subparagraph}{attribute}{104}{subparagraph*.214}%
+\contentsline {subparagraph}{simpleType}{105}{subparagraph*.215}%
+\contentsline {subparagraph}{complexType}{106}{subparagraph*.216}%
+\contentsline {subparagraph}{sequence}{107}{subparagraph*.217}%
+\contentsline {subparagraph}{choice}{107}{subparagraph*.218}%
+\contentsline {subparagraph}{all}{108}{subparagraph*.219}%
+\contentsline {subparagraph}{complexContent}{108}{subparagraph*.220}%
+\contentsline {subparagraph}{simpleContent}{110}{subparagraph*.221}%
+\contentsline {subparagraph}{enumeration}{110}{subparagraph*.222}%
+\contentsline {subparagraph}{annotation}{112}{subparagraph*.223}%
+\contentsline {subparagraph}{documentation}{112}{subparagraph*.224}%
+\contentsline {subparagraph}{restriction}{113}{subparagraph*.225}%
+\contentsline {subparagraph}{extension}{113}{subparagraph*.226}%
+\contentsline {subparagraph}{union}{113}{subparagraph*.227}%
+\contentsline {subparagraph}{union}{113}{subparagraph*.228}%
+\contentsline {paragraph}{Atributai}{113}{paragraph*.229}%
+\contentsline {subparagraph}{base}{113}{subparagraph*.230}%
+\contentsline {subparagraph}{unique}{113}{subparagraph*.231}%
+\contentsline {subparagraph}{minOccurs}{113}{subparagraph*.232}%
+\contentsline {subparagraph}{maxOccurs}{113}{subparagraph*.233}%
+\contentsline {subparagraph}{nillable}{114}{subparagraph*.234}%
+\contentsline {subparagraph}{type}{114}{subparagraph*.235}%
+\contentsline {subparagraph}{use}{114}{subparagraph*.236}%
+\contentsline {paragraph}{Duomenų tipai}{114}{paragraph*.237}%
+\contentsline {section}{\numberline {2.14}Duomenų šaltiniai}{115}{section.2.14}%
+\contentsline {subsection}{\numberline {2.14.1}SQL}{115}{subsection.2.14.1}%
+\contentsline {subsection}{\numberline {2.14.2}CSV}{116}{subsection.2.14.2}%
+\contentsline {subsection}{\numberline {2.14.3}JSON}{117}{subsection.2.14.3}%
+\contentsline {subsection}{\numberline {2.14.4}XML}{117}{subsection.2.14.4}%
+\contentsline {subsection}{\numberline {2.14.5}XLSX}{121}{subsection.2.14.5}%
+\contentsline {section}{\numberline {2.15}Vardų erdvės}{122}{section.2.15}%
+\contentsline {subsection}{\numberline {2.15.1}Reliatyvūs pavadinimai}{123}{subsection.2.15.1}%
+\contentsline {section}{\numberline {2.16}Išoriniai žodynai}{123}{section.2.16}%
+\contentsline {subsection}{\numberline {2.16.1}Subjekto URI}{126}{subsection.2.16.1}%
+\contentsline {section}{\numberline {2.17}Formulės}{127}{section.2.17}%
+\contentsline {subsection}{\numberline {2.17.1}Gramatika}{127}{subsection.2.17.1}%
+\contentsline {subsection}{\numberline {2.17.2}Sintaksės medis}{128}{subsection.2.17.2}%
+\contentsline {subsection}{\numberline {2.17.3}Funkcijų iškvietimas}{129}{subsection.2.17.3}%
+\contentsline {subsection}{\numberline {2.17.4}Poziciniai argumentai}{129}{subsection.2.17.4}%
+\contentsline {subsection}{\numberline {2.17.5}Vardiniai argumentai}{129}{subsection.2.17.5}%
+\contentsline {subsection}{\numberline {2.17.6}Alternatyvus funkcijos iškvietimas}{129}{subsection.2.17.6}%
+\contentsline {subsection}{\numberline {2.17.7}Standartinės funkcijos}{130}{subsection.2.17.7}%
+\contentsline {subsection}{\numberline {2.17.8}Failai}{134}{subsection.2.17.8}%
+\contentsline {subsection}{\numberline {2.17.9}Stulpeliai lentelėje}{135}{subsection.2.17.9}%
+\contentsline {subsection}{\numberline {2.17.10}Duomenų atranka}{135}{subsection.2.17.10}%
+\contentsline {subsection}{\numberline {2.17.11}Periodiškumas}{139}{subsection.2.17.11}%
+\contentsline {subsection}{\numberline {2.17.12}Statinės reikšmės}{140}{subsection.2.17.12}%
+\contentsline {subsection}{\numberline {2.17.13}Transformavimas}{140}{subsection.2.17.13}%
+\contentsline {subsection}{\numberline {2.17.14}Kompleksinės struktūros}{142}{subsection.2.17.14}%
+\contentsline {section}{\numberline {2.18}Sąvokos}{144}{section.2.18}%
+\contentsline {section}{\numberline {2.19}Keitimų istorija}{154}{section.2.19}%
+\contentsline {subsection}{\numberline {2.19.1}1.1.0 (neišleista)}{154}{subsection.2.19.1}%
+\contentsline {subsection}{\numberline {2.19.2}1.0.0 (2024\sphinxhyphen {}10\sphinxhyphen {}22)}{154}{subsection.2.19.2}%
+\contentsline {subsection}{\numberline {2.19.3}0.1.0 (2022\sphinxhyphen {}03\sphinxhyphen {}03)}{154}{subsection.2.19.3}%
+\contentsline {chapter}{Python Module Index}{155}{section*.390}%
+\contentsline {chapter}{Indeksas}{157}{section*.391}%

@@ -23,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Fetch all history to avoid unrelated histories issue
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v3
@@ -31,8 +31,7 @@ jobs:
           python-version: '3.10'
 
       - name: Upgrade pip
-        run: |
-          python -m pip install --upgrade pip
+        run: python -m pip install --upgrade pip
 
       - name: Get pip cache dir
         id: pip-cache
@@ -47,15 +46,19 @@ jobs:
             ${{ runner.os }}-pip-
 
       - name: Install dependencies
-        run: |
-          python -m pip install -r ./requirements.txt
+        run: python -m pip install -r requirements.txt
 
-      - name: Build Documentation
+      # Copy static files into dsa/_static so that images are where Sphinx expects them.
+      - name: Prepare static files
+        run: |
+          mkdir -p dsa/_static
+          cp -r static/* dsa/_static/
+
+      - name: Build HTML Documentation
         run: sphinx-build -b html dsa build -c .
 
       - name: Create .nojekyll file
-        run: |
-          touch build/.nojekyll
+        run: touch build/.nojekyll
 
       - name: Install mike
         run: python -m pip install mike
@@ -74,21 +77,53 @@ jobs:
           git config --global user.email "github-actions@github.com"
           git config pull.rebase false
 
+      - name: Install LaTeX and XeLaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-xetex texlive-latex-extra texlive-fonts-recommended texlive-latex-recommended latexmk xindy texlive-lang-european fonts-freefont-ttf
+
+      # Build PDF Documentation
+      - name: Build PDF Documentation
+        run: |
+          sphinx-build -b latex dsa build/latex -c .
+          cd build/latex
+          latexmk -pdf DSA.tex
+          cd ../..
+
+      - name: Determine Version
+        id: determine_version
+        run: |
+          if [[ "${GITHUB_REF##*/}" == "main" ]]; then
+            echo "version=draft" >> $GITHUB_OUTPUT
+          elif [[ "${GITHUB_REF##*/}" == *.* ]]; then
+            echo "version=${GITHUB_REF##*/}" >> $GITHUB_OUTPUT
+          else
+            echo "version=unknown" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Rename PDF for this Version
+        run: |
+          VERSION=${{ steps.determine_version.outputs.version }}
+          cd build/latex
+          PDF_FILE=$(find . -maxdepth 1 -name '*.pdf' | head -n 1)
+          if [ -n "$PDF_FILE" ]; then
+            mv "$PDF_FILE" "../${VERSION}.pdf"
+          fi
+          cd ..
+
       - name: Deploy Documentation with mike
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Deploy the current version from the branch (e.g., v1.0, v1.1, etc.)
-          if [[ "${GITHUB_REF##*/}" == *.* ]]; then
-            VERSION=${GITHUB_REF##*/}
-            # Deploy version to its specific path (e.g., /1.0/)
-            mike deploy --push --update --branch gh-pages "$VERSION"
-            # Update the ALL_VERSIONS variable to get the highest version number
-            ALL_VERSIONS=$(mike list --branch gh-pages | grep -Eo '[0-9]+\.[0-9]+' | sort -V | tail -n 1)
-          # Deploy "draft" version from the main branch
-          elif [ "${GITHUB_REF##*/}" == "main" ]; then
+          VERSION=${{ steps.determine_version.outputs.version }}
+          if [[ "$VERSION" == "draft" ]]; then
+            # Deploy "draft" version from main
             mike deploy --push --update --branch gh-pages draft
-            ALL_VERSIONS=draft
+            ALL_VERSIONS=$(mike list --branch gh-pages | grep -Eo '[0-9]+\.[0-9]+' | sort -V | tail -n 1)
+          else
+            # Deploy numeric version (e.g. 1.0)
+            mike deploy --push --update --branch gh-pages "$VERSION"
+            ALL_VERSIONS=$(mike list --branch gh-pages | grep -Eo '[0-9]+\.[0-9]+' | sort -V | tail -n 1)
           fi
 
           # Update root to point to the latest version
@@ -99,28 +134,25 @@ jobs:
           # Create a JSON file with all versions for the version selector
           mike list --json --branch gh-pages > build/_static/versions.json
 
-          # Ensure .nojekyll and versions.json are committed to the gh-pages branch using mike
+          # Commit versions.json and nojekyll
           git checkout gh-pages
-          cp build/_static/versions.json ./_static/versions.json
+          mkdir -p _static
+          cp build/_static/versions.json _static/versions.json
           touch .nojekyll
           git add .nojekyll _static/versions.json
           git commit -m "Add .nojekyll and versions.json to gh-pages" || true
           git push origin gh-pages || true
 
+          # Add PDF to gh-pages
+          if [ -f "build/${VERSION}.pdf" ]; then
+            mkdir -p pdfs
+            cp "build/${VERSION}.pdf" "pdfs/${VERSION}.pdf"
+            git add pdfs/${VERSION}.pdf
+            git commit -m "Add PDF for version ${VERSION}" || true
+            git push origin gh-pages || true
+          fi
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./build
-  deploy:
-    environment:
-      name: github-pages
-    runs-on: ubuntu-latest
-    needs: build
-    if: github.ref == 'refs/heads/main'
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-
-      - name: Set Deployment URL
-        run: echo "url=${{ steps.deployment.outputs.page_url }}" >> $GITHUB_ENV

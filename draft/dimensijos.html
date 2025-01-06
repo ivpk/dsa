@@ -403,7 +403,9 @@ window.addEventListener("load", () => mermaid.run());
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enum.ref"><code class="docutils literal notranslate"><span class="pre">ref</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enum.source"><code class="docutils literal notranslate"><span class="pre">source</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enum.prepare"><code class="docutils literal notranslate"><span class="pre">prepare</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enum.level"><code class="docutils literal notranslate"><span class="pre">level</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enum.access"><code class="docutils literal notranslate"><span class="pre">access</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enum.uri"><code class="docutils literal notranslate"><span class="pre">uri</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enum.title"><code class="docutils literal notranslate"><span class="pre">title</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enum.description"><code class="docutils literal notranslate"><span class="pre">description</span></code></a></li>
 </ul>
@@ -2199,12 +2201,24 @@ reikšmė.</p>
 </dd></dl>
 
 <dl class="py data">
+<dt class="sig sig-object py" id="enum.level">
+<span class="sig-prename descclassname"><span class="pre">enum.</span></span><span class="sig-name descname"><span class="pre">level</span></span><a class="headerlink" href="#enum.level" title="Link to this definition">#</a></dt>
+<dd><p>Nurodo klasifikatoriaus sąvokos brandos lygį. Žiūrėti <a class="reference internal" href="branda.html#level"><span class="std std-ref">Brandos lygiai</span></a>.</p>
+</dd></dl>
+
+<dl class="py data">
 <dt class="sig sig-object py" id="enum.access">
 <span class="sig-prename descclassname"><span class="pre">enum.</span></span><span class="sig-name descname"><span class="pre">access</span></span><a class="headerlink" href="#enum.access" title="Link to this definition">#</a></dt>
 <dd><p>Klasifikatoriams galima nurodyti skirtingas prieigos teises, tokiu
 atveju, naudotojas turintis <code class="docutils literal notranslate"><span class="pre">open</span></code> prieigą matys tik tuos duomenis,
 kurių klasifikatorių reikšmės turi <code class="docutils literal notranslate"><span class="pre">open</span></code> prieigos teises, visi kiti bus
 išfiltruoti.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="enum.uri">
+<span class="sig-prename descclassname"><span class="pre">enum.</span></span><span class="sig-name descname"><span class="pre">uri</span></span><a class="headerlink" href="#enum.uri" title="Link to this definition">#</a></dt>
+<dd><p>Sąsaja su išoriniu žodynu, pateikiant <code class="docutils literal notranslate"><span class="pre">skos:Concept</span></code> URI. Žiūrėti <a class="reference internal" href="zodynai.html#vocab"><span class="std std-ref">Išoriniai žodynai</span></a>.</p>
 </dd></dl>
 
 <dl class="py data">
@@ -3592,7 +3606,9 @@ kontekstą.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enum.ref"><code class="docutils literal notranslate"><span class="pre">ref</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enum.source"><code class="docutils literal notranslate"><span class="pre">source</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enum.prepare"><code class="docutils literal notranslate"><span class="pre">prepare</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enum.level"><code class="docutils literal notranslate"><span class="pre">level</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enum.access"><code class="docutils literal notranslate"><span class="pre">access</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enum.uri"><code class="docutils literal notranslate"><span class="pre">uri</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enum.title"><code class="docutils literal notranslate"><span class="pre">title</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enum.description"><code class="docutils literal notranslate"><span class="pre">description</span></code></a></li>
 </ul>
@@ -3676,7 +3692,7 @@ Iki Valstybės skaitmeninių sprendimų agentūra
 
   <p class="copyright">
     
-      © Copyright 2019-2024, VSSA.
+      © Copyright 2019-2025, VSSA.
       <br/>
     
   </p>

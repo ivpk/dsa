@@ -13,9 +13,10 @@ pavadinimus. Kodiniams pavadinimams keliami griežtesni reikalavimai, kadangi
 Visi :term:`DSA` lentelės stulpelių pavadinimai turi būti užrašyti tiksliai
 taip, kaip nurodyta, kad kompiuterio programos galėtų juos atpažinti.
 
-Kodiniai pavadinimai rašomi naudojant tik lotyniškas raidas. Lietuviškų
-raidžių naudoti negalima, todėl geriausia pavadinimus užrašyti anglų kalba,
-arba pakeičiant lietuviškas raides į lotyniškos raidės analogą.
+Kodiniai pavadinimai rašomi naudojant tik lotyniškas raidas ir privalo būti 
+užrašomi anglų kalba, kaip nurodyta bendrųjų konvencijų stiliaus vadove_.
+
+.. _vadove: https://semiceu.github.io/style-guide/1.0.0/gc-general-conventions.html
 
 Deja, vis dar pasitaiko vietų, kuriose palaikoma tik lotyniška abėcėlė, todėl
 ir keliamas toks reikalavimas, siekiant užtikrinti maksimalų suderinamumą

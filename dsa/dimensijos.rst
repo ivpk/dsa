@@ -883,7 +883,18 @@ scope
 
 Modelių `model` arba savybių `property` duomenys gali būti teikiami pilnai arba jiems gali būti prsikiriami
 papildomi apribojimai priklausomai nuo duomenų gavėjui suteiktų teisių. Šios teisės yra pateikiamos po 'model`
-arba po `property`, `type` stulpelyje pateikiant :ref:`scope <scopes>` dimensiją jos `scope.ref` nurodant `scope` pavadinimą, `scope.prepare` nurodant apribojimo taisyklės :ref: `formulę <formulės>`
+arba po `property`, `type` stulpelyje pateikiant :ref:`scope <scopes>` dimensiją.
+
+.. data: ref
+Nurodomas `scope` identifikatorius / pavadinimas
+
+.. data: prepare
+Nurodamos apribojimo taisyklės :ref: `formulės`
+
+.. data: eli
+Nurodo į teisinį šaltinį kur nurodoma, kokia imtimi gali būti teikiami duomenys. Tai nurodo duomenų imtį.
+
+O kokia organizacija gali gauti duomenis, nurodoma ne DSA, o išmaniojoje sutartyje.
 
 
 .. _enum:

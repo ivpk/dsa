@@ -647,7 +647,7 @@ rdfs       \http://www.w3.org/2000/01/rdf-schema#
 
 .. _OWL: https://www.w3.org/TR/owl2-overview/
 .. _RDFS: https://www.w3.org/TR/rdf-schema/
-.. _IRI: https://www.ietf.org/rfc/rfc3987.txt
+.. _URI: https://www.ietf.org/rfc/rfc3987.txt
 .. _RDF: https://www.w3.org/TR/rdf11-concepts/
 .. _FOAF: http://xmlns.com/foaf/spec/
 .. _SKOS: https://www.w3.org/TR/skos-primer/

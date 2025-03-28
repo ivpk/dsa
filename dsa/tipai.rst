@@ -306,6 +306,8 @@ Duomenų tipai
 
 .. data:: time
 
+.. deprecated:: 1.0
+
     Dienos laikas, be konkrečios datos. Šio tipo reikšmės, kaip ir kiti
     su laiku susiję tipai turi atitikti `ISO 8601`_::
 
@@ -325,6 +327,25 @@ Duomenų tipai
     `U`      Mikrosekundės
     `N`      Nanosekundės
     =======  ================
+
+.. data:: duration
+
+    Laiko trukmė nurodoma dviem tipais:
+
+    - Pagal `ISO 8601`_ 
+
+        PnYnMnDTnHnMnS
+        PnW
+        P<date>T<time>
+        PnYnMnDTnHnMnSnLnCnN
+
+      Kur L - milisekundės 10^-3; C - mikrosekundės 10^-6; N - nanosekundės 10^-9
+
+    - Arba
+
+        D HH[:MM[:SS[.fff[fff]]]]
+
+      Kur `D` yra dienos.
 
 .. data:: temporal
     :noindex:

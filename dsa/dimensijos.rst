@@ -586,6 +586,38 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
             Nenurodytas modelio duomenų šaltinis :data:`model.source` ir duomenys nėra
             publikuojami :ref:`vidinėje saugykloje <internal-backend>`.
 
+.. data:: origin
+
+    Nurodyo pirminį šaltinį iš kurio `source` stulpelyje nurodyti duomenys buvo išvesti.
+
+    Tarkime jei turime tokį pirminio duomenų šaltinio DSA:
+    
+    | dataset  | resource | base        | model | property | type    | ref | source      | origin
+    | -------  | -------- | ----------- | ----- | -------- | ----    | --- | ----------- | ------
+    | pirminis |          |             |       |          |         |     |             |
+    |          | db1      |             |       |          | sql     |     | sqlite://   | 
+    |          |          | /rc/ar/City |       |          |         | id  |             | 
+    |          |          |             | City  |          |         | id  | CITIES      | 
+    |          |          |             |       | id       | integer |     | CITY_ID     | 
+    |          |          |             |       | name@lt  | string  |     | CITY_NAME   | 
+    
+    Ir išvestinį duomenų šaltinį:
+    
+    | dataset     | resource | base           | model | property | type    | ref | source      | origin
+    | ----------- | -------- | -------------- | ----- | -------- | ----    | --- | ----------- | ------
+    | isvestinis  |          |                |       |          |         |     |             |
+    |             | service1 |                |       |          | json    |     | http://...  | 
+    |             |          | /rc/ar/City    |       |          |         | id  |             | 
+    |             |          |                | City  |          |         | id  | miestai     | /pirminis/City
+    |             |          |                |       | id       | integer |     | id          | id
+    |             |          |                |       | name@lt  | string  |     | pavadinimas | name@lt
+    
+    Tada gauname informaciją, kad `isvestinis/City` modelio duomenys yra išvestiniai iš `pirminis/City`.
+    
+    `base` nurodo modelio bazę, pagal kurią formuojami vienodi identifikatoriai, `origin` nurodo duomenų kilmę.
+    
+    `origin` stulpelyje nurodomi reliatyvūs kodiniai pavadinimai, taip pat, kaip ir `base` ar `ref` stulpeliuose.
+
 .. data:: prepare
 
     Formulė skirta duomenų filtravimui ir paruošimui, iš dalies priklauso nuo
@@ -732,6 +764,38 @@ Savybė yra duomenų laukas, modelio atributas.
 
     Duomenų lauko pavadinimas šaltinyje. Prasmė priklauso nuo
     :data:`resource.type`.
+
+.. data:: origin
+
+    Nurodyo pirminį šaltinį iš kurio `source` stulpelyje nurodyti duomenys buvo išvesti.
+
+    Tarkime jei turime tokį pirminio duomenų šaltinio DSA:
+    
+    | dataset  | resource | base        | model | property | type    | ref | source      | origin
+    | -------  | -------- | ----------- | ----- | -------- | ----    | --- | ----------- | ------
+    | pirminis |          |             |       |          |         |     |             |
+    |          | db1      |             |       |          | sql     |     | sqlite://   | 
+    |          |          | /rc/ar/City |       |          |         | id  |             | 
+    |          |          |             | City  |          |         | id  | CITIES      | 
+    |          |          |             |       | id       | integer |     | CITY_ID     | 
+    |          |          |             |       | name@lt  | string  |     | CITY_NAME   | 
+    
+    Ir išvestinį duomenų šaltinį:
+    
+    | dataset     | resource | base           | model | property | type    | ref | source      | origin
+    | ----------- | -------- | -------------- | ----- | -------- | ----    | --- | ----------- | ------
+    | isvestinis  |          |                |       |          |         |     |             |
+    |             | service1 |                |       |          | json    |     | http://...  | 
+    |             |          | /rc/ar/City    |       |          |         | id  |             | 
+    |             |          |                | City  |          |         | id  | miestai     | /pirminis/City
+    |             |          |                |       | id       | integer |     | id          | id
+    |             |          |                |       | name@lt  | string  |     | pavadinimas | name@lt
+    
+    Tada gauname informaciją, kad `isvestinis/City/name@lt` atributo duomenys yra išvestiniai iš `pirminis/City/name@lt`.
+    
+    `base` nurodo modelio bazę, pagal kurią formuojami vienodi identifikatoriai, `origin` nurodo duomenų kilmę.
+    
+    `origin` stulpelyje nurodomi reliatyvūs kodiniai pavadinimai, taip pat, kaip ir `base` ar `ref` stulpeliuose.
 
 .. data:: prepare
 

@@ -751,6 +751,9 @@ Savybė yra duomenų laukas, modelio atributas.
     - `required` - nurodo, kad šis duomenų laukas yra privalomas, tai reiškia,
       kad šio duomenų lauko reikšmė visada turi būti pateikta. Pagal nutylėjimą
       visi modelio duomenų laukai yra neprivalomi.
+    - `unique` - nurodo, kad šio elemento duomenų reikšmės yra unikalios ir gali būti
+      naudojamos kaip identifikatorius. Pagal nutylėjimą, atributai, kurie yra nurodyti
+      kaip modelio prirminiai yra `unique`.
 
     Kai kurie duomenų tipai, gali turėti konkrečiam duomenų tipui pateikiamus
     papildomus parametrus, tokie parametrai nurodomi skliausteliuose.
@@ -760,6 +763,8 @@ Savybė yra duomenų laukas, modelio atributas.
     - `integer`
 
     - `integer required`
+
+    - `integer required unique`
 
     - `geometry`
 

@@ -78,6 +78,10 @@ pavadinimą.
 
     Duomenų rinkinio arba duomenų erdvės identifikatorius.
 
+.. data:: count
+
+    Duomenų rinkinio šaltiniuose esančių visų `model` objektų egzempliorių skaičius.
+
 .. data:: type
 
     Jei nenurodyta, pagal nutylėjimą naudojama `dataset` reikšmė, kuri nurodo
@@ -458,6 +462,14 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
         Modelio kodinis pavadinimas neatitinka reikalavimų keliamų kodiniams
         pavadinimams.
 
+.. data:: id
+
+    Modelio identifikatorius.
+
+.. data:: count
+
+    Šio modelio objektų skaičius duomenų šaltinyje.
+
 .. data:: type
 
     .. versionchanged:: 0.2
@@ -728,6 +740,14 @@ property
 
 Savybė yra duomenų laukas, modelio atributas.
 
+.. data:: id
+
+    Atributo identifikatorius.
+
+.. data:: count
+
+    Šių duomenų elementų, kurių vertė nėra `null` skaičius duomenų šaltinyje.
+
 .. data:: source
 
     Duomenų lauko pavadinimas šaltinyje. Prasmė priklauso nuo
@@ -944,6 +964,11 @@ tada galima iškelti klasifikatorių ir suteikti jam pavadinimą, pavyzdžiui:
 `enum.ref` stulpelyje, 2-oje eilutėje. O `Place.type` laukui, `property.ref`
 stulpelyje nurodyta, kad šis laukas naudoja vardinį `place` klasifikatorių.
 
+
+
+.. data:: count
+
+    Objektų, turinčių šia konkrečią klasifikatoriaus vertę, skaičius duomenų šaltinyje.
 
 .. data:: ref
 

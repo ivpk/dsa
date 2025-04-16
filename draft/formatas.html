@@ -555,12 +555,13 @@ pavadinimą, pavyzdžiui <a class="reference internal" href="dimensijos.html#mod
 <dt class="sig sig-object py" id="id">
 <span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#id" title="Link to this definition">#</a></dt>
 <dd><p><strong>Eilutės identifikatorius</strong></p>
-<p>Unikalus elemento numeris, gali būti sveikas, monotoniškai didėjantis
-skaičius arba <span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc9562.html"><strong>UUID</strong></a>. Svarbu užtikrinti, kad visi elementai
-turėtu unikalų id.</p>
-<p>Šis stulpelis pildomas automatinėmis priemonėmis, siekiant identifikuoti
-konkrečias metaduomenų eilutes, kad būtų galima atpažinti metaduomenis,
+<p>Unikalus elemento identifikatorius. Šis stulpelis pildomas automatinėmis priemonėmis,
+siekiant identifikuoti konkrečias metaduomenų eilutes, kad būtų galima atpažinti metaduomenis,
 kurie jau buvo pateikti ir po to atnaujinti.</p>
+<p><span class="xref std std-term">SDSA</span> leidžiama naudoti lokalų šaltinio identifikatorių - tai gali būti sveikasis, monotoniškai didėjantis
+skaičius ar bet koks kitas unikalus identifikatorius.</p>
+<p>Viešai publikuojamame <a class="reference internal" href="savokos.html#term-DSA"><span class="xref std std-term">DSA</span></a> privaloma naudoti tik globaliai unikalų <span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc9562.html"><strong>UUID</strong></a>.
+Pateikus <span class="xref std std-term">SDSA</span> į duomenų katalogą, lokalus identifikatorius automatiškai pakeičiamas į <span class="target" id="index-2"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc9562.html"><strong>UUID</strong></a>.</p>
 <p>Šio stulpelio pildyti nereikia.</p>
 </dd></dl>
 

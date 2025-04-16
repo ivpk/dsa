@@ -4,7 +4,7 @@
 Dimensijos
 ##########
 
-Demensijos leidžia vienoje lentelėje sutalpinti kelias skirtingas lenteles
+Dimensijos leidžia vienoje lentelėje sutalpinti kelias skirtingas lenteles
 turinčias bendrų savybių.
 
 DSA lentelėje turime tokius dimensijų stulpelius:
@@ -76,7 +76,7 @@ pavadinimą.
 
 .. data:: id
 
-    Duomenų rinkinio arba duomenų erdvės identifikatorius.
+    Duomenų rinkinio arba duomenų erdvės unikalus identifikatorius.
 
 .. data:: type
 
@@ -141,7 +141,6 @@ pavadinimą.
 
     Duomenų rinkinio ar vardų erdvės aprašymas.
 
-.. .. _duomenų-šaltinis:
 .. _resource:
 
 resource
@@ -164,7 +163,7 @@ rinkinio kontekste.
 
 .. data:: id
 
-    Duomenų šaltinio unikalus identifikatorius UUID formatu.
+    Duomenų šaltinio unikalus identifikatorius.
 
 .. data:: type
 
@@ -263,7 +262,7 @@ Funkcijos
 
 .. module:: resource
 
-.. function:: http(method="GET", body=form)
+.. function:: http(method="GET", body="form")
 
     Papildomi parametrai, reikaling konstruojant HTTP užklausas.
 
@@ -280,7 +279,7 @@ Funkcijos
         ======= =============
         `json`  Duomenys perduodami JSON formatu.
         `xml`   Duomenys perduodami XML formatu.
-        `from`  Duomenys perduodami `application/x-www-form-urlencoded` arba
+        `form`  Duomenys perduodami `application/x-www-form-urlencoded` arba
                 `multipart/form-data` (jei formoje pateikiami failai) formatu.
         ======= =============
 

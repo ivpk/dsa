@@ -975,6 +975,21 @@ kelis jau aprašytus laukus.
 
         Grąžina elementų skaičių sekoje.
 
+    .. function:: default()
+
+        Nrodytų reikšmę pagal nutylėjimą, kuri priskiriama, kai kuriamas naujas objektas `insert` veiksmas, arba kai perrašomas objektas nenurodant `property` reikšmės `update`.
+
+        | model | property | type    | ref | source      | prepare
+        | ----- | -------- | ----    | --- | ----------- | ------
+        |       |          |         |     |             |
+        |       |          | sql     |     | sqlite://   | 
+        |       |          |         | id  |             | 
+        | City  |          |         | id  | CITIES      | 
+        |       | id       | integer |     | CITY_ID     | 
+        |       | name@lt  | string  |     | CITY_NAME   | default("")
+        
+        Šiame pavyzdyje `prepare` stulpelyje nurodyta, kad `name@lt` reikšmė, pagal nutylėjimą keičiama į `default("")`, jei nenurodyta kitaip.
+
     .. function:: choose(default)
 
         Jei šaltinio reikšmė nėra viena iš :ref:`enum`, tada grąžinama default

@@ -15,3 +15,4 @@ Schemų sąrašas
     :maxdepth: 2
 
     xsd
+    openapi

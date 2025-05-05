@@ -128,9 +128,20 @@ pavadinimą.
     Duomenų rinkinio brandos lygis yra išskaičiuojamas iš :data:`model.level`
     ir :data:`property.level`.
 
+.. data:: visibility
+
+    Duomenų rinkinio metaduomenų matomumas ir prieinamumas. Skirstomas į:
+
+    ========= ============================
+    public    taikomas EU lygmeniu
+    package   taikomas LT lygmeniu (įteisintas IS nuostatuose ir kituose LT teisės aktuose)
+    protected taikomas IS lygmeniu (nėra jokios IS, kurioje tvarkomi duomenys arba IS nėra registruota Kataloge)
+    private   metaduomenys nepublikuojami
+    ========= ============================
+
 .. data:: access
 
-    Prieigos lygis, naudojamas pagal nutylėjimą viesiems šios vardų erdvės
+    Duomenų prieigos lygis, naudojamas pagal nutylėjimą viesiems šios vardų erdvės
     elementams.
 
 .. data:: title
@@ -298,8 +309,6 @@ Funkcijos
         .. code-block:: uri
 
             https://example.com/?NAME1=value1&NAME2=value2
-
-
 
 
 .. _base:
@@ -606,6 +615,17 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
 
         :ref:`ref-level`
 
+.. data:: visibility
+
+    Modelio metaduomenų matomumas ir prieinamumas. Skirstomas į:
+
+    ========= ============================
+    public    taikomas EU lygmeniu
+    package   taikomas LT lygmeniu (įteisintas IS nuostatuose ir kituose LT teisės aktuose)
+    protected taikomas IS lygmeniu (nėra jokios IS, kurioje tvarkomi duomenys arba IS nėra registruota Kataloge)
+    private   metaduomenys nepublikuojami
+    ========= ============================
+
 .. data:: access
 
     Modeliui priklausančių laukų :ref:`prieigos lygis <access>`.
@@ -774,6 +794,17 @@ Savybė yra duomenų laukas, modelio atributas.
 .. data:: level
 
     Nurodo duomenų lauko brandos lygį. Žiūrėti :ref:`level`.
+
+.. data:: visibility
+
+    Duomenų elemento metaduomenų matomumas ir prieinamumas. Skirstomas į:
+
+    ========= ============================
+    public    taikomas EU lygmeniu
+    package   taikomas LT lygmeniu (įteisintas IS nuostatuose ir kituose LT teisės aktuose)
+    protected taikomas IS lygmeniu (nėra jokios IS, kurioje tvarkomi duomenys arba IS nėra registruota Kataloge)
+    private   metaduomenys nepublikuojami
+    ========= ============================
 
 .. data:: access
 
@@ -974,8 +1005,16 @@ stulpelyje nurodyta, kad šis laukas naudoja vardinį `place` klasifikatorių.
 
     Nurodo klasifikatoriaus sąvokos brandos lygį. Žiūrėti :ref:`level`.
 
+.. data:: visibility
 
+    `enum` elemento metaduomenų matomumas ir prieinamumas. Skirstomas į:
 
+    ========= ============================
+    public    taikomas EU lygmeniu
+    package   taikomas LT lygmeniu (įteisintas IS nuostatuose ir kituose LT teisės aktuose)
+    protected taikomas IS lygmeniu (nėra jokios IS, kurioje tvarkomi duomenys arba IS nėra registruota Kataloge)
+    private   metaduomenys nepublikuojami
+    ========= ============================
 
 .. data:: access
 

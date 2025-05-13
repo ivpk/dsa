@@ -19,6 +19,31 @@ reprezentaciją nesunkiai gali suprasti skirtingose srityse dirbandys žmonės i
 pasitivrtinti duomenų modelį, kuris vėliau bus taikomas rengiant duomenų
 struktūros aprašus.
 
+Kad standartizuoti ir palengvinti modelių paiešką ir atpažinimą VSSA paruošė
+UML modelio šabloną kuris nusako papildomus stiliaus ir struktūros elementų
+reikalavimus.
+
+Pavyzdinis pavaiksliukas su aprašymais:
+
+.. image:: _static/VSSA-UML-template-example.svg
+
+* Metadaduomenys - pagrinde naudojama URI prefiksų žymėjimui, tačiau taip pat ir `rdfs:Property`, nesusietų su jokiomis konkrečiomis savybėmis įtraukimui ir retais atvejais, naujų tipų deklaravimui.
+* Klasifikatoriai - žymėjimas sutampa su `Conceptual model conventions (UML)`_ žymėjimu.
+* Pirminiai duomenys - pagrindiniai duomenys, registro objektai, žymėjimas sutampa su `Conceptual model conventions (UML)`_ žymėjimu.
+* Transakciniai duomenys - veiksmai ar įvykiai susiję su pagrindiniais duomenimis, tokie kaip adreso registravimo dokumentas, juridinio asmens likvidavimas, kokio nors statusio galiojimo terminas. SEMIC to atskirai nežymi, tačiau BRAIF išskiria tokią duomenų rūšį, todėl įtraukiame atskirą žymėjimą transakciniams duomenims, taip užtikrindami vienareikšmišką komunikaciją.
+* Ataskaitos - statistiniai duomenys, ataskaitos, paslaugos teikiančios agreguotus duomenis, `Conceptual model conventions (UML)`_ neturi tokio žymėjimo, tačiau Lietuvos kontekste matome poreikį šiam žymėjimui, pavyzdžiui VDA duomenims, kur statistinėse ataskaitose nėra identifikatorių, taikomas kiek kitas Data Cube modelis, kuris yra suderinamas su `SDMX`_ standartu, todėl siūlome aiškiai atskirti ataskaitas, nuo kitų duomenų.
+
+Visi šie duomenys taip pat gali teikiami skirtingai mastais, priklausomai nuo susiejimo su teisiniais ir semantiniais šaltiniais:
+
+* Public - siūlome prefiksus žymėti tik išoriniams žodynams, o tais atvejais, kai naudojami Lietuvos registrai, neįtraukti URI prefikso, o naudoti informacinės sistemos kodinį pavadinimą registruotą duomenų kataloge, pilnas informacinės sistemos URI turėtu būti formuojamas pagal `UDTS URI <https://ivpk.github.io/uapi/#section/Concepts/URI>`_, kur URI formuojamas pagal informacinės sistemos veiklos sritį, nesiejant su institucija, nes institucijų pavadinimai ir veiklų priskyrimas institucijoms gali keistis. Tam reikalingas atskiras informacinių sistemų susiejimas su URI prefiksais. Reikia atkreipti dėmesį, kad IS URI ir Dataset URI yra skirtingi. Pavyzdys, su adresų duomenimis: `https://data.gov.lt/id/adresses/Location`
+* Package - kaip nurodo `ES Core žodynai`_ arba teisės aktuose (nuostatuose) įrašyti duomenys, kurių valdymas priskirtas konkrečiai Informacinei Sistemai, tokių duomenų teisiškai dubliuoti negalima, privalomas pakartotinis naudojimas.
+* Package, tačiau duomenys neteikiami  - tais atvejais, kai duomenys yra Package, tačiau fiziškai informacinėje sistemoje jų nėra, žymima atskirai.
+* Protected - duomenys, kurių nėra nei teisės aktuose, jų nenurodo `ES Core žodynai`_, tačiau jie yra reikalingi Informacinės sistemos veikimui užtikrinti, tokie duomenys gali būti dubliuojami, kadangi teisiškai nėra priskirti jokiai informacinei sistemai, bet jie turėtu būti pažymėti ir gal būt bus perkelti į IS nuostatus. Žymėjimas "_" reiškia, kad duomenys, pagal nuostatus nepriklauso informacinei sistemai, todėl ir žymima brūkšneliu, kuris žymi, kad šie duomenys nėra reguliuojami. Analogiškai žymėjimas yra naudojamas RDF duomenyse, nurodant, kad objektas neturi subjekto, yra anonimis objektas, taip ir šuo atveju, klasė neturi oficialiai priskirtos informacinės sistemos. 
+
+Norint padėti naudotis šiuo šablonu, VSSA rekomenduoja UML diagramų kūrimui naudoti `Draw.io <https://draw.io>`_ diagramų kūrimo įrankį ir šiam įrankiui paruošė šio šablono `elementų biblioteką <_static/UML%20(VSSA).xml>`_ .
+
+Prieš naudojantis šią biblioteką reikia įdiegti `Draw.io <https://draw.io>`_ įrankyje. Pasirinkus *File*, pasirinkti *Open Library from*, tuomet *GitHub*. Jei reikia prisijunkite prie savo GitHub paskyros ir tuomet pasirinkite `ivpk/dsa` repozitoriją, `main` šaką, joje `static/UML (VSSA).xml` dokumentą.
+
 Reikia atkreipti dėmesį, kad koncepcinis modelis yra vienas, o jį atitinkančių
 duomenų šaltinių gali būti daug.
 
@@ -644,7 +669,7 @@ rdfs       \http://www.w3.org/2000/01/rdf-schema#
      Gyvenviete --|> Location
 
 
-
+.. _SDMX: https://sdmx.org/standards-2/
 .. _OWL: https://www.w3.org/TR/owl2-overview/
 .. _RDFS: https://www.w3.org/TR/rdf-schema/
 .. _IRI: https://www.ietf.org/rfc/rfc3987.txt
@@ -657,3 +682,4 @@ rdfs       \http://www.w3.org/2000/01/rdf-schema#
 .. _foaf:Group: http://xmlns.com/foaf/spec/#term_Group
 .. _foaf:Agent: http://xmlns.com/foaf/spec/#term_Agent
 .. _Conceptual model conventions (UML): https://semiceu.github.io/style-guide/1.0.0/gc-conceptual-model-conventions.html
+.. _ES Core žodynai: https://interoperable-europe.ec.europa.eu/collection/semic-support-centre/core-vocabularies

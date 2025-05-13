@@ -357,6 +357,27 @@ naudojamas, kaip vienintelis tiesos šaltinis, kadangi vizualinę duomenų model
 reprezentaciją nesunkiai gali suprasti skirtingose srityse dirbandys žmonės ir
 pasitivrtinti duomenų modelį, kuris vėliau bus taikomas rengiant duomenų
 struktūros aprašus.</p>
+<p>Kad standartizuoti ir palengvinti modelių paiešką ir atpažinimą VSSA paruošė
+UML modelio šabloną kuris nusako papildomus stiliaus ir struktūros elementų
+reikalavimus.</p>
+<p>Pavyzdinis pavaiksliukas su aprašymais:</p>
+<img alt="_static/VSSA-UML-template-example.svg" src="_static/VSSA-UML-template-example.svg" />
+<ul class="simple">
+<li><p>Metadaduomenys - pagrinde naudojama URI prefiksų žymėjimui, tačiau taip pat ir <code class="docutils literal notranslate"><span class="pre">rdfs:Property</span></code>, nesusietų su jokiomis konkrečiomis savybėmis įtraukimui ir retais atvejais, naujų tipų deklaravimui.</p></li>
+<li><p>Klasifikatoriai - žymėjimas sutampa su <a class="reference external" href="https://semiceu.github.io/style-guide/1.0.0/gc-conceptual-model-conventions.html">Conceptual model conventions (UML)</a> žymėjimu.</p></li>
+<li><p>Pirminiai duomenys - pagrindiniai duomenys, registro objektai, žymėjimas sutampa su <a class="reference external" href="https://semiceu.github.io/style-guide/1.0.0/gc-conceptual-model-conventions.html">Conceptual model conventions (UML)</a> žymėjimu.</p></li>
+<li><p>Transakciniai duomenys - veiksmai ar įvykiai susiję su pagrindiniais duomenimis, tokie kaip adreso registravimo dokumentas, juridinio asmens likvidavimas, kokio nors statusio galiojimo terminas. SEMIC to atskirai nežymi, tačiau BRAIF išskiria tokią duomenų rūšį, todėl įtraukiame atskirą žymėjimą transakciniams duomenims, taip užtikrindami vienareikšmišką komunikaciją.</p></li>
+<li><p>Ataskaitos - statistiniai duomenys, ataskaitos, paslaugos teikiančios agreguotus duomenis, <a class="reference external" href="https://semiceu.github.io/style-guide/1.0.0/gc-conceptual-model-conventions.html">Conceptual model conventions (UML)</a> neturi tokio žymėjimo, tačiau Lietuvos kontekste matome poreikį šiam žymėjimui, pavyzdžiui VDA duomenims, kur statistinėse ataskaitose nėra identifikatorių, taikomas kiek kitas Data Cube modelis, kuris yra suderinamas su <a class="reference external" href="https://sdmx.org/standards-2/">SDMX</a> standartu, todėl siūlome aiškiai atskirti ataskaitas, nuo kitų duomenų.</p></li>
+</ul>
+<p>Visi šie duomenys taip pat gali teikiami skirtingai mastais, priklausomai nuo susiejimo su teisiniais ir semantiniais šaltiniais:</p>
+<ul class="simple">
+<li><p>Public - siūlome prefiksus žymėti tik išoriniams žodynams, o tais atvejais, kai naudojami Lietuvos registrai, neįtraukti URI prefikso, o naudoti informacinės sistemos kodinį pavadinimą registruotą duomenų kataloge, pilnas informacinės sistemos URI turėtu būti formuojamas pagal <a class="reference external" href="https://ivpk.github.io/uapi/#section/Concepts/URI">UDTS URI</a>, kur URI formuojamas pagal informacinės sistemos veiklos sritį, nesiejant su institucija, nes institucijų pavadinimai ir veiklų priskyrimas institucijoms gali keistis. Tam reikalingas atskiras informacinių sistemų susiejimas su URI prefiksais. Reikia atkreipti dėmesį, kad IS URI ir Dataset URI yra skirtingi. Pavyzdys, su adresų duomenimis: <code class="docutils literal notranslate"><span class="pre">https://data.gov.lt/id/adresses/Location</span></code></p></li>
+<li><p>Package - kaip nurodo <a class="reference external" href="https://interoperable-europe.ec.europa.eu/collection/semic-support-centre/core-vocabularies">ES Core žodynai</a> arba teisės aktuose (nuostatuose) įrašyti duomenys, kurių valdymas priskirtas konkrečiai Informacinei Sistemai, tokių duomenų teisiškai dubliuoti negalima, privalomas pakartotinis naudojimas.</p></li>
+<li><p>Package, tačiau duomenys neteikiami  - tais atvejais, kai duomenys yra Package, tačiau fiziškai informacinėje sistemoje jų nėra, žymima atskirai.</p></li>
+<li><p>Protected - duomenys, kurių nėra nei teisės aktuose, jų nenurodo <a class="reference external" href="https://interoperable-europe.ec.europa.eu/collection/semic-support-centre/core-vocabularies">ES Core žodynai</a>, tačiau jie yra reikalingi Informacinės sistemos veikimui užtikrinti, tokie duomenys gali būti dubliuojami, kadangi teisiškai nėra priskirti jokiai informacinei sistemai, bet jie turėtu būti pažymėti ir gal būt bus perkelti į IS nuostatus. Žymėjimas &quot;_&quot; reiškia, kad duomenys, pagal nuostatus nepriklauso informacinei sistemai, todėl ir žymima brūkšneliu, kuris žymi, kad šie duomenys nėra reguliuojami. Analogiškai žymėjimas yra naudojamas RDF duomenyse, nurodant, kad objektas neturi subjekto, yra anonimis objektas, taip ir šuo atveju, klasė neturi oficialiai priskirtos informacinės sistemos.</p></li>
+</ul>
+<p>Norint padėti naudotis šiuo šablonu, VSSA rekomenduoja UML diagramų kūrimui naudoti <a class="reference external" href="https://draw.io">Draw.io</a> diagramų kūrimo įrankį ir šiam įrankiui paruošė šio šablono <a class="reference external" href="_static/UML%20(VSSA).xml">elementų biblioteką</a> .</p>
+<p>Prieš naudojantis šią biblioteką reikia įdiegti <a class="reference external" href="https://draw.io">Draw.io</a> įrankyje. Pasirinkus <em>File</em>, pasirinkti <em>Open Library from</em>, tuomet <em>GitHub</em>. Jei reikia prisijunkite prie savo GitHub paskyros ir tuomet pasirinkite <code class="docutils literal notranslate"><span class="pre">ivpk/dsa</span></code> repozitoriją, <code class="docutils literal notranslate"><span class="pre">main</span></code> šaką, joje <code class="docutils literal notranslate"><span class="pre">static/UML</span> <span class="pre">(VSSA).xml</span></code> dokumentą.</p>
 <p>Reikia atkreipti dėmesį, kad koncepcinis modelis yra vienas, o jį atitinkančių
 duomenų šaltinių gali būti daug.</p>
 <p>Kaip pavyzdį, naudosime žemiau pateiktą koncepcinį duomenų modelį:</p>
@@ -564,7 +585,7 @@ pavadinimai nurodytais DSA lentelės loginio modelio <code class="docutils liter
 skirtinguose šaltiniuose gali skirtis, tačiau loginio modelio pavadinimai turi
 išlikti tokie patys.</p>
 <section id="objektas">
-<span id="id1"></span><h2>Objektas<a class="headerlink" href="#objektas" title="Link to this heading">#</a></h2>
+<span id="id2"></span><h2>Objektas<a class="headerlink" href="#objektas" title="Link to this heading">#</a></h2>
 <p><em class="dfn">Objektas</em> yra viena duomenų eilutė, arba vienas duomenų įrašas ar
 atvejis. Kalbant apie objektus, naudojamas <span class="underline">pavyzdys</span> žymėjimas.</p>
 <p>Pavyzdžiui iš aukščiau pateikto duomenų modelio, klasės <code class="docutils literal notranslate"><span class="pre">Gyvenviete</span></code> objektai
@@ -658,7 +679,7 @@ kad neriboti klasės taikymo. Tačiau tam tikrais atvejais, ontologijoje klasės
 pateikiamos ir su keliomis savybėmis, kurios apibrėžia pačią klasę.</p>
 </section>
 <section id="modelis">
-<span id="id2"></span><h2>Modelis<a class="headerlink" href="#modelis" title="Link to this heading">#</a></h2>
+<span id="id3"></span><h2>Modelis<a class="headerlink" href="#modelis" title="Link to this heading">#</a></h2>
 <img alt="_static/modelis.png" src="_static/modelis.png" />
 <p>Klasės savybės apibrežia pačią klasę ir tampa klasės dalimi, tačiau modelio
 savybės neturi įtakos klasės semantiniam apibrėžimui, tai yra tiesiog duomenų

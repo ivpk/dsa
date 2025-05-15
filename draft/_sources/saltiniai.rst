@@ -447,3 +447,190 @@ XLSX
 
 
 .. _UDTS: https://ivpk.github.io/uapi
+
+
+WSDL/SOAP
+---------
+
+Šiuo metu palaikoma tik `WSDL 1.1 versija`_.
+
+.. _`WSDL 1.1 versija`: https://www.w3.org/TR/2001/NOTE-wsdl-20010315
+
+.. describe:: resource.source
+
+    Pilnas WSDL adresas :term:`URI` formatu.
+
+.. describe:: resource.type
+
+    Galimos reikšmės: `soap`.
+
+.. describe:: model.source
+
+    WSDL elementai, aprašantys konkretų duomenų rinkinį, atskirti tašku, naudojant tokį šabloną:
+
+    .. code-block:: text
+
+        Service.Port.PortType.Operation
+
+    Šablone naudojamų kintamųjų aprašymas:
+
+    .. describe:: Service
+
+        WSDL Service_ elemento pavadinimas.
+
+        .. _Service: https://www.w3.org/TR/2001/NOTE-wsdl-20010315#_services
+
+    .. describe:: Port
+
+        WSDL Port_ elemento pavadinimas.
+
+        .. _Port: https://www.w3.org/TR/2001/NOTE-wsdl-20010315#_ports
+
+    .. describe:: PortType
+
+        WSDL PortType_ elemento pavadinimas.
+
+        .. _PortType: https://www.w3.org/TR/2001/NOTE-wsdl-20010315#_porttypes
+
+    .. describe:: Operation
+
+        WSDL SOAP Operation_ elemento pavadinimas.
+
+        .. _Operation: https://www.w3.org/TR/2001/NOTE-wsdl-20010315#_soap:operation
+
+
+.. describe:: property.source
+
+    XML elemento, kuriame nurodyti duomenys, pavadinimas duomenų šaltinyje.
+
+    .. note::
+        Svarbu pabrėžti, kad yra įgyvendintas tik vienareikšmių savybių skaitymas,
+        todėl duomenys, esantys duomenų šaltinio daugiareikšmėse savybėse, nebus nuskaityti.
+
+.. admonition:: Pavyzdys
+
+    **Duomenų šaltinis:**
+
+    .. code-block:: xml
+
+        <ns0:Envelope xmlns:ns0="http://schemas.xmlsoap.org/soap/envelope/"
+                      xmlns:ns1="city_app">
+            <ns0:Body>
+                <ns1:CityOutputResponse>
+                    <ns1:CityOutput>
+                        <ns1:id>100</ns1:id>
+                        <ns1:name>Name One</ns1:name>
+                    </ns1:CityOutput>
+                    <ns1:CityOutput>
+                        <ns1:id>101</ns1:id>
+                        <ns1:name>Name Two</ns1:name>
+                    </ns1:CityOutput>
+                </ns1:CityOutputResponse>
+            </ns0:Body>
+        </ns0:Envelope>
+
+    **WSDL:**
+
+    .. code-block:: xml
+
+        <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                 xmlns:tns="city_app"
+                 targetNamespace="city_app"
+                 name="CityService">
+
+            <wsdl:types>
+                <xs:schema targetNamespace="city_app">
+                    <xs:element name="CityInputRequest"/>
+
+                    <xs:element name="CityOutputResponse">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="CityOutput" type="tns:CityOutput" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+
+                    <xs:complexType name="CityOutput">
+                        <xs:sequence>
+                            <xs:element name="id" type="xs:int"/>
+                            <xs:element name="name" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:schema>
+            </wsdl:types>
+
+            <wsdl:message name="CityInputRequest">
+                <wsdl:part name="parameters" element="tns:CityInputRequest"/>
+            </wsdl:message>
+            <wsdl:message name="CityOutputResponse">
+                <wsdl:part name="parameters" element="tns:CityOutputResponse"/>
+            </wsdl:message>
+
+            <wsdl:portType name="CityPortType">
+                <wsdl:operation name="CityOperation">
+                    <wsdl:input message="tns:CityInputRequest"/>
+                    <wsdl:output message="tns:CityOutputResponse"/>
+                </wsdl:operation>
+            </wsdl:portType>
+
+            <wsdl:binding name="CityServiceBinding" type="tns:CityPortType">
+                <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+                <wsdl:operation name="CityOperation">
+                    <soap:operation soapAction="urn:CityOperation"/>
+                    <wsdl:input>
+                        <soap:body use="literal"/>
+                    </wsdl:input>
+                    <wsdl:output>
+                        <soap:body use="literal"/>
+                    </wsdl:output>
+                </wsdl:operation>
+            </wsdl:binding>
+
+            <wsdl:service name="CityService">
+                <wsdl:port name="CityPort" binding="tns:CityServiceBinding">
+                    <soap:address location="http://example.com/city"/>
+                </wsdl:port>
+            </wsdl:service>
+        </wsdl:definitions>
+
+    Pagal aukščiau pateiktus duomenis ir WSDL aprašymą, duomenų struktūros aprašas atrodys taip:
+
+    ========  ======  ============================  ========  ============  ============
+    resource  model   property                      type      ref           source
+    ========  ======  ============================  ========  ============  ============
+    towns                                           soap                    http://example.com/city?wsdl
+    \         City                                            id            CityService.CityPort.CityPortType.CityOperation
+    --------  ------  ----------------------------  --------  ------------  ------------
+    \                 id                            integer                 id
+    \                 name                          string                  name
+    ========  ======  ============================  ========  ============  ============
+    |
+    Struktūros apraše `resource.source` stulpelyje yra nurodomas WSDL dokumento adresas,
+    o `model.source` stulpelyje nurodomi WSDL elementai, aprašantys konkretų duomenų rinkinį.
+
+    Reikia atkreipti dėmesį, kad `property.source` stulpelyje aprašomi elementai turi sutapti
+    su duomenų šaltinyje esančių elementų pavadinimais.
+
+    Pagal duomenų struktūros aprašą pateiktą aukščiau, kreipiantis į `/City`,
+    gausime tokius UDTS_ specifikaciją atitinkančius duomenis:
+
+    .. code-block:: json
+
+        {
+            "_data": [
+                {
+                    "_type": "City",
+                    "_id": "c1380514-549f-4cdd-b258-6fecc3a5bbda",
+                    "id": 100,
+                    "name": "Name One",
+                },
+                {
+                    "_type": "City",
+                    "_id": "5c02f700-6478-43a0-a147-959927cb3c1c",
+                    "id": 101,
+                    "name": "Name Two",
+                }
+            ]
+        }

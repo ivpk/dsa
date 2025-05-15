@@ -335,6 +335,7 @@ window.addEventListener("load", () => mermaid.run());
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xlsx">XLSX</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wsdl-soap">WSDL/SOAP</a></li>
 </ul>
             </nav>
         </div>
@@ -957,6 +958,222 @@ gausime tokius <a class="reference external" href="https://ivpk.github.io/uapi">
 </dd></dl>
 
 </section>
+<section id="wsdl-soap">
+<h2>WSDL/SOAP<a class="headerlink" href="#wsdl-soap" title="Link to this heading">#</a></h2>
+<p>Šiuo metu palaikoma tik <a class="reference external" href="https://www.w3.org/TR/2001/NOTE-wsdl-20010315">WSDL 1.1 versija</a>.</p>
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">resource.source</span></span></dt>
+<dd><p>Pilnas WSDL adresas <a class="reference internal" href="savokos.html#term-URI"><span class="xref std std-term">URI</span></a> formatu.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">resource.type</span></span></dt>
+<dd><p>Galimos reikšmės: <code class="docutils literal notranslate"><span class="pre">soap</span></code>.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">model.source</span></span></dt>
+<dd><p>WSDL elementai, aprašantys konkretų duomenų rinkinį, atskirti tašku, naudojant tokį šabloną:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Service.Port.PortType.Operation
+</pre></div>
+</div>
+<p>Šablone naudojamų kintamųjų aprašymas:</p>
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Service</span></span></dt>
+<dd><p>WSDL <a class="reference external" href="https://www.w3.org/TR/2001/NOTE-wsdl-20010315#_services">Service</a> elemento pavadinimas.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Port</span></span></dt>
+<dd><p>WSDL <a class="reference external" href="https://www.w3.org/TR/2001/NOTE-wsdl-20010315#_ports">Port</a> elemento pavadinimas.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">PortType</span></span></dt>
+<dd><p>WSDL <a class="reference external" href="https://www.w3.org/TR/2001/NOTE-wsdl-20010315#_porttypes">PortType</a> elemento pavadinimas.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Operation</span></span></dt>
+<dd><p>WSDL SOAP <a class="reference external" href="https://www.w3.org/TR/2001/NOTE-wsdl-20010315#_soap:operation">Operation</a> elemento pavadinimas.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">property.source</span></span></dt>
+<dd><p>XML elemento, kuriame nurodyti duomenys, pavadinimas duomenų šaltinyje.</p>
+<div class="admonition note">
+<p class="admonition-title">Pastaba</p>
+<p>Svarbu pabrėžti, kad yra įgyvendintas tik vienareikšmių savybių skaitymas,
+todėl duomenys, esantys duomenų šaltinio daugiareikšmėse savybėse, nebus nuskaityti.</p>
+</div>
+</dd></dl>
+
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<p><strong>Duomenų šaltinis:</strong></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;ns0:Envelope</span><span class="w"> </span><span class="na">xmlns:ns0=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>
+<span class="w">              </span><span class="na">xmlns:ns1=</span><span class="s">&quot;city_app&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ns0:Body&gt;</span>
+<span class="w">        </span><span class="nt">&lt;ns1:CityOutputResponse&gt;</span>
+<span class="w">            </span><span class="nt">&lt;ns1:CityOutput&gt;</span>
+<span class="w">                </span><span class="nt">&lt;ns1:id&gt;</span>100<span class="nt">&lt;/ns1:id&gt;</span>
+<span class="w">                </span><span class="nt">&lt;ns1:name&gt;</span>Name<span class="w"> </span>One<span class="nt">&lt;/ns1:name&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/ns1:CityOutput&gt;</span>
+<span class="w">            </span><span class="nt">&lt;ns1:CityOutput&gt;</span>
+<span class="w">                </span><span class="nt">&lt;ns1:id&gt;</span>101<span class="nt">&lt;/ns1:id&gt;</span>
+<span class="w">                </span><span class="nt">&lt;ns1:name&gt;</span>Name<span class="w"> </span>Two<span class="nt">&lt;/ns1:name&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/ns1:CityOutput&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/ns1:CityOutputResponse&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/ns0:Body&gt;</span>
+<span class="nt">&lt;/ns0:Envelope&gt;</span>
+</pre></div>
+</div>
+<p><strong>WSDL:</strong></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;wsdl:definitions</span><span class="w"> </span><span class="na">xmlns:soap=</span><span class="s">&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot;</span>
+<span class="w">         </span><span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span>
+<span class="w">         </span><span class="na">xmlns:wsdl=</span><span class="s">&quot;http://schemas.xmlsoap.org/wsdl/&quot;</span>
+<span class="w">         </span><span class="na">xmlns:tns=</span><span class="s">&quot;city_app&quot;</span>
+<span class="w">         </span><span class="na">targetNamespace=</span><span class="s">&quot;city_app&quot;</span>
+<span class="w">         </span><span class="na">name=</span><span class="s">&quot;CityService&quot;</span><span class="nt">&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;wsdl:types&gt;</span>
+<span class="w">        </span><span class="nt">&lt;xs:schema</span><span class="w"> </span><span class="na">targetNamespace=</span><span class="s">&quot;city_app&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;CityInputRequest&quot;</span><span class="nt">/&gt;</span>
+
+<span class="w">            </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;CityOutputResponse&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;xs:complexType&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;xs:sequence&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;CityOutput&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;tns:CityOutput&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;unbounded&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/xs:element&gt;</span>
+
+<span class="w">            </span><span class="nt">&lt;xs:complexType</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;CityOutput&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;xs:sequence&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;id&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:int&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xs:schema&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/wsdl:types&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;wsdl:message</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;CityInputRequest&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;wsdl:part</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;parameters&quot;</span><span class="w"> </span><span class="na">element=</span><span class="s">&quot;tns:CityInputRequest&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/wsdl:message&gt;</span>
+<span class="w">    </span><span class="nt">&lt;wsdl:message</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;CityOutputResponse&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;wsdl:part</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;parameters&quot;</span><span class="w"> </span><span class="na">element=</span><span class="s">&quot;tns:CityOutputResponse&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/wsdl:message&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;wsdl:portType</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;CityPortType&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;wsdl:operation</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;CityOperation&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;wsdl:input</span><span class="w"> </span><span class="na">message=</span><span class="s">&quot;tns:CityInputRequest&quot;</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;wsdl:output</span><span class="w"> </span><span class="na">message=</span><span class="s">&quot;tns:CityOutputResponse&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/wsdl:operation&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/wsdl:portType&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;wsdl:binding</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;CityServiceBinding&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;tns:CityPortType&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;soap:binding</span><span class="w"> </span><span class="na">transport=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/http&quot;</span><span class="w"> </span><span class="na">style=</span><span class="s">&quot;document&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;wsdl:operation</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;CityOperation&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;soap:operation</span><span class="w"> </span><span class="na">soapAction=</span><span class="s">&quot;urn:CityOperation&quot;</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;wsdl:input&gt;</span>
+<span class="w">                </span><span class="nt">&lt;soap:body</span><span class="w"> </span><span class="na">use=</span><span class="s">&quot;literal&quot;</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/wsdl:input&gt;</span>
+<span class="w">            </span><span class="nt">&lt;wsdl:output&gt;</span>
+<span class="w">                </span><span class="nt">&lt;soap:body</span><span class="w"> </span><span class="na">use=</span><span class="s">&quot;literal&quot;</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/wsdl:output&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/wsdl:operation&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/wsdl:binding&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;wsdl:service</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;CityService&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;wsdl:port</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;CityPort&quot;</span><span class="w"> </span><span class="na">binding=</span><span class="s">&quot;tns:CityServiceBinding&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;soap:address</span><span class="w"> </span><span class="na">location=</span><span class="s">&quot;http://example.com/city&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/wsdl:port&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/wsdl:service&gt;</span>
+<span class="nt">&lt;/wsdl:definitions&gt;</span>
+</pre></div>
+</div>
+<p>Pagal aukščiau pateiktus duomenis ir WSDL aprašymą, duomenų struktūros aprašas atrodys taip:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>resource</p></th>
+<th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>towns</p></td>
+<td></td>
+<td></td>
+<td><p>soap</p></td>
+<td></td>
+<td><p><a class="reference external" href="http://example.com/city?wsdl">http://example.com/city?wsdl</a></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>City</p></td>
+<td></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>CityService.CityPort.CityPortType.CityOperation</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>id</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td><p>name</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>name</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Struktūros apraše <code class="docutils literal notranslate"><span class="pre">resource.source</span></code> stulpelyje yra nurodomas WSDL dokumento adresas,
+o <code class="docutils literal notranslate"><span class="pre">model.source</span></code> stulpelyje nurodomi WSDL elementai, aprašantys konkretų duomenų rinkinį.</p>
+<p>Reikia atkreipti dėmesį, kad <code class="docutils literal notranslate"><span class="pre">property.source</span></code> stulpelyje aprašomi elementai turi sutapti
+su duomenų šaltinyje esančių elementų pavadinimais.</p>
+<p>Pagal duomenų struktūros aprašą pateiktą aukščiau, kreipiantis į <code class="docutils literal notranslate"><span class="pre">/City</span></code>,
+gausime tokius <a class="reference external" href="https://ivpk.github.io/uapi">UDTS</a> specifikaciją atitinkančius duomenis:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;_data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;City&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c1380514-549f-4cdd-b258-6fecc3a5bbda&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Name One&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;City&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5c02f700-6478-43a0-a147-959927cb3c1c&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Name Two&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
 </section>
 
 
@@ -1019,6 +1236,7 @@ gausime tokius <a class="reference external" href="https://ivpk.github.io/uapi">
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xlsx">XLSX</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wsdl-soap">WSDL/SOAP</a></li>
 </ul>
   </nav></div>
 

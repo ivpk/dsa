@@ -1187,7 +1187,7 @@ Duomenų šaltinių tarpusavio sąsaja
 ==================================
 
 Situacijose, kai vienas duomenų resursas savyje aprašo kelis vidinius resursus
-(pvz WSDL gali aprašyti kelis skirtingus SOAP servisus) galima naudoti duomenų
+(pvz: WSDL gali aprašyti kelis skirtingus SOAP servisus) galima naudoti duomenų
 tarpusavio sąsają, "vaikiniame" resurse nurodant formulę.
 
 .. describe:: resource.prepare
@@ -1197,8 +1197,8 @@ tarpusavio sąsają, "vaikiniame" resurse nurodant formulę.
         :arg name: `wsdl` tipo resurso pavadinimas
 
         Ši funkcija pagal `resource.source` nurodytus WSDL elementus nuskaito SOAP operaciją. WSDL failas
-        gaunamas iš susijusio resurso pavadinimu `name`
+        gaunamas iš susijusio resurso pavadinimu `name`.
 
         .. seealso::
 
-            - :ref:`ref-soap` skaitymas
+            - :ref:`ref-soap` skaitymas.

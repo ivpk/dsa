@@ -639,7 +639,7 @@ SOAP
     \                    name       string          name
     ===========  ======  =========  ========  ====  ================================================  ================
     |
-    Struktūros apraše, aprašyti du resursai **towns_wsdl** ir **towns**, naudojantys :ref:`ref-resource-nesting`.
+    Struktūros apraše, aprašyti du ištekliai **towns_wsdl** ir **towns**, naudojantys :ref:`ref-resource-nesting`.
 
     Resurso **towns_wsdl** `resource.source` stulpelyje yra nurodomas WSDL dokumento adresas. Šis resursas
     inicializuos WSDL klientą.

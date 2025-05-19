@@ -160,6 +160,8 @@ JSON
     Žiūrėti :ref:`kompleksinės-struktūros`.
 
 
+.. _XPath: https://en.wikipedia.org/wiki/XPath
+
 XML
 ---
 
@@ -173,8 +175,7 @@ XML
 
 .. describe:: model.source
 
-    `XPath <https://en.wikipedia.org/wiki/XPath>`_ iki elementų sąrašo kuriame
-    yra modelio duomenys.
+    XPath_ iki elementų sąrašo kuriame yra modelio duomenys.
 
 .. describe:: model.prepare
 
@@ -186,8 +187,7 @@ XML
 
 .. describe:: property.source
 
-    `XPath <https://en.wikipedia.org/wiki/XPath>`_ iki elemento kuriame yra
-    duomenys.
+    XPath_ iki elemento kuriame yra duomenys.
 
     XPath nurodomas reliatyvus modeliui, arba kitai daugiareikšmei savybei,
     kurios sudėtyje savybė yra. Daugiareikšmės savybės žymimos `[]` simboliais
@@ -449,12 +449,22 @@ XLSX
 .. _UDTS: https://ivpk.github.io/uapi
 
 
-WSDL/SOAP
----------
+WSDL
+----
 
 Šiuo metu palaikoma tik `WSDL 1.1 versija`_.
 
 .. _`WSDL 1.1 versija`: https://www.w3.org/TR/2001/NOTE-wsdl-20010315
+
+Šaltinis inicializuoja WSDL klientą pagal `resource.source` nurodytą URI.
+
+
+.. note::
+    `wsdl` šaltinis skaito WSDL failą, aprašantį kitus duomenų šaltinius, todėl
+    pagrinde yra naudojamas kartu su kitais resursais, nurodant :ref:`ref-resource-nesting`.
+
+    Šiuo metu WSDL resursas naudojamas tik kartu su :ref:`ref-soap` resursu.
+
 
 .. describe:: resource.source
 
@@ -462,9 +472,15 @@ WSDL/SOAP
 
 .. describe:: resource.type
 
-    Galimos reikšmės: `soap`.
+    Galimos reikšmės: `wsdl`.
 
-.. describe:: model.source
+
+.. _ref-soap:
+
+SOAP
+----
+
+.. describe:: resource.source
 
     WSDL elementai, aprašantys konkretų duomenų rinkinį, atskirti tašku, naudojant tokį šabloną:
 
@@ -498,6 +514,21 @@ WSDL/SOAP
 
         .. _Operation: https://www.w3.org/TR/2001/NOTE-wsdl-20010315#_soap:operation
 
+
+.. describe:: resource.type
+
+    Galimos reikšmės: `soap`.
+
+.. describe:: resource.prepare
+
+    Žiūrėti :ref:`ref-resource-nesting`.
+
+.. describe:: model.source
+
+    XPath_ iki elementų sąrašo, kuriame yra modelio duomenys.
+
+    .. note::
+        Kol kas nėra įgyvendinta. Naudoti `/`.
 
 .. describe:: property.source
 
@@ -597,20 +628,28 @@ WSDL/SOAP
 
     Pagal aukščiau pateiktus duomenis ir WSDL aprašymą, duomenų struktūros aprašas atrodys taip:
 
-    ========  ======  ============================  ========  ============  ============
-    resource  model   property                      type      ref           source
-    ========  ======  ============================  ========  ============  ============
-    towns                                           soap                    http://example.com/city?wsdl
-    \         City                                            id            CityService.CityPort.CityPortType.CityOperation
-    --------  ------  ----------------------------  --------  ------------  ------------
-    \                 id                            integer                 id
-    \                 name                          string                  name
-    ========  ======  ============================  ========  ============  ============
+    ===========  ======  =========  ========  ====  ================================================  ================
+    resource     model   property   type      ref   source                                            prepare
+    ===========  ======  =========  ========  ====  ================================================  ================
+    towns_wsdl                      wsdl            http://example.com/city?wsdl
+    towns                           soap            CityService.CityPort.CityPortType.CityOperation   wsdl(towns_wsdl)
+    \            City                         id    /
+    -----------  ------  ---------  --------  ----  ------------------------------------------------  ----------------
+    \                    id         integer         id
+    \                    name       string          name
+    ===========  ======  =========  ========  ====  ================================================  ================
     |
-    Struktūros apraše `resource.source` stulpelyje yra nurodomas WSDL dokumento adresas,
-    o `model.source` stulpelyje nurodomi WSDL elementai, aprašantys konkretų duomenų rinkinį.
+    Struktūros apraše, aprašyti du ištekliai **towns_wsdl** ir **towns**, naudojantys :ref:`ref-resource-nesting`.
 
-    Reikia atkreipti dėmesį, kad `property.source` stulpelyje aprašomi elementai turi sutapti
+    Resurso **towns_wsdl** `resource.source` stulpelyje yra nurodomas WSDL dokumento adresas. Šis resursas
+    inicializuos WSDL klientą.
+
+    Resurso **towns** `resource.source` stulpelyje nurodomi WSDL elementai,
+    aprašantys konkretų duomenų rinkinį. `resource.prepare` stulpelyje yra nurodoma `wsdl(towns_wsdl)` funkcija,
+    kuri grąžina SOAP operaciją, naudojant **towns_wsdl** resurse inicializuotą WSDL klientą ir WSDL elementus,
+    aprašytus `resource.source`.
+
+    Reikia atkreipti dėmesį, kad `property.source` stulpeliuose aprašomi elementai turi sutapti
     su duomenų šaltinyje esančių elementų pavadinimais.
 
     Pagal duomenų struktūros aprašą pateiktą aukščiau, kreipiantis į `/City`,

@@ -1179,3 +1179,26 @@ count   results
 
 Šioje lentelėje stulpelių pavadinimai pateikti trijose eilutėse, todėl
 `model.prepare` reikėtų naudoti :func:`header(0, 1, 2) <header>`.
+
+
+.. _ref-resource-nesting:
+
+Duomenų šaltinių tarpusavio sąsaja
+==================================
+
+Situacijose, kai vienas duomenų resursas savyje aprašo kelis vidinius resursus
+(pvz: WSDL gali aprašyti kelis skirtingus SOAP servisus) galima naudoti duomenų
+tarpusavio sąsają, "vaikiniame" resurse nurodant formulę.
+
+.. describe:: resource.prepare
+
+    .. function:: wsdl(name)
+
+        :arg name: `wsdl` tipo resurso pavadinimas
+
+        Ši funkcija pagal `resource.source` nurodytus WSDL elementus nuskaito SOAP operaciją. WSDL failas
+        gaunamas iš susijusio resurso pavadinimu `name`.
+
+        .. seealso::
+
+            - :ref:`ref-soap` skaitymas.

@@ -130,7 +130,7 @@ pavadinimą.
 
 .. data:: access
 
-    Prieigos lygis, naudojamas pagal nutylėjimą viesiems šios vardų erdvės
+    Prieigos lygis, naudojamas pagal nutylėjimą visiems šios vardų erdvės
     elementams.
 
 .. data:: title

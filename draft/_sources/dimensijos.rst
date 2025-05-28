@@ -174,6 +174,8 @@ rinkinio kontekste.
     `csv`     CSV lentelės
     `json`    JSON resursai
     `xml`     XML resursai
+    `wsdl`    WSDL resursai
+    `soap`    SOAP resursai
     ========= ============================
 
 .. data:: ref

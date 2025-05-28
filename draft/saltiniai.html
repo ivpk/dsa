@@ -335,7 +335,8 @@ window.addEventListener("load", () => mermaid.run());
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xlsx">XLSX</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wsdl-soap">WSDL/SOAP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wsdl">WSDL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soap">SOAP</a></li>
 </ul>
             </nav>
         </div>
@@ -584,8 +585,7 @@ kompleksinis žiūrėti <a class="reference internal" href="formules.html#komple
 <dl class="describe">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">model.source</span></span></dt>
-<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/XPath">XPath</a> iki elementų sąrašo kuriame
-yra modelio duomenys.</p>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/XPath">XPath</a> iki elementų sąrašo kuriame yra modelio duomenys.</p>
 </dd></dl>
 
 <dl class="describe">
@@ -603,8 +603,7 @@ yra modelio duomenys.</p>
 <dl class="describe">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">property.source</span></span></dt>
-<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/XPath">XPath</a> iki elemento kuriame yra
-duomenys.</p>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/XPath">XPath</a> iki elemento kuriame yra duomenys.</p>
 <p>XPath nurodomas reliatyvus modeliui, arba kitai daugiareikšmei savybei,
 kurios sudėtyje savybė yra. Daugiareikšmės savybės žymimos <code class="docutils literal notranslate"><span class="pre">[]</span></code> simboliais
 savybės kodiniame pavadinime, įprastai tai yra <code class="docutils literal notranslate"><span class="pre">array</span></code> tipo savybės.</p>
@@ -958,9 +957,16 @@ gausime tokius <a class="reference external" href="https://ivpk.github.io/uapi">
 </dd></dl>
 
 </section>
-<section id="wsdl-soap">
-<h2>WSDL/SOAP<a class="headerlink" href="#wsdl-soap" title="Link to this heading">#</a></h2>
+<section id="wsdl">
+<h2>WSDL<a class="headerlink" href="#wsdl" title="Link to this heading">#</a></h2>
 <p>Šiuo metu palaikoma tik <a class="reference external" href="https://www.w3.org/TR/2001/NOTE-wsdl-20010315">WSDL 1.1 versija</a>.</p>
+<p>Šaltinis inicializuoja WSDL klientą pagal <code class="docutils literal notranslate"><span class="pre">resource.source</span></code> nurodytą URI.</p>
+<div class="admonition note">
+<p class="admonition-title">Pastaba</p>
+<p><code class="docutils literal notranslate"><span class="pre">wsdl</span></code> šaltinis skaito WSDL failą, aprašantį kitus duomenų šaltinius, todėl
+pagrinde yra naudojamas kartu su kitais resursais, nurodant <a class="reference internal" href="formules.html#ref-resource-nesting"><span class="std std-ref">Duomenų šaltinių tarpusavio sąsaja</span></a>.</p>
+<p>Šiuo metu WSDL resursas naudojamas tik kartu su <a class="reference internal" href="#ref-soap"><span class="std std-ref">SOAP</span></a> resursu.</p>
+</div>
 <dl class="describe">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">resource.source</span></span></dt>
@@ -970,12 +976,15 @@ gausime tokius <a class="reference external" href="https://ivpk.github.io/uapi">
 <dl class="describe">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">resource.type</span></span></dt>
-<dd><p>Galimos reikšmės: <code class="docutils literal notranslate"><span class="pre">soap</span></code>.</p>
+<dd><p>Galimos reikšmės: <code class="docutils literal notranslate"><span class="pre">wsdl</span></code>.</p>
 </dd></dl>
 
+</section>
+<section id="soap">
+<span id="ref-soap"></span><h2>SOAP<a class="headerlink" href="#soap" title="Link to this heading">#</a></h2>
 <dl class="describe">
 <dt class="sig sig-object">
-<span class="sig-name descname"><span class="pre">model.source</span></span></dt>
+<span class="sig-name descname"><span class="pre">resource.source</span></span></dt>
 <dd><p>WSDL elementai, aprašantys konkretų duomenų rinkinį, atskirti tašku, naudojant tokį šabloną:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Service.Port.PortType.Operation
 </pre></div>
@@ -1005,6 +1014,28 @@ gausime tokius <a class="reference external" href="https://ivpk.github.io/uapi">
 <dd><p>WSDL SOAP <a class="reference external" href="https://www.w3.org/TR/2001/NOTE-wsdl-20010315#_soap:operation">Operation</a> elemento pavadinimas.</p>
 </dd></dl>
 
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">resource.type</span></span></dt>
+<dd><p>Galimos reikšmės: <code class="docutils literal notranslate"><span class="pre">soap</span></code>.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">resource.prepare</span></span></dt>
+<dd><p>Žiūrėti <a class="reference internal" href="formules.html#ref-resource-nesting"><span class="std std-ref">Duomenų šaltinių tarpusavio sąsaja</span></a>.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">model.source</span></span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/XPath">XPath</a> iki elementų sąrašo, kuriame yra modelio duomenys.</p>
+<div class="admonition note">
+<p class="admonition-title">Pastaba</p>
+<p>Kol kas nėra įgyvendinta. Naudoti <code class="docutils literal notranslate"><span class="pre">/</span></code>.</p>
+</div>
 </dd></dl>
 
 <dl class="describe">
@@ -1111,36 +1142,49 @@ todėl duomenys, esantys duomenų šaltinio daugiareikšmėse savybėse, nebus n
 <th class="head"><p>type</p></th>
 <th class="head"><p>ref</p></th>
 <th class="head"><p>source</p></th>
+<th class="head"><p>prepare</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>towns</p></td>
+<tr class="row-even"><td><p>towns_wsdl</p></td>
+<td></td>
+<td></td>
+<td><p>wsdl</p></td>
+<td></td>
+<td><p><a class="reference external" href="http://example.com/city?wsdl">http://example.com/city?wsdl</a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>towns</p></td>
 <td></td>
 <td></td>
 <td><p>soap</p></td>
 <td></td>
-<td><p><a class="reference external" href="http://example.com/city?wsdl">http://example.com/city?wsdl</a></p></td>
+<td><p>CityService.CityPort.CityPortType.CityOperation</p></td>
+<td><p>wsdl(towns_wsdl)</p></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
+<tr class="row-even"><td><p></p></td>
 <td><p>City</p></td>
 <td></td>
 <td></td>
 <td><p>id</p></td>
-<td><p>CityService.CityPort.CityPortType.CityOperation</p></td>
+<td><p>/</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td><p></p></td>
+<tr class="row-odd"><td><p></p></td>
 <td></td>
 <td><p>id</p></td>
 <td><p>integer</p></td>
 <td></td>
 <td><p>id</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
+<tr class="row-even"><td><p></p></td>
 <td></td>
 <td><p>name</p></td>
 <td><p>string</p></td>
 <td></td>
 <td><p>name</p></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -1148,9 +1192,14 @@ todėl duomenys, esantys duomenų šaltinio daugiareikšmėse savybėse, nebus n
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>Struktūros apraše <code class="docutils literal notranslate"><span class="pre">resource.source</span></code> stulpelyje yra nurodomas WSDL dokumento adresas,
-o <code class="docutils literal notranslate"><span class="pre">model.source</span></code> stulpelyje nurodomi WSDL elementai, aprašantys konkretų duomenų rinkinį.</p>
-<p>Reikia atkreipti dėmesį, kad <code class="docutils literal notranslate"><span class="pre">property.source</span></code> stulpelyje aprašomi elementai turi sutapti
+<p>Struktūros apraše, aprašyti du ištekliai <strong>towns_wsdl</strong> ir <strong>towns</strong>, naudojantys <a class="reference internal" href="formules.html#ref-resource-nesting"><span class="std std-ref">Duomenų šaltinių tarpusavio sąsaja</span></a>.</p>
+<p>Resurso <strong>towns_wsdl</strong> <code class="docutils literal notranslate"><span class="pre">resource.source</span></code> stulpelyje yra nurodomas WSDL dokumento adresas. Šis resursas
+inicializuos WSDL klientą.</p>
+<p>Resurso <strong>towns</strong> <code class="docutils literal notranslate"><span class="pre">resource.source</span></code> stulpelyje nurodomi WSDL elementai,
+aprašantys konkretų duomenų rinkinį. <code class="docutils literal notranslate"><span class="pre">resource.prepare</span></code> stulpelyje yra nurodoma <code class="docutils literal notranslate"><span class="pre">wsdl(towns_wsdl)</span></code> funkcija,
+kuri grąžina SOAP operaciją, naudojant <strong>towns_wsdl</strong> resurse inicializuotą WSDL klientą ir WSDL elementus,
+aprašytus <code class="docutils literal notranslate"><span class="pre">resource.source</span></code>.</p>
+<p>Reikia atkreipti dėmesį, kad <code class="docutils literal notranslate"><span class="pre">property.source</span></code> stulpeliuose aprašomi elementai turi sutapti
 su duomenų šaltinyje esančių elementų pavadinimais.</p>
 <p>Pagal duomenų struktūros aprašą pateiktą aukščiau, kreipiantis į <code class="docutils literal notranslate"><span class="pre">/City</span></code>,
 gausime tokius <a class="reference external" href="https://ivpk.github.io/uapi">UDTS</a> specifikaciją atitinkančius duomenis:</p>
@@ -1236,7 +1285,8 @@ gausime tokius <a class="reference external" href="https://ivpk.github.io/uapi">
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xlsx">XLSX</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wsdl-soap">WSDL/SOAP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wsdl">WSDL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soap">SOAP</a></li>
 </ul>
   </nav></div>
 

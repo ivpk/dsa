@@ -424,6 +424,10 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first"><code class="docutils literal notranslate"><span class="pre">first()</span></code></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#duomenu-saltiniu-tarpusavio-sasaja">Duomenų šaltinių tarpusavio sąsaja</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wsdl"><code class="docutils literal notranslate"><span class="pre">wsdl()</span></code></a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -1869,6 +1873,35 @@ nurodyti keliose eilutėse, pavyzdyje pateiktą struktūrą atitiktų tokia lent
 <p>Šioje lentelėje stulpelių pavadinimai pateikti trijose eilutėse, todėl
 <code class="docutils literal notranslate"><span class="pre">model.prepare</span></code> reikėtų naudoti <a class="reference internal" href="#header" title="header"><code class="xref py py-func docutils literal notranslate"><span class="pre">header(0,</span> <span class="pre">1,</span> <span class="pre">2)</span></code></a>.</p>
 </section>
+<section id="duomenu-saltiniu-tarpusavio-sasaja">
+<span id="ref-resource-nesting"></span><h2>Duomenų šaltinių tarpusavio sąsaja<a class="headerlink" href="#duomenu-saltiniu-tarpusavio-sasaja" title="Link to this heading">#</a></h2>
+<p>Situacijose, kai vienas duomenų resursas savyje aprašo kelis vidinius resursus
+(pvz: WSDL gali aprašyti kelis skirtingus SOAP servisus) galima naudoti duomenų
+tarpusavio sąsają, &quot;vaikiniame&quot; resurse nurodant formulę.</p>
+<dl class="describe">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">resource.prepare</span></span></dt>
+<dd><dl class="py function">
+<dt class="sig sig-object py" id="wsdl">
+<span class="sig-name descname"><span class="pre">wsdl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wsdl" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parametrai<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> -- <code class="docutils literal notranslate"><span class="pre">wsdl</span></code> tipo resurso pavadinimas</p>
+</dd>
+</dl>
+<p>Ši funkcija pagal <code class="docutils literal notranslate"><span class="pre">resource.source</span></code> nurodytus WSDL elementus nuskaito SOAP operaciją. WSDL failas
+gaunamas iš susijusio resurso pavadinimu <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
+<div class="admonition seealso">
+<p class="admonition-title">Taip pat žiūrėkite</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="saltiniai.html#ref-soap"><span class="std std-ref">SOAP</span></a> skaitymas.</p></li>
+</ul>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
 </section>
 
 
@@ -2031,6 +2064,10 @@ nurodyti keliose eilutėse, pavyzdyje pateiktą struktūrą atitiktų tokia lent
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21"><code class="docutils literal notranslate"><span class="pre">getattr()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22"><code class="docutils literal notranslate"><span class="pre">getitem()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first"><code class="docutils literal notranslate"><span class="pre">first()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#duomenu-saltiniu-tarpusavio-sasaja">Duomenų šaltinių tarpusavio sąsaja</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wsdl"><code class="docutils literal notranslate"><span class="pre">wsdl()</span></code></a></li>
 </ul>
 </li>
 </ul>

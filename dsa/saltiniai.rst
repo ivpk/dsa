@@ -756,7 +756,7 @@ SOAP
             </wsdl:service>
         </wsdl:definitions>
 
-    ir turint DSA, papidytą `resource.param` ir `property` eilutėmis:
+    ir turint DSA, papildytą `resource.param` ir `property` eilutėmis:
 
     ===========  ======  =========  ============  ============== ================================================  =====================
     resource     model   property   type          ref            source                                            prepare

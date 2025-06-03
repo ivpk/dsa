@@ -1365,15 +1365,66 @@ prepare
 
 .. function:: input(source, default=NA)
 
-    Generuoja Python dictionary, kuris bus naudojamas kuriant dokumentą, pateikiamą SOAP užklausos metu.
+    Generuoja duomenis, pateikiamus SOAP užklausos metu.
 
     **Argumentai**
 
     source
-        Nurodo Python dictionary raktą. Nurodomas :data:`param.source` stulpelyje.
+        Nurodomas :data:`param.source` stulpelyje. Nurodo kelią iki WSDL faile esančio elemento.
+        Kelias aprašomas XSD elementų vardais, atskirtais `/`, pradedant nuo elemento, esančio
+        WSDL `operation` -> `input` -> `message` -> `part` elemento viduje.
+
+        .. admonition:: Pavyzdys
+
+            Pagal žemiau pateiktą WSDL failo dalį, parametro "param1" kelias `param.source`
+            stulpelyje yra `request_model/param1`.
+
+            .. code-block:: python
+
+                <wsdl:definitions ...>
+                    <wsdl:types>
+                        ...
+                        <xs:schema targetNamespace="city_app">
+                            <xs:element name="CityInputRequest">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="request_model" type="tns:RequestModelType" minOccurs="0" nillable="true"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+
+                            <xs:complexType name="RequestModelType">
+                                <xs:sequence>
+                                    <xs:element name="param1" type="xs:string" minOccurs="0" nillable="true"/>
+                                    <xs:element name="param2" type="xs:string" minOccurs="0" nillable="true"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:schema>
+                    </wsdl:types>
+
+                    <wsdl:message name="CityInputRequest">
+                        <wsdl:part name="parameters" element="tns:CityInputRequest"/>
+                    </wsdl:message>
+
+                    <wsdl:portType name="CityPortType">
+                        <wsdl:operation name="CityOperation">
+                            <wsdl:input message="tns:CityInputRequest"/>
+                            <wsdl:output message="tns:CityOutputResponse"/>
+                        </wsdl:operation>
+                    </wsdl:portType>
+
+                    <wsdl:binding ...>
+                        ...
+                    </wsdl:binding>
+
+                    <wsdl:service ...>
+                        ...
+                    </wsdl:service>
+                </wsdl:definitions>
+
 
     default
-        Nurodo Python dictionary rakto `default` reikšmę, jei ji nėra nurodyta URI parametre.
+        Nurodo elemento `default` reikšmę, kuri bus naudojama, jei reikšmė nėra nurodyta URI parametre.
         Jei reikšmė nenurodyta nei URI, nei default - bus naudojama `NA` reikšmė.
 
     .. admonition:: Pavyzdys (be URI parametrų)
@@ -1392,10 +1443,7 @@ prepare
 
         .. code-block:: python
 
-            {
-                "body/param1": "value1",
-                "body/param2": NA,
-            }
+            {"body": {"param1": "value1", "param2": NA}}
 
     .. admonition:: Pavyzdys (su URI parametrais)
 

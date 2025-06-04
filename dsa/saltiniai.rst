@@ -538,7 +538,7 @@ SOAP
         Svarbu pabrėžti, kad yra įgyvendintas tik vienareikšmių savybių skaitymas,
         todėl duomenys, esantys duomenų šaltinio daugiareikšmėse savybėse, nebus nuskaityti.
 
-.. admonition:: Pavyzdys
+.. admonition:: Pavyzdys (be SOAP request duomenų)
 
     **Duomenų šaltinis:**
 
@@ -670,6 +670,138 @@ SOAP
                     "_id": "5c02f700-6478-43a0-a147-959927cb3c1c",
                     "id": 101,
                     "name": "Name Two",
+                }
+            ]
+        }
+
+.. admonition:: Pavyzdys (su SOAP request duomenimis)
+
+    Remiantis ankstesniu pavyzdžiu, turint **WSDL**, papildytą `CityInputRequest` schema:
+
+    .. code-block:: xml
+        :emphasize-lines: 10-23
+
+        <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                 xmlns:tns="city_app"
+                 targetNamespace="city_app"
+                 name="CityService">
+
+            <wsdl:types>
+                <xs:schema targetNamespace="city_app">
+                    <xs:element name="CityInputRequest">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="request_model" type="tns:RequestModelType" minOccurs="0" nillable="true"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+
+                    <xs:complexType name="RequestModelType">
+                        <xs:sequence>
+                            <xs:element name="param1" type="xs:string" minOccurs="0" nillable="true"/>
+                            <xs:element name="param2" type="xs:string" minOccurs="0" nillable="true"/>
+                        </xs:sequence>
+                    </xs:complexType>
+
+                    <xs:element name="CityOutputResponse">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="CityOutput" type="tns:CityOutput" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+
+                    <xs:complexType name="CityOutput">
+                        <xs:sequence>
+                            <xs:element name="id" type="xs:int"/>
+                            <xs:element name="name" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:schema>
+            </wsdl:types>
+
+            <wsdl:message name="CityInputRequest">
+                <wsdl:part name="parameters" element="tns:CityInputRequest"/>
+            </wsdl:message>
+            <wsdl:message name="CityOutputResponse">
+                <wsdl:part name="parameters" element="tns:CityOutputResponse"/>
+            </wsdl:message>
+
+            <wsdl:portType name="CityPortType">
+                <wsdl:operation name="CityOperation">
+                    <wsdl:input message="tns:CityInputRequest"/>
+                    <wsdl:output message="tns:CityOutputResponse"/>
+                </wsdl:operation>
+            </wsdl:portType>
+
+            <wsdl:binding name="CityServiceBinding" type="tns:CityPortType">
+                <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+                <wsdl:operation name="CityOperation">
+                    <soap:operation soapAction="urn:CityOperation"/>
+                    <wsdl:input>
+                        <soap:body use="literal"/>
+                    </wsdl:input>
+                    <wsdl:output>
+                        <soap:body use="literal"/>
+                    </wsdl:output>
+                </wsdl:operation>
+            </wsdl:binding>
+
+            <wsdl:service name="CityService">
+                <wsdl:port name="CityPort" binding="tns:CityServiceBinding">
+                    <soap:address location="http://example.com/city"/>
+                </wsdl:port>
+            </wsdl:service>
+        </wsdl:definitions>
+
+    ir turint DSA, papildytą `resource.param` ir `property` eilutėmis:
+
+    ===========  ======  =========  ============  ============== ================================================  =====================
+    resource     model   property   type          ref            source                                            prepare
+    ===========  ======  =========  ============  ============== ================================================  =====================
+    towns_wsdl                      wsdl                         http://example.com/city?wsdl
+    towns                           soap                         CityService.CityPort.CityPortType.CityOperation   wsdl(towns_wsdl)
+    \                               **param**     **parameter1** **body/param1**                                   **input("value1")**
+    \                               **param**     **parameter2** **body/param2**                                   **input("value2")**
+    \            City                             id             /
+    \                    id         integer                      id
+    \                    name       string                       name
+    \                    **p1**     **string**                                                                     **param(parameter1)**
+    \                    **p2**     **string**                                                                     **param(parameter2)**
+    ===========  ======  =========  ============  ============== ================================================  =====================
+    |
+
+    kreipiantis į `/City?p1="first"`, bus suformuotas toks python dictionary, kurį
+    `Zeep` klientas perduos kaip SOAP request body:
+
+    .. code-block:: python
+
+        {"body": {"param1": "first", "param2": "value2"}}
+
+
+    ir gausime tokius UDTS_ specifikaciją atitinkančius duomenis:
+
+    .. code-block:: json
+
+        {
+            "_data": [
+                {
+                    "_type": "City",
+                    "_id": "c1380514-549f-4cdd-b258-6fecc3a5bbda",
+                    "id": 100,
+                    "name": "Name One",
+                    "p1": "first",
+                    "p2": "value2",
+                },
+                {
+                    "_type": "City",
+                    "_id": "5c02f700-6478-43a0-a147-959927cb3c1c",
+                    "id": 101,
+                    "name": "Name Two",
+                    "p1": "first",
+                    "p2": "value2",
                 }
             ]
         }

@@ -1363,6 +1363,114 @@ prepare
     `x.field` arba `param(x).field`.
 
 
+.. function:: input(source, default=NA)
+
+    Generuoja duomenis, pateikiamus SOAP užklausos metu.
+
+    **Argumentai**
+
+    source
+        Nurodomas :data:`param.source` stulpelyje. Nurodo kelią iki WSDL faile esančio elemento.
+        Kelias aprašomas XSD elementų vardais, atskirtais `/`, pradedant nuo elemento, esančio
+        WSDL `operation` -> `input` -> `message` -> `part` elemento viduje.
+
+        .. admonition:: Pavyzdys
+
+            Pagal žemiau pateiktą WSDL failo dalį, parametro "param1" kelias `param.source`
+            stulpelyje yra `request_model/param1`.
+
+            .. code-block:: xml
+
+                <wsdl:definitions ...>
+                    <wsdl:types>
+                        ...
+                        <xs:schema targetNamespace="city_app">
+                            <xs:element name="CityInputRequest">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="request_model" type="tns:RequestModelType" minOccurs="0" nillable="true"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+
+                            <xs:complexType name="RequestModelType">
+                                <xs:sequence>
+                                    <xs:element name="param1" type="xs:string" minOccurs="0" nillable="true"/>
+                                    <xs:element name="param2" type="xs:string" minOccurs="0" nillable="true"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:schema>
+                    </wsdl:types>
+
+                    <wsdl:message name="CityInputRequest">
+                        <wsdl:part name="parameters" element="tns:CityInputRequest"/>
+                    </wsdl:message>
+
+                    <wsdl:portType name="CityPortType">
+                        <wsdl:operation name="CityOperation">
+                            <wsdl:input message="tns:CityInputRequest"/>
+                            <wsdl:output message="tns:CityOutputResponse"/>
+                        </wsdl:operation>
+                    </wsdl:portType>
+
+                    <wsdl:binding ...>
+                        ...
+                    </wsdl:binding>
+
+                    <wsdl:service ...>
+                        ...
+                    </wsdl:service>
+                </wsdl:definitions>
+
+
+    default
+        Nurodo elemento `default` reikšmę, kuri bus naudojama, jei reikšmė nėra nurodyta URI parametre.
+        Jei reikšmė nenurodyta nei URI, nei default - bus naudojama `NA` reikšmė.
+
+    .. admonition:: Pavyzdys (be URI parametrų)
+
+        **DSA:**
+
+        ========== ====== ====== ====================== =================
+        resource   type   ref    source                 prepare
+        ========== ====== ====== ====================== =================
+        resource1  soap          \https://example.com/
+        \          param         body/param1            `input("value1")`
+        \          param         body/param2            `input()`
+        ========== ====== ====== ====================== =================
+        |
+        Pagal pateiktą DSA bus sugeneruotas toks python dictionary:
+
+        .. code-block:: python
+
+            {"body": {"param1": "value1", "param2": NA}}
+
+    .. admonition:: Pavyzdys (su URI parametrais)
+
+        **URI:** `https://example.com/?p1="first"`
+
+        **DSA:**
+
+        ========== ======= ======== ====== =========== ===================== ==================
+        resource   model   property type   ref         source                 prepare
+        ========== ======= ======== ====== =========== ===================== ==================
+        resource1                   soap               \https://example.com/
+        \                           param  parameter1  body/param1            `input("value1")`
+        \                           param  parameter2  body/param2            `input("value2")`
+        \                           param  parameter3  body/param3            `input()`
+        \          City
+        \                  p1       string                                    param(parameter1)
+        \                  p2       string                                    param(parameter2)
+        \                  p3       string                                    param(parameter3)
+        ========== ======= ======== ====== =========== ===================== ==================
+        |
+
+        Pagal pateiktą DSA ir URL bus sugeneruotas toks python dictionary:
+
+        .. code-block:: python
+
+            {"body": {"param1": "first", "param2": "value2", "param3": NA}}
+
 .. _switch:
 
 switch

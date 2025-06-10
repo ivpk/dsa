@@ -608,6 +608,21 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
 
         :ref:`ref-level`
 
+.. data:: status
+
+    Metaduomenų statusas nurodomas pagal EU Publications Office kontroliuojamą žodyną `Distribution status <http://publications.europa.eu/resource/authority/distribution-status>`_
+    ir EU Publications Office kontroliuojamą žodyną `Dataset status <http://publications.europa.eu/resource/authority/dataset-status>`_ , kuris prideda `discont`
+
+    Naudojamos šios rekšmės:
+
+    ========== ============================
+    develop    galima keisti be išankstinio įspėjimo
+    completed  galima keisti tik informavus naudotojus prieš X laiko, kur X yra ne mažiau kaip 12 mėnesių.
+    discont    duomenys nėra atnaujinami, tačiau elemento šalinti kol kas neplanuojama.
+    deprecated nebenaudotina, ateityje bus pašalinta, nurodoma, kai numatyta pašaltini status=completed elementus.
+    withdrawn  pilnai panaikinama, kai praeina X laiko, po to, kai buvo nurodyta status=deprecated.
+    ========= ============================
+
 .. data:: access
 
     Modeliui priklausančių laukų :ref:`prieigos lygis <access>`.
@@ -777,6 +792,21 @@ Savybė yra duomenų laukas, modelio atributas.
 
     Nurodo duomenų lauko brandos lygį. Žiūrėti :ref:`level`.
 
+.. data:: status
+
+    Metaduomenų statusas nurodomas pagal EU Publications Office kontroliuojamą žodyną `Distribution status <http://publications.europa.eu/resource/authority/distribution-status>`_
+    ir EU Publications Office kontroliuojamą žodyną `Dataset status <http://publications.europa.eu/resource/authority/dataset-status>`_ , kuris prideda `discont`
+
+    Naudojamos šios rekšmės:
+
+    ========== ============================
+    develop    galima keisti be išankstinio įspėjimo
+    completed  galima keisti tik informavus naudotojus prieš X laiko, kur X yra ne mažiau kaip 12 mėnesių.
+    discont    duomenys nėra atnaujinami, tačiau elemento šalinti kol kas neplanuojama.
+    deprecated nebenaudotina, ateityje bus pašalinta, nurodoma, kai numatyta pašaltini status=completed elementus.
+    withdrawn  pilnai panaikinama, kai praeina X laiko, po to, kai buvo nurodyta status=deprecated.
+    ========= ============================
+
 .. data:: access
 
     Nurodo prieigos prie duomenų lygį. Žiūrėti skyrių :ref:`access`.
@@ -823,6 +853,21 @@ reikia apsirašyti žodynų prefiksus. Žodynų prefiksai aprašomi taip:
     Prefikso pavadinimas.
 
     Rekomenduojama naudoti prefix.cc_ paslaugą URI prefiksų pavadinimams.
+
+.. data:: status
+
+    Metaduomenų statusas nurodomas pagal EU Publications Office kontroliuojamą žodyną `Distribution status <http://publications.europa.eu/resource/authority/distribution-status>`_
+    ir EU Publications Office kontroliuojamą žodyną `Dataset status <http://publications.europa.eu/resource/authority/dataset-status>`_ , kuris prideda `discont`
+
+    Naudojamos šios rekšmės:
+
+    ========== ============================
+    develop    galima keisti be išankstinio įspėjimo
+    completed  galima keisti tik informavus naudotojus prieš X laiko, kur X yra ne mažiau kaip 12 mėnesių.
+    discont    duomenys nėra atnaujinami, tačiau elemento šalinti kol kas neplanuojama.
+    deprecated nebenaudotina, ateityje bus pašalinta, nurodoma, kai numatyta pašaltini status=completed elementus.
+    withdrawn  pilnai panaikinama, kai praeina X laiko, po to, kai buvo nurodyta status=deprecated.
+    ========= ============================
 
 .. data:: uri
 
@@ -976,8 +1021,20 @@ stulpelyje nurodyta, kad šis laukas naudoja vardinį `place` klasifikatorių.
 
     Nurodo klasifikatoriaus sąvokos brandos lygį. Žiūrėti :ref:`level`.
 
+.. data:: status
 
+    Metaduomenų statusas nurodomas pagal EU Publications Office kontroliuojamą žodyną `Distribution status <http://publications.europa.eu/resource/authority/distribution-status>`_
+    ir EU Publications Office kontroliuojamą žodyną `Dataset status <http://publications.europa.eu/resource/authority/dataset-status>`_ , kuris prideda `discont`
 
+    Naudojamos šios rekšmės:
+
+    ========== ============================
+    develop    galima keisti be išankstinio įspėjimo
+    completed  galima keisti tik informavus naudotojus prieš X laiko, kur X yra ne mažiau kaip 12 mėnesių.
+    discont    duomenys nėra atnaujinami, tačiau elemento šalinti kol kas neplanuojama.
+    deprecated nebenaudotina, ateityje bus pašalinta, nurodoma, kai numatyta pašaltini status=completed elementus.
+    withdrawn  pilnai panaikinama, kai praeina X laiko, po to, kai buvo nurodyta status=deprecated.
+    ========= ============================
 
 .. data:: access
 

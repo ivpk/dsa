@@ -1335,7 +1335,7 @@ gausime tokius <a class="reference external" href="https://ivpk.github.io/uapi">
 <td></td>
 <td><p><strong>param</strong></p></td>
 <td><p><strong>parameter1</strong></p></td>
-<td><p><strong>body/param1</strong></p></td>
+<td><p><strong>request_model/param1</strong></p></td>
 <td><p><strong>input(&quot;value1&quot;)</strong></p></td>
 </tr>
 <tr class="row-odd"><td><p></p></td>
@@ -1343,7 +1343,7 @@ gausime tokius <a class="reference external" href="https://ivpk.github.io/uapi">
 <td></td>
 <td><p><strong>param</strong></p></td>
 <td><p><strong>parameter2</strong></p></td>
-<td><p><strong>body/param2</strong></p></td>
+<td><p><strong>request_model/param2</strong></p></td>
 <td><p><strong>input(&quot;value2&quot;)</strong></p></td>
 </tr>
 <tr class="row-even"><td><p></p></td>
@@ -1394,7 +1394,7 @@ gausime tokius <a class="reference external" href="https://ivpk.github.io/uapi">
 </div>
 <p>kreipiantis į <code class="docutils literal notranslate"><span class="pre">/City?p1=&quot;first&quot;</span></code>, bus suformuotas toks python dictionary, kurį
 <code class="docutils literal notranslate"><span class="pre">Zeep</span></code> klientas perduos kaip SOAP request body:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;body&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;param1&quot;</span><span class="p">:</span> <span class="s2">&quot;first&quot;</span><span class="p">,</span> <span class="s2">&quot;param2&quot;</span><span class="p">:</span> <span class="s2">&quot;value2&quot;</span><span class="p">}}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;request_model&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;param1&quot;</span><span class="p">:</span> <span class="s2">&quot;first&quot;</span><span class="p">,</span> <span class="s2">&quot;param2&quot;</span><span class="p">:</span> <span class="s2">&quot;value2&quot;</span><span class="p">}}</span>
 </pre></div>
 </div>
 <p>ir gausime tokius <a class="reference external" href="https://ivpk.github.io/uapi">UDTS</a> specifikaciją atitinkančius duomenis:</p>

@@ -763,8 +763,8 @@ SOAP
     ===========  ======  =========  ============  ============== ================================================  =====================
     towns_wsdl                      wsdl                         http://example.com/city?wsdl
     towns                           soap                         CityService.CityPort.CityPortType.CityOperation   wsdl(towns_wsdl)
-    \                               **param**     **parameter1** **body/param1**                                   **input("value1")**
-    \                               **param**     **parameter2** **body/param2**                                   **input("value2")**
+    \                               **param**     **parameter1** **request_model/param1**                          **input("value1")**
+    \                               **param**     **parameter2** **request_model/param2**                          **input("value2")**
     \            City                             id             /
     \                    id         integer                      id
     \                    name       string                       name
@@ -778,7 +778,7 @@ SOAP
 
     .. code-block:: python
 
-        {"body": {"param1": "first", "param2": "value2"}}
+        {"request_model": {"param1": "first", "param2": "value2"}}
 
 
     ir gausime tokius UDTS_ specifikaciją atitinkančius duomenis:

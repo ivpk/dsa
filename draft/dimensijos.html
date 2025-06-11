@@ -2957,46 +2957,46 @@ WSDL <code class="docutils literal notranslate"><span class="pre">operation</spa
 <p class="admonition-title">Pavyzdys</p>
 <p>Pagal žemiau pateiktą WSDL failo dalį, parametro &quot;param1&quot; kelias <code class="docutils literal notranslate"><span class="pre">param.source</span></code>
 stulpelyje yra <code class="docutils literal notranslate"><span class="pre">request_model/param1</span></code>.</p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;wsdl:definitions</span><span class="w"> </span><span class="err">...</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;wsdl:types&gt;</span>
-<span class="w">        </span>...
-<span class="w">        </span><span class="nt">&lt;xs:schema</span><span class="w"> </span><span class="na">targetNamespace=</span><span class="s">&quot;city_app&quot;</span><span class="nt">&gt;</span>
-<span class="w">            </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;CityInputRequest&quot;</span><span class="nt">&gt;</span>
-<span class="w">                </span><span class="nt">&lt;xs:complexType&gt;</span>
-<span class="w">                    </span><span class="nt">&lt;xs:sequence&gt;</span>
-<span class="w">                        </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;request_model&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;tns:RequestModelType&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">nillable=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">                    </span><span class="nt">&lt;/xs:sequence&gt;</span>
-<span class="w">                </span><span class="nt">&lt;/xs:complexType&gt;</span>
-<span class="w">            </span><span class="nt">&lt;/xs:element&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">wsdl</span><span class="p">:</span><span class="n">definitions</span> <span class="o">...&gt;</span>
+    <span class="o">&lt;</span><span class="n">wsdl</span><span class="p">:</span><span class="n">types</span><span class="o">&gt;</span>
+        <span class="o">...</span>
+        <span class="o">&lt;</span><span class="n">xs</span><span class="p">:</span><span class="n">schema</span> <span class="n">targetNamespace</span><span class="o">=</span><span class="s2">&quot;city_app&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">xs</span><span class="p">:</span><span class="n">element</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;CityInputRequest&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">xs</span><span class="p">:</span><span class="n">complexType</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="n">xs</span><span class="p">:</span><span class="n">sequence</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="n">xs</span><span class="p">:</span><span class="n">element</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;request_model&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;tns:RequestModelType&quot;</span> <span class="n">minOccurs</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="n">nillable</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="o">/&gt;</span>
+                    <span class="o">&lt;/</span><span class="n">xs</span><span class="p">:</span><span class="n">sequence</span><span class="o">&gt;</span>
+                <span class="o">&lt;/</span><span class="n">xs</span><span class="p">:</span><span class="n">complexType</span><span class="o">&gt;</span>
+            <span class="o">&lt;/</span><span class="n">xs</span><span class="p">:</span><span class="n">element</span><span class="o">&gt;</span>
 
-<span class="w">            </span><span class="nt">&lt;xs:complexType</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;RequestModelType&quot;</span><span class="nt">&gt;</span>
-<span class="w">                </span><span class="nt">&lt;xs:sequence&gt;</span>
-<span class="w">                    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;param1&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">nillable=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">                    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;param2&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">nillable=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;/xs:sequence&gt;</span>
-<span class="w">            </span><span class="nt">&lt;/xs:complexType&gt;</span>
-<span class="w">        </span><span class="nt">&lt;/xs:schema&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/wsdl:types&gt;</span>
+            <span class="o">&lt;</span><span class="n">xs</span><span class="p">:</span><span class="n">complexType</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;RequestModelType&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">xs</span><span class="p">:</span><span class="n">sequence</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="n">xs</span><span class="p">:</span><span class="n">element</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;param1&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;xs:string&quot;</span> <span class="n">minOccurs</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="n">nillable</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="o">/&gt;</span>
+                    <span class="o">&lt;</span><span class="n">xs</span><span class="p">:</span><span class="n">element</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;param2&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;xs:string&quot;</span> <span class="n">minOccurs</span><span class="o">=</span><span class="s2">&quot;0&quot;</span> <span class="n">nillable</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="o">/&gt;</span>
+                <span class="o">&lt;/</span><span class="n">xs</span><span class="p">:</span><span class="n">sequence</span><span class="o">&gt;</span>
+            <span class="o">&lt;/</span><span class="n">xs</span><span class="p">:</span><span class="n">complexType</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">xs</span><span class="p">:</span><span class="n">schema</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">wsdl</span><span class="p">:</span><span class="n">types</span><span class="o">&gt;</span>
 
-<span class="w">    </span><span class="nt">&lt;wsdl:message</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;CityInputRequest&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;wsdl:part</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;parameters&quot;</span><span class="w"> </span><span class="na">element=</span><span class="s">&quot;tns:CityInputRequest&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/wsdl:message&gt;</span>
+    <span class="o">&lt;</span><span class="n">wsdl</span><span class="p">:</span><span class="n">message</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;CityInputRequest&quot;</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">wsdl</span><span class="p">:</span><span class="n">part</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;parameters&quot;</span> <span class="n">element</span><span class="o">=</span><span class="s2">&quot;tns:CityInputRequest&quot;</span><span class="o">/&gt;</span>
+    <span class="o">&lt;/</span><span class="n">wsdl</span><span class="p">:</span><span class="n">message</span><span class="o">&gt;</span>
 
-<span class="w">    </span><span class="nt">&lt;wsdl:portType</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;CityPortType&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;wsdl:operation</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;CityOperation&quot;</span><span class="nt">&gt;</span>
-<span class="w">            </span><span class="nt">&lt;wsdl:input</span><span class="w"> </span><span class="na">message=</span><span class="s">&quot;tns:CityInputRequest&quot;</span><span class="nt">/&gt;</span>
-<span class="w">            </span><span class="nt">&lt;wsdl:output</span><span class="w"> </span><span class="na">message=</span><span class="s">&quot;tns:CityOutputResponse&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;/wsdl:operation&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/wsdl:portType&gt;</span>
+    <span class="o">&lt;</span><span class="n">wsdl</span><span class="p">:</span><span class="n">portType</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;CityPortType&quot;</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">wsdl</span><span class="p">:</span><span class="n">operation</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;CityOperation&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">wsdl</span><span class="p">:</span><span class="nb">input</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;tns:CityInputRequest&quot;</span><span class="o">/&gt;</span>
+            <span class="o">&lt;</span><span class="n">wsdl</span><span class="p">:</span><span class="n">output</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;tns:CityOutputResponse&quot;</span><span class="o">/&gt;</span>
+        <span class="o">&lt;/</span><span class="n">wsdl</span><span class="p">:</span><span class="n">operation</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">wsdl</span><span class="p">:</span><span class="n">portType</span><span class="o">&gt;</span>
 
-<span class="w">    </span><span class="nt">&lt;wsdl:binding</span><span class="w"> </span><span class="err">...</span><span class="nt">&gt;</span>
-<span class="w">        </span>...
-<span class="w">    </span><span class="nt">&lt;/wsdl:binding&gt;</span>
+    <span class="o">&lt;</span><span class="n">wsdl</span><span class="p">:</span><span class="n">binding</span> <span class="o">...&gt;</span>
+        <span class="o">...</span>
+    <span class="o">&lt;/</span><span class="n">wsdl</span><span class="p">:</span><span class="n">binding</span><span class="o">&gt;</span>
 
-<span class="w">    </span><span class="nt">&lt;wsdl:service</span><span class="w"> </span><span class="err">...</span><span class="nt">&gt;</span>
-<span class="w">        </span>...
-<span class="w">    </span><span class="nt">&lt;/wsdl:service&gt;</span>
-<span class="nt">&lt;/wsdl:definitions&gt;</span>
+    <span class="o">&lt;</span><span class="n">wsdl</span><span class="p">:</span><span class="n">service</span> <span class="o">...&gt;</span>
+        <span class="o">...</span>
+    <span class="o">&lt;/</span><span class="n">wsdl</span><span class="p">:</span><span class="n">service</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">wsdl</span><span class="p">:</span><span class="n">definitions</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -3027,13 +3027,13 @@ Jei reikšmė nenurodyta nei URI, nei default - bus naudojama <code class="docut
 <tr class="row-odd"><td><p></p></td>
 <td><p>param</p></td>
 <td></td>
-<td><p>body/param1</p></td>
+<td><p>request_model/param1</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">input(&quot;value1&quot;)</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p></p></td>
 <td><p>param</p></td>
 <td></td>
-<td><p>body/param2</p></td>
+<td><p>request_model/param2</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">input()</span></code></p></td>
 </tr>
 </tbody>
@@ -3043,7 +3043,7 @@ Jei reikšmė nenurodyta nei URI, nei default - bus naudojama <code class="docut
 <div class="line"><br /></div>
 </div>
 <p>Pagal pateiktą DSA bus sugeneruotas toks python dictionary:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;body&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;param1&quot;</span><span class="p">:</span> <span class="s2">&quot;value1&quot;</span><span class="p">,</span> <span class="s2">&quot;param2&quot;</span><span class="p">:</span> <span class="n">NA</span><span class="p">}}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;request_model&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;param1&quot;</span><span class="p">:</span> <span class="s2">&quot;value1&quot;</span><span class="p">,</span> <span class="s2">&quot;param2&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}}</span>
 </pre></div>
 </div>
 </div>
@@ -3076,7 +3076,7 @@ Jei reikšmė nenurodyta nei URI, nei default - bus naudojama <code class="docut
 <td></td>
 <td><p>param</p></td>
 <td><p>parameter1</p></td>
-<td><p>body/param1</p></td>
+<td><p>request_model/param1</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">input(&quot;value1&quot;)</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p></p></td>
@@ -3084,7 +3084,7 @@ Jei reikšmė nenurodyta nei URI, nei default - bus naudojama <code class="docut
 <td></td>
 <td><p>param</p></td>
 <td><p>parameter2</p></td>
-<td><p>body/param2</p></td>
+<td><p>request_model/param2</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">input(&quot;value2&quot;)</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p></p></td>
@@ -3092,7 +3092,7 @@ Jei reikšmė nenurodyta nei URI, nei default - bus naudojama <code class="docut
 <td></td>
 <td><p>param</p></td>
 <td><p>parameter3</p></td>
-<td><p>body/param3</p></td>
+<td><p>request_model/param3</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">input()</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p></p></td>
@@ -3134,7 +3134,7 @@ Jei reikšmė nenurodyta nei URI, nei default - bus naudojama <code class="docut
 <div class="line"><br /></div>
 </div>
 <p>Pagal pateiktą DSA ir URL bus sugeneruotas toks python dictionary:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;body&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;param1&quot;</span><span class="p">:</span> <span class="s2">&quot;first&quot;</span><span class="p">,</span> <span class="s2">&quot;param2&quot;</span><span class="p">:</span> <span class="s2">&quot;value2&quot;</span><span class="p">,</span> <span class="s2">&quot;param3&quot;</span><span class="p">:</span> <span class="n">NA</span><span class="p">}}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;request_model&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;param1&quot;</span><span class="p">:</span> <span class="s2">&quot;first&quot;</span><span class="p">,</span> <span class="s2">&quot;param2&quot;</span><span class="p">:</span> <span class="s2">&quot;value2&quot;</span><span class="p">,</span> <span class="s2">&quot;param3&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}}</span>
 </pre></div>
 </div>
 </div>

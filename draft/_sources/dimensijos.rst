@@ -1379,7 +1379,7 @@ prepare
             Pagal žemiau pateiktą WSDL failo dalį, parametro "param1" kelias `param.source`
             stulpelyje yra `request_model/param1`.
 
-            .. code-block:: xml
+            .. code-block::
 
                 <wsdl:definitions ...>
                     <wsdl:types>
@@ -1435,15 +1435,15 @@ prepare
         resource   type   ref    source                 prepare
         ========== ====== ====== ====================== =================
         resource1  soap          \https://example.com/
-        \          param         body/param1            `input("value1")`
-        \          param         body/param2            `input()`
+        \          param         request_model/param1   `input("value1")`
+        \          param         request_model/param2   `input()`
         ========== ====== ====== ====================== =================
         |
         Pagal pateiktą DSA bus sugeneruotas toks python dictionary:
 
         .. code-block:: python
 
-            {"body": {"param1": "value1", "param2": NA}}
+            {"request_model": {"param1": "value1", "param2": None}}
 
     .. admonition:: Pavyzdys (su URI parametrais)
 
@@ -1455,9 +1455,9 @@ prepare
         resource   model   property type   ref         source                 prepare
         ========== ======= ======== ====== =========== ===================== ==================
         resource1                   soap               \https://example.com/
-        \                           param  parameter1  body/param1            `input("value1")`
-        \                           param  parameter2  body/param2            `input("value2")`
-        \                           param  parameter3  body/param3            `input()`
+        \                           param  parameter1  request_model/param1  `input("value1")`
+        \                           param  parameter2  request_model/param2  `input("value2")`
+        \                           param  parameter3  request_model/param3  `input()`
         \          City
         \                  p1       string                                    param(parameter1)
         \                  p2       string                                    param(parameter2)
@@ -1469,7 +1469,7 @@ prepare
 
         .. code-block:: python
 
-            {"body": {"param1": "first", "param2": "value2", "param3": NA}}
+            {"request_model": {"param1": "first", "param2": "value2", "param3": None}}
 
 .. _switch:
 

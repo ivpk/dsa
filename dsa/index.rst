@@ -15,12 +15,15 @@ Naujausia paskelbta versija:
     `Naujausia paskelbta versija`_
 Naujausias redaktoriaus juodraštis:
     `Naujausias redaktoriaus juodraštis`_
+Šis dokumentas taip pat pateikiamas šiais nenorminiais formatais:
+    `PDF`_
 
 .. _DSA 1.0: https://ivpk.github.io/dsa/1.0
 .. _Naujausia paskelbta versija: https://ivpk.github.io/dsa/
 .. _Naujausias redaktoriaus juodraštis: https://ivpk.github.io/dsa/draft/
 .. _Github: https://github.com/ivpk/dsa/issues
 .. _VSSA: https://vssa.lrv.lt/lt/
+.. _PDF: draft.pdf
 
 Čia rasite *Duomenų struktūros aprašo* (:term:`DSA`) lentelės specifikaciją.
 

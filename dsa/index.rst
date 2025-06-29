@@ -86,6 +86,7 @@ Turinys
     modeliai/funkciniai
     branda
     prieiga
+    scopes
     schemos/index
     saltiniai
     vardu-erdves

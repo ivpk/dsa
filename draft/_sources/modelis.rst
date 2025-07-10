@@ -378,7 +378,7 @@ property
 
 type
     Duomenų tipas, žiūrėti :ref:`duomenų-tipai`. UML diagramose, jei duomenų
-    tipas yra :data:`ref` arba :data:`backref`, tada nurodomas modelio
+    tipas yra `ref` arba `backref`, tada nurodomas modelio
     pavadinimas, URI forma, su kuriuo daroma asociacija.
 
 cardinality

@@ -41,7 +41,7 @@ kur ir kaip duomenys yra saugomi ir kaip juos pasiekti. Schema apibrėžianti
 duomenų modelį priklauso nuo duomenų saugojimo formato. Jei duomenys saugomi
 SQL duomenų bazėse, tada DSA lentelėje nurodomi lentelių ir stulpelių
 pavadinimai, XML atveju nurodomos XPath_ išraiškos, JSON atveju nurodomos
-JSONPath_ išraiškos. DSA lentelėje fizinis modelis nurodomas :ref:`source`
+JSONPath_ išraiškos. DSA lentelėje fizinis modelis nurodomas :data:`source`
 stulpelyje.
 
 :dfn:`Loginis modelis` yra duomenų schema, kuri naudojama duomenų apsikeitimui

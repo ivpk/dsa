@@ -423,6 +423,7 @@ window.addEventListener("load", () => mermaid.run());
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#param.header"><code class="docutils literal notranslate"><span class="pre">header()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#param.body"><code class="docutils literal notranslate"><span class="pre">body()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#param.input"><code class="docutils literal notranslate"><span class="pre">input()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#param.creds"><code class="docutils literal notranslate"><span class="pre">creds()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -3140,6 +3141,111 @@ Jei reikšmė nenurodyta nei URI, nei default - bus naudojama <code class="docut
 </div>
 </dd></dl>
 
+<dl class="py function">
+<dt class="sig sig-object py" id="param.creds">
+<span class="sig-prename descclassname"><span class="pre">param.</span></span><span class="sig-name descname"><span class="pre">creds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#param.creds" title="Link to this definition">#</a></dt>
+<dd><p>Skaito kliento duomenyse išsaugoto <code class="docutils literal notranslate"><span class="pre">key</span></code> atributo reikšmę.</p>
+<p>Kliento duomenyse kiekvieno resurso atributai saugomi atskirai. Resursas identifikuojamas
+pagal resurso pavadinimą.</p>
+<p><strong>Argumentai</strong></p>
+<dl class="simple">
+<dt>key</dt><dd><p>Nurodo atributo pavadinimą kliento faile.</p>
+</dd>
+</dl>
+<div class="admonition-pavyzdys-be-uri-parametru admonition">
+<p class="admonition-title">Pavyzdys (be URI parametrų)</p>
+<p><strong>Kliento failas:</strong></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">client_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">75d17c2f-d7b8-466f-90c7-466caa21582a</span>
+<span class="nt">client_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example_client</span>
+<span class="nt">client_secret_hash</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hashed_secret</span>
+<span class="nt">scopes</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spinta_getall</span>
+<span class="nt">backends</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">resource_one</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">first password</span>
+<span class="w">  </span><span class="nt">resource_two</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">second password</span>
+</pre></div>
+</div>
+<p>Kliento duomenyse yra išsaugoti resursai: <code class="docutils literal notranslate"><span class="pre">resource_one</span></code> ir <code class="docutils literal notranslate"><span class="pre">resource_two</span></code>. Abu resursai turi po atributą
+tuo pačiu vardu <code class="docutils literal notranslate"><span class="pre">password</span></code>, bet skirtingomis reikšmėmis.</p>
+<p><strong>DSA:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>resource</p></th>
+<th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+<th class="head"><p>prepare</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>resource_one</p></td>
+<td></td>
+<td></td>
+<td><p>soap</p></td>
+<td></td>
+<td><p>https://example.com/</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>param</p></td>
+<td><p>parameter1</p></td>
+<td><p>param1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">creds(&quot;password&quot;).input()</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Town</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>resource_two</p></td>
+<td></td>
+<td></td>
+<td><p>soap</p></td>
+<td></td>
+<td><p>https://example.com/</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>param</p></td>
+<td><p>parameter2</p></td>
+<td><p>param2</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">creds(&quot;password&quot;).input()</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>City</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Pagal pateiktą DSA, Spinta užklausos metu, <code class="docutils literal notranslate"><span class="pre">creds()</span></code> funkcija iš kliento duomenų perskaitys
+<code class="docutils literal notranslate"><span class="pre">password</span></code> reikšmes ir <code class="docutils literal notranslate"><span class="pre">input()</span></code> funkcijos pagalba, sugeneruos tokius Python dictionary:</p>
+<ul class="simple">
+<li><p>Kviečiant <code class="docutils literal notranslate"><span class="pre">Town</span></code>: <code class="docutils literal notranslate"><span class="pre">{&quot;param1&quot;:</span> <span class="pre">&quot;first</span> <span class="pre">password&quot;}</span></code></p></li>
+<li><p>Kviečiant <code class="docutils literal notranslate"><span class="pre">City</span></code>: <code class="docutils literal notranslate"><span class="pre">{&quot;param2&quot;:</span> <span class="pre">&quot;second</span> <span class="pre">password&quot;}</span></code></p></li>
+</ul>
+<p>Apie kliento duomenų saugojimą daugiau skaityti Duomenų atvėrimo vadove, <a class="reference external" href="https://atviriduomenys.readthedocs.io/agentas.html#agent-crud-update">Klientų atnaujinimas</a>.</p>
+</div>
+</dd></dl>
+
 </section>
 </section>
 <section id="switch">
@@ -3829,6 +3935,7 @@ kontekstą.</p>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#param.header"><code class="docutils literal notranslate"><span class="pre">header()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#param.body"><code class="docutils literal notranslate"><span class="pre">body()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#param.input"><code class="docutils literal notranslate"><span class="pre">input()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#param.creds"><code class="docutils literal notranslate"><span class="pre">creds()</span></code></a></li>
 </ul>
 </li>
 </ul>

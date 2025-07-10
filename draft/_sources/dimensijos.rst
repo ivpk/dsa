@@ -1471,6 +1471,64 @@ prepare
 
             {"request_model": {"param1": "first", "param2": "value2", "param3": None}}
 
+
+.. function:: creds(key)
+
+    Skaito kliento duomenyse išsaugoto `key` atributo reikšmę.
+
+    Kliento duomenyse kiekvieno resurso atributai saugomi atskirai. Resursas identifikuojamas
+    pagal resurso pavadinimą.
+
+    **Argumentai**
+
+    key
+        Nurodo atributo pavadinimą kliento faile.
+
+    .. admonition:: Pavyzdys (be URI parametrų)
+
+        **Kliento failas:**
+
+        .. code-block:: yaml
+
+            client_id: 75d17c2f-d7b8-466f-90c7-466caa21582a
+            client_name: example_client
+            client_secret_hash: hashed_secret
+            scopes:
+              - spinta_getall
+            backends:
+              resource_one:
+                password: first password
+              resource_two:
+                password: second password
+
+        Kliento duomenyse yra išsaugoti resursai: `resource_one` ir `resource_two`. Abu resursai turi po atributą
+        tuo pačiu vardu `password`, bet skirtingomis reikšmėmis.
+
+        **DSA:**
+
+        ============= ======= ======== ====== =========== ===================== ===========================
+        resource      model   property type   ref         source                 prepare
+        ============= ======= ======== ====== =========== ===================== ===========================
+        resource_one                   soap               \https://example.com/
+        \                              param  parameter1  param1                `creds("password").input()`
+        \             Town
+        resource_two                   soap               \https://example.com/
+        \                              param  parameter2  param2                `creds("password").input()`
+        \             City
+        ============= ======= ======== ====== =========== ===================== ===========================
+        |
+
+        Pagal pateiktą DSA, Spinta užklausos metu, `creds()` funkcija iš kliento duomenų perskaitys
+        `password` reikšmes ir `input()` funkcijos pagalba, sugeneruos tokius Python dictionary:
+
+        * Kviečiant `Town`: `{"param1": "first password"}`
+        * Kviečiant `City`: `{"param2": "second password"}`
+
+        Apie kliento duomenų saugojimą daugiau skaityti Duomenų atvėrimo vadove, `Klientų atnaujinimas`_.
+
+        .. _Klientų atnaujinimas: https://atviriduomenys.readthedocs.io/agentas.html#agent-crud-update
+
+
 .. _switch:
 
 switch

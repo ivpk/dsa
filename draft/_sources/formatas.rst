@@ -232,11 +232,11 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
     siekiant identifikuoti konkrečias metaduomenų eilutes, kad būtų galima atpažinti metaduomenis,
     kurie jau buvo pateikti ir po to atnaujinti.
 
-    :term:`SDSA` leidžiama naudoti lokalų šaltinio identifikatorių - tai gali būti sveikasis, monotoniškai didėjantis
+    :term:`ŠDSA` leidžiama naudoti lokalų šaltinio identifikatorių - tai gali būti sveikasis, monotoniškai didėjantis
     skaičius ar bet koks kitas unikalus identifikatorius.
 
     Viešai publikuojamame :term:`DSA` privaloma naudoti tik globaliai unikalų :rfc:`UUID <9562>`.
-    Pateikus :term:`SDSA` į duomenų katalogą, lokalus identifikatorius automatiškai pakeičiamas į :rfc:`UUID <9562>`.
+    Pateikus :term:`ŠDSA` į duomenų katalogą, lokalus identifikatorius automatiškai pakeičiamas į :rfc:`UUID <9562>`.
 
     Šio stulpelio pildyti nereikia.
 

@@ -590,15 +590,15 @@ Sąvokoms, kurios yra vardų erdvės rėmuose, žodyno prefiksai nenurodomi. Žo
 prefiksai nurodomi tik tuo atveju, jei sąvoka yra iš kito žodyno.
 
 
-IRI
+URI
 ***
 
 Visos sąvokos, tokios kaip klasės, savybės, duomenų tipai, taip pat yra
 objektai, turintys savo identifikatorius.
 
-UML diagramose nurodomi būtent sąvokų identifikatoriai sutrumpinta IRI forma.
+UML diagramose nurodomi būtent sąvokų identifikatoriai sutrumpinta URI forma.
 
-IRI yra identifikatorius schema sudaryta iš sekančių komponentų:
+URI yra identifikatorius schema sudaryta iš sekančių komponentų:
 
 **scheme** `://` **host** `/` **path** `?` **query** `#` **fragment**
 
@@ -619,13 +619,13 @@ id
 
 
 Jei mūsų kuriamam žodynui būtų suteiktas kodinis pavadinimas `adresai`, tada
-mūsų sąvokoms būtų suteikti tokie IRI identifikatoriai::
+mūsų sąvokoms būtų suteikti tokie URI identifikatoriai::
 
     https://data.gov.lt/id/adresai/Gyvenviete
     https://data.gov.lt/id/adresai/id
     https://data.gov.lt/id/adresai/pavadinimas
 
-Kadangi pilnas IRI yra gan ilgas, UML diagramose naudojame sutrumpintą IRI
+Kadangi pilnas URI yra gan ilgas, UML diagramose naudojame sutrumpintą URI
 formą su prefiksu. Šiuo atveju, galime deklaruoti, kad `ar` prefiksas atitinka
 `https://data.gov.lt/id/adresai/` URI, todėl sutrumpinta forma atrodys taip:
 
@@ -643,7 +643,7 @@ būtina pateikti ir prefiksų sąrašą, kad būtų ašku, ką reiškia kiekvien
 prefikas:
 
 =========  =================================
-Prefiksas  Vardų erdvės IRI
+Prefiksas  Vardų erdvės URI
 =========  =================================
 ar         \https://data.gov.lt/id/adresai/
 locn       \http://www.w3.org/ns/locn#
@@ -672,7 +672,7 @@ rdfs       \http://www.w3.org/2000/01/rdf-schema#
 .. _SDMX: https://sdmx.org/standards-2/
 .. _OWL: https://www.w3.org/TR/owl2-overview/
 .. _RDFS: https://www.w3.org/TR/rdf-schema/
-.. _IRI: https://www.ietf.org/rfc/rfc3987.txt
+.. _URI: https://www.ietf.org/rfc/rfc3987.txt
 .. _RDF: https://www.w3.org/TR/rdf11-concepts/
 .. _FOAF: http://xmlns.com/foaf/spec/
 .. _SKOS: https://www.w3.org/TR/skos-primer/

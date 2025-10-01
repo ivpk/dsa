@@ -100,3 +100,18 @@ mermaid.initialize({
     theme: 'neutral'
 });
 """
+
+latex_engine = 'xelatex'
+latex_elements = {
+    'fontpkg': r'''
+\setmainfont{DejaVu Serif}
+\setsansfont{DejaVu Sans}
+\setmonofont{DejaVu Sans Mono}
+''',
+    'preamble': r'''\usepackage{enumitem} \setlistdepth{9}'''
+}
+latex_documents = [
+    ('index', 'DSA.tex', 'DSA Specifikacija', 'VSSA', 'manual'),
+]
+latex_use_xindy = False
+

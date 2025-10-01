@@ -1069,6 +1069,54 @@ kelis jau aprašytus laukus.
 
             | :func:`param.path`
 
+    .. function:: base64()
+
+        Funkcija skirta dekoduoti `base64` užšifruotus duomenis.
+
+        Tarkime, jei turime tokią duomenų lentelę, kurioje stulpelis `COUNTRY` yra užkoduotas `base64`:
+
+        ============ =======
+        COUNTRIES
+        --------------------
+        COUNTRY      CODE
+        ============ =======
+        TGlldHV2YQ== lt
+        TGF0dmlqYQ== lv
+        ============ =======
+
+        Naudodami prepare funkciją `base64`, galime dekoduoti `COUNTRY` stulpelio reikšmes:
+
+        +---+---+---+---+------------+---------+---------+-----------+----------+
+        | d | r | b | m | property   | type    | ref     | source    | prepare  |
+        +===+===+===+===+============+=========+=========+===========+==========+
+        | datasets/example/countries |         |         |           |          |
+        +---+---+---+---+------------+---------+---------+-----------+----------+
+        |   | salys                  | sql     |         | sqlite:// |          |
+        +---+---+---+---+------------+---------+---------+-----------+----------+
+        |   |   |   | Country        |         | code    | COUNTRIES |          |
+        +---+---+---+---+------------+---------+---------+-----------+----------+
+        |   |   |   |   | name       | string  |         | COUNTRY   | base64() |
+        +---+---+---+---+------------+---------+---------+-----------+----------+
+        |   |   |   |   | code       | string  |         | CODE      |          |
+        +---+---+---+---+------------+---------+---------+-----------+----------+
+
+        Pagal pateiktą DSA bus nuskaityti tokie duomenys:
+
+        .. code-block:: json
+
+            {
+                "_data": [
+                    {
+                        "name": "Lietuva",
+                        "code": "lt"
+                    },
+                    {
+                        "name": "Latvija",
+                        "code": "lv"
+                    },
+                ]
+            }
+
 
 .. _kompleksinės-struktūros:
 

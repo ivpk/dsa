@@ -426,7 +426,7 @@ XLSX
 
 .. describe:: resource.type
 
-    Galimos reikšmės: `xlsx`, `xls` arba `odt`.
+    Galimos reikšmės: `xlsx`, `ods` arba `xls`.
 
 .. describe:: resource.source
 

@@ -130,10 +130,10 @@ Sąvokos
         .. _dcterms:created: http://purl.org/dc/terms/created
 
     daugiareikšmis tipas
-        Duomenų tipas nurodantis, kad viena savybė gali turėti daugiau nei
-        vieną, to pačio tipo reikšmę.
+        Duomenų tipas, nurodantis, kad viena savybė gali turėti daugiau nei
+        vieną to pačio tipo reikšmę.
 
-        Struktūros aprašuose daugiareimšmės savybės žymimos `[]` simboliais,
+        Struktūros aprašuose daugiareikšmės savybės žymimos `[]` simboliais,
         užrašomais savybės pavadinimo pabaigoje.
 
         .. seealso::
@@ -258,13 +258,13 @@ Sąvokos
 
         .. note::
 
-            IVPK pavadininimas 2024 metais pakeistas į :term:`VSSA`.
+            IVPK pavadinimas 2024 metais pakeistas į :term:`VSSA`.
 
     jungtinis modelis
         Jungtinis modelis yra duomenų modelis, kuriame yra apjungtos kelių
         skirtingų klasių savybės į vieną duomenų modelį.
 
-        Toks apjungiams yra vadinamas duomenų denormalizavimu.
+        Toks apjungimas vadinamas duomenų denormalizavimu.
 
         .. seealso::
 
@@ -329,7 +329,7 @@ Sąvokos
 
     normalizavimas
         Duomenų normalizavimas yra duomenų struktūros transformavimo procesas
-        taikant taip vadinamas normalines formas, tam kad sumažinti duomenų
+        taikant taip vadinamas normalines formas, taip sumažinant duomenų
         pasikartojimą.
 
         Plačiau apie tai skaitykite `Vikipedijoje
@@ -367,7 +367,7 @@ Sąvokos
            container:
              name: value
 
-        YAML yra sukurtas JSON formato pagrindu, siekant palengvinti darbą su
+        YAML yra sukurtas JSON formato pagrindu, siekiant palengvinti darbą su
         JSON serializuotais duomenimis žmonėms. Analogiškas pavyzdys JSON formatu
         atrodo taip:
 
@@ -400,9 +400,9 @@ Sąvokos
 
     pirminis šaltinis
     pirminis duomenų šaltinis
-        Duomenš šaltinis, kuriame duomenys pateikiami arba įrašomi pirmą kartą.
+        Duomenų šaltinis, kuriame duomenys pateikiami arba įrašomi pirmą kartą.
 
-        Įprastai, kas būtų užtikrinamas duomenų vientisumas, duomenų objektai
+        Įprastai, siekiant užtikrinti duomenų vientisumą, duomenų objektai
         yra registruojami vienoje vietoje, tai yra numatyta ir :term:`VIIVĮ`
         įstatyme, kuriame nurodyta, kad Informacinės sistemos objektai, gali
         būti registruojami tik vienoje vietoje.
@@ -416,7 +416,7 @@ Sąvokos
 
     DCAT-AP
         `DCAT-AP`_ (DCAT Application Profile) yra specifikacija__, detalizuojanti
-        DCAT naudojima, nurodant kurios DCAT klasės ir savybės yra privalomos,
+        DCAT naudojimą, nurodant kurios DCAT klasės ir savybės yra privalomos,
         kurios rekomenduojamos ir kaip jas naudoti.
 
         .. _DCAT-AP: https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic/solution/dcat-application-profile-data-portals-europe
@@ -548,7 +548,7 @@ Sąvokos
         įvardija objektą apie kurį eina kalba.
         
         Tarkime saknyje „Namas turi stogą“ subjektas yra Namas, todėl, kad
-        kalba eina apie namą.
+        kalbama apie namą.
 
         .. _Subjektas: https://en.wikipedia.org/wiki/Semantic_triple#Subject,_predicate_and_object 
 
@@ -585,9 +585,9 @@ Sąvokos
 
         - pirmiausia sudaromas vieno duomenų rinkinio žodynas,
 
-        - kuris palaipsniui transformuojamas į Lietuvos vieningą žodyną,
+        - jis palaipsniui transformuojamas į Lietuvos vieningą žodyną,
 
-        - o Lietuvos vieningas žodynas palaipsniui transformuojamas į globalų
+        - Lietuvos vieningas žodynas palaipsniui transformuojamas į globalų
           žodyną, nurodant sąsajas su išoriniais žodynais ir standartais.
 
         Žodynai sudaromi pasitelkiant :ref:`vardų erdves <vardų-erdvės>`.

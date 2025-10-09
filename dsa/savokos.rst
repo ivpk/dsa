@@ -125,7 +125,7 @@ Sąvokos
             įgyvendinti tokias priemones, kurios veiktų universaliai,
             nepriklausomai nuo duomenų šaltinio ar duomenų kilmės.
 
-        .. _5 ★ Open Data: https://5stardata.info/
+        .. _5 ★ Open Data: https://5stardata.info/en/
         .. _ISO 8601: https://en.wikipedia.org/wiki/ISO_8601
         .. _dcterms:created: http://purl.org/dc/terms/created
 

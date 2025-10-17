@@ -1250,3 +1250,263 @@ tarpusavio sąsają, "vaikiniame" resurse nurodant formulę.
         .. seealso::
 
             - :ref:`ref-soap` skaitymas.
+
+
+Pakartotinis duomenų skaitymas
+==============================
+
+Situacijose, kai resursas grąžina duomenų laukus kitu formatu, galima juos
+pakartotinai skaityti naudojant kitą resursą — nurodant `resource.property` formulę.
+
+.. describe:: resource.prepare
+
+    .. function:: eval(expression)
+
+        :arg expression: išraiška, kuri skaito duomenis (formulė)
+
+        Funkcija `eval()` įvykdo nurodytą formulę `expression` ir grąžina jos rezultatą.
+        Tai leidžia naudoti tą rezultatą kaip naują duomenų šaltinį vietoje duomenų iš `resource.source`.
+
+        .. note::
+
+            Modeliai pirmenybę teikia duomenų skaitymui iš `resource.source`, tad norint naudoti
+            `eval()` funkciją, `resource.source` turi būti paliktas tuščias.
+
+        Norint pakartotinai skaityti duomenis, DSA konfigūracijoje paprastai aprašomi du resursai:
+
+        - **Išorinis resursas** — aprašo pradinį duomenų formatą (pvz. `dask/json`, `dask/xml`, `soap`),
+          naudojant `resource.source` arba `resource.ref`.
+        - **Vidinis resursas** — aprašo vidinį duomenų formatą (pvz. JSON, XML), naudojant
+          `prepare = eval(param(...))`, o ne `resource.source` ar `resource.ref`.
+
+        Skaitant „vidinio resurso“ duomenis:
+
+        1. Pirmiausia, `param(...)` funkcijos pagalba, nuskaitomi „išorinio resurso“ duomenys.
+        2. Tada iš nuskaitytų duomenų, randamas parametre nurodytas duomenų laukas ir jo reikšmės
+           skaitomos naudojant „vidinio resurso“ formatą.
+
+        .. seealso::
+
+            - :ref:`param` dimensijos naudojimas.
+
+        Šiuo metu „išorinio resurso“ tipai gali būti `dask/json`, `dask/xml` arba `soap`,
+        o „vidinio resurso“ tipai — `dask/xml` arba `dask/json`.
+
+        .. admonition:: Pavyzdys 1
+
+            Turime XML formato duomenis, kur `<data>` elemento turinys yra JSON formato:
+
+            .. code-block:: xml
+
+                <countries>
+                    <country>
+                        <name>Lietuva</name>
+                        <data>[{"name": "Lietuva", "capital": "Vilnius"}]</data>
+                    </country>
+                    <country>
+                        <name>Latvija</name>
+                        <data>[{"name": "Latvija", "capital": "Ryga"}]</data>
+                    </country>
+                </countries>
+
+            Norint perskaityti „vidinius“ JSON formato duomenis, reikalingas toks DSA:
+
+            ======== ============= ==========  ============ ============  ============== ================== ========================
+            dataset  resource      model       property     type          ref            source             prepare
+            ======== ============= ==========  ============ ============  ============== ================== ========================
+            example
+            \        xml_resource                           dask/xml                     file.xml
+            \                      Country                                               countries/country
+            \                                  name         string                       name
+            \                                  data         string                       data
+            \        json_resource                          dask/json                                       eval(param(nested_json))
+            \                                               param         nested_json    Country            read().data
+            \                      Data                                                  .
+            \                                  name         string                       name
+            \                                  capital      string                       capital
+            ======== ============= ==========  ============ ============  ============== ================== ========================
+            |
+
+            - Resursas `xml_resource` aprašo įprastą XML duomenų skaitymą.
+            - Resursas `json_resource` aprašo JSON duomenų skaitymą. Resursas nenaudoja `resource.source`, bet naudoja
+              `prepare = eval(param(nested_json))`. Tai reiškia, kad duomenys gaunami per `param(nested_json)`,
+              kuris yra interpretuojamas kaip JSON duomenys.
+            - Resurso `json_resource` parametras `nested_json` aprašo iteratorių (plačiau skaityti:
+              :ref:`param` dimensijos aprašyme), kuris skaito visas `Country.data` reikšmes.
+
+            Taigi, `eval()` funkcijos pagalba, resursas `json_resource` nurodo, kad resurso duomenų šaltinis
+            bus `Country` modelio `data` property reikšmės.
+
+            Kreipiantis į `/Data`, gausime tokį JSON:
+
+            .. code-block:: json
+
+                {
+                    "_data": [
+                        {
+                            "_type": "example/Data",
+                            "_id": "...",
+                            "name": "Lietuva",
+                            "capital": "Vilnius",
+                        },
+                        {
+                            "_type": "example/Data",
+                            "_id": "...",
+                            "name": "Latvija",
+                            "capital": "Ryga",
+                        }
+                    ]
+                }
+
+
+        .. admonition:: Pavyzdys 2
+
+            Turime SOAP duomenis, kuriuose `<data>` elemente yra `base64` formatu užkoduoti XML duomenys:
+
+            .. code-block:: xml
+
+                <ns0:Envelope xmlns:ns0="http://schemas.xmlsoap.org/soap/envelope/"
+                              xmlns:ns1="city_app">
+                    <ns0:Body>
+                        <ns1:CountryOutputResponse>
+                            <ns1:CountryOutput>
+                                <ns1:id>100</ns1:id>
+                                <ns1:data>PGNvdW50cmllcz48Y291bnRyeT48bmFtZT5MaWV0dXZhPC9uYW1lPjxjYXBpdGFsPlZpbG5pdXM8L2NhcGl0YWw+PC9jb3VudHJ5PjwvY291bnRyaWVzPg==</ns1:name>
+                            </ns1:CountryOutput>
+                            <ns1:CountryOutput>
+                                <ns1:id>101</ns1:id>
+                                <ns1:name>PGNvdW50cmllcz48Y291bnRyeT48bmFtZT5MYXR2aWphPC9uYW1lPjxjYXBpdGFsPlJ5Z2E8L2NhcGl0YWw+PC9jb3VudHJ5PjwvY291bnRyaWVzPg==</ns1:name>
+                            </ns1:CountryOutput>
+                        </ns1:CountryOutputResponse>
+                    </ns0:Body>
+                </ns0:Envelope>
+
+            Iškoduotas XML:
+
+            .. code-block:: xml
+
+                <countries><country><name>Lietuva</name><capital>Vilnius</capital></country></countries>
+                <countries><country><name>Latvija</name><capital>Ryga</capital></country></countries>
+
+            WSDL aprašo privalomą `arg_code` parametrą.
+
+            .. code-block:: xml
+
+                <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                                  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                                  xmlns:tns="city_app"
+                                  targetNamespace="city_app"
+                                  name="Service">
+
+                    <wsdl:types>
+                        <xs:schema targetNamespace="country_app">
+                            <xs:element name="CountryInputRequest">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="arg_code" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+
+                            <xs:element name="CountryOutputResponse">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="CountryOutput" type="tns:CountryOutput" minOccurs="0" maxOccurs="unbounded"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+
+                            <xs:complexType name="CountryOutput">
+                                <xs:sequence>
+                                    <xs:element name="id" type="xs:int"/>
+                                    <xs:element name="data" type="xs:string"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:schema>
+                    </wsdl:types>
+
+                    <wsdl:message name="CountryInputRequest">
+                        <wsdl:part name="parameters" element="tns:CountryInputRequest"/>
+                    </wsdl:message>
+                    <wsdl:message name="CountryOutputResponse">
+                        <wsdl:part name="parameters" element="tns:CountryOutputResponse"/>
+                    </wsdl:message>
+
+                    <wsdl:portType name="PortType">
+                        <wsdl:operation name="Operation">
+                            <wsdl:input message="tns:CountryInputRequest"/>
+                            <wsdl:output message="tns:CountryOutputResponse"/>
+                        </wsdl:operation>
+                    </wsdl:portType>
+
+                    <wsdl:binding name="ServiceBinding" type="tns:PortType">
+                        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+                        <wsdl:operation name="Operation">
+                            <soap:operation soapAction="urn:Operation"/>
+                            <wsdl:input>
+                                <soap:body use="literal"/>
+                            </wsdl:input>
+                            <wsdl:output>
+                                <soap:body use="literal"/>
+                            </wsdl:output>
+                        </wsdl:operation>
+                    </wsdl:binding>
+
+                    <wsdl:service name="Service">
+                        <wsdl:port name="Port" binding="tns:ServiceBinding">
+                            <soap:address location="http://example.com/country"/>
+                        </wsdl:port>
+                    </wsdl:service>
+                </wsdl:definitions>
+
+            Norint dekoduoti ir perskaityti „vidinius“ XML duomenis, reikalingas toks DSA:
+
+            ======== ============  ==========  ============ ============  ============== ================================ =======================
+            dataset  resource      model       property     type          ref            source                           prepare
+            ======== ============  ==========  ============ ============  ============== ================================ =======================
+            example
+            \        country_wsdl                           wsdl                         http://example.com/country?wsdl
+            \        country_soap                           soap                         Service.Port.PortType.Operation  wsdl(towns_wsdl)
+            \                                               param         parameter1     request_model/arg_code           input()
+            \                       Country                               id             /
+            \                                  id           integer                      id
+            \                                  data         string                       data                             base64()
+            \                                  p1           string                                                        param(parameter1)
+            \        country_xml                            dask/xml                                                      eval(param(nested_xml))
+            \                                               param         nested_xml     Country                          read().data
+            \                       Capital                                              countries/country
+            \                                  country_name string                       name
+            \                                  capital      string                       capital
+            ======== ============  ==========  ============ ============  ============== ================================ =======================
+            |
+
+            - `country_soap` resursas turi parametrą `parameter1` su `input()` formule, be numatytosios reikšmės,
+              todėl ši reikšmė turės būti perduota per URL parametrą.
+            - `Country.data` duomenų laukas yra dekoduojamas naudojant `base64()` formulę.
+            - `country_xml` naudoja `eval(param(nested_xml))` formulę, kad skaitytų dekoduotus XML duomenis.
+
+            Kreipiantis į `/Capital?p1="arg_value"`, gausime:
+
+            .. code-block:: json
+
+                {
+                    "_data": [
+                        {
+                            "_type": "example/Capital",
+                            "_id": "c1380514-549f-4cdd-b258-6fecc3a5bbda",
+                            "name": "Lietuva",
+                            "capital": "Vilnius",
+                        },
+                        {
+                            "_type": "example/Capital",
+                            "_id": "5c02f700-6478-43a0-a147-959927cb3c1c",
+                            "name": "Latvija",
+                            "capital": "Ryga",
+                        }
+                    ]
+                }
+
+            Atkreipkite dėmesį, kad pagal DSA `Capital` modelio skaitymui URL parametras `p1` nėra reikalingas.
+            Tačiau jis reikalingas `Country` modelio skaitymui, kurį būtina perskaityti norint gauti `Capital`
+            duomenis.

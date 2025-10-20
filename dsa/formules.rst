@@ -1255,8 +1255,8 @@ tarpusavio sąsają, "vaikiniame" resurse nurodant formulę.
 Pakartotinis duomenų skaitymas
 ==============================
 
-Situacijose, kai resursas grąžina duomenų laukus kitu formatu, galima juos
-pakartotinai skaityti naudojant kitą resursą — nurodant `resource.property` formulę.
+Situacijose, kai duomenų išteklius grąžina duomenų laukus kitu formatu, galima juos
+pakartotinai skaityti naudojant kitą duomenų išteklių — nurodant `resource.property` formulę.
 
 .. describe:: resource.prepare
 
@@ -1272,25 +1272,25 @@ pakartotinai skaityti naudojant kitą resursą — nurodant `resource.property` 
             Modeliai pirmenybę teikia duomenų skaitymui iš `resource.source`, tad norint naudoti
             `eval()` funkciją, `resource.source` turi būti paliktas tuščias.
 
-        Norint pakartotinai skaityti duomenis, DSA konfigūracijoje paprastai aprašomi du resursai:
+        Norint pakartotinai skaityti duomenis, DSA konfigūracijoje paprastai aprašomi du ištekliai:
 
-        - **Išorinis resursas** — aprašo pradinį duomenų formatą (pvz. `dask/json`, `dask/xml`, `soap`),
+        - **Išorinis išteklius** — aprašo pradinį duomenų formatą (pvz. `dask/json`, `dask/xml`, `soap`),
           naudojant `resource.source` arba `resource.ref`.
-        - **Vidinis resursas** — aprašo vidinį duomenų formatą (pvz. JSON, XML), naudojant
+        - **Vidinis išteklius** — aprašo vidinį duomenų formatą (pvz. JSON, XML), naudojant
           `prepare = eval(param(...))`, o ne `resource.source` ar `resource.ref`.
 
-        Skaitant „vidinio resurso“ duomenis:
+        Skaitant „vidinio ištekliaus“ duomenis:
 
-        1. Pirmiausia, `param(...)` funkcijos pagalba, nuskaitomi „išorinio resurso“ duomenys.
+        1. Pirmiausia, `param(...)` funkcijos pagalba, nuskaitomi „išorinio ištekliaus“ duomenys.
         2. Tada iš nuskaitytų duomenų, randamas parametre nurodytas duomenų laukas ir jo reikšmės
-           skaitomos naudojant „vidinio resurso“ formatą.
+           skaitomos naudojant „vidinio ištekliaus“ formatą.
 
         .. seealso::
 
             - :ref:`param` dimensijos naudojimas.
 
-        Šiuo metu „išorinio resurso“ tipai gali būti `dask/json`, `dask/xml` arba `soap`,
-        o „vidinio resurso“ tipai — `dask/xml` arba `dask/json`.
+        Šiuo metu „išorinio ištekliaus“ tipai gali būti `dask/json`, `dask/xml` arba `soap`,
+        o „vidinio ištekliaus“ tipai — `dask/xml` arba `dask/json`.
 
         .. admonition:: Pavyzdys 1
 
@@ -1327,14 +1327,14 @@ pakartotinai skaityti naudojant kitą resursą — nurodant `resource.property` 
             ======== ============= ==========  ============ ============  ============== ================== ========================
             |
 
-            - Resursas `xml_resource` aprašo įprastą XML duomenų skaitymą.
-            - Resursas `json_resource` aprašo JSON duomenų skaitymą. Resursas nenaudoja `resource.source`, bet naudoja
+            - Išteklius `xml_resource` aprašo įprastą XML duomenų skaitymą.
+            - Išteklius `json_resource` aprašo JSON duomenų skaitymą. Išteklius nenaudoja `resource.source`, bet naudoja
               `prepare = eval(param(nested_json))`. Tai reiškia, kad duomenys gaunami per `param(nested_json)`,
               kuris yra interpretuojamas kaip JSON duomenys.
-            - Resurso `json_resource` parametras `nested_json` aprašo iteratorių (plačiau skaityti:
+            - Ištekliaus `json_resource` parametras `nested_json` aprašo iteratorių (plačiau skaityti:
               :ref:`param` dimensijos aprašyme), kuris skaito visas `Country.data` reikšmes.
 
-            Taigi, `eval()` funkcijos pagalba, resursas `json_resource` nurodo, kad resurso duomenų šaltinis
+            Taigi, `eval()` funkcijos pagalba, išteklius `json_resource` nurodo, kad ištekliaus duomenų šaltinis
             bus `Country` modelio `data` property reikšmės.
 
             Kreipiantis į `/Data`, gausime tokį JSON:
@@ -1481,7 +1481,7 @@ pakartotinai skaityti naudojant kitą resursą — nurodant `resource.property` 
             ======== ============  ==========  ============ ============  ============== ================================ =======================
             |
 
-            - `country_soap` resursas turi parametrą `parameter1` su `input()` formule, be numatytosios reikšmės,
+            - `country_soap` išteklius turi parametrą `parameter1` su `input()` formule, be numatytosios reikšmės,
               todėl ši reikšmė turės būti perduota per URL parametrą.
             - `Country.data` duomenų laukas yra dekoduojamas naudojant `base64()` formulę.
             - `country_xml` naudoja `eval(param(nested_xml))` formulę, kad skaitytų dekoduotus XML duomenis.

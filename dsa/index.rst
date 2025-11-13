@@ -1,4 +1,4 @@
-dsa.. default-role:: literal
+.. default-role:: literal
 
 Duomenų struktūros aprašas
 ##########################

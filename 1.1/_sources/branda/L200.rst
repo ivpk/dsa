@@ -1,0 +1,174 @@
+.. default-role:: literal
+.. _level2:
+
+Antras Brandos Lygis
+====================
+
+**Struktūruota**
+----------------
+
+Duomenys kaupiami struktūruota, mašininiu būdu nuskaitoma forma, bet
+kokiu formatu. Užpildytas :data:`property.source` stulpelis.
+
+Plačiau apie brandos lygio kėlimą skaitykite skyriuje :ref:`to-level-2`.
+
+Antru brandos lygiu žymimi duomenų laukai, kurie pateikti vieninga
+forma arba pagal aiškų ir vienodą šabloną. Tačiau pateikimo būdas nėra
+standartinis. Nestandartinis duomenų formatas yra toks, kuris neturi
+viešai skelbiamos ir atviros formato specifikacijos arba kuris nėra
+priimtas kaip standartas, kurį prižiūri tam tikra standartizacijos
+organizacija.
+
+**Pavyzdžiai**
+
+========== =================== ======
+Imone                                
+-------------------------------------
+imones_id  imones_pavadinimas  rusis 
+========== =================== ======
+42         UAB "Įmonė"         1     
+========== =================== ======
+
+============= ========= ========== ======================= ================
+Filialas                                                                   
+---------------------------------------------------------------------------
+ikurimo_data  atstumas  imones_id  imones_pavadinimas._id  tel_nr          
+============= ========= ========== ======================= ================
+1/9/21        1 m.      1          UAB "Įmonė"             (83\) 111 11111 
+2/9/21        2 m.      1          UAB "Įmonė"             (83\) 222 22222 
+3/9/21        3 m.      1          UAB "Įmonė"             (83\) 333 33333 
+4/9/21        4 m.      1          UAB "Įmonė"             (83\) 444 44444 
+============= ========= ========== ======================= ================
+
+== == == == ===================== ========= ========== =====
+Struktūros aprašas                                     
+------------------------------------------------------------
+d  r  b  m  property              type      ref        level
+== == == == ===================== ========= ========== =====
+example                                                 
+--------------------------------- --------- ---------- -----
+\        JuridinisAsmuo                     kodas      4
+-- -- -- ------------------------ --------- ---------- -----
+\           kodas                 integer              4
+\           pavadinimas\@lt       text                 4
+\        Imone                              imones_id  2
+-- -- -- ------------------------ --------- ---------- -----
+\           imones_id             integer              2
+\           imones_pavadinimas    string               2
+\           rusis                 integer              2     
+\        Filialas                                      3
+-- -- -- ------------------------ --------- ---------- -----
+\           ikurimo_data          string               2
+\           atstumas              string               2
+\           imones_id             integer              2
+\           imones_pavadinimas    string               2
+\           tel_nr                string               2
+== == == == ===================== ========= ========== =====
+
+.. _level201:
+
+Reikalavimas 1 (L201)
+---------------------
+- **Nestandartiniai duomenų tipai** - antru brandos lygiu žymimi duomenys,
+  kurių nurodytas tipas neatitinka realaus duomenų tipo. Pavyzdžiui:
+
+  - `ikurimo_data` - nurodytas `string`, turėtu būti `date`.
+  - `imones_pavadinimas` - nurodytas `string`, turėtu būti `text`.
+  - `atstumas` - nurodytas `string`, turėtu būti `integer`.
+
+.. _level202:
+
+Reikalavimas 2 (L202)
+---------------------
+- **Nestandartinis formatas** - antru brandos lygiu žymimi duomenys,
+  kurie pateikti nestandartiniu formatu. Standartinis duomenų
+  pateikimas nurodytas prie kiekvieno duomenų tipo skyriuje
+  :ref:`duomenų-tipai`. Payvzdžiui:
+
+  - `ikurimo_data` - nurodytas `DD/MM/YY`, turėtu būti `YYYY-MM-DD`.
+  - `atstumas` - nurodyta `X m.`, turėtu būti `X`.
+  - `tel_nr` - nurodytas `(XX) XXX XXXXX`, turėtu būti
+    `+XXX-XXX-XXXXX`.
+
+.. _level203:
+
+Reikalavimas 3 (L203)
+---------------------
+- **Nestandartiniai kodiniai pavadinimai** - antru brandos lygiu žymimi
+  duomenys, kurių kodiniai pavadinimai, neatitinka :ref:`standartinių
+  reikalavimų keliamų kodiniams pavadinimams <kodiniai-pavadinimai>`.
+  Pavyzdžiui:
+
+  - `imones_id` - dubliuojamas modelio pavadinimas, turėtu būti `id`.
+  - `imones_pavadinimas` - dubliuojamas modelio pavadinimas, turėtu
+    būti `pavadinimas`.
+  - `ikurimo_data` - dubliuojamas tipo pavadinimas, turėtu būti
+   `ikurta`.
+
+.. _level204:
+
+Reikalavimas 4 (L204)
+---------------------
+- **Nepatikimi identifikatoriai** - antru brandos lygiu žymimi
+  duomenys, kurių `ref` tipui naudojami nepatikimi identifikatoriai,
+  pavyzdžiui tokie, kaip pavadinimai, kurie gali keistis arba kartotis.
+  Pavyzdžiui:
+
+  - `imones_pavadinimas` - jungimas daromas per įmonės pavadinimą,
+    tačiau šiuo atveju kito varianto nėra, nes `Filialas.imones_id`
+    nesutampa su `Imone.imones_id`.
+
+.. _level205:
+
+Reikalavimas 5 (L205)
+---------------------
+- **Denormalizuoti duomenys** - antru brandos lygiu žymimi duomenys,
+  kurie dubliuoja kito modelio duomenis ir yra užrašyti nenurodant, kad
+  tai yra duomenys dubliuojantys kito modelio duomenis. Pavyzdžiui:
+
+  - `Filialas.imones_id` turėtu būti `Filialas.imone.imones_id`.
+  - `Filialas.imones_pavadinimas` turėtu būti
+    `Filialas.imone.imones_pavadinimas`.
+
+    Plačiau apie denormalizuotus duomenis skaitykite skyriuje
+    :ref:`ref-denorm`.
+
+.. _level206:
+
+Reikalavimas 6 (L206)
+---------------------
+- **Nenurodytas susiejimas** - antru brandos lygiu žymimi duomenys,
+  kurie siejasi su kitu modeliu, tačiau tokia informacija nėra pateikta
+  metaduomenyse. Pavyzdžiui:
+
+  - `Filialas.imone` - `Filialas` siejasi su `Imone`, per
+    `Filialas.imones_pavadiniams`, todėl turėtu būti nurodytas `imone
+    ref Imone` ryšys su `Imone`.
+
+.. _level207:
+
+Reikalavimas 7 (L207)
+---------------------
+- **Neatitinka modelio bazės** - antru brandos lygiu žymimi duomenys,
+  kurie priklauso vienai semantinei klasei, tačiau duomenų schema
+  nesutampa su bazinio modelio schema. Pavyzdžiui:
+
+  - `Imone` - priklauso semantinei klasei `JuridinisAsmuo`, tačiau tai
+    nėra pažymėta metaduomenyse.
+  - `Imone.imones_id` turėtu būti `Imone.kodas`, kad sutaptu su baze
+    (`JuridinisAsmuo.kodas`).
+  - `Imone.imones_pavadinimas` turėtu būti `Imone.pavadinimas@lt`, kad
+    sutaptu su baze (`JuridinisAsmuo.pavadinimas@lt`).
+
+.. _level208:
+
+Reikalavimas 8 (L208)
+---------------------
+- **Nenurodytas enum kodinėms reikšmėms** - antru brandos lygiu žymimi
+  kategoriniai duomenys, kurių reikšmės pateiktos sutartiniais
+  kodinais, kurių prasmė nėra aiški. Pavyzdžiui:
+
+  - `Imone.rusis` - įmonės rūšis žymima skaičiais, tačiau nėra aišku,
+    kokks skaičius, ką rei6kia, todėl reikia pateitki `enum` sąrašą,
+    kuriame būtų nurodyta, ką koks skaičius reiškia. Plačiau skaityti
+    :ref:`enum`.

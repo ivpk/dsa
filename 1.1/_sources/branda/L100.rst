@@ -1,0 +1,88 @@
+.. default-role:: literal
+.. _level1:
+
+Pirmas Brandos Lygis
+====================
+
+**Publikuojama**
+----------------
+
+Duomenys publikuojami bet kokia forma. Užpildyta :data:`resource`
+eilutė.
+
+Plačiau apie brandos lygio kėlimą skaitykite skyriuje :ref:`to-level-1`.
+
+Pirmu brandos lygiu žymimi duomenų laukai, kurių reikšmės neturi
+vientisumo, tarkime ta pati reikšmė gali būti pateikta keliais
+skirtingais variantais.
+
+**Pavyzdžiai**
+
+========== =================== ======
+Imone                                
+-------------------------------------
+imones_id  imones_pavadinimas  rusis 
+========== =================== ======
+42         UAB "Įmonė"         1     
+========== =================== ======
+
+==================== ========= ============== =================== ===============
+Filialas                                                                         
+---------------------------------------------------------------------------------
+ikurimo_data         atstumas  imones_id._id  imones_pavadinimas  tel_nr         
+==================== ========= ============== =================== ===============
+vakar                1 m.      1              Įmonė 1             +370 345 36522 
+2021 rugpjūčio 1 d.  1 m       1              UAB Įmonė 1         8 345 36 522   
+1/9/21               1 metras  1              Įmonė 1, UAB        (83) 45 34522  
+21/9/1               0.001 km  1              „ĮMONĖ 1“, UAB      037034536522   
+==================== ========= ============== =================== ===============
+
+== == == == ===================== ========= =========== =====
+Struktūros aprašas
+-------------------------------------------------------------
+d  r  b  m  property              type      ref         level
+== == == == ===================== ========= =========== =====
+example                                                  
+--------------------------------- --------- ----------- -----
+\        Imone                              id          4
+-- -- -- ------------------------ --------- ----------- -----
+\           imones_id             integer               2
+\           imones_pavadinimas    string                2
+\           rusis                 integer               2     
+\        Filialas                                       3
+-- -- -- ------------------------ --------- ----------- -----
+\           ikurimo_data          string                1
+\           atstumas              string                1
+\           imones_id             ref       Imone       1
+\           imones_pavadinimas    string                1
+\           tel_nr                string                1
+== == == == ===================== ========= =========== =====
+
+.. _level101:
+
+Reikalavimas 1 (L101)
+---------------------
+**Neaiški struktūra** - pirmu brandos lygiu žymimi duomenys, kuriuose
+nėra aiškios struktūros, pavyzdžiui `ikurta` datos formatas nėra
+vienodas, kiekviena data užrašyta vis kitokiu formatu.
+
+.. _level102:
+
+Reikalavimas 2 (L102)
+---------------------
+**Nėra vientisumo** - pirmu brandos lygiu žymimi duomenuys, kuruose
+nėra vientisumo, pavyzdžiui `atstumas` užrašytas laikantis tam tikros
+struktūros, tačiau skirtingais vienetais.
+
+.. _level103:
+
+Reikalavimas 3 (L103)
+---------------------
+**Neįmanomas jungimas** - pirmu brandos lygiu žymimi
+duomenys, kurių neįmanoma arba sudėtinga sujungti. Pavyzdžiui
+`Filialas` duomnų laukas `imone` naudoja tam tikrą identifikatorių,
+kuris nesutampa nei su vienu iš `Imone` atributų, pagal kuriuose būtų
+galima identifikuoti filialo įmonę.
+
+
+

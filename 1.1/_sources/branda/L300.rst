@@ -1,0 +1,131 @@
+.. default-role:: literal
+.. _level3:
+
+Trečias Brandos Lygis
+=====================
+
+**Standartizuota**
+------------------
+
+Duomenys saugomi atviru, standartiniu formatu. Užpildytas
+:data:`property.type` stulpelis ir duomenys atitinka nurodytą tipą.
+
+Plačiau apie brandos lygio kėlimą skaitykite skyriuje :ref:`to-level-3`.
+
+Trečias brandos lygis suteikiamas tada, kai duomenys pateikti vieninga
+forma, vieningu masteliu, naudojamas formatas yra standartinis, tai
+reiškia, kad yra viešai skelbiama ir atvira formato specifikacija arba
+pats formatas yra patvirtintas ir prižiūrimas kokios nors
+standartizacijos organizacijos.
+
+**Pavyzdžiai**
+
+===== ================ ==========
+Imone                                                                  
+---------------------------------
+id    pavadinimas\@lt  rusis     
+===== ================ ==========
+42    UAB "Įmonė"      juridinis 
+===== ================ ==========
+
+=========== ========= ========== ====================== =============
+Filialas                                         
+---------------------------------------------------------------------
+ikurta      atstumas  imone._id  imone.pavadinimas\@lt  tel_nr  
+=========== ========= ========== ====================== =============
+2021-09-01  1         42         UAB "Įmonė"            +37011111111
+2021-09-02  2         42         UAB "Įmonė"            +37022222222
+2021-09-03  3         42         UAB "Įmonė"            +37033333333
+2021-09-04  4         42         UAB "Įmonė"            +37044444444
+=========== ========= ========== ====================== =============
+
+== == == == ===================== ========= =========== ===== ======== ==========
+Struktūros aprašas                                                               
+---------------------------------------------------------------------------------
+d  r  b  m  property              type      ref         level prepare  title     
+== == == == ===================== ========= =========== ===== ======== ==========
+example                                                                          
+--------------------------------- --------- ----------- ----- -------- ----------
+\        JuridinisAsmuo                     kodas       4                        
+-- -- -- ------------------------ --------- ----------- ----- -------- ----------
+\           kodas                 integer               4                        
+\           pavadinimas\@lt       text                  4                        
+\     JuridinisAsmuo                                    4                        
+-- -- --------------------------- --------- ----------- ----- -------- ----------
+\        Imone                              kodas       4                        
+-- -- -- ------------------------ --------- ----------- ----- -------- ----------
+\           kodas                                       4                        
+\           pavadinimas\@lt                             4                        
+\           rusis                 string                3                         
+\     /                                                                                                    
+-- -- --------------------------- --------- ----------- ----- -------- ----------
+\        Filialas                                       3                        
+-- -- -- ------------------------ --------- ----------- ----- -------- ----------
+\           ikurta                date                  3                        
+\           atstumas              integer               3                        
+\           imone                 ref       Imone       3                        
+\           imone.kodas                                 4                        
+\           imone.pavadinimas\@lt                       4                        
+\           tel_nr                string                4                        
+== == == == ===================== ========= =========== ===== ======== ==========
+
+.. _level301:
+
+Reikalavimas 1 (L301)
+---------------------
+
+- **Nenurodytas pirminis raktas** - trečiu brandos lygiu žymimi
+  duomenys, kurie neturi nurodyto pirminio rakto :data:`model.ref`
+  stulpelyje. Pavyzdžiui:
+
+  - `Filialas` - nenurodytas pirminis raktas :data:`model.ref`
+    stulpelyje.
+
+.. _level301:
+
+Reikalavimas 2 (L302)
+---------------------
+
+- **Nenurodyt vienetai** - trečiu brandos lygiu žymimi kiekybiniai
+  duomenys, kuriems nėra nurodyti matavimo vienetai
+  :data:`property.ref` stulpelyje. Pavyzdžiui:
+
+  - `atstumas` - nenurodyta, kokiais vienetais matuojamas atstumas.
+
+.. _level301:
+
+Reikalavimas 3 (L303)
+---------------------
+
+- **Nenurodyti tikslumas** - trečiu brandos lygiu žymimi laiko ir
+  erdviniai duomenys, kuriems nėra nurodytas matavimo tikslumas.
+  Matavimo tikslumas nurodomas `property.ref` stulpelyje. Pavyzdžiui:
+
+  - `ikurta` - nenurodytas datos tikslumas, turėtu būti `D` - vienos
+    dienos tiksumas.
+
+.. _level301:
+
+Reikalavimas 4 (L304)
+---------------------
+
+- **Siejimas ne per priminį raktą** - trečiu brandos lygiu žymimi `ref`
+  tipo duomenų laukai, kurie siejami ne per perminį raktą `_id`, o per
+  kitą identifikatorių. Pavyzdžiui:
+
+  - `Filialas.imone` - siejimas atliekamas per `Imone.kodas`, o ne per
+    `Imone._id`.
+
+.. _level301:
+
+Reikalavimas 5 (L305)
+---------------------
+
+- **Neaprašyti kategoriniai duomenys** - trečiu brandos lygiu žymimi
+  kategoriniai duomenys, kurių reikšmės pačios savaime yra aiškios,
+  tačiau neišvardintos struktūros apraše. Pavyzdžiui:
+
+  - `Imone.rusis` - įmonės rūšies kategorijos duomenys yra pateikta
+    tekstine forma, tačiau, struktūros apraše nėra išvardintos visos
+    galimos kategorijos ir pats duomenų laukas nėra pažymėtas, kaip
+    kategorinis.

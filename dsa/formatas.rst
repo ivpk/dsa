@@ -173,7 +173,7 @@ nei vieno dimensijos stulpelio.
 
     **Savybė (stulpelis)**
 
-    Kodinis savybės pavadinimas, užrašomas mažosiomis lotyniškomis raidėmis,
+    Kodinis savybės pavadinimas, užrašomas mažosiomis lotyniškomis raidėmis, vienaskaita,
     žodžiai atskiriami `_` simoboliu.
 
     Savybių pavadinimai prasidedantys `_` simboliu yra rezervuoti ir turi
@@ -190,7 +190,7 @@ nei vieno dimensijos stulpelio.
             | `adresas.gatve`
 
     []
-        Duomenų masyvas arba sąrašas, gali būti naudojamas su visais tipais.
+        Duomenų masyvas arba sąrašas, gali būti naudojamas su visais tipais, jo pavadinimas užrašomas daugiskaita.
 
         .. admonition:: Pavyzdys
 
@@ -210,7 +210,6 @@ nei vieno dimensijos stulpelio.
     .. seealso::
 
         | :ref:`property`
-
 
 
 .. _metaduomenų-stulpeliai:
@@ -277,6 +276,15 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
     .. seealso::
 
         | :ref:`duomenu-saltiniai`
+        | :ref:`enum`
+
+.. data:: source.type
+
+    **Pirminio šaltinio tipas**
+
+    Prasmė priklauso nuo dimensijos.
+    
+    Nurodo pirminį duomenų šaltinio duomenų tipą.
 
 .. data:: prepare
 
@@ -289,6 +297,24 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
 
         :ref:`formulės`
 
+.. data:: origin
+
+    `base` nurodo modelio bazę, pagal kurią formuojami vienodi identifikatoriai, `origin` nurodo duomenų kilmę.
+
+    `origin` stulpelyje nurodomi reliatyvūs kodiniai pavadinimai, taip pat, kaip ir `base` ar `ref` stulpeliuose.
+
+.. data:: count
+
+    Prasmė priklauso nuo dimensijos.
+    
+    Nudorodo elementų skaičių dimensijoje. Duomenų agentas šias vertes generuoja automatiškai.
+
+    .. admonition:: Pastaba
+
+      Automatinis duomenų elementų skaičiavimas priklauso nuo duomenų šaltinio tipo ir nėra galimas su visais duomenų šaltiniais.
+
+      Priklausomai nuo duomenų kiekio duomenų šaltinyje, ši operacija gali reikalauti didelių apdorojimo resursų ir gali būti išjungiama.
+
 .. data:: level
 
     **Brandos lygis**
@@ -300,6 +326,32 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
     .. seealso::
 
         :ref:`level`
+
+.. data:: status
+
+    Metaduomenų statusas nurodomas pagal EU Publications Office kontroliuojamą žodyną `Distribution status <http://publications.europa.eu/resource/authority/distribution-status>`_
+    ir EU Publications Office kontroliuojamą žodyną `Dataset status <http://publications.europa.eu/resource/authority/dataset-status>`_ , kuris prideda `discont`
+
+    Naudojamos šios rekšmės:
+
+    ========== ============================
+    develop    galima keisti be išankstinio įspėjimo
+    completed  galima keisti tik informavus naudotojus ne mažiau kaip prieš 12 mėnesių.
+    discont    duomenys nėra atnaujinami, tačiau elemento šalinti kol kas neplanuojama.
+    deprecated nebenaudotina, ateityje bus pašalinta, nurodoma, kai numatyta pašaltini status=completed elementus.
+    withdrawn  pilnai panaikinama, kai praeina ne mažiau nei 12 mėnesių, po to, kai buvo nurodyta `status=deprecated`.
+
+
+.. data:: visibility
+
+    Modelio metaduomenų matomumas ir prieinamumas. Skirstomas į:
+
+    ========= ============================
+    public    naudojamas EU lygmeniu
+    package   naudojamas LT lygmeniu (įteisintas IS nuostatuose ir kituose LT teisės aktuose)
+    protected naudojamas informacinės sistemos (IS) lygmeniu 
+    private   metaduomenys nepublikuojami
+    ========= ============================
 
 .. data:: access
 
@@ -320,6 +372,21 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
     .. seealso::
 
         :ref:`vocab`
+
+.. data:: eli
+
+    Modelį (esybę / objektą) teisiniuose šaltiniuose įteisinančio resurso nuoroda pagal `ELI <https://eur-lex.europa.eu/eli-register/about.html>`_
+
+    Pavyzdys:
+    `http://data.europa.eu/eli/{typeOfDocument}/{yearOfAdoption}/{numberOfDocument}/oj`
+
+    Lietuvoje, kol nėra įgyvendintas ELI standartas naudojamos TAR ar kitos nuorodos pridedant `#section` elementą, kur "section" yra punkto, nurodančio objektą teisiniame šaltinyje, numeris
+
+    Pavyzdžiui:
+    `https://www.e-tar.lt/portal/lt/legalAct/TAR.839B704AEA5E/asr#17.1`
+
+    Taip pat gali būti nurodoma į dokumente įvardinamus priedus. Pavyzdžiui:
+    `https://www.e-tar.lt/portal/lt/legalAct/TAR.839B704AEA5E/asr#preidas1/17.1
 
 .. data:: title
 
@@ -346,7 +413,6 @@ interpretuoti juos kaip tuščius. Taip pat įrankiai neturėtų tikėtis, kad s
 bus išdėstyti būtent tokia tvarka. Nors įrankių atžvilgiu stulpelių tvarka nėra
 svarbi, tačiau rekomenduotina išlaikyti vienodą stulpelių tvarką, tam kad
 lenteles būtų lengviau skaityti.
-
 
 
 .. _Duomenų katalogą: https://data.gov.lt/

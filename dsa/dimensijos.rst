@@ -739,7 +739,7 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
 
 .. data:: count
 
-    Modelio objektų skaičius duomenų šaltinyje. Atitinka lentelių arba ojektų įrašų skaičių šaltinyje. Duomenų agento generuojamas automatiškai.
+    Modelio objektų skaičius duomenų šaltinyje. Atitinka lentelės eilučių skaičių šaltinyje. Duomenų agento generuojamas automatiškai. Pildyti nereikia.
 
 .. data:: level
 
@@ -952,7 +952,7 @@ Kai yra nurodomas masyvas - savybė kuri grąžina reikšmių sąrašą - jos pa
 
 .. data:: source.type
 
-    SQL atveju `property.source.type` būtų originalus duomenų bazės stulpelio tipas, pavyzdžiui `VARCHAR(255)`.
+    SQL atveju `property.source.type` būtų originalus duomenų šaltinio tipas, pavyzdžiui `VARCHAR(255)`.
 
     .. admonition:: Pavyzdys
 
@@ -1032,7 +1032,7 @@ Kai yra nurodomas masyvas - savybė kuri grąžina reikšmių sąrašą - jos pa
 
 .. data:: count
 
-    Savybės objektų skaičius duomenų šaltinyje. Atitinka stulpelių arba ojektų atributų skaičių šaltinyje, kurie nėra `null` . Duomenų agento generuojamas automatiškai.
+    Savybės reikšmių skaičius duomenų šaltinyje. Atitinka reikšmių skaičių šaltinyje, kurios nėra `NULL`. Duomenų agento generuojamas automatiškai. Pildyti nereikia.
 
 .. data:: level
 

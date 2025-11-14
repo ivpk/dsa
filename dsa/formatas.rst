@@ -280,7 +280,7 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
 
 .. data:: source.type
 
-    **Pirminio šaltinio tipas**
+    **Duomenų šaltinio tipas**
 
     Prasmė priklauso nuo dimensijos.
     
@@ -307,7 +307,7 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
 
     Prasmė priklauso nuo dimensijos.
     
-    Nudorodo elementų skaičių dimensijoje. Duomenų agentas šias vertes generuoja automatiškai.
+    Nudorodo elementų skaičių dimensijoje. Duomenų agentas šias vertes generuoja automatiškai. Pildyti nereikia.
 
     .. admonition:: Pastaba
 
@@ -375,7 +375,7 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
 
 .. data:: eli
 
-    Modelį (esybę / objektą) teisiniuose šaltiniuose įteisinančio resurso nuoroda pagal `ELI <https://eur-lex.europa.eu/eli-register/about.html>`_
+    Modelį (esybę) teisiniuose šaltiniuose įteisinančio resurso nuoroda pagal `ELI <https://eur-lex.europa.eu/eli-register/about.html>`_
 
     Pavyzdys:
     `http://data.europa.eu/eli/{typeOfDocument}/{yearOfAdoption}/{numberOfDocument}/oj`

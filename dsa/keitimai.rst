@@ -5,13 +5,15 @@
 Keitimų istorija
 ################
 
-1.1.0 (neišleista)
+1.1.0 (ši versija)
 ******************
 
 - Pridėtos `select()`, `expand()`, `include()`, `exclude()` ir `extends()`
   funkcijos.
 
 - Naujas skyrius :ref:`functional-models`.
+
+- Pridėti nauji DSA stulpeliai `source.type`, `origin`, `count`, `status`, `visibility`, `eli`
 
 
 1.0.0 (2024-10-22)

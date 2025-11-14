@@ -5,7 +5,7 @@
 Keitimų istorija
 ################
 
-1.1.0 (ši versija)
+1.1.0 (2025-11-14)
 ******************
 
 - Pridėtos `select()`, `expand()`, `include()`, `exclude()` ir `extends()`

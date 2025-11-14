@@ -336,11 +336,11 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
 
     ========== ============================
     develop    galima keisti be išankstinio įspėjimo
-    completed  galima keisti tik informavus naudotojus ne mažiau kaip prieš 12 mėnesių.
+    completed  galima keisti tik pagal numatytą laikotarpį iš anksto informavus naudotojus
     discont    duomenys nėra atnaujinami, tačiau elemento šalinti kol kas neplanuojama.
     deprecated nebenaudotina, ateityje bus pašalinta, nurodoma, kai numatyta pašaltini status=completed elementus.
-    withdrawn  pilnai panaikinama, kai praeina ne mažiau nei 12 mėnesių, po to, kai buvo nurodyta `status=deprecated`.
-
+    withdrawn  pilnai panaikinama, kai praeinanumatytas laikotarpis, po to, kai buvo nurodyta `status=deprecated`.
+    ========== ============================
 
 .. data:: visibility
 
@@ -352,6 +352,16 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
     protected naudojamas informacinės sistemos (IS) lygmeniu 
     private   metaduomenys nepublikuojami
     ========= ============================
+
+    Integracijoms tarp skirtingų sistemų už Lietuvos ribų, rekomenduojama naudoti tik `public` matomumo elementus.
+
+    Integracijoms tarp skirtingų sistemų Lietuvoje, rekomenduojama naudoti `public` arba `package` matomumo elementus.
+
+    Jei `visibility = protected` (IS lygmens) elementas yra naudojamas už IS ribų, tada reikia atkreipti dėmesį, kad IS tvarkytojas gali elementą keisti neatsižvelgdamas į už konkrečios IS ribų esančius naudojimo atvejus.
+
+    `visibility = private` metaduomenys saugomi tik IS tvarkytojo infrastruktūroje ir viešai nėra skelbiami. Jie aprašomi DSA metaduomenų pilnumo ir šaltinio pokyčių sekimo tikslais. Pirmą kartą nuskaičius ŠDSA, visi elementai žymimi `visibility = private`.
+    
+    `visibility` reikšmių žodynas yra iš dalies paremtas UML 2.5 VisibilityKind klasifikatoriumi, žiūrėti `7.8.24 <https://www.omg.org/spec/UML/2.5.1/PDF>`_ skyrių
 
 .. data:: access
 

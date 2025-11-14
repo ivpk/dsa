@@ -290,7 +290,11 @@ rinkinio kontekste.
 
 .. data:: status
 
-    Duomenų šaltinio būklė pagal [Distribution status](http://publications.europa.eu/resource/authority/distribution-status)
+    Duomenų šaltinio duomenų būklė.
+
+    .. seealso::
+    
+        :ref:`status`
 
 .. data:: visibility
 
@@ -669,12 +673,12 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
         =================== ================ ======== ======== ========= ===============
                                              sql               sqlite:// sqlite
         ------------------- ---------------- -------- -------- --------- ---------------
-        **Gyvenviete**                       id       Gyven    table
+        **Gyvenviete**                                id       Gyven     table
         ------------------- ---------------- -------- -------- --------- ---------------
                             id               integer  id       gyv_id    integer  
                             pavadinimas\@lt  string            gyv_pav   varchar(255)    
         ------------------- ---------------- -------- -------- --------- ---------------
-        **GyvenvieteView**                   id       Gyven    table
+        **GyvenvieteView**                            id       Gyven     table
         ------------------- ---------------- -------- -------- --------- ---------------
                             id               integer  id       gyv_id    integer  
                             pavadinimas\@lt  string            gyv_pav   varchar(255)
@@ -963,12 +967,12 @@ Kai yra nurodomas masyvas - savybė kuri grąžina reikšmių sąrašą - jos pa
         =================== ================ ======== ======== ========= ===============
                                              sql               sqlite:// sqlite
         ------------------- ---------------- -------- -------- --------- ---------------
-        **Gyvenviete**                       id       Gyven    table
+        **Gyvenviete**                                id       Gyven     table
         ------------------- ---------------- -------- -------- --------- ---------------
                             id               integer  id       gyv_id    integer  
                             pavadinimas\@lt  string            gyv_pav   varchar(255)    
         ------------------- ---------------- -------- -------- --------- ---------------
-        **GyvenvieteView**                   id       Gyven    table
+        **GyvenvieteView**                            id       Gyven     table
         ------------------- ---------------- -------- -------- --------- ---------------
                             id               integer  id       gyv_id    integer  
                             pavadinimas\@lt  string            gyv_pav   varchar(255)

@@ -121,6 +121,10 @@ pavadinimą.
 
     Nenaudojama.
 
+.. data:: count
+
+    Modelių skaičius duomenų rinkinyje. Atitinka unikalių lentelių arba ojektų elementų skaičių šaltinio schemoje. Duomenų agento generuojamas automatiškai.
+
 .. data:: level
 
     Nenaudojamas.
@@ -128,10 +132,39 @@ pavadinimą.
     Duomenų rinkinio brandos lygis yra išskaičiuojamas iš :data:`model.level`
     ir :data:`property.level`.
 
+.. data:: status
+
+    Duomenų rinkinio metaduomenų išbaigtumo būsena.
+
+.. seealso::
+
+    :ref:`status`
+
+.. data:: visibility
+
+    Metaduomenų matomumas, naudojamas pagal nutylėjimą visiems šios vardų erdvės
+    elementams.
+
+.. seealso::
+
+    :ref:`visibility`
+
 .. data:: access
 
     Prieigos lygis, naudojamas pagal nutylėjimą visiems šios vardų erdvės
     elementams.
+
+.. seealso::
+
+    :ref:`access`
+
+.. data:: eli
+
+    Nuoroda į duomenų rinkinį įteisinantį teisės aktą.
+
+    .. seealso::
+
+        :ref:`eli`
 
 .. data:: title
 
@@ -237,11 +270,38 @@ rinkinio kontekste.
     params
         Papildomi parametrai, priklauso nuo naudojamo **driver**.
 
+.. data:: source.type
+
+    Nurodoma originalaus šaltinio technologija, kuri priklauso nuo duomenų šaltinio tipo.
+
+    `SQL` atveju nurodo duomenų šaltinio sistemos pavadinimą, galimi variantai:
+
+        - `mariadb`
+        - `mssql`
+        - `mysql`
+        - `oracle`
+        - `postgresql`
+        - `sqlite`
 
 .. data:: level
 
     Duomenų šaltinio :ref:`brandos lygis <level>`, vertinant tik pagal formatą,
     nežiūrint į šaltinyje esančių duomenų turinį.
+
+.. data:: status
+
+    Duomenų šaltinio duomenų būklė.
+
+    .. seealso::
+    
+        :ref:`status`
+
+.. data:: visibility
+
+    Duomenų šaltinio :ref:`matomumas <visibility>`.
+
+    Pildyti neprivaloma, jei nurodytas, tada visoms žemesnio lygio dimensijoms,
+    pagal nutylėjimą taikomas nurodytas šaltinio matomumas.
 
 .. data:: access
 
@@ -587,6 +647,43 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
             Nenurodytas modelio duomenų šaltinis :data:`model.source` ir duomenys nėra
             publikuojami :ref:`vidinėje saugykloje <internal-backend>`.
 
+.. data:: source.type
+
+    Nurodo originalaus šaltinio modelio tipą.
+    SQL atveju galimos reikšmės būtų:
+
+        - `table` - nurodo, kad modelis yra lentelė
+        - `view` - nurodo, kad modelis yra atvaizdas.
+
+    Papildomai, gali turėti parametrus:
+        
+        - `table
+            - `temporary`
+            - `permanent`
+        - `view`
+            - `temporary`
+            - `meterialized`
+            - `dinamic`
+    .. admonition:: Pavyzdys
+
+        **Struktūros aprašas**
+
+        =================== ================ ======== ======== ========= ===============
+        model               property         type     ref      source    source.type
+        =================== ================ ======== ======== ========= ===============
+                                             sql               sqlite:// sqlite
+        ------------------- ---------------- -------- -------- --------- ---------------
+        **Gyvenviete**                                id       Gyven     table
+        ------------------- ---------------- -------- -------- --------- ---------------
+                            id               integer  id       gyv_id    integer  
+                            pavadinimas\@lt  string            gyv_pav   varchar(255)    
+        ------------------- ---------------- -------- -------- --------- ---------------
+        **GyvenvieteView**                            id       Gyven     table
+        ------------------- ---------------- -------- -------- --------- ---------------
+                            id               integer  id       gyv_id    integer  
+                            pavadinimas\@lt  string            gyv_pav   varchar(255)
+        =================== ================ ======== ======== ========= ===============
+
 .. data:: prepare
 
     Formulė skirta duomenų filtravimui ir paruošimui, iš dalies priklauso nuo
@@ -597,6 +694,56 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
         | :ref:`formulės`
         | :ref:`duomenų-atranka`
 
+.. data:: origin
+
+    Nurodo į pirminį šaltinį iš kurio `model.source` stulpelyje nurodyti duomenys buvo išvesti.
+
+    .. admonition:: Pavyzdys
+
+        Tarkime jei turime tokį pirminio duomenų šaltinio DSA:
+
+        ============ ========== ============= =============== ============== ======== ==== ============ ============
+        dataset      resource   base          model           property       type     ref  source       origin
+        ============ ========== ============= =============== ============== ======== ==== ============ ============
+          pirminis           
+        ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ ------------
+                     db1                                                     sql           sqlite://   
+        ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ ------------
+                                /rc/ar/City                                           id                
+        ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ ------------
+                                              Gyvenviete                              id   Gyven       
+        ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ ------------
+                                                              id             integer       gyv_id      
+                                                              pavadinimas@lt string        gyv_pav    
+        ============ ========== ============= =============== ============== ======== ==== ============ ============
+
+        Ir išvestinį duomenų šaltinį:
+
+        ============ ========== ============= =============== ============== ======== ==== ============ ====================
+        dataset      resource   base          model           property       type     ref  source       origin
+        ============ ========== ============= =============== ============== ======== ==== ============ ====================
+          pirminis           
+        ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ --------------------
+                     service1                                                json          http://...   
+        ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ --------------------
+                                /rc/ar/City                                           id                
+        ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ --------------------
+                                              Gyvenviete                              id   Cities       /pirminis/Gyvenviete
+        ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ --------------------
+                                                              id             integer       gyv_id       id
+                                                              pavadinimas@lt string        gyv_pav      pavadinimas@lt
+        ============ ========== ============= =============== ============== ======== ==== ============ ====================
+
+
+        Tada gauname informaciją, kad `isvestinis/Gyvenviete` modelio duomenys yra išvestiniai iš `pirminis/Gyvenviete`.
+
+        `base` nurodo modelio bazę, pagal kurią formuojami vienodi identifikatoriai, `origin` nurodo duomenų kilmę.
+
+        `origin` stulpelyje nurodomi reliatyvūs kodiniai pavadinimai, taip pat, kaip ir `base` ar `ref` stulpeliuose.
+
+.. data:: count
+
+    Modelio objektų skaičius duomenų šaltinyje. Atitinka lentelės eilučių skaičių šaltinyje. Duomenų agento generuojamas automatiškai. Pildyti nereikia.
 
 .. data:: level
 
@@ -607,6 +754,22 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
     .. seealso::
 
         :ref:`ref-level`
+
+.. data:: status
+
+    Duomenų modelio eilutės metaduomenų išbaigtumo būsena.
+
+.. seealso::
+
+    :ref:`status`
+
+.. data:: visibility
+
+    Modelio eilutės metaduomenų matomumas.
+
+.. seealso::
+
+    :ref:`visibility`
 
 .. data:: access
 
@@ -661,6 +824,14 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
     .. seealso::
 
         :ref:`vocab`
+
+.. data:: eli
+
+    Nuoroda į duomenų objektą įteisinantį teisės aktą.
+
+    .. seealso::
+
+        :ref:`eli`
 
 .. data:: title
 
@@ -728,16 +899,21 @@ property
 .. module:: property
 
 Savybė yra duomenų laukas, modelio atributas.
+Savybės :ref:`kodinis pavadinimas <kodiniai-pavadinimai>`užrašomas
+vienaskaitos forma iš mažosios raidės, jei pavadinimas iš kelių žodžių,
+žodžiai atskiriami pabraukimu `_`. 
 
-.. data:: source
+.. admonition:: Pavyzdžiai
 
-    Duomenų lauko pavadinimas šaltinyje. Prasmė priklauso nuo
-    :data:`resource.type`.
+    | `id`
+    | `pavadinimas`
+    | `pasto_kodas`
 
-.. data:: prepare
+Kai yra nurodomas masyvas - savybė kuri grąžina reikšmių sąrašą - jos pavadinimas užrašomas daugiskaita.
 
-    Formulė skirta duomenų tikrinimui ir transformavimui arba statinės reikšmės
-    pateikimui.
+    .. seealso::
+
+        :ref:`array`
 
 .. data:: type
 
@@ -773,17 +949,138 @@ Savybė yra duomenų laukas, modelio atributas.
     <ryšiai>`. Ką tiksliai reiškia šis laukas, patikslinta skyrelyje
     :ref:`duomenų-tipai`.
 
+.. data:: source
+
+    Duomenų lauko pavadinimas šaltinyje. Prasmė priklauso nuo
+    :data:`resource.type`.
+
+.. data:: source.type
+
+    SQL atveju `property.source.type` būtų originalus duomenų šaltinio tipas, pavyzdžiui `VARCHAR(255)`.
+
+    .. admonition:: Pavyzdys
+
+        **Struktūros aprašas**
+
+        =================== ================ ======== ======== ========= ===============
+        model               property         type     ref      source    source.type
+        =================== ================ ======== ======== ========= ===============
+                                             sql               sqlite:// sqlite
+        ------------------- ---------------- -------- -------- --------- ---------------
+        **Gyvenviete**                                id       Gyven     table
+        ------------------- ---------------- -------- -------- --------- ---------------
+                            id               integer  id       gyv_id    integer  
+                            pavadinimas\@lt  string            gyv_pav   varchar(255)    
+        ------------------- ---------------- -------- -------- --------- ---------------
+        **GyvenvieteView**                            id       Gyven     table
+        ------------------- ---------------- -------- -------- --------- ---------------
+                            id               integer  id       gyv_id    integer  
+                            pavadinimas\@lt  string            gyv_pav   varchar(255)
+        =================== ================ ======== ======== ========= ===============
+
+.. data:: prepare
+
+    Formulė skirta duomenų tikrinimui ir transformavimui arba statinės reikšmės
+    pateikimui.
+
+    .. seealso::
+
+        :ref:`formulės`
+
+.. data:: origin
+
+    Nurodo į pirminį šaltinį iš kurio elemente nurodyti duomenys buvo išvesti.
+
+    .. admonition:: Pavyzdys
+
+        Tarkime jei turime tokį pirminio duomenų šaltinio DSA:
+
+        ============ ========== ============= =============== ============== ======== ==== ============ ============
+        dataset      resource   base          model           property       type     ref  source       origin
+        ============ ========== ============= =============== ============== ======== ==== ============ ============
+          pirminis           
+        ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ ------------
+                     db1                                                     sql           sqlite://   
+        ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ ------------
+                                /rc/ar/City                                           id                
+        ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ ------------
+                                              Gyvenviete                              id   Gyven       
+        ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ ------------
+                                                              id             integer       gyv_id      
+                                                              pavadinimas@lt string        gyv_pav    
+        ============ ========== ============= =============== ============== ======== ==== ============ ============
+
+        Ir išvestinį duomenų šaltinį:
+
+        ============ ========== ============= =============== ============== ======== ==== ============ ====================
+        dataset      resource   base          model           property       type     ref  source       origin
+        ============ ========== ============= =============== ============== ======== ==== ============ ====================
+          pirminis           
+        ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ --------------------
+                     service1                                                json          http://...   
+        ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ --------------------
+                                /rc/ar/City                                           id                
+        ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ --------------------
+                                              Gyvenviete                              id   Cities       /pirminis/Gyvenviete
+        ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ --------------------
+                                                              id             integer       gyv_id       id
+                                                              pavadinimas@lt string        gyv_pav      pavadinimas@lt
+        ============ ========== ============= =============== ============== ======== ==== ============ ====================
+
+
+        Tada gauname informaciją, kad `isvestinis/Gyvenviete` modelio duomenys yra išvestiniai iš `pirminis/Gyvenviete`, ir prie savybių yra nurodomi pirminio šaltinio savybių pavadinimai.
+
+        `base` nurodo modelio bazę, pagal kurią formuojami vienodi identifikatoriai, `origin` nurodo duomenų kilmę.
+
+        `origin` stulpelyje nurodomi reliatyvūs kodiniai pavadinimai, taip pat, kaip ir `base` ar `ref` stulpeliuose.
+
+.. data:: count
+
+    Savybės reikšmių skaičius duomenų šaltinyje. Atitinka reikšmių skaičių šaltinyje, kurios nėra `NULL`. Duomenų agento generuojamas automatiškai. Pildyti nereikia.
+
 .. data:: level
 
     Nurodo duomenų lauko brandos lygį. Žiūrėti :ref:`level`.
 
+.. data:: status
+
+    Duomenų modelio eilutės metaduomenų išbaigtumo būsena.
+
+.. seealso::
+
+    :ref:`status`
+
+.. data:: visibility
+
+    Modelio eilutės metaduomenų matomumas.
+
+.. seealso::
+
+    :ref:`visibility`
+
 .. data:: access
 
-    Nurodo prieigos prie duomenų lygį. Žiūrėti skyrių :ref:`access`.
+    Nurodo prieigos prie duomenų lygį.
+
+.. seealso::
+
+    :ref:`access`
 
 .. data:: uri
 
-    Sąsaja su išoriniu žodynu. Žiūrėti :ref:`vocab`.
+    Sąsaja su išoriniu žodynu.
+
+.. seealso::
+
+    :ref:`uri`
+
+.. data:: eli
+
+    Nuoroda į duomenų elementą įteisinantį teisės aktą.
+
+    .. seealso::
+
+        :ref:`eli`
 
 .. data:: title
 
@@ -798,7 +1095,6 @@ Savybė yra duomenų laukas, modelio atributas.
 .. data:: enum
 
     Žiūrėti :ref:`enum`.
-
 
 .. _papildomos-dimensijos:
 

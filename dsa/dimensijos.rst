@@ -138,7 +138,7 @@ pavadinimą.
 
 .. seealso::
 
-    :ref:`metaduomenų-stulpeliai.status`
+    :ref:`metaduomenų-stulpeliai`
 
 .. data:: visibility
 

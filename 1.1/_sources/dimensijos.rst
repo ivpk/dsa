@@ -138,7 +138,7 @@ pavadinimą.
 
 .. seealso::
 
-    :ref:`metaduomenų-stulpeliai`
+    :ref:`status`
 
 .. data:: visibility
 
@@ -472,7 +472,7 @@ Pavyzdžiai
     \                     id          integer
     \                     name\@lt    text
     \                     population  integer
-    \        Loocation                          name\@lt 
+    \        Location                          name\@lt 
     -------- ------------------------ --------- --------- ------------------
     \              City                         name\@lt  CITY
     -------- ----- ------------------ --------- --------- ------------------

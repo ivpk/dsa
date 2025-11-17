@@ -267,7 +267,7 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
         | :ref:`enum`
 
 
-.. data: _source
+.. data:: source
 
     **Šaltinis**
 
@@ -278,7 +278,7 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
         | :ref:`duomenu-saltiniai`
         | :ref:`enum`
 
-.. data: _source.type
+.. data:: source.type
 
     **Duomenų šaltinio tipas**
 
@@ -297,13 +297,13 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
 
         :ref:`formulės`
 
-.. data: _origin
+.. data:: origin
 
     `base` nurodo modelio bazę, pagal kurią formuojami vienodi identifikatoriai, `origin` nurodo duomenų kilmę.
 
     `origin` stulpelyje nurodomi reliatyvūs kodiniai pavadinimai, taip pat, kaip ir `base` ar `ref` stulpeliuose.
 
-.. data: _count
+.. data:: count
 
     Prasmė priklauso nuo dimensijos.
     
@@ -327,7 +327,7 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
 
         :ref:`level`
 
-.. data: _status
+.. data:: status
 
     Metaduomenų statusas nurodomas pagal EU Publications Office kontroliuojamą žodyną `Distribution status <http://publications.europa.eu/resource/authority/distribution-status>`_
     ir EU Publications Office kontroliuojamą žodyną `Dataset status <http://publications.europa.eu/resource/authority/dataset-status>`_ , kuris prideda `discont`
@@ -342,7 +342,7 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
     withdrawn  pilnai panaikinama, kai praeinanumatytas laikotarpis, po to, kai buvo nurodyta `status=deprecated`.
     ========== ============================
 
-.. data: _visibility
+.. data:: visibility
 
     Modelio metaduomenų matomumas ir prieinamumas. Skirstomas į:
 
@@ -383,7 +383,7 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
 
         :ref:`vocab`
 
-.. data: _eli
+.. data:: eli
 
     Modelį (esybę) teisiniuose šaltiniuose įteisinančio resurso nuoroda pagal `ELI <https://eur-lex.europa.eu/eli-register/about.html>`_
 

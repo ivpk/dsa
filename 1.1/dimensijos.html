@@ -328,8 +328,12 @@ window.addEventListener("load", () => mermaid.run());
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset.ref"><code class="docutils literal notranslate"><span class="pre">ref</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset.source"><code class="docutils literal notranslate"><span class="pre">source</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset.prepare"><code class="docutils literal notranslate"><span class="pre">prepare</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset.count"><code class="docutils literal notranslate"><span class="pre">count</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset.level"><code class="docutils literal notranslate"><span class="pre">level</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset.status"><code class="docutils literal notranslate"><span class="pre">status</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset.visibility"><code class="docutils literal notranslate"><span class="pre">visibility</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset.access"><code class="docutils literal notranslate"><span class="pre">access</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset.eli"><code class="docutils literal notranslate"><span class="pre">eli</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset.title"><code class="docutils literal notranslate"><span class="pre">title</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset.description"><code class="docutils literal notranslate"><span class="pre">description</span></code></a></li>
 </ul>
@@ -339,7 +343,10 @@ window.addEventListener("load", () => mermaid.run());
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resource.type"><code class="docutils literal notranslate"><span class="pre">type</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resource.ref"><code class="docutils literal notranslate"><span class="pre">ref</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resource.source"><code class="docutils literal notranslate"><span class="pre">source</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resource.source.type"><code class="docutils literal notranslate"><span class="pre">source.type</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resource.level"><code class="docutils literal notranslate"><span class="pre">level</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resource.status"><code class="docutils literal notranslate"><span class="pre">status</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resource.visibility"><code class="docutils literal notranslate"><span class="pre">visibility</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resource.access"><code class="docutils literal notranslate"><span class="pre">access</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resource.title"><code class="docutils literal notranslate"><span class="pre">title</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resource.description"><code class="docutils literal notranslate"><span class="pre">description</span></code></a></li>
@@ -364,27 +371,39 @@ window.addEventListener("load", () => mermaid.run());
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.type"><code class="docutils literal notranslate"><span class="pre">type</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.ref"><code class="docutils literal notranslate"><span class="pre">ref</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.source"><code class="docutils literal notranslate"><span class="pre">source</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.source.type"><code class="docutils literal notranslate"><span class="pre">source.type</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.prepare"><code class="docutils literal notranslate"><span class="pre">prepare</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.origin"><code class="docutils literal notranslate"><span class="pre">origin</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.count"><code class="docutils literal notranslate"><span class="pre">count</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.level"><code class="docutils literal notranslate"><span class="pre">level</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.status"><code class="docutils literal notranslate"><span class="pre">status</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.visibility"><code class="docutils literal notranslate"><span class="pre">visibility</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.access"><code class="docutils literal notranslate"><span class="pre">access</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.uri"><code class="docutils literal notranslate"><span class="pre">uri</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.eli"><code class="docutils literal notranslate"><span class="pre">eli</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.title"><code class="docutils literal notranslate"><span class="pre">title</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.description"><code class="docutils literal notranslate"><span class="pre">description</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.property"><code class="docutils literal notranslate"><span class="pre">property</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Funkcijos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Funkcijos</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#model.distinct"><code class="docutils literal notranslate"><span class="pre">distinct()</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#property">property</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.source"><code class="docutils literal notranslate"><span class="pre">source</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.prepare"><code class="docutils literal notranslate"><span class="pre">prepare</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.type"><code class="docutils literal notranslate"><span class="pre">type</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.ref"><code class="docutils literal notranslate"><span class="pre">ref</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.source"><code class="docutils literal notranslate"><span class="pre">source</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.source.type"><code class="docutils literal notranslate"><span class="pre">source.type</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.prepare"><code class="docutils literal notranslate"><span class="pre">prepare</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.origin"><code class="docutils literal notranslate"><span class="pre">origin</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.count"><code class="docutils literal notranslate"><span class="pre">count</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.level"><code class="docutils literal notranslate"><span class="pre">level</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.status"><code class="docutils literal notranslate"><span class="pre">status</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.visibility"><code class="docutils literal notranslate"><span class="pre">visibility</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.access"><code class="docutils literal notranslate"><span class="pre">access</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.uri"><code class="docutils literal notranslate"><span class="pre">uri</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.eli"><code class="docutils literal notranslate"><span class="pre">eli</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.title"><code class="docutils literal notranslate"><span class="pre">title</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.description"><code class="docutils literal notranslate"><span class="pre">description</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.enum"><code class="docutils literal notranslate"><span class="pre">enum</span></code></a></li>
@@ -415,7 +434,7 @@ window.addEventListener("load", () => mermaid.run());
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#param.ref"><code class="docutils literal notranslate"><span class="pre">ref</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#param.prepare"><code class="docutils literal notranslate"><span class="pre">prepare</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#param.source"><code class="docutils literal notranslate"><span class="pre">source</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Funkcijos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Funkcijos</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#param.read"><code class="docutils literal notranslate"><span class="pre">read()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#param.range"><code class="docutils literal notranslate"><span class="pre">range()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#param.path"><code class="docutils literal notranslate"><span class="pre">path()</span></code></a></li>
@@ -651,6 +670,12 @@ naudoti <a class="reference internal" href="#dataset.source" title="dataset.sour
 </dd></dl>
 
 <dl class="py data">
+<dt class="sig sig-object py" id="dataset.count">
+<span class="sig-prename descclassname"><span class="pre">dataset.</span></span><span class="sig-name descname"><span class="pre">count</span></span><a class="headerlink" href="#dataset.count" title="Link to this definition">#</a></dt>
+<dd><p>Modelių skaičius duomenų rinkinyje. Atitinka unikalių lentelių arba ojektų elementų skaičių šaltinio schemoje. Duomenų agento generuojamas automatiškai.</p>
+</dd></dl>
+
+<dl class="py data">
 <dt class="sig sig-object py" id="dataset.level">
 <span class="sig-prename descclassname"><span class="pre">dataset.</span></span><span class="sig-name descname"><span class="pre">level</span></span><a class="headerlink" href="#dataset.level" title="Link to this definition">#</a></dt>
 <dd><p>Nenaudojamas.</p>
@@ -659,10 +684,45 @@ ir <a class="reference internal" href="#property.level" title="property.level"><
 </dd></dl>
 
 <dl class="py data">
+<dt class="sig sig-object py" id="dataset.status">
+<span class="sig-prename descclassname"><span class="pre">dataset.</span></span><span class="sig-name descname"><span class="pre">status</span></span><a class="headerlink" href="#dataset.status" title="Link to this definition">#</a></dt>
+<dd><p>Duomenų rinkinio metaduomenų išbaigtumo būsena.</p>
+</dd></dl>
+
+<div class="admonition seealso">
+<p class="admonition-title">Taip pat žiūrėkite</p>
+<p><span class="xref std std-ref">status</span></p>
+</div>
+<dl class="py data">
+<dt class="sig sig-object py" id="dataset.visibility">
+<span class="sig-prename descclassname"><span class="pre">dataset.</span></span><span class="sig-name descname"><span class="pre">visibility</span></span><a class="headerlink" href="#dataset.visibility" title="Link to this definition">#</a></dt>
+<dd><p>Metaduomenų matomumas, naudojamas pagal nutylėjimą visiems šios vardų erdvės
+elementams.</p>
+</dd></dl>
+
+<div class="admonition seealso">
+<p class="admonition-title">Taip pat žiūrėkite</p>
+<p><span class="xref std std-ref">visibility</span></p>
+</div>
+<dl class="py data">
 <dt class="sig sig-object py" id="dataset.access">
 <span class="sig-prename descclassname"><span class="pre">dataset.</span></span><span class="sig-name descname"><span class="pre">access</span></span><a class="headerlink" href="#dataset.access" title="Link to this definition">#</a></dt>
 <dd><p>Prieigos lygis, naudojamas pagal nutylėjimą visiems šios vardų erdvės
 elementams.</p>
+</dd></dl>
+
+<div class="admonition seealso">
+<p class="admonition-title">Taip pat žiūrėkite</p>
+<p><a class="reference internal" href="prieiga.html#access"><span class="std std-ref">Prieigos lygiai</span></a></p>
+</div>
+<dl class="py data">
+<dt class="sig sig-object py" id="dataset.eli">
+<span class="sig-prename descclassname"><span class="pre">dataset.</span></span><span class="sig-name descname"><span class="pre">eli</span></span><a class="headerlink" href="#dataset.eli" title="Link to this definition">#</a></dt>
+<dd><p>Nuoroda į duomenų rinkinį įteisinantį teisės aktą.</p>
+<div class="admonition seealso">
+<p class="admonition-title">Taip pat žiūrėkite</p>
+<p><span class="xref std std-ref">eli</span></p>
+</div>
 </dd></dl>
 
 <dl class="py data">
@@ -796,10 +856,45 @@ nuotoliniame serveryje.</p>
 </dd></dl>
 
 <dl class="py data">
+<dt class="sig sig-object py" id="resource.source.type">
+<span class="sig-prename descclassname"><span class="pre">source.</span></span><span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#resource.source.type" title="Link to this definition">#</a></dt>
+<dd><p>Nurodoma originalaus šaltinio technologija, kuri priklauso nuo duomenų šaltinio tipo.</p>
+<p><code class="docutils literal notranslate"><span class="pre">SQL</span></code> atveju nurodo duomenų šaltinio sistemos pavadinimą, galimi variantai:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mariadb</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mssql</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mysql</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">oracle</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">postgresql</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sqlite</span></code></p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py data">
 <dt class="sig sig-object py" id="resource.level">
 <span class="sig-prename descclassname"><span class="pre">resource.</span></span><span class="sig-name descname"><span class="pre">level</span></span><a class="headerlink" href="#resource.level" title="Link to this definition">#</a></dt>
 <dd><p>Duomenų šaltinio <a class="reference internal" href="branda.html#level"><span class="std std-ref">brandos lygis</span></a>, vertinant tik pagal formatą,
 nežiūrint į šaltinyje esančių duomenų turinį.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="resource.status">
+<span class="sig-prename descclassname"><span class="pre">resource.</span></span><span class="sig-name descname"><span class="pre">status</span></span><a class="headerlink" href="#resource.status" title="Link to this definition">#</a></dt>
+<dd><p>Duomenų šaltinio duomenų būklė.</p>
+<div class="admonition seealso">
+<p class="admonition-title">Taip pat žiūrėkite</p>
+<p><span class="xref std std-ref">status</span></p>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="resource.visibility">
+<span class="sig-prename descclassname"><span class="pre">resource.</span></span><span class="sig-name descname"><span class="pre">visibility</span></span><a class="headerlink" href="#resource.visibility" title="Link to this definition">#</a></dt>
+<dd><p>Duomenų šaltinio <span class="xref std std-ref">matomumas</span>.</p>
+<p>Pildyti neprivaloma, jei nurodytas, tada visoms žemesnio lygio dimensijoms,
+pagal nutylėjimą taikomas nurodytas šaltinio matomumas.</p>
 </dd></dl>
 
 <dl class="py data">
@@ -1302,6 +1397,94 @@ publikuojami <span class="xref std std-ref">vidinėje saugykloje</span>.</p>
 </dd></dl>
 
 <dl class="py data">
+<dt class="sig sig-object py" id="model.source.type">
+<span class="sig-prename descclassname"><span class="pre">source.</span></span><span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#model.source.type" title="Link to this definition">#</a></dt>
+<dd><p>Nurodo originalaus šaltinio modelio tipą.
+SQL atveju galimos reikšmės būtų:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">table</span></code> - nurodo, kad modelis yra lentelė</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">view</span></code> - nurodo, kad modelis yra atvaizdas.</p></li>
+</ul>
+</div></blockquote>
+<p>Papildomai, gali turėti parametrus:</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt><a href="#id6"><span class="problematic" id="id7">`</span></a>table</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">temporary</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">permanent</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">view</span></code></dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">temporary</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">meterialized</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dinamic</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<p><strong>Struktūros aprašas</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+<th class="head"><p>source.type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Gyvenviete</strong></p></td>
+<td></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>Gyven</p></td>
+<td><p>table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>GyvenvieteView</strong></p></td>
+<td></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>Gyven</p></td>
+<td><p>table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</dd></dl>
+
+<dl class="py data">
 <dt class="sig sig-object py" id="model.prepare">
 <span class="sig-prename descclassname"><span class="pre">model.</span></span><span class="sig-name descname"><span class="pre">prepare</span></span><a class="headerlink" href="#model.prepare" title="Link to this definition">#</a></dt>
 <dd><p>Formulė skirta duomenų filtravimui ir paruošimui, iš dalies priklauso nuo
@@ -1316,6 +1499,160 @@ publikuojami <span class="xref std std-ref">vidinėje saugykloje</span>.</p>
 </dd></dl>
 
 <dl class="py data">
+<dt class="sig sig-object py" id="model.origin">
+<span class="sig-prename descclassname"><span class="pre">model.</span></span><span class="sig-name descname"><span class="pre">origin</span></span><a class="headerlink" href="#model.origin" title="Link to this definition">#</a></dt>
+<dd><p>Nurodo į pirminį šaltinį iš kurio <code class="docutils literal notranslate"><span class="pre">model.source</span></code> stulpelyje nurodyti duomenys buvo išvesti.</p>
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<p>Tarkime jei turime tokį pirminio duomenų šaltinio DSA:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>dataset</p></th>
+<th class="head"><p>resource</p></th>
+<th class="head"><p>base</p></th>
+<th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+<th class="head"><p>origin</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>pirminis</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Ir išvestinį duomenų šaltinį:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>dataset</p></th>
+<th class="head"><p>resource</p></th>
+<th class="head"><p>base</p></th>
+<th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+<th class="head"><p>origin</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>pirminis</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Tada gauname informaciją, kad <code class="docutils literal notranslate"><span class="pre">isvestinis/Gyvenviete</span></code> modelio duomenys yra išvestiniai iš <code class="docutils literal notranslate"><span class="pre">pirminis/Gyvenviete</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">base</span></code> nurodo modelio bazę, pagal kurią formuojami vienodi identifikatoriai, <code class="docutils literal notranslate"><span class="pre">origin</span></code> nurodo duomenų kilmę.</p>
+<p><code class="docutils literal notranslate"><span class="pre">origin</span></code> stulpelyje nurodomi reliatyvūs kodiniai pavadinimai, taip pat, kaip ir <code class="docutils literal notranslate"><span class="pre">base</span></code> ar <code class="docutils literal notranslate"><span class="pre">ref</span></code> stulpeliuose.</p>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="model.count">
+<span class="sig-prename descclassname"><span class="pre">model.</span></span><span class="sig-name descname"><span class="pre">count</span></span><a class="headerlink" href="#model.count" title="Link to this definition">#</a></dt>
+<dd><p>Modelio objektų skaičius duomenų šaltinyje. Atitinka lentelės eilučių skaičių šaltinyje. Duomenų agento generuojamas automatiškai. Pildyti nereikia.</p>
+</dd></dl>
+
+<dl class="py data">
 <dt class="sig sig-object py" id="model.level">
 <span class="sig-prename descclassname"><span class="pre">model.</span></span><span class="sig-name descname"><span class="pre">level</span></span><a class="headerlink" href="#model.level" title="Link to this definition">#</a></dt>
 <dd><p>Modelio <a class="reference internal" href="branda.html#level"><span class="std std-ref">brandos lygis</span></a>, nusakantis pačio modelio brandos
@@ -1327,6 +1664,26 @@ atitinka kodiniams pavadinimams keliamus reikalavimus.</p>
 </div>
 </dd></dl>
 
+<dl class="py data">
+<dt class="sig sig-object py" id="model.status">
+<span class="sig-prename descclassname"><span class="pre">model.</span></span><span class="sig-name descname"><span class="pre">status</span></span><a class="headerlink" href="#model.status" title="Link to this definition">#</a></dt>
+<dd><p>Duomenų modelio eilutės metaduomenų išbaigtumo būsena.</p>
+</dd></dl>
+
+<div class="admonition seealso">
+<p class="admonition-title">Taip pat žiūrėkite</p>
+<p><span class="xref std std-ref">status</span></p>
+</div>
+<dl class="py data">
+<dt class="sig sig-object py" id="model.visibility">
+<span class="sig-prename descclassname"><span class="pre">model.</span></span><span class="sig-name descname"><span class="pre">visibility</span></span><a class="headerlink" href="#model.visibility" title="Link to this definition">#</a></dt>
+<dd><p>Modelio eilutės metaduomenų matomumas.</p>
+</dd></dl>
+
+<div class="admonition seealso">
+<p class="admonition-title">Taip pat žiūrėkite</p>
+<p><span class="xref std std-ref">visibility</span></p>
+</div>
 <dl class="py data">
 <dt class="sig sig-object py" id="model.access">
 <span class="sig-prename descclassname"><span class="pre">model.</span></span><span class="sig-name descname"><span class="pre">access</span></span><a class="headerlink" href="#model.access" title="Link to this definition">#</a></dt>
@@ -1441,6 +1798,16 @@ generuojamas <code class="docutils literal notranslate"><span class="pre">adresa
 </dd></dl>
 
 <dl class="py data">
+<dt class="sig sig-object py" id="model.eli">
+<span class="sig-prename descclassname"><span class="pre">model.</span></span><span class="sig-name descname"><span class="pre">eli</span></span><a class="headerlink" href="#model.eli" title="Link to this definition">#</a></dt>
+<dd><p>Nuoroda į duomenų objektą įteisinantį teisės aktą.</p>
+<div class="admonition seealso">
+<p class="admonition-title">Taip pat žiūrėkite</p>
+<p><span class="xref std std-ref">eli</span></p>
+</div>
+</dd></dl>
+
+<dl class="py data">
 <dt class="sig sig-object py" id="model.title">
 <span class="sig-prename descclassname"><span class="pre">model.</span></span><span class="sig-name descname"><span class="pre">title</span></span><a class="headerlink" href="#model.title" title="Link to this definition">#</a></dt>
 <dd><p>Trumpas modelio pavadinimas pirmas žodis iš didžiosios raidės, pavadinimo
@@ -1461,8 +1828,8 @@ pavadinimas rašomas duomenų rinkinio kontekste.</p>
 <dd><p>Modeliui priklausantis duomenų laukas.</p>
 </dd></dl>
 
-<section id="id6">
-<h3>Funkcijos<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<section id="id8">
+<h3>Funkcijos<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <dl class="py function" id="module-1">
 <dt class="sig sig-object py" id="model.distinct">
 <span class="sig-prename descclassname"><span class="pre">model.</span></span><span class="sig-name descname"><span class="pre">distinct</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#model.distinct" title="Link to this definition">#</a></dt>
@@ -1557,22 +1924,26 @@ tik vieną šalį.</p>
 </section>
 </section>
 <section id="property">
-<span id="id7"></span><h2>property<a class="headerlink" href="#property" title="Link to this heading">#</a></h2>
-<p id="module-property">Savybė yra duomenų laukas, modelio atributas.</p>
-<dl class="py data">
-<dt class="sig sig-object py" id="property.source">
-<span class="sig-prename descclassname"><span class="pre">property.</span></span><span class="sig-name descname"><span class="pre">source</span></span><a class="headerlink" href="#property.source" title="Link to this definition">#</a></dt>
-<dd><p>Duomenų lauko pavadinimas šaltinyje. Prasmė priklauso nuo
-<a class="reference internal" href="#resource.type" title="resource.type"><code class="xref py py-data docutils literal notranslate"><span class="pre">resource.type</span></code></a>.</p>
-</dd></dl>
-
-<dl class="py data">
-<dt class="sig sig-object py" id="property.prepare">
-<span class="sig-prename descclassname"><span class="pre">property.</span></span><span class="sig-name descname"><span class="pre">prepare</span></span><a class="headerlink" href="#property.prepare" title="Link to this definition">#</a></dt>
-<dd><p>Formulė skirta duomenų tikrinimui ir transformavimui arba statinės reikšmės
-pateikimui.</p>
-</dd></dl>
-
+<span id="id9"></span><h2>property<a class="headerlink" href="#property" title="Link to this heading">#</a></h2>
+<p id="module-property">Savybė yra duomenų laukas, modelio atributas.
+Savybės <span class="xref std std-ref">kodinis pavadinimas &lt;kodiniai-pavadinimai&gt;`užrašomas
+vienaskaitos forma iš mažosios raidės, jei pavadinimas iš kelių žodžių,
+žodžiai atskiriami pabraukimu `_</span>.</p>
+<div class="admonition-pavyzdziai admonition">
+<p class="admonition-title">Pavyzdžiai</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">id</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">pavadinimas</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">pasto_kodas</span></code></div>
+</div>
+</div>
+<p>Kai yra nurodomas masyvas - savybė kuri grąžina reikšmių sąrašą - jos pavadinimas užrašomas daugiskaita.</p>
+<blockquote>
+<div><div class="admonition seealso">
+<p class="admonition-title">Taip pat žiūrėkite</p>
+<p><span class="xref std std-ref">array</span></p>
+</div>
+</div></blockquote>
 <dl class="py data">
 <dt class="sig sig-object py" id="property.type">
 <span class="sig-prename descclassname"><span class="pre">property.</span></span><span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#property.type" title="Link to this definition">#</a></dt>
@@ -1606,21 +1977,290 @@ tikslumą, <a class="reference internal" href="#enum"><span class="std std-ref">
 </dd></dl>
 
 <dl class="py data">
+<dt class="sig sig-object py" id="property.source">
+<span class="sig-prename descclassname"><span class="pre">property.</span></span><span class="sig-name descname"><span class="pre">source</span></span><a class="headerlink" href="#property.source" title="Link to this definition">#</a></dt>
+<dd><p>Duomenų lauko pavadinimas šaltinyje. Prasmė priklauso nuo
+<a class="reference internal" href="#resource.type" title="resource.type"><code class="xref py py-data docutils literal notranslate"><span class="pre">resource.type</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="property.source.type">
+<span class="sig-prename descclassname"><span class="pre">source.</span></span><span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#property.source.type" title="Link to this definition">#</a></dt>
+<dd><p>SQL atveju <code class="docutils literal notranslate"><span class="pre">property.source.type</span></code> būtų originalus duomenų šaltinio tipas, pavyzdžiui <code class="docutils literal notranslate"><span class="pre">VARCHAR(255)</span></code>.</p>
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<p><strong>Struktūros aprašas</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+<th class="head"><p>source.type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Gyvenviete</strong></p></td>
+<td></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>Gyven</p></td>
+<td><p>table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>GyvenvieteView</strong></p></td>
+<td></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>Gyven</p></td>
+<td><p>table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="property.prepare">
+<span class="sig-prename descclassname"><span class="pre">property.</span></span><span class="sig-name descname"><span class="pre">prepare</span></span><a class="headerlink" href="#property.prepare" title="Link to this definition">#</a></dt>
+<dd><p>Formulė skirta duomenų tikrinimui ir transformavimui arba statinės reikšmės
+pateikimui.</p>
+<div class="admonition seealso">
+<p class="admonition-title">Taip pat žiūrėkite</p>
+<p><a class="reference internal" href="formules.html#formules"><span class="std std-ref">Formulės</span></a></p>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="property.origin">
+<span class="sig-prename descclassname"><span class="pre">property.</span></span><span class="sig-name descname"><span class="pre">origin</span></span><a class="headerlink" href="#property.origin" title="Link to this definition">#</a></dt>
+<dd><p>Nurodo į pirminį šaltinį iš kurio elemente nurodyti duomenys buvo išvesti.</p>
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<p>Tarkime jei turime tokį pirminio duomenų šaltinio DSA:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>dataset</p></th>
+<th class="head"><p>resource</p></th>
+<th class="head"><p>base</p></th>
+<th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+<th class="head"><p>origin</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>pirminis</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Ir išvestinį duomenų šaltinį:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>dataset</p></th>
+<th class="head"><p>resource</p></th>
+<th class="head"><p>base</p></th>
+<th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+<th class="head"><p>origin</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>pirminis</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Tada gauname informaciją, kad <code class="docutils literal notranslate"><span class="pre">isvestinis/Gyvenviete</span></code> modelio duomenys yra išvestiniai iš <code class="docutils literal notranslate"><span class="pre">pirminis/Gyvenviete</span></code>, ir prie savybių yra nurodomi pirminio šaltinio savybių pavadinimai.</p>
+<p><code class="docutils literal notranslate"><span class="pre">base</span></code> nurodo modelio bazę, pagal kurią formuojami vienodi identifikatoriai, <code class="docutils literal notranslate"><span class="pre">origin</span></code> nurodo duomenų kilmę.</p>
+<p><code class="docutils literal notranslate"><span class="pre">origin</span></code> stulpelyje nurodomi reliatyvūs kodiniai pavadinimai, taip pat, kaip ir <code class="docutils literal notranslate"><span class="pre">base</span></code> ar <code class="docutils literal notranslate"><span class="pre">ref</span></code> stulpeliuose.</p>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="property.count">
+<span class="sig-prename descclassname"><span class="pre">property.</span></span><span class="sig-name descname"><span class="pre">count</span></span><a class="headerlink" href="#property.count" title="Link to this definition">#</a></dt>
+<dd><p>Savybės reikšmių skaičius duomenų šaltinyje. Atitinka reikšmių skaičių šaltinyje, kurios nėra <code class="docutils literal notranslate"><span class="pre">NULL</span></code>. Duomenų agento generuojamas automatiškai. Pildyti nereikia.</p>
+</dd></dl>
+
+<dl class="py data">
 <dt class="sig sig-object py" id="property.level">
 <span class="sig-prename descclassname"><span class="pre">property.</span></span><span class="sig-name descname"><span class="pre">level</span></span><a class="headerlink" href="#property.level" title="Link to this definition">#</a></dt>
 <dd><p>Nurodo duomenų lauko brandos lygį. Žiūrėti <a class="reference internal" href="branda.html#level"><span class="std std-ref">Brandos lygiai</span></a>.</p>
 </dd></dl>
 
 <dl class="py data">
-<dt class="sig sig-object py" id="property.access">
-<span class="sig-prename descclassname"><span class="pre">property.</span></span><span class="sig-name descname"><span class="pre">access</span></span><a class="headerlink" href="#property.access" title="Link to this definition">#</a></dt>
-<dd><p>Nurodo prieigos prie duomenų lygį. Žiūrėti skyrių <a class="reference internal" href="prieiga.html#access"><span class="std std-ref">Prieigos lygiai</span></a>.</p>
+<dt class="sig sig-object py" id="property.status">
+<span class="sig-prename descclassname"><span class="pre">property.</span></span><span class="sig-name descname"><span class="pre">status</span></span><a class="headerlink" href="#property.status" title="Link to this definition">#</a></dt>
+<dd><p>Duomenų modelio eilutės metaduomenų išbaigtumo būsena.</p>
 </dd></dl>
 
+<div class="admonition seealso">
+<p class="admonition-title">Taip pat žiūrėkite</p>
+<p><span class="xref std std-ref">status</span></p>
+</div>
+<dl class="py data">
+<dt class="sig sig-object py" id="property.visibility">
+<span class="sig-prename descclassname"><span class="pre">property.</span></span><span class="sig-name descname"><span class="pre">visibility</span></span><a class="headerlink" href="#property.visibility" title="Link to this definition">#</a></dt>
+<dd><p>Modelio eilutės metaduomenų matomumas.</p>
+</dd></dl>
+
+<div class="admonition seealso">
+<p class="admonition-title">Taip pat žiūrėkite</p>
+<p><span class="xref std std-ref">visibility</span></p>
+</div>
+<dl class="py data">
+<dt class="sig sig-object py" id="property.access">
+<span class="sig-prename descclassname"><span class="pre">property.</span></span><span class="sig-name descname"><span class="pre">access</span></span><a class="headerlink" href="#property.access" title="Link to this definition">#</a></dt>
+<dd><p>Nurodo prieigos prie duomenų lygį.</p>
+</dd></dl>
+
+<div class="admonition seealso">
+<p class="admonition-title">Taip pat žiūrėkite</p>
+<p><a class="reference internal" href="prieiga.html#access"><span class="std std-ref">Prieigos lygiai</span></a></p>
+</div>
 <dl class="py data">
 <dt class="sig sig-object py" id="property.uri">
 <span class="sig-prename descclassname"><span class="pre">property.</span></span><span class="sig-name descname"><span class="pre">uri</span></span><a class="headerlink" href="#property.uri" title="Link to this definition">#</a></dt>
-<dd><p>Sąsaja su išoriniu žodynu. Žiūrėti <a class="reference internal" href="zodynai.html#vocab"><span class="std std-ref">Išoriniai žodynai</span></a>.</p>
+<dd><p>Sąsaja su išoriniu žodynu.</p>
+</dd></dl>
+
+<div class="admonition seealso">
+<p class="admonition-title">Taip pat žiūrėkite</p>
+<p><span class="xref std std-ref">uri</span></p>
+</div>
+<dl class="py data">
+<dt class="sig sig-object py" id="property.eli">
+<span class="sig-prename descclassname"><span class="pre">property.</span></span><span class="sig-name descname"><span class="pre">eli</span></span><a class="headerlink" href="#property.eli" title="Link to this definition">#</a></dt>
+<dd><p>Nuoroda į duomenų elementą įteisinantį teisės aktą.</p>
+<div class="admonition seealso">
+<p class="admonition-title">Taip pat žiūrėkite</p>
+<p><span class="xref std std-ref">eli</span></p>
+</div>
 </dd></dl>
 
 <dl class="py data">
@@ -1646,9 +2286,9 @@ naudojamas <a class="reference internal" href="formatas.html#property" title="pr
 </section>
 </section>
 <section id="papildomos-dimensijos">
-<span id="id8"></span><h1>Papildomos dimensijos<a class="headerlink" href="#papildomos-dimensijos" title="Link to this heading">#</a></h1>
+<span id="id10"></span><h1>Papildomos dimensijos<a class="headerlink" href="#papildomos-dimensijos" title="Link to this heading">#</a></h1>
 <section id="prefix">
-<span id="id9"></span><h2>prefix<a class="headerlink" href="#prefix" title="Link to this heading">#</a></h2>
+<span id="id11"></span><h2>prefix<a class="headerlink" href="#prefix" title="Link to this heading">#</a></h2>
 <p id="module-prefix">Sąsają su išoriniais žodynais galima pateikti <a class="reference internal" href="#model.uri" title="model.uri"><code class="xref py py-data docutils literal notranslate"><span class="pre">model.uri</span></code></a> ir
 <a class="reference internal" href="#property.uri" title="property.uri"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.uri</span></code></a> stulpeliuose. Tačiau prieš naudojant žodynus, pirmiausia
 reikia apsirašyti žodynų prefiksus. Žodynų prefiksai aprašomi taip:</p>
@@ -1848,7 +2488,7 @@ Pavyzdžiui abiejuose rinkinių pavyzdžiuose aukščiau, <code class="docutils 
 <code class="docutils literal notranslate"><span class="pre">dctype</span></code> iš <code class="docutils literal notranslate"><span class="pre">dataset2</span></code> rodo į tą patį URI.</p>
 </section>
 <section id="enum">
-<span id="id10"></span><h2>enum<a class="headerlink" href="#enum" title="Link to this heading">#</a></h2>
+<span id="id12"></span><h2>enum<a class="headerlink" href="#enum" title="Link to this heading">#</a></h2>
 <p>Tam tikri duomenų laukai turi fiksuotą reikšmių variantų aibę. Dažnai duomenų
 bazėse fiksuotos reikšmės saugomos skaitine forma ar kitais kodiniais
 pavadinimais. Tokias fiksuotas reikšmes duomenų struktūros apraše galima
@@ -2250,7 +2890,7 @@ kokios yra šaltinyje, tada <a class="reference internal" href="#property.prepar
 <code class="docutils literal notranslate"><span class="pre">self.choose(self)</span></code>.</p>
 </section>
 <section id="param">
-<span id="id11"></span><h2>param<a class="headerlink" href="#param" title="Link to this heading">#</a></h2>
+<span id="id13"></span><h2>param<a class="headerlink" href="#param" title="Link to this heading">#</a></h2>
 <p id="module-param">Parametrai leidžia iškelti tam tikras duomenų paruošimo operacijas į parametrus
 kurie gali būti naudojami <a class="reference internal" href="#dimensijos"><span class="std std-ref">Dimensijos</span></a>, kurioje apibrėžtas parametras
 kontekste. Parametrai gali gražinti <a class="reference internal" href="savokos.html#term-iteratorius"><span class="xref std std-term">iteratorius</span></a>, kurių pagalba galima
@@ -2509,8 +3149,8 @@ ee, kurie bus panaudojami <code class="docutils literal notranslate"><span class
 <dt>prepare</dt><dd><p><code class="docutils literal notranslate"><span class="pre">x</span></code> arba <code class="docutils literal notranslate"><span class="pre">param(x)</span></code>.</p>
 </dd>
 </dl>
-<section id="id12">
-<h3>Funkcijos<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<section id="id14">
+<h3>Funkcijos<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
 <p>Parametrų generavimui galima naudoti tokias formules:</p>
 <dl class="py function" id="module-2">
 <dt class="sig sig-object py" id="param.read">
@@ -2701,7 +3341,7 @@ stulpelyje.</p>
 užklausos metu.</p>
 <p><strong>Argumentai</strong></p>
 <dl>
-<dt>name</dt><dd><p><a class="reference external" href="https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html">JSONPath</a> arba <a href="#id17"><span class="problematic" id="id18">XPath_</span></a> išraiška, priklauso nuoo <code class="xref py py-data docutils literal notranslate"><span class="pre">resource.prapare</span></code>
+<dt>name</dt><dd><p><a class="reference external" href="https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html">JSONPath</a> arba <a href="#id19"><span class="problematic" id="id20">XPath_</span></a> išraiška, priklauso nuoo <code class="xref py py-data docutils literal notranslate"><span class="pre">resource.prapare</span></code>
 nurodytos <a class="reference internal" href="#resource.http" title="resource.http"><code class="xref py py-func docutils literal notranslate"><span class="pre">resource.http()</span></code></a> <code class="docutils literal notranslate"><span class="pre">body</span></code> tipo.</p>
 <p>Nurodoma <a class="reference internal" href="#param.source" title="param.source"><code class="xref py py-data docutils literal notranslate"><span class="pre">param.source</span></code></a> stulpelyje.</p>
 </dd>
@@ -3249,7 +3889,7 @@ tuo pačiu vardu <code class="docutils literal notranslate"><span class="pre">pa
 </section>
 </section>
 <section id="switch">
-<span id="id13"></span><h2>switch<a class="headerlink" href="#switch" title="Link to this heading">#</a></h2>
+<span id="id15"></span><h2>switch<a class="headerlink" href="#switch" title="Link to this heading">#</a></h2>
 <p id="module-switch">Tam tikrais atvejais duomenis tenka normalizuoti parenkant tam tikrą reikšmę jei
 tenkinama nurodyta sąlyga. Tokias situacijas galima aprašyti pasitelkiant
 <a class="reference internal" href="formules.html#switch" title="switch"><code class="xref py py-data docutils literal notranslate"><span class="pre">switch</span></code></a> dimensiją.</p>
@@ -3272,7 +3912,7 @@ visada grąžinama <a class="reference internal" href="#switch.switch.source" ti
 
 </section>
 <section id="comment">
-<span id="id14"></span><h2>comment<a class="headerlink" href="#comment" title="Link to this heading">#</a></h2>
+<span id="id16"></span><h2>comment<a class="headerlink" href="#comment" title="Link to this heading">#</a></h2>
 <p id="module-comment">Dirbant su <a class="reference internal" href="savokos.html#term-DSA"><span class="xref std std-term">DSA</span></a> yra galimybė komentuoti eilutes, naudojant papildomą
 <a class="reference internal" href="#module-comment" title="comment"><code class="xref py py-data docutils literal notranslate"><span class="pre">comment</span></code></a> dimensiją, kurią galima naudoti bet kurios kitos dimensijos
 kontekste.</p>
@@ -3476,7 +4116,7 @@ atsakymas į ankstesnį komentarą.</p>
 </div>
 </section>
 <section id="lang">
-<span id="id15"></span><h2>lang<a class="headerlink" href="#lang" title="Link to this heading">#</a></h2>
+<span id="id17"></span><h2>lang<a class="headerlink" href="#lang" title="Link to this heading">#</a></h2>
 <div class="deprecated" id="module-lang">
 <p><span class="versionmodified deprecated">Nebepalaikoma nuo 0.2 versijos.</span></p>
 </div>
@@ -3504,7 +4144,7 @@ tekstas kita kalba.</p>
 
 </section>
 <section id="migrate">
-<span id="id16"></span><h2>migrate<a class="headerlink" href="#migrate" title="Link to this heading">#</a></h2>
+<span id="id18"></span><h2>migrate<a class="headerlink" href="#migrate" title="Link to this heading">#</a></h2>
 <div class="deprecated" id="module-migrate">
 <p><span class="versionmodified deprecated">Nebepalaikoma nuo 0.2 versijos.</span></p>
 </div>
@@ -3840,8 +4480,12 @@ kontekstą.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset.ref"><code class="docutils literal notranslate"><span class="pre">ref</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset.source"><code class="docutils literal notranslate"><span class="pre">source</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset.prepare"><code class="docutils literal notranslate"><span class="pre">prepare</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset.count"><code class="docutils literal notranslate"><span class="pre">count</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset.level"><code class="docutils literal notranslate"><span class="pre">level</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset.status"><code class="docutils literal notranslate"><span class="pre">status</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset.visibility"><code class="docutils literal notranslate"><span class="pre">visibility</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset.access"><code class="docutils literal notranslate"><span class="pre">access</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset.eli"><code class="docutils literal notranslate"><span class="pre">eli</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset.title"><code class="docutils literal notranslate"><span class="pre">title</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset.description"><code class="docutils literal notranslate"><span class="pre">description</span></code></a></li>
 </ul>
@@ -3851,7 +4495,10 @@ kontekstą.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resource.type"><code class="docutils literal notranslate"><span class="pre">type</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resource.ref"><code class="docutils literal notranslate"><span class="pre">ref</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resource.source"><code class="docutils literal notranslate"><span class="pre">source</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resource.source.type"><code class="docutils literal notranslate"><span class="pre">source.type</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resource.level"><code class="docutils literal notranslate"><span class="pre">level</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resource.status"><code class="docutils literal notranslate"><span class="pre">status</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resource.visibility"><code class="docutils literal notranslate"><span class="pre">visibility</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resource.access"><code class="docutils literal notranslate"><span class="pre">access</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resource.title"><code class="docutils literal notranslate"><span class="pre">title</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resource.description"><code class="docutils literal notranslate"><span class="pre">description</span></code></a></li>
@@ -3876,27 +4523,39 @@ kontekstą.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.type"><code class="docutils literal notranslate"><span class="pre">type</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.ref"><code class="docutils literal notranslate"><span class="pre">ref</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.source"><code class="docutils literal notranslate"><span class="pre">source</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.source.type"><code class="docutils literal notranslate"><span class="pre">source.type</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.prepare"><code class="docutils literal notranslate"><span class="pre">prepare</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.origin"><code class="docutils literal notranslate"><span class="pre">origin</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.count"><code class="docutils literal notranslate"><span class="pre">count</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.level"><code class="docutils literal notranslate"><span class="pre">level</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.status"><code class="docutils literal notranslate"><span class="pre">status</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.visibility"><code class="docutils literal notranslate"><span class="pre">visibility</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.access"><code class="docutils literal notranslate"><span class="pre">access</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.uri"><code class="docutils literal notranslate"><span class="pre">uri</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.eli"><code class="docutils literal notranslate"><span class="pre">eli</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.title"><code class="docutils literal notranslate"><span class="pre">title</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.description"><code class="docutils literal notranslate"><span class="pre">description</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model.property"><code class="docutils literal notranslate"><span class="pre">property</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Funkcijos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Funkcijos</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#model.distinct"><code class="docutils literal notranslate"><span class="pre">distinct()</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#property">property</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.source"><code class="docutils literal notranslate"><span class="pre">source</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.prepare"><code class="docutils literal notranslate"><span class="pre">prepare</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.type"><code class="docutils literal notranslate"><span class="pre">type</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.ref"><code class="docutils literal notranslate"><span class="pre">ref</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.source"><code class="docutils literal notranslate"><span class="pre">source</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.source.type"><code class="docutils literal notranslate"><span class="pre">source.type</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.prepare"><code class="docutils literal notranslate"><span class="pre">prepare</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.origin"><code class="docutils literal notranslate"><span class="pre">origin</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.count"><code class="docutils literal notranslate"><span class="pre">count</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.level"><code class="docutils literal notranslate"><span class="pre">level</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.status"><code class="docutils literal notranslate"><span class="pre">status</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.visibility"><code class="docutils literal notranslate"><span class="pre">visibility</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.access"><code class="docutils literal notranslate"><span class="pre">access</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.uri"><code class="docutils literal notranslate"><span class="pre">uri</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.eli"><code class="docutils literal notranslate"><span class="pre">eli</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.title"><code class="docutils literal notranslate"><span class="pre">title</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.description"><code class="docutils literal notranslate"><span class="pre">description</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#property.enum"><code class="docutils literal notranslate"><span class="pre">enum</span></code></a></li>
@@ -3927,7 +4586,7 @@ kontekstą.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#param.ref"><code class="docutils literal notranslate"><span class="pre">ref</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#param.prepare"><code class="docutils literal notranslate"><span class="pre">prepare</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#param.source"><code class="docutils literal notranslate"><span class="pre">source</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Funkcijos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Funkcijos</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#param.read"><code class="docutils literal notranslate"><span class="pre">read()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#param.range"><code class="docutils literal notranslate"><span class="pre">range()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#param.path"><code class="docutils literal notranslate"><span class="pre">path()</span></code></a></li>

@@ -125,6 +125,10 @@ pavadinimą.
 
     Modelių skaičius duomenų rinkinyje. Atitinka unikalių lentelių arba ojektų elementų skaičių šaltinio schemoje. Duomenų agento generuojamas automatiškai.
 
+.. seealso::
+
+    :ref:`count`
+
 .. data:: level
 
     Nenaudojamas.
@@ -162,9 +166,9 @@ pavadinimą.
 
     Nuoroda į duomenų rinkinį įteisinantį teisės aktą.
 
-    .. seealso::
+.. seealso::
 
-        :ref:`eli`
+    :ref:`eli`
 
 .. data:: title
 
@@ -657,7 +661,7 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
 
     Papildomai, gali turėti parametrus:
         
-        - `table
+        - `table`
             - `temporary`
             - `permanent`
         - `view`
@@ -671,17 +675,17 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
         =================== ================ ======== ======== ========= ===============
         model               property         type     ref      source    source.type
         =================== ================ ======== ======== ========= ===============
-                                             sql               sqlite:// sqlite
+        \                                    sql               sqlite:// sqlite
         ------------------- ---------------- -------- -------- --------- ---------------
         **Gyvenviete**                                id       Gyven     table
         ------------------- ---------------- -------- -------- --------- ---------------
-                            id               integer  id       gyv_id    integer  
-                            pavadinimas\@lt  string            gyv_pav   varchar(255)    
+        \                   id               integer  id       gyv_id    integer  
+        \                   pavadinimas\@lt  string            gyv_pav   varchar(255)    
         ------------------- ---------------- -------- -------- --------- ---------------
         **GyvenvieteView**                            id       Gyven     table
         ------------------- ---------------- -------- -------- --------- ---------------
-                            id               integer  id       gyv_id    integer  
-                            pavadinimas\@lt  string            gyv_pav   varchar(255)
+        \                   id               integer  id       gyv_id    integer  
+        \                   pavadinimas\@lt  string            gyv_pav   varchar(255)
         =================== ================ ======== ======== ========= ===============
 
 .. data:: prepare
@@ -705,16 +709,16 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
         ============ ========== ============= =============== ============== ======== ==== ============ ============
         dataset      resource   base          model           property       type     ref  source       origin
         ============ ========== ============= =============== ============== ======== ==== ============ ============
-          pirminis           
+        pirminis           
         ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ ------------
-                     db1                                                     sql           sqlite://   
+        \            db1                                                     sql           sqlite://   
         ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ ------------
-                                /rc/ar/City                                           id                
+        \                       /rc/ar/City                                           id                
         ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ ------------
-                                              Gyvenviete                              id   Gyven       
+        \                                     Gyvenviete                              id   Gyven       
         ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ ------------
-                                                              id             integer       gyv_id      
-                                                              pavadinimas@lt string        gyv_pav    
+        \                                                     id             integer       gyv_id      
+        \                                                     pavadinimas@lt string        gyv_pav    
         ============ ========== ============= =============== ============== ======== ==== ============ ============
 
         Ir išvestinį duomenų šaltinį:
@@ -722,16 +726,16 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
         ============ ========== ============= =============== ============== ======== ==== ============ ====================
         dataset      resource   base          model           property       type     ref  source       origin
         ============ ========== ============= =============== ============== ======== ==== ============ ====================
-          pirminis           
+        pirminis           
         ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ --------------------
-                     service1                                                json          http://...   
+        \            service1                                                json          http://...   
         ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ --------------------
-                                /rc/ar/City                                           id                
+        \                       /rc/ar/City                                           id                
         ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ --------------------
-                                              Gyvenviete                              id   Cities       /pirminis/Gyvenviete
+        \                                     Gyvenviete                              id   Cities       /pirminis/Gyvenviete
         ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ --------------------
-                                                              id             integer       gyv_id       id
-                                                              pavadinimas@lt string        gyv_pav      pavadinimas@lt
+        \                                                     id             integer       gyv_id       id
+        \                                                     pavadinimas@lt string        gyv_pav      pavadinimas@lt
         ============ ========== ============= =============== ============== ======== ==== ============ ====================
 
 
@@ -965,17 +969,17 @@ Kai yra nurodomas masyvas - savybė kuri grąžina reikšmių sąrašą - jos pa
         =================== ================ ======== ======== ========= ===============
         model               property         type     ref      source    source.type
         =================== ================ ======== ======== ========= ===============
-                                             sql               sqlite:// sqlite
+        \                                    sql               sqlite:// sqlite
         ------------------- ---------------- -------- -------- --------- ---------------
         **Gyvenviete**                                id       Gyven     table
         ------------------- ---------------- -------- -------- --------- ---------------
-                            id               integer  id       gyv_id    integer  
-                            pavadinimas\@lt  string            gyv_pav   varchar(255)    
+        \                   id               integer  id       gyv_id    integer  
+        \                   pavadinimas\@lt  string            gyv_pav   varchar(255)    
         ------------------- ---------------- -------- -------- --------- ---------------
         **GyvenvieteView**                            id       Gyven     table
         ------------------- ---------------- -------- -------- --------- ---------------
-                            id               integer  id       gyv_id    integer  
-                            pavadinimas\@lt  string            gyv_pav   varchar(255)
+        \                   id               integer  id       gyv_id    integer  
+        \                   pavadinimas\@lt  string            gyv_pav   varchar(255)
         =================== ================ ======== ======== ========= ===============
 
 .. data:: prepare
@@ -998,16 +1002,16 @@ Kai yra nurodomas masyvas - savybė kuri grąžina reikšmių sąrašą - jos pa
         ============ ========== ============= =============== ============== ======== ==== ============ ============
         dataset      resource   base          model           property       type     ref  source       origin
         ============ ========== ============= =============== ============== ======== ==== ============ ============
-          pirminis           
+        pirminis           
         ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ ------------
-                     db1                                                     sql           sqlite://   
+        \            db1                                                     sql           sqlite://   
         ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ ------------
-                                /rc/ar/City                                           id                
+        \                       /rc/ar/City                                           id                
         ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ ------------
-                                              Gyvenviete                              id   Gyven       
+        \                                     Gyvenviete                              id   Gyven       
         ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ ------------
-                                                              id             integer       gyv_id      
-                                                              pavadinimas@lt string        gyv_pav    
+        \                                                     id             integer       gyv_id      
+        \                                                     pavadinimas@lt string        gyv_pav    
         ============ ========== ============= =============== ============== ======== ==== ============ ============
 
         Ir išvestinį duomenų šaltinį:
@@ -1015,16 +1019,16 @@ Kai yra nurodomas masyvas - savybė kuri grąžina reikšmių sąrašą - jos pa
         ============ ========== ============= =============== ============== ======== ==== ============ ====================
         dataset      resource   base          model           property       type     ref  source       origin
         ============ ========== ============= =============== ============== ======== ==== ============ ====================
-          pirminis           
+        pirminis           
         ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ --------------------
-                     service1                                                json          http://...   
+        \            service1                                                json          http://...   
         ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ --------------------
-                                /rc/ar/City                                           id                
+        \                       /rc/ar/City                                           id                
         ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ --------------------
-                                              Gyvenviete                              id   Cities       /pirminis/Gyvenviete
+        \                                     Gyvenviete                              id   Cities       /pirminis/Gyvenviete
         ------------ ---------- ------------- --------------- -------------- -------- ---- ------------ --------------------
-                                                              id             integer       gyv_id       id
-                                                              pavadinimas@lt string        gyv_pav      pavadinimas@lt
+        \                                                     id             integer       gyv_id       id
+        \                                                     pavadinimas@lt string        gyv_pav      pavadinimas@lt
         ============ ========== ============= =============== ============== ======== ==== ============ ====================
 
 
@@ -1040,7 +1044,11 @@ Kai yra nurodomas masyvas - savybė kuri grąžina reikšmių sąrašą - jos pa
 
 .. data:: level
 
-    Nurodo duomenų lauko brandos lygį. Žiūrėti :ref:`level`.
+    Nurodo duomenų lauko brandos lygį.
+
+.. seealso::
+
+    :ref:`level`
 
 .. data:: status
 

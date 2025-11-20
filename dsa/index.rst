@@ -86,6 +86,9 @@ Turinys
     modeliai/funkciniai
     branda
     prieiga
+    statusas
+    matomumas
+    eli
     schemos/index
     saltiniai
     vardu-erdves

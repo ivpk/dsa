@@ -1080,7 +1080,7 @@ Kai yra nurodomas masyvas - savybė kuri grąžina reikšmių sąrašą - jos pa
 
 .. seealso::
 
-    :ref:`uri`
+    :ref:`vocab`
 
 .. data:: eli
 

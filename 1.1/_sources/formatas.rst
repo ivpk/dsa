@@ -309,11 +309,9 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
     
     Nudorodo elementų skaičių dimensijoje. Duomenų agentas šias vertes generuoja automatiškai. Pildyti nereikia.
 
-    .. admonition:: Pastaba
+    .. seealso::
 
-      Automatinis duomenų elementų skaičiavimas priklauso nuo duomenų šaltinio tipo ir nėra galimas su visais duomenų šaltiniais.
-
-      Priklausomai nuo duomenų kiekio duomenų šaltinyje, ši operacija gali reikalauti didelių apdorojimo resursų ir gali būti išjungiama.
+        :ref:`count`
 
 .. data:: level
 
@@ -329,18 +327,11 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
 
 .. data:: status
 
-    Metaduomenų statusas nurodomas pagal EU Publications Office kontroliuojamą žodyną `Distribution status <http://publications.europa.eu/resource/authority/distribution-status>`_
-    ir EU Publications Office kontroliuojamą žodyną `Dataset status <http://publications.europa.eu/resource/authority/dataset-status>`_ , kuris prideda `discont`
+    Metaduomenų paruoštumo statusas
 
-    Naudojamos šios rekšmės:
+    .. seealso::
 
-    ========== ============================
-    develop    galima keisti be išankstinio įspėjimo
-    completed  galima keisti tik pagal numatytą laikotarpį iš anksto informavus naudotojus
-    discont    duomenys nėra atnaujinami, tačiau elemento šalinti kol kas neplanuojama.
-    deprecated nebenaudotina, ateityje bus pašalinta, nurodoma, kai numatyta pašaltini status=completed elementus.
-    withdrawn  pilnai panaikinama, kai praeinanumatytas laikotarpis, po to, kai buvo nurodyta `status=deprecated`.
-    ========== ============================
+        :ref:`status`
 
 .. data:: visibility
 
@@ -353,15 +344,9 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
     private   metaduomenys nepublikuojami
     ========= ============================
 
-    Integracijoms tarp skirtingų sistemų už Lietuvos ribų, rekomenduojama naudoti tik `public` matomumo elementus.
+    .. seealso::
 
-    Integracijoms tarp skirtingų sistemų Lietuvoje, rekomenduojama naudoti `public` arba `package` matomumo elementus.
-
-    Jei `visibility = protected` (IS lygmens) elementas yra naudojamas už IS ribų, tada reikia atkreipti dėmesį, kad IS tvarkytojas gali elementą keisti neatsižvelgdamas į už konkrečios IS ribų esančius naudojimo atvejus.
-
-    `visibility = private` metaduomenys saugomi tik IS tvarkytojo infrastruktūroje ir viešai nėra skelbiami. Jie aprašomi DSA metaduomenų pilnumo ir šaltinio pokyčių sekimo tikslais. Pirmą kartą nuskaičius ŠDSA, visi elementai žymimi `visibility = private`.
-    
-    `visibility` reikšmių žodynas yra iš dalies paremtas UML 2.5 VisibilityKind klasifikatoriumi, žiūrėti `7.8.24 <https://www.omg.org/spec/UML/2.5.1/PDF>`_ skyrių
+        :ref:`visibility`
 
 .. data:: access
 
@@ -387,16 +372,9 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
 
     Modelį (esybę) teisiniuose šaltiniuose įteisinančio resurso nuoroda pagal `ELI <https://eur-lex.europa.eu/eli-register/about.html>`_
 
-    Pavyzdys:
-    `http://data.europa.eu/eli/{typeOfDocument}/{yearOfAdoption}/{numberOfDocument}/oj`
+    .. seealso::
 
-    Lietuvoje, kol nėra įgyvendintas ELI standartas naudojamos TAR ar kitos nuorodos pridedant `#section` elementą, kur "section" yra punkto, nurodančio objektą teisiniame šaltinyje, numeris
-
-    Pavyzdžiui:
-    `https://www.e-tar.lt/portal/lt/legalAct/TAR.839B704AEA5E/asr#17.1`
-
-    Taip pat gali būti nurodoma į dokumente įvardinamus priedus. Pavyzdžiui:
-    `https://www.e-tar.lt/portal/lt/legalAct/TAR.839B704AEA5E/asr#preidas1/17.1
+        :ref:`eli`
 
 .. data:: title
 

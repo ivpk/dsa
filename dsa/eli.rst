@@ -1,7 +1,7 @@
 .. default-role:: literal
 .. _eli:
 
-Prieigos lygiai
+ELI
 ===============
 
 Elementą teisiniuose šaltiniuose įteisinančio resurso nuoroda pagal `ELI <https://eur-lex.europa.eu/eli-register/about.html>`_

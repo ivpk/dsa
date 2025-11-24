@@ -875,6 +875,29 @@ Pavyzdžiui abiejuose rinkinių pavyzdžiuose aukščiau, `dct` iš `dataset1` i
 `dctype` iš `dataset2` rodo į tą patį URI.
 
 
+.. _scope:
+
+scope
+*****
+
+.. module:: scope
+
+Modelių `model` arba savybių `property` duomenys gali būti teikiami pilnai arba jiems gali būti prsikiriami
+papildomi apribojimai priklausomai nuo duomenų gavėjui suteiktų teisių. Šios teisės yra pateikiamos po 'model`
+arba po `property`, `type` stulpelyje pateikiant :ref:`scope <scopes>` dimensiją.
+
+.. data: ref
+Nurodomas `scope` identifikatorius / pavadinimas
+
+.. data: prepare
+Nurodamos apribojimo taisyklės :ref: `formulės`
+
+.. data: eli
+Nurodo į teisinį šaltinį kur nurodoma, kokia imtimi gali būti teikiami duomenys. Tai nurodo duomenų imtį.
+
+O kokia organizacija gali gauti duomenis, nurodoma ne DSA, o išmaniojoje sutartyje.
+
+
 .. _enum:
 
 enum

@@ -1472,6 +1472,76 @@ prepare
             {"request_model": {"param1": "first", "param2": "value2", "param3": None}}
 
 
+.. function:: cdata()
+
+    Pažymi, kad pateikti duomenys turi būti siunčiami kaip XML CDATA elementai.
+
+    Naudojant `cdata()` kartu su `input()` - `input('value').cdata()` galima siųsti duomenis, automatiškai
+    neužkoduojant XML simbolių.
+
+    .. admonition:: Pavyzdys
+
+        Turint DSA be `cdata()`
+
+        ========== ======= ======== ====== =========== =============================== ==================
+        resource   model   property type   ref         source                          prepare
+        ========== ======= ======== ====== =========== =============================== ==================
+        resource1                   wsdl               \https://example.com/
+        resource2                   soap               Service.Port.PortType.Operation
+        \                           param  parameter1  request_model/param1            input("<arg>value</arg>")
+        \          City
+        \                  p1       string                                              param(parameter1)
+        ========== ======= ======== ====== =========== =============================== ==================
+        |
+
+        Darant Spinta užklausą `https://example.com/City/`, bus suformuota SOAP užklausa, užkoduojanti
+        `param1` reikšmę
+
+        .. code-block:: xml
+
+            <soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+                <soap-env:Body>
+                    <Operation>
+                        <request_model>
+                            <param1>
+                                &lt;arg&gt;value&lt;/arg&gt;
+                            </param1>
+                        </request_model>
+                    </Operation>
+                </soap-env:Body>
+            </soap-env:Envelope>
+
+        Turint tokį patį DSA, tik kartu su `input()` naudojant ir `cdata()` funkciją
+
+        ========== ======= ======== ====== =========== =============================== ==================
+        resource   model   property type   ref         source                          prepare
+        ========== ======= ======== ====== =========== =============================== ==================
+        resource1                   wsdl               \https://example.com/
+        resource2                   soap               Service.Port.PortType.Operation
+        \                           param  parameter1  request_model/param1            input("<arg>value</arg>").cdata()
+        \          City
+        \                  p1       string                                              param(parameter1)
+        ========== ======= ======== ====== =========== =============================== ==================
+        |
+
+        Darant Spinta užklausą `https://example.com/City/`, bus suformuota SOAP užklausa, neužkoduojanti
+        `param1` reikšmės
+
+        .. code-block:: xml
+
+            <soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+                <soap-env:Body>
+                    <Operation>
+                        <request_model>
+                            <param1>
+                                <![CDATA[<arg>value</arg>]]>
+                            </param1>
+                        </request_model>
+                    </Operation>
+                </soap-env:Body>
+            </soap-env:Envelope>
+
+
 .. function:: creds(key)
 
     Skaito kliento duomenyse išsaugoto `key` atributo reikšmę.

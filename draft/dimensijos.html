@@ -423,6 +423,7 @@ window.addEventListener("load", () => mermaid.run());
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#param.header"><code class="docutils literal notranslate"><span class="pre">header()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#param.body"><code class="docutils literal notranslate"><span class="pre">body()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#param.input"><code class="docutils literal notranslate"><span class="pre">input()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#param.cdata"><code class="docutils literal notranslate"><span class="pre">cdata()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#param.creds"><code class="docutils literal notranslate"><span class="pre">creds()</span></code></a></li>
 </ul>
 </li>
@@ -3020,18 +3021,24 @@ Jei reikšmė nenurodyta nei URI, nei default - bus naudojama <code class="docut
 </thead>
 <tbody>
 <tr class="row-even"><td><p>resource1</p></td>
-<td><p>soap</p></td>
+<td><p>wsdl</p></td>
 <td></td>
 <td><p>https://example.com/</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
+<tr class="row-odd"><td><p>resource2</p></td>
+<td><p>soap</p></td>
+<td></td>
+<td><p>Service.Port.PortType.Operation</p></td>
+<td><p>wsdl(resource1)</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
 <td><p>param</p></td>
 <td></td>
 <td><p>request_model/param1</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">input(&quot;value1&quot;)</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p></p></td>
+<tr class="row-odd"><td><p></p></td>
 <td><p>param</p></td>
 <td></td>
 <td><p>request_model/param2</p></td>
@@ -3067,12 +3074,20 @@ Jei reikšmė nenurodyta nei URI, nei default - bus naudojama <code class="docut
 <tr class="row-even"><td><p>resource1</p></td>
 <td></td>
 <td></td>
-<td><p>soap</p></td>
+<td><p>wsdl</p></td>
 <td></td>
 <td><p>https://example.com/</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
+<tr class="row-odd"><td><p>resource2</p></td>
+<td></td>
+<td></td>
+<td><p>soap</p></td>
+<td></td>
+<td><p>Service.Port.PortType.Operation</p></td>
+<td><p>wsdl(resource1)</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
 <td></td>
 <td></td>
 <td><p>param</p></td>
@@ -3080,7 +3095,7 @@ Jei reikšmė nenurodyta nei URI, nei default - bus naudojama <code class="docut
 <td><p>request_model/param1</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">input(&quot;value1&quot;)</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p></p></td>
+<tr class="row-odd"><td><p></p></td>
 <td></td>
 <td></td>
 <td><p>param</p></td>
@@ -3088,7 +3103,7 @@ Jei reikšmė nenurodyta nei URI, nei default - bus naudojama <code class="docut
 <td><p>request_model/param2</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">input(&quot;value2&quot;)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
+<tr class="row-even"><td><p></p></td>
 <td></td>
 <td></td>
 <td><p>param</p></td>
@@ -3096,7 +3111,7 @@ Jei reikšmė nenurodyta nei URI, nei default - bus naudojama <code class="docut
 <td><p>request_model/param3</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">input()</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p></p></td>
+<tr class="row-odd"><td><p></p></td>
 <td><p>City</p></td>
 <td></td>
 <td></td>
@@ -3104,7 +3119,7 @@ Jei reikšmė nenurodyta nei URI, nei default - bus naudojama <code class="docut
 <td></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
+<tr class="row-even"><td><p></p></td>
 <td></td>
 <td><p>p1</p></td>
 <td><p>string</p></td>
@@ -3112,7 +3127,7 @@ Jei reikšmė nenurodyta nei URI, nei default - bus naudojama <code class="docut
 <td></td>
 <td><p>param(parameter1)</p></td>
 </tr>
-<tr class="row-even"><td><p></p></td>
+<tr class="row-odd"><td><p></p></td>
 <td></td>
 <td><p>p2</p></td>
 <td><p>string</p></td>
@@ -3120,7 +3135,7 @@ Jei reikšmė nenurodyta nei URI, nei default - bus naudojama <code class="docut
 <td></td>
 <td><p>param(parameter2)</p></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
+<tr class="row-even"><td><p></p></td>
 <td></td>
 <td><p>p3</p></td>
 <td><p>string</p></td>
@@ -3136,6 +3151,110 @@ Jei reikšmė nenurodyta nei URI, nei default - bus naudojama <code class="docut
 </div>
 <p>Pagal pateiktą DSA ir URL bus sugeneruotas toks python dictionary:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;request_model&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;param1&quot;</span><span class="p">:</span> <span class="s2">&quot;first&quot;</span><span class="p">,</span> <span class="s2">&quot;param2&quot;</span><span class="p">:</span> <span class="s2">&quot;value2&quot;</span><span class="p">,</span> <span class="s2">&quot;param3&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="param.cdata">
+<span class="sig-prename descclassname"><span class="pre">param.</span></span><span class="sig-name descname"><span class="pre">cdata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#param.cdata" title="Link to this definition">#</a></dt>
+<dd><p>Pažymi, kad pateikti duomenys turi būti siunčiami kaip XML CDATA elementai.</p>
+<p>Naudojant <code class="docutils literal notranslate"><span class="pre">cdata()</span></code> kartu su <code class="docutils literal notranslate"><span class="pre">input()</span></code> - <code class="docutils literal notranslate"><span class="pre">input('value').cdata()</span></code> galima siųsti duomenis, automatiškai
+neužkoduojant XML simbolių.</p>
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<p>Turint DSA be <code class="docutils literal notranslate"><span class="pre">cdata()</span></code></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Darant Spinta užklausą <code class="docutils literal notranslate"><span class="pre">https://example.com/City/</span></code>, bus suformuota SOAP užklausa, užkoduojanti
+<code class="docutils literal notranslate"><span class="pre">param1</span></code> reikšmę</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;soap-env:Envelope</span><span class="w"> </span><span class="na">xmlns:soap-env=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;soap-env:Body&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Operation&gt;</span>
+<span class="w">            </span><span class="nt">&lt;request_model&gt;</span>
+<span class="w">                </span><span class="nt">&lt;param1&gt;</span>
+<span class="w">                    </span><span class="ni">&amp;lt;</span>arg<span class="ni">&amp;gt;</span>value<span class="ni">&amp;lt;</span>/arg<span class="ni">&amp;gt;</span>
+<span class="w">                </span><span class="nt">&lt;/param1&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/request_model&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/Operation&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/soap-env:Body&gt;</span>
+<span class="nt">&lt;/soap-env:Envelope&gt;</span>
+</pre></div>
+</div>
+<p>Turint tokį patį DSA, tik kartu su <code class="docutils literal notranslate"><span class="pre">input()</span></code> naudojant ir <code class="docutils literal notranslate"><span class="pre">cdata()</span></code> funkciją</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>resource</p></th>
+<th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+<th class="head"><p>prepare</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>resource1</p></td>
+<td></td>
+<td></td>
+<td><p>wsdl</p></td>
+<td></td>
+<td><p>https://example.com/</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>resource2</p></td>
+<td></td>
+<td></td>
+<td><p>soap</p></td>
+<td></td>
+<td><p>Service.Port.PortType.Operation</p></td>
+<td><p>wsdl(resource1)</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td></td>
+<td><p>param</p></td>
+<td><p>parameter1</p></td>
+<td><p>request_model/param1</p></td>
+<td><p>input(&quot;&lt;arg&gt;value&lt;/arg&gt;&quot;).cdata()</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>City</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td></td>
+<td><p>p1</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>param(parameter1)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Darant Spinta užklausą <code class="docutils literal notranslate"><span class="pre">https://example.com/City/</span></code>, bus suformuota SOAP užklausa, neužkoduojanti
+<code class="docutils literal notranslate"><span class="pre">param1</span></code> reikšmės</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;soap-env:Envelope</span><span class="w"> </span><span class="na">xmlns:soap-env=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;soap-env:Body&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Operation&gt;</span>
+<span class="w">            </span><span class="nt">&lt;request_model&gt;</span>
+<span class="w">                </span><span class="nt">&lt;param1&gt;</span>
+<span class="w">                    </span><span class="cp">&lt;![CDATA[&lt;arg&gt;value&lt;/arg&gt;]]&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/param1&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/request_model&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/Operation&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/soap-env:Body&gt;</span>
+<span class="nt">&lt;/soap-env:Envelope&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -3161,13 +3280,13 @@ pagal resurso pavadinimą.</p>
 <span class="nt">scopes</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spinta_getall</span>
 <span class="nt">backends</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">resource_one</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">resource2</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">first password</span>
-<span class="w">  </span><span class="nt">resource_two</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">resource3</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">second password</span>
 </pre></div>
 </div>
-<p>Kliento duomenyse yra išsaugoti resursai: <code class="docutils literal notranslate"><span class="pre">resource_one</span></code> ir <code class="docutils literal notranslate"><span class="pre">resource_two</span></code>. Abu resursai turi po atributą
+<p>Kliento duomenyse yra išsaugoti resursai: <code class="docutils literal notranslate"><span class="pre">resource2</span></code> ir <code class="docutils literal notranslate"><span class="pre">resource3</span></code>. Abu resursai turi po atributą
 tuo pačiu vardu <code class="docutils literal notranslate"><span class="pre">password</span></code>, bet skirtingomis reikšmėmis.</p>
 <p><strong>DSA:</strong></p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -3182,15 +3301,23 @@ tuo pačiu vardu <code class="docutils literal notranslate"><span class="pre">pa
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>resource_one</p></td>
+<tr class="row-even"><td><p>resource1</p></td>
 <td></td>
 <td></td>
-<td><p>soap</p></td>
+<td><p>wsdl</p></td>
 <td></td>
 <td><p>https://example.com/</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
+<tr class="row-odd"><td><p>resource2</p></td>
+<td></td>
+<td></td>
+<td><p>soap</p></td>
+<td></td>
+<td><p>Service.Port.PortType.Opr1</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
 <td></td>
 <td></td>
 <td><p>param</p></td>
@@ -3198,7 +3325,7 @@ tuo pačiu vardu <code class="docutils literal notranslate"><span class="pre">pa
 <td><p>param1</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">creds(&quot;password&quot;).input()</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p></p></td>
+<tr class="row-odd"><td><p></p></td>
 <td><p>Town</p></td>
 <td></td>
 <td></td>
@@ -3206,15 +3333,15 @@ tuo pačiu vardu <code class="docutils literal notranslate"><span class="pre">pa
 <td></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>resource_two</p></td>
+<tr class="row-even"><td><p>resource3</p></td>
 <td></td>
 <td></td>
 <td><p>soap</p></td>
 <td></td>
-<td><p>https://example.com/</p></td>
+<td><p>Service.Port.PortType.Opr2</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p></p></td>
+<tr class="row-odd"><td><p></p></td>
 <td></td>
 <td></td>
 <td><p>param</p></td>
@@ -3222,7 +3349,7 @@ tuo pačiu vardu <code class="docutils literal notranslate"><span class="pre">pa
 <td><p>param2</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">creds(&quot;password&quot;).input()</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
+<tr class="row-even"><td><p></p></td>
 <td><p>City</p></td>
 <td></td>
 <td></td>
@@ -3935,6 +4062,7 @@ kontekstą.</p>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#param.header"><code class="docutils literal notranslate"><span class="pre">header()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#param.body"><code class="docutils literal notranslate"><span class="pre">body()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#param.input"><code class="docutils literal notranslate"><span class="pre">input()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#param.cdata"><code class="docutils literal notranslate"><span class="pre">cdata()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#param.creds"><code class="docutils literal notranslate"><span class="pre">creds()</span></code></a></li>
 </ul>
 </li>

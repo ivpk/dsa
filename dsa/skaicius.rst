@@ -6,7 +6,7 @@ Elementų skaičius
 
 Prasmė priklauso nuo dimensijos.
 
-Nudorodo elementų skaičių dimensijoje, nurodomas :data:`count` stulpelyje. Duomenų agentas šias vertes generuoja automatiškai. Pildyti nereikia.
+Nurodo elementų skaičių dimensijoje, nurodomas :data:`count` stulpelyje. Duomenų agentas šias vertes generuoja automatiškai. Pildyti nereikia.
 
 .. admonition:: Pastaba
 

@@ -23,4 +23,4 @@ Jei `visibility = protected` (IS lygmens) elementas yra naudojamas už IS ribų,
 
 `visibility = private` metaduomenys saugomi tik IS tvarkytojo infrastruktūroje ir viešai nėra skelbiami. Jie aprašomi DSA metaduomenų pilnumo ir šaltinio pokyčių sekimo tikslais. Pirmą kartą nuskaičius ŠDSA, visi elementai žymimi `visibility = private`.
 
-`visibility` reikšmių žodynas yra iš dalies paremtas UML 2.5 VisibilityKind klasifikatoriumi, žiūrėti `7.8.24 <https://www.omg.org/spec/UML/2.5.1/PDF>`_ skyrių
+`visibility` reikšmių žodynas yra iš dalies paremtas UML 2.5 VisibilityKind klasifikatoriumi, žiūrėti `7.8.24 <https://www.omg.org/spec/UML/2.5.1/PDF>`_ skyrių.

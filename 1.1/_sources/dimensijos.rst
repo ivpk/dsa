@@ -123,7 +123,7 @@ pavadinimą.
 
 .. data:: count
 
-    Modelių skaičius duomenų rinkinyje. Atitinka unikalių lentelių arba ojektų elementų skaičių šaltinio schemoje. Duomenų agento generuojamas automatiškai.
+    Modelių skaičius duomenų rinkinyje. Atitinka unikalių lentelių arba objektų elementų skaičių šaltinio schemoje. Duomenų agento generuojamas automatiškai.
 
 .. seealso::
 

@@ -13,7 +13,7 @@ Keitimų istorija
 
 - Naujas skyrius :ref:`functional-models`.
 
-- Pridėti nauji DSA stulpeliai `source.type`, `origin`, `count`, `status`, `visibility`, `eli`
+- Pridėti nauji DSA stulpeliai `source.type`, `origin`, `count`, `status`, `visibility`, `eli`.
 
 
 1.0.0 (2024-10-22)

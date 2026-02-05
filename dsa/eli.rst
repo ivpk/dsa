@@ -4,7 +4,7 @@
 ELI
 ===============
 
-Elementą teisiniuose šaltiniuose įteisinančio resurso nuoroda pagal `ELI <https://eur-lex.europa.eu/eli-register/about.html>`_
+Elementą teisiniuose šaltiniuose įteisinančio resurso nuoroda pagal `ELI <https://eur-lex.europa.eu/eli-register/about.html>`_.
 
 Pavyzdys:
 `http://data.europa.eu/eli/{typeOfDocument}/{yearOfAdoption}/{numberOfDocument}/oj`

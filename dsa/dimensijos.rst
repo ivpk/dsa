@@ -667,7 +667,7 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
         - `view`
             - `temporary`
             - `materialized`
-            - `dinamic`
+            - `dynamic`
     .. admonition:: Pavyzdys
 
         **Struktūros aprašas**

@@ -1343,8 +1343,8 @@ atitinkamai nurodyti teisingą laukelio duomenų formatą.
 
     Fiksuotos reikšmės aprašymas.
 
-Pagal nutylėjimą, jei :data:`property.prepare` yra tuščias ir :data:`property`
-turi :ref:`enum` sąrašą, tada jei šaltinis turi neaprašytą reikšmę, yra fiksuojama klaida.
+Jei :data:`property.prepare` yra tuščias ir :data:`property` turi :ref:`enum` sąrašą,
+ir šaltinis grąžina `enum` neaprašytą reikšmę, yra fiksuojama duomenų klaida.
 
 
 .. _param:

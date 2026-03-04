@@ -2534,7 +2534,15 @@ pateikti neužpildant hierarchinių stulpelių ir nurodant <code class="docutils
 </div>
 <p>Šiame pavyzdyje <code class="docutils literal notranslate"><span class="pre">Place.type</span></code> laukas yra klasifikatorius, kurio reikšmės yra
 kodai 1, 2 ir 3, kurios duomenų struktūros apraše keičiamos į <code class="docutils literal notranslate"><span class="pre">city</span></code>, <code class="docutils literal notranslate"><span class="pre">town</span></code>
-ir <code class="docutils literal notranslate"><span class="pre">village</span></code>, papildomai <code class="docutils literal notranslate"><span class="pre">title</span></code> stulpelyje nurodant reikšmės pavadinimą.</p>
+ir <code class="docutils literal notranslate"><span class="pre">village</span></code>, papildomai <code class="docutils literal notranslate"><span class="pre">title</span></code> stulpelyje nurodant reikšmės pavadinimą.
+Svarbu atkreipti dėmesį, kokiais formatais yra teikiami duomenys duomenų
+šaltinyje ir kokiu formatu jie bus grąžinami duomenis teikiančioje duomenų
+paslaugoje. <code class="docutils literal notranslate"><span class="pre">source</span></code> stulpelyje turi būti nurodomi tikslios duomenų šaltinyje
+naudojamos šio klasifikatoriaus reikšmės. Klasifikatoriaus teikamų duomenų
+formatas duomenų paslaugoje turi sutapti su duomenų formatu nurodytu
+<code class="docutils literal notranslate"><span class="pre">prepare</span></code> stulpelio vertese. Aukščiau pateiktame pavyzdyje, duomenų šaltinyje yra
+skaitinės <code class="docutils literal notranslate"><span class="pre">Place.type</span></code> vertės, tačiau modelis keičia šias vertes į <code class="docutils literal notranslate"><span class="pre">string</span></code>, todėl
+<code class="docutils literal notranslate"><span class="pre">prepare</span></code> stulpelyje yra nurodomos tekstinės šių laukelių vertės.</p>
 <p>Jei tas pats klasifikatorius gali būti naudojamas keliose skirtingose vietose,
 tada galima iškelti klasifikatorių ir suteikti jam pavadinimą, pavyzdžiui:</p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -2698,7 +2706,9 @@ tada galima iškelti klasifikatorių ir suteikti jam pavadinimą, pavyzdžiui:</
 </div>
 <p>Šiuo atveju, klasifikatoriui buvo suteiktas pavadinimas <code class="docutils literal notranslate"><span class="pre">place</span></code> įrašytas
 <code class="docutils literal notranslate"><span class="pre">enum.ref</span></code> stulpelyje, 2-oje eilutėje. O <code class="docutils literal notranslate"><span class="pre">Place.type</span></code> laukui, <code class="docutils literal notranslate"><span class="pre">property.ref</span></code>
-stulpelyje nurodyta, kad šis laukas naudoja vardinį <code class="docutils literal notranslate"><span class="pre">place</span></code> klasifikatorių.</p>
+stulpelyje nurodyta, kad šis laukas naudoja vardinį <code class="docutils literal notranslate"><span class="pre">place</span></code> klasifikatorių.
+Vėlgi svarbu atkreipti dėmesį, kokias vertes klasifikatorius grąžina ir
+atitinkamai nurodyti teisingą laukelio duomenų formatą.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="enum.ref">
 <span class="sig-prename descclassname"><span class="pre">enum.</span></span><span class="sig-name descname"><span class="pre">ref</span></span><a class="headerlink" href="#enum.ref" title="Link to this definition">#</a></dt>
@@ -2721,13 +2731,179 @@ reikšmę pakeičia, į kokią nors kitą. Formulės pavyzdys:</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="enum.prepare">
 <span class="sig-prename descclassname"><span class="pre">enum.</span></span><span class="sig-name descname"><span class="pre">prepare</span></span><a class="headerlink" href="#enum.prepare" title="Link to this definition">#</a></dt>
-<dd><p>Pateikiama reikšmė, tokia kuri bus naudojama atveriant duomenis.
+<dd><p>Pateikiama reikšmė, tokia kuri bus naudojama teikiant duomenis.
 <a class="reference internal" href="#model.prepare" title="model.prepare"><code class="xref py py-data docutils literal notranslate"><span class="pre">model.prepare</span></code></a> filtruose taip pat bus naudojama būtent ši
 reikšmė.</p>
 <p><code class="docutils literal notranslate"><span class="pre">enum.prepare</span></code> reikšmės gali kartotis, tokiu būdu, kelios skirtingos
 <code class="docutils literal notranslate"><span class="pre">enum.source</span></code> reikšmės bus susietos su viena <code class="docutils literal notranslate"><span class="pre">enum.prepare</span></code> reikšme.</p>
+<p>Šis laukelis yra privalomas, ir jei reikšmės šaltinyje sutampa su
+norimomis teikti reikšmėmis paslaugoje, jos turi būti atkartotos.
+Jei yra keičiamas duomenų formatas, pavyzdžiui jei šaltinyje yra
+duomenys pateikiami kaip <code class="docutils literal notranslate"><span class="pre">string</span></code> tačiau yra teikiamos skaitinės
+reikšmės ir paslaugoje norima teikti kaip <code class="docutils literal notranslate"><span class="pre">integer</span></code> atitinkamai
+<a class="reference internal" href="#property.type" title="property.type"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.type</span></code></a> turi būti nurodytas <code class="docutils literal notranslate"><span class="pre">integer</span></code> ir prie
+<code class="docutils literal notranslate"><span class="pre">enum.source</span></code> reikšmių pateikiamos reikšmės <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> kabutėse pavyzdžiui:</p>
 </dd></dl>
 
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>id</p></th>
+<th class="head"><p>d</p></th>
+<th class="head"><p>r</p></th>
+<th class="head"><p>b</p></th>
+<th class="head"><p>m</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+<th class="head"><p>prepare</p></th>
+<th class="head"><p>level</p></th>
+<th class="head"><p>access</p></th>
+<th class="head"><p>uri</p></th>
+<th class="head"><p>title</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td colspan="5"><p>datasets/example/places</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td></td>
+<td colspan="4"><p>places</p></td>
+<td><p>sql</p></td>
+<td></td>
+<td><p>sqlite://</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>Place</p></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>PLACES</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>ID</p></td>
+<td></td>
+<td><p>3</p></td>
+<td><p>open</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>type</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>CODE</p></td>
+<td></td>
+<td><p>3</p></td>
+<td><p>open</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>enum</p></td>
+<td></td>
+<td><p>&quot;1&quot;</p></td>
+<td><p>1</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>City</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>&quot;2&quot;</p></td>
+<td><p>2</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>Town</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>&quot;3&quot;</p></td>
+<td><p>3</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>Village</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>name</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>NAME</p></td>
+<td></td>
+<td><p>3</p></td>
+<td><p>open</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
 <dl class="py data">
 <dt class="sig sig-object py" id="enum.level">
 <span class="sig-prename descclassname"><span class="pre">enum.</span></span><span class="sig-name descname"><span class="pre">level</span></span><a class="headerlink" href="#enum.level" title="Link to this definition">#</a></dt>
@@ -2746,7 +2922,8 @@ išfiltruoti.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="enum.uri">
 <span class="sig-prename descclassname"><span class="pre">enum.</span></span><span class="sig-name descname"><span class="pre">uri</span></span><a class="headerlink" href="#enum.uri" title="Link to this definition">#</a></dt>
-<dd><p>Sąsaja su išoriniu žodynu, pateikiant <code class="docutils literal notranslate"><span class="pre">skos:Concept</span></code> URI. Žiūrėti <a class="reference internal" href="zodynai.html#vocab"><span class="std std-ref">Išoriniai žodynai</span></a>.</p>
+<dd><p>Sąsaja su išoriniu žodynu, pateikiant <code class="docutils literal notranslate"><span class="pre">skos:Concept</span></code> URI. Žiūrėti <a class="reference internal" href="zodynai.html#vocab"><span class="std std-ref">Išoriniai žodynai</span></a>.
+Ši sąsaja yra numatoma pagal nutylėjimą visiems <code class="docutils literal notranslate"><span class="pre">enum</span></code> objektams.</p>
 </dd></dl>
 
 <dl class="py data">
@@ -2761,12 +2938,8 @@ išfiltruoti.</p>
 <dd><p>Fiksuotos reikšmės aprašymas.</p>
 </dd></dl>
 
-<p>Pagal nutylėjimą, jei <a class="reference internal" href="#property.prepare" title="property.prepare"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.prepare</span></code></a> yra tuščias ir <a class="reference internal" href="formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a>
-turi <a class="reference internal" href="#enum"><span class="std std-ref">enum</span></a> sąrašą, tada jei šaltinis turi neaprašytą reikšmę, turėtų
-būti fiksuojama klaida.</p>
-<p>Jei yra poreikis fiksuoti tik tam tikras reikšmes, o visas kitas palikti tokias,
-kokios yra šaltinyje, tada <a class="reference internal" href="#property.prepare" title="property.prepare"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.prepare</span></code></a> stulpelyje reikia įrašyti
-<code class="docutils literal notranslate"><span class="pre">self.choose(self)</span></code>.</p>
+<p>Jei <a class="reference internal" href="#property.prepare" title="property.prepare"><code class="xref py py-data docutils literal notranslate"><span class="pre">property.prepare</span></code></a> yra tuščias ir <a class="reference internal" href="formatas.html#property" title="property"><code class="xref py py-data docutils literal notranslate"><span class="pre">property</span></code></a> turi <a class="reference internal" href="#enum"><span class="std std-ref">enum</span></a> sąrašą,
+ir šaltinis grąžina <code class="docutils literal notranslate"><span class="pre">enum</span></code> neaprašytą reikšmę, yra fiksuojama duomenų klaida.</p>
 </section>
 <section id="param">
 <span id="id11"></span><h2>param<a class="headerlink" href="#param" title="Link to this heading">#</a></h2>

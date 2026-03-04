@@ -1219,6 +1219,14 @@ pateikti neužpildant hierarchinių stulpelių ir nurodant `type` reikšmę
 Šiame pavyzdyje `Place.type` laukas yra klasifikatorius, kurio reikšmės yra
 kodai 1, 2 ir 3, kurios duomenų struktūros apraše keičiamos į `city`, `town`
 ir `village`, papildomai `title` stulpelyje nurodant reikšmės pavadinimą.
+Svarbu atkreipti dėmesį, kokiais formatais yra teikiami duomenys duomenų
+šaltinyje ir kokiu formatu jie bus grąžinami duomenis teikiančioje duomenų
+paslaugoje. `source` stulpelyje turi būti nurodomi tikslios duomenų šaltinyje
+naudojamos šio klasifikatoriaus reikšmės. Klasifikatoriaus teikamų duomenų
+formatas duomenų paslaugoje turi sutapti su duomenų formatu nurodytu 
+`prepare` stulpelio vertese. Aukščiau pateiktame pavyzdyje, duomenų šaltinyje yra
+skaitinės `Place.type` vertės, tačiau modelis keičia šias vertes į `string`, todėl
+`prepare` stulpelyje yra nurodomos tekstinės šių laukelių vertės.
 
 Jei tas pats klasifikatorius gali būti naudojamas keliose skirtingose vietose,
 tada galima iškelti klasifikatorių ir suteikti jam pavadinimą, pavyzdžiui:
@@ -1248,6 +1256,8 @@ tada galima iškelti klasifikatorių ir suteikti jam pavadinimą, pavyzdžiui:
 Šiuo atveju, klasifikatoriui buvo suteiktas pavadinimas `place` įrašytas
 `enum.ref` stulpelyje, 2-oje eilutėje. O `Place.type` laukui, `property.ref`
 stulpelyje nurodyta, kad šis laukas naudoja vardinį `place` klasifikatorių.
+Vėlgi svarbu atkreipti dėmesį, kokias vertes klasifikatorius grąžina ir
+atitinkamai nurodyti teisingą laukelio duomenų formatą.
 
 
 .. data:: ref
@@ -1269,12 +1279,42 @@ stulpelyje nurodyta, kad šis laukas naudoja vardinį `place` klasifikatorių.
 
 .. data:: prepare
 
-    Pateikiama reikšmė, tokia kuri bus naudojama atveriant duomenis.
+    Pateikiama reikšmė, tokia kuri bus naudojama teikiant duomenis.
     :data:`model.prepare` filtruose taip pat bus naudojama būtent ši
     reikšmė.
 
     `enum.prepare` reikšmės gali kartotis, tokiu būdu, kelios skirtingos
     `enum.source` reikšmės bus susietos su viena `enum.prepare` reikšme.
+
+    Šis laukelis yra privalomas, ir jei reikšmės šaltinyje sutampa su
+    norimomis teikti reikšmėmis paslaugoje, jos turi būti atkartotos.
+    Jei yra keičiamas duomenų formatas, pavyzdžiui jei šaltinyje yra
+    duomenys pateikiami kaip `string` tačiau yra teikiamos skaitinės
+    reikšmės ir paslaugoje norima teikti kaip `integer` atitinkamai
+    :data:`property.type` turi būti nurodytas `integer` ir prie
+    `enum.source` reikšmių pateikiamos reikšmės `""` kabutėse pavyzdžiui:
+
++----+---+---+---+---+----------+---------+-----+-----------+-----------+-------+--------+-----+---------+-------------+
+| id | d | r | b | m | property | type    | ref | source    | prepare   | level | access | uri | title   | description |
++====+===+===+===+===+==========+=========+=====+===========+===========+=======+========+=====+=========+=============+
+|  1 | datasets/example/places  |         |     |           |           |       |        |     |         |             |
++----+---+---+---+---+----------+---------+-----+-----------+-----------+-------+--------+-----+---------+-------------+
+|  2 |   | places               | sql     |     | sqlite:// |           |       |        |     |         |             |
++----+---+---+---+---+----------+---------+-----+-----------+-----------+-------+--------+-----+---------+-------------+
+|  3 |   |   |   | Place        |         | id  | PLACES    |           |       |        |     |         |             |
++----+---+---+---+---+----------+---------+-----+-----------+-----------+-------+--------+-----+---------+-------------+
+|  4 |   |   |   |   | id       | integer |     | ID        |           | 3     | open   |     |         |             |
++----+---+---+---+---+----------+---------+-----+-----------+-----------+-------+--------+-----+---------+-------------+
+|  5 |   |   |   |   | type     | integer |     | CODE      |           | 3     | open   |     |         |             |
++----+---+---+---+---+----------+---------+-----+-----------+-----------+-------+--------+-----+---------+-------------+
+|  6 |   |   |   |   |          | enum    |     | "1"       | 1         |       |        |     | City    |             |
++----+---+---+---+---+----------+---------+-----+-----------+-----------+-------+--------+-----+---------+-------------+
+|  7 |   |   |   |   |          |         |     | "2"       | 2         |       |        |     | Town    |             |
++----+---+---+---+---+----------+---------+-----+-----------+-----------+-------+--------+-----+---------+-------------+
+|  8 |   |   |   |   |          |         |     | "3"       | 3         |       |        |     | Village |             |
++----+---+---+---+---+----------+---------+-----+-----------+-----------+-------+--------+-----+---------+-------------+
+|  9 |   |   |   |   | name     | string  |     | NAME      |           | 3     | open   |     |         |             |
++----+---+---+---+---+----------+---------+-----+-----------+-----------+-------+--------+-----+---------+-------------+
 
 .. data:: level
 
@@ -1293,6 +1333,7 @@ stulpelyje nurodyta, kad šis laukas naudoja vardinį `place` klasifikatorių.
 .. data:: uri
 
     Sąsaja su išoriniu žodynu, pateikiant `skos:Concept` URI. Žiūrėti :ref:`vocab`.
+    Ši sąsaja yra numatoma pagal nutylėjimą visiems `enum` objektams.
 
 .. data:: title
 
@@ -1302,13 +1343,8 @@ stulpelyje nurodyta, kad šis laukas naudoja vardinį `place` klasifikatorių.
 
     Fiksuotos reikšmės aprašymas.
 
-Pagal nutylėjimą, jei :data:`property.prepare` yra tuščias ir :data:`property`
-turi :ref:`enum` sąrašą, tada jei šaltinis turi neaprašytą reikšmę, turėtų
-būti fiksuojama klaida.
-
-Jei yra poreikis fiksuoti tik tam tikras reikšmes, o visas kitas palikti tokias,
-kokios yra šaltinyje, tada :data:`property.prepare` stulpelyje reikia įrašyti
-`self.choose(self)`.
+Jei :data:`property.prepare` yra tuščias ir :data:`property` turi :ref:`enum` sąrašą,
+ir šaltinis grąžina `enum` neaprašytą reikšmę, yra fiksuojama duomenų klaida.
 
 
 .. _param:

@@ -97,12 +97,6 @@ SQL
 
     Duomenų bazėje esančios lentelės pavadinimas.
 
-    Pavadinimas aprašomas pridedant ir duomenų bazės schemos pavadinimą.
-
-    .. admonition:: Pavyzdys
-
-        Turint duomenų bazės schemą `geography` su lentele `country`. Ši reikšmė bus `geography.country`.
-
 .. describe:: property.source
 
     Lentelės stulpelio pavadinimas.

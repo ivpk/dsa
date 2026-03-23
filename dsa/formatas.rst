@@ -173,7 +173,7 @@ nei vieno dimensijos stulpelio.
 
     **Savybė (stulpelis)**
 
-    Kodinis savybės pavadinimas, užrašomas mažosiomis lotyniškomis raidėmis,
+    Kodinis savybės pavadinimas, užrašomas mažosiomis lotyniškomis raidėmis, vienaskaita,
     žodžiai atskiriami `_` simoboliu.
 
     Savybių pavadinimai prasidedantys `_` simboliu yra rezervuoti ir turi
@@ -190,7 +190,7 @@ nei vieno dimensijos stulpelio.
             | `adresas.gatve`
 
     []
-        Duomenų masyvas arba sąrašas, gali būti naudojamas su visais tipais.
+        Duomenų masyvas arba sąrašas, gali būti naudojamas su visais tipais, jo pavadinimas užrašomas daugiskaita.
 
         .. admonition:: Pavyzdys
 
@@ -210,7 +210,6 @@ nei vieno dimensijos stulpelio.
     .. seealso::
 
         | :ref:`property`
-
 
 
 .. _metaduomenų-stulpeliai:
@@ -277,6 +276,15 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
     .. seealso::
 
         | :ref:`duomenu-saltiniai`
+        | :ref:`enum`
+
+.. data:: source.type
+
+    **Duomenų šaltinio tipas**
+
+    Prasmė priklauso nuo dimensijos.
+    
+    Nurodo pirminį duomenų šaltinio duomenų tipą.
 
 .. data:: prepare
 
@@ -289,6 +297,22 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
 
         :ref:`formulės`
 
+.. data:: origin
+
+    `base` nurodo modelio bazę, pagal kurią formuojami vienodi identifikatoriai, `origin` nurodo duomenų kilmę.
+
+    `origin` stulpelyje nurodomi reliatyvūs kodiniai pavadinimai, taip pat, kaip ir `base` ar `ref` stulpeliuose.
+
+.. data:: count
+
+    Prasmė priklauso nuo dimensijos.
+    
+    Nudorodo elementų skaičių dimensijoje. Duomenų agentas šias vertes generuoja automatiškai. Pildyti nereikia.
+
+    .. seealso::
+
+        :ref:`count`
+
 .. data:: level
 
     **Brandos lygis**
@@ -300,6 +324,29 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
     .. seealso::
 
         :ref:`level`
+
+.. data:: status
+
+    Metaduomenų paruoštumo statusas
+
+    .. seealso::
+
+        :ref:`status`
+
+.. data:: visibility
+
+    Modelio metaduomenų matomumas ir prieinamumas. Skirstomas į:
+
+    ========= ============================
+    public    naudojamas EU lygmeniu
+    package   naudojamas LT lygmeniu (įteisintas IS nuostatuose ir kituose LT teisės aktuose)
+    protected naudojamas informacinės sistemos (IS) lygmeniu 
+    private   metaduomenys nepublikuojami
+    ========= ============================
+
+    .. seealso::
+
+        :ref:`visibility`
 
 .. data:: access
 
@@ -320,6 +367,14 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
     .. seealso::
 
         :ref:`vocab`
+
+.. data:: eli
+
+    Modelį (esybę) teisiniuose šaltiniuose įteisinančio resurso nuoroda pagal `ELI <https://eur-lex.europa.eu/eli-register/about.html>`_
+
+    .. seealso::
+
+        :ref:`eli`
 
 .. data:: title
 
@@ -346,7 +401,6 @@ interpretuoti juos kaip tuščius. Taip pat įrankiai neturėtų tikėtis, kad s
 bus išdėstyti būtent tokia tvarka. Nors įrankių atžvilgiu stulpelių tvarka nėra
 svarbi, tačiau rekomenduotina išlaikyti vienodą stulpelių tvarką, tam kad
 lenteles būtų lengviau skaityti.
-
 
 
 .. _Duomenų katalogą: https://data.gov.lt/

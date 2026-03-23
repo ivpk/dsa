@@ -36,6 +36,8 @@ Duomenų prieigos lygis nurodomas :data:`access` stulpelyje.
         Duomenys skirti tik vidiniam konkrečios sistemos naudojimui, neteikiami
         už vienos sistemos ribų.
 
+Nenurodžius duomenų `access` lygio yra naudojamas `private` numatytasis priegos lygis
+ir duomenys nėra teikiami už IS ribų.
 
 Viešam pakartotiniam naudojimui gali būti teikiami tik `public` ir `open`
 prieigos lygio duomenys.

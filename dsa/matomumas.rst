@@ -15,6 +15,8 @@ protected naudojamas informacinės sistemos (IS) lygmeniu
 private   metaduomenys nepublikuojami
 ========= ============================
 
+Nenurodžius metaduomenų matomumo reikšmės numatytoji reikšmė yra `private`.
+
 Integracijoms tarp skirtingų sistemų už Lietuvos ribų, rekomenduojama naudoti tik `public` matomumo elementus.
 
 Integracijoms tarp skirtingų sistemų Lietuvoje, rekomenduojama naudoti `public` arba `package` matomumo elementus.

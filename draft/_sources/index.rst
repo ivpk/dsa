@@ -4,7 +4,7 @@ Duomenų struktūros aprašas
 ##########################
 
 Ši versija:
-    `Naujausias redaktoriaus juodraštis`_
+    `DSA 1.1`_
 Klaidų sekimas:
     `Github`_
 Redaktorius:
@@ -16,7 +16,7 @@ Naujausia paskelbta versija:
 Naujausias redaktoriaus juodraštis:
     `Naujausias redaktoriaus juodraštis`_
 
-.. _DSA 1.0: https://ivpk.github.io/dsa/1.0
+.. _DSA 1.1: https://ivpk.github.io/dsa/1.1
 .. _Naujausia paskelbta versija: https://ivpk.github.io/dsa/
 .. _Naujausias redaktoriaus juodraštis: https://ivpk.github.io/dsa/draft/
 .. _Github: https://github.com/ivpk/dsa/issues
@@ -86,6 +86,9 @@ Turinys
     modeliai/funkciniai
     branda
     prieiga
+    statusas
+    matomumas
+    eli
     schemos/index
     saltiniai
     vardu-erdves

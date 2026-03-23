@@ -147,7 +147,7 @@ pavadinimą.
 .. data:: visibility
 
     Metaduomenų matomumas, naudojamas pagal nutylėjimą visiems šios vardų erdvės
-    elementams.
+    elementams. Nenurodžius, išskaičiuojamas pagal elementų matomumo lygius.
 
 .. seealso::
 
@@ -156,7 +156,7 @@ pavadinimą.
 .. data:: access
 
     Prieigos lygis, naudojamas pagal nutylėjimą visiems šios vardų erdvės
-    elementams.
+    elementams. Nenurodžius, išskaičiuojamas pagal elementų prieigos lygius.
 
 .. seealso::
 
@@ -769,7 +769,7 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
 
 .. data:: visibility
 
-    Modelio eilutės metaduomenų matomumas.
+    Modelio eilutės metaduomenų matomumas. Nenurodžius, išskaičiuojamas pagal savybių matomumo lygius - jei yra tik `private` arba `visibility` neturinčios savybės, modelis yra `private` ir nėra skeilbiamas. Jei yra `protected` savybės, modelis `protected`, jei yra `package` arba `public` savybės - modelis `package`.
 
 .. seealso::
 
@@ -779,7 +779,7 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
 
     Modeliui priklausančių laukų :ref:`prieigos lygis <access>`.
 
-    Modelio prieigos lygis yra išskaičiuojamas iš modeliui priskirtų duomenų laukų, imant didžiausią prieigos lygmenį nurodytą prie duomenų lauko. Pavyzdžiui, jei bent vienas duomenų laukas turi aukščiausią `open` prieigos lygmenį, tada ir viso modelio prieigos lygis tampa `open`.
+    Modelio prieigos lygis yra išskaičiuojamas iš modeliui priskirtų duomenų laukų, imant didžiausią prieigos lygmenį nurodytą prie duomenų lauko. Pavyzdžiui, jei bent vienas duomenų laukas turi aukščiausią `open` prieigos lygmenį, tada ir viso modelio prieigos lygis tampa `open`. Jei nenurodytas savybių `access` numatytas yra `private` modelio ir savybių prieigos lygis ir duomenys nėra teikiami už IS ribų.
 
     .. seealso::
 
@@ -1060,7 +1060,7 @@ Kai yra nurodomas masyvas - savybė kuri grąžina reikšmių sąrašą - jos pa
 
 .. data:: visibility
 
-    Modelio eilutės metaduomenų matomumas.
+    Modelio eilutės metaduomenų matomumas. Nenurodžius, numatytas `private` matomumo lygis ir metaduomenys nėra skelbiami.
 
 .. seealso::
 
@@ -1068,7 +1068,7 @@ Kai yra nurodomas masyvas - savybė kuri grąžina reikšmių sąrašą - jos pa
 
 .. data:: access
 
-    Nurodo prieigos prie duomenų lygį.
+    Nurodo prieigos prie duomenų lygį. Nenurodžius, numatytas `private` prieigos lygis ir duomenys nėra teikiami už IS ribų.
 
 .. seealso::
 

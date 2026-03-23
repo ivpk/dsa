@@ -704,7 +704,7 @@ ir <a class="reference internal" href="#property.level" title="property.level"><
 <dt class="sig sig-object py" id="dataset.visibility">
 <span class="sig-prename descclassname"><span class="pre">dataset.</span></span><span class="sig-name descname"><span class="pre">visibility</span></span><a class="headerlink" href="#dataset.visibility" title="Link to this definition">#</a></dt>
 <dd><p>Metaduomenų matomumas, naudojamas pagal nutylėjimą visiems šios vardų erdvės
-elementams.</p>
+elementams. Nenurodžius, išskaičiuojamas pagal elementų matomumo lygius.</p>
 </dd></dl>
 
 <div class="admonition seealso">
@@ -715,7 +715,7 @@ elementams.</p>
 <dt class="sig sig-object py" id="dataset.access">
 <span class="sig-prename descclassname"><span class="pre">dataset.</span></span><span class="sig-name descname"><span class="pre">access</span></span><a class="headerlink" href="#dataset.access" title="Link to this definition">#</a></dt>
 <dd><p>Prieigos lygis, naudojamas pagal nutylėjimą visiems šios vardų erdvės
-elementams.</p>
+elementams. Nenurodžius, išskaičiuojamas pagal elementų prieigos lygius.</p>
 </dd></dl>
 
 <div class="admonition seealso">
@@ -1518,7 +1518,7 @@ atitinka kodiniams pavadinimams keliamus reikalavimus.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="model.visibility">
 <span class="sig-prename descclassname"><span class="pre">model.</span></span><span class="sig-name descname"><span class="pre">visibility</span></span><a class="headerlink" href="#model.visibility" title="Link to this definition">#</a></dt>
-<dd><p>Modelio eilutės metaduomenų matomumas.</p>
+<dd><p>Modelio eilutės metaduomenų matomumas. Nenurodžius, išskaičiuojamas pagal savybių matomumo lygius - jei yra tik <code class="docutils literal notranslate"><span class="pre">private</span></code> arba <code class="docutils literal notranslate"><span class="pre">visibility</span></code> neturinčios savybės, modelis yra <code class="docutils literal notranslate"><span class="pre">private</span></code> ir nėra skeilbiamas. Jei yra <code class="docutils literal notranslate"><span class="pre">protected</span></code> savybės, modelis <code class="docutils literal notranslate"><span class="pre">protected</span></code>, jei yra <code class="docutils literal notranslate"><span class="pre">package</span></code> arba <code class="docutils literal notranslate"><span class="pre">public</span></code> savybės - modelis <code class="docutils literal notranslate"><span class="pre">package</span></code>.</p>
 </dd></dl>
 
 <div class="admonition seealso">
@@ -1529,7 +1529,7 @@ atitinka kodiniams pavadinimams keliamus reikalavimus.</p>
 <dt class="sig sig-object py" id="model.access">
 <span class="sig-prename descclassname"><span class="pre">model.</span></span><span class="sig-name descname"><span class="pre">access</span></span><a class="headerlink" href="#model.access" title="Link to this definition">#</a></dt>
 <dd><p>Modeliui priklausančių laukų <a class="reference internal" href="prieiga.html#access"><span class="std std-ref">prieigos lygis</span></a>.</p>
-<p>Modelio prieigos lygis yra išskaičiuojamas iš modeliui priskirtų duomenų laukų, imant didžiausią prieigos lygmenį nurodytą prie duomenų lauko. Pavyzdžiui, jei bent vienas duomenų laukas turi aukščiausią <code class="docutils literal notranslate"><span class="pre">open</span></code> prieigos lygmenį, tada ir viso modelio prieigos lygis tampa <code class="docutils literal notranslate"><span class="pre">open</span></code>.</p>
+<p>Modelio prieigos lygis yra išskaičiuojamas iš modeliui priskirtų duomenų laukų, imant didžiausią prieigos lygmenį nurodytą prie duomenų lauko. Pavyzdžiui, jei bent vienas duomenų laukas turi aukščiausią <code class="docutils literal notranslate"><span class="pre">open</span></code> prieigos lygmenį, tada ir viso modelio prieigos lygis tampa <code class="docutils literal notranslate"><span class="pre">open</span></code>. Jei nenurodytas savybių <code class="docutils literal notranslate"><span class="pre">access</span></code> numatytas yra <code class="docutils literal notranslate"><span class="pre">private</span></code> modelio ir savybių prieigos lygis ir duomenys nėra teikiami už IS ribų.</p>
 <div class="admonition seealso">
 <p class="admonition-title">Taip pat žiūrėkite</p>
 <p><a class="reference internal" href="prieiga.html#access"><span class="std std-ref">Prieigos lygiai</span></a></p>
@@ -2105,7 +2105,7 @@ pateikimui.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="property.visibility">
 <span class="sig-prename descclassname"><span class="pre">property.</span></span><span class="sig-name descname"><span class="pre">visibility</span></span><a class="headerlink" href="#property.visibility" title="Link to this definition">#</a></dt>
-<dd><p>Modelio eilutės metaduomenų matomumas.</p>
+<dd><p>Modelio eilutės metaduomenų matomumas. Nenurodžius, numatytas <code class="docutils literal notranslate"><span class="pre">private</span></code> matomumo lygis ir metaduomenys nėra skelbiami.</p>
 </dd></dl>
 
 <div class="admonition seealso">
@@ -2115,7 +2115,7 @@ pateikimui.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="property.access">
 <span class="sig-prename descclassname"><span class="pre">property.</span></span><span class="sig-name descname"><span class="pre">access</span></span><a class="headerlink" href="#property.access" title="Link to this definition">#</a></dt>
-<dd><p>Nurodo prieigos prie duomenų lygį.</p>
+<dd><p>Nurodo prieigos prie duomenų lygį. Nenurodžius, numatytas <code class="docutils literal notranslate"><span class="pre">private</span></code> prieigos lygis ir duomenys nėra teikiami už IS ribų.</p>
 </dd></dl>
 
 <div class="admonition seealso">

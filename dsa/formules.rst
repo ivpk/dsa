@@ -984,6 +984,11 @@ kelis jau aprašytus laukus.
         reikšmių, jei duomenų šaltinio reikšmė nėra viena iš
         :data:`property.enum`, tada grąžinama klaida.
 
+    .. function:: noop()
+
+       Naudojama su `property.enum`. Nurodo, kad DSA yra išvardintos ne visos `enum` vertės
+       ir iš šaltion gavus kitas reikšmes nėturėtų būti atliekamos jokios operacijos (no operation)
+
     .. function:: switch(*cases)
     .. function:: case(cond, value)
     .. function:: case(default)

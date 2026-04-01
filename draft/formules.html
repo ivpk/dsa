@@ -1623,10 +1623,115 @@ jei <code class="docutils literal notranslate"><span class="pre">pattern</span><
 
 <dl class="py function">
 <dt class="sig sig-object py" id="cast">
-<span class="sig-name descname"><span class="pre">cast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cast" title="Link to this definition">#</a></dt>
-<dd><p>Konvertuoja šaltinio tipą į nurodytą <code class="docutils literal notranslate"><span class="pre">type</span></code> tipą. Tipų konvertavimas yra
+<span class="sig-name descname"><span class="pre">cast</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cast" title="Link to this definition">#</a></dt>
+<dd><p>Konvertuoja šaltinio tipą į duomenų lauko tipą. Tipų konvertavimas yra
 įmanomas tik tam tikrais atvejais. Jei tipų konvertuoti neįmanoma, tada
-metodas turėtų grąžinti klaidą.</p>
+metodas grąžina klaidą.</p>
+<p>Tarkime, turime tokius JSON duomenis:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;grades&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Perfect&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;last_used&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-01-01 14:00&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Good&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;last_used&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-01-02 16:00&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Naudodami prepare funkciją <code class="docutils literal notranslate"><span class="pre">cast()</span></code>, galime transformuoti duomenų lauko <code class="docutils literal notranslate"><span class="pre">last_used</span></code>
+reikšmę į tik datos arba tik laiko formatus:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>d</p></th>
+<th class="head"><p>r</p></th>
+<th class="head"><p>b</p></th>
+<th class="head"><p>m</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+<th class="head"><p>prepare</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="5"><p>datasets/example/grades</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td colspan="4"><p>grades</p></td>
+<td><p>dask/json</p></td>
+<td></td>
+<td><p>data.json</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td colspan="2"><p>Grade</p></td>
+<td></td>
+<td><p>name</p></td>
+<td><p>grades</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>name</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>name</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>last_used_date</p></td>
+<td><p>date</p></td>
+<td></td>
+<td><p>last_used</p></td>
+<td><p>cast()</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>last_used_time</p></td>
+<td><p>time</p></td>
+<td></td>
+<td><p>last_used</p></td>
+<td><p>cast()</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Pagal pateiktą DSA bus nuskaityti tokie duomenys:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;_data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Perfect&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;last_used_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-01-01&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;last_used_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;14:00:00&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Good&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;last_used_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-01-02&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;last_used_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16:00:00&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Atkreipkite dėmesį, kad grąžintų duomenų <code class="docutils literal notranslate"><span class="pre">last_used_date</span></code> reikšmė transformuota tik į datą, be laiko,
+o <code class="docutils literal notranslate"><span class="pre">last_used_date</span></code> - į laiką sekundžių tikslumu.</p>
 </dd></dl>
 
 <dl class="py function">

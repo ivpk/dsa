@@ -466,34 +466,72 @@ Pavyzdžiai
 
 .. admonition:: Pavyzdys
 
-    ======== ===== ====== =========== ========= ========= ==================
-    dataset  base  model  property    type      ref       source
-    ======== ===== ====== =========== ========= ========= ==================
-    example                                                           
-    --------------------------------- --------- --------- ------------------
-    \              Location                     id       
-    -------- ----- ------------------ --------- --------- ------------------
-    \                     id          integer
-    \                     name\@lt    text
-    \                     population  integer
-    \        Location                          name\@lt 
-    -------- ------------------------ --------- --------- ------------------
-    \              City                         name\@lt  CITY
-    -------- ----- ------------------ --------- --------- ------------------
-    \                     name\@lt                        NAME
-    \                     population                      POPULATION
-    \        /
-    -------- ------------------------ --------- --------- ------------------
-    \              Village                      name\@lt  VILLAGE
-    -------- ----- ------------------ --------- --------- ------------------
-    \                     name\@lt                        VILLAGE
-    \                     population                      POPULATION
-    \                     region      ref       Location  REGION
-    \        /
-    ======== ======================== ========= ========= ==================
+    Pavyzdyje modelis `Location` yra pirminis šaltinis su identifikatoriumi `id`. `City` modelis
+    turi nurodytą modelio bazę. `Village` modelis nors ir turi tokius pat laukus, neturi nurodytos
+    modelio bazės.
+
+    ======== ========== ========== ========== =========== ========= ========= ==================
+    dataset  resource   base       model      property    type      ref       source
+    ======== ========== ========== ========== =========== ========= ========= ==================
+    example
+    ----------------------------------------------------- --------- --------- ------------------
+    \        sql_db                                       sql                 database_url
+    -------- -------------------------------------------- --------- --------- ------------------
+    \                              Location                         id
+    -------- ---------- ---------- ---------------------- --------- --------- ------------------
+    \                                         id          integer
+    \                                         population  integer
+    \                   Location                                    id
+    -------- ---------- ---------- ---------- ----------- --------- --------- ------------------
+    \                              City                             id        CITY
+    -------- ---------- ---------- ---------------------- --------- --------- ------------------
+    \                                         id                              NAME
+    \                                         population                      POPULATION
+    \                   /
+    -------- ---------- --------------------------------- --------- --------- ------------------
+    \                              Village                          id        VILLAGE
+    -------- ---------- ---------- ---------------------- --------- --------- ------------------
+    \                                          id                             VILLAGE
+    \                                          population                     POPULATION
+    \                   /
+    ======== ========== ================================= ========= ========= ==================
+
+    Skaitant duomenis, laukų `Location.id` ir `City.id` reikšmės sutaps, nes `City.id` naudoja
+    `Location.id` globalų identifikatorių.
+
+    `Village` turi savo globalų identifikatorių `id`, nes šis modelis nėra susietas su `Location` modeliu
+    per modelio bazę.
+
+.. admonition:: Pavyzdys
 
     Šiame pavyzdyje esminis skirtumas yra tas, kad nurodyta kaip daromas jungimas.
     `City` ir `Village` su `Location` jungiame per `name\@lt` lauką.
+
+    ======== ========== ========== =========== ========= ========= ==================
+    dataset  base       model      property    type      ref       source
+    ======== ========== ========== =========== ========= ========= ==================
+    example
+    ------------------------------------------ --------- --------- ------------------
+    \                   Location                         id
+    -------- ---------- ---------------------- --------- --------- ------------------
+    \                              id          integer
+    \                              name\@lt    text
+    \                              population  integer
+    \        Location                          name\@lt
+    -------- --------------------------------- --------- --------- ------------------
+    \                   City                             name\@lt  CITY
+    -------- ---------- ---------------------- --------- --------- ------------------
+    \                              name\@lt                        NAME
+    \                              population                      POPULATION
+    \        /
+    -------- --------------------------------- --------- --------- ------------------
+    \                   Village                          name\@lt  VILLAGE
+    -------- ---------- ---------------------- --------- --------- ------------------
+    \                              name\@lt                        VILLAGE
+    \                              population                      POPULATION
+    \                              region      ref       Location  REGION
+    \        /
+    ======== ================================= ========= ========= ==================
 
 
 .. .. _duomenų-modelis:

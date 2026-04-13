@@ -173,10 +173,10 @@ Duomenų kilmė
 
 Įprastai duomenys yra registruojami vieną kartą pirminiame šaltinyje ir daug
 kartų pernaudojami išvestiniuose šaltiniuose. Informacija apie tai iš kokio
-pirminio šaldinio duomenys pateko į išvestinį šaltinį, vadinama duomenų kilme.
+pirminio šaltinio duomenys pateko į išvestinį šaltinį, vadinama duomenų kilme.
 
 Struktūros aprašuose, duomenų kilmė pažymima nepildant :data:`property.type`
-stulpleio. Jei :data:`property.type` yra neužpildytas, nurodoma, kad modelis
+stulpelio. Jei :data:`property.type` yra neužpildytas, nurodoma, kad modelis
 kuriame pateikta savybė, nėra pirminis šios savybės šaltinis.
 
 Jei modelis yra kito jungtinio modelio dalis arba pirminio modelio dalis,
@@ -188,7 +188,7 @@ pateikiamos tik skaitymui, be galimybės keisti savybių reikšmių.
   duomenų modelyje prie kurios savybė yra pateikta,
 - jei `type` nenurodytas, tada nurodoma, kad ši savybė nėra :term:`pirminis
   duomenų šaltinis` ir gali būti naudojama tik skaitymui, be galimybės keisti
-  savybės reikšias per modelį, kuriame savybė pateikita.
+  savybės reikšmess per modelį, kuriame savybė pateikta.
 
 Pavyzdžiui turime jungtinį `City` modelį:
 

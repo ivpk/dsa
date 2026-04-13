@@ -330,7 +330,7 @@ Funkcijos
 
 .. function:: http(method="GET", body="form")
 
-    Papildomi parametrai, reikaling konstruojant HTTP užklausas.
+    Papildomi parametrai, reikalingi konstruojant HTTP užklausas.
 
     **Argumentai**
 
@@ -458,7 +458,7 @@ Tais atvejais, kai :data:`property` yra saugomas tiek :data:`base`, tiek
 :data:`model` lentelėse, norint gauti persidengiančios savybės duomenis iš
 :data:`base`, reikia naudoti `_base.` prefiksą.
 
-`_base` rodo į bazinį modelė.
+`_base` rodo į bazinį modelį.
 
 
 Pavyzdžiai
@@ -807,7 +807,7 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
 
 .. data:: visibility
 
-    Modelio eilutės metaduomenų matomumas. Nenurodžius, išskaičiuojamas pagal savybių matomumo lygius - jei yra tik `private` arba `visibility` neturinčios savybės, modelis yra `private` ir nėra skeilbiamas. Jei yra `protected` savybės, modelis `protected`, jei yra `package` arba `public` savybės - modelis `package`.
+    Modelio eilutės metaduomenų matomumas. Nenurodžius, išskaičiuojamas pagal savybių matomumo lygius - jei yra tik `private` arba `visibility` neturinčios savybės, modelis yra `private` ir nėra skelbiamas. Jei yra `protected` savybės, modelis `protected`, jei yra `package` arba `public` savybės - modelis `package`.
 
 .. seealso::
 
@@ -901,7 +901,7 @@ Funkcijos
 
     Jei :data:`model.ref` pirminis raktas nėra unikalus ir norma panaikinti
     besidubliuojančias reikšmes, galima nurodyti `distinct()` funkciją, kuri
-    panaidins objktus su besidubliuojančiais pirminiais raktais.
+    panaikins objektus su besidubliuojančiais pirminiais raktais.
 
     .. admonition:: Pavyzdys
 
@@ -941,7 +941,7 @@ property
 .. module:: property
 
 Savybė yra duomenų laukas, modelio atributas.
-Savybės :ref:`kodinis pavadinimas <kodiniai-pavadinimai>`užrašomas
+Savybės :ref:`kodinis pavadinimas <kodiniai-pavadinimai>` užrašomas
 vienaskaitos forma iš mažosios raidės, jei pavadinimas iš kelių žodžių,
 žodžiai atskiriami pabraukimu `_`. 
 
@@ -974,7 +974,7 @@ Kai yra nurodomas masyvas - savybė kuri grąžina reikšmių sąrašą - jos pa
     Kai kurie duomenų tipai, gali turėti konkrečiam duomenų tipui pateikiamus
     papildomus parametrus, tokie parametrai nurodomi skliausteliuose.
 
-    Dupmenų tipų pavyzdžiai:
+    Duomenų tipų pavyzdžiai:
 
     - `integer`
 
@@ -1628,7 +1628,7 @@ Parametrų generavimui galima naudoti tokias formules:
     **Argumentai**
 
     name
-        JSONPath_ arba XPath_ išraiška, priklauso nuoo :data:`resource.prapare`
+        JSONPath_ arba XPath_ išraiška, priklauso nuo :data:`resource.prapare`
         nurodytos :func:`resource.http` `body` tipo.
 
         Nurodoma :data:`param.source` stulpelyje.
@@ -1992,7 +1992,7 @@ kontekste.
     nurodytas kito komentaro :data:`comment.id`, nurodant, kad tai yra
     atsakymas į ankstesnį komentarą.
 
-    URI pateikiami sutrumpinta forma, naudojant prefikstus. Žiūrėti skrių
+    URI pateikiami sutrumpinta forma, naudojant prefikstus. Žiūrėti skyrių
     :ref:`vocab`.
 
 .. data:: title

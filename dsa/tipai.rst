@@ -134,6 +134,10 @@ Duomenų tipai
         pateikti Lietuvių kalba, tačiau laukas `description` papildomai turi
         vertimą į anglų kalbą. Papildomai, šalies aprašymo teksto formatas yra
         HTML_ tipo.
+		
+	.. container:: agent-only
+		.. admonition:: Duomenų agento "Spinta" atveju
+			| Šiuo metu neįgyvendinta
 
     .. topic:: Brandos lygis
 
@@ -597,7 +601,10 @@ Duomenų tipai
         123.45
         123 EUR
         123.45 EUR
-
+		
+	.. container:: agent-only
+		.. admonition:: Duomenų agento "Spinta" atveju
+			| Šiuo metu neįgyvendinta - https://github.com/atviriduomenys/spinta/issues/1083
 
 .. data:: file
 
@@ -726,7 +733,7 @@ Duomenų tipai
 
     Atgalinis ryšys su modeliu.
 
-    Jei ryšys tarp dviejų modlių yra daug su vienu, tada `property` pavadinimas
+    Jei ryšys tarp dviejų modlių yra vienas su daug, tada `property` pavadinimas
     nurodomas su `[]` simboliu.
 
     .. admonition:: Pavyzdys
@@ -774,6 +781,11 @@ Duomenų tipai
 
         :ref:`atgalinis-ryšys`
 
+	.. container:: agent-only
+		.. admonition:: Duomenų agento "Spinta" atveju
+			| Šiuo metu nurodant `backref` ryšį turi būti kuriamas ir `ref` tipo ryšys iš modelio, į kurį
+			nurodomas `backref` ryšys. Nenurodžius, yra pateikiama validavimo klaida.
+
 .. data:: generic
 
     Dinaminis ryšys su modeliu.
@@ -804,7 +816,7 @@ Duomenų tipai
     grupę, po vienu pavadinimu.
 
     Šis tipas naudojamas apibrėžti sudėtiniams duomenims, kurie aprašyti
-    naudojant kelis skirtingus tipas. Kompozicinio tipo atveju property
+    naudojant kelis skirtingus tipus. Kompozicinio tipo atveju property
     stulpelyje komponuojami pavadinimai atskiriami taško simboliu.
 
     Sudarant duomenų modelį, rekomenduojama laikytis plokščios struktūros ir

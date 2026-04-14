@@ -369,7 +369,7 @@ access
     Prieigos lygis. Gali būti naudojami tokie žymėjimai:
 
     - `+` - atviri duomenys, žiūrėti :data:`open`.
-    - `#` - vieši duomenys, žiūrįti :data:`public`.
+    - `#` - vieši duomenys, žiūrėti :data:`public`.
     - `~` - duomenys teikiami pagal sutartį, žiūrėti :data:`protected`.
     - `-` - nepublikuojami duomenys, žiūrėti :data:`private`.
 

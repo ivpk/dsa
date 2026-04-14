@@ -24,7 +24,7 @@ _now = datetime.now().year
 project = 'Duomenų struktūros aprašas'
 copyright = f'2019-{_now}, VSSA'
 author = 'Valstybės skaitmeninių sprendimų agentūra'
-version = '1.1'
+version = '1.2'
 
 
 # -- General configuration ---------------------------------------------------

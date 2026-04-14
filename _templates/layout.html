@@ -1,0 +1,17 @@
+{% extends "!layout.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  <script src="{{ pathto('static/agent-toggle.js', 1) }}"></script>
+  <link rel="stylesheet" href="{{ pathto('static/agent-toggle.css', 1) }}">
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  <div id="agent-toggle">
+    <label>
+      <input type="checkbox" id="agent-switch">
+      Palaiko duomenų agentas
+    </label>
+  </div>
+{% endblock %}

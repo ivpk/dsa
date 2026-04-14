@@ -793,6 +793,10 @@ Pilnas galimų filtrų sąrašas:
         savybes.
 
     .. function:: include(*props)
+	
+	.. container:: agent-only
+		.. admonition:: Duomenų agento "Spinta" atveju
+			| Šis funkcionalumas nėra įgyvendintas. 
 
         Prie grąžinamų savybių, papildomai įtraukiamos nurodytos savybės. Gali
         būti naudojama kartu su `select()`, papildomai įtraukiant
@@ -800,10 +804,18 @@ Pilnas galimų filtrų sąrašas:
 
     .. function:: exclude(*props)
 
+	.. container:: agent-only
+		.. admonition:: Duomenų agento "Spinta" atveju
+			| Šis funkcionalumas nėra įgyvendintas.
+
         Pašalina savybę iš `select()` ar `expand()` funkcijos pagalba atrinktų
         savybių sąrašo.
 
     .. function:: expand(*props)
+
+	.. container:: agent-only
+		.. admonition:: Duomenų agento "Spinta" atveju
+			| Šis funkcionalumas nėra įgyvendintas.
 
         Veikia panašiai, kaip `include()`, tačiau įtraukia visas nurodyto
         sudėtinio tipo savybes.
@@ -817,6 +829,10 @@ Pilnas galimų filtrų sąrašas:
             - :ref:`prop-expand`
 
     .. function:: extends(model, *props)
+
+	.. container:: agent-only
+		.. admonition:: Duomenų agento "Spinta" atveju
+			| Šis funkcionalumas nėra įgyvendintas.
 
         Įtraukia nurodyto `model` modelio `props` savybes.
 

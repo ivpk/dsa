@@ -59,6 +59,8 @@ Duomenų subjektas yra dalykas turintis pavadinimą ar unikalų identifikatorių
 Duomenų subjekto tipas yra subjektų grupė priklausančių tai pačiai kategorijai
 ar klasei__.
 
+Pateikiami anglų kalba.
+
 __ https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model#Entity%E2%80%93relationship_model
 __ https://en.wikipedia.org/wiki/Class_(knowledge_representation)
 
@@ -82,6 +84,8 @@ Visi duomenų lauko žodžiai rašomi mažosiomis raidėmis, atskiriami pabrauki
 ženklu `_`.
 
 Duomenų lauko pavadinimas turi prasidėti mažąja raide.
+
+Pateikiami anglų kalba.
 
 
 Ryšiai tarp modelių

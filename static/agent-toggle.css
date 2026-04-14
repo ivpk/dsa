@@ -1,0 +1,7 @@
+.agent-only {
+  display: none;
+}
+
+body.agent-enabled .agent-only {
+  display: block;
+}

@@ -53,10 +53,32 @@ dataset
 
 .. module:: dataset
 
-Duomenų rinkinys struktūros apraše nurodomas tam, kad būtų galimybė susieti
-duomenų struktūros elementus su duomenų rinkiniais registruotais duomenų
-kataloge. Toks susiejimas atliekamas naudojant duomenų rinkinio kodinį
-pavadinimą.
+Duomenų rinkinys struktūros apraše nurodomas tam, kad būtų galima susieti duomenų struktūros elementus su duomenų kataloge registruotais duomenų rinkiniais. Šis susiejimas atliekamas naudojant duomenų rinkinio identifikatorių (kodinį pavadinimą).
+
+Duomenų rinkinio URI formuojamas laikantis šių taisyklių:
+
+a) KDSA (koncepcinis DSA, talpinamas prie informacinės sistemos) – URI pildomas pagal IRI specifikacijoje aprašytą tvarką (https://ivpk.github.io/dsa/draft/modelis.html#iri).
+
+b) Duomenų rinkinio DSA – URI formuojamas taip:
+datasets/form/org/is/dataset
+pvz.: datasets/gov/rc/ar/masterdata.
+
+c) Duomenų paslaugos DSA – URI formuojamas taip:
+datasets/form/org/is/service/dataset
+pvz.: datasets/gov/rc/ar/udts/masterdata.
+
+Jei duomenų paslauga aptarnauja daugiau nei vieną duomenų rinkinį, jie nurodomi nuosekliai, t.y. imami visi jungiami Duomenų rinkinių DSA, jie nuosekliai suklijuojami į vieną, tik nebekartojant pirmos eilutės, kuri žymi stulpelių pavadinimus. Tuomet papildoma URI Service bendra reikšme reikšme visuose failo "dataset" stulpelio įrašuose. Kiekvienas papildomas duomenų rinkinys Duomenų paslaugos jungtiniame DSA identifikuojamas savo „dataset“ segmento reikšme. Pavyzdžiui,
+datasets/gov/rc/ar/udts/masterdata
+[kita DSA1 informacija]
+datasets/gov/rc/ar/udts/clasificators
+[kita DSA2 informacija].
+
+d) ŠDSA, esanti šaltinyje, atitinka duomenų paslaugos DSA, tačiau papildomai nurodoma duomenų paslaugos versija. URI formuojamas taip:
+datasets/form/org/is/service/version/dataset
+pvz.: datasets/gov/rc/ar/udts/0/masterdata.
+
+Versijavimui naudojama ta pati versija, kuri registruojama API Vartuose. Taikoma tik MAJOR versijos dalis pagal https://semver.org/
+ specifikaciją. Vystomos (nestabilios) duomenų paslaugos žymimos versija „0“, o stabilios – „1“ ir didesnėmis reikšmėmis, didinant versiją su kiekvienu reikšmingu pakeitimu.
 
 .. topic:: Brandos lygis
 

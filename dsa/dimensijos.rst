@@ -21,9 +21,9 @@ datasets/gov/rc/ar/ws                Duomenų rinkinys
 ------------------------------------ ------------------------------ 
 \       db                           Duomenų teikimo paslauga
 ------- ---------------------------- ------------------------------ 
-\                **Gyvenviete**      Esybė
+\                **Location**        Esybė
 ------- -------- ------------------- ------------------------------ 
-\                      pavadinimas   Savybė
+\                      name          Savybė
 ======= ======== ===== ============= ============================== 
 
 Pavyzdyje aukščiau turime tris lenteles, turinčias vieną bendrą stulpelį
@@ -36,8 +36,8 @@ type       name                  title
 ========== ===================== ============================== 
 dataset    datasets/gov/rc/ar/ws Duomenų rinkinys
 resource   db                    Duomenų teikimo paslauga
-model      **Gyvenviete**        Esybė
-property   pavadinimas           Savybė
+model      **Location**          Esybė
+property   name                  Savybė
 ========== ===================== ============================== 
 
 Kadangi DSA lentelė yra daugiamatė, nurodant stulpelį, jei kalbama apie
@@ -53,10 +53,32 @@ dataset
 
 .. module:: dataset
 
-Duomenų rinkinys struktūros apraše nurodomas tam, kad būtų galimybė susieti
-duomenų struktūros elementus su duomenų rinkiniais registruotais duomenų
-kataloge. Toks susiejimas atliekamas naudojant duomenų rinkinio kodinį
-pavadinimą.
+Duomenų rinkinys struktūros apraše nurodomas tam, kad būtų galima susieti duomenų struktūros elementus su duomenų kataloge registruotais duomenų rinkiniais. Šis susiejimas atliekamas naudojant duomenų rinkinio identifikatorių (kodinį pavadinimą).
+
+Duomenų rinkinio URI formuojamas laikantis šių taisyklių:
+
+a) KDSA (koncepcinis DSA, talpinamas prie informacinės sistemos) – URI pildomas pagal IRI specifikacijoje aprašytą tvarką (https://ivpk.github.io/dsa/draft/modelis.html#iri).
+
+b) Duomenų rinkinio DSA – URI formuojamas taip:
+datasets/form/org/is/dataset
+pvz.: datasets/gov/rc/ar/masterdata.
+
+c) Duomenų paslaugos DSA – URI formuojamas taip:
+datasets/form/org/is/service/dataset
+pvz.: datasets/gov/rc/ar/udts/masterdata.
+
+Jei duomenų paslauga aptarnauja daugiau nei vieną duomenų rinkinį, jie nurodomi nuosekliai, t.y. imami visi jungiami Duomenų rinkinių DSA, jie nuosekliai suklijuojami į vieną, tik nebekartojant pirmos eilutės, kuri žymi stulpelių pavadinimus. Tuomet papildoma URI Service bendra reikšme reikšme visuose failo "dataset" stulpelio įrašuose. Kiekvienas papildomas duomenų rinkinys Duomenų paslaugos jungtiniame DSA identifikuojamas savo „dataset“ segmento reikšme. Pavyzdžiui,
+datasets/gov/rc/ar/udts/masterdata
+[kita DSA1 informacija]
+datasets/gov/rc/ar/udts/clasificators
+[kita DSA2 informacija].
+
+d) ŠDSA, esanti šaltinyje, atitinka duomenų paslaugos DSA, tačiau papildomai nurodoma duomenų paslaugos versija. URI formuojamas taip:
+datasets/form/org/is/service/version/dataset
+pvz.: datasets/gov/rc/ar/udts/0/masterdata.
+
+Versijavimui naudojama ta pati versija, kuri registruojama API Vartuose. Taikoma tik MAJOR versijos dalis pagal https://semver.org/
+ specifikaciją. Vystomos (nestabilios) duomenų paslaugos žymimos versija „0“, o stabilios – „1“ ir didesnėmis reikšmėmis, didinant versiją su kiekvienu reikšmingu pakeitimu.
 
 .. topic:: Brandos lygis
 
@@ -76,7 +98,16 @@ pavadinimą.
 
 .. data:: id
 
-    Duomenų rinkinio arba duomenų erdvės unikalus identifikatorius.
+    Duomenų rinkinio arba duomenų erdvės unikalus globalus identifikatorius.
+	Šis stulpelis pildomas automatinėmis priemonėmis,
+    siekiant identifikuoti duomenų rinkinius, kad būtų galima atpažinti metaduomenis,
+    kurie jau buvo pateikti ir po to atnaujinti.
+	
+    Šio stulpelio pildyti nereikia.
+	
+	.. container:: agent-only
+		.. admonition:: Duomenų agento "Spinta" atveju
+			| Šis `id` yra generuojamas automatinėmis duomenų agento priemonėmis sinchronizacijos su metaduomenų katalogu metu.
 
 .. data:: type
 
@@ -119,15 +150,23 @@ pavadinimą.
 
 .. data:: prepare
 
-    Nenaudojama.
+    Nenaudojamas.
 
 .. data:: count
 
-    Modelių skaičius duomenų rinkinyje. Atitinka unikalių lentelių arba objektų elementų skaičių šaltinio schemoje. Duomenų agento generuojamas automatiškai.
+    Modelių skaičius duomenų rinkinyje. Atitinka unikalių lentelių arba objektų elementų skaičių šaltinio schemoje.
+	
+	Šio stulpelio pildyti nereikia.
+	
+	.. container:: agent-only
+		.. admonition:: Duomenų agento "Spinta" atveju
+			| Duomenų agentas šias vertes generuos automatiškai. Šiuo metu neįgyvendinta - https://github.com/atviriduomenys/spinta/issues/1453
+		
+		.. admonition:: Pastaba
 
-.. seealso::
+			Automatinis duomenų elementų skaičiavimas priklauso nuo duomenų šaltinio tipo ir nėra galimas su visais duomenų šaltiniais.
 
-    :ref:`count`
+			Priklausomai nuo duomenų kiekio duomenų šaltinyje, ši operacija gali reikalauti didelių apdorojimo resursų ir gali būti išjungiama.
 
 .. data:: level
 
@@ -178,6 +217,7 @@ pavadinimą.
 
     Duomenų rinkinio ar vardų erdvės aprašymas.
 
+
 .. _resource:
 
 resource
@@ -200,20 +240,33 @@ rinkinio kontekste.
 
 .. data:: id
 
-    Duomenų šaltinio unikalus identifikatorius.
+    Duomenų šaltinio unikalus globalus identifikatorius.
+	Šis stulpelis pildomas automatinėmis priemonėmis,
+    siekiant identifikuoti duomenų rinkinius, kad būtų galima atpažinti metaduomenis,
+    kurie jau buvo pateikti ir po to atnaujinti.
+	
+    Šio stulpelio pildyti nereikia.
+	
+	.. container:: agent-only
+		.. admonition:: Duomenų agento "Spinta" atveju
+			| Šis `id` yra generuojamas automatinėmis duomenų agento priemonėmis sinchronizacijos su metaduomenų katalogu metu.
 
 .. data:: type
 
-    Duomenų šaltinio tipas. Galimos reikšmės:
+    Duomenų šaltinio tipas. 
+	
+.. container:: agent-only
+		.. admonition:: Duomenų agento "Spinta" atveju
+			| Šiuo metu duomenų agento palaikomos reikšmės:
 
-    ========= ============================
-    `sql`     Reliacinės duomenų bazės
-    `csv`     CSV lentelės
-    `json`    JSON resursai
-    `xml`     XML resursai
-    `wsdl`    WSDL resursai
-    `soap`    SOAP resursai
-    ========= ============================
+			========= ============================
+			`sql`     Reliacinės duomenų bazės
+			`csv`     CSV lentelės
+			`json`    JSON resursai
+			`xml`     XML resursai
+			`wsdl`    WSDL resursai
+			`soap`    SOAP resursai
+			========= ============================
 
 .. data:: ref
 
@@ -240,17 +293,20 @@ rinkinio kontekste.
 
     dialect
         Duomenų šaltinio dialektas arba protokolas, kuriuo teikiami duomenys,
-        galimi variantai:
 
-        ================ ===========================
-        `postgresql`     PostgreSQL duomenų bazė.
-        `mysql`          MySQL duomenų bazė.
-        `mariadb`        MariaDB duomenų bazė.
-        `sqlite`         SQLite duomenų bazė.
-        `oracle`         Oracle duomenų bazė.
-        `mssql`          Microsoft SQL Server duomenų bazė.
-        `http`, `https`  Duomenų failas publikuojamas HTTP protokolu.
-        ================ ===========================
+		.. container:: agent-only
+			.. admonition:: Duomenų agento "Spinta" atveju
+				| Duomenų agento palaikomi variantai:
+
+				================ ===========================
+				`postgresql`     PostgreSQL duomenų bazė.
+				`mysql`          MySQL duomenų bazė.
+				`mariadb`        MariaDB duomenų bazė.
+				`sqlite`         SQLite duomenų bazė.
+				`oracle`         Oracle duomenų bazė.
+				`mssql`          Microsoft SQL Server duomenų bazė.
+				`http`, `https`  Duomenų failas publikuojamas HTTP protokolu.
+				================ ===========================
 
     driver
         Priklauso nuo **dialect** ir nuo naudojamo duomenų agento.
@@ -274,6 +330,10 @@ rinkinio kontekste.
     params
         Papildomi parametrai, priklauso nuo naudojamo **driver**.
 
+	.. container:: agent-only
+		.. admonition:: Duomenų agento "Spinta" atveju
+			| ŠDSA generavimo su duomenų agentu metu šis laukas automatiškai užpildomas komandinėje eilutėje nurodyta prisijungimo prie šaltinio informacija.
+
 .. data:: source.type
 
     Nurodoma originalaus šaltinio technologija, kuri priklauso nuo duomenų šaltinio tipo.
@@ -286,6 +346,8 @@ rinkinio kontekste.
         - `oracle`
         - `postgresql`
         - `sqlite`
+		
+	Pildyti nėra būtina.
 
 .. data:: level
 
@@ -335,19 +397,21 @@ Funkcijos
     **Argumentai**
 
     method (vardinis)
-        HTTP `methodas <mdn-http-methods_>`_.
+        HTTP `metodas <mdn-http-methods_>`_.
 
     body (vardinis)
         HTTP užklausos perduodamų duomenų formatas.
 
-        Galimi variantai:
+		.. container:: agent-only
+			.. admonition:: Duomenų agento "Spinta" atveju
+				| Šiuo metu duomenų agento palaikomi variantai:
 
-        ======= =============
-        `json`  Duomenys perduodami JSON formatu.
-        `xml`   Duomenys perduodami XML formatu.
-        `form`  Duomenys perduodami `application/x-www-form-urlencoded` arba
-                `multipart/form-data` (jei formoje pateikiami failai) formatu.
-        ======= =============
+				======= =============
+				`json`  Duomenys perduodami JSON formatu.
+				`xml`   Duomenys perduodami XML formatu.
+				`form`  Duomenys perduodami `application/x-www-form-urlencoded` arba
+						`multipart/form-data` (jei formoje pateikiami failai) formatu.
+				======= =============
 
     .. admonition:: Pavyzdys
 
@@ -364,8 +428,6 @@ Funkcijos
         .. code-block:: uri
 
             https://example.com/?NAME1=value1&NAME2=value2
-
-
 
 
 .. _base:
@@ -403,6 +465,14 @@ duomenų modeliai aprašo tą pačią realaus pasaulio esybę.
     Jei brandos lygis yra žemesnis nei `3`, tada identifikatorių siejimas nėra
     atliekamas, tokiu būdu tiesiog nurodomas semantinis susiejimas metaduomenų,
     o ne duomenų lygmenyje.
+
+.. data:: status
+
+    Base modelio metaduomnų būklė.
+
+    .. seealso::
+    
+        :ref:`status`
 
 .. data:: access
 
@@ -458,7 +528,7 @@ Tais atvejais, kai :data:`property` yra saugomas tiek :data:`base`, tiek
 :data:`model` lentelėse, norint gauti persidengiančios savybės duomenis iš
 :data:`base`, reikia naudoti `_base.` prefiksą.
 
-`_base` rodo į bazinį modelė.
+`_base` rodo į bazinį modelį.
 
 
 Pavyzdžiai
@@ -544,12 +614,12 @@ model
 
 Duomenų modelio :ref:`kodinis pavadinimas <kodiniai-pavadinimai>`. Užrašomas
 vienaskaitos forma iš didžiosios raidės, jei pavadinimas iš kelių žodžių,
-žodžiai atskiriami didžiąja raide.
+žodžiai atskiriami didžiąja raide. Pavadinimas turi būti pateiktas anglų kalba.
 
 .. admonition:: Pavyzdžiai
 
-    | `Gyvenviete`
-    | `AdministracinisTipas`
+    | `Location`
+    | `AdminUnitType`
 
 Modelis yra siejamas su realaus pasaulio esybėmis. Viena esybė gali turėti
 kelis skirtingus duomenų modelius, su skirtingomis savybėmis, tačiau skirtingi
@@ -644,8 +714,8 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
     kurie kartu unikaliai identifikuoja vieną duomenų eilutę (pirminis lentelės
     raktas arba identifikatorius).
 
-    Jei nurodytas :data:`model.type`, pirminis raktas būtinai turi sutapti su
-    :data:`model.type` pirminiu raktu.
+    Jei nurodytas `base` arba :data:`model.type`, pirminis raktas būtinai turi sutapti su
+    `base` arba :data:`model.type` pirminiu raktu.
 
     Jei modelio objektą unikaliai identifikuoja keli duomenų laukai,
     :data:`model.ref` stulpelyje galima nurodyti kelis duomenų laukus atskirtus
@@ -669,6 +739,11 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
             Nurodytas objekto identifikatorius yra patikimas, tačiau nėra
             siejamas su globaliu objekto identifikatoriumi.
 
+	.. container:: agent-only
+		.. admonition:: Duomenų agento "Spinta" atveju
+			| Generuojant ŠDSA su duomenų agentu, jei yra naudojamas šaltinis, kuriame yra nurodomi
+			pirminiai lentelės raktai arba objekto identifikatoriai, agentas šį lauką užpildo automatiškai.
+
 .. data:: source
 
     Modelio duomenų šaltinis, vieta ar pavadinimas fiziniame duomenų modelyje.
@@ -689,6 +764,11 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
             Nenurodytas modelio duomenų šaltinis :data:`model.source` ir duomenys nėra
             publikuojami :ref:`vidinėje saugykloje <internal-backend>`.
 
+	.. container:: agent-only
+		.. admonition:: Duomenų agento "Spinta" atveju
+			| Generuojant ŠDSA su duomenų agentu jis automatiškai užpildo šias reikšmes,
+			jei yra galimybė nustatyti vienareikšmius elementų kelius duomenų šaltinyje.
+
 .. data:: source.type
 
     Nurodo originalaus šaltinio modelio tipą.
@@ -706,6 +786,9 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
             - `temporary`
             - `materialized`
             - `dynamic`
+			
+	Nurodyti nėra būtina.
+	
     .. admonition:: Pavyzdys
 
         **Struktūros aprašas**
@@ -720,7 +803,7 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
         \                   id               integer  id       gyv_id    integer  
         \                   pavadinimas\@lt  string            gyv_pav   varchar(255)    
         ------------------- ---------------- -------- -------- --------- ---------------
-        **GyvenvieteView**                            id       Gyven     table
+        **GyvenvieteView**                            id       Gyven     view
         ------------------- ---------------- -------- -------- --------- ---------------
         \                   id               integer  id       gyv_id    integer  
         \                   pavadinimas\@lt  string            gyv_pav   varchar(255)
@@ -753,10 +836,10 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
         ------------ ---------- ------------- --------------- --------------- -------- ---- ------------ ------------
         \                       /rc/ar/City                                            id                
         ------------ ---------- ------------- --------------- --------------- -------- ---- ------------ ------------
-        \                                     Gyvenviete                               id   Gyven       
+        \                                     Location                                 id   Gyven       
         ------------ ---------- ------------- --------------- --------------- -------- ---- ------------ ------------
         \                                                     id              integer       gyv_id      
-        \                                                     pavadinimas\@lt string        gyv_pav    
+        \                                                     name\@lt        string        gyv_pav    
         ============ ========== ============= =============== =============== ======== ==== ============ ============
 
         Ir išvestinį duomenų šaltinį:
@@ -764,20 +847,20 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
         ============ ========== ============= =============== =============== ======== ==== ============ ====================
         dataset      resource   base          model           property        type     ref  source       origin
         ============ ========== ============= =============== =============== ======== ==== ============ ====================
-        pirminis           
+        isvestinis           
         ------------ ---------- ------------- --------------- --------------- -------- ---- ------------ --------------------
         \            service1                                                 json          \http://...   
         ------------ ---------- ------------- --------------- --------------- -------- ---- ------------ --------------------
         \                       /rc/ar/City                                            id                
         ------------ ---------- ------------- --------------- --------------- -------- ---- ------------ --------------------
-        \                                     Gyvenviete                               id   Cities       /pirminis/Gyvenviete
+        \                                     Location                                 id   Cities       /pirminis/Location
         ------------ ---------- ------------- --------------- --------------- -------- ---- ------------ --------------------
         \                                                     id              integer       gyv_id       id
-        \                                                     pavadinimas\@lt string        gyv_pav      pavadinimas@lt
+        \                                                     name\@lt string               gyv_pav      pavadinimas@lt
         ============ ========== ============= =============== =============== ======== ==== ============ ====================
 
 
-        Tada gauname informaciją, kad `isvestinis/Gyvenviete` modelio duomenys yra išvestiniai iš `pirminis/Gyvenviete`.
+        Tada gauname informaciją, kad `isvestinis/Location` modelio duomenys yra išvestiniai iš `pirminis/Location`.
 
         `base` nurodo modelio bazę, pagal kurią formuojami vienodi identifikatoriai, `origin` nurodo duomenų kilmę.
 
@@ -785,7 +868,19 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
 
 .. data:: count
 
-    Modelio objektų skaičius duomenų šaltinyje. Atitinka lentelės eilučių skaičių šaltinyje. Duomenų agento generuojamas automatiškai. Pildyti nereikia.
+    Modelio objektų skaičius duomenų šaltinyje. Atitinka lentelės eilučių skaičių šaltinyje.
+
+	Pildyti nereikia.
+	
+	.. container:: agent-only
+		.. admonition:: Duomenų agento "Spinta" atveju
+			| Duomenų agentas šias vertes generuos automatiškai. Šiuo metu neįgyvendinta - https://github.com/atviriduomenys/spinta/issues/1453
+		
+		.. admonition:: Pastaba
+
+			Automatinis duomenų elementų skaičiavimas priklauso nuo duomenų šaltinio tipo ir nėra galimas su visais duomenų šaltiniais.
+
+			Priklausomai nuo duomenų kiekio duomenų šaltinyje, ši operacija gali reikalauti didelių apdorojimo resursų ir gali būti išjungiama.
 
 .. data:: level
 
@@ -804,14 +899,22 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
 .. seealso::
 
     :ref:`status`
+	
+    .. container:: agent-only
+		.. admonition:: Duomenų agento "Spinta" atveju
+			| Generuojant ŠDSA su duomenų agentu, šios reikšmės atomatiškai nustatomos kaip `develop`
 
 .. data:: visibility
 
-    Modelio eilutės metaduomenų matomumas. Nenurodžius, išskaičiuojamas pagal savybių matomumo lygius - jei yra tik `private` arba `visibility` neturinčios savybės, modelis yra `private` ir nėra skeilbiamas. Jei yra `protected` savybės, modelis `protected`, jei yra `package` arba `public` savybės - modelis `package`.
+    Modelio eilutės metaduomenų matomumas. Nenurodžius, išskaičiuojamas pagal savybių matomumo lygius - jei yra tik `private` arba `visibility` neturinčios savybės, modelis yra `private` ir nėra skelbiamas. Jei yra `protected` savybės, modelis `protected`, jei yra `package` arba `public` savybės - modelis `package`.
 
 .. seealso::
 
     :ref:`visibility`
+
+    .. container:: agent-only
+		.. admonition:: Duomenų agento "Spinta" atveju
+			| Generuojant ŠDSA su duomenų agentu, šios reikšmės automatiškai nustatomos kaip `private`
 
 .. data:: access
 
@@ -854,7 +957,7 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
         datasets/gov/ivpk/dp/api                                           
         ------------------------------ ------------------ ---- ------------
         \                              prefix             ar   \https://data.gov.lt/id/adresai/
-        \       **Gyvenviete**                            code ar:Location 
+        \       **Street**                                code ar:Location 
         ------- ---------------------- ------------------ ---- ------------
         \             code             integer                 ar:code     
         \             name\@lt         string                  ar:name
@@ -901,7 +1004,7 @@ Funkcijos
 
     Jei :data:`model.ref` pirminis raktas nėra unikalus ir norma panaikinti
     besidubliuojančias reikšmes, galima nurodyti `distinct()` funkciją, kuri
-    panaidins objktus su besidubliuojančiais pirminiais raktais.
+    panaikins objektus su besidubliuojančiais pirminiais raktais.
 
     .. admonition:: Pavyzdys
 
@@ -943,13 +1046,13 @@ property
 Savybė yra duomenų laukas, modelio atributas.
 Savybės :ref:`kodinis pavadinimas <kodiniai-pavadinimai>`užrašomas
 vienaskaitos forma iš mažosios raidės, jei pavadinimas iš kelių žodžių,
-žodžiai atskiriami pabraukimu `_`. 
+žodžiai atskiriami pabraukimu `_`. Turi būti užrašoma anglų kalba.
 
 .. admonition:: Pavyzdžiai
 
     | `id`
-    | `pavadinimas`
-    | `pasto_kodas`
+    | `name`
+    | `post_code`
 
 Kai yra nurodomas masyvas - savybė kuri grąžina reikšmių sąrašą - jos pavadinimas užrašomas daugiskaita.
 
@@ -983,6 +1086,11 @@ Kai yra nurodomas masyvas - savybė kuri grąžina reikšmių sąrašą - jos pa
     - `geometry`
 
     - `geometry(linestringm, 3345) required`
+	
+    .. container:: agent-only
+		.. admonition:: Duomenų agento "Spinta" atveju
+			| Generuojant ŠDSA su duomenų agentu, šios reikšmės nuskaitomos iš fizinio šaltinio automatiškai 
+			duomenų tipus pritaikant JSON duomenų tipams. Rekšmės turėtų būti keičiamos tik duomenų transformacijos atveju.
 
 .. data:: ref
 
@@ -993,12 +1101,21 @@ Kai yra nurodomas masyvas - savybė kuri grąžina reikšmių sąrašą - jos pa
 
 .. data:: source
 
-    Duomenų lauko pavadinimas šaltinyje. Prasmė priklauso nuo
+    Duomenų lauko pavadinimas arba kelias šaltinyje. Prasmė priklauso nuo
     :data:`resource.type`.
+	
+    .. container:: agent-only
+		.. admonition:: Duomenų agento "Spinta" atveju
+			| Generuojant ŠDSA su duomenų agentu, šios reikšmės nuskaitomos iš fizinio šaltinio automatiškai 
+			jei yra galimybė jas nurodyti vienareikšmiškai.
 
 .. data:: source.type
 
-    SQL atveju `property.source.type` būtų originalus duomenų šaltinio tipas, pavyzdžiui `VARCHAR(255)`.
+    Duomenų tipas duomenų šaltinyje.
+	
+	Pildyti nėra būtina.
+	
+	SQL atveju `property.source.type` būtų originalus duomenų šaltinio tipas, pavyzdžiui `VARCHAR(255)`.
 
     .. admonition:: Pavyzdys
 
@@ -1046,10 +1163,10 @@ Kai yra nurodomas masyvas - savybė kuri grąžina reikšmių sąrašą - jos pa
         ------------ ---------- ------------- --------------- --------------- -------- ---- ------------ ------------
         \                       /rc/ar/City                                            id                
         ------------ ---------- ------------- --------------- --------------- -------- ---- ------------ ------------
-        \                                     Gyvenviete                               id   Gyven       
+        \                                     Location                                 id   Gyven       
         ------------ ---------- ------------- --------------- --------------- -------- ---- ------------ ------------
         \                                                     id              integer       gyv_id      
-        \                                                     pavadinimas\@lt string        gyv_pav    
+        \                                                     name\@lt        string        gyv_pav    
         ============ ========== ============= =============== =============== ======== ==== ============ ============
 
         Ir išvestinį duomenų šaltinį:
@@ -1057,28 +1174,40 @@ Kai yra nurodomas masyvas - savybė kuri grąžina reikšmių sąrašą - jos pa
         ============ ========== ============= =============== =============== ======== ==== ============ ====================
         dataset      resource   base          model           property        type     ref  source       origin
         ============ ========== ============= =============== =============== ======== ==== ============ ====================
-        pirminis           
+        isvestinis           
         ------------ ---------- ------------- --------------- --------------- -------- ---- ------------ --------------------
         \            service1                                                 json          \http://...   
         ------------ ---------- ------------- --------------- --------------- -------- ---- ------------ --------------------
         \                       /rc/ar/City                                            id                
         ------------ ---------- ------------- --------------- --------------- -------- ---- ------------ --------------------
-        \                                     Gyvenviete                               id   Cities       /pirminis/Gyvenviete
+        \                                     City                                     id   Cities       /pirminis/Location
         ------------ ---------- ------------- --------------- --------------- -------- ---- ------------ --------------------
-        \                                                     id              integer       gyv_id       id
-        \                                                     pavadinimas\@lt string        gyv_pav      pavadinimas@lt
+        \                                                     id              integer       miest_id     id
+        \                                                     name\@lt        string        miest_pav    name@lt
         ============ ========== ============= =============== =============== ======== ==== ============ ====================
 
 
-        Tada gauname informaciją, kad `isvestinis/Gyvenviete` modelio duomenys yra išvestiniai iš `pirminis/Gyvenviete`, ir prie savybių yra nurodomi pirminio šaltinio savybių pavadinimai.
+        Tada gauname informaciją, kad `isvestinis/City` modelio duomenys yra išvestiniai iš `pirminis/Location`, ir prie savybių yra nurodomi pirminio šaltinio savybių pavadinimai.
 
         `base` nurodo modelio bazę, pagal kurią formuojami vienodi identifikatoriai, `origin` nurodo duomenų kilmę.
 
-        `origin` stulpelyje nurodomi reliatyvūs kodiniai pavadinimai, taip pat, kaip ir `base` ar `ref` stulpeliuose.
+        `origin` stulpelyje nurodomi reliatyvūs arba absoliutūs kodiniai pavadinimai, taip pat, kaip ir `base` ar `ref` stulpeliuose.
 
 .. data:: count
 
-    Savybės reikšmių skaičius duomenų šaltinyje. Atitinka reikšmių skaičių šaltinyje, kurios nėra `NULL`. Duomenų agento generuojamas automatiškai. Pildyti nereikia.
+    Savybės reikšmių skaičius duomenų šaltinyje. Atitinka reikšmių skaičių šaltinyje, kurios nėra `NULL`.
+	
+	Pildyti nereikia.
+	
+    .. container:: agent-only
+		.. admonition:: Duomenų agento "Spinta" atveju
+			| Duomenų agentas šias vertes generuos automatiškai. Šiuo metu neįgyvendinta - https://github.com/atviriduomenys/spinta/issues/1453
+		
+		.. admonition:: Pastaba
+
+			Automatinis duomenų elementų skaičiavimas priklauso nuo duomenų šaltinio tipo ir nėra galimas su visais duomenų šaltiniais.
+
+			Priklausomai nuo duomenų kiekio duomenų šaltinyje, ši operacija gali reikalauti didelių apdorojimo resursų ir gali būti išjungiama.
 
 .. data:: level
 
@@ -1090,19 +1219,27 @@ Kai yra nurodomas masyvas - savybė kuri grąžina reikšmių sąrašą - jos pa
 
 .. data:: status
 
-    Duomenų modelio eilutės metaduomenų išbaigtumo būsena.
+    Duomenų lauko eilutės metaduomenų išbaigtumo būsena.
 
 .. seealso::
 
     :ref:`status`
 
+    .. container:: agent-only
+		.. admonition:: Duomenų agento "Spinta" atveju
+			| Generuojant ŠDSA su duomenų agentu, šios reikšmės atomatiškai nustatomos kaip `develop`
+
 .. data:: visibility
 
-    Modelio eilutės metaduomenų matomumas. Nenurodžius, numatytas `private` matomumo lygis ir metaduomenys nėra skelbiami.
+    Duomenų lauko eilutės metaduomenų matomumas. Nenurodžius, numatytas `private` matomumo lygis ir metaduomenys nėra skelbiami.
 
 .. seealso::
 
     :ref:`visibility`
+
+    .. container:: agent-only
+		.. admonition:: Duomenų agento "Spinta" atveju
+			| Generuojant ŠDSA su duomenų agentu, šios reikšmės automatiškai nustatomos kaip `private`
 
 .. data:: access
 
@@ -1182,7 +1319,7 @@ Rekomenduojama naudoti LOV_ prefiksus.
 
 .. _LOV: https://lov.linkeddata.es/dataset/lov/
 
-Aprašyti prefiksai gali būti naudojami :data:`model.uri` ir :data:`property.uri`
+Aprašyti prefiksai gali būti naudojami :data:`model.uri`, :data:`model.eli` ir :data:`property.uri`, :data:`property.eli`
 stulpeliuose tokiu būdu: `prefix:name`.
 
 Pavyzdys:
@@ -1195,6 +1332,7 @@ dataset1
 \                        prefix   spinta    \https://github.com/atviriduomenys/spinta/issues/
 \                                 dsa       \https://ivpk.github.io/dsa/
 \                                 dct       \http://purl.org/dc/dcmitype/
+\                                 nuost     \https://www.e-tar.lt/portal/lt/legalAct/TAR.839B704AEA5E/nFvjaUZhyL?csrt=13161327988575849300#
 dataset2                                                                                        
 ------------------------ -------- --------- ----------------------------------------------------
 \                        prefix   dcat      \http://www.w3.org/ns/dcat#
@@ -1381,8 +1519,10 @@ atitinkamai nurodyti teisingą laukelio duomenų formatą.
 
     Fiksuotos reikšmės aprašymas.
 
-Jei :data:`property.prepare` yra tuščias ir :data:`property` turi :ref:`enum` sąrašą,
-ir šaltinis grąžina `enum` neaprašytą reikšmę, yra fiksuojama duomenų klaida.
+    .. container:: agent-only
+		.. admonition:: Duomenų agento "Spinta" atveju
+			| Jei :data:`property.prepare` yra tuščias ir :data:`property` turi :ref:`enum` sąrašą,
+			ir šaltinis grąžina `enum` neaprašytą reikšmę, validacijos metu yra fiksuojama duomenų klaida.
 
 
 .. _param:
@@ -1429,6 +1569,11 @@ datasets/example/cities
 .. data:: prepare
 
     Formulė, kuri grąžina sąrašą reikšmių aprašomam parametrui.
+	
+    .. seealso::
+
+        :ref:`formulės`
+
 
 .. data:: source
 
@@ -1495,416 +1640,417 @@ source
 prepare
     `x` arba `param(x)`.
 
-Funkcijos
-=========
+.. container:: agent-only
+	Duomenų agento palaikomos funkcijos
+	=========
 
-Parametrų generavimui galima naudoti tokias formules:
+	Parametrų generavimui galima naudoti tokias formules:
 
-.. module:: param
+	.. module:: param
 
-.. function:: read(model)
+	.. function:: read(model)
 
-    Sukuriama priklausomybė nuo kito modelio, skaitomi duomenys iš kito modelio
-    ir su kiekvienu objektu, kreipiamasi į :data:`resource.source`, panaudojant
-    nuskaitytą objektą kaip parametrą formuojant šaltinio užklausą.
+		Sukuriama priklausomybė nuo kito modelio, skaitomi duomenys iš kito modelio
+		ir su kiekvienu objektu, kreipiamasi į :data:`resource.source`, panaudojant
+		nuskaitytą objektą kaip parametrą formuojant šaltinio užklausą.
 
-.. function:: range(stop)
+	.. function:: range(stop)
 
-    Sveikų skaičių generavimas nuo 0 iki `stop`, `stop` neįeina.
+		Sveikų skaičių generavimas nuo 0 iki `stop`, `stop` neįeina.
 
-.. function:: range(start, stop)
-    :noindex:
+	.. function:: range(start, stop)
+		:noindex:
 
-    Sveikų skaičių generavimas nuo `start` iki `stop`, `stop` neįeina.
+		Sveikų skaičių generavimas nuo `start` iki `stop`, `stop` neįeina.
 
-.. function:: path(name, value)
+	.. function:: path(name, value)
 
-    Parametras pateikia URI path dalies parametrą.
+		Parametras pateikia URI path dalies parametrą.
 
-    :data:`resource.source` URI path parametrų vieta pateikiama `{}` skliaustų
-    viduje, pavyzdžiui `/cities/{id}` nurodytas parametras `id`.
+		:data:`resource.source` URI path parametrų vieta pateikiama `{}` skliaustų
+		viduje, pavyzdžiui `/cities/{id}` nurodytas parametras `id`.
 
-    Funkcija gali būti iškviestai tokiais būdais:
+		Funkcija gali būti iškviestai tokiais būdais:
 
-    - `path(value)`
-    - `path(name, value)`
+		- `path(value)`
+		- `path(name, value)`
 
-    **Argumentai**
+		**Argumentai**
 
-    name
-        Parametro pavadinimas nurodytas `{}` riestinių skliaustelių viduje. Jei
-        nenurodyta, tada naudojamas :data:`param.source`, jei šis nenurodytas,
-        tada naudojamas :data:`param.ref` pavadinimas.
+		name
+			Parametro pavadinimas nurodytas `{}` riestinių skliaustelių viduje. Jei
+			nenurodyta, tada naudojamas :data:`param.source`, jei šis nenurodytas,
+			tada naudojamas :data:`param.ref` pavadinimas.
 
-    value
-        Parametro reikšmė, gali būti statinė arba dinaminė.
+		value
+			Parametro reikšmė, gali būti statinė arba dinaminė.
 
-    .. admonition:: Pavyzdys
+		.. admonition:: Pavyzdys
 
-        ========== ===== ====== ================ ========
-        resource   type  ref    source           prepare
-        ========== ===== ====== ================ ========
-        resource1  json         \/cities/{id}/   
-        \          param id                      `path(42)`
-        ========== ===== ====== ================ ========
+			========== ===== ====== ================ ========
+			resource   type  ref    source           prepare
+			========== ===== ====== ================ ========
+			resource1  json         \/cities/{id}/   
+			\          param id                      `path(42)`
+			========== ===== ====== ================ ========
 
-        Bus konstruojamas toks URI:
+			Bus konstruojamas toks URI:
 
-        .. code-block:: uri
+			.. code-block:: uri
 
-            /cities/42/
+				/cities/42/
 
 
-.. function:: query(name, value)
+	.. function:: query(name, value)
 
-    Parametras pateikia URI query dalies parametrą.
+		Parametras pateikia URI query dalies parametrą.
 
-    Jei :data:`resource.source` jau turi query parametrus, jei bus papildyti
-    arba perrašyti.
+		Jei :data:`resource.source` jau turi query parametrus, jei bus papildyti
+		arba perrašyti.
 
-    **Argumentai**
+		**Argumentai**
 
-    name
-        Nurodo URI query parametro pavadinimą, nurodomas :data:`param.source`
-        stulpelyje.
+		name
+			Nurodo URI query parametro pavadinimą, nurodomas :data:`param.source`
+			stulpelyje.
 
-    value
-        URI query paramtro reikšmė.
+		value
+			URI query paramtro reikšmė.
 
-    .. admonition:: Pavyzdys
+		.. admonition:: Pavyzdys
 
-        ========== ===== ====== ====================== ========
-        resource   type  ref    source                 prepare
-        ========== ===== ====== ====================== ========
-        resource1  json         \https://example.com/  
-        \          param name1  NAME1                  `query("value1")`
-        \                name2  NAME2                  `query("value2")`
-        ========== ===== ====== ====================== ========
+			========== ===== ====== ====================== ========
+			resource   type  ref    source                 prepare
+			========== ===== ====== ====================== ========
+			resource1  json         \https://example.com/  
+			\          param name1  NAME1                  `query("value1")`
+			\                name2  NAME2                  `query("value2")`
+			========== ===== ====== ====================== ========
 
-        Bus konstruojamas toks URI:
+			Bus konstruojamas toks URI:
 
-        .. code-block:: uri
+			.. code-block:: uri
 
-            https://example.com/?NAME1=value1&NAME2=value2
+				https://example.com/?NAME1=value1&NAME2=value2
 
 
-.. function:: header(name, value)
+	.. function:: header(name, value)
 
-    Parametras pateikiamas, kaip HTTP antraštė.
+		Parametras pateikiamas, kaip HTTP antraštė.
 
-    **Argumentai**
+		**Argumentai**
 
-    name
-        Nurodo HTTP antraštės pavadinimą, nurodomas :data:`param.source`
-        stulpelyje.
-
-    value
-        HTTP antraštės reikšmė.
-
-    .. admonition:: Pavyzdys
-
-        ========== ===== ====== ====================== ========
-        resource   type  ref    source                 prepare
-        ========== ===== ====== ====================== ========
-        resource1  json         \https://example.com/  
-        \          param name1  X-Name1                `header("value1")`
-        \                name2  X-Name2                `header("value2")`
-        ========== ===== ====== ====================== ========
-
-        Bus konstruojama tokia HTTP užklausa:
-
-        .. code-block:: http
-
-            GET / HTTP/1.1
-            X-Name1: value1
-            X-Name2: value2
-
-
-.. function:: body(name, value, parent, type)
-
-    Generuoja XML, JSON ar kito formato dokumentą, kuris pateikiamas HTTP
-    užklausos metu.
-
-    **Argumentai**
-
-    name
-        JSONPath_ arba XPath_ išraiška, priklauso nuoo :data:`resource.prapare`
-        nurodytos :func:`resource.http` `body` tipo.
-
-        Nurodoma :data:`param.source` stulpelyje.
-
-    value
-        Reikšmė suteikiama `name` elementui http užklausos struktūroje.
-
-    parent (neprivalomas)
-        Parametro pavadinimas, kurio pagrindu konstruojamas naujas dokumentas.
-
-    type (neprivalomas, vardinis)
-        Naudojamas konstruojant naują dokumentą, jei nurodytas, kiti argumentai
-        turi būti nepateikti.
-
-    .. admonition:: Pavyzdys (JSON)
-
-        ========== ===== ====== ====================== ========
-        resource   type  ref    source                 prepare
-        ========== ===== ====== ====================== ========
-        resource1  json         \https://example.com/  `http(body: json)`
-        \          param name1  NAME1                  `body("value1")`
-        \                name2  NAME2                  `body("value2")`
-        \                name3  NESTED.NAME3           `body("value3")`
-        \                name4  ARRAY[].NAME4          `body("value4")`
-        \                name5  MATRIX[]               `body()`
-        \                       MATRIX[][]             `body("value5")`
-        \                       MATRIX[]               `body()`
-        \                       MATRIX[][]             `body("value6")`
-        \                       MATRIX[][]             `body("value7")`
-        ========== ===== ====== ====================== ========
-
-        .. code-block:: json
-
-            {
-                "NAME1": "value1",
-                "NAME2": "value2",
-                "NESTED": {
-                    "NAME3": "value3",
-                },
-                "ARRAY": [
-                    {"NAME4": "value4"}
-                ],
-                "MATRIX": [
-                    ["value5"],
-                    ["value6", "value7"]
-                ]
-            }
-
-    .. admonition:: Pavyzdys (XML)
-
-        ========== ===== ====== ====================== ========
-        resource   type  ref    source                 prepare
-        ========== ===== ====== ====================== ========
-        resource1  json         \https://example.com/  `http(body: xml)`
-        \          param name1  DATA/\@NAME1           `body("value1")`
-        \                name2  DATA/NAME2             `body("value2")`
-        \                name3  DATA/NESTED/NAME3      `body("value3")`
-        \                name4  DATA/ARRAY/NAME4       `body("value4")`
-        \                name5  DATA/ARRAY/NAME4       `body("value5")`
-        ========== ===== ====== ====================== ========
-
-        .. code-block:: xml
-
-            <?xml version="1.0" encoding="utf-8"?>
-            <DATA NAME1="value1">
-                <NAME2>value2</NAME2>
-                <NESTED>
-                    <NAME3>value3</NAME3>
-                </NESTED>
-                <ARRAY>
-                    <NAME4>value4</NAME4>
-                    <NAME4>value5</NAME4>
-                </ARRAY>
-            </DATA>
-
-    .. admonition:: Pavyzdys (maišytas)
-
-        ========== ===== ====== ====================== ========
-        resource   type  ref    source                 prepare
-        ========== ===== ====== ====================== ========
-        resource1  json         \https://example.com/  `http(body: xml)`
-        \          param name1  DATA/\@NAME1           `body("value1")`
-        \                name2  DATA/NAME2             `body(name3)`
-        \                name3                         `body(type: json)`
-        \                name4  NAME4                  `body("value4", name3)`
-        \                name5  NAME5                  `body("value5", name3)`
-        ========== ===== ====== ====================== ========
-
-        .. code-block:: xml
-
-            <?xml version="1.0" encoding="utf-8"?>
-            <DATA NAME1="value1">
-                <NAME2><![CDATA[
-                    {
-                        "NAME4": "value4",
-                        "NAME5": "value5"
-                    }
-                ]]></NAME2>
-            </DATA>
-
-Jei užpildytas :data:`param.source` stulpelis, tada :data:`param.prepare`
-stulpelyje galima naudoti filtrą nurodyto :data:`param.source` modelio duomenims
-filtruoti, o naudojant parametrus galima nurodyti ir modelio laukų pavadinimus,
-pavyzdžiui:
-
-source
-    `{x.field}`.
-
-prepare
-    `x.field` arba `param(x).field`.
-
-
-.. function:: input(source, default=NA)
-
-    Generuoja duomenis, pateikiamus SOAP užklausos metu.
-
-    **Argumentai**
-
-    source
-        Nurodomas :data:`param.source` stulpelyje. Nurodo kelią iki WSDL faile esančio elemento.
-        Kelias aprašomas XSD elementų vardais, atskirtais `/`, pradedant nuo elemento, esančio
-        WSDL `operation` -> `input` -> `message` -> `part` elemento viduje.
-
-        .. admonition:: Pavyzdys
-
-            Pagal žemiau pateiktą WSDL failo dalį, parametro "param1" kelias `param.source`
-            stulpelyje yra `request_model/param1`.
-
-            .. code-block::
-
-                <wsdl:definitions ...>
-                    <wsdl:types>
-                        ...
-                        <xs:schema targetNamespace="city_app">
-                            <xs:element name="CityInputRequest">
-                                <xs:complexType>
-                                    <xs:sequence>
-                                        <xs:element name="request_model" type="tns:RequestModelType" minOccurs="0" nillable="true"/>
-                                    </xs:sequence>
-                                </xs:complexType>
-                            </xs:element>
-
-                            <xs:complexType name="RequestModelType">
-                                <xs:sequence>
-                                    <xs:element name="param1" type="xs:string" minOccurs="0" nillable="true"/>
-                                    <xs:element name="param2" type="xs:string" minOccurs="0" nillable="true"/>
-                                </xs:sequence>
-                            </xs:complexType>
-                        </xs:schema>
-                    </wsdl:types>
-
-                    <wsdl:message name="CityInputRequest">
-                        <wsdl:part name="parameters" element="tns:CityInputRequest"/>
-                    </wsdl:message>
-
-                    <wsdl:portType name="CityPortType">
-                        <wsdl:operation name="CityOperation">
-                            <wsdl:input message="tns:CityInputRequest"/>
-                            <wsdl:output message="tns:CityOutputResponse"/>
-                        </wsdl:operation>
-                    </wsdl:portType>
-
-                    <wsdl:binding ...>
-                        ...
-                    </wsdl:binding>
-
-                    <wsdl:service ...>
-                        ...
-                    </wsdl:service>
-                </wsdl:definitions>
-
-
-    default
-        Nurodo elemento `default` reikšmę, kuri bus naudojama, jei reikšmė nėra nurodyta URI parametre.
-        Jei reikšmė nenurodyta nei URI, nei default - bus naudojama `NA` reikšmė.
-
-    .. admonition:: Pavyzdys (be URI parametrų)
-
-        **DSA:**
-
-        ========== ====== ====== ====================== =================
-        resource   type   ref    source                 prepare
-        ========== ====== ====== ====================== =================
-        resource1  soap          \https://example.com/
-        \          param         request_model/param1   `input("value1")`
-        \          param         request_model/param2   `input()`
-        ========== ====== ====== ====================== =================
-        |
-        Pagal pateiktą DSA bus sugeneruotas toks python dictionary:
-
-        .. code-block:: python
-
-            {"request_model": {"param1": "value1", "param2": None}}
-
-    .. admonition:: Pavyzdys (su URI parametrais)
-
-        **URI:** `https://example.com/?p1="first"`
-
-        **DSA:**
-
-        ========== ======= ======== ====== =========== ===================== ==================
-        resource   model   property type   ref         source                 prepare
-        ========== ======= ======== ====== =========== ===================== ==================
-        resource1                   soap               \https://example.com/
-        \                           param  parameter1  request_model/param1  `input("value1")`
-        \                           param  parameter2  request_model/param2  `input("value2")`
-        \                           param  parameter3  request_model/param3  `input()`
-        \          City
-        \                  p1       string                                    param(parameter1)
-        \                  p2       string                                    param(parameter2)
-        \                  p3       string                                    param(parameter3)
-        ========== ======= ======== ====== =========== ===================== ==================
-        |
-
-        Pagal pateiktą DSA ir URL bus sugeneruotas toks python dictionary:
-
-        .. code-block:: python
-
-            {"request_model": {"param1": "first", "param2": "value2", "param3": None}}
-
-
-.. function:: creds(key)
-
-    Skaito kliento duomenyse išsaugoto `key` atributo reikšmę.
-
-    Kliento duomenyse kiekvieno resurso atributai saugomi atskirai. Resursas identifikuojamas
-    pagal resurso pavadinimą.
-
-    **Argumentai**
-
-    key
-        Nurodo atributo pavadinimą kliento faile.
-
-    .. admonition:: Pavyzdys (be URI parametrų)
-
-        **Kliento failas:**
-
-        .. code-block:: yaml
-
-            client_id: 75d17c2f-d7b8-466f-90c7-466caa21582a
-            client_name: example_client
-            client_secret_hash: hashed_secret
-            scopes:
-              - spinta_getall
-            backends:
-              resource_one:
-                password: first password
-              resource_two:
-                password: second password
-
-        Kliento duomenyse yra išsaugoti resursai: `resource_one` ir `resource_two`. Abu resursai turi po atributą
-        tuo pačiu vardu `password`, bet skirtingomis reikšmėmis.
-
-        **DSA:**
-
-        ============= ======= ======== ====== =========== ===================== ===========================
-        resource      model   property type   ref         source                 prepare
-        ============= ======= ======== ====== =========== ===================== ===========================
-        resource_one                   soap               \https://example.com/
-        \                              param  parameter1  param1                `creds("password").input()`
-        \             Town
-        resource_two                   soap               \https://example.com/
-        \                              param  parameter2  param2                `creds("password").input()`
-        \             City
-        ============= ======= ======== ====== =========== ===================== ===========================
-        |
-
-        Pagal pateiktą DSA, Spinta užklausos metu, `creds()` funkcija iš kliento duomenų perskaitys
-        `password` reikšmes ir `input()` funkcijos pagalba, sugeneruos tokius Python dictionary:
-
-        * Kviečiant `Town`: `{"param1": "first password"}`
-        * Kviečiant `City`: `{"param2": "second password"}`
-
-        Apie kliento duomenų saugojimą daugiau skaityti Duomenų atvėrimo vadove, `Klientų atnaujinimas`_.
-
-        .. _Klientų atnaujinimas: https://atviriduomenys.readthedocs.io/agentas.html#agent-crud-update
+		name
+			Nurodo HTTP antraštės pavadinimą, nurodomas :data:`param.source`
+			stulpelyje.
+
+		value
+			HTTP antraštės reikšmė.
+
+		.. admonition:: Pavyzdys
+
+			========== ===== ====== ====================== ========
+			resource   type  ref    source                 prepare
+			========== ===== ====== ====================== ========
+			resource1  json         \https://example.com/  
+			\          param name1  X-Name1                `header("value1")`
+			\                name2  X-Name2                `header("value2")`
+			========== ===== ====== ====================== ========
+
+			Bus konstruojama tokia HTTP užklausa:
+
+			.. code-block:: http
+
+				GET / HTTP/1.1
+				X-Name1: value1
+				X-Name2: value2
+
+
+	.. function:: body(name, value, parent, type)
+
+		Generuoja XML, JSON ar kito formato dokumentą, kuris pateikiamas HTTP
+		užklausos metu.
+
+		**Argumentai**
+
+		name
+			JSONPath_ arba XPath_ išraiška, priklauso nuoo :data:`resource.prapare`
+			nurodytos :func:`resource.http` `body` tipo.
+
+			Nurodoma :data:`param.source` stulpelyje.
+
+		value
+			Reikšmė suteikiama `name` elementui http užklausos struktūroje.
+
+		parent (neprivalomas)
+			Parametro pavadinimas, kurio pagrindu konstruojamas naujas dokumentas.
+
+		type (neprivalomas, vardinis)
+			Naudojamas konstruojant naują dokumentą, jei nurodytas, kiti argumentai
+			turi būti nepateikti.
+
+		.. admonition:: Pavyzdys (JSON)
+
+			========== ===== ====== ====================== ========
+			resource   type  ref    source                 prepare
+			========== ===== ====== ====================== ========
+			resource1  json         \https://example.com/  `http(body: json)`
+			\          param name1  NAME1                  `body("value1")`
+			\                name2  NAME2                  `body("value2")`
+			\                name3  NESTED.NAME3           `body("value3")`
+			\                name4  ARRAY[].NAME4          `body("value4")`
+			\                name5  MATRIX[]               `body()`
+			\                       MATRIX[][]             `body("value5")`
+			\                       MATRIX[]               `body()`
+			\                       MATRIX[][]             `body("value6")`
+			\                       MATRIX[][]             `body("value7")`
+			========== ===== ====== ====================== ========
+
+			.. code-block:: json
+
+				{
+					"NAME1": "value1",
+					"NAME2": "value2",
+					"NESTED": {
+						"NAME3": "value3",
+					},
+					"ARRAY": [
+						{"NAME4": "value4"}
+					],
+					"MATRIX": [
+						["value5"],
+						["value6", "value7"]
+					]
+				}
+
+		.. admonition:: Pavyzdys (XML)
+
+			========== ===== ====== ====================== ========
+			resource   type  ref    source                 prepare
+			========== ===== ====== ====================== ========
+			resource1  json         \https://example.com/  `http(body: xml)`
+			\          param name1  DATA/\@NAME1           `body("value1")`
+			\                name2  DATA/NAME2             `body("value2")`
+			\                name3  DATA/NESTED/NAME3      `body("value3")`
+			\                name4  DATA/ARRAY/NAME4       `body("value4")`
+			\                name5  DATA/ARRAY/NAME4       `body("value5")`
+			========== ===== ====== ====================== ========
+
+			.. code-block:: xml
+
+				<?xml version="1.0" encoding="utf-8"?>
+				<DATA NAME1="value1">
+					<NAME2>value2</NAME2>
+					<NESTED>
+						<NAME3>value3</NAME3>
+					</NESTED>
+					<ARRAY>
+						<NAME4>value4</NAME4>
+						<NAME4>value5</NAME4>
+					</ARRAY>
+				</DATA>
+
+		.. admonition:: Pavyzdys (maišytas)
+
+			========== ===== ====== ====================== ========
+			resource   type  ref    source                 prepare
+			========== ===== ====== ====================== ========
+			resource1  json         \https://example.com/  `http(body: xml)`
+			\          param name1  DATA/\@NAME1           `body("value1")`
+			\                name2  DATA/NAME2             `body(name3)`
+			\                name3                         `body(type: json)`
+			\                name4  NAME4                  `body("value4", name3)`
+			\                name5  NAME5                  `body("value5", name3)`
+			========== ===== ====== ====================== ========
+
+			.. code-block:: xml
+
+				<?xml version="1.0" encoding="utf-8"?>
+				<DATA NAME1="value1">
+					<NAME2><![CDATA[
+						{
+							"NAME4": "value4",
+							"NAME5": "value5"
+						}
+					]]></NAME2>
+				</DATA>
+
+	Jei užpildytas :data:`param.source` stulpelis, tada :data:`param.prepare`
+	stulpelyje galima naudoti filtrą nurodyto :data:`param.source` modelio duomenims
+	filtruoti, o naudojant parametrus galima nurodyti ir modelio laukų pavadinimus,
+	pavyzdžiui:
+
+	source
+		`{x.field}`.
+
+	prepare
+		`x.field` arba `param(x).field`.
+
+
+	.. function:: input(source, default=NA)
+
+		Generuoja duomenis, pateikiamus SOAP užklausos metu.
+
+		**Argumentai**
+
+		source
+			Nurodomas :data:`param.source` stulpelyje. Nurodo kelią iki WSDL faile esančio elemento.
+			Kelias aprašomas XSD elementų vardais, atskirtais `/`, pradedant nuo elemento, esančio
+			WSDL `operation` -> `input` -> `message` -> `part` elemento viduje.
+
+			.. admonition:: Pavyzdys
+
+				Pagal žemiau pateiktą WSDL failo dalį, parametro "param1" kelias `param.source`
+				stulpelyje yra `request_model/param1`.
+
+				.. code-block::
+
+					<wsdl:definitions ...>
+						<wsdl:types>
+							...
+							<xs:schema targetNamespace="city_app">
+								<xs:element name="CityInputRequest">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="request_model" type="tns:RequestModelType" minOccurs="0" nillable="true"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+
+								<xs:complexType name="RequestModelType">
+									<xs:sequence>
+										<xs:element name="param1" type="xs:string" minOccurs="0" nillable="true"/>
+										<xs:element name="param2" type="xs:string" minOccurs="0" nillable="true"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:schema>
+						</wsdl:types>
+
+						<wsdl:message name="CityInputRequest">
+							<wsdl:part name="parameters" element="tns:CityInputRequest"/>
+						</wsdl:message>
+
+						<wsdl:portType name="CityPortType">
+							<wsdl:operation name="CityOperation">
+								<wsdl:input message="tns:CityInputRequest"/>
+								<wsdl:output message="tns:CityOutputResponse"/>
+							</wsdl:operation>
+						</wsdl:portType>
+
+						<wsdl:binding ...>
+							...
+						</wsdl:binding>
+
+						<wsdl:service ...>
+							...
+						</wsdl:service>
+					</wsdl:definitions>
+
+
+		default
+			Nurodo elemento `default` reikšmę, kuri bus naudojama, jei reikšmė nėra nurodyta URI parametre.
+			Jei reikšmė nenurodyta nei URI, nei default - bus naudojama `NA` reikšmė.
+
+		.. admonition:: Pavyzdys (be URI parametrų)
+
+			**DSA:**
+
+			========== ====== ====== ====================== =================
+			resource   type   ref    source                 prepare
+			========== ====== ====== ====================== =================
+			resource1  soap          \https://example.com/
+			\          param         request_model/param1   `input("value1")`
+			\          param         request_model/param2   `input()`
+			========== ====== ====== ====================== =================
+			|
+			Pagal pateiktą DSA bus sugeneruotas toks python dictionary:
+
+			.. code-block:: python
+
+				{"request_model": {"param1": "value1", "param2": None}}
+
+		.. admonition:: Pavyzdys (su URI parametrais)
+
+			**URI:** `https://example.com/?p1="first"`
+
+			**DSA:**
+
+			========== ======= ======== ====== =========== ===================== ==================
+			resource   model   property type   ref         source                 prepare
+			========== ======= ======== ====== =========== ===================== ==================
+			resource1                   soap               \https://example.com/
+			\                           param  parameter1  request_model/param1  `input("value1")`
+			\                           param  parameter2  request_model/param2  `input("value2")`
+			\                           param  parameter3  request_model/param3  `input()`
+			\          City
+			\                  p1       string                                    param(parameter1)
+			\                  p2       string                                    param(parameter2)
+			\                  p3       string                                    param(parameter3)
+			========== ======= ======== ====== =========== ===================== ==================
+			|
+
+			Pagal pateiktą DSA ir URL bus sugeneruotas toks python dictionary:
+
+			.. code-block:: python
+
+				{"request_model": {"param1": "first", "param2": "value2", "param3": None}}
+
+
+	.. function:: creds(key)
+
+		Skaito kliento duomenyse išsaugoto `key` atributo reikšmę.
+
+		Kliento duomenyse kiekvieno resurso atributai saugomi atskirai. Resursas identifikuojamas
+		pagal resurso pavadinimą.
+
+		**Argumentai**
+
+		key
+			Nurodo atributo pavadinimą kliento faile.
+
+		.. admonition:: Pavyzdys (be URI parametrų)
+
+			**Kliento failas:**
+
+			.. code-block:: yaml
+
+				client_id: 75d17c2f-d7b8-466f-90c7-466caa21582a
+				client_name: example_client
+				client_secret_hash: hashed_secret
+				scopes:
+				  - spinta_getall
+				backends:
+				  resource_one:
+					password: first password
+				  resource_two:
+					password: second password
+
+			Kliento duomenyse yra išsaugoti resursai: `resource_one` ir `resource_two`. Abu resursai turi po atributą
+			tuo pačiu vardu `password`, bet skirtingomis reikšmėmis.
+
+			**DSA:**
+
+			============= ======= ======== ====== =========== ===================== ===========================
+			resource      model   property type   ref         source                 prepare
+			============= ======= ======== ====== =========== ===================== ===========================
+			resource_one                   soap               \https://example.com/
+			\                              param  parameter1  param1                `creds("password").input()`
+			\             Town
+			resource_two                   soap               \https://example.com/
+			\                              param  parameter2  param2                `creds("password").input()`
+			\             City
+			============= ======= ======== ====== =========== ===================== ===========================
+			|
+
+			Pagal pateiktą DSA, Spinta užklausos metu, `creds()` funkcija iš kliento duomenų perskaitys
+			`password` reikšmes ir `input()` funkcijos pagalba, sugeneruos tokius Python dictionary:
+
+			* Kviečiant `Town`: `{"param1": "first password"}`
+			* Kviečiant `City`: `{"param2": "second password"}`
+
+			Apie kliento duomenų saugojimą daugiau skaityti Duomenų atvėrimo vadove, `Klientų atnaujinimas`_.
+
+			.. _Klientų atnaujinimas: https://atviriduomenys.readthedocs.io/agentas.html#agent-crud-update
 
 
 .. _switch:
@@ -1961,12 +2107,12 @@ kontekste.
 
 .. data:: prepare
 
-    Keitimo pasiūlymas, naudojant `create()`, `update` ir `delete()` funkcijas. Pavyzdžiui::
+    Keitimo pasiūlymas, naudojant `create()`, `update()` ir `delete()` funkcijas. Pavyzdžiui::
 
-        update(property: "pavadinimas@lt", type: "text")
+        update(property: "name@lt", type: "string")
 
-    Šiuo atveju nurodoma, kad siūloma keisti `property` pavadnimą į
-    `pavadinimas@lt`, o `type` į `text`.
+    Šiuo atveju nurodoma, kad siūloma keisti `property` pavadinimą į
+    `name@lt`, o `type` į `string`.
 
 .. data:: level
 
@@ -2016,13 +2162,13 @@ example
 ------------------------ -------- --------- -------------------------------------------------- ------ ------- ----------------------------------------------------
 \                        prefix   spinta                                                                      \https://github.com/atviriduomenys/spinta/issues/
 \                                 dsa                                                                         \https://ivpk.github.io/dsa/
-\        Imone                                                                                 2                           
+\        Entity                                                                                 2                           
 -- -- -- --------------- -------- --------- -------------------------------------------------- ------ ------- ----------------------------------------------------
-\                        comment  base      update(base: "/jar/JuridinisAsmuo", ref: "id")     4      open    spinta:205, manifest:1290                                                    
-\                        comment  ref       update(ref: "id")                                  4      open    vadovas:dsa/dimensijos.html#model.ref                                                    
+\                        comment  base      update(base: "/jar/LegalEntity", ref: "id")        4      open    spinta:205, manifest:1290                                                    
+\                        comment  ref       update(ref: "id")                                  4      open    dsa:dimensijos.html#model.ref                                                    
 \           id           integer                                                               4      open                                                        
-\           pavadinimas  string                                                                2      open                                                        
-\                        comment  ref       update(property: "pavadinimas\@lt", type: "text")  4      open    spinta:204                                                    
+\           name         string                                                                2      open                                                        
+\                        comment  ref       update(property: "name\@lt", type: "string")       4      open    spinta:204                                                    
 == == == == ============ ======== ========= ================================================== ====== ======= ====================================================
 
 

@@ -1,807 +1,809 @@
-.. default-role:: literal
+.. container:: agent-only
 
-.. .. _resource:
-.. _duomenu-saltiniai:
+	.. default-role:: literal
 
-Duomenų šaltiniai
-=================
+	.. .. _resource:
+	.. _duomenu-saltiniai:
 
-.. _resource-type-sql:
+	Duomenų šaltiniai
+	=================
 
-SQL
----
+	.. _resource-type-sql:
 
-.. _sql-resource-source:
+	SQL
+	---
 
-.. describe:: resource.source
+	.. _sql-resource-source:
 
-    Duomenų bazės URI. Duomenų bazės URI formuojamas naudojant tokį ABNF_
-    šabloną:
+	.. describe:: resource.source
 
-    .. _ABNF: https://en.wikipedia.org/wiki/Augmented_Backus–Naur_form
+		Duomenų bazės URI. Duomenų bazės URI formuojamas naudojant tokį ABNF_
+		šabloną:
 
-    .. code-block:: abnf
+		.. _ABNF: https://en.wikipedia.org/wiki/Augmented_Backus–Naur_form
 
-        uri = type ["+" driver] "://"
-              [user [":" password] "@"]
-              host [":" port]
-              "/" database ["?" params]
+		.. code-block:: abnf
 
-    Šablone naudojamų kintamųjų aprašymas:
+			uri = type ["+" driver] "://"
+				  [user [":" password] "@"]
+				  host [":" port]
+				  "/" database ["?" params]
 
-    .. describe:: type
+		Šablone naudojamų kintamųjų aprašymas:
 
-        Duomenų bazių serverio pavadinimas:
+		.. describe:: type
 
-        .. describe:: sqlite
+			Duomenų bazių serverio pavadinimas:
 
-        .. describe:: postgresql
+			.. describe:: sqlite
 
-        .. describe:: mysql
+			.. describe:: postgresql
 
-        .. describe:: oracle
+			.. describe:: mysql
 
-        .. describe:: mssql
+			.. describe:: oracle
 
-    .. describe:: driver
+			.. describe:: mssql
 
-        Konkretaus duomenų bazių serverio tvarkyklė naudojama komunikacijai su
-        duomenų baze.
+		.. describe:: driver
 
-    .. describe:: user
+			Konkretaus duomenų bazių serverio tvarkyklė naudojama komunikacijai su
+			duomenų baze.
 
-        Naudotojo vardas jungimuisi prie duomenų bazės.
+		.. describe:: user
 
-    .. describe:: password
+			Naudotojo vardas jungimuisi prie duomenų bazės.
 
-        Duomenų bazės naudotojo slaptažodis.
+		.. describe:: password
 
-    .. describe:: host
+			Duomenų bazės naudotojo slaptažodis.
 
-        Duomenų bazių serverio adresas.
+		.. describe:: host
 
-    .. describe:: port
+			Duomenų bazių serverio adresas.
 
-        Duomenų bazių serverio prievadas.
+		.. describe:: port
 
-    .. describe:: database
+			Duomenų bazių serverio prievadas.
 
-        Konkrečios duomenų bazės pavadinimas.
+		.. describe:: database
 
-    .. describe:: params
+			Konkrečios duomenų bazės pavadinimas.
 
-        Papildomi parametrai `Query string` formatu.
+		.. describe:: params
 
-.. describe:: resource.prepare
+			Papildomi parametrai `Query string` formatu.
 
-    Formulė skirta papildomiems veiksmams reikalingiems ryšiui su duomenų baze
-    užmegzti ir duomenų bazės paruošimui, kad būtų galima skaityt duomenis.
+	.. describe:: resource.prepare
 
-.. describe:: resource.type
+		Formulė skirta papildomiems veiksmams reikalingiems ryšiui su duomenų baze
+		užmegzti ir duomenų bazės paruošimui, kad būtų galima skaityt duomenis.
 
-    Galimos reikšmės: `sql`.
+	.. describe:: resource.type
 
-.. describe:: resource.prepare
+		Galimos reikšmės: `sql`.
 
-    .. function:: connect(dsn, schema: str = None, encoding: str = 'utf-8')
+	.. describe:: resource.prepare
 
-        :arg dsn: Duomenų bazės URI, kaip nurodyta :ref:`resource.source
-            <sql-resource-source>`.
-        :arg schema: Duomenų bazės schema.
-        :arg encoding: Duomenų bazės koduotė.
+		.. function:: connect(dsn, schema: str = None, encoding: str = 'utf-8')
 
-        Naudojama tais atvejais, kai jungiantis prie duomenų bazės reikia
-        perduoti papildomus parametrus.
+			:arg dsn: Duomenų bazės URI, kaip nurodyta :ref:`resource.source
+				<sql-resource-source>`.
+			:arg schema: Duomenų bazės schema.
+			:arg encoding: Duomenų bazės koduotė.
 
-.. describe:: model.source
+			Naudojama tais atvejais, kai jungiantis prie duomenų bazės reikia
+			perduoti papildomus parametrus.
 
-    Duomenų bazėje esančios lentelės pavadinimas.
+	.. describe:: model.source
 
-.. describe:: property.source
+		Duomenų bazėje esančios lentelės pavadinimas.
 
-    Lentelės stulpelio pavadinimas.
+	.. describe:: property.source
 
+		Lentelės stulpelio pavadinimas.
 
-CSV
----
 
-.. describe:: resource.type
+	CSV
+	---
 
-    Galimos reikšmės: `csv`, `tsv`.
+	.. describe:: resource.type
 
-.. describe:: resource.source
+		Galimos reikšmės: `csv`, `tsv`.
 
-    Žiūrėti :ref:`failai`.
+	.. describe:: resource.source
 
-.. describe:: resource.prepare
+		Žiūrėti :ref:`failai`.
 
-    .. function:: tabular(sep: ",")
+	.. describe:: resource.prepare
 
-        Nurodoma kaip CSV faile atskirti stulpeliai. Pagal nutylėjimą
-        `separator` reikšmė yra `,`.
+		.. function:: tabular(sep: ",")
 
-.. describe:: model.source
+			Nurodoma kaip CSV faile atskirti stulpeliai. Pagal nutylėjimą
+			`separator` reikšmė yra `,`.
 
-    Nenaudojama, kadangi CSV resursas gali turėti tik vieną lentelę.
+	.. describe:: model.source
 
-.. describe:: model.prepare
+		Nenaudojama, kadangi CSV resursas gali turėti tik vieną lentelę.
 
-    Žiūrėti :ref:`stulpeliai-lentelėje`.
+	.. describe:: model.prepare
 
-.. describe:: property.source
+		Žiūrėti :ref:`stulpeliai-lentelėje`.
 
-    Žiūrėti :ref:`stulpeliai-lentelėje`.
+	.. describe:: property.source
 
+		Žiūrėti :ref:`stulpeliai-lentelėje`.
 
-JSON
-----
 
-.. describe:: resource.type
+	JSON
+	----
 
-    Galimos reikšmės: `json`, `jsonl`.
+	.. describe:: resource.type
 
-.. describe:: resource.source
+		Galimos reikšmės: `json`, `jsonl`.
 
-    Žiūrėti :ref:`failai`.
+	.. describe:: resource.source
 
-.. describe:: model.source
+		Žiūrėti :ref:`failai`.
 
-    JSON objekto savybės pavadinimas, kuri rodo į masyvą reikšmių, kurios bus
-    naudojamos kaip modelio duomenų eilutės. Kiekvienas masyvo elementas
-    atskirai aprašomas :data:`property` dimensijoje. Jei JSON objektas yra
-    kompleksinis žiūrėti :ref:`kompleksinės-struktūros`.
+	.. describe:: model.source
 
-.. describe:: property.source
+		JSON objekto savybės pavadinimas, kuri rodo į masyvą reikšmių, kurios bus
+		naudojamos kaip modelio duomenų eilutės. Kiekvienas masyvo elementas
+		atskirai aprašomas :data:`property` dimensijoje. Jei JSON objektas yra
+		kompleksinis žiūrėti :ref:`kompleksinės-struktūros`.
 
-    JSON objekto savybė, kurioje pateikiami aprašomo stulpelio duomenys.
+	.. describe:: property.source
 
-.. describe:: property.prepare
+		JSON objekto savybė, kurioje pateikiami aprašomo stulpelio duomenys.
 
-    Žiūrėti :ref:`kompleksinės-struktūros`.
+	.. describe:: property.prepare
 
+		Žiūrėti :ref:`kompleksinės-struktūros`.
 
-.. _XPath: https://en.wikipedia.org/wiki/XPath
 
-XML
----
+	.. _XPath: https://en.wikipedia.org/wiki/XPath
 
-.. describe:: resource.type
+	XML
+	---
 
-    Galimos reikšmės: `xml`, `html`.
+	.. describe:: resource.type
 
-.. describe:: resource.source
+		Galimos reikšmės: `xml`, `html`.
 
-    Žiūrėti :ref:`failai`.
+	.. describe:: resource.source
 
-.. describe:: model.source
+		Žiūrėti :ref:`failai`.
 
-    XPath_ iki elementų sąrašo kuriame yra modelio duomenys.
+	.. describe:: model.source
 
-.. describe:: model.prepare
+		XPath_ iki elementų sąrašo kuriame yra modelio duomenys.
 
-    Jei neužpildyta, vykdoma :func:`xpath(self) <xml.xpath>` funkcija.
+	.. describe:: model.prepare
 
-    .. function:: xpath(expr)
+		Jei neužpildyta, vykdoma :func:`xpath(self) <xml.xpath>` funkcija.
 
-        Vykdo nurodyta `expr`, viso XML dokumento kontekste.
+		.. function:: xpath(expr)
 
-.. describe:: property.source
+			Vykdo nurodyta `expr`, viso XML dokumento kontekste.
 
-    XPath_ iki elemento kuriame yra duomenys.
+	.. describe:: property.source
 
-    XPath nurodomas reliatyvus modeliui, arba kitai daugiareikšmei savybei,
-    kurios sudėtyje savybė yra. Daugiareikšmės savybės žymimos `[]` simboliais
-    savybės kodiniame pavadinime, įprastai tai yra `array` tipo savybės.
+		XPath_ iki elemento kuriame yra duomenys.
 
-.. describe:: model.prepare
+		XPath nurodomas reliatyvus modeliui, arba kitai daugiareikšmei savybei,
+		kurios sudėtyje savybė yra. Daugiareikšmės savybės žymimos `[]` simboliais
+		savybės kodiniame pavadinime, įprastai tai yra `array` tipo savybės.
 
-    Jei neužpildyta, vykdoma :func:`xpath(self) <xml.xpath>` funkcija, iš
-    :data:`model` gauto elemento kontekste.
+	.. describe:: model.prepare
 
+		Jei neužpildyta, vykdoma :func:`xpath(self) <xml.xpath>` funkcija, iš
+		:data:`model` gauto elemento kontekste.
 
-.. admonition:: Pavyzdys
 
-    .. code-block:: xml
+	.. admonition:: Pavyzdys
 
-        <countries>
-            <country id="1" name="Lithuania">
-                <cities>
-                    <city id="10" name="Vilnius">
-                        <streets>
-                            <street id="100">Gedimino st.</street>
-                            <street id="101">Konstitucijos st.</street>
-                        </streets>
-                    </city>
-                    <city id="11" name="Kaunas">
-                        <streets>
-                            <street id="102">Laisves st.</street>
-                            <street id="103">Daukanto st.</street>
-                        </streets>
-                    </city>
-                </cities>
-            </country>
-        </countries>
+		.. code-block:: xml
 
+			<countries>
+				<country id="1" name="Lithuania">
+					<cities>
+						<city id="10" name="Vilnius">
+							<streets>
+								<street id="100">Gedimino st.</street>
+								<street id="101">Konstitucijos st.</street>
+							</streets>
+						</city>
+						<city id="11" name="Kaunas">
+							<streets>
+								<street id="102">Laisves st.</street>
+								<street id="103">Daukanto st.</street>
+							</streets>
+						</city>
+					</cities>
+				</country>
+			</countries>
 
-    .. mermaid::
 
-        classDiagram
-            direction LR
+		.. mermaid::
 
-            class Country {
-              + id: integer [1..1]
-              + name@en: string [1..1]
-            }
+			classDiagram
+				direction LR
 
-            class City {
-              + id: integer [1..1]
-              + name@en: string [1..1]
-            }
+				class Country {
+				  + id: integer [1..1]
+				  + name@en: string [1..1]
+				}
 
-            class Street {
-              + id: integer [1..1]
-              + name@en: string [1..1]
-            }
+				class City {
+				  + id: integer [1..1]
+				  + name@en: string [1..1]
+				}
 
-            City --> "[1..1]" Country : country
-            City "[1..*]" <-- Country : cities
+				class Street {
+				  + id: integer [1..1]
+				  + name@en: string [1..1]
+				}
 
-            Street --> "[1..1]" City : city
-            Street "[1..*]" <-- City : streets
+				City --> "[1..1]" Country : country
+				City "[1..*]" <-- Country : cities
 
-    |
+				Street --> "[1..1]" City : city
+				Street "[1..*]" <-- City : streets
 
-    Pagal aukščiau duotus duomenis ir koncepcinį modelį, struktūros aprašas
-    atrodys taip:
+		|
 
-    ======  ============================  ========  ============  ============
-    model   property                      type      ref           source
-    ======  ============================  ========  ============  ============
-    **Country**                                     id            **countries/country**
-    ------------------------------------  --------  ------------  ------------
-    \       id                            integer                 @id
-    \       name\@en                      string                  @name
-    \       cities[]                      backref   **City**      cities/city
-    \       cities[].id                   integer                 @id
-    \       cities[].name\@en             string                  @name
-    \       cities[].country              ref       **Country**   ../../@id
-    \       cities[].streets[]            backref   **Street**    streets/street
-    \       cities[].streets[].id         integer                 @id
-    \       cities[].streets[].name\@en   string                  @name
-    \       cities[].streets[].city       ref       **City**      ../../@id
-    **City**                                        id            **countries/country/cities/city**
-    ------------------------------------  --------  ------------  ------------
-    \       id                            integer                 @id
-    \       name\@en                      string                  @name
-    \       country                       ref       **Country**   ../../@id
-    **Street**                                      id            **countries/country/cities/city/streets/street**
-    ------------------------------------  --------  ------------  ------------
-    \       id                            integer                 @id
-    \       name\@en                      string                  @name
-    \       country                       ref       **City**      ../../@id
-    ======  ============================  ========  ============  ============
-
-    Struktūros apraše matome du variantus, kaip gali būti aprašomi duomenys.
-    Pirmu atveju `Country` modelyje naudojama objektų kompozicija, kur vieno
-    `Country` objekto apimtyje, pateikiami ir kiti objektai.
-
-    Reikia atkreipti dėmesį, kad savybės esančios kitos daugiareikšmės savybės
-    sudėtyje, :data:`property.source` stulpelyje nurodo XPath išraišką
-    reliatyvią daugereikšmei savybei. Daugiareikšmės savybės žymymos `[]` žyme.
-
-    Pavyzdyje `cities[].id` :data:`property.source` stulpelyje nurodo `@id`,
-    kuris yra reliatyvus `cities[]` savybės `streets/street` atžvilgiu.
-
-    Pagal struktūros aprašą pateiktą aukščiau, kreipiantis į `/Country`,
-    gausime tokius UDTS_ specifikaciją atitinkančius duomenis:
-
-    .. code-block:: json
-
-        {
-            "_type": "Country",
-            "_id": "29df0534-389d-4eac-a048-799ac64d5103",
-            "id": 1,
-            "name": {"en": "Lithuana"},
-            "cities": [
-                {
-                    "_type": "City",
-                    "_id": "4a7a3214-e6c3-4a5b-99a8-04be88eac3d4",
-                    "id": 10,
-                    "name": {"en": "Vilnius"},
-                    "country": {
-                        "_type": "Country",
-                        "_id": "29df0534-389d-4eac-a048-799ac64d5103"
-                    },
-                    "streets": [
-                        {
-                            "_type": "Street",
-                            "_id": "c1380514-549f-4cdd-b258-6fecc3a5bbda",
-                            "id": 100,
-                            "name": {"en": "Gedimino st."},
-                            "city": {
-                                "_type": "City",
-                                "_id": "4a7a3214-e6c3-4a5b-99a8-04be88eac3d4"
-                            },
-                        },
-                        {
-                            "_type": "Street",
-                            "_id": "5c02f700-6478-43a0-a147-959927cb3c1c",
-                            "id": 101,
-                            "name": {"en": "Konstitucijos st."},
-                            "city": {
-                                "_type": "City",
-                                "_id": "4a7a3214-e6c3-4a5b-99a8-04be88eac3d4"
-                            },
-                        }
-                    ]
-                },
-                {
-                    "_type": "City",
-                    "_id": "0fee7d9a-6827-4931-bbea-d44d197faef2",
-                    "id": 11,
-                    "name": {"en": "Kaunas"},
-                    "country": {
-                        "_type": "Country",
-                        "_id": "29df0534-389d-4eac-a048-799ac64d5103"
-                    },
-                    "streets": [
-                        {
-                            "_type": "Street",
-                            "_id": "399a37d6-63a7-43a4-82de-d3d5c75f5d02",
-                            "id": 102,
-                            "name": {"en": "Laisves st."},
-                            "city": {
-                                "_type": "City",
-                                "_id": "0fee7d9a-6827-4931-bbea-d44d197faef2"
-                            },
-                        },
-                        {
-                            "_type": "Street",
-                            "_id": "5b04fecd-5fff-48f6-8674-7cc6da840281",
-                            "id": 103,
-                            "name": {"en": "Daukanto st."},
-                            "city": {
-                                "_type": "City",
-                                "_id": "0fee7d9a-6827-4931-bbea-d44d197faef2"
-                            },
-                        }
-                    ]
-                }
-            ]
-        }
+		Pagal aukščiau duotus duomenis ir koncepcinį modelį, struktūros aprašas
+		atrodys taip:
 
-    Analogiškai, jei kreiptumėmės į `/Street`, gautume visas gatves iš visų miestų:
+		======  ============================  ========  ============  ============
+		model   property                      type      ref           source
+		======  ============================  ========  ============  ============
+		**Country**                                     id            **countries/country**
+		------------------------------------  --------  ------------  ------------
+		\       id                            integer                 @id
+		\       name\@en                      string                  @name
+		\       cities[]                      backref   **City**      cities/city
+		\       cities[].id                   integer                 @id
+		\       cities[].name\@en             string                  @name
+		\       cities[].country              ref       **Country**   ../../@id
+		\       cities[].streets[]            backref   **Street**    streets/street
+		\       cities[].streets[].id         integer                 @id
+		\       cities[].streets[].name\@en   string                  @name
+		\       cities[].streets[].city       ref       **City**      ../../@id
+		**City**                                        id            **countries/country/cities/city**
+		------------------------------------  --------  ------------  ------------
+		\       id                            integer                 @id
+		\       name\@en                      string                  @name
+		\       country                       ref       **Country**   ../../@id
+		**Street**                                      id            **countries/country/cities/city/streets/street**
+		------------------------------------  --------  ------------  ------------
+		\       id                            integer                 @id
+		\       name\@en                      string                  @name
+		\       country                       ref       **City**      ../../@id
+		======  ============================  ========  ============  ============
 
-    .. code-block:: json
+		Struktūros apraše matome du variantus, kaip gali būti aprašomi duomenys.
+		Pirmu atveju `Country` modelyje naudojama objektų kompozicija, kur vieno
+		`Country` objekto apimtyje, pateikiami ir kiti objektai.
+
+		Reikia atkreipti dėmesį, kad savybės esančios kitos daugiareikšmės savybės
+		sudėtyje, :data:`property.source` stulpelyje nurodo XPath išraišką
+		reliatyvią daugereikšmei savybei. Daugiareikšmės savybės žymymos `[]` žyme.
+
+		Pavyzdyje `cities[].id` :data:`property.source` stulpelyje nurodo `@id`,
+		kuris yra reliatyvus `cities[]` savybės `streets/street` atžvilgiu.
+
+		Pagal struktūros aprašą pateiktą aukščiau, kreipiantis į `/Country`,
+		gausime tokius UDTS_ specifikaciją atitinkančius duomenis:
+
+		.. code-block:: json
+
+			{
+				"_type": "Country",
+				"_id": "29df0534-389d-4eac-a048-799ac64d5103",
+				"id": 1,
+				"name": {"en": "Lithuana"},
+				"cities": [
+					{
+						"_type": "City",
+						"_id": "4a7a3214-e6c3-4a5b-99a8-04be88eac3d4",
+						"id": 10,
+						"name": {"en": "Vilnius"},
+						"country": {
+							"_type": "Country",
+							"_id": "29df0534-389d-4eac-a048-799ac64d5103"
+						},
+						"streets": [
+							{
+								"_type": "Street",
+								"_id": "c1380514-549f-4cdd-b258-6fecc3a5bbda",
+								"id": 100,
+								"name": {"en": "Gedimino st."},
+								"city": {
+									"_type": "City",
+									"_id": "4a7a3214-e6c3-4a5b-99a8-04be88eac3d4"
+								},
+							},
+							{
+								"_type": "Street",
+								"_id": "5c02f700-6478-43a0-a147-959927cb3c1c",
+								"id": 101,
+								"name": {"en": "Konstitucijos st."},
+								"city": {
+									"_type": "City",
+									"_id": "4a7a3214-e6c3-4a5b-99a8-04be88eac3d4"
+								},
+							}
+						]
+					},
+					{
+						"_type": "City",
+						"_id": "0fee7d9a-6827-4931-bbea-d44d197faef2",
+						"id": 11,
+						"name": {"en": "Kaunas"},
+						"country": {
+							"_type": "Country",
+							"_id": "29df0534-389d-4eac-a048-799ac64d5103"
+						},
+						"streets": [
+							{
+								"_type": "Street",
+								"_id": "399a37d6-63a7-43a4-82de-d3d5c75f5d02",
+								"id": 102,
+								"name": {"en": "Laisves st."},
+								"city": {
+									"_type": "City",
+									"_id": "0fee7d9a-6827-4931-bbea-d44d197faef2"
+								},
+							},
+							{
+								"_type": "Street",
+								"_id": "5b04fecd-5fff-48f6-8674-7cc6da840281",
+								"id": 103,
+								"name": {"en": "Daukanto st."},
+								"city": {
+									"_type": "City",
+									"_id": "0fee7d9a-6827-4931-bbea-d44d197faef2"
+								},
+							}
+						]
+					}
+				]
+			}
 
-        {
-            "_data": [
-                {
-                    "_type": "Street",
-                    "_id": "c1380514-549f-4cdd-b258-6fecc3a5bbda",
-                    "id": 100,
-                    "name": {"en": "Gedimino st."},
-                    "city": {
-                        "_type": "City",
-                        "_id": "4a7a3214-e6c3-4a5b-99a8-04be88eac3d4"
-                    },
-                },
-                {
-                    "_type": "Street",
-                    "_id": "5c02f700-6478-43a0-a147-959927cb3c1c",
-                    "id": 101,
-                    "name": {"en": "Konstitucijos st."},
-                    "city": {
-                        "_type": "City",
-                        "_id": "4a7a3214-e6c3-4a5b-99a8-04be88eac3d4"
-                    },
-                },
-                {
-                    "_type": "Street",
-                    "_id": "399a37d6-63a7-43a4-82de-d3d5c75f5d02",
-                    "id": 102,
-                    "name": {"en": "Laisves st."},
-                    "city": {
-                        "_type": "City",
-                        "_id": "0fee7d9a-6827-4931-bbea-d44d197faef2"
-                    },
-                },
-                {
-                    "_type": "Street",
-                    "_id": "5b04fecd-5fff-48f6-8674-7cc6da840281",
-                    "id": 103,
-                    "name": {"en": "Daukanto st."},
-                    "city": {
-                        "_type": "City",
-                        "_id": "0fee7d9a-6827-4931-bbea-d44d197faef2"
-                    },
-                }
-            ]
-        }
+		Analogiškai, jei kreiptumėmės į `/Street`, gautume visas gatves iš visų miestų:
 
+		.. code-block:: json
 
+			{
+				"_data": [
+					{
+						"_type": "Street",
+						"_id": "c1380514-549f-4cdd-b258-6fecc3a5bbda",
+						"id": 100,
+						"name": {"en": "Gedimino st."},
+						"city": {
+							"_type": "City",
+							"_id": "4a7a3214-e6c3-4a5b-99a8-04be88eac3d4"
+						},
+					},
+					{
+						"_type": "Street",
+						"_id": "5c02f700-6478-43a0-a147-959927cb3c1c",
+						"id": 101,
+						"name": {"en": "Konstitucijos st."},
+						"city": {
+							"_type": "City",
+							"_id": "4a7a3214-e6c3-4a5b-99a8-04be88eac3d4"
+						},
+					},
+					{
+						"_type": "Street",
+						"_id": "399a37d6-63a7-43a4-82de-d3d5c75f5d02",
+						"id": 102,
+						"name": {"en": "Laisves st."},
+						"city": {
+							"_type": "City",
+							"_id": "0fee7d9a-6827-4931-bbea-d44d197faef2"
+						},
+					},
+					{
+						"_type": "Street",
+						"_id": "5b04fecd-5fff-48f6-8674-7cc6da840281",
+						"id": 103,
+						"name": {"en": "Daukanto st."},
+						"city": {
+							"_type": "City",
+							"_id": "0fee7d9a-6827-4931-bbea-d44d197faef2"
+						},
+					}
+				]
+			}
 
-XLSX
-----
 
-.. describe:: resource.type
 
-    Galimos reikšmės: `xlsx`, `ods` arba `xls`.
+	XLSX
+	----
 
-.. describe:: resource.source
+	.. describe:: resource.type
 
-    Žiūrėti :ref:`failai`.
+		Galimos reikšmės: `xlsx`, `ods` arba `xls`.
 
-.. describe:: model.source
+	.. describe:: resource.source
 
-    Skaičiuoklės faile esančio lapo pavadinimas.
+		Žiūrėti :ref:`failai`.
 
-.. describe:: model.prepare
+	.. describe:: model.source
 
-    Žiūrėti :ref:`stulpeliai-lentelėje`.
+		Skaičiuoklės faile esančio lapo pavadinimas.
 
-.. describe:: property.source
+	.. describe:: model.prepare
 
-    Žiūrėti :ref:`stulpeliai-lentelėje`.
+		Žiūrėti :ref:`stulpeliai-lentelėje`.
 
+	.. describe:: property.source
 
+		Žiūrėti :ref:`stulpeliai-lentelėje`.
 
-.. _UDTS: https://ivpk.github.io/uapi
 
 
-WSDL
-----
+	.. _UDTS: https://ivpk.github.io/uapi
 
-Šiuo metu palaikoma tik `WSDL 1.1 versija`_.
 
-.. _`WSDL 1.1 versija`: https://www.w3.org/TR/2001/NOTE-wsdl-20010315
+	WSDL
+	----
 
-Šaltinis inicializuoja WSDL klientą pagal `resource.source` nurodytą URI.
+	Šiuo metu palaikoma tik `WSDL 1.1 versija`_.
 
+	.. _`WSDL 1.1 versija`: https://www.w3.org/TR/2001/NOTE-wsdl-20010315
 
-.. note::
-    `wsdl` šaltinis skaito WSDL failą, aprašantį kitus duomenų šaltinius, todėl
-    pagrinde yra naudojamas kartu su kitais resursais, nurodant :ref:`ref-resource-nesting`.
+	Šaltinis inicializuoja WSDL klientą pagal `resource.source` nurodytą URI.
 
-    Šiuo metu WSDL resursas naudojamas tik kartu su :ref:`ref-soap` resursu.
 
+	.. note::
+		`wsdl` šaltinis skaito WSDL failą, aprašantį kitus duomenų šaltinius, todėl
+		pagrinde yra naudojamas kartu su kitais resursais, nurodant :ref:`ref-resource-nesting`.
 
-.. describe:: resource.source
+		Šiuo metu WSDL resursas naudojamas tik kartu su :ref:`ref-soap` resursu.
 
-    Pilnas WSDL adresas :term:`URI` formatu.
 
-.. describe:: resource.type
+	.. describe:: resource.source
 
-    Galimos reikšmės: `wsdl`.
+		Pilnas WSDL adresas :term:`URI` formatu.
 
+	.. describe:: resource.type
 
-.. _ref-soap:
+		Galimos reikšmės: `wsdl`.
 
-SOAP
-----
 
-.. describe:: resource.source
+	.. _ref-soap:
 
-    WSDL elementai, aprašantys konkretų duomenų rinkinį, atskirti tašku, naudojant tokį šabloną:
+	SOAP
+	----
 
-    .. code-block:: text
+	.. describe:: resource.source
 
-        Service.Port.PortType.Operation
+		WSDL elementai, aprašantys konkretų duomenų rinkinį, atskirti tašku, naudojant tokį šabloną:
 
-    Šablone naudojamų kintamųjų aprašymas:
+		.. code-block:: text
 
-    .. describe:: Service
+			Service.Port.PortType.Operation
 
-        WSDL Service_ elemento pavadinimas.
+		Šablone naudojamų kintamųjų aprašymas:
 
-        .. _Service: https://www.w3.org/TR/2001/NOTE-wsdl-20010315#_services
+		.. describe:: Service
 
-    .. describe:: Port
+			WSDL Service_ elemento pavadinimas.
 
-        WSDL Port_ elemento pavadinimas.
+			.. _Service: https://www.w3.org/TR/2001/NOTE-wsdl-20010315#_services
 
-        .. _Port: https://www.w3.org/TR/2001/NOTE-wsdl-20010315#_ports
+		.. describe:: Port
 
-    .. describe:: PortType
+			WSDL Port_ elemento pavadinimas.
 
-        WSDL PortType_ elemento pavadinimas.
+			.. _Port: https://www.w3.org/TR/2001/NOTE-wsdl-20010315#_ports
 
-        .. _PortType: https://www.w3.org/TR/2001/NOTE-wsdl-20010315#_porttypes
+		.. describe:: PortType
 
-    .. describe:: Operation
+			WSDL PortType_ elemento pavadinimas.
 
-        WSDL SOAP Operation_ elemento pavadinimas.
+			.. _PortType: https://www.w3.org/TR/2001/NOTE-wsdl-20010315#_porttypes
 
-        .. _Operation: https://www.w3.org/TR/2001/NOTE-wsdl-20010315#_soap:operation
+		.. describe:: Operation
 
+			WSDL SOAP Operation_ elemento pavadinimas.
 
-.. describe:: resource.type
+			.. _Operation: https://www.w3.org/TR/2001/NOTE-wsdl-20010315#_soap:operation
 
-    Galimos reikšmės: `soap`.
 
-.. describe:: resource.prepare
+	.. describe:: resource.type
 
-    Žiūrėti :ref:`ref-resource-nesting`.
+		Galimos reikšmės: `soap`.
 
-.. describe:: model.source
+	.. describe:: resource.prepare
 
-    XPath_ iki elementų sąrašo, kuriame yra modelio duomenys.
+		Žiūrėti :ref:`ref-resource-nesting`.
 
-    .. note::
-        Kol kas nėra įgyvendinta. Naudoti `/`.
+	.. describe:: model.source
 
-.. describe:: property.source
+		XPath_ iki elementų sąrašo, kuriame yra modelio duomenys.
 
-    XML elemento, kuriame nurodyti duomenys, pavadinimas duomenų šaltinyje.
+		.. note::
+			Kol kas nėra įgyvendinta. Naudoti `/`.
 
-    .. note::
-        Svarbu pabrėžti, kad yra įgyvendintas tik vienareikšmių savybių skaitymas,
-        todėl duomenys, esantys duomenų šaltinio daugiareikšmėse savybėse, nebus nuskaityti.
+	.. describe:: property.source
 
-.. admonition:: Pavyzdys (be SOAP request duomenų)
+		XML elemento, kuriame nurodyti duomenys, pavadinimas duomenų šaltinyje.
 
-    **Duomenų šaltinis:**
+		.. note::
+			Svarbu pabrėžti, kad yra įgyvendintas tik vienareikšmių savybių skaitymas,
+			todėl duomenys, esantys duomenų šaltinio daugiareikšmėse savybėse, nebus nuskaityti.
 
-    .. code-block:: xml
+	.. admonition:: Pavyzdys (be SOAP request duomenų)
 
-        <ns0:Envelope xmlns:ns0="http://schemas.xmlsoap.org/soap/envelope/"
-                      xmlns:ns1="city_app">
-            <ns0:Body>
-                <ns1:CityOutputResponse>
-                    <ns1:CityOutput>
-                        <ns1:id>100</ns1:id>
-                        <ns1:name>Name One</ns1:name>
-                    </ns1:CityOutput>
-                    <ns1:CityOutput>
-                        <ns1:id>101</ns1:id>
-                        <ns1:name>Name Two</ns1:name>
-                    </ns1:CityOutput>
-                </ns1:CityOutputResponse>
-            </ns0:Body>
-        </ns0:Envelope>
+		**Duomenų šaltinis:**
 
-    **WSDL:**
+		.. code-block:: xml
 
-    .. code-block:: xml
+			<ns0:Envelope xmlns:ns0="http://schemas.xmlsoap.org/soap/envelope/"
+						  xmlns:ns1="city_app">
+				<ns0:Body>
+					<ns1:CityOutputResponse>
+						<ns1:CityOutput>
+							<ns1:id>100</ns1:id>
+							<ns1:name>Name One</ns1:name>
+						</ns1:CityOutput>
+						<ns1:CityOutput>
+							<ns1:id>101</ns1:id>
+							<ns1:name>Name Two</ns1:name>
+						</ns1:CityOutput>
+					</ns1:CityOutputResponse>
+				</ns0:Body>
+			</ns0:Envelope>
 
-        <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                 xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-                 xmlns:tns="city_app"
-                 targetNamespace="city_app"
-                 name="CityService">
+		**WSDL:**
 
-            <wsdl:types>
-                <xs:schema targetNamespace="city_app">
-                    <xs:element name="CityInputRequest"/>
+		.. code-block:: xml
 
-                    <xs:element name="CityOutputResponse">
-                        <xs:complexType>
-                            <xs:sequence>
-                                <xs:element name="CityOutput" type="tns:CityOutput" minOccurs="0" maxOccurs="unbounded"/>
-                            </xs:sequence>
-                        </xs:complexType>
-                    </xs:element>
+			<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+					 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+					 xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+					 xmlns:tns="city_app"
+					 targetNamespace="city_app"
+					 name="CityService">
 
-                    <xs:complexType name="CityOutput">
-                        <xs:sequence>
-                            <xs:element name="id" type="xs:int"/>
-                            <xs:element name="name" type="xs:string"/>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:schema>
-            </wsdl:types>
+				<wsdl:types>
+					<xs:schema targetNamespace="city_app">
+						<xs:element name="CityInputRequest"/>
 
-            <wsdl:message name="CityInputRequest">
-                <wsdl:part name="parameters" element="tns:CityInputRequest"/>
-            </wsdl:message>
-            <wsdl:message name="CityOutputResponse">
-                <wsdl:part name="parameters" element="tns:CityOutputResponse"/>
-            </wsdl:message>
+						<xs:element name="CityOutputResponse">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="CityOutput" type="tns:CityOutput" minOccurs="0" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
 
-            <wsdl:portType name="CityPortType">
-                <wsdl:operation name="CityOperation">
-                    <wsdl:input message="tns:CityInputRequest"/>
-                    <wsdl:output message="tns:CityOutputResponse"/>
-                </wsdl:operation>
-            </wsdl:portType>
+						<xs:complexType name="CityOutput">
+							<xs:sequence>
+								<xs:element name="id" type="xs:int"/>
+								<xs:element name="name" type="xs:string"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:schema>
+				</wsdl:types>
 
-            <wsdl:binding name="CityServiceBinding" type="tns:CityPortType">
-                <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-                <wsdl:operation name="CityOperation">
-                    <soap:operation soapAction="urn:CityOperation"/>
-                    <wsdl:input>
-                        <soap:body use="literal"/>
-                    </wsdl:input>
-                    <wsdl:output>
-                        <soap:body use="literal"/>
-                    </wsdl:output>
-                </wsdl:operation>
-            </wsdl:binding>
+				<wsdl:message name="CityInputRequest">
+					<wsdl:part name="parameters" element="tns:CityInputRequest"/>
+				</wsdl:message>
+				<wsdl:message name="CityOutputResponse">
+					<wsdl:part name="parameters" element="tns:CityOutputResponse"/>
+				</wsdl:message>
 
-            <wsdl:service name="CityService">
-                <wsdl:port name="CityPort" binding="tns:CityServiceBinding">
-                    <soap:address location="http://example.com/city"/>
-                </wsdl:port>
-            </wsdl:service>
-        </wsdl:definitions>
+				<wsdl:portType name="CityPortType">
+					<wsdl:operation name="CityOperation">
+						<wsdl:input message="tns:CityInputRequest"/>
+						<wsdl:output message="tns:CityOutputResponse"/>
+					</wsdl:operation>
+				</wsdl:portType>
 
-    Pagal aukščiau pateiktus duomenis ir WSDL aprašymą, duomenų struktūros aprašas atrodys taip:
+				<wsdl:binding name="CityServiceBinding" type="tns:CityPortType">
+					<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+					<wsdl:operation name="CityOperation">
+						<soap:operation soapAction="urn:CityOperation"/>
+						<wsdl:input>
+							<soap:body use="literal"/>
+						</wsdl:input>
+						<wsdl:output>
+							<soap:body use="literal"/>
+						</wsdl:output>
+					</wsdl:operation>
+				</wsdl:binding>
 
-    ===========  ======  =========  ========  ====  ================================================  ================
-    resource     model   property   type      ref   source                                            prepare
-    ===========  ======  =========  ========  ====  ================================================  ================
-    towns_wsdl                      wsdl            http://example.com/city?wsdl
-    towns                           soap            CityService.CityPort.CityPortType.CityOperation   wsdl(towns_wsdl)
-    \            City                         id    /
-    -----------  ------  ---------  --------  ----  ------------------------------------------------  ----------------
-    \                    id         integer         id
-    \                    name       string          name
-    ===========  ======  =========  ========  ====  ================================================  ================
-    |
-    Struktūros apraše, aprašyti du ištekliai **towns_wsdl** ir **towns**, naudojantys :ref:`ref-resource-nesting`.
+				<wsdl:service name="CityService">
+					<wsdl:port name="CityPort" binding="tns:CityServiceBinding">
+						<soap:address location="http://example.com/city"/>
+					</wsdl:port>
+				</wsdl:service>
+			</wsdl:definitions>
 
-    Resurso **towns_wsdl** `resource.source` stulpelyje yra nurodomas WSDL dokumento adresas. Šis resursas
-    inicializuos WSDL klientą.
+		Pagal aukščiau pateiktus duomenis ir WSDL aprašymą, duomenų struktūros aprašas atrodys taip:
 
-    Resurso **towns** `resource.source` stulpelyje nurodomi WSDL elementai,
-    aprašantys konkretų duomenų rinkinį. `resource.prepare` stulpelyje yra nurodoma `wsdl(towns_wsdl)` funkcija,
-    kuri grąžina SOAP operaciją, naudojant **towns_wsdl** resurse inicializuotą WSDL klientą ir WSDL elementus,
-    aprašytus `resource.source`.
+		===========  ======  =========  ========  ====  ================================================  ================
+		resource     model   property   type      ref   source                                            prepare
+		===========  ======  =========  ========  ====  ================================================  ================
+		towns_wsdl                      wsdl            http://example.com/city?wsdl
+		towns                           soap            CityService.CityPort.CityPortType.CityOperation   wsdl(towns_wsdl)
+		\            City                         id    /
+		-----------  ------  ---------  --------  ----  ------------------------------------------------  ----------------
+		\                    id         integer         id
+		\                    name       string          name
+		===========  ======  =========  ========  ====  ================================================  ================
+		|
+		Struktūros apraše, aprašyti du ištekliai **towns_wsdl** ir **towns**, naudojantys :ref:`ref-resource-nesting`.
 
-    Reikia atkreipti dėmesį, kad `property.source` stulpeliuose aprašomi elementai turi sutapti
-    su duomenų šaltinyje esančių elementų pavadinimais.
+		Resurso **towns_wsdl** `resource.source` stulpelyje yra nurodomas WSDL dokumento adresas. Šis resursas
+		inicializuos WSDL klientą.
 
-    Pagal duomenų struktūros aprašą pateiktą aukščiau, kreipiantis į `/City`,
-    gausime tokius UDTS_ specifikaciją atitinkančius duomenis:
+		Resurso **towns** `resource.source` stulpelyje nurodomi WSDL elementai,
+		aprašantys konkretų duomenų rinkinį. `resource.prepare` stulpelyje yra nurodoma `wsdl(towns_wsdl)` funkcija,
+		kuri grąžina SOAP operaciją, naudojant **towns_wsdl** resurse inicializuotą WSDL klientą ir WSDL elementus,
+		aprašytus `resource.source`.
 
-    .. code-block:: json
+		Reikia atkreipti dėmesį, kad `property.source` stulpeliuose aprašomi elementai turi sutapti
+		su duomenų šaltinyje esančių elementų pavadinimais.
 
-        {
-            "_data": [
-                {
-                    "_type": "City",
-                    "_id": "c1380514-549f-4cdd-b258-6fecc3a5bbda",
-                    "id": 100,
-                    "name": "Name One",
-                },
-                {
-                    "_type": "City",
-                    "_id": "5c02f700-6478-43a0-a147-959927cb3c1c",
-                    "id": 101,
-                    "name": "Name Two",
-                }
-            ]
-        }
-
-.. admonition:: Pavyzdys (su SOAP request duomenimis)
-
-    Remiantis ankstesniu pavyzdžiu, turint **WSDL**, papildytą `CityInputRequest` schema:
-
-    .. code-block:: xml
-        :emphasize-lines: 10-23
-
-        <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                 xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-                 xmlns:tns="city_app"
-                 targetNamespace="city_app"
-                 name="CityService">
+		Pagal duomenų struktūros aprašą pateiktą aukščiau, kreipiantis į `/City`,
+		gausime tokius UDTS_ specifikaciją atitinkančius duomenis:
 
-            <wsdl:types>
-                <xs:schema targetNamespace="city_app">
-                    <xs:element name="CityInputRequest">
-                        <xs:complexType>
-                            <xs:sequence>
-                                <xs:element name="request_model" type="tns:RequestModelType" minOccurs="0" nillable="true"/>
-                            </xs:sequence>
-                        </xs:complexType>
-                    </xs:element>
-
-                    <xs:complexType name="RequestModelType">
-                        <xs:sequence>
-                            <xs:element name="param1" type="xs:string" minOccurs="0" nillable="true"/>
-                            <xs:element name="param2" type="xs:string" minOccurs="0" nillable="true"/>
-                        </xs:sequence>
-                    </xs:complexType>
-
-                    <xs:element name="CityOutputResponse">
-                        <xs:complexType>
-                            <xs:sequence>
-                                <xs:element name="CityOutput" type="tns:CityOutput" minOccurs="0" maxOccurs="unbounded"/>
-                            </xs:sequence>
-                        </xs:complexType>
-                    </xs:element>
-
-                    <xs:complexType name="CityOutput">
-                        <xs:sequence>
-                            <xs:element name="id" type="xs:int"/>
-                            <xs:element name="name" type="xs:string"/>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:schema>
-            </wsdl:types>
-
-            <wsdl:message name="CityInputRequest">
-                <wsdl:part name="parameters" element="tns:CityInputRequest"/>
-            </wsdl:message>
-            <wsdl:message name="CityOutputResponse">
-                <wsdl:part name="parameters" element="tns:CityOutputResponse"/>
-            </wsdl:message>
-
-            <wsdl:portType name="CityPortType">
-                <wsdl:operation name="CityOperation">
-                    <wsdl:input message="tns:CityInputRequest"/>
-                    <wsdl:output message="tns:CityOutputResponse"/>
-                </wsdl:operation>
-            </wsdl:portType>
-
-            <wsdl:binding name="CityServiceBinding" type="tns:CityPortType">
-                <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-                <wsdl:operation name="CityOperation">
-                    <soap:operation soapAction="urn:CityOperation"/>
-                    <wsdl:input>
-                        <soap:body use="literal"/>
-                    </wsdl:input>
-                    <wsdl:output>
-                        <soap:body use="literal"/>
-                    </wsdl:output>
-                </wsdl:operation>
-            </wsdl:binding>
-
-            <wsdl:service name="CityService">
-                <wsdl:port name="CityPort" binding="tns:CityServiceBinding">
-                    <soap:address location="http://example.com/city"/>
-                </wsdl:port>
-            </wsdl:service>
-        </wsdl:definitions>
-
-    ir turint DSA, papildytą `resource.param` ir `property` eilutėmis:
-
-    ===========  ======  =========  ============  ============== ================================================  =====================
-    resource     model   property   type          ref            source                                            prepare
-    ===========  ======  =========  ============  ============== ================================================  =====================
-    towns_wsdl                      wsdl                         http://example.com/city?wsdl
-    towns                           soap                         CityService.CityPort.CityPortType.CityOperation   wsdl(towns_wsdl)
-    \                               **param**     **parameter1** **request_model/param1**                          **input("value1")**
-    \                               **param**     **parameter2** **request_model/param2**                          **input("value2")**
-    \            City                             id             /
-    \                    id         integer                      id
-    \                    name       string                       name
-    \                    **p1**     **string**                                                                     **param(parameter1)**
-    \                    **p2**     **string**                                                                     **param(parameter2)**
-    ===========  ======  =========  ============  ============== ================================================  =====================
-    |
-
-    kreipiantis į `/City?p1="first"`, bus suformuotas toks python dictionary, kurį
-    `Zeep` klientas perduos kaip SOAP request body:
-
-    .. code-block:: python
-
-        {"request_model": {"param1": "first", "param2": "value2"}}
-
-
-    ir gausime tokius UDTS_ specifikaciją atitinkančius duomenis:
-
-    .. code-block:: json
-
-        {
-            "_data": [
-                {
-                    "_type": "City",
-                    "_id": "c1380514-549f-4cdd-b258-6fecc3a5bbda",
-                    "id": 100,
-                    "name": "Name One",
-                    "p1": "first",
-                    "p2": "value2",
-                },
-                {
-                    "_type": "City",
-                    "_id": "5c02f700-6478-43a0-a147-959927cb3c1c",
-                    "id": 101,
-                    "name": "Name Two",
-                    "p1": "first",
-                    "p2": "value2",
-                }
-            ]
-        }
+		.. code-block:: json
+
+			{
+				"_data": [
+					{
+						"_type": "City",
+						"_id": "c1380514-549f-4cdd-b258-6fecc3a5bbda",
+						"id": 100,
+						"name": "Name One",
+					},
+					{
+						"_type": "City",
+						"_id": "5c02f700-6478-43a0-a147-959927cb3c1c",
+						"id": 101,
+						"name": "Name Two",
+					}
+				]
+			}
+
+	.. admonition:: Pavyzdys (su SOAP request duomenimis)
+
+		Remiantis ankstesniu pavyzdžiu, turint **WSDL**, papildytą `CityInputRequest` schema:
+
+		.. code-block:: xml
+			:emphasize-lines: 10-23
+
+			<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+					 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+					 xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+					 xmlns:tns="city_app"
+					 targetNamespace="city_app"
+					 name="CityService">
+
+				<wsdl:types>
+					<xs:schema targetNamespace="city_app">
+						<xs:element name="CityInputRequest">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="request_model" type="tns:RequestModelType" minOccurs="0" nillable="true"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+
+						<xs:complexType name="RequestModelType">
+							<xs:sequence>
+								<xs:element name="param1" type="xs:string" minOccurs="0" nillable="true"/>
+								<xs:element name="param2" type="xs:string" minOccurs="0" nillable="true"/>
+							</xs:sequence>
+						</xs:complexType>
+
+						<xs:element name="CityOutputResponse">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="CityOutput" type="tns:CityOutput" minOccurs="0" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+
+						<xs:complexType name="CityOutput">
+							<xs:sequence>
+								<xs:element name="id" type="xs:int"/>
+								<xs:element name="name" type="xs:string"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:schema>
+				</wsdl:types>
+
+				<wsdl:message name="CityInputRequest">
+					<wsdl:part name="parameters" element="tns:CityInputRequest"/>
+				</wsdl:message>
+				<wsdl:message name="CityOutputResponse">
+					<wsdl:part name="parameters" element="tns:CityOutputResponse"/>
+				</wsdl:message>
+
+				<wsdl:portType name="CityPortType">
+					<wsdl:operation name="CityOperation">
+						<wsdl:input message="tns:CityInputRequest"/>
+						<wsdl:output message="tns:CityOutputResponse"/>
+					</wsdl:operation>
+				</wsdl:portType>
+
+				<wsdl:binding name="CityServiceBinding" type="tns:CityPortType">
+					<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+					<wsdl:operation name="CityOperation">
+						<soap:operation soapAction="urn:CityOperation"/>
+						<wsdl:input>
+							<soap:body use="literal"/>
+						</wsdl:input>
+						<wsdl:output>
+							<soap:body use="literal"/>
+						</wsdl:output>
+					</wsdl:operation>
+				</wsdl:binding>
+
+				<wsdl:service name="CityService">
+					<wsdl:port name="CityPort" binding="tns:CityServiceBinding">
+						<soap:address location="http://example.com/city"/>
+					</wsdl:port>
+				</wsdl:service>
+			</wsdl:definitions>
+
+		ir turint DSA, papildytą `resource.param` ir `property` eilutėmis:
+
+		===========  ======  =========  ============  ============== ================================================  =====================
+		resource     model   property   type          ref            source                                            prepare
+		===========  ======  =========  ============  ============== ================================================  =====================
+		towns_wsdl                      wsdl                         http://example.com/city?wsdl
+		towns                           soap                         CityService.CityPort.CityPortType.CityOperation   wsdl(towns_wsdl)
+		\                               **param**     **parameter1** **request_model/param1**                          **input("value1")**
+		\                               **param**     **parameter2** **request_model/param2**                          **input("value2")**
+		\            City                             id             /
+		\                    id         integer                      id
+		\                    name       string                       name
+		\                    **p1**     **string**                                                                     **param(parameter1)**
+		\                    **p2**     **string**                                                                     **param(parameter2)**
+		===========  ======  =========  ============  ============== ================================================  =====================
+		|
+
+		kreipiantis į `/City?p1="first"`, bus suformuotas toks python dictionary, kurį
+		`Zeep` klientas perduos kaip SOAP request body:
+
+		.. code-block:: python
+
+			{"request_model": {"param1": "first", "param2": "value2"}}
+
+
+		ir gausime tokius UDTS_ specifikaciją atitinkančius duomenis:
+
+		.. code-block:: json
+
+			{
+				"_data": [
+					{
+						"_type": "City",
+						"_id": "c1380514-549f-4cdd-b258-6fecc3a5bbda",
+						"id": 100,
+						"name": "Name One",
+						"p1": "first",
+						"p2": "value2",
+					},
+					{
+						"_type": "City",
+						"_id": "5c02f700-6478-43a0-a147-959927cb3c1c",
+						"id": 101,
+						"name": "Name Two",
+						"p1": "first",
+						"p2": "value2",
+					}
+				]
+			}

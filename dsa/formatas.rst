@@ -90,6 +90,10 @@ nei vieno dimensijos stulpelio.
 
         | :ref:`dataset`
         | :ref:`kodiniai-pavadinimai`
+		
+	.. container:: agent-only
+		.. admonition:: Duomenų agento "Spinta" atveju
+			| Generuojant ŠDSA su duomenų agentu, šiame elemente užpildomas loginis duomenų šaltinio elemento pavadinimas. Jį reikia atnaujinti pagal aukščiau nurodomas taisykles.
 
 .. data:: resource
 
@@ -154,7 +158,7 @@ nei vieno dimensijos stulpelio.
 
     Kodinis modelio pavadinimas, užrašomas lotyniškomis raidėmis, kiekvieno
     žodžio pirma raidė didžioji, kitos mažosios, žodžiai atskiriami didžiąja
-    raide.
+    raide. Turi būti nurodomas anglų kalba.
 
     Pagal semantinę prasmę atitinka `rdfs:Class`_ arba `r2rml:SubjectMap`_.
 
@@ -168,13 +172,18 @@ nei vieno dimensijos stulpelio.
         | :ref:`model`
         | :ref:`modelis`
 
+    .. container:: agent-only
+		.. admonition:: Duomenų agento "Spinta" atveju
+			| Generuojant ŠDSA su duomenų agentu, šiame elemente užpildomas duomenų bazės lentelės
+			arba duomenų objekto pavadinimas iš fizinio šaltinio automatiškai pritaikant kodinių pavadinimų skirybos taisykles.
+			Jį reikia atnaujinti pagal visas aukščiau nurodomas taisykles.
 
 .. data:: property
 
     **Savybė (stulpelis)**
 
     Kodinis savybės pavadinimas, užrašomas mažosiomis lotyniškomis raidėmis, vienaskaita,
-    žodžiai atskiriami `_` simoboliu.
+    žodžiai atskiriami `_` simoboliu. Turi būti pateikiamas anglų kalba. 
 
     Savybių pavadinimai prasidedantys `_` simboliu yra rezervuoti ir turi
     apibrėžtą prasmę.
@@ -182,12 +191,12 @@ nei vieno dimensijos stulpelio.
     Savybės pavadinime gali būti naudojami tokie specialūs simboliai:
 
     .
-        (taško simbolis) nurodo objektų kompoziciją. Naudojamas su
-        :data:`ref <type.ref>` ir :data:`object <type.object>` duomenų tipais.
+        (taško simbolis) nurodo objektų kompoziciją.
 
         .. admonition:: Pavyzdys
 
             | `adresas.gatve`
+			| `adresas.gatve.nr`
 
     []
         Duomenų masyvas arba sąrašas, gali būti naudojamas su visais tipais, jo pavadinimas užrašomas daugiskaita.
@@ -197,7 +206,7 @@ nei vieno dimensijos stulpelio.
             | `miestai[]`
 
     @
-        Kalbos žymė, naudojama su :data:`text <type.text>` tipu.
+        Kalbos žymė, naudojama su :data:`string <type.string>` tipu.
 
         .. admonition:: Pavyzdys
 
@@ -211,6 +220,11 @@ nei vieno dimensijos stulpelio.
 
         | :ref:`property`
 
+    .. container:: agent-only
+		.. admonition:: Duomenų agento "Spinta" atveju
+			| Generuojant ŠDSA su duomenų agentu, šiame elemente užpildomas duomenų bazės lentelės stulpelio
+			arba duomenų objekto savybės pavadinimas iš fizinio šaltinio automatiškai pritaikant kodinių pavadinimų skirybos taisykles.
+			Jį reikia atnaujinti pagal visas aukščiau nurodomas taisykles.
 
 .. _metaduomenų-stulpeliai:
 
@@ -238,6 +252,10 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
     Pateikus :term:`ŠDSA` į duomenų katalogą, lokalus identifikatorius automatiškai pakeičiamas į :rfc:`UUID <9562>`.
 
     Šio stulpelio pildyti nereikia.
+	
+	.. container:: agent-only
+		.. admonition:: Duomenų agento "Spinta" atveju
+			| Šis `id` yra generuojamas automatinėmis duomenų agento priemonėmis sinchronizacijos su metaduomenų katalogu metu. 
 
 .. data:: type
 
@@ -252,7 +270,6 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
     .. seealso::
 
         :ref:`duomenų-tipai`
-
 
 .. data:: ref
 
@@ -285,6 +302,8 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
     Prasmė priklauso nuo dimensijos.
     
     Nurodo pirminį duomenų šaltinio duomenų tipą.
+	
+	Pildyti nėra būtina.
 
 .. data:: prepare
 
@@ -302,16 +321,24 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
     `base` nurodo modelio bazę, pagal kurią formuojami vienodi identifikatoriai, `origin` nurodo duomenų kilmę.
 
     `origin` stulpelyje nurodomi reliatyvūs kodiniai pavadinimai, taip pat, kaip ir `base` ar `ref` stulpeliuose.
+	
+	Pildyti nėra būtina.
 
 .. data:: count
 
     Prasmė priklauso nuo dimensijos.
     
-    Nudorodo elementų skaičių dimensijoje. Duomenų agentas šias vertes generuoja automatiškai. Pildyti nereikia.
+    Nudorodo elementų skaičių dimensijoje. Pildyti nereikia.
 
-    .. seealso::
+	.. container:: agent-only
+		.. admonition:: Duomenų agento "Spinta" atveju
+			| Duomenų agentas šias vertes generuos automatiškai. Šiuo metu neįgyvendinta - https://github.com/atviriduomenys/spinta/issues/1453
+		
+		.. admonition:: Pastaba
 
-        :ref:`count`
+			Automatinis duomenų elementų skaičiavimas priklauso nuo duomenų šaltinio tipo ir nėra galimas su visais duomenų šaltiniais.
+
+			Priklausomai nuo duomenų kiekio duomenų šaltinyje, ši operacija gali reikalauti didelių apdorojimo resursų ir gali būti išjungiama.
 
 .. data:: level
 
@@ -332,6 +359,10 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
     .. seealso::
 
         :ref:`status`
+		
+    .. container:: agent-only
+		.. admonition:: Duomenų agento "Spinta" atveju
+			| Generuojant ŠDSA su duomenų agentu, šios reikšmės atomatiškai nustatomos kaip `develop`
 
 .. data:: visibility
 
@@ -347,6 +378,10 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
     .. seealso::
 
         :ref:`visibility`
+
+    .. container:: agent-only
+		.. admonition:: Duomenų agento "Spinta" atveju
+			| Generuojant ŠDSA su duomenų agentu, šios reikšmės automatiškai nustatomos kaip `private`
 
 .. data:: access
 
@@ -402,6 +437,10 @@ bus išdėstyti būtent tokia tvarka. Nors įrankių atžvilgiu stulpelių tvark
 svarbi, tačiau rekomenduotina išlaikyti vienodą stulpelių tvarką, tam kad
 lenteles būtų lengviau skaityti.
 
+.. container:: agent-only
+	.. admonition:: Duomenų agento "Spinta" atveju
+		| Duomenų teikimui naudojant duomenų agentą, visi stulpeliai turi būti pateikti
+		DSA dokumente ir negalima nurodyti jokių kitų papildomų stulpelių.
 
 .. _Duomenų katalogą: https://data.gov.lt/
 .. _dcat:Resource: https://www.w3.org/TR/vocab-dcat-2/#Class:Resource

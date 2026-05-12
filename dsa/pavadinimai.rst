@@ -24,17 +24,37 @@ tarp skirtingų sistemų.
 Pavadinimai turėtu būti rašomi laikantis tokio stiliaus:
 
 
-Vardų erdvių
+Duomenų rinkiniai
 ************
 
-Pavyzdys: `datasets/gov/abbr/short/word`
+Duomenų rinkinio kodinis pavadinimas DSA užrašomas pateikiant pilną jo URI.
 
-Visos mažosios raidės, stengiantis naudoti vieno žodžio trumpus
-pavadinimus arba žodžio trumpinius. Kadangi vardų erdvė rašoma prie
-kiekvieno modelio pavadinimo, todėl reikia stengtis vardų erdvių ir
-duomenų rinkinių pavadinimus išlaikyti kiek įmanoma trumpesnius.
+Jis formuojamas pagal šias taisykles:
 
-Vardų erdvės pavadinimai užrašomi daugiskaita ir turi prasidėti mažąja raide.
+```
+datasets/forma/org/is/duomenu_rinkinys
+```
+
+- `datasets` - tai statinė URI dalis. Visi Lietuvos duomenu rinkiniai yra identifikuojami kaip `datasets`
+- `forma` - tai dinaminė dalis, kuri priklauso nuo instuticijos tipo:
+  - nurodoma `gov` kai tai valstybinė institucija
+  - nurodoma `com` kai tai ne valstybinė institucija, organizacija
+- `org` - tai kodinis institucijos/organizacijos pavadinimas. Pateikiama vertė pagal institucijos/organizacijos registracijos duomenis duomenų kataloge.
+- `is` - tai kodinis informacinės sistemos pavadinimas. Pateikiama vertė pagal informacinės sistemos registracijos duomenis duomenų kataloge.
+- `duomenu_rinkinys` - tai kodinis duomenų rinkinio pavadinimas. Pateikiama vertė pagal duomenų rinkinio registracijos duomenis duomenų kataloge.
+
+Jei DSA ruošiamas prieš registruojant metaduomenis duomenų kataloge, kodinis pavadinimas turi būti pateikiamas mažosiomis raidėmis, duomenų rinkinio pavadinimui
+ stengiantis naudoti vieno žodžio trumpus pavadinimus arba žodžio trumpinius, atskirus žodžius atskiriant `_` ženklu.
+
+Referuojant į išorinius modelius pilnas kodinis duomenų rinkinio pavadinimas pateikiamas prie
+kiekvieno modelio pavadinimo, todėl reikia stengtis duomenų rinkinių pavadinimus išlaikyti kiek įmanoma trumpesnius.
+
+Pavyzdys:
+
+```
+datasets/gov/rc/ar/text_with_coordinates
+```
+
 
 
 Modeliai

@@ -1,0 +1,789 @@
+
+<!DOCTYPE html>
+
+
+<html lang="lt" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Rezervuotos savybės &#8212; DSA</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-examples.css?v=e236af4b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=f0eb6ae9" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=4ee96f2e"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="_static/translations.js?v=e4682f4a"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'rezervuotos-savybes';</script>
+    <link rel="index" title="Indeksas" href="genindex.html" />
+    <link rel="search" title="Paieška" href="search.html" />
+    <link rel="next" title="Duomenų tipai" href="tipai.html" />
+    <link rel="prev" title="Dimensijos" href="dimensijos.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="lt"/>
+  <meta name="docsearch:version" content="1.1" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">DSA</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Paieška" aria-label="Paieška" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Paieška</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="modelis.html">Koncepcinis modelis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formatas.html">Lentelės formatas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dimensijos.html">Dimensijos</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Rezervuotos savybės</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tipai.html">Duomenų tipai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pavadinimai.html">Kodiniai pavadinimai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vienetai.html">Matavimo vienetai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apibendrinimas.html">Apibendrinimas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="identifikatoriai.html">Asociacija</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modeliai/funkciniai.html">Funkciniai modeliai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="branda.html">Brandos lygiai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prieiga.html">Prieigos lygiai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statusas.html">Metaduomenų statusas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matomumas.html">Matomumas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eli.html">ELI</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="schemos/index.html">Duomenų schemos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="schemos/xsd.html">XSD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schemos/openapi.html">OpenAPI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="saltiniai.html">Duomenų šaltiniai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vardu-erdves.html">Vardų erdvės</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zodynai.html">Išoriniai žodynai</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formules.html">Formulės</a></li>
+<li class="toctree-l1"><a class="reference internal" href="savokos.html">Sąvokos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keitimai.html">Keitimų istorija</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ivpk/dsa" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Šaltinio saugykla"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ivpk/dsa/issues/new?title=Issue%20on%20page%20%2Frezervuotos-savybes.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Atidarykite problemą"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Pilno ekrano režimas"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Paieška" aria-label="Paieška" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Rezervuotos savybės</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Turinys </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-_id">_id</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id.type"><code class="docutils literal notranslate"><span class="pre">type</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id.source"><code class="docutils literal notranslate"><span class="pre">source</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-_revision">_revision</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#revision.type"><code class="docutils literal notranslate"><span class="pre">type</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#revision.source"><code class="docutils literal notranslate"><span class="pre">source</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="rezervuotos-savybes">
+<span id="id1"></span><h1>Rezervuotos savybės<a class="headerlink" href="#rezervuotos-savybes" title="Link to this heading">#</a></h1>
+<p>Savybės, kurių pavadinimai prasideda pabraukimu <code class="docutils literal notranslate"><span class="pre">_</span></code>, yra rezervuoti DSA
+specialių laukų pavadinimai. Tokios savybės yra automatiškai pridedamos prie
+visų modelių ir struktūros apraše jų papildomai aprašyti nereikia.</p>
+<p>Tačiau, kai duomenys teikiami iš išorinio <a class="reference internal" href="dimensijos.html#resource"><span class="std std-ref">duomenų šaltinio</span></a>,
+kai kurias rezervuotas savybes galima įtraukti į struktūros aprašo lentelę
+ir nurodyti, iš kurio šaltinio lauko reikšmė bus paimama.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>savybė</p></th>
+<th class="head"><p>paskirtis</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#module-_id" title="_id"><code class="xref py py-data docutils literal notranslate"><span class="pre">_id</span></code></a></p></td>
+<td><p>Globalus unikalus modelio objekto identifikatorius.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#module-_revision" title="_revision"><code class="xref py py-data docutils literal notranslate"><span class="pre">_revision</span></code></a></p></td>
+<td><p>Objekto versijos identifikatorius.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="module-_id">
+<span id="id2"></span><span id="id"></span><h2>_id<a class="headerlink" href="#module-_id" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">_id</span></code> — globalus unikalus modelio objekto identifikatorius. <code class="docutils literal notranslate"><span class="pre">_id</span></code> reikšmė
+turi būti unikali visoje duomenų erdvėje.</p>
+<p>Kai duomenys teikiami iš išorinio duomenų šaltinio, <code class="docutils literal notranslate"><span class="pre">_id</span></code> savybė gali
+būti įrašyta į struktūros aprašo lentelę kaip atskira modelio savybės eilutė.
+Tam, kad būtų galima identifikuoti modelio objektus, šiai <code class="docutils literal notranslate"><span class="pre">_id</span></code> eilutei turi
+būti užpildytas vienas iš dviejų variantų:</p>
+<ul class="simple">
+<li><p>užpildomas <a class="reference internal" href="dimensijos.html#model.ref" title="model.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">model.ref</span></code></a> stulpelis,</p></li>
+<li><p>arba užpildomas <a class="reference internal" href="#id.source" title="_id.source"><code class="xref py py-data docutils literal notranslate"><span class="pre">_id.source</span></code></a> stulpelis su šaltinio lauko pavadinimu,
+iš kurio <code class="docutils literal notranslate"><span class="pre">_id</span></code> reikšmė paimama tiesiogiai.</p></li>
+</ul>
+<dl class="py data">
+<dt class="sig sig-object py" id="id.type">
+<span class="sig-prename descclassname"><span class="pre">_id.</span></span><span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#id.type" title="Link to this definition">#</a></dt>
+<dd><p>Loginis <code class="docutils literal notranslate"><span class="pre">_id</span></code> tipas. Nuo šio tipo priklauso, kokia forma <code class="docutils literal notranslate"><span class="pre">_id</span></code> reikšmė
+bus pateikiama teikiant duomenis</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">integer</span></code></p></td>
+<td><p>Sveikas skaičius.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Simbolių eilutė.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">uuid</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">UUID</span></code> reikšmė tekstine forma.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">base32</span></code></p></td>
+<td><p>Reikšmė užkoduota Base32 formatu, žiūrėti <a class="reference internal" href="tipai.html#type.base32" title="type.base32"><code class="xref py py-data docutils literal notranslate"><span class="pre">type.base32</span></code></a>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="id.source">
+<span class="sig-prename descclassname"><span class="pre">_id.</span></span><span class="sig-name descname"><span class="pre">source</span></span><a class="headerlink" href="#id.source" title="Link to this definition">#</a></dt>
+<dd><p>Duomenų šaltinio lauko pavadinimas, iš kurio paimama <code class="docutils literal notranslate"><span class="pre">_id</span></code> reikšmė.
+Prasmė priklauso nuo <a class="reference internal" href="dimensijos.html#resource.type" title="resource.type"><code class="xref py py-data docutils literal notranslate"><span class="pre">resource.type</span></code></a>.</p>
+</dd></dl>
+
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<p><code class="docutils literal notranslate"><span class="pre">_id</span></code> reikšmė formuojama iš <a class="reference internal" href="dimensijos.html#model.ref" title="model.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">model.ref</span></code></a> pirminio rakto <code class="docutils literal notranslate"><span class="pre">id</span></code>.
+<code class="docutils literal notranslate"><span class="pre">_id.source</span></code> nepildoma.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Country</p></td>
+<td></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>COUNTRY</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>_id</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>ID</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>name</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>NAME</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<p>Kompozicinis <code class="docutils literal notranslate"><span class="pre">_id</span></code>, kai pirminis raktas sudaromas iš kelių laukų.
+<a class="reference internal" href="dimensijos.html#model.ref" title="model.ref"><code class="xref py py-data docutils literal notranslate"><span class="pre">model.ref</span></code></a> stulpelyje kableliais išvardijami visi laukai, sudarantys
+pirminį raktą. <code class="docutils literal notranslate"><span class="pre">_id.source</span></code> nepildoma.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Country</p></td>
+<td></td>
+<td></td>
+<td><p>id,
+code</p></td>
+<td><p>COUNTRY</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>_id</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>ID</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>code</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>CODE</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>name</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>NAME</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<p><code class="docutils literal notranslate"><span class="pre">_id</span></code> reikšmė imama tiesiogiai iš šaltinio <code class="docutils literal notranslate"><span class="pre">ID</span></code> lauko, tipas — <code class="docutils literal notranslate"><span class="pre">integer</span></code>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Country</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>COUNTRY</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>_id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>ID</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>name</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>NAME</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<p><code class="docutils literal notranslate"><span class="pre">_id</span></code> tipas — <code class="docutils literal notranslate"><span class="pre">uuid</span></code>. Šaltinyje reikšmė saugoma kaip tekstinė UUID
+reikšmė ir tokia pat forma yra grąžinama duomenis teikiančioje paslaugoje.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Country</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>COUNTRY</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>_id</p></td>
+<td><p>uuid</p></td>
+<td></td>
+<td><p>UUID</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>name</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>NAME</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<p><code class="docutils literal notranslate"><span class="pre">_id</span></code> tipas — <code class="docutils literal notranslate"><span class="pre">base32</span></code>. Šaltinyje reikšmė saugoma bet kokia forma,
+o duomenų agentas teikiant duomenis
+konvertuoja ją į Base32 formatą.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Country</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>COUNTRY</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>_id</p></td>
+<td><p>base32</p></td>
+<td></td>
+<td><p>RAW_ID</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>name</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>NAME</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="module-_revision">
+<span id="id3"></span><span id="revision"></span><h2>_revision<a class="headerlink" href="#module-_revision" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">_revision</span></code> — objekto versijos identifikatorius. Reikšmė keičiasi kiekvieną
+kartą, kai objekto duomenys atnaujinami. Naudojama konkurentinio duomenų
+keitimo kontrolei ir versijavimui.</p>
+<p>Kai duomenys teikiami iš išorinio duomenų šaltinio, <code class="docutils literal notranslate"><span class="pre">_revision</span></code> savybę
+galima įtraukti į struktūros aprašo lentelę kaip atskirą modelio savybės
+eilutę ir užpildyti <a class="reference internal" href="#revision.source" title="_revision.source"><code class="xref py py-data docutils literal notranslate"><span class="pre">_revision.source</span></code></a> stulpelį su šaltinio lauko
+pavadinimu.</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="revision.type">
+<span class="sig-prename descclassname"><span class="pre">_revision.</span></span><span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#revision.type" title="Link to this definition">#</a></dt>
+<dd><p>Loginis <code class="docutils literal notranslate"><span class="pre">_revision</span></code> tipas. Galimi tipai sutampa su <a class="reference internal" href="#id.type" title="_id.type"><code class="xref py py-data docutils literal notranslate"><span class="pre">_id.type</span></code></a>
+galimais tipais — <code class="docutils literal notranslate"><span class="pre">integer</span></code>, <code class="docutils literal notranslate"><span class="pre">string</span></code>, <code class="docutils literal notranslate"><span class="pre">uuid</span></code>, <code class="docutils literal notranslate"><span class="pre">base32</span></code>.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="revision.source">
+<span class="sig-prename descclassname"><span class="pre">_revision.</span></span><span class="sig-name descname"><span class="pre">source</span></span><a class="headerlink" href="#revision.source" title="Link to this definition">#</a></dt>
+<dd><p>Duomenų šaltinio lauko pavadinimas, iš kurio paimama <code class="docutils literal notranslate"><span class="pre">_revision</span></code>
+reikšmė. Prasmė priklauso nuo <a class="reference internal" href="dimensijos.html#resource.type" title="resource.type"><code class="xref py py-data docutils literal notranslate"><span class="pre">resource.type</span></code></a>.</p>
+</dd></dl>
+
+<div class="admonition-pavyzdys admonition">
+<p class="admonition-title">Pavyzdys</p>
+<p><code class="docutils literal notranslate"><span class="pre">Country._revision</span></code> reikšmė imama iš šaltinio <code class="docutils literal notranslate"><span class="pre">VERSION</span></code> lauko.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>model</p></th>
+<th class="head"><p>property</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>ref</p></th>
+<th class="head"><p>source</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Country</p></td>
+<td></td>
+<td></td>
+<td><p>id</p></td>
+<td><p>COUNTRY</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>id</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td><p>ID</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>_revision</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>VERSION</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>name</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>NAME</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">Taip pat žiūrėkite</p>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="dimensijos.html#property"><span class="std std-ref">property</span></a></div>
+<div class="line"><a class="reference internal" href="tipai.html#duomenu-tipai"><span class="std std-ref">Duomenų tipai</span></a></div>
+</div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dimensijos.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">praeitas</p>
+        <p class="prev-next-title">Dimensijos</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tipai.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">kitas</p>
+        <p class="prev-next-title">Duomenų tipai</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Turinys
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-_id">_id</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id.type"><code class="docutils literal notranslate"><span class="pre">type</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id.source"><code class="docutils literal notranslate"><span class="pre">source</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-_revision">_revision</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#revision.type"><code class="docutils literal notranslate"><span class="pre">type</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#revision.source"><code class="docutils literal notranslate"><span class="pre">source</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Iki Valstybės skaitmeninių sprendimų agentūra
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2019-2026, VSSA.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - "*.*"
+      - agent-mode
   pull_request:
   workflow_dispatch:
 
@@ -88,6 +89,9 @@ jobs:
           # Deploy "draft" version from the main branch
           elif [ "${GITHUB_REF##*/}" == "main" ]; then
             mike deploy --push --update --branch gh-pages draft
+            ALL_VERSIONS=$(mike list --branch gh-pages | grep -Eo '[0-9]+\.[0-9]+' | sort -V | tail -n 1)
+          elif [ "${GITHUB_REF##*/}" == "agent-mode" ]; then
+            mike deploy --push --update --branch gh-pages wip
             ALL_VERSIONS=$(mike list --branch gh-pages | grep -Eo '[0-9]+\.[0-9]+' | sort -V | tail -n 1)
           fi
 

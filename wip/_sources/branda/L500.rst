@@ -1,0 +1,83 @@
+.. default-role:: literal
+.. _level1:
+
+Penktas Brandos Lygis
+=====================
+
+**Susieta su išoriniu žodynu**
+------------------------------
+
+Modeliai iš įstaigų duomenų rinkinių vardų erdvės susieti su modeliais
+iš standartų vardų erdvės, užpildytas :data:`base` eilutė. Standartų
+vardų erdvėje esantiems :term:`modeliams <modelis>` ir jų
+:term:`savybėms <savybė>` užpildytas :data:`uri` stulpelis.
+
+Daugiau apie vardų erdves skaitykite skyrelyje: :ref:`vardų-erdvės`.
+
+Plačiau apie brandos lygio kėlimą skaitykite skyriuje :ref:`to-level-5`.
+
+Penkto brandos lygio duomenys yra lygiai tokie patys, kaip ir ketvirto
+brandos lygio, tačiau penktame brandos lygyje, duomenys yra praturtinami
+metaduomenimis, pateikiant nuorodas į išorinius žodynus arba bend jau
+pateikiant aiškius pavadinimus ir aprašymus, užpildant `title` ir
+`description` stulpelius.
+
+Penktame brandos lygyje visas dėmesys yra sutelkiamas yra semantinę
+duomenų prasmę.
+
+**Pavyzdžiai**
+
+===================================== ===== ================ ======
+Imone                                                              
+-------------------------------------------------------------------
+_id                                   id    pavadinimas\@lt  rusis 
+===================================== ===== ================ ======
+26510da5-f6a6-45b0-a9b9-27b3d0090a58  42    UAB "Įmonė"      1     
+===================================== ===== ================ ======
+
+===================================== === =========== ========= ===================================== ========= ====================== =================
+Filialas                                                                                                      
+------------------------------------- ------------------------------------------------------------------------------------------------------------------
+_id                                   id  ikurta      atstumas  imone._id                             imone.id  imone.pavadinimas\@lt  tel_nr           
+===================================== === =========== ========= ===================================== ========= ====================== =================
+63161bd2-158f-4d62-9804-636573abb9c7  1   2021-09-01  1         26510da5-f6a6-45b0-a9b9-27b3d0090a58  42        UAB "Įmonė"            \tel:+37011111111
+65ec7208-fb97-41a8-9cfc-dfedd197ced6  2   2021-09-02  2         26510da5-f6a6-45b0-a9b9-27b3d0090a58  42        UAB "Įmonė"            \tel:+37022222222
+2b8cdfa6-1396-431a-851c-c7c6eb7aa433  3   2021-09-03  3         26510da5-f6a6-45b0-a9b9-27b3d0090a58  42        UAB "Įmonė"            \tel:+37033333333
+1882bb9e-73ee-4057-b04d-d4af47f0aae8  4   2021-09-04  4         26510da5-f6a6-45b0-a9b9-27b3d0090a58  42        UAB "Įmonė"            \tel:+37044444444
+===================================== === =========== ========= ===================================== ========= ====================== =================
+
+== == == == ====================== ========= ======= ===== ============================ ======== ==========
+Struktūros aprašas                                                                                         
+-----------------------------------------------------------------------------------------------------------
+d  r  b  m  property               type      ref     level uri                          prepare  title     
+== == == == ====================== ========= ======= ===== ============================ ======== ==========
+example                                                                                                    
+---------------------------------- --------- ------- ----- ---------------------------- -------- ----------
+\                                  prefix    foaf          \http://xmlns.com/foaf/0.1/                                                
+\                                            dct           \http://purl.org/dc/terms/  
+\                                            schema        \http://schema.org/                             
+\        JuridinisAsmuo                       kodas  4                                                     
+-- -- -- ------------------------- --------- ------- ----- ---------------------------- -------- ----------                    
+\           kodas                  integer           4                                 
+\           pavadinimas\@lt        text              4                                                     
+\     JuridinisAsmuo                                 4                                 
+-- -- ---------------------------- --------- ------- ----- ---------------------------- -------- ----------                    
+\        Imone                               id      5     foaf:Organization                               
+-- -- -- ------------------------- --------- ------- ----- ---------------------------- -------- ----------                    
+\           id                                       5     dct:identifier               
+\           pavadinimas\@lt                          5     dct:title                    
+\           rusis                  integer           4                                  
+\                                  enum                                                 1        Juridinis               
+\                                                                                       2        Fizinis            
+\     /                                                                                                                
+-- -- ---------------------------- --------- ------- ----- ---------------------------- -------- ----------
+\        Filialas                            id      5     schema:LocalBusiness
+-- -- -- ------------------------- --------- ------- ----- ---------------------------- -------- ----------                                      
+\           id                     date      1D      5     dct:identifier                                                
+\           ikurta                 date      1D      5     dct:created                                                
+\           atstumas               integer   km      5     schema:distance                                 
+\           imone                  ref       Imone   5     foaf:Organization                                                
+\           imone.id               integer           5     dct:identifier              
+\           imone.pavadinimas\@lt  text              5     dct:title                            
+\           tel_nr                 string            5     foaf:phone
+== == == == ====================== ========= ======= ===== ============================ ======== ==========

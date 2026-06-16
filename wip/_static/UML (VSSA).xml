@@ -1,0 +1,149 @@
+<mxlibrary>[
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"&amp;lt;p style=&amp;quot;margin:0px;margin-top:4px;text-align:center;&amp;quot;&amp;gt;&amp;lt;i style=&amp;quot;font-weight: normal;&amp;quot;&amp;gt;«enumeration»&amp;lt;/i&amp;gt;&amp;lt;br&amp;gt;ex:Concept&amp;lt;/p&amp;gt;\" style=\"verticalAlign=top;align=center;overflow=fill;html=1;whiteSpace=wrap;labelBackgroundColor=none;gradientColor=#F0FDF0;fillColor=#d0fac6;gradientDirection=east;shape=swimlane;fontStyle=1;startSize=40;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=default;shadow=1;strokeColor=#8FB58F;swimlaneFillColor=default;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry width=\"200\" height=\"60\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;mxCell id=\"3\" value=\"&amp;lt;p style=&amp;quot;text-align: center; margin: 0px 0px 0px 4px; font-size: 12px;&amp;quot;&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/p&amp;gt;\" style=\"text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;gradientColor=#fcfbf9;glass=0;fillOpacity=100;noLabel=0;backgroundOutline=0;comic=0;gradientDirection=east;fontFamily=Helvetica;fontSize=12;fontColor=default;fontStyle=0\" vertex=\"1\" parent=\"2\"&gt;&lt;mxGeometry y=\"40\" width=\"200\" height=\"20\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 200,
+    "h": 60,
+    "aspect": "fixed",
+    "title": "Concept"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"ex:Entity\" style=\"swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;rounded=0;shadow=1;glass=0;comic=0;strokeColor=#9D8787;swimlaneFillColor=default;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=#f5e8df;gradientColor=#fcfbf9;gradientDirection=east;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry width=\"200\" height=\"50\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 200,
+    "h": 50,
+    "aspect": "fixed",
+    "title": "Entity"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"ex:Event\" style=\"swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;rounded=0;shadow=1;glass=0;comic=0;strokeColor=#B88D8D;swimlaneFillColor=default;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=#FAD4D4;gradientColor=#FDF3F3;gradientDirection=east;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry width=\"200\" height=\"50\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 200,
+    "h": 50,
+    "aspect": "fixed",
+    "title": "Transaction"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"ex:Report\" style=\"swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;rounded=0;shadow=1;glass=0;comic=0;strokeColor=#A292B8;swimlaneFillColor=default;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=#E5D9FA;gradientColor=#F7F3FD;gradientDirection=east;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry width=\"200\" height=\"50\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 200,
+    "h": 50,
+    "aspect": "fixed",
+    "title": "Report"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"+ id: integer [1..1]\" style=\"text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;gradientColor=#fcfbf9;glass=0;fillOpacity=100;noLabel=0;backgroundOutline=0;comic=0;gradientDirection=east;fontFamily=Helvetica;fontSize=12;fontColor=default;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry width=\"200\" height=\"26\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 200,
+    "h": 26,
+    "aspect": "fixed",
+    "title": "Property"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"&amp;lt;p style=&amp;quot;margin:0px;margin-top:4px;text-align:center;&amp;quot;&amp;gt;&amp;lt;i style=&amp;quot;font-weight: normal;&amp;quot;&amp;gt;«enumeration»&amp;lt;/i&amp;gt;&amp;lt;br&amp;gt;Concept&amp;lt;/p&amp;gt;\" style=\"verticalAlign=top;align=center;overflow=fill;html=1;whiteSpace=wrap;labelBackgroundColor=none;gradientColor=#F0FDF0;fillColor=#d0fac6;gradientDirection=east;shape=swimlane;fontStyle=1;startSize=40;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=default;shadow=1;strokeColor=#8FB58F;swimlaneFillColor=default;dashed=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"-2.2737367544323206e-13\" width=\"200\" height=\"60\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 200,
+    "h": 60,
+    "aspect": "fixed",
+    "title": "Concept (missing)"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"Entity\" style=\"swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#f5e8df;strokeColor=#9D8787;gradientColor=#fcfbf9;gradientDirection=east;shadow=1;swimlaneFillColor=default;backgroundOutline=0;comic=0;swimlaneLine=1;rounded=0;glass=0;dashed=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry width=\"200\" height=\"50\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 200,
+    "h": 50,
+    "aspect": "fixed",
+    "title": "Entity (missing)"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"Event\" style=\"swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;rounded=0;shadow=1;glass=0;comic=0;strokeColor=#B88D8D;swimlaneFillColor=default;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=#FAD4D4;gradientColor=#FDF3F3;gradientDirection=east;dashed=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry width=\"200\" height=\"50\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 200,
+    "h": 50,
+    "aspect": "fixed",
+    "title": "Transaction (missing)"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"Report\" style=\"swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;rounded=0;shadow=1;glass=0;comic=0;strokeColor=#A292B8;swimlaneFillColor=default;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=#E5D9FA;gradientColor=#F7F3FD;gradientDirection=east;dashed=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry width=\"200\" height=\"50\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 200,
+    "h": 50,
+    "aspect": "fixed",
+    "title": "Report (missing)"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"+ id: integer [1..1]\" style=\"text;strokeColor=none;fillColor=#F0F0F0;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;gradientColor=none;glass=0;fillOpacity=100;noLabel=0;backgroundOutline=0;comic=0;gradientDirection=east;fontFamily=Helvetica;fontSize=12;fontColor=default;fillStyle=auto;dashed=1;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry width=\"200\" height=\"26\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 200,
+    "h": 26,
+    "aspect": "fixed",
+    "title": "Property (missing)"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"rdfs:Resource\" style=\"swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;rounded=0;shadow=1;glass=0;comic=0;strokeColor=#B8A884;swimlaneFillColor=default;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=#FAF0C6;gradientColor=#fcfbf9;gradientDirection=east;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry y=\"-2.2737367544323206e-13\" width=\"200\" height=\"50\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 200,
+    "h": 50,
+    "aspect": "fixed",
+    "title": "Metadata"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"&amp;lt;span&amp;gt;«mandatory»&amp;lt;/span&amp;gt;\" style=\"text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=16;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;gradientColor=#fcfbf9;glass=0;fillOpacity=100;noLabel=0;backgroundOutline=0;comic=0;gradientDirection=east;fontFamily=Helvetica;fontSize=12;fontColor=default;fontStyle=2\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry width=\"200\" height=\"26\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 200,
+    "h": 26,
+    "aspect": "fixed",
+    "title": "Mandatory"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"&amp;lt;font style=&amp;quot;font-size: 11px;&amp;quot;&amp;gt;&amp;amp;nbsp;+ ref&amp;amp;nbsp;&amp;lt;/font&amp;gt;\" style=\"edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endSize=12;dashed=1;labelBackgroundColor=default;fontColor=default;elbow=vertical;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry x=\"-0.0005\" relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"160\" as=\"sourcePoint\"/&gt;&lt;mxPoint as=\"offset\"/&gt;&lt;Array as=\"points\"/&gt;&lt;mxPoint as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"3\" value=\"0..*\" style=\"edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];\" vertex=\"1\" connectable=\"0\" parent=\"2\"&gt;&lt;mxGeometry x=\"0.7898\" relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"-9\" y=\"-14\" as=\"offset\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 160,
+    "h": 0.2127659574468085,
+    "aspect": "fixed",
+    "title": "Dependency"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"&amp;amp;nbsp;+ ref&amp;amp;nbsp;\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=1;endSize=12;sourcePerimeterSpacing=0;spacingLeft=0;labelBackgroundColor=default;labelBorderColor=none;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;Array as=\"points\"&gt;&lt;mxPoint x=\"117\"/&gt;&lt;mxPoint x=\"117\"/&gt;&lt;/Array&gt;&lt;mxPoint as=\"offset\"/&gt;&lt;mxPoint x=\"160\" as=\"sourcePoint\"/&gt;&lt;mxPoint as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"3\" value=\"0..*\" style=\"edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];\" vertex=\"1\" connectable=\"0\" parent=\"2\"&gt;&lt;mxGeometry x=\"0.8136\" relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"-7\" y=\"-14\" as=\"offset\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 160,
+    "h": 0.2127659574468085,
+    "aspect": "fixed",
+    "title": "Association"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endSize=16;endFill=0;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint y=\"60\" as=\"sourcePoint\"/&gt;&lt;mxPoint as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 0.9523809523809523,
+    "h": 60,
+    "aspect": "fixed",
+    "title": "Generalization"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"&amp;lt;span style=&amp;quot;font-weight: normal;&amp;quot;&amp;gt;&amp;lt;i&amp;gt;«dataType»&amp;lt;/i&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;br&amp;gt;&amp;lt;b&amp;gt;DataType&amp;lt;/b&amp;gt;\" style=\"html=1;whiteSpace=wrap;rounded=0;shadow=1;glass=0;comic=0;strokeColor=#B8A884;align=center;verticalAlign=middle;swimlaneFillColor=default;fontFamily=Helvetica;fontSize=12;fontColor=default;fontStyle=1;labelBackgroundColor=none;fillColor=#FAF0C6;gradientColor=#fcfbf9;gradientDirection=east;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry width=\"200\" height=\"50\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 200,
+    "h": 50,
+    "aspect": "fixed",
+    "title": "Data Type"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"&amp;lt;span&amp;gt;«optional»&amp;lt;/span&amp;gt;\" style=\"text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=16;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;labelBackgroundColor=none;gradientColor=#fcfbf9;glass=0;fillOpacity=100;noLabel=0;backgroundOutline=0;comic=0;gradientDirection=east;fontFamily=Helvetica;fontSize=12;fontColor=default;fontStyle=2\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry width=\"200\" height=\"26\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 200,
+    "h": 26,
+    "aspect": "fixed",
+    "title": "Optional"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"&amp;lt;font style=&amp;quot;font-size: 11px;&amp;quot;&amp;gt;&amp;amp;nbsp;+ ref&amp;amp;nbsp;&amp;lt;/font&amp;gt;\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endSize=12;dashed=1;labelBackgroundColor=#F0F0F0;fontColor=default;elbow=vertical;labelBorderColor=none;spacingLeft=4;spacingRight=4;spacingTop=4;spacing=4;spacingBottom=4;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"160\" as=\"sourcePoint\"/&gt;&lt;mxPoint as=\"offset\"/&gt;&lt;mxPoint as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"3\" value=\"0..*\" style=\"edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];\" vertex=\"1\" connectable=\"0\" parent=\"2\"&gt;&lt;mxGeometry x=\"0.7898\" relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"-9\" y=\"-14\" as=\"offset\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 160,
+    "h": 0.2127659574468085,
+    "aspect": "fixed",
+    "title": "Dependency (missing)"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"&amp;amp;nbsp;+ ref&amp;amp;nbsp;\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=1;endSize=12;labelBackgroundColor=#F0F0F0;spacing=2;\" edge=\"1\" parent=\"1\"&gt;&lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;&lt;Array as=\"points\"&gt;&lt;mxPoint x=\"40\"/&gt;&lt;mxPoint x=\"40\"/&gt;&lt;/Array&gt;&lt;mxPoint as=\"offset\"/&gt;&lt;mxPoint x=\"160\" as=\"sourcePoint\"/&gt;&lt;mxPoint as=\"targetPoint\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\"3\" value=\"0..*\" style=\"edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];\" vertex=\"1\" connectable=\"0\" parent=\"2\"&gt;&lt;mxGeometry x=\"0.7472\" relative=\"1\" as=\"geometry\"&gt;&lt;mxPoint x=\"-12\" y=\"-14\" as=\"offset\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 160,
+    "h": 0.2127659574468085,
+    "aspect": "fixed",
+    "title": "Association (missing)"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=4;spacingRight=4;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;fontFamily=Helvetica;fontSize=12;fontColor=default;labelBackgroundColor=none;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry width=\"200\" height=\"32\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 200,
+    "h": 32,
+    "aspect": "fixed",
+    "title": "Spacer"
+  },
+  {
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"\" style=\"shape=table;html=1;whiteSpace=wrap;startSize=0;container=1;collapsible=0;childLayout=tableLayout;columnLines=0;rowLines=0;fontSize=16;strokeColor=#999999;spacingLeft=4;spacingRight=0;fillColor=#fefefe;gradientColor=#efefef;gradientDirection=east;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry width=\"200\" height=\"30\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;mxCell id=\"3\" value=\"\" style=\"shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;strokeColor=inherit;spacingLeft=4;spacingRight=0;\" vertex=\"1\" parent=\"2\"&gt;&lt;mxGeometry width=\"200\" height=\"30\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;mxCell id=\"4\" value=\"ex\" style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;fontSize=12;strokeColor=inherit;align=left;spacingLeft=4;spacingRight=0;fontStyle=1\" vertex=\"1\" parent=\"3\"&gt;&lt;mxGeometry width=\"23\" height=\"30\" as=\"geometry\"&gt;&lt;mxRectangle width=\"23\" height=\"30\" as=\"alternateBounds\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;UserObject label=\"https://example.com/external/\" link=\"https://example.com/external/\" linkTarget=\"_blank\" id=\"5\"&gt;&lt;mxCell style=\"shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;fontSize=12;strokeColor=inherit;align=left;spacingLeft=4;spacingRight=0;fontStyle=2\" vertex=\"1\" parent=\"3\"&gt;&lt;mxGeometry x=\"23\" width=\"177\" height=\"30\" as=\"geometry\"&gt;&lt;mxRectangle width=\"177\" height=\"30\" as=\"alternateBounds\"/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/UserObject&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 200,
+    "h": 30,
+    "aspect": "fixed",
+    "title": "Prefixes"
+  }
+]</mxlibrary>

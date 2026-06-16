@@ -1,0 +1,97 @@
+.. default-role:: literal
+.. _level4:
+
+Ketvirtas Brandos Lygis(L400)
+=============================
+
+**Identifikuojama**
+-------------------
+
+Duomenų objektai turi aiškius, unikalius identifikatorius. Užpildyti
+:data:`model.ref` ir :data:`property.ref` stulpeliai.
+
+.. note::
+
+    :data:`property.ref` stulpelis pildomas šiais atvejais:
+
+    - Jei duomenų laukas yra išorinis raktas (žiūrėti :ref:`ref-types`).
+
+    - Jei duomenų laukas yra kiekybinis ir turi matavimo vienetus
+      (žiūrėti :ref:`matavimo-vienetai`).
+
+    - Jei duomenų laukas žymi laiką ar vietą (žiūrėti
+      :ref:`temporal-types` ir :ref:`spatial-types`).
+
+Plačiau apie brandos lygio kėlimą skaitykite skyriuje :ref:`to-level-4`.
+
+Ketvirtas duomenų brandos lygis labiau susijęs ne su pačių duomenų
+formatu, bet su metaduomenimis, kurie lydi duomenis.
+
+Duomenų struktūros apraše :data:`model.ref` stulpelyje, pateikiamas
+objektą unikaliai identifikuojančių laukų sąrašas, o
+:data:`property.type` stulpelyje įrašomas `ref` tipas, kuris nurodo
+ryšį tarp dviejų objektų.
+
+**Pavyzdžiai**
+
+===================================== ===== ================ ======
+Imone                                                              
+-------------------------------------------------------------------
+_id                                   id    pavadinimas\@lt  rusis 
+===================================== ===== ================ ======
+26510da5-f6a6-45b0-a9b9-27b3d0090a58  42    UAB "Įmonė"      1     
+===================================== ===== ================ ======
+
+===================================== === =========== ========= ===================================== ========= ====================== =============
+Filialas                                                                                                      
+------------------------------------- --- ----------------------------------------------------------------------------------------------------------
+_id                                   id  ikurta      atstumas  imone._id                             imone.id  imone.pavadinimas\@lt  tel_nr       
+===================================== === =========== ========= ===================================== ========= ====================== =============
+63161bd2-158f-4d62-9804-636573abb9c7  1   2021-09-01  1         26510da5-f6a6-45b0-a9b9-27b3d0090a58  42        UAB "Įmonė"            +37011111111
+65ec7208-fb97-41a8-9cfc-dfedd197ced6  2   2021-09-02  2         26510da5-f6a6-45b0-a9b9-27b3d0090a58  42        UAB "Įmonė"            +37022222222
+2b8cdfa6-1396-431a-851c-c7c6eb7aa433  3   2021-09-03  3         26510da5-f6a6-45b0-a9b9-27b3d0090a58  42        UAB "Įmonė"            +37033333333
+1882bb9e-73ee-4057-b04d-d4af47f0aae8  4   2021-09-04  4         26510da5-f6a6-45b0-a9b9-27b3d0090a58  42        UAB "Įmonė"            +37044444444
+===================================== === =========== ========= ===================================== ========= ====================== =============
+
+== == == == ===================== ========= ====== ===== ======== ==========
+Struktūros aprašas                                                          
+----------------------------------------------------------------------------
+d  r  b  m  property              type      ref    level prepare  title     
+== == == == ===================== ========= ====== ===== ======== ==========
+example                                                                     
+--------------------------------- --------- ------ ----- -------- ----------
+\        JuridinisAsmuo                     kodas  4                        
+-- -- -- ------------------------ --------- ------ ----- -------- ----------
+\           kodas                 integer          4                        
+\           pavadinimas\@lt       text             4                        
+\     JuridinisAsmuo                               4                        
+-- -- --------------------------- --------- ------ ----- -------- ----------
+\        Imone                              kodas  4                        
+-- -- -- ------------------------ --------- ------ ----- -------- ----------
+\           id                    integer          4                        
+\           pavadinimas\@lt       text             4                        
+\           rusis                 integer          4                                             
+\                                 enum                   1        Juridinis
+\                                                        2        Fizinis
+\     /                                                                                               
+-- -- --------------------------- --------- ------ ----- -------- ----------
+\        Filialas                           id     4                        
+-- -- -- ------------------------ --------- ------ ----- -------- ----------
+\           id                    integer          4                        
+\           ikurta                date      D      4                        
+\           atstumas              integer   km     4                        
+\           imone                 ref       Imone  4                        
+\           imone.id                               4                        
+\           imone.pavadinimas\@lt                  4                        
+\           tel_nr                string           4
+== == == == ===================== ========= ====== ===== ======== ==========
+
+.. _level401:
+
+Reikalavimas 1 (L401)
+---------------------
+
+- **Nesusieta su standartiniu žodynu** - ketvirtu brandos lygiu žimimi
+  duomenys, kurie nėra susieti su standartiniais žodynais ar
+  ontologijomis. Siejimas su žodynais atliekamas `model.uri` ir
+  `property.uri` stulpeluose.

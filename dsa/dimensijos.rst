@@ -1093,6 +1093,10 @@ Kai yra nurodomas masyvas - savybė kuri grąžina reikšmių sąrašą - jos pa
 
         :ref:`array`
 
+Savybių pavadinimai, prasidedantys pabraukimu `_`, yra rezervuoti ir turi
+specialią reikšmę. Jų aprašymas pateikiamas atskirame skyriuje, žiūrėti
+:ref:`rezervuotos-savybes`.
+
 .. data:: type
 
     Nurodomas loginis duomenų tipas. Dėl galimų tipų sąrašo žiūrėti

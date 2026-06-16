@@ -87,6 +87,17 @@ Duomenų tipai
 
     Jei reikšmė yra didesnė nei 1G reikųtu naudoti :data:`type.file`.
 
+.. data:: base32
+
+    Reikšmė užkoduota `Base32`_ formatu. Šaltinyje saugoma reikšmė gali būti
+    bet kokio tipo, duomenų agentas ją užkoduos į Base32 formą teikiant
+    duomenis.
+
+    .. _Base32: https://en.wikipedia.org/wiki/Base32
+
+    `base32` tipą galima naudoti tik prie :data:`_id` arba :data:`_revision`
+    savybių.
+
 
 .. .. _text-types:
 

@@ -138,9 +138,9 @@ Duomenų rinkinio URI formuojamas laikantis šių taisyklių:
 	
     Šio stulpelio pildyti nereikia.
 	
-	.. container:: agent-only
-		.. admonition:: Duomenų agento "Spinta" atveju
-			| Šis `id` yra generuojamas automatinėmis duomenų agento priemonėmis sinchronizacijos su metaduomenų katalogu metu.
+    .. admonition:: Duomenų agento "Spinta" atveju
+        :class: agent-only
+        | Šis `id` yra generuojamas automatinėmis duomenų agento priemonėmis sinchronizacijos su metaduomenų katalogu metu.
 
 .. data:: type
 
@@ -191,15 +191,17 @@ Duomenų rinkinio URI formuojamas laikantis šių taisyklių:
 	
 	Šio stulpelio pildyti nereikia.
 	
-	.. container:: agent-only
-		.. admonition:: Duomenų agento "Spinta" atveju
-			| Duomenų agentas šias vertes generuos automatiškai. Šiuo metu neįgyvendinta - https://github.com/atviriduomenys/spinta/issues/1453
-		
-		.. admonition:: Pastaba
+    .. admonition:: Duomenų agento "Spinta" atveju
+        :class: agent-only
 
-			Automatinis duomenų elementų skaičiavimas priklauso nuo duomenų šaltinio tipo ir nėra galimas su visais duomenų šaltiniais.
+        | Duomenų agentas šias vertes generuos automatiškai. Šiuo metu neįgyvendinta - https://github.com/atviriduomenys/spinta/issues/1453
+    
+    .. admonition:: Pastaba
+        :class: agent-only
 
-			Priklausomai nuo duomenų kiekio duomenų šaltinyje, ši operacija gali reikalauti didelių apdorojimo resursų ir gali būti išjungiama.
+        Automatinis duomenų elementų skaičiavimas priklauso nuo duomenų šaltinio tipo ir nėra galimas su visais duomenų šaltiniais.
+
+        Priklausomai nuo duomenų kiekio duomenų šaltinyje, ši operacija gali reikalauti didelių apdorojimo resursų ir gali būti išjungiama.
 
 .. data:: level
 
@@ -280,26 +282,28 @@ rinkinio kontekste.
 	
     Šio stulpelio pildyti nereikia.
 	
-	.. container:: agent-only
-		.. admonition:: Duomenų agento "Spinta" atveju
-			| Šis `id` yra generuojamas automatinėmis duomenų agento priemonėmis sinchronizacijos su metaduomenų katalogu metu.
+    .. admonition:: Duomenų agento "Spinta" atveju
+        :class: agent-only
+
+        | Šis `id` yra generuojamas automatinėmis duomenų agento priemonėmis sinchronizacijos su metaduomenų katalogu metu.
 
 .. data:: type
 
     Duomenų šaltinio tipas. 
 	
-.. container:: agent-only
-		.. admonition:: Duomenų agento "Spinta" atveju
-			| Šiuo metu duomenų agento palaikomos reikšmės:
+    .. admonition:: Duomenų agento "Spinta" atveju
+        :class: agent-only
 
-			========= ============================
-			`sql`     Reliacinės duomenų bazės
-			`csv`     CSV lentelės
-			`json`    JSON resursai
-			`xml`     XML resursai
-			`wsdl`    WSDL resursai
-			`soap`    SOAP resursai
-			========= ============================
+        | Šiuo metu duomenų agento palaikomos reikšmės:
+
+        ========= ============================
+        `sql`     Reliacinės duomenų bazės
+        `csv`     CSV lentelės
+        `json`    JSON resursai
+        `xml`     XML resursai
+        `wsdl`    WSDL resursai
+        `soap`    SOAP resursai
+        ========= ============================
 
 .. data:: ref
 
@@ -327,19 +331,20 @@ rinkinio kontekste.
     dialect
         Duomenų šaltinio dialektas arba protokolas, kuriuo teikiami duomenys,
 
-		.. container:: agent-only
-			.. admonition:: Duomenų agento "Spinta" atveju
-				| Duomenų agento palaikomi variantai:
+        .. admonition:: Duomenų agento "Spinta" atveju
+             :class: agent-only
 
-				================ ===========================
-				`postgresql`     PostgreSQL duomenų bazė.
-				`mysql`          MySQL duomenų bazė.
-				`mariadb`        MariaDB duomenų bazė.
-				`sqlite`         SQLite duomenų bazė.
-				`oracle`         Oracle duomenų bazė.
-				`mssql`          Microsoft SQL Server duomenų bazė.
-				`http`, `https`  Duomenų failas publikuojamas HTTP protokolu.
-				================ ===========================
+            | Duomenų agento palaikomi variantai:
+
+            ================ ===========================
+            `postgresql`     PostgreSQL duomenų bazė.
+            `mysql`          MySQL duomenų bazė.
+            `mariadb`        MariaDB duomenų bazė.
+            `sqlite`         SQLite duomenų bazė.
+            `oracle`         Oracle duomenų bazė.
+            `mssql`          Microsoft SQL Server duomenų bazė.
+            `http`, `https`  Duomenų failas publikuojamas HTTP protokolu.
+            ================ ===========================
 
     driver
         Priklauso nuo **dialect** ir nuo naudojamo duomenų agento.
@@ -363,8 +368,9 @@ rinkinio kontekste.
     params
         Papildomi parametrai, priklauso nuo naudojamo **driver**.
 
-	.. container:: agent-only
 		.. admonition:: Duomenų agento "Spinta" atveju
+            :class: agent-only
+
 			| ŠDSA generavimo su duomenų agentu metu šis laukas automatiškai užpildomas komandinėje eilutėje nurodyta prisijungimo prie šaltinio informacija.
 
 .. data:: source.type
@@ -435,16 +441,17 @@ Funkcijos
     body (vardinis)
         HTTP užklausos perduodamų duomenų formatas.
 
-		.. container:: agent-only
-			.. admonition:: Duomenų agento "Spinta" atveju
-				| Šiuo metu duomenų agento palaikomi variantai:
+        .. admonition:: Duomenų agento "Spinta" atveju
+            :class: agent-only
+            
+            | Šiuo metu duomenų agento palaikomi variantai:
 
-				======= =============
-				`json`  Duomenys perduodami JSON formatu.
-				`xml`   Duomenys perduodami XML formatu.
-				`form`  Duomenys perduodami `application/x-www-form-urlencoded` arba
-						`multipart/form-data` (jei formoje pateikiami failai) formatu.
-				======= =============
+            ======= =============
+            `json`  Duomenys perduodami JSON formatu.
+            `xml`   Duomenys perduodami XML formatu.
+            `form`  Duomenys perduodami `application/x-www-form-urlencoded` arba
+                    `multipart/form-data` (jei formoje pateikiami failai) formatu.
+            ======= =============
 
     .. admonition:: Pavyzdys
 
@@ -772,10 +779,11 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
             Nurodytas objekto identifikatorius yra patikimas, tačiau nėra
             siejamas su globaliu objekto identifikatoriumi.
 
-	.. container:: agent-only
-		.. admonition:: Duomenų agento "Spinta" atveju
-			| Generuojant ŠDSA su duomenų agentu, jei yra naudojamas šaltinis, kuriame yra nurodomi
-			pirminiai lentelės raktai arba objekto identifikatoriai, agentas šį lauką užpildo automatiškai.
+    .. admonition:: Duomenų agento "Spinta" atveju
+        :class: agent-only
+        
+        | Generuojant ŠDSA su duomenų agentu, jei yra naudojamas šaltinis, kuriame yra nurodomi
+        pirminiai lentelės raktai arba objekto identifikatoriai, agentas šį lauką užpildo automatiškai.
 
 .. data:: source
 
@@ -797,10 +805,11 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
             Nenurodytas modelio duomenų šaltinis :data:`model.source` ir duomenys nėra
             publikuojami :ref:`vidinėje saugykloje <internal-backend>`.
 
-	.. container:: agent-only
-		.. admonition:: Duomenų agento "Spinta" atveju
-			| Generuojant ŠDSA su duomenų agentu jis automatiškai užpildo šias reikšmes,
-			jei yra galimybė nustatyti vienareikšmius elementų kelius duomenų šaltinyje.
+    .. admonition:: Duomenų agento "Spinta" atveju
+        :class: agent-only
+
+        | Generuojant ŠDSA su duomenų agentu jis automatiškai užpildo šias reikšmes,
+        jei yra galimybė nustatyti vienareikšmius elementų kelius duomenų šaltinyje.
 
 .. data:: source.type
 
@@ -905,15 +914,17 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
 
 	Pildyti nereikia.
 	
-	.. container:: agent-only
-		.. admonition:: Duomenų agento "Spinta" atveju
-			| Duomenų agentas šias vertes generuos automatiškai. Šiuo metu neįgyvendinta - https://github.com/atviriduomenys/spinta/issues/1453
-		
-		.. admonition:: Pastaba
+    .. admonition:: Duomenų agento "Spinta" atveju
+        :class: agent-only
 
-			Automatinis duomenų elementų skaičiavimas priklauso nuo duomenų šaltinio tipo ir nėra galimas su visais duomenų šaltiniais.
+        | Duomenų agentas šias vertes generuos automatiškai. Šiuo metu neįgyvendinta - https://github.com/atviriduomenys/spinta/issues/1453
+    
+    .. admonition:: Pastaba
+        :class: agent-only
+        
+        Automatinis duomenų elementų skaičiavimas priklauso nuo duomenų šaltinio tipo ir nėra galimas su visais duomenų šaltiniais.
 
-			Priklausomai nuo duomenų kiekio duomenų šaltinyje, ši operacija gali reikalauti didelių apdorojimo resursų ir gali būti išjungiama.
+        Priklausomai nuo duomenų kiekio duomenų šaltinyje, ši operacija gali reikalauti didelių apdorojimo resursų ir gali būti išjungiama.
 
 .. data:: level
 
@@ -933,9 +944,10 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
 
     :ref:`status`
 	
-    .. container:: agent-only
-		.. admonition:: Duomenų agento "Spinta" atveju
-			| Generuojant ŠDSA su duomenų agentu, šios reikšmės atomatiškai nustatomos kaip `develop`
+    .. admonition:: Duomenų agento "Spinta" atveju
+        :class: agent-only
+
+        | Generuojant ŠDSA su duomenų agentu, šios reikšmės atomatiškai nustatomos kaip `develop`
 
 .. data:: visibility
 
@@ -945,9 +957,10 @@ vienos esybės modeliai turi turėti vienodus identifikatorius.
 
     :ref:`visibility`
 
-    .. container:: agent-only
-		.. admonition:: Duomenų agento "Spinta" atveju
-			| Generuojant ŠDSA su duomenų agentu, šios reikšmės automatiškai nustatomos kaip `private`
+    .. admonition:: Duomenų agento "Spinta" atveju
+        :class: agent-only
+
+        | Generuojant ŠDSA su duomenų agentu, šios reikšmės automatiškai nustatomos kaip `private`
 
 .. data:: access
 
@@ -1124,10 +1137,11 @@ specialią reikšmę. Jų aprašymas pateikiamas atskirame skyriuje, žiūrėti
 
     - `geometry(linestringm, 3345) required`
 	
-    .. container:: agent-only
-		.. admonition:: Duomenų agento "Spinta" atveju
-			| Generuojant ŠDSA su duomenų agentu, šios reikšmės nuskaitomos iš fizinio šaltinio automatiškai 
-			duomenų tipus pritaikant JSON duomenų tipams. Rekšmės turėtų būti keičiamos tik duomenų transformacijos atveju.
+    .. admonition:: Duomenų agento "Spinta" atveju
+        :class: agent-only
+
+        | Generuojant ŠDSA su duomenų agentu, šios reikšmės nuskaitomos iš fizinio šaltinio automatiškai 
+        duomenų tipus pritaikant JSON duomenų tipams. Rekšmės turėtų būti keičiamos tik duomenų transformacijos atveju.
 
 .. data:: ref
 
@@ -1141,10 +1155,11 @@ specialią reikšmę. Jų aprašymas pateikiamas atskirame skyriuje, žiūrėti
     Duomenų lauko pavadinimas arba kelias šaltinyje. Prasmė priklauso nuo
     :data:`resource.type`.
 	
-    .. container:: agent-only
-		.. admonition:: Duomenų agento "Spinta" atveju
-			| Generuojant ŠDSA su duomenų agentu, šios reikšmės nuskaitomos iš fizinio šaltinio automatiškai 
-			jei yra galimybė jas nurodyti vienareikšmiškai.
+    .. admonition:: Duomenų agento "Spinta" atveju
+        :class: agent-only
+
+        | Generuojant ŠDSA su duomenų agentu, šios reikšmės nuskaitomos iš fizinio šaltinio automatiškai 
+        jei yra galimybė jas nurodyti vienareikšmiškai.
 
 .. data:: source.type
 
@@ -1236,15 +1251,17 @@ specialią reikšmę. Jų aprašymas pateikiamas atskirame skyriuje, žiūrėti
 	
 	Pildyti nereikia.
 	
-    .. container:: agent-only
-		.. admonition:: Duomenų agento "Spinta" atveju
-			| Duomenų agentas šias vertes generuos automatiškai. Šiuo metu neįgyvendinta - https://github.com/atviriduomenys/spinta/issues/1453
-		
-		.. admonition:: Pastaba
+    .. admonition:: Duomenų agento "Spinta" atveju
+        :class: agent-only
 
-			Automatinis duomenų elementų skaičiavimas priklauso nuo duomenų šaltinio tipo ir nėra galimas su visais duomenų šaltiniais.
+        | Duomenų agentas šias vertes generuos automatiškai. Šiuo metu neįgyvendinta - https://github.com/atviriduomenys/spinta/issues/1453
+    
+    .. admonition:: Pastaba
+        :class: agent-only
 
-			Priklausomai nuo duomenų kiekio duomenų šaltinyje, ši operacija gali reikalauti didelių apdorojimo resursų ir gali būti išjungiama.
+        Automatinis duomenų elementų skaičiavimas priklauso nuo duomenų šaltinio tipo ir nėra galimas su visais duomenų šaltiniais.
+
+        Priklausomai nuo duomenų kiekio duomenų šaltinyje, ši operacija gali reikalauti didelių apdorojimo resursų ir gali būti išjungiama.
 
 .. data:: level
 
@@ -1262,9 +1279,10 @@ specialią reikšmę. Jų aprašymas pateikiamas atskirame skyriuje, žiūrėti
 
     :ref:`status`
 
-    .. container:: agent-only
-		.. admonition:: Duomenų agento "Spinta" atveju
-			| Generuojant ŠDSA su duomenų agentu, šios reikšmės atomatiškai nustatomos kaip `develop`
+    .. admonition:: Duomenų agento "Spinta" atveju
+        :class: agent-only
+
+        | Generuojant ŠDSA su duomenų agentu, šios reikšmės atomatiškai nustatomos kaip `develop`
 
 .. data:: visibility
 
@@ -1274,9 +1292,10 @@ specialią reikšmę. Jų aprašymas pateikiamas atskirame skyriuje, žiūrėti
 
     :ref:`visibility`
 
-    .. container:: agent-only
-		.. admonition:: Duomenų agento "Spinta" atveju
-			| Generuojant ŠDSA su duomenų agentu, šios reikšmės automatiškai nustatomos kaip `private`
+    .. admonition:: Duomenų agento "Spinta" atveju
+        :class: agent-only
+
+        | Generuojant ŠDSA su duomenų agentu, šios reikšmės automatiškai nustatomos kaip `private`
 
 .. data:: access
 
@@ -1556,10 +1575,11 @@ atitinkamai nurodyti teisingą laukelio duomenų formatą.
 
     Fiksuotos reikšmės aprašymas.
 
-    .. container:: agent-only
-		.. admonition:: Duomenų agento "Spinta" atveju
-			| Jei :data:`property.prepare` yra tuščias ir :data:`property` turi :ref:`enum` sąrašą,
-			ir šaltinis grąžina `enum` neaprašytą reikšmę, validacijos metu yra fiksuojama duomenų klaida.
+    .. admonition:: Duomenų agento "Spinta" atveju
+        :class: agent-only
+        
+        | Jei :data:`property.prepare` yra tuščias ir :data:`property` turi :ref:`enum` sąrašą,
+        ir šaltinis grąžina `enum` neaprašytą reikšmę, validacijos metu yra fiksuojama duomenų klaida.
 
 
 .. _param:

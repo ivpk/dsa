@@ -1,19 +1,21 @@
-.. container:: agent-only
-	.. default-role:: literal
+:html_theme_options:
+   agent_only: tru
 
-	Duomenų schemos
-	###############
+.. default-role:: literal
 
-	Duomenų struktūra aprašoma schemos pagalba.
+Duomenų schemos
+###############
 
-	Žemiau rasite sąrašą schemų kalbų su aprašymais, kaip kiekviena schemų kalba
-	siejama su duomenų struktūros aprašu.
+Duomenų struktūra aprašoma schemos pagalba.
 
-	Schemų sąrašas
-	**************
+Žemiau rasite sąrašą schemų kalbų su aprašymais, kaip kiekviena schemų kalba
+siejama su duomenų struktūros aprašu.
 
-	.. toctree::
-		:maxdepth: 2
+Schemų sąrašas
+**************
 
-		xsd
-		openapi
+.. toctree::
+	:maxdepth: 2
+
+	xsd
+	openapi

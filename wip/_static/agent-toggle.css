@@ -8,20 +8,11 @@ body:not(.agent-enabled) .agent-only {
   margin-left: 10px;
 }
 
-
-.navbar .navbar-icon-links + #agent-toggle {
-  order: 999;
+.header-article-items #agent-toggle {
   display: flex;
   align-items: center;
+  margin-left: 8px;
 }
-
-
-.navbar-end-items #agent-toggle {
-  display: flex;
-  align-items: center;
-  margin-left: 10px;
-}
-
 
 #agent-toggle input {
   margin-right: 4px;

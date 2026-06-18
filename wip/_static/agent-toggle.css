@@ -2,11 +2,31 @@ body:not(.agent-enabled) .agent-only {
   display: none;
 }
 
+/* Make header items stay in one row */
+.header-article-items {
+  display: flex;
+  align-items: center;
+}
+
+/* Make inner container horizontal */
+.header-article__inner {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+/* Prevent your toggle from taking full width */
 #agent-toggle-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--pst-color-text-base);
+  margin-right: 6px;
+}
+
+/* Force both blocks to sit inline */
+.header-article__inner > * {
+  display: flex;
+  align-items: center;
 }
 
 /* active (inverted look) */

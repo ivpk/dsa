@@ -50,7 +50,6 @@ html_theme_options = {
     ],
 }
 
-html_css_files = ['agent-toggle.css']
 html_js_files = ['agent-toggle.js']
 
 
@@ -94,7 +93,7 @@ html_title = "DSA"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['static']
 
-html_css_files = ['custom.css']
+html_css_files = ['custom.css', 'agent-toggle.css']
 
 master_doc = 'index'
 

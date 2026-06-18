@@ -1,22 +1,22 @@
 function initAgentToggle() {
-  const checkbox = document.getElementById("agent-switch");
+  const btn = document.getElementById("agent-toggle-btn");
+  if (!btn) return;
 
-  // Restore state
+  // restore state
   const enabled = localStorage.getItem("agent-mode") === "true";
   document.body.classList.toggle("agent-enabled", enabled);
+  btn.classList.toggle("active", enabled);
 
-  if (checkbox) {
-    checkbox.checked = enabled;
-
-    checkbox.addEventListener("change", () => {
-      document.body.classList.toggle("agent-enabled", checkbox.checked);
-      localStorage.setItem("agent-mode", checkbox.checked);
-    });
-  }
+  btn.addEventListener("click", () => {
+    const newState = !document.body.classList.contains("agent-enabled");
+    document.body.classList.toggle("agent-enabled", newState);
+    localStorage.setItem("agent-mode", newState);
+    btn.classList.toggle("active", newState);
+  });
 }
 
 function markAgentPagesInNav() {
-  
+
   const links = document.querySelectorAll(".bd-sidebar a");
 
   const AGENT_PAGES = [
@@ -37,7 +37,6 @@ document.addEventListener("DOMContentLoaded", initAgentToggle);
 
 // Run again after page navigation 
 document.addEventListener("pjax:end", initAgentToggle);
-
 
 document.addEventListener("DOMContentLoaded", markAgentPagesInNav);
 document.addEventListener("pjax:end", markAgentPagesInNav);

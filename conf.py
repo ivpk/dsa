@@ -45,8 +45,7 @@ templates_path = ['_templates']
 #Adding custom Agent mode items
 
 html_theme_options = {
-    "navbar_end": [
-        "navbar-icon-links",   # keeps GitHub icon
+    "navbar_start": [
         "agent_toggle.html",   # your toggle
     ],
 }

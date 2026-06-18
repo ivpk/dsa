@@ -5,9 +5,23 @@ body:not(.agent-enabled) .agent-only {
 #agent-toggle {
   display: flex;
   align-items: center;
-  font-size: 0.85rem;
-  white-space: nowrap;
+  margin-left: 10px;
 }
+
+
+.navbar .navbar-icon-links + #agent-toggle {
+  order: 999;
+  display: flex;
+  align-items: center;
+}
+
+
+.navbar-end-items #agent-toggle {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
 
 #agent-toggle input {
   margin-right: 4px;

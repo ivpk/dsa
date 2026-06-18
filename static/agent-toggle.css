@@ -6,11 +6,14 @@ body:not(.agent-enabled) .agent-only {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  color: var(--pst-color-text-base);
 }
 
-/* visual feedback when enabled */
+/* active (inverted look) */
 #agent-toggle-btn.active {
-  color: var(--pst-color-primary);
+  background: var(--pst-color-text-base);
+  color: var(--pst-color-on-background);
+  border-radius: 4px;
 }
 
 /* optional hover polish */

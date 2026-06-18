@@ -2,22 +2,21 @@ body:not(.agent-enabled) .agent-only {
   display: none;
 }
 
-#agent-toggle {
-  display: flex;
+#agent-toggle-btn {
+  display: inline-flex;
   align-items: center;
-  margin-left: 10px;
+  justify-content: center;
 }
 
-.header-article-items #agent-toggle {
-  display: flex;
-  align-items: center;
-  margin-left: 8px;
+/* visual feedback when enabled */
+#agent-toggle-btn.active {
+  color: var(--pst-color-primary);
 }
 
-#agent-toggle input {
-  margin-right: 4px;
+/* optional hover polish */
+#agent-toggle-btn:hover {
+  color: var(--pst-color-primary);
 }
-
 
 body:not(.agent-enabled) .agent-only-link {
   display: none;

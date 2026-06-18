@@ -5,6 +5,13 @@
 Keitimų istorija
 ################
 
+2.0.0 (2026-06-18)
+******************
+
+- Pridėtas funkcionalumas atvaizduoti Duomenų agento palaikomus ir nepalaikomus funkcionalumus,
+  juos atskiriant nuo pagrindinės specifikacijos.
+
+
 1.1.0 (2025-11-14)
 ******************
 

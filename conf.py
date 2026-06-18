@@ -73,10 +73,10 @@ html_theme_options = {
     "use_source_button": False,
     "use_edit_page_button": False,
     "use_issues_button": True,
-    "navbar_end": [
-            "navbar-icon-links",
-            "agent_toggle.html",
-        ],
+    "article_header_end": [
+        "agent_toggle.html",
+    ]
+
 }
 
 html_title = "DSA"

@@ -17,6 +17,8 @@ function initAgentToggle() {
 
 function markAgentPagesInNav() {
   
+  const links = document.querySelectorAll(".bd-sidebar a");
+
   const AGENT_PAGES = [
     "saltiniai",
   ];

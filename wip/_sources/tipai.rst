@@ -146,9 +146,10 @@ Duomenų tipai
         vertimą į anglų kalbą. Papildomai, šalies aprašymo teksto formatas yra
         HTML_ tipo.
 		
-	.. container:: agent-only
-		.. admonition:: Duomenų agento "Spinta" atveju
-			| Šiuo metu neįgyvendinta
+    .. admonition:: Duomenų agento "Spinta" atveju
+        :class: agent-only
+
+        | Šiuo metu neįgyvendinta
 
     .. topic:: Brandos lygis
 
@@ -613,9 +614,10 @@ Duomenų tipai
         123 EUR
         123.45 EUR
 		
-	.. container:: agent-only
-		.. admonition:: Duomenų agento "Spinta" atveju
-			| Šiuo metu neįgyvendinta - https://github.com/atviriduomenys/spinta/issues/1083
+    .. admonition:: Duomenų agento "Spinta" atveju
+        :class: agent-only
+
+        | Šiuo metu neįgyvendinta - https://github.com/atviriduomenys/spinta/issues/1083
 
 .. data:: file
 
@@ -792,10 +794,11 @@ Duomenų tipai
 
         :ref:`atgalinis-ryšys`
 
-	.. container:: agent-only
-		.. admonition:: Duomenų agento "Spinta" atveju
-			| Šiuo metu nurodant `backref` ryšį turi būti kuriamas ir `ref` tipo ryšys iš modelio, į kurį
-			nurodomas `backref` ryšys. Nenurodžius, yra pateikiama validavimo klaida.
+    .. admonition:: Duomenų agento "Spinta" atveju
+        :class: agent-only
+        
+        | Šiuo metu nurodant `backref` ryšį turi būti kuriamas ir `ref` tipo ryšys iš modelio, į kurį
+        nurodomas `backref` ryšys. Nenurodžius, yra pateikiama validavimo klaida.
 
 .. data:: generic
 

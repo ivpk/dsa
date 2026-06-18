@@ -52,17 +52,14 @@
     <script src="_static/translations.js?v=e4682f4a"></script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'formatas';</script>
+    <script src="_static/agent-toggle.js?v=fa37591b"></script>
     <link rel="index" title="Indeksas" href="genindex.html" />
     <link rel="search" title="Paieška" href="search.html" />
     <link rel="next" title="Dimensijos" href="dimensijos.html" />
     <link rel="prev" title="Koncepcinis modelis" href="modelis.html" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="lt"/>
   <meta name="docsearch:version" content="1.2" />
-  <script src="static/agent-toggle.js"></script>
-  <link rel="stylesheet" href="static/agent-toggle.css">
-
   </head>
   
   
@@ -71,14 +68,6 @@
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
-  
-  <div id="agent-toggle">
-    <label>
-      <input type="checkbox" id="agent-switch">
-      Palaiko duomenų agentas
-    </label>
-  </div>
-
   
   <div id="pst-scroll-pixel-helper"></div>
   
@@ -174,9 +163,12 @@
 <li class="toctree-l1"><a class="reference internal" href="statusas.html">Metaduomenų statusas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="matomumas.html">Matomumas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="eli.html">ELI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="saltiniai.html"><code class="docutils literal notranslate"><span class="pre">connect()</span></code></a></li>
-
-
+<li class="toctree-l1 has-children"><a class="reference internal" href="schemos/index.html">Duomenų schemos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="schemos/xsd.html">XSD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schemos/openapi.html">OpenAPI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="saltiniai.html">Duomenų šaltiniai</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vardu-erdves.html">Vardų erdvės</a></li>
 <li class="toctree-l1"><a class="reference internal" href="zodynai.html">Išoriniai žodynai</a></li>
 <li class="toctree-l1"><a class="reference internal" href="formules.html">Formulės</a></li>
@@ -431,6 +423,12 @@ atskirti gali būti naudojamas <code class="docutils literal notranslate"><span 
 <div class="line"><a class="reference internal" href="pavadinimai.html#kodiniai-pavadinimai"><span class="std std-ref">Kodiniai pavadinimai</span></a></div>
 </div>
 </div>
+<div class="agent-only admonition">
+<p class="admonition-title">Duomenų agento &quot;Spinta&quot; atveju</p>
+<div class="line-block">
+<div class="line">Generuojant ŠDSA su duomenų agentu, šiame elemente užpildomas loginis duomenų šaltinio elemento pavadinimas. Jį reikia atnaujinti pagal aukščiau nurodomas taisykles.</div>
+</div>
+</div>
 </dd></dl>
 
 <dl class="py data">
@@ -453,7 +451,7 @@ duomenys.</p>
 <p class="admonition-title">Taip pat žiūrėkite</p>
 <div class="line-block">
 <div class="line"><a class="reference internal" href="dimensijos.html#resource"><span class="std std-ref">resource</span></a></div>
-<div class="line"><span class="xref std std-ref">duomenu-saltiniai</span></div>
+<div class="line"><a class="reference internal" href="saltiniai.html#duomenu-saltiniai"><span class="std std-ref">Duomenų šaltiniai</span></a></div>
 </div>
 </div>
 </dd></dl>
@@ -512,6 +510,14 @@ raide. Turi būti nurodomas anglų kalba.</p>
 <div class="line"><a class="reference internal" href="modelis.html#modelis"><span class="std std-ref">Modelis</span></a></div>
 </div>
 </div>
+<div class="agent-only admonition">
+<p class="admonition-title">Duomenų agento &quot;Spinta&quot; atveju</p>
+<div class="line-block">
+<div class="line">Generuojant ŠDSA su duomenų agentu, šiame elemente užpildomas duomenų bazės lentelės</div>
+</div>
+<p>arba duomenų objekto pavadinimas iš fizinio šaltinio automatiškai pritaikant kodinių pavadinimų skirybos taisykles.
+Jį reikia atnaujinti pagal visas aukščiau nurodomas taisykles.</p>
+</div>
 </dd></dl>
 
 <dl class="py data">
@@ -561,6 +567,14 @@ apibrėžtą prasmę.</p>
 <div class="line"><a class="reference internal" href="dimensijos.html#property"><span class="std std-ref">property</span></a></div>
 </div>
 </div>
+<div class="agent-only admonition">
+<p class="admonition-title">Duomenų agento &quot;Spinta&quot; atveju</p>
+<div class="line-block">
+<div class="line">Generuojant ŠDSA su duomenų agentu, šiame elemente užpildomas duomenų bazės lentelės stulpelio</div>
+</div>
+<p>arba duomenų objekto savybės pavadinimas iš fizinio šaltinio automatiškai pritaikant kodinių pavadinimų skirybos taisykles.
+Jį reikia atnaujinti pagal visas aukščiau nurodomas taisykles.</p>
+</div>
 </dd></dl>
 
 </section>
@@ -583,8 +597,12 @@ skaičius ar bet koks kitas unikalus identifikatorius.</p>
 <p>Viešai publikuojamame <a class="reference internal" href="savokos.html#term-DSA"><span class="xref std std-term">DSA</span></a> privaloma naudoti tik globaliai unikalų <span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc9562.html"><strong>UUID</strong></a>.
 Pateikus <a class="reference internal" href="savokos.html#term-SDSA"><span class="xref std std-term">ŠDSA</span></a> į duomenų katalogą, lokalus identifikatorius automatiškai pakeičiamas į <span class="target" id="index-2"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc9562.html"><strong>UUID</strong></a>.</p>
 <p>Šio stulpelio pildyti nereikia.</p>
-<blockquote>
-<div></div></blockquote>
+<div class="agent-only admonition">
+<p class="admonition-title">Duomenų agento &quot;Spinta&quot; atveju</p>
+<div class="line-block">
+<div class="line">Šis <code class="docutils literal notranslate"><span class="pre">id</span></code> yra generuojamas automatinėmis duomenų agento priemonėmis sinchronizacijos su metaduomenų katalogu metu.</div>
+</div>
+</div>
 </dd></dl>
 
 <dl class="py data">
@@ -623,7 +641,7 @@ dimensija</span></a>.</p>
 <div class="admonition seealso">
 <p class="admonition-title">Taip pat žiūrėkite</p>
 <div class="line-block">
-<div class="line"><span class="xref std std-ref">duomenu-saltiniai</span></div>
+<div class="line"><a class="reference internal" href="saltiniai.html#duomenu-saltiniai"><span class="std std-ref">Duomenų šaltiniai</span></a></div>
 <div class="line"><a class="reference internal" href="dimensijos.html#enum"><span class="std std-ref">enum</span></a></div>
 </div>
 </div>
@@ -667,8 +685,17 @@ ir pan.</p>
 <span class="sig-name descname"><span class="pre">count</span></span><a class="headerlink" href="#count" title="Link to this definition">#</a></dt>
 <dd><p>Prasmė priklauso nuo dimensijos.</p>
 <p>Nudorodo elementų skaičių dimensijoje. Pildyti nereikia.</p>
-<blockquote>
-<div></div></blockquote>
+<div class="agent-only admonition">
+<p class="admonition-title">Duomenų agento &quot;Spinta&quot; atveju</p>
+<div class="line-block">
+<div class="line">Duomenų agentas šias vertes generuos automatiškai. Šiuo metu neįgyvendinta - <a class="github reference external" href="https://github.com/atviriduomenys/spinta/issues/1453">atviriduomenys/spinta#1453</a></div>
+</div>
+</div>
+<div class="agent-only admonition">
+<p class="admonition-title">Pastaba</p>
+<p><a href="#id1"><span class="problematic" id="id2">|</span></a>Automatinis duomenų elementų skaičiavimas priklauso nuo duomenų šaltinio tipo ir nėra galimas su visais duomenų šaltiniais.</p>
+<p>Priklausomai nuo duomenų kiekio duomenų šaltinyje, ši operacija gali reikalauti didelių apdorojimo resursų ir gali būti išjungiama.</p>
+</div>
 </dd></dl>
 
 <dl class="py data">
@@ -689,6 +716,12 @@ ir pan.</p>
 <div class="admonition seealso">
 <p class="admonition-title">Taip pat žiūrėkite</p>
 <p><a class="reference internal" href="statusas.html#status"><span class="std std-ref">Metaduomenų statusas</span></a></p>
+</div>
+<div class="agent-only admonition">
+<p class="admonition-title">Duomenų agento &quot;Spinta&quot; atveju</p>
+<div class="line-block">
+<div class="line">Generuojant ŠDSA su duomenų agentu, šios reikšmės atomatiškai nustatomos kaip <code class="docutils literal notranslate"><span class="pre">develop</span></code></div>
+</div>
 </div>
 </dd></dl>
 
@@ -716,6 +749,12 @@ ir pan.</p>
 <div class="admonition seealso">
 <p class="admonition-title">Taip pat žiūrėkite</p>
 <p><a class="reference internal" href="matomumas.html#visibility"><span class="std std-ref">Matomumas</span></a></p>
+</div>
+<div class="agent-only admonition">
+<p class="admonition-title">Duomenų agento &quot;Spinta&quot; atveju</p>
+<div class="line-block">
+<div class="line">Generuojant ŠDSA su duomenų agentu, šios reikšmės automatiškai nustatomos kaip <code class="docutils literal notranslate"><span class="pre">private</span></code></div>
+</div>
 </div>
 </dd></dl>
 
@@ -775,6 +814,13 @@ interpretuoti juos kaip tuščius. Taip pat įrankiai neturėtų tikėtis, kad s
 bus išdėstyti būtent tokia tvarka. Nors įrankių atžvilgiu stulpelių tvarka nėra
 svarbi, tačiau rekomenduotina išlaikyti vienodą stulpelių tvarką, tam kad
 lenteles būtų lengviau skaityti.</p>
+<div class="agent-only admonition">
+<p class="admonition-title">Duomenų agento &quot;Spinta&quot; atveju</p>
+<div class="line-block">
+<div class="line">Duomenų teikimui naudojant duomenų agentą, visi stulpeliai turi būti pateikti</div>
+</div>
+<p>DSA dokumente ir negalima nurodyti jokių kitų papildomų stulpelių.</p>
+</div>
 </section>
 </section>
 

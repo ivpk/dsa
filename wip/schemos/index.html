@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; DSA</title>
+    <title>Duomenų schemos &#8212; DSA</title>
   
   
   
@@ -52,17 +52,14 @@
     <script src="../_static/translations.js?v=e4682f4a"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'schemos/index';</script>
+    <script src="../_static/agent-toggle.js?v=fa37591b"></script>
     <link rel="index" title="Indeksas" href="../genindex.html" />
     <link rel="search" title="Paieška" href="../search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="../saltiniai.html" />
+    <link rel="next" title="XSD" href="xsd.html" />
     <link rel="prev" title="ELI" href="../eli.html" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="lt"/>
   <meta name="docsearch:version" content="1.2" />
-  <script src="../static/agent-toggle.js"></script>
-  <link rel="stylesheet" href="../static/agent-toggle.css">
-
   </head>
   
   
@@ -71,14 +68,6 @@
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
-  
-  <div id="agent-toggle">
-    <label>
-      <input type="checkbox" id="agent-switch">
-      Palaiko duomenų agentas
-    </label>
-  </div>
-
   
   <div id="pst-scroll-pixel-helper"></div>
   
@@ -157,7 +146,7 @@
 </button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../modelis.html">Koncepcinis modelis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../formatas.html">Lentelės formatas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dimensijos.html">Dimensijos</a></li>
@@ -174,9 +163,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../statusas.html">Metaduomenų statusas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../matomumas.html">Matomumas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../eli.html">ELI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../saltiniai.html"><code class="docutils literal notranslate"><span class="pre">connect()</span></code></a></li>
-
-
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Duomenų schemos</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="xsd.html">XSD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openapi.html">OpenAPI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../saltiniai.html">Duomenų šaltiniai</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../vardu-erdves.html">Vardų erdvės</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../zodynai.html">Išoriniai žodynai</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../formules.html">Formulės</a></li>
@@ -311,7 +303,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Duomenų schemos</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -320,9 +312,9 @@
                 <h2> Turinys </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schemu-sarasas">Schemų sąrašas</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -333,7 +325,31 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  
+  <section id="duomenu-schemos">
+<h1>Duomenų schemos<a class="headerlink" href="#duomenu-schemos" title="Link to this heading">#</a></h1>
+<p>Duomenų struktūra aprašoma schemos pagalba.</p>
+<p>Žemiau rasite sąrašą schemų kalbų su aprašymais, kaip kiekviena schemų kalba
+siejama su duomenų struktūros aprašu.</p>
+<section id="schemu-sarasas">
+<h2>Schemų sąrašas<a class="headerlink" href="#schemu-sarasas" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="xsd.html">XSD</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="xsd.html#jungtinis-modelis">Jungtinis modelis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xsd.html#elementai">Elementai</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xsd.html#atributai">Atributai</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xsd.html#duomenu-tipai">Duomenų tipai</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="openapi.html">OpenAPI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="openapi.html#struktura">Struktūra</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+
 
                 </article>
               
@@ -355,11 +371,11 @@
       </div>
     </a>
     <a class="right-next"
-       href="../saltiniai.html"
+       href="xsd.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">kitas</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">XSD</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -379,9 +395,9 @@
     <i class="fa-solid fa-list"></i> Turinys
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schemu-sarasas">Schemų sąrašas</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>

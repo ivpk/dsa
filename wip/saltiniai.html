@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; DSA</title>
+    <title>Duomenų šaltiniai &#8212; DSA</title>
   
   
   
@@ -65,17 +65,14 @@ import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.es
 window.addEventListener("load", () => mermaid.run());
 </script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'saltiniai';</script>
+    <script src="_static/agent-toggle.js?v=fa37591b"></script>
     <link rel="index" title="Indeksas" href="genindex.html" />
     <link rel="search" title="Paieška" href="search.html" />
     <link rel="next" title="Vardų erdvės" href="vardu-erdves.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="schemos/index.html" />
-  
+    <link rel="prev" title="OpenAPI" href="schemos/openapi.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="lt"/>
   <meta name="docsearch:version" content="1.2" />
-  <script src="static/agent-toggle.js"></script>
-  <link rel="stylesheet" href="static/agent-toggle.css">
-
   </head>
   
   
@@ -84,14 +81,6 @@ window.addEventListener("load", () => mermaid.run());
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
-  
-  <div id="agent-toggle">
-    <label>
-      <input type="checkbox" id="agent-switch">
-      Palaiko duomenų agentas
-    </label>
-  </div>
-
   
   <div id="pst-scroll-pixel-helper"></div>
   
@@ -187,9 +176,12 @@ window.addEventListener("load", () => mermaid.run());
 <li class="toctree-l1"><a class="reference internal" href="statusas.html">Metaduomenų statusas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="matomumas.html">Matomumas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="eli.html">ELI</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">connect()</span></code></a></li>
-
-
+<li class="toctree-l1 has-children"><a class="reference internal" href="schemos/index.html">Duomenų schemos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="schemos/xsd.html">XSD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schemos/openapi.html">OpenAPI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Duomenų šaltiniai</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vardu-erdves.html">Vardų erdvės</a></li>
 <li class="toctree-l1"><a class="reference internal" href="zodynai.html">Išoriniai žodynai</a></li>
 <li class="toctree-l1"><a class="reference internal" href="formules.html">Formulės</a></li>
@@ -324,7 +316,7 @@ window.addEventListener("load", () => mermaid.run());
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Duomenų šaltiniai</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -334,11 +326,23 @@ window.addEventListener("load", () => mermaid.run());
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><code class="docutils literal notranslate"><span class="pre">connect()</span></code></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular"><code class="docutils literal notranslate"><span class="pre">tabular()</span></code></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">xpath()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sql">SQL</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connect"><code class="docutils literal notranslate"><span class="pre">connect()</span></code></a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#csv">CSV</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular"><code class="docutils literal notranslate"><span class="pre">tabular()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json">JSON</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xml">XML</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">xpath()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xlsx">XLSX</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wsdl">WSDL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soap">SOAP</a></li>
+</ul>
             </nav>
         </div>
     </div>
@@ -349,16 +353,19 @@ window.addEventListener("load", () => mermaid.run());
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="agent-only docutils container">
-<span class="target" id="resource-type-sql"><span id="duomenu-saltiniai"></span></span><dl class="describe" id="sql-resource-source">
+  <section id="duomenu-saltiniai">
+<span id="id1"></span><h1>Duomenų šaltiniai<a class="headerlink" href="#duomenu-saltiniai" title="Link to this heading">#</a></h1>
+<section id="sql">
+<span id="resource-type-sql"></span><h2>SQL<a class="headerlink" href="#sql" title="Link to this heading">#</a></h2>
+<dl class="describe" id="sql-resource-source">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">resource.source</span></span></dt>
 <dd><p>Duomenų bazės URI. Duomenų bazės URI formuojamas naudojant tokį <a class="reference external" href="https://en.wikipedia.org/wiki/Augmented_Backus–Naur_form">ABNF</a>
 šabloną:</p>
 <div class="highlight-abnf notranslate"><div class="highlight"><pre><span></span><span class="nc">uri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">type</span><span class="w"> </span><span class="p">[</span><span class="l">&quot;+&quot;</span><span class="w"> </span><span class="nc">driver</span><span class="p">]</span><span class="w"> </span><span class="l">&quot;://&quot;</span>
-<span class="w">          </span><span class="p">[</span><span class="nc">user</span><span class="w"> </span><span class="p">[</span><span class="l">&quot;:&quot;</span><span class="w"> </span><span class="nc">password</span><span class="p">]</span><span class="w"> </span><span class="l">&quot;@&quot;</span><span class="p">]</span>
-<span class="w">          </span><span class="nc">host</span><span class="w"> </span><span class="p">[</span><span class="l">&quot;:&quot;</span><span class="w"> </span><span class="nc">port</span><span class="p">]</span>
-<span class="w">          </span><span class="l">&quot;/&quot;</span><span class="w"> </span><span class="nc">database</span><span class="w"> </span><span class="p">[</span><span class="l">&quot;?&quot;</span><span class="w"> </span><span class="nc">params</span><span class="p">]</span>
+<span class="w">                </span><span class="p">[</span><span class="nc">user</span><span class="w"> </span><span class="p">[</span><span class="l">&quot;:&quot;</span><span class="w"> </span><span class="nc">password</span><span class="p">]</span><span class="w"> </span><span class="l">&quot;@&quot;</span><span class="p">]</span>
+<span class="w">                </span><span class="nc">host</span><span class="w"> </span><span class="p">[</span><span class="l">&quot;:&quot;</span><span class="w"> </span><span class="nc">port</span><span class="p">]</span>
+<span class="w">                </span><span class="l">&quot;/&quot;</span><span class="w"> </span><span class="nc">database</span><span class="w"> </span><span class="p">[</span><span class="l">&quot;?&quot;</span><span class="w"> </span><span class="nc">params</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Šablone naudojamų kintamųjų aprašymas:</p>
@@ -484,6 +491,9 @@ perduoti papildomus parametrus.</p>
 <dd><p>Lentelės stulpelio pavadinimas.</p>
 </dd></dl>
 
+</section>
+<section id="csv">
+<h2>CSV<a class="headerlink" href="#csv" title="Link to this heading">#</a></h2>
 <dl class="describe">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">resource.type</span></span></dt>
@@ -526,6 +536,9 @@ perduoti papildomus parametrus.</p>
 <dd><p>Žiūrėti <a class="reference internal" href="formules.html#stulpeliai-lenteleje"><span class="std std-ref">Stulpeliai lentelėje</span></a>.</p>
 </dd></dl>
 
+</section>
+<section id="json">
+<h2>JSON<a class="headerlink" href="#json" title="Link to this heading">#</a></h2>
 <dl class="describe">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">resource.type</span></span></dt>
@@ -559,6 +572,9 @@ kompleksinis žiūrėti <a class="reference internal" href="formules.html#komple
 <dd><p>Žiūrėti <a class="reference internal" href="formules.html#kompleksines-strukturos"><span class="std std-ref">Kompleksinės struktūros</span></a>.</p>
 </dd></dl>
 
+</section>
+<section id="xml">
+<h2>XML<a class="headerlink" href="#xml" title="Link to this heading">#</a></h2>
 <dl class="describe">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">resource.type</span></span></dt>
@@ -632,18 +648,18 @@ savybės kodiniame pavadinime, įprastai tai yra <code class="docutils literal n
         direction LR
 
         class Country {
-          + id: integer [1..1]
-          + name&#64;en: string [1..1]
+                + id: integer [1..1]
+                + name&#64;en: string [1..1]
         }
 
         class City {
-          + id: integer [1..1]
-          + name&#64;en: string [1..1]
+                + id: integer [1..1]
+                + name&#64;en: string [1..1]
         }
 
         class Street {
-          + id: integer [1..1]
-          + name&#64;en: string [1..1]
+                + id: integer [1..1]
+                + name&#64;en: string [1..1]
         }
 
         City --&gt; &quot;[1..1]&quot; Country : country
@@ -912,6 +928,9 @@ gausime tokius <a class="reference external" href="https://ivpk.github.io/uapi">
 </pre></div>
 </div>
 </div>
+</section>
+<section id="xlsx">
+<h2>XLSX<a class="headerlink" href="#xlsx" title="Link to this heading">#</a></h2>
 <dl class="describe">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">resource.type</span></span></dt>
@@ -942,13 +961,16 @@ gausime tokius <a class="reference external" href="https://ivpk.github.io/uapi">
 <dd><p>Žiūrėti <a class="reference internal" href="formules.html#stulpeliai-lenteleje"><span class="std std-ref">Stulpeliai lentelėje</span></a>.</p>
 </dd></dl>
 
+</section>
+<section id="wsdl">
+<h2>WSDL<a class="headerlink" href="#wsdl" title="Link to this heading">#</a></h2>
 <p>Šiuo metu palaikoma tik <a class="reference external" href="https://www.w3.org/TR/2001/NOTE-wsdl-20010315">WSDL 1.1 versija</a>.</p>
 <p>Šaltinis inicializuoja WSDL klientą pagal <code class="docutils literal notranslate"><span class="pre">resource.source</span></code> nurodytą URI.</p>
 <div class="admonition note">
 <p class="admonition-title">Pastaba</p>
 <p><code class="docutils literal notranslate"><span class="pre">wsdl</span></code> šaltinis skaito WSDL failą, aprašantį kitus duomenų šaltinius, todėl
 pagrinde yra naudojamas kartu su kitais resursais, nurodant <a class="reference internal" href="formules.html#ref-resource-nesting"><span class="std std-ref">Duomenų šaltinių tarpusavio sąsaja</span></a>.</p>
-<p>Šiuo metu WSDL resursas naudojamas tik kartu su <span class="xref std std-ref">ref-soap</span> resursu.</p>
+<p>Šiuo metu WSDL resursas naudojamas tik kartu su <a class="reference internal" href="#ref-soap"><span class="std std-ref">SOAP</span></a> resursu.</p>
 </div>
 <dl class="describe">
 <dt class="sig sig-object">
@@ -962,7 +984,10 @@ pagrinde yra naudojamas kartu su kitais resursais, nurodant <a class="reference 
 <dd><p>Galimos reikšmės: <code class="docutils literal notranslate"><span class="pre">wsdl</span></code>.</p>
 </dd></dl>
 
-<span class="target" id="ref-soap"></span><dl class="describe">
+</section>
+<section id="soap">
+<span id="ref-soap"></span><h2>SOAP<a class="headerlink" href="#soap" title="Link to this heading">#</a></h2>
+<dl class="describe">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">resource.source</span></span></dt>
 <dd><p>WSDL elementai, aprašantys konkretų duomenų rinkinį, atskirti tašku, naudojant tokį šabloną:</p>
@@ -1033,7 +1058,7 @@ todėl duomenys, esantys duomenų šaltinio daugiareikšmėse savybėse, nebus n
 <p class="admonition-title">Pavyzdys (be SOAP request duomenų)</p>
 <p><strong>Duomenų šaltinis:</strong></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;ns0:Envelope</span><span class="w"> </span><span class="na">xmlns:ns0=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>
-<span class="w">                          </span><span class="na">xmlns:ns1=</span><span class="s">&quot;city_app&quot;</span><span class="nt">&gt;</span>
+<span class="w">                                </span><span class="na">xmlns:ns1=</span><span class="s">&quot;city_app&quot;</span><span class="nt">&gt;</span>
 <span class="w">        </span><span class="nt">&lt;ns0:Body&gt;</span>
 <span class="w">                </span><span class="nt">&lt;ns1:CityOutputResponse&gt;</span>
 <span class="w">                        </span><span class="nt">&lt;ns1:CityOutput&gt;</span>
@@ -1051,11 +1076,11 @@ todėl duomenys, esantys duomenų šaltinio daugiareikšmėse savybėse, nebus n
 </div>
 <p><strong>WSDL:</strong></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;wsdl:definitions</span><span class="w"> </span><span class="na">xmlns:soap=</span><span class="s">&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot;</span>
-<span class="w">                 </span><span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span>
-<span class="w">                 </span><span class="na">xmlns:wsdl=</span><span class="s">&quot;http://schemas.xmlsoap.org/wsdl/&quot;</span>
-<span class="w">                 </span><span class="na">xmlns:tns=</span><span class="s">&quot;city_app&quot;</span>
-<span class="w">                 </span><span class="na">targetNamespace=</span><span class="s">&quot;city_app&quot;</span>
-<span class="w">                 </span><span class="na">name=</span><span class="s">&quot;CityService&quot;</span><span class="nt">&gt;</span>
+<span class="w">                        </span><span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span>
+<span class="w">                        </span><span class="na">xmlns:wsdl=</span><span class="s">&quot;http://schemas.xmlsoap.org/wsdl/&quot;</span>
+<span class="w">                        </span><span class="na">xmlns:tns=</span><span class="s">&quot;city_app&quot;</span>
+<span class="w">                        </span><span class="na">targetNamespace=</span><span class="s">&quot;city_app&quot;</span>
+<span class="w">                        </span><span class="na">name=</span><span class="s">&quot;CityService&quot;</span><span class="nt">&gt;</span>
 
 <span class="w">        </span><span class="nt">&lt;wsdl:types&gt;</span>
 <span class="w">                </span><span class="nt">&lt;xs:schema</span><span class="w"> </span><span class="na">targetNamespace=</span><span class="s">&quot;city_app&quot;</span><span class="nt">&gt;</span>
@@ -1206,11 +1231,11 @@ gausime tokius <a class="reference external" href="https://ivpk.github.io/uapi">
 <p class="admonition-title">Pavyzdys (su SOAP request duomenimis)</p>
 <p>Remiantis ankstesniu pavyzdžiu, turint <strong>WSDL</strong>, papildytą <code class="docutils literal notranslate"><span class="pre">CityInputRequest</span></code> schema:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;wsdl:definitions</span><span class="w"> </span><span class="na">xmlns:soap=</span><span class="s">&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot;</span>
-<span class="w">                 </span><span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span>
-<span class="w">                 </span><span class="na">xmlns:wsdl=</span><span class="s">&quot;http://schemas.xmlsoap.org/wsdl/&quot;</span>
-<span class="w">                 </span><span class="na">xmlns:tns=</span><span class="s">&quot;city_app&quot;</span>
-<span class="w">                 </span><span class="na">targetNamespace=</span><span class="s">&quot;city_app&quot;</span>
-<span class="w">                 </span><span class="na">name=</span><span class="s">&quot;CityService&quot;</span><span class="nt">&gt;</span>
+<span class="w">                        </span><span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span>
+<span class="w">                        </span><span class="na">xmlns:wsdl=</span><span class="s">&quot;http://schemas.xmlsoap.org/wsdl/&quot;</span>
+<span class="w">                        </span><span class="na">xmlns:tns=</span><span class="s">&quot;city_app&quot;</span>
+<span class="w">                        </span><span class="na">targetNamespace=</span><span class="s">&quot;city_app&quot;</span>
+<span class="w">                        </span><span class="na">name=</span><span class="s">&quot;CityService&quot;</span><span class="nt">&gt;</span>
 
 <span class="w">        </span><span class="nt">&lt;wsdl:types&gt;</span>
 <span class="w">                </span><span class="nt">&lt;xs:schema</span><span class="w"> </span><span class="na">targetNamespace=</span><span class="s">&quot;city_app&quot;</span><span class="nt">&gt;</span>
@@ -1397,11 +1422,12 @@ gausime tokius <a class="reference external" href="https://ivpk.github.io/uapi">
 <span class="w">                        </span><span class="nt">&quot;p2&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;value2&quot;</span><span class="p">,</span>
 <span class="w">                </span><span class="p">}</span>
 <span class="w">        </span><span class="p">]</span>
-<span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
-</div>
+</section>
+</section>
 
 
                 </article>
@@ -1415,12 +1441,12 @@ gausime tokius <a class="reference external" href="https://ivpk.github.io/uapi">
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="schemos/index.html"
+       href="schemos/openapi.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">praeitas</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">OpenAPI</p>
       </div>
     </a>
     <a class="right-next"
@@ -1449,11 +1475,23 @@ gausime tokius <a class="reference external" href="https://ivpk.github.io/uapi">
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><code class="docutils literal notranslate"><span class="pre">connect()</span></code></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular"><code class="docutils literal notranslate"><span class="pre">tabular()</span></code></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">xpath()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sql">SQL</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connect"><code class="docutils literal notranslate"><span class="pre">connect()</span></code></a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#csv">CSV</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular"><code class="docutils literal notranslate"><span class="pre">tabular()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json">JSON</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xml">XML</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">xpath()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xlsx">XLSX</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wsdl">WSDL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soap">SOAP</a></li>
+</ul>
   </nav></div>
 
 </div></div>

@@ -1,7 +1,19 @@
-.agent-only {
+body:not(.agent-enabled) .agent-only {
   display: none;
 }
 
-body.agent-enabled .agent-only {
-  display: block;
+#agent-toggle {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+#agent-toggle input {
+  margin-right: 4px;
+}
+
+
+body:not(.agent-enabled) .agent-only-link {
+  display: none;
 }

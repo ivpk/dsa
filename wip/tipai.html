@@ -65,17 +65,14 @@ import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.es
 window.addEventListener("load", () => mermaid.run());
 </script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tipai';</script>
+    <script src="_static/agent-toggle.js?v=fa37591b"></script>
     <link rel="index" title="Indeksas" href="genindex.html" />
     <link rel="search" title="Paieška" href="search.html" />
     <link rel="next" title="Kodiniai pavadinimai" href="pavadinimai.html" />
     <link rel="prev" title="Rezervuotos savybės" href="rezervuotos-savybes.html" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="lt"/>
   <meta name="docsearch:version" content="1.2" />
-  <script src="static/agent-toggle.js"></script>
-  <link rel="stylesheet" href="static/agent-toggle.css">
-
   </head>
   
   
@@ -84,14 +81,6 @@ window.addEventListener("load", () => mermaid.run());
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
-  
-  <div id="agent-toggle">
-    <label>
-      <input type="checkbox" id="agent-switch">
-      Palaiko duomenų agentas
-    </label>
-  </div>
-
   
   <div id="pst-scroll-pixel-helper"></div>
   
@@ -187,9 +176,12 @@ window.addEventListener("load", () => mermaid.run());
 <li class="toctree-l1"><a class="reference internal" href="statusas.html">Metaduomenų statusas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="matomumas.html">Matomumas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="eli.html">ELI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="saltiniai.html"><code class="docutils literal notranslate"><span class="pre">connect()</span></code></a></li>
-
-
+<li class="toctree-l1 has-children"><a class="reference internal" href="schemos/index.html">Duomenų schemos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="schemos/xsd.html">XSD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schemos/openapi.html">OpenAPI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="saltiniai.html">Duomenų šaltiniai</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vardu-erdves.html">Vardų erdvės</a></li>
 <li class="toctree-l1"><a class="reference internal" href="zodynai.html">Išoriniai žodynai</a></li>
 <li class="toctree-l1"><a class="reference internal" href="formules.html">Formulės</a></li>
@@ -556,6 +548,12 @@ formatą, nadojant vieną iš šių formatų:</p>
 pateikti Lietuvių kalba, tačiau laukas <code class="docutils literal notranslate"><span class="pre">description</span></code> papildomai turi
 vertimą į anglų kalbą. Papildomai, šalies aprašymo teksto formatas yra
 <a class="reference external" href="https://en.wikipedia.org/wiki/HTML">HTML</a> tipo.</p>
+</div>
+<div class="agent-only admonition">
+<p class="admonition-title">Duomenų agento &quot;Spinta&quot; atveju</p>
+<div class="line-block">
+<div class="line">Šiuo metu neįgyvendinta</div>
+</div>
 </div>
 <aside class="topic">
 <p class="topic-title">Brandos lygis</p>
@@ -1178,11 +1176,13 @@ aprašyti taip:</p>
 <span class="mf">123.45</span>
 <span class="mi">123</span> <span class="n">EUR</span>
 <span class="mf">123.45</span> <span class="n">EUR</span>
-
-<span class="o">..</span> <span class="n">container</span><span class="p">::</span> <span class="n">agent</span><span class="o">-</span><span class="n">only</span>
-        <span class="o">..</span> <span class="n">admonition</span><span class="p">::</span> <span class="n">Duomenų</span> <span class="n">agento</span> <span class="s2">&quot;Spinta&quot;</span> <span class="n">atveju</span>
-                <span class="o">|</span> <span class="n">Šiuo</span> <span class="n">metu</span> <span class="n">neįgyvendinta</span> <span class="o">-</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">atviriduomenys</span><span class="o">/</span><span class="n">spinta</span><span class="o">/</span><span class="n">issues</span><span class="o">/</span><span class="mi">1083</span>
 </pre></div>
+</div>
+<div class="agent-only admonition">
+<p class="admonition-title">Duomenų agento &quot;Spinta&quot; atveju</p>
+<div class="line-block">
+<div class="line">Šiuo metu neįgyvendinta - <a class="github reference external" href="https://github.com/atviriduomenys/spinta/issues/1083">atviriduomenys/spinta#1083</a></div>
+</div>
 </div>
 </dd></dl>
 
@@ -1494,6 +1494,13 @@ nurodomas su <code class="docutils literal notranslate"><span class="pre">[]</sp
 <div class="admonition seealso">
 <p class="admonition-title">Taip pat žiūrėkite</p>
 <p><a class="reference internal" href="identifikatoriai.html#atgalinis-rysys"><span class="std std-ref">Atgalinis ryšys</span></a></p>
+</div>
+<div class="agent-only admonition">
+<p class="admonition-title">Duomenų agento &quot;Spinta&quot; atveju</p>
+<div class="line-block">
+<div class="line">Šiuo metu nurodant <code class="docutils literal notranslate"><span class="pre">backref</span></code> ryšį turi būti kuriamas ir <code class="docutils literal notranslate"><span class="pre">ref</span></code> tipo ryšys iš modelio, į kurį</div>
+</div>
+<p>nurodomas <code class="docutils literal notranslate"><span class="pre">backref</span></code> ryšys. Nenurodžius, yra pateikiama validavimo klaida.</p>
 </div>
 </dd></dl>
 

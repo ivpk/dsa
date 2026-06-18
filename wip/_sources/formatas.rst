@@ -91,9 +91,10 @@ nei vieno dimensijos stulpelio.
         | :ref:`dataset`
         | :ref:`kodiniai-pavadinimai`
 		
-	.. container:: agent-only
-		.. admonition:: Duomenų agento "Spinta" atveju
-			| Generuojant ŠDSA su duomenų agentu, šiame elemente užpildomas loginis duomenų šaltinio elemento pavadinimas. Jį reikia atnaujinti pagal aukščiau nurodomas taisykles.
+    .. admonition:: Duomenų agento "Spinta" atveju
+        :class: agent-only
+
+        | Generuojant ŠDSA su duomenų agentu, šiame elemente užpildomas loginis duomenų šaltinio elemento pavadinimas. Jį reikia atnaujinti pagal aukščiau nurodomas taisykles.
 
 .. data:: resource
 
@@ -172,11 +173,12 @@ nei vieno dimensijos stulpelio.
         | :ref:`model`
         | :ref:`modelis`
 
-    .. container:: agent-only
-		.. admonition:: Duomenų agento "Spinta" atveju
-			| Generuojant ŠDSA su duomenų agentu, šiame elemente užpildomas duomenų bazės lentelės
-			arba duomenų objekto pavadinimas iš fizinio šaltinio automatiškai pritaikant kodinių pavadinimų skirybos taisykles.
-			Jį reikia atnaujinti pagal visas aukščiau nurodomas taisykles.
+    .. admonition:: Duomenų agento "Spinta" atveju
+        :class: agent-only
+
+        | Generuojant ŠDSA su duomenų agentu, šiame elemente užpildomas duomenų bazės lentelės
+        arba duomenų objekto pavadinimas iš fizinio šaltinio automatiškai pritaikant kodinių pavadinimų skirybos taisykles.
+        Jį reikia atnaujinti pagal visas aukščiau nurodomas taisykles.
 
 .. data:: property
 
@@ -220,11 +222,12 @@ nei vieno dimensijos stulpelio.
 
         | :ref:`property`
 
-    .. container:: agent-only
-		.. admonition:: Duomenų agento "Spinta" atveju
-			| Generuojant ŠDSA su duomenų agentu, šiame elemente užpildomas duomenų bazės lentelės stulpelio
-			arba duomenų objekto savybės pavadinimas iš fizinio šaltinio automatiškai pritaikant kodinių pavadinimų skirybos taisykles.
-			Jį reikia atnaujinti pagal visas aukščiau nurodomas taisykles.
+    .. admonition:: Duomenų agento "Spinta" atveju
+        :class: agent-only
+
+        | Generuojant ŠDSA su duomenų agentu, šiame elemente užpildomas duomenų bazės lentelės stulpelio
+        arba duomenų objekto savybės pavadinimas iš fizinio šaltinio automatiškai pritaikant kodinių pavadinimų skirybos taisykles.
+        Jį reikia atnaujinti pagal visas aukščiau nurodomas taisykles.
 
 .. _metaduomenų-stulpeliai:
 
@@ -253,9 +256,10 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
 
     Šio stulpelio pildyti nereikia.
 	
-	.. container:: agent-only
-		.. admonition:: Duomenų agento "Spinta" atveju
-			| Šis `id` yra generuojamas automatinėmis duomenų agento priemonėmis sinchronizacijos su metaduomenų katalogu metu. 
+    .. admonition:: Duomenų agento "Spinta" atveju
+        :class: agent-only
+
+        | Šis `id` yra generuojamas automatinėmis duomenų agento priemonėmis sinchronizacijos su metaduomenų katalogu metu. 
 
 .. data:: type
 
@@ -330,15 +334,17 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
     
     Nudorodo elementų skaičių dimensijoje. Pildyti nereikia.
 
-	.. container:: agent-only
-		.. admonition:: Duomenų agento "Spinta" atveju
-			| Duomenų agentas šias vertes generuos automatiškai. Šiuo metu neįgyvendinta - https://github.com/atviriduomenys/spinta/issues/1453
-		
-		.. admonition:: Pastaba
+    .. admonition:: Duomenų agento "Spinta" atveju
+        :class: agent-only
 
-			Automatinis duomenų elementų skaičiavimas priklauso nuo duomenų šaltinio tipo ir nėra galimas su visais duomenų šaltiniais.
+        | Duomenų agentas šias vertes generuos automatiškai. Šiuo metu neįgyvendinta - https://github.com/atviriduomenys/spinta/issues/1453
+    
+    .. admonition:: Pastaba
+        :class: agent-only
 
-			Priklausomai nuo duomenų kiekio duomenų šaltinyje, ši operacija gali reikalauti didelių apdorojimo resursų ir gali būti išjungiama.
+        |Automatinis duomenų elementų skaičiavimas priklauso nuo duomenų šaltinio tipo ir nėra galimas su visais duomenų šaltiniais.
+
+        Priklausomai nuo duomenų kiekio duomenų šaltinyje, ši operacija gali reikalauti didelių apdorojimo resursų ir gali būti išjungiama.
 
 .. data:: level
 
@@ -360,9 +366,10 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
 
         :ref:`status`
 		
-    .. container:: agent-only
-		.. admonition:: Duomenų agento "Spinta" atveju
-			| Generuojant ŠDSA su duomenų agentu, šios reikšmės atomatiškai nustatomos kaip `develop`
+    .. admonition:: Duomenų agento "Spinta" atveju
+        :class: agent-only
+        
+        | Generuojant ŠDSA su duomenų agentu, šios reikšmės atomatiškai nustatomos kaip `develop`
 
 .. data:: visibility
 
@@ -379,9 +386,10 @@ pavadinimą, pavyzdžiui :data:`model.ref`, kas reikštų, kad kalbama apie
 
         :ref:`visibility`
 
-    .. container:: agent-only
-		.. admonition:: Duomenų agento "Spinta" atveju
-			| Generuojant ŠDSA su duomenų agentu, šios reikšmės automatiškai nustatomos kaip `private`
+    .. admonition:: Duomenų agento "Spinta" atveju
+        :class: agent-only
+
+        | Generuojant ŠDSA su duomenų agentu, šios reikšmės automatiškai nustatomos kaip `private`
 
 .. data:: access
 
@@ -437,10 +445,11 @@ bus išdėstyti būtent tokia tvarka. Nors įrankių atžvilgiu stulpelių tvark
 svarbi, tačiau rekomenduotina išlaikyti vienodą stulpelių tvarką, tam kad
 lenteles būtų lengviau skaityti.
 
-.. container:: agent-only
-	.. admonition:: Duomenų agento "Spinta" atveju
-		| Duomenų teikimui naudojant duomenų agentą, visi stulpeliai turi būti pateikti
-		DSA dokumente ir negalima nurodyti jokių kitų papildomų stulpelių.
+.. admonition:: Duomenų agento "Spinta" atveju
+    :class: agent-only
+    
+    | Duomenų teikimui naudojant duomenų agentą, visi stulpeliai turi būti pateikti
+    DSA dokumente ir negalima nurodyti jokių kitų papildomų stulpelių.
 
 .. _Duomenų katalogą: https://data.gov.lt/
 .. _dcat:Resource: https://www.w3.org/TR/vocab-dcat-2/#Class:Resource

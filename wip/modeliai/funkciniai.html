@@ -65,17 +65,14 @@ import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.es
 window.addEventListener("load", () => mermaid.run());
 </script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'modeliai/funkciniai';</script>
+    <script src="../_static/agent-toggle.js?v=fa37591b"></script>
     <link rel="index" title="Indeksas" href="../genindex.html" />
     <link rel="search" title="Paieška" href="../search.html" />
     <link rel="next" title="Brandos lygiai" href="../branda.html" />
     <link rel="prev" title="Asociacija" href="../identifikatoriai.html" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="lt"/>
   <meta name="docsearch:version" content="1.2" />
-  <script src="../static/agent-toggle.js"></script>
-  <link rel="stylesheet" href="../static/agent-toggle.css">
-
   </head>
   
   
@@ -84,14 +81,6 @@ window.addEventListener("load", () => mermaid.run());
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
-  
-  <div id="agent-toggle">
-    <label>
-      <input type="checkbox" id="agent-switch">
-      Palaiko duomenų agentas
-    </label>
-  </div>
-
   
   <div id="pst-scroll-pixel-helper"></div>
   
@@ -187,9 +176,12 @@ window.addEventListener("load", () => mermaid.run());
 <li class="toctree-l1"><a class="reference internal" href="../statusas.html">Metaduomenų statusas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../matomumas.html">Matomumas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../eli.html">ELI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../saltiniai.html"><code class="docutils literal notranslate"><span class="pre">connect()</span></code></a></li>
-
-
+<li class="toctree-l1 has-children"><a class="reference internal" href="../schemos/index.html">Duomenų schemos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../schemos/xsd.html">XSD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../schemos/openapi.html">OpenAPI</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../saltiniai.html">Duomenų šaltiniai</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../vardu-erdves.html">Vardų erdvės</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../zodynai.html">Išoriniai žodynai</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../formules.html">Formulės</a></li>
@@ -361,6 +353,12 @@ window.addEventListener("load", () => mermaid.run());
                   
   <section id="funkciniai-modeliai">
 <span id="functional-models"></span><h1>Funkciniai modeliai<a class="headerlink" href="#funkciniai-modeliai" title="Link to this heading">#</a></h1>
+<div class="agent-only admonition">
+<p class="admonition-title">Duomenų agento &quot;Spinta&quot; atveju</p>
+<div class="line-block">
+<div class="line">Šiuo metu funkcinių modelių duomenų agentas nepalaiko.</div>
+</div>
+</div>
 <p>Loginis duomenų modelis formuojamas <a class="reference internal" href="../formatas.html#model" title="model"><code class="xref py py-data docutils literal notranslate"><span class="pre">model</span></code></a> stulpelyje įvardinant
 <a class="reference internal" href="../modelis.html#uml-index"><span class="std std-ref">koncepcinio modelio</span></a> klasės pavadinimą.</p>
 <p><a class="reference internal" href="../modelis.html#uml-index"><span class="std std-ref">Koncepcinis modelis</span></a> nėra siejamas su jokiu konkrečiu duomenų šaltiniu, tačiau

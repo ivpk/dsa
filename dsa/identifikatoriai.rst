@@ -82,6 +82,12 @@ Jungtinis modelis turi vieną šakninį modelį (angl. *aggregate root*), prie
 kurio prijungiami kiti modeliai naudojant vieną iš :ref:`duomenų jungimo būdų
 <ref-types>`.
 
+.. admonition:: Duomenų agento "Spinta" atveju
+    :class: agent-only
+    
+    | Šiuo metu jungtinių modelių aprašymas yra galimas ŠDSA/DSA
+    tačiau duomenų grąžinimo per jungtinio modelio elementus duomenų agentas nepalaiko.
+
 Žiamiau pateikiamas jungtinio modelio pavyzdys.
 
 .. _denorm-dsa-example-1:

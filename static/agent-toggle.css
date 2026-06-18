@@ -1,0 +1,46 @@
+body:not(.agent-enabled) .agent-only {
+  display: none;
+}
+
+/* Make header items stay in one row */
+.header-article-items {
+  display: flex;
+  align-items: center;
+}
+
+/* Make inner container horizontal */
+.header-article__inner {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+/* Prevent your toggle from taking full width */
+#agent-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 6px;
+}
+
+/* Force both blocks to sit inline */
+.header-article__inner > * {
+  display: flex;
+  align-items: center;
+}
+
+/* active (inverted look) */
+#agent-toggle-btn.active {
+  background: var(--pst-color-text-base);
+  color: var(--pst-color-on-background);
+  border-radius: 4px;
+}
+
+/* optional hover polish */
+#agent-toggle-btn:hover {
+  color: var(--pst-color-primary);
+}
+
+body:not(.agent-enabled) .agent-only-link {
+  display: none;
+}

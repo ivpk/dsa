@@ -1,3 +1,6 @@
+:html_theme_options:
+   agent_only: tru
+
 .. default-role:: literal
 
 Duomenų schemos
@@ -12,7 +15,7 @@ Schemų sąrašas
 **************
 
 .. toctree::
-    :maxdepth: 2
+	:maxdepth: 2
 
-    xsd
-    openapi
+	xsd
+	openapi

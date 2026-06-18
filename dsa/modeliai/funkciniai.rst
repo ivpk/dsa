@@ -5,6 +5,11 @@
 Funkciniai modeliai
 ###################
 
+.. admonition:: Duomenų agento "Spinta" atveju
+    :class: agent-only
+    
+    | Šiuo metu funkcinių modelių duomenų agentas nepalaiko.
+
 Loginis duomenų modelis formuojamas :data:`model` stulpelyje įvardinant
 :ref:`koncepcinio modelio <uml-index>` klasės pavadinimą.
 

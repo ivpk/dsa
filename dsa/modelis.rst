@@ -369,7 +369,7 @@ access
     Prieigos lygis. Gali būti naudojami tokie žymėjimai:
 
     - `+` - atviri duomenys, žiūrėti :data:`open`.
-    - `#` - vieši duomenys, žiūrįti :data:`public`.
+    - `#` - vieši duomenys, žiūrėti :data:`public`.
     - `~` - duomenys teikiami pagal sutartį, žiūrėti :data:`protected`.
     - `-` - nepublikuojami duomenys, žiūrėti :data:`private`.
 
@@ -606,12 +606,12 @@ IRI yra identifikatorius schema sudaryta iš sekančių komponentų:
 Lietuvos viešąjame sektoriuje naudojama sekanti URI schema:
 
 
-`https://data.gov.lt/id/` **vocab** `/` **term** [ `/` **id** ]
+`https://data.gov.lt/id/` **vocab** `/` **entityType** [ `/` **id** ]
 
 vocab
     Žodyno kodinis pavadinimas.
 
-term
+entityType
     Sąvokos kodinis pavadinimas.
 
 id

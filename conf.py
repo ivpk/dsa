@@ -74,6 +74,7 @@ html_theme_options = {
     "use_edit_page_button": False,
     "use_issues_button": True,
     "article_header_end": [
+        "agent_toggle.html",
         "article-header-buttons",
     ]
 

@@ -68,7 +68,7 @@ window.addEventListener("load", () => mermaid.run());
     <link rel="index" title="Indeksas" href="genindex.html" />
     <link rel="search" title="Paieška" href="search.html" />
     <link rel="next" title="Kodiniai pavadinimai" href="pavadinimai.html" />
-    <link rel="prev" title="Dimensijos" href="dimensijos.html" />
+    <link rel="prev" title="Rezervuotos savybės" href="rezervuotos-savybes.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="lt"/>
   <meta name="docsearch:version" content="1.1" />
@@ -163,6 +163,7 @@ window.addEventListener("load", () => mermaid.run());
 <li class="toctree-l1"><a class="reference internal" href="formatas.html">Lentelės formatas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dimensijos.html">Dimensijos</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="rezervuotos-savybes.html">Rezervuotos savybės</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Duomenų tipai</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pavadinimai.html">Kodiniai pavadinimai</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vienetai.html">Matavimo vienetai</a></li>
@@ -329,6 +330,7 @@ window.addEventListener("load", () => mermaid.run());
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.integer"><code class="docutils literal notranslate"><span class="pre">integer</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.number"><code class="docutils literal notranslate"><span class="pre">number</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.binary"><code class="docutils literal notranslate"><span class="pre">binary</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.base32"><code class="docutils literal notranslate"><span class="pre">base32</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.string"><code class="docutils literal notranslate"><span class="pre">string</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.text"><code class="docutils literal notranslate"><span class="pre">text</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.datetime"><code class="docutils literal notranslate"><span class="pre">datetime</span></code></a></li>
@@ -445,6 +447,16 @@ nenurodyti vienetai.</p>
 <span class="sig-prename descclassname"><span class="pre">type.</span></span><span class="sig-name descname"><span class="pre">binary</span></span><a class="headerlink" href="#type.binary" title="Link to this definition">#</a></dt>
 <dd><p>Dvejetainiai duomenys. Bendras baitų skaičius turi būti ne didesnis nei 1G.</p>
 <p>Jei reikšmė yra didesnė nei 1G reikųtu naudoti <a class="reference internal" href="#type.file" title="type.file"><code class="xref py py-data docutils literal notranslate"><span class="pre">type.file</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="type.base32">
+<span class="sig-prename descclassname"><span class="pre">type.</span></span><span class="sig-name descname"><span class="pre">base32</span></span><a class="headerlink" href="#type.base32" title="Link to this definition">#</a></dt>
+<dd><p>Reikšmė užkoduota <a class="reference external" href="https://en.wikipedia.org/wiki/Base32">Base32</a> formatu. Šaltinyje saugoma reikšmė gali būti
+bet kokio tipo, duomenų agentas ją užkoduos į Base32 formą teikiant
+duomenis.</p>
+<p><code class="docutils literal notranslate"><span class="pre">base32</span></code> tipą galima naudoti tik prie <a class="reference internal" href="rezervuotos-savybes.html#module-_id" title="_id"><code class="xref py py-data docutils literal notranslate"><span class="pre">_id</span></code></a> arba <a class="reference internal" href="rezervuotos-savybes.html#module-_revision" title="_revision"><code class="xref py py-data docutils literal notranslate"><span class="pre">_revision</span></code></a>
+savybių.</p>
 </dd></dl>
 
 <dl class="py data">
@@ -1548,12 +1560,12 @@ identifikatorius, RDF duomenų modelyje tai yra subjeto identifikatorius.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="dimensijos.html"
+       href="rezervuotos-savybes.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">praeitas</p>
-        <p class="prev-next-title">Dimensijos</p>
+        <p class="prev-next-title">Rezervuotos savybės</p>
       </div>
     </a>
     <a class="right-next"
@@ -1587,6 +1599,7 @@ identifikatorius, RDF duomenų modelyje tai yra subjeto identifikatorius.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.integer"><code class="docutils literal notranslate"><span class="pre">integer</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.number"><code class="docutils literal notranslate"><span class="pre">number</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.binary"><code class="docutils literal notranslate"><span class="pre">binary</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.base32"><code class="docutils literal notranslate"><span class="pre">base32</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.string"><code class="docutils literal notranslate"><span class="pre">string</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.text"><code class="docutils literal notranslate"><span class="pre">text</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type.datetime"><code class="docutils literal notranslate"><span class="pre">datetime</span></code></a></li>

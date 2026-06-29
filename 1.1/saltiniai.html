@@ -163,6 +163,7 @@ window.addEventListener("load", () => mermaid.run());
 <li class="toctree-l1"><a class="reference internal" href="formatas.html">Lentelės formatas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dimensijos.html">Dimensijos</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="rezervuotos-savybes.html">Rezervuotos savybės</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tipai.html">Duomenų tipai</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pavadinimai.html">Kodiniai pavadinimai</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vienetai.html">Matavimo vienetai</a></li>
@@ -1035,21 +1036,12 @@ pagrinde yra naudojamas kartu su kitais resursais, nurodant <a class="reference 
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">model.source</span></span></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/XPath">XPath</a> iki elementų sąrašo, kuriame yra modelio duomenys.</p>
-<div class="admonition note">
-<p class="admonition-title">Pastaba</p>
-<p>Kol kas nėra įgyvendinta. Naudoti <code class="docutils literal notranslate"><span class="pre">/</span></code>.</p>
-</div>
 </dd></dl>
 
 <dl class="describe">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">property.source</span></span></dt>
 <dd><p>XML elemento, kuriame nurodyti duomenys, pavadinimas duomenų šaltinyje.</p>
-<div class="admonition note">
-<p class="admonition-title">Pastaba</p>
-<p>Svarbu pabrėžti, kad yra įgyvendintas tik vienareikšmių savybių skaitymas,
-todėl duomenys, esantys duomenų šaltinio daugiareikšmėse savybėse, nebus nuskaityti.</p>
-</div>
 </dd></dl>
 
 <div class="admonition-pavyzdys-be-soap-request-duomenu admonition">
@@ -1170,7 +1162,7 @@ todėl duomenys, esantys duomenų šaltinio daugiareikšmėse savybėse, nebus n
 <td></td>
 <td></td>
 <td><p>id</p></td>
-<td><p>/</p></td>
+<td><p>CityOutput</p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p></p></td>
@@ -1354,7 +1346,7 @@ gausime tokius <a class="reference external" href="https://ivpk.github.io/uapi">
 <td></td>
 <td></td>
 <td><p>id</p></td>
-<td><p>/</p></td>
+<td><p>CityOutput</p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p></p></td>
@@ -1395,12 +1387,7 @@ gausime tokius <a class="reference external" href="https://ivpk.github.io/uapi">
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>kreipiantis į <code class="docutils literal notranslate"><span class="pre">/City?p1=&quot;first&quot;</span></code>, bus suformuotas toks python dictionary, kurį
-<code class="docutils literal notranslate"><span class="pre">Zeep</span></code> klientas perduos kaip SOAP request body:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;request_model&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;param1&quot;</span><span class="p">:</span> <span class="s2">&quot;first&quot;</span><span class="p">,</span> <span class="s2">&quot;param2&quot;</span><span class="p">:</span> <span class="s2">&quot;value2&quot;</span><span class="p">}}</span>
-</pre></div>
-</div>
-<p>ir gausime tokius <a class="reference external" href="https://ivpk.github.io/uapi">UDTS</a> specifikaciją atitinkančius duomenis:</p>
+<p>kreipiantis į <code class="docutils literal notranslate"><span class="pre">/City?p1=&quot;first&quot;</span></code>, gausime tokius <a class="reference external" href="https://ivpk.github.io/uapi">UDTS</a> specifikaciją atitinkančius duomenis:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;_data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="p">{</span>

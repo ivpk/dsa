@@ -527,16 +527,9 @@ SOAP
 
     XPath_ iki elementų sąrašo, kuriame yra modelio duomenys.
 
-    .. note::
-        Kol kas nėra įgyvendinta. Naudoti `/`.
-
 .. describe:: property.source
 
     XML elemento, kuriame nurodyti duomenys, pavadinimas duomenų šaltinyje.
-
-    .. note::
-        Svarbu pabrėžti, kad yra įgyvendintas tik vienareikšmių savybių skaitymas,
-        todėl duomenys, esantys duomenų šaltinio daugiareikšmėse savybėse, nebus nuskaityti.
 
 .. admonition:: Pavyzdys (be SOAP request duomenų)
 
@@ -633,7 +626,7 @@ SOAP
     ===========  ======  =========  ========  ====  ================================================  ================
     towns_wsdl                      wsdl            http://example.com/city?wsdl
     towns                           soap            CityService.CityPort.CityPortType.CityOperation   wsdl(towns_wsdl)
-    \            City                         id    /
+    \            City                         id    CityOutput
     -----------  ------  ---------  --------  ----  ------------------------------------------------  ----------------
     \                    id         integer         id
     \                    name       string          name
@@ -765,7 +758,7 @@ SOAP
     towns                           soap                         CityService.CityPort.CityPortType.CityOperation   wsdl(towns_wsdl)
     \                               **param**     **parameter1** **request_model/param1**                          **input("value1")**
     \                               **param**     **parameter2** **request_model/param2**                          **input("value2")**
-    \            City                             id             /
+    \            City                             id             CityOutput
     \                    id         integer                      id
     \                    name       string                       name
     \                    **p1**     **string**                                                                     **param(parameter1)**
@@ -773,15 +766,7 @@ SOAP
     ===========  ======  =========  ============  ============== ================================================  =====================
     |
 
-    kreipiantis į `/City?p1="first"`, bus suformuotas toks python dictionary, kurį
-    `Zeep` klientas perduos kaip SOAP request body:
-
-    .. code-block:: python
-
-        {"request_model": {"param1": "first", "param2": "value2"}}
-
-
-    ir gausime tokius UDTS_ specifikaciją atitinkančius duomenis:
+    kreipiantis į `/City?p1="first"`, gausime tokius UDTS_ specifikaciją atitinkančius duomenis:
 
     .. code-block:: json
 

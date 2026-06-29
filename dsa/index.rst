@@ -78,6 +78,7 @@ Turinys
     modelis
     formatas
     dimensijos
+    rezervuotos-savybes
     tipai
     pavadinimai
     vienetai

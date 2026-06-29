@@ -948,11 +948,69 @@ kelis jau aprašytus laukus.
         pirmos grupės reikšmę jei naudojama tik viena grupė arba reikšmių grupę
         jei `pattern` yra daugiau nei viena grupė.
 
-    .. function:: cast(type)
+    .. function:: cast()
 
-        Konvertuoja šaltinio tipą į nurodytą `type` tipą. Tipų konvertavimas yra
+        Konvertuoja šaltinio tipą į duomenų lauko tipą. Tipų konvertavimas yra
         įmanomas tik tam tikrais atvejais. Jei tipų konvertuoti neįmanoma, tada
-        metodas turėtų grąžinti klaidą.
+        metodas grąžina klaidą.
+
+        Tarkime, turime tokius JSON duomenis:
+
+        .. code-block:: json
+
+            {
+                "grades": [
+                    {
+                        "name": "Perfect",
+                        "last_used": "2025-01-01 14:00"
+                    },
+                    {
+                        "name": "Good",
+                        "last_used": "2025-01-02 16:00"
+                    }
+                ]
+            }
+
+        Naudodami prepare funkciją `cast()`, galime transformuoti duomenų lauko `last_used`
+        reikšmę į tik datos arba tik laiko formatus:
+
+        +---+---+---+---+----------------+-----------+---------+-----------+----------+
+        | d | r | b | m | property       | type      | ref     | source    | prepare  |
+        +===+===+===+===+================+===========+=========+===========+==========+
+        | datasets/example/grades        |           |         |           |          |
+        +---+---+---+---+----------------+-----------+---------+-----------+----------+
+        |   | grades                     | dask/json |         | data.json |          |
+        +---+---+---+---+----------------+-----------+---------+-----------+----------+
+        |   |   |   | Grade              |           | name    | grades    |          |
+        +---+---+---+---+----------------+-----------+---------+-----------+----------+
+        |   |   |   |   | name           | string    |         | name      |          |
+        +---+---+---+---+----------------+-----------+---------+-----------+----------+
+        |   |   |   |   | last_used_date | date      |         | last_used | cast()   |
+        +---+---+---+---+----------------+-----------+---------+-----------+----------+
+        |   |   |   |   | last_used_time | time      |         | last_used | cast()   |
+        +---+---+---+---+----------------+-----------+---------+-----------+----------+
+
+        Pagal pateiktą DSA bus nuskaityti tokie duomenys:
+
+        .. code-block:: json
+
+            {
+                "_data": [
+                    {
+                        "name": "Perfect",
+                        "last_used_date": "2025-01-01",
+                        "last_used_time": "14:00:00"
+                    },
+                    {
+                        "name": "Good",
+                        "last_used_date": "2025-01-02",
+                        "last_used_time": "16:00:00"
+                    },
+                ]
+            }
+
+        Atkreipkite dėmesį, kad grąžintų duomenų `last_used_date` reikšmė transformuota tik į datą, be laiko,
+        o `last_used_date` - į laiką sekundžių tikslumu.
 
     .. function:: split()
 

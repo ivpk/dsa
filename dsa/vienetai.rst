@@ -125,7 +125,7 @@ datasets/example
 \           id            integer        4
 -- -- -- -- ------------- -------- ----- -----
 \           temperatura   number   °C    4
-\           svorlis       number   kg    4
+\           svoris        number   kg    4
 \           plotas        number   m²    4
 \           turis         number   m³    4
 \           greitis       number   km/h  4

@@ -34,6 +34,72 @@ Rengiant duomenų struktūros aprašą, reikėtų nurodyti ne šaltinio duomenų
 brandos lygį, o galutinį brandos lygį, kuris yra gaunamas atlikus visas
 duomenų struktūros apraše nurodytas transformacijas.
 
+.. _Brandos vertinimas:
+
+Brandos vertinimas
+******************
+
+Kadangi kai kurie DSA dokumentai gali būti dideli ir sudėtingi ir elementų gali būti labai daug, jų kūrimas ir tikrinimas yra gan sudėtingas, todėl siūlome vadovautis tokiais prioritetais, susidedančiais iš trijų grupių:
+
+Prioritetai:
+
+- Pagal taikymo mastą (`visibility`)
+- Pagal elemento tipą
+- Pagal duomenų rūšį
+
+Šie prioritetai yra skirti vienos informacinės sistemos elementams, kur elementas gali būti klasė (`model`) arba savybė (`property`).
+
+Papildomai, gali būti sudaromi prioritetai informacinių sistemų arba duomenų rinkinių lygmeniu, tačiau nepriklausomai, nuo to, kurie informacinė sistema ir duomenų rinkinys yra aukštesnio prioriteto, vienos informacinės sistemos lygmenyje, prioritetai nustatomi pagal elementus, tokia tvarka, kaip aprašyta šiame dokumente.
+
+**Pagal taikymo mastą**
+
+- Elementai, kurie yra taikomi ES lygmeniu
+- Elementai, kurie yra taikomi LT lygmeniu
+- Elementai, kurie yra taikomi IS lygmeniu
+
+**Pagal elemento tipą**
+
+- Klasės
+- Ryšiai tarp klasių
+- Klasifikatoriai
+- Ryšiai tarp klasifikatorių
+- Savybės
+- Klasifikatoriaus kodų sąrašai
+
+**Pagal duomenų rūšį**
+
+- Metadata - nauji duomenų tipai arba bendro naudojamo savybės.
+- Master data
+- Reference data (klasifikatoriai)
+- Transactional data
+- Reporting data
+
+**Kriterijai**
+Tam, kad būtų galima suteikti elementui `status=completed`, būtina atlikti eilę patikrinimų, tačiau tikrinamų kriterijų sąrašas priklauso nuo elemento matomumo (`visibility`).
+
+Žemiau pateiktas kriterijų sąrašas, kuriuos reikia patikrinti, tam, kad būtų suteiktas `status=completed`. Kriterijai suskirstyti pagal `visibility`, aukštesniam `visibility` taikomi visi kriterijai nurodyti prie žemesnių `visibility`.
+
+**IS taikymo lygmuo** (`visibility=protected`)
+
+- Sėkmingai praeina automatinius `spinta check` patikrinimus.
+- Atliktas pilnas DSA brandos lygio (`level`) vertinimas.
+- DSA elementai sulyginti su baziniais modeliais.
+- Taisyklingai supildyti `title` ir `description` aprašymai, ir aprašymai atitinka semantiką.
+- Yra pateikti duomenų pavyzdžiai ir DSA patikrintai pagal juos.
+- Elementai patikrinti ir atitinka VSSA Core Vocabulary.
+- IS DSA sulyginta su kitų IS koncepciniais modeliais, paskelbtais [metaduomenų kataloge](https://github.com/ivpk/metadata).
+
+**LT taikymo lygmuo** (`visibility=package`)
+
+- Elementai patikrinti pagal IS nuostatais
+- Elementai patikrinti pagal teisės aktuss, pagal IS veiklos sritį
+- Elementai įtraukti į IS koncepcinį modelį
+
+**ES taikymo lygmuo** (`visibility=public`)
+
+- Elementai patikrinti ir susieti su [SEMIC Core Vocabularies](https://interoperable-europe.ec.europa.eu/collection/semic-support-centre/core-vocabularies)
+- Klasifikatoriai sulyginti su rekomenduojamais kontroliuojamais žodynais.
+
 
 .. _L000:
 
